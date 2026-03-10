@@ -1,5 +1,5 @@
 --[[
-Questionably Epic Mythic+ Dungeon Tips
+Tothys Dungeon Tips TBC
 Configuration Page
 
 Version: 4.8
@@ -12,7 +12,7 @@ Contact:
 local _, addon = ...;
 
 -- UI
-QEConf = {}
+TothysConf = {}
 --local ACD = LibStub("MSA-AceConfigDialog-3.0")
 
 
@@ -104,8 +104,8 @@ end
 local function createConfigMenu()
 
 	-- Setup Panel --
-	addon.configPanel = CreateFrame("Frame", "QEConfiguration", UIParent)
-	addon.configPanel.name = "QE Mythic+ Dungeon Tips";
+	addon.configPanel = CreateFrame("Frame", "TothysDungeonTipsConfiguration", UIParent)
+	addon.configPanel.name = "Tothys Dungeon Tips TBC";
 	addon.configPanel.okay = function (self) return end
 	addon.configPanel.cancel = function (self) return end
 	
@@ -114,7 +114,7 @@ local function createConfigMenu()
 	ddTitleString:SetPoint("TOPLEFT", 10, -10)
 	ddTitleString:SetFont("Fonts\\MORPHEUS.ttf", 22, "OUTLINE")
 	ddTitleString:SetTextColor(0.9, 0.68, 0.22, 1)
-	ddTitleString:SetText("QE Mythic+ Dungeon Tips - Config")
+	ddTitleString:SetText("Tothys Dungeon Tips TBC - Config")
 
 	
 	-----------------------
@@ -351,5 +351,7 @@ local function createConfigMenu()
 end
 
 createConfigMenu()
+
+
 
 

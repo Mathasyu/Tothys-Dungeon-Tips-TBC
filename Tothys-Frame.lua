@@ -1,5 +1,5 @@
 --[[
-Questionably Epic Mythic+ Dungeon Tips
+Tothys Dungeon Tips TBC
 Configuration Page
 
 Version: 4.8
@@ -94,7 +94,7 @@ end)
 	headerQE:SetTextColor(239/255, 191/255, 90/255)
 	headerQE:SetJustifyH("LEFT")
 	headerQE:SetJustifyV("CENTER")
-	headerQE:SetText("Questionably Epic Dungeon Tips")
+	headerQE:SetText("Tothys Dungeon Tips TBC")
 	headerQE:SetWordWrap(true)
 	
 	QE_HeaderPanel:SetPoint("TOPLEFT", QE_ParentFrame, "TOPLEFT", 0, 0)
@@ -397,5 +397,6 @@ end
 QE_onBoss = false
 
 --createQEFrame()
+
 
 

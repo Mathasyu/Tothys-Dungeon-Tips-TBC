@@ -1,5 +1,5 @@
 --[[
-Questionably Epic Dungeon Tips
+Tothys Dungeon Tips TBC
 Version: 0.5 (Burning Crusade Classic Alpha)
 Developed by: Voulk
 Contact: 
@@ -320,5 +320,6 @@ function addon:getTarget(mobType)
 	
   end
 end
+
 
 
