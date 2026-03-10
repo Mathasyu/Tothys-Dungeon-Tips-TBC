@@ -29,14 +29,20 @@ function createQEFrame()
 	--addon.isShowing = true
 
 	QE_ParentFrame = CreateFrame("Frame", "QE_ParentFrame", UIParent)
-	QE_ParentFrame:SetResizable(true)
+	if QE_ParentFrame.SetResizable then
+		QE_ParentFrame:SetResizable(true)
+	end
 	QE_ParentFrame:SetMovable(true)
 	QE_ParentFrame:EnableMouse(true)
 	QE_ParentFrame:SetWidth(420)
 	QE_ParentFrame:SetHeight(120)
-	QE_ParentFrame:SetMinResize(300, 90) -- Real, change back to this
-	--QE_ParentFrame:SetMinResize(20, 90) -- For testing wraps
-	QE_ParentFrame:SetMaxResize(500, 200)
+	if QE_ParentFrame.SetMinResize then
+		QE_ParentFrame:SetMinResize(300, 90) -- Real, change back to this
+		--QE_ParentFrame:SetMinResize(20, 90) -- For testing wraps
+	end
+	if QE_ParentFrame.SetMaxResize then
+		QE_ParentFrame:SetMaxResize(500, 200)
+	end
 	QE_ParentFrame:RegisterForDrag("LeftButton")
 	QE_ParentFrame:SetScript("OnDragStart", function(self) self:StartMoving() end)
 	QE_ParentFrame:SetScript("OnDragStop", function(self) self:StopMovingOrSizing() end)
@@ -57,23 +63,30 @@ function createQEFrame()
 	resizeButton:SetHighlightTexture("Interface\\ChatFrame\\UI-ChatIM-SizeGrabber-Highlight")
 	resizeButton:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIM-SizeGrabber-Down")
  
-	resizeButton:SetScript("OnMouseDown", function(self, button)
-    QE_ParentFrame:StartSizing("BOTTOMRIGHT")
-    QE_ParentFrame:SetUserPlaced(true)
-end)
+	if QE_ParentFrame.StartSizing and QE_ParentFrame.StopMovingOrSizing then
+		resizeButton:SetScript("OnMouseDown", function(self, button)
+			QE_ParentFrame:StartSizing("BOTTOMRIGHT")
+			if QE_ParentFrame.SetUserPlaced then
+				QE_ParentFrame:SetUserPlaced(true)
+			end
+		end)
  
-	resizeButton:SetScript("OnMouseUp", function(self, button)
-    QE_ParentFrame:StopMovingOrSizing()
-end)
+		resizeButton:SetScript("OnMouseUp", function(self, button)
+			QE_ParentFrame:StopMovingOrSizing()
+		end)
+	else
+		resizeButton:Hide()
+	end
 	--
 	
 	
 	
-
+	
+	
 
 
 	-- Header Panel
-	QE_HeaderPanel = CreateFrame("Frame", "QE_HeaderFrame", QE_ParentFrame)	
+    QE_HeaderPanel = CreateFrame("Frame", "QE_HeaderFrame", QE_ParentFrame)
 	QE_HeaderPanel:SetFrameStrata("Background")
 	--QE_HeaderPanel:SetAllPoints(QE_ParentFrame)
 	
@@ -397,6 +410,8 @@ end
 QE_onBoss = false
 
 --createQEFrame()
+
+
 
 
 
