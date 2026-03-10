@@ -17,26 +17,37 @@ TothysConf = {}
 
 
 -- Saved Variables
-TDTConfig = {
-	["Important"] = true,
-	["PriorityTargets"] = true,
-	["Defensives"] = true,
-	["Interrupts"] = true,
-	["Fluff"] = false,
-	["Advanced"] = true,
-	["Dodge"] = true,
-	["RoleChoice"] = "Show my role only",
-	["ClassChoice"] = "Show my class only",
-	["ShowFrame"] = "Show in separate frame",
-	["TargetTrigger"] = "Show targeted mob",
-	
-	["RaidToggle"] = true,
-	["MythicPlusToggle"] = true,
-	["FrameWidth"] = 450,
-	["FrameHeight"] = 175,
-	["FontSize"] = 12,
-	["FrameOpacity"] = 0.55
+local defaultConfig = {
+    ["Important"] = true,
+    ["PriorityTargets"] = true,
+    ["Defensives"] = true,
+    ["Interrupts"] = true,
+    ["Fluff"] = false,
+    ["Advanced"] = true,
+    ["Dodge"] = true,
+    ["RoleChoice"] = "Show my role only",
+    ["ClassChoice"] = "Show my class only",
+    ["ShowFrame"] = "Show in separate frame",
+    ["TargetTrigger"] = "Show targeted mob",
+    ["RaidToggle"] = true,
+    ["MythicPlusToggle"] = true,
+    ["FrameWidth"] = 450,
+    ["FrameHeight"] = 175,
+    ["FontSize"] = 12,
+    ["FrameOpacity"] = 0.55
 }
+
+local function applyConfigDefaults(config)
+    for key, value in pairs(defaultConfig) do
+        if config[key] == nil then
+            config[key] = value
+        end
+    end
+
+    return config
+end
+
+TDTConfig = TDTConfig or {}
 
 -- Create Checkboxes
 local function createCheck(label, description, frame, onClick)
@@ -299,19 +310,16 @@ local function createConfigMenu()
 	-- Load in SavedVariables on ADDON_LOADED
 	addon.configPanel:RegisterEvent("ADDON_LOADED")
 	addon.configPanel:SetScript("OnEvent", function(self, event, arg1)
-		if event == "ADDON_LOADED" then
-			-- Check for new variables added in a later release
-			TDTConfig.ShowFrame = TDTConfig.ShowFrame or "Show in separate frame"
-			TDTConfig.TargetTrigger = TDTConfig.TargetTrigger or "Show targeted mob"
-			
-			-- More variables added in a later release
-			if TDTConfig.RaidToggle == nil then TDTConfig.RaidToggle = true end
-			if TDTConfig.MythicPlusToggle == nil then TDTConfig.MythicPlusToggle = true end
-			TDTConfig.FrameOpacity = TDTConfig.FrameOpacity or 0.55
-			TDTConfig.FrameWidth = TDTConfig.FrameWidth or 450
-			TDTConfig.FrameHeight = TDTConfig.FrameHeight or 175
-			TDTConfig.FontSize = TDTConfig.FontSize or 14
-			--print(TDTConfig.FontSize)
+        if event == "ADDON_LOADED" then
+            if arg1 ~= "Tothys-Dungeon-Tips-TBC" then return end
+
+            if QEConfig and next(TDTConfig) == nil then
+                TDTConfig = QEConfig
+            end
+            QEConfig = nil
+            TDTConfig = applyConfigDefaults(TDTConfig)
+            TDTConfig.FontSize = TDTConfig.FontSize or 14
+            --print(TDTConfig.FontSize)
 			
 			-- Set default checkbox behaviour
 			chkPriority:SetChecked(TDTConfig.PriorityTargets)
@@ -355,6 +363,7 @@ local function createConfigMenu()
 end
 
 createConfigMenu()
+
 
 
 
