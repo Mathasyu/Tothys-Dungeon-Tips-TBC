@@ -344,13 +344,18 @@ local function createConfigMenu()
 	end);
 	
 	-- Add panel to config options
-	InterfaceOptions_AddCategory(addon.configPanel)
+	if InterfaceOptions_AddCategory then
+		InterfaceOptions_AddCategory(addon.configPanel)
+	elseif InterfaceOptionsFrame_AddCategory then
+		InterfaceOptionsFrame_AddCategory(addon.configPanel)
+	end
 	
 	-- Proceed
 	createQEFrame()
 end
 
 createConfigMenu()
+
 
 
 
