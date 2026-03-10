@@ -1,3 +1,40 @@
+local localeDisplayNames = {
+    Auto = "Auto",
+    enUS = "English",
+    deDE = "Deutsch",
+}
+
+local function createCycleButton(frame, name, values, onChange)
+    local button = CreateFrame("Button", "TDTButton" .. name, frame, "UIPanelButtonTemplate")
+    button:SetWidth(140)
+    button:SetHeight(24)
+    button.values = values
+    button.currentIndex = 1
+
+    function button:SetCurrentValue(value)
+        for index, candidate in ipairs(self.values) do
+            if candidate == value then
+                self.currentIndex = index
+                break
+            end
+        end
+        self:SetText(localeDisplayNames[self.values[self.currentIndex]] or self.values[self.currentIndex])
+    end
+
+    button:SetScript("OnClick", function(self)
+        self.currentIndex = self.currentIndex + 1
+        if self.currentIndex > #self.values then
+            self.currentIndex = 1
+        end
+
+        local value = self.values[self.currentIndex]
+        self:SetText(localeDisplayNames[value] or value)
+        onChange(value)
+    end)
+
+    return button
+end
+
 --[[
 Tothys Dungeon Tips TBC
 Configuration Page
@@ -34,7 +71,8 @@ local defaultConfig = {
     ["FrameWidth"] = 450,
     ["FrameHeight"] = 175,
     ["FontSize"] = 12,
-    ["FrameOpacity"] = 0.55
+    ["FrameOpacity"] = 0.55,
+    ["LocaleChoice"] = "Auto"
 }
 
 local function applyConfigDefaults(config)
@@ -73,6 +111,9 @@ end
 TDTConfig = applyConfigDefaults(TDTConfig or QEConfig or {})
 if type(TDTConfig.FontSize) ~= "number" then
     TDTConfig.FontSize = tonumber(TDTConfig.FontSize) or defaultConfig.FontSize
+end
+if TDTConfig.LocaleChoice ~= "Auto" and TDTConfig.LocaleChoice ~= "enUS" and TDTConfig.LocaleChoice ~= "deDE" then
+    TDTConfig.LocaleChoice = defaultConfig.LocaleChoice
 end
 
 -- Create Checkboxes
@@ -255,10 +296,22 @@ local function createConfigMenu()
 			end)	
 	chkClass:SetPoint("TOPLEFT", classFS, "BOTTOMLEFT", 0, -8)
 	
+	local localeFS = createString(addon.configPanel, "Language", headerFont, headerSize)
+	localeFS:SetPoint("TOPLEFT", chkClass, "BOTTOMLEFT", 0, -24)
+
+	local localeHelp = createString(addon.configPanel, "Auto uses the client locale. English is the fallback if no translation exists.", "Fonts\\FRIZQT__.TTF", 11)
+	localeHelp:SetPoint("TOPLEFT", localeFS, "BOTTOMLEFT", 0, -4)
+	localeHelp:SetWidth(250)
+
+	local localeButton = createCycleButton(addon.configPanel, "Locale", {"Auto", "enUS", "deDE"}, function(value)
+		TDTConfig.LocaleChoice = value
+	end)
+	localeButton:SetPoint("TOPLEFT", localeHelp, "BOTTOMLEFT", 0, -8)
+
 	-- Activate in
 	-- Tip Location Selector --
 	local showinFS = createString(addon.configPanel, "Content", headerFont, headerSize)
-	showinFS:SetPoint("TOPLEFT", roleFS, "BOTTOMLEFT", 0, -54)
+	showinFS:SetPoint("TOPLEFT", localeButton, "BOTTOMLEFT", 0, -24)
 	
 	local chkRegDungeons = createCheck("RegDungeons", "Show Tips in Dungeons", addon.configPanel, function(self, value) end)
 	chkRegDungeons:SetPoint("TOPLEFT", showinFS, "BOTTOMLEFT", 0, -8)
@@ -344,6 +397,9 @@ local function createConfigMenu()
             if type(TDTConfig.FontSize) ~= "number" then
                 TDTConfig.FontSize = tonumber(TDTConfig.FontSize) or defaultConfig.FontSize
             end
+            if TDTConfig.LocaleChoice ~= "Auto" and TDTConfig.LocaleChoice ~= "enUS" and TDTConfig.LocaleChoice ~= "deDE" then
+                TDTConfig.LocaleChoice = defaultConfig.LocaleChoice
+            end
             --print(TDTConfig.FontSize)
 			
 			-- Set default checkbox behaviour
@@ -366,6 +422,7 @@ local function createConfigMenu()
 			addon.chkTarget:SetChecked(TDTConfig.TargetTrigger == "Show targeted mob")
 			chkRole:SetChecked(TDTConfig.RoleChoice == "Show all roles")
 			chkClass:SetChecked(TDTConfig.ClassChoice == "Show all classes")
+			localeButton:SetCurrentValue(TDTConfig.LocaleChoice)
 			
 			updateTextSize()
 			fontEdit.text:SetText(TDTConfig.FontSize)

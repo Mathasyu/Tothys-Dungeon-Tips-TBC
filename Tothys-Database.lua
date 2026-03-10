@@ -6,7 +6,7 @@ local _, addon = ...;
 
 -- The Tips maps holds tooltip information and mob ID's for all 13 legion dungeons, 10 BFA dungeons and the 8 Shadowlands dungeons. This is basically the database.
 -- Each array uses the format: {{"Type", "Tip1"}, {"Type", "Tip2"}}
-tipsMap = {
+tipsMap_enUS = {
 	-- Example
 	[126389] = {{"Blank", "A+ Tip right here. \n It's a shame it's so damn long eh? It just goes on and on and on and ooon"}, 
 				{"Interrupts", "INTERRUPT: Stone Bolt"}}, -- In this example case, all roles will see "A+ Tip right here" on the mobs tooltip but only Healers will see the second tip.
@@ -2248,4 +2248,6 @@ tipsMap = {
 	
 	[0] = {{"-"}}	
 	
-}                                                                                                                                                                                                                                                  
+}
+
+tipsMap_deDE = tipsMap_deDE or {}

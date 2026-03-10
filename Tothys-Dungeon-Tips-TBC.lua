@@ -156,6 +156,39 @@ addon.acceptedDungeons = {
 	
 }
 
+local function getSelectedLocale()
+	if not TDTConfig then
+		return "enUS"
+	end
+
+	local preferredLocale = TDTConfig.LocaleChoice or "Auto"
+	if preferredLocale == "Auto" then
+		preferredLocale = GetLocale() or "enUS"
+	end
+
+	if preferredLocale ~= "deDE" then
+		preferredLocale = "enUS"
+	end
+
+	return preferredLocale
+end
+
+function addon:getTipsForNpc(id)
+	local localeMaps = {
+		enUS = tipsMap_enUS,
+		deDE = tipsMap_deDE,
+	}
+	local selectedLocale = getSelectedLocale()
+	local localizedMap = localeMaps[selectedLocale] or tipsMap_enUS
+
+	if localizedMap and localizedMap[id] then
+		return localizedMap[id]
+	end
+
+	if tipsMap_enUS then
+		return tipsMap_enUS[id]
+	end
+end
 local function RGBToHex(r, g, b)
 	r = r <= 1 and r >= 0 and r or 0
 	g = g <= 1 and g >= 0 and g or 0
@@ -269,13 +302,14 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 		local name = UnitName(unit) or ""
 		
 		-- Check our dictionary to see if we actually have any tips for the mob targeted.
-		if tipsMap[id] then
+		local npcTips = addon:getTipsForNpc(id)
+		if npcTips then
 			-- Don't remove active tip if you accidentally mouse over ally.
 			TDT_TipText:SetText("")
 			TDT_MobName:SetText(name)
 		
-			if TDTConfig.ShowFrame == "Show in separate frame" then addFrameLine(TDT_TipPanel, tipsMap[id], "NPC ID:", class)
-			else addLine(GameTooltip, tipsMap[id], "NPC ID:", class)
+			if TDTConfig.ShowFrame == "Show in separate frame" then addFrameLine(TDT_TipPanel, npcTips, "NPC ID:", class)
+			else addLine(GameTooltip, npcTips, "NPC ID:", class)
 			end
 		
 		elseif UnitIsEnemy(unit, "player") then
@@ -302,12 +336,13 @@ function addon:getTarget(mobType)
     local id = tonumber(guid:match("-(%d+)-%x+$"), 10) -- This is the mobs ID. Don't worry about the regex.
 	local name = UnitName(mobType) or ""
 	-- Check our dictionary to see if we actually have any tips for the mob targeted.
-	if tipsMap[id] then
+	local npcTips = addon:getTipsForNpc(id)
+		if npcTips then
 		-- Don't remove active tip if you accidentally mouse over ally.
 		
 		TDT_TipText:SetText("")
 		TDT_MobName:SetText(name)
-		addFrameLine(TDT_TipPanel, tipsMap[id], "NPC ID:", class)
+		addFrameLine(TDT_TipPanel, npcTips, "NPC ID:", class)
 		--addLine(GameTooltip, tipsMap[id], "NPC ID:", role, class)		
 
 	elseif 	UnitIsEnemy(mobType, "player") then
