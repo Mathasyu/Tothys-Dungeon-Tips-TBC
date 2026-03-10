@@ -329,6 +329,15 @@ local function tdtPrint(message)
 	end
 end
 
+local function tdtDumpConfigApiState()
+	tdtPrint("InterfaceOptions_AddCategory: " .. tostring(InterfaceOptions_AddCategory ~= nil))
+	tdtPrint("InterfaceOptionsFrame_AddCategory: " .. tostring(InterfaceOptionsFrame_AddCategory ~= nil))
+	tdtPrint("InterfaceOptionsFrame_OpenToCategory: " .. tostring(InterfaceOptionsFrame_OpenToCategory ~= nil))
+	tdtPrint("InterfaceOptionsFrame: " .. tostring(InterfaceOptionsFrame ~= nil))
+	tdtPrint("Settings: " .. tostring(Settings ~= nil))
+	tdtPrint("BlizzardOptionsPanel name: " .. tostring(addon.configPanel and addon.configPanel.name or nil))
+	tdtPrint("Config registered: " .. tostring(addon.configPanelRegistered == true))
+end
 function addon:openConfig()
     if addon.registerConfigPanel then
         addon:registerConfigPanel()
@@ -379,8 +388,12 @@ SlashCmdList["TDTCOMMAND"] = function(msg)
 		end
 	elseif msg == "test" then
 		addon:showTestFrame()
+    elseif msg == "diag" then
+        tdtDumpConfigApiState()
 	else
-		tdtPrint("Commands: /tdt config, /tdt show, /tdt hide, /tdt test")
+		tdtPrint("Commands: /tdt config, /tdt show, /tdt hide, /tdt test, /tdt diag")
 	end
 end
+
+
 
