@@ -153,7 +153,7 @@ function createTDTFrame()
 	TDT_MobName:SetText(" ")
 
 	-- Frame Tip Text
-	TDT_TipText = TDT_TipPanel:CreateFontString("TDT_TipText", nil, GameFontNormal)
+	TDT_TipText = TDT_TipPanel:CreateFontString("TDT_TipText", nil, nil)
 	TDT_TipText:SetPoint("TOPLEFT", TDT_MobName, "BOTTOMLEFT", 0, -3)
 	TDT_TipText:SetPoint("TOPRIGHT", TDT_MobName, "BOTTOMRIGHT", -3, -3)
 	TDT_TipText:SetPoint("BOTTOMLEFT", TDT_ParentFrame, "BOTTOMLEFT", 0, 0)
@@ -410,6 +410,7 @@ end
 TDT_onBoss = false
 
 --createTDTFrame()
+
 
 
 
