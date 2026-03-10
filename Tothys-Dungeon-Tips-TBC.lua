@@ -323,3 +323,60 @@ end
 
 
 
+local function tdtPrint(message)
+	if DEFAULT_CHAT_FRAME then
+		DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99TDT:|r " .. message)
+	end
+end
+
+function addon:openConfig()
+	if addon.configPanel and InterfaceOptionsFrame_OpenToCategory then
+		InterfaceOptionsFrame_OpenToCategory(addon.configPanel)
+		InterfaceOptionsFrame_OpenToCategory(addon.configPanel)
+	else
+		tdtPrint("Config panel is not available in this client.")
+	end
+end
+
+function addon:showTestFrame()
+	if not TDT_ParentFrame then
+		tdtPrint("Main frame is not ready yet.")
+		return
+	end
+
+	TDT_ParentFrame:Show()
+	if TDT_TipPanel then
+		TDT_TipPanel:SetHeight(TDTConfig.FrameHeight or 175)
+		TDT_TipPanel:Show()
+		TDT_TipText:Show()
+	end
+	if TDT_MobName then
+		TDT_MobName:SetText("TDT Test Target")
+	end
+	if TDT_TipText then
+		TDT_TipText:SetText(" |cff33ff99Addon loaded successfully.|r\n |cffffd166Use /tdt show, /tdt hide, or target a dungeon mob.|r")
+	end
+end
+
+SLASH_TDTCOMMAND1 = "/tdt"
+SlashCmdList["TDTCOMMAND"] = function(msg)
+	msg = string.lower(msg or "")
+
+	if msg == "config" then
+		addon:openConfig()
+	elseif msg == "show" then
+		if TDT_ParentFrame then
+			TDT_ParentFrame:Show()
+			tdtPrint("Frame shown.")
+		end
+	elseif msg == "hide" then
+		if TDT_ParentFrame then
+			TDT_ParentFrame:Hide()
+			tdtPrint("Frame hidden.")
+		end
+	elseif msg == "test" then
+		addon:showTestFrame()
+	else
+		tdtPrint("Commands: /tdt config, /tdt show, /tdt hide, /tdt test")
+	end
+end
