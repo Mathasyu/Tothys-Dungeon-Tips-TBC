@@ -342,12 +342,20 @@ function addon:openConfig()
     if addon.registerConfigPanel then
         addon:registerConfigPanel()
     end
-	if addon.configPanel and InterfaceOptionsFrame_OpenToCategory then
-		InterfaceOptionsFrame_OpenToCategory(addon.configPanel)
-		InterfaceOptionsFrame_OpenToCategory(addon.configPanel)
-	else
-		tdtPrint("Config panel is not available in this client.")
-	end
+    if Settings and Settings.OpenToCategory and addon.configCategory then
+        if addon.configCategory.GetID then
+            Settings.OpenToCategory(addon.configCategory:GetID())
+        elseif addon.configCategory.ID then
+            Settings.OpenToCategory(addon.configCategory.ID)
+        else
+            Settings.OpenToCategory(addon.configPanel.name)
+        end
+    elseif addon.configPanel and InterfaceOptionsFrame_OpenToCategory then
+        InterfaceOptionsFrame_OpenToCategory(addon.configPanel)
+        InterfaceOptionsFrame_OpenToCategory(addon.configPanel)
+    else
+        tdtPrint("Config panel is not available in this client.")
+    end
 end
 
 function addon:showTestFrame()
@@ -394,6 +402,8 @@ SlashCmdList["TDTCOMMAND"] = function(msg)
 		tdtPrint("Commands: /tdt config, /tdt show, /tdt hide, /tdt test, /tdt diag")
 	end
 end
+
+
 
 
 

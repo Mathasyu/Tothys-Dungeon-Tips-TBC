@@ -51,6 +51,17 @@ function addon:registerConfigPanel()
 		return
 	end
 
+	if Settings and Settings.RegisterCanvasLayoutCategory and Settings.RegisterAddOnCategory then
+		local category = Settings.RegisterCanvasLayoutCategory(addon.configPanel, addon.configPanel.name, addon.configPanel.name)
+		if category then
+			category.ID = category.ID or addon.configPanel.name
+			Settings.RegisterAddOnCategory(category)
+			addon.configCategory = category
+			addon.configPanelRegistered = true
+			return
+		end
+	end
+
 	if InterfaceOptions_AddCategory then
 		InterfaceOptions_AddCategory(addon.configPanel)
 		addon.configPanelRegistered = true
@@ -373,6 +384,7 @@ local function createConfigMenu()
 end
 
 createConfigMenu()
+
 
 
 
