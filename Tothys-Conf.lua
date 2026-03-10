@@ -46,12 +46,25 @@ local function applyConfigDefaults(config)
 
     return config
 end
+local function isAddOnAlreadyLoaded(addOnName)
+	if IsAddOnLoaded then
+		return IsAddOnLoaded(addOnName)
+	end
+
+	if GetAddOnInfo then
+		local _, _, _, enabled, loadable, reason, security = GetAddOnInfo(addOnName)
+		return reason == "LOADED" or reason == "DISABLED"
+	end
+
+	return false
+end
+
 function addon:registerConfigPanel()
 	if addon.configPanelRegistered or not addon.configPanel then
 		return
 	end
 
-	if UIParentLoadAddOn and not IsAddOnLoaded("Blizzard_InterfaceOptions") then
+	if UIParentLoadAddOn and not isAddOnAlreadyLoaded("Blizzard_InterfaceOptions") then
 		pcall(UIParentLoadAddOn, "Blizzard_InterfaceOptions")
 	end
 
@@ -377,6 +390,7 @@ local function createConfigMenu()
 end
 
 createConfigMenu()
+
 
 
 
