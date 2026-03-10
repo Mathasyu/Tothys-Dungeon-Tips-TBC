@@ -106,7 +106,7 @@ function createTDTFrame()
 	headerTDT:SetFont("Fonts\\SKURRI.TTF", 16, "OUTLINE")
 	headerTDT:SetTextColor(239/255, 191/255, 90/255)
 	headerTDT:SetJustifyH("LEFT")
-	headerTDT:SetJustifyV("CENTER")
+	headerTDT:SetJustifyV("MIDDLE")
 	headerTDT:SetText("Tothys Dungeon Tips TBC")
 	headerTDT:SetWordWrap(true)
 	
@@ -410,6 +410,7 @@ end
 TDT_onBoss = false
 
 --createTDTFrame()
+
 
 
 
