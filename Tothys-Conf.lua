@@ -47,7 +47,10 @@ local function applyConfigDefaults(config)
     return config
 end
 
-TDTConfig = TDTConfig or {}
+TDTConfig = applyConfigDefaults(TDTConfig or QEConfig or {})
+if type(TDTConfig.FontSize) ~= "number" then
+    TDTConfig.FontSize = tonumber(TDTConfig.FontSize) or defaultConfig.FontSize
+end
 
 -- Create Checkboxes
 local function createCheck(label, description, frame, onClick)
@@ -313,12 +316,11 @@ local function createConfigMenu()
         if event == "ADDON_LOADED" then
             if arg1 ~= "Tothys-Dungeon-Tips-TBC" then return end
 
-            if QEConfig and next(TDTConfig) == nil then
-                TDTConfig = QEConfig
-            end
             QEConfig = nil
             TDTConfig = applyConfigDefaults(TDTConfig)
-            TDTConfig.FontSize = TDTConfig.FontSize or 14
+            if type(TDTConfig.FontSize) ~= "number" then
+                TDTConfig.FontSize = tonumber(TDTConfig.FontSize) or defaultConfig.FontSize
+            end
             --print(TDTConfig.FontSize)
 			
 			-- Set default checkbox behaviour
@@ -363,6 +365,7 @@ local function createConfigMenu()
 end
 
 createConfigMenu()
+
 
 
 
