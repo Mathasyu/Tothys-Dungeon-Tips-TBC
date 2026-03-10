@@ -330,6 +330,9 @@ local function tdtPrint(message)
 end
 
 function addon:openConfig()
+    if addon.registerConfigPanel then
+        addon:registerConfigPanel()
+    end
 	if addon.configPanel and InterfaceOptionsFrame_OpenToCategory then
 		InterfaceOptionsFrame_OpenToCategory(addon.configPanel)
 		InterfaceOptionsFrame_OpenToCategory(addon.configPanel)
@@ -380,3 +383,4 @@ SlashCmdList["TDTCOMMAND"] = function(msg)
 		tdtPrint("Commands: /tdt config, /tdt show, /tdt hide, /tdt test")
 	end
 end
+

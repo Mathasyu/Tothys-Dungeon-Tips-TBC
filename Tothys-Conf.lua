@@ -46,7 +46,23 @@ local function applyConfigDefaults(config)
 
     return config
 end
+function addon:registerConfigPanel()
+	if addon.configPanelRegistered or not addon.configPanel then
+		return
+	end
 
+	if UIParentLoadAddOn and not IsAddOnLoaded("Blizzard_InterfaceOptions") then
+		pcall(UIParentLoadAddOn, "Blizzard_InterfaceOptions")
+	end
+
+	if InterfaceOptions_AddCategory then
+		InterfaceOptions_AddCategory(addon.configPanel)
+		addon.configPanelRegistered = true
+	elseif InterfaceOptionsFrame_AddCategory then
+		InterfaceOptionsFrame_AddCategory(addon.configPanel)
+		addon.configPanelRegistered = true
+	end
+end
 TDTConfig = applyConfigDefaults(TDTConfig or QEConfig or {})
 if type(TDTConfig.FontSize) ~= "number" then
     TDTConfig.FontSize = tonumber(TDTConfig.FontSize) or defaultConfig.FontSize
@@ -354,17 +370,14 @@ local function createConfigMenu()
 	end);
 	
 	-- Add panel to config options
-	if InterfaceOptions_AddCategory then
-		InterfaceOptions_AddCategory(addon.configPanel)
-	elseif InterfaceOptionsFrame_AddCategory then
-		InterfaceOptionsFrame_AddCategory(addon.configPanel)
-	end
+	addon:registerConfigPanel()
 	
 	-- Proceed
 	createTDTFrame()
 end
 
 createConfigMenu()
+
 
 
 
