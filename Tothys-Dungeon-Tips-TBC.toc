@@ -3,7 +3,7 @@
 ## Author: Voulk (Discord: Voulk#1858)
 ## Notes: Tothys Dungeon Tips highlights information about dangerous trash mobs in Burning Crusade dungeons and raids.
 ## Version: 1.1
-## SavedVariables: QEConfig
+## SavedVariables: TDTConfig
 
 Tothys-Database.lua
 Tothys-Dungeon-Tips-TBC.lua

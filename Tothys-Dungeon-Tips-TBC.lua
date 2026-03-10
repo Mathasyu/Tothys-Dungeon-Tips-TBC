@@ -182,9 +182,9 @@ local function addLine(tooltip, tips, type, class)
 		for i, tip in ipairs(tips) do
 			-- tip[1] is the category indicator and we'll use that to decide whether we should show this tooltip or not.
 			
-			if QEConfig[tip[1]] or tip[1] == "Legion" or tip[1] == "Dodge" or -- Show if tip type turned on, or if it's using an old Legion tag.
-				(tip[1] == class and QEConfig["ClassChoice"] == "Show my class only") or
-				(classList[tip[1]] and QEConfig["ClassChoice"] == "Show all classes") then
+			if TDTConfig[tip[1]] or tip[1] == "Legion" or tip[1] == "Dodge" or -- Show if tip type turned on, or if it's using an old Legion tag.
+				(tip[1] == class and TDTConfig["ClassChoice"] == "Show my class only") or
+				(classList[tip[1]] and TDTConfig["ClassChoice"] == "Show all classes") then
 				
 					local r,g,b = tipsColors[tip[1]][1], tipsColors[tip[1]][2], tipsColors[tip[1]][3]
 					
@@ -206,7 +206,7 @@ end
 local function addFrameLine(tooltip, tips, type, class)
 	local found = false
 	-- Check if we already added to this tooltip. This prevents writing the same thing to the tooltip multiple times.
-	if not QE_HeaderPanel:IsVisible() then addon:setEnabled() end
+	if not TDT_HeaderPanel:IsVisible() then addon:setEnabled() end
 	
 	for i = 1,15 do	
 		local frame = _G[tooltip:GetName() .. "TextLeft" .. i]
@@ -222,24 +222,24 @@ local function addFrameLine(tooltip, tips, type, class)
 		for i, tip in ipairs(tips) do
 			-- tip[1] is the category indicator and we'll use that to decide whether we should show this tooltip or not.
 
-			if QEConfig[tip[1]] or tip[1] == "Legion" or tip[1] == "Dodge" or -- Show if tip type turned on, or if it's using an old Legion tag.
-				(tip[1] == class and QEConfig["ClassChoice"] == "Show my class only") or
-				(classList[tip[1]] and QEConfig["ClassChoice"] == "Show all classes") then
+			if TDTConfig[tip[1]] or tip[1] == "Legion" or tip[1] == "Dodge" or -- Show if tip type turned on, or if it's using an old Legion tag.
+				(tip[1] == class and TDTConfig["ClassChoice"] == "Show my class only") or
+				(classList[tip[1]] and TDTConfig["ClassChoice"] == "Show all classes") then
 				
 					local r,g,b = tipsColors[tip[1]][1], tipsColors[tip[1]][2], tipsColors[tip[1]][3]
 					local lineHex = RGBToHex(r, g, b)
-					local tipBase = QE_TipText:GetText() or ""
+					local tipBase = TDT_TipText:GetText() or ""
 					
 					if iconList[tip[1]] then -- Check if Icon exists
 						--tooltip:AddLine((("|T%s:0|t"):format("Interface\\Icons\\"..iconList[tip[1]])..tip[2]),r,g,b)
 						
-						QE_TipText:SetText(tipBase .. ((("|T%s:0|t"):format("Interface\\Icons\\"..iconList[tip[1]]).. "|cff" .. lineHex .. " " .. tip[2] .. "|r" .. "\n")))
+						TDT_TipText:SetText(tipBase .. ((("|T%s:0|t"):format("Interface\\Icons\\"..iconList[tip[1]]).. "|cff" .. lineHex .. " " .. tip[2] .. "|r" .. "\n")))
 						
 					elseif tipsColors[tip[1]] then -- Check if color exists
-						QE_TipText:SetText(tipBase .. "|cff" .. lineHex .. " " .. tip[2] .. "|r" .. "\n")
+						TDT_TipText:SetText(tipBase .. "|cff" .. lineHex .. " " .. tip[2] .. "|r" .. "\n")
 						--tooltip:AddLine(tip[2],r,g,b)
 					else -- There is no icon or color assigned to the category so a plain line will be added instead.
-						QE_TipText:SetText(tipBase .. " " .. tip[2] .. "\n")
+						TDT_TipText:SetText(tipBase .. " " .. tip[2] .. "\n")
 						--tooltip:AddLine(tip[2])
 					end
 			end
@@ -254,8 +254,8 @@ end
 
 -- This starts the ball rolling. This function is called whenever an NPC tooltip is moused over.
 GameTooltip:HookScript("OnTooltipSetUnit", function(self)
-  if QEConfig.ShowFrame == "Show in separate frame" and QEConfig.TargetTrigger == "Show targeted mob" then return end -- Tiny Snippet to disable the tooltip hook if targeting is selected instead.
-  if QEConfig.ShowFrame == "Show in separate frame" and QEConfig.TargetTrigger == "Show mouseover" and QE_onBoss then return end -- Disable tooltip hook if player is using frame + Mouseover but is on boss
+  if TDTConfig.ShowFrame == "Show in separate frame" and TDTConfig.TargetTrigger == "Show targeted mob" then return end -- Tiny Snippet to disable the tooltip hook if targeting is selected instead.
+  if TDTConfig.ShowFrame == "Show in separate frame" and TDTConfig.TargetTrigger == "Show mouseover" and TDT_onBoss then return end -- Disable tooltip hook if player is using frame + Mouseover but is on boss
   if not addon:checkInstance() then return end -- We won't be adding anything to tooltips if the addon is disabled in the current instance.
   
   local unit = select(2, self:GetUnit()) -- This grabs information about the unit we have targeted.
@@ -271,16 +271,16 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 		-- Check our dictionary to see if we actually have any tips for the mob targeted.
 		if tipsMap[id] then
 			-- Don't remove active tip if you accidentally mouse over ally.
-			QE_TipText:SetText("")
-			QE_MobName:SetText(name)	
+			TDT_TipText:SetText("")
+			TDT_MobName:SetText(name)
 		
-			if QEConfig.ShowFrame == "Show in separate frame" then addFrameLine(QE_TipPanel, tipsMap[id], "NPC ID:", class) 
+			if TDTConfig.ShowFrame == "Show in separate frame" then addFrameLine(TDT_TipPanel, tipsMap[id], "NPC ID:", class)
 			else addLine(GameTooltip, tipsMap[id], "NPC ID:", class)
 			end
 		
 		elseif UnitIsEnemy(unit, "player") then
-			QE_TipText:SetText("")
-			QE_MobName:SetText(name)
+			TDT_TipText:SetText("")
+			TDT_MobName:SetText(name)
 		end
 		
 	
@@ -305,14 +305,14 @@ function addon:getTarget(mobType)
 	if tipsMap[id] then
 		-- Don't remove active tip if you accidentally mouse over ally.
 		
-		QE_TipText:SetText("")		
-		QE_MobName:SetText(name)
-		addFrameLine(QE_TipPanel, tipsMap[id], "NPC ID:", class)
+		TDT_TipText:SetText("")
+		TDT_MobName:SetText(name)
+		addFrameLine(TDT_TipPanel, tipsMap[id], "NPC ID:", class)
 		--addLine(GameTooltip, tipsMap[id], "NPC ID:", role, class)		
 
 	elseif 	UnitIsEnemy(mobType, "player") then
-		QE_TipText:SetText("")
-		QE_MobName:SetText(name)
+		TDT_TipText:SetText("")
+		TDT_MobName:SetText(name)
 		
 	end
 	

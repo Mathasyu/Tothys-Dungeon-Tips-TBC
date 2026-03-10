@@ -13,7 +13,7 @@ Future Versions - Engine
  - Tooltips on all config options
  - Lock button on frame
  - Alpha channel config
- - /QE Slash command to bring up config.
+ - /TDT Slash command to bring up config.
  - Add an icon to fluff
  
 Future Versions - Content
@@ -25,54 +25,54 @@ Future Versions - Content
 local _, addon = ...;
 
 -- Create a frame
-function createQEFrame() 
+function createTDTFrame()
 	--addon.isShowing = true
 
-	QE_ParentFrame = CreateFrame("Frame", "QE_ParentFrame", UIParent)
-	if QE_ParentFrame.SetResizable then
-		QE_ParentFrame:SetResizable(true)
+	TDT_ParentFrame = CreateFrame("Frame", "TDT_ParentFrame", UIParent)
+	if TDT_ParentFrame.SetResizable then
+		TDT_ParentFrame:SetResizable(true)
 	end
-	QE_ParentFrame:SetMovable(true)
-	QE_ParentFrame:EnableMouse(true)
-	QE_ParentFrame:SetWidth(420)
-	QE_ParentFrame:SetHeight(120)
-	if QE_ParentFrame.SetMinResize then
-		QE_ParentFrame:SetMinResize(300, 90) -- Real, change back to this
-		--QE_ParentFrame:SetMinResize(20, 90) -- For testing wraps
+	TDT_ParentFrame:SetMovable(true)
+	TDT_ParentFrame:EnableMouse(true)
+	TDT_ParentFrame:SetWidth(420)
+	TDT_ParentFrame:SetHeight(120)
+	if TDT_ParentFrame.SetMinResize then
+		TDT_ParentFrame:SetMinResize(300, 90) -- Real, change back to this
+		--TDT_ParentFrame:SetMinResize(20, 90) -- For testing wraps
 	end
-	if QE_ParentFrame.SetMaxResize then
-		QE_ParentFrame:SetMaxResize(500, 200)
+	if TDT_ParentFrame.SetMaxResize then
+		TDT_ParentFrame:SetMaxResize(500, 200)
 	end
-	QE_ParentFrame:RegisterForDrag("LeftButton")
-	QE_ParentFrame:SetScript("OnDragStart", function(self) self:StartMoving() end)
-	QE_ParentFrame:SetScript("OnDragStop", function(self) self:StopMovingOrSizing() end)
+	TDT_ParentFrame:RegisterForDrag("LeftButton")
+	TDT_ParentFrame:SetScript("OnDragStart", function(self) self:StartMoving() end)
+	TDT_ParentFrame:SetScript("OnDragStop", function(self) self:StopMovingOrSizing() end)
 	
 	
 	-- Texture
-	QE_ParentFrameTexture = QE_ParentFrame:CreateTexture(nil, "Background")
-	QE_ParentFrameTexture:ClearAllPoints()
-	--QE_ParentFrameTexture:SetColorTexture(35/255, 35/255, 35/255, 0.0)
-	--QE_ParentFrameTexture:SetAllPoints(QE_ParentFrame)
+	TDT_ParentFrameTexture = TDT_ParentFrame:CreateTexture(nil, "Background")
+	TDT_ParentFrameTexture:ClearAllPoints()
+	--TDT_ParentFrameTexture:SetColorTexture(35/255, 35/255, 35/255, 0.0)
+	--TDT_ParentFrameTexture:SetAllPoints(TDT_ParentFrame)
 	------
 	
 	-- Resize Button
-	local resizeButton = CreateFrame("Button", nil, QE_ParentFrame)
+	local resizeButton = CreateFrame("Button", nil, TDT_ParentFrame)
 	resizeButton:SetSize(16, 16)
 	resizeButton:SetPoint("BOTTOMRIGHT")
 	resizeButton:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIM-SizeGrabber-Up")
 	resizeButton:SetHighlightTexture("Interface\\ChatFrame\\UI-ChatIM-SizeGrabber-Highlight")
 	resizeButton:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIM-SizeGrabber-Down")
  
-	if QE_ParentFrame.StartSizing and QE_ParentFrame.StopMovingOrSizing then
+	if TDT_ParentFrame.StartSizing and TDT_ParentFrame.StopMovingOrSizing then
 		resizeButton:SetScript("OnMouseDown", function(self, button)
-			QE_ParentFrame:StartSizing("BOTTOMRIGHT")
-			if QE_ParentFrame.SetUserPlaced then
-				QE_ParentFrame:SetUserPlaced(true)
+			TDT_ParentFrame:StartSizing("BOTTOMRIGHT")
+			if TDT_ParentFrame.SetUserPlaced then
+				TDT_ParentFrame:SetUserPlaced(true)
 			end
 		end)
  
 		resizeButton:SetScript("OnMouseUp", function(self, button)
-			QE_ParentFrame:StopMovingOrSizing()
+			TDT_ParentFrame:StopMovingOrSizing()
 		end)
 	else
 		resizeButton:Hide()
@@ -86,120 +86,120 @@ function createQEFrame()
 
 
 	-- Header Panel
-    QE_HeaderPanel = CreateFrame("Frame", "QE_HeaderFrame", QE_ParentFrame)
-	QE_HeaderPanel:SetFrameStrata("Background")
-	--QE_HeaderPanel:SetAllPoints(QE_ParentFrame)
+    TDT_HeaderPanel = CreateFrame("Frame", "TDT_HeaderFrame", TDT_ParentFrame)
+	TDT_HeaderPanel:SetFrameStrata("Background")
+	--TDT_HeaderPanel:SetAllPoints(TDT_ParentFrame)
 	
 
 	
 	-- Header Texture
-	QE_HeaderPanelTexture = QE_HeaderPanel:CreateTexture(nil, "Background")
+	TDT_HeaderPanelTexture = TDT_HeaderPanel:CreateTexture(nil, "Background")
 
-	QE_HeaderPanelTexture:ClearAllPoints()
-	QE_HeaderPanelTexture:SetColorTexture(62/255, 59/255, 55/255, 0.75)
-	QE_HeaderPanelTexture:SetAllPoints(QE_HeaderPanel)
+	TDT_HeaderPanelTexture:ClearAllPoints()
+	TDT_HeaderPanelTexture:SetColorTexture(62/255, 59/255, 55/255, 0.75)
+	TDT_HeaderPanelTexture:SetAllPoints(TDT_HeaderPanel)
 	
 	-- Header Text
-	headerQE = QE_HeaderPanel:CreateFontString("QE_HeaderText", nil, nil)
-	headerQE:SetPoint("TOPLEFT", 5, -4)
-	headerQE:SetPoint("TOPRIGHT", 5, -4)
-	headerQE:SetFont("Fonts\\SKURRI.TTF", 16, "OUTLINE")
-	headerQE:SetTextColor(239/255, 191/255, 90/255)
-	headerQE:SetJustifyH("LEFT")
-	headerQE:SetJustifyV("CENTER")
-	headerQE:SetText("Tothys Dungeon Tips TBC")
-	headerQE:SetWordWrap(true)
+	headerTDT = TDT_HeaderPanel:CreateFontString("TDT_HeaderText", nil, nil)
+	headerTDT:SetPoint("TOPLEFT", 5, -4)
+	headerTDT:SetPoint("TOPRIGHT", 5, -4)
+	headerTDT:SetFont("Fonts\\SKURRI.TTF", 16, "OUTLINE")
+	headerTDT:SetTextColor(239/255, 191/255, 90/255)
+	headerTDT:SetJustifyH("LEFT")
+	headerTDT:SetJustifyV("CENTER")
+	headerTDT:SetText("Tothys Dungeon Tips TBC")
+	headerTDT:SetWordWrap(true)
 	
-	QE_HeaderPanel:SetPoint("TOPLEFT", QE_ParentFrame, "TOPLEFT", 0, 0)
-	QE_HeaderPanel:SetPoint("TOPRIGHT", QE_ParentFrame, "TOPRIGHT", 0, 0)
-	QE_HeaderPanel:SetHeight(22)
-	QE_HeaderPanel:SetWidth(450)
-	QE_HeaderPanel:Show()
+	TDT_HeaderPanel:SetPoint("TOPLEFT", TDT_ParentFrame, "TOPLEFT", 0, 0)
+	TDT_HeaderPanel:SetPoint("TOPRIGHT", TDT_ParentFrame, "TOPRIGHT", 0, 0)
+	TDT_HeaderPanel:SetHeight(22)
+	TDT_HeaderPanel:SetWidth(450)
+	TDT_HeaderPanel:Show()
 	
 	
 	-----------------
 	-- TIPS PANEL ---
 	-----------------
-	QE_TipPanel = CreateFrame("Frame", "QE_TipFrame", QE_ParentFrame)
+	TDT_TipPanel = CreateFrame("Frame", "TDT_TipFrame", TDT_ParentFrame)
 	
-	QE_TipPanel:SetFrameStrata("Background")
-	QE_TipPanel:SetWidth(450)
-	--QE_TipPanel:SetHeight(98)
-	QE_TipPanel:SetPoint("TOPLEFT", QE_HeaderPanel, "BOTTOMLEFT", 0, 0)
-	QE_TipPanel:SetPoint("TOPRIGHT", QE_HeaderPanel, "BOTTOMRIGHT", 0, 0)
-	QE_TipPanel:SetPoint("BOTTOMLEFT", QE_ParentFrame, "BOTTOMLEFT", 0, 0)
-	QE_TipPanel:SetPoint("BOTTOMRIGHT", QE_ParentFrame, "BOTTOMRIGHT", 0, 0)
+	TDT_TipPanel:SetFrameStrata("Background")
+	TDT_TipPanel:SetWidth(450)
+	--TDT_TipPanel:SetHeight(98)
+	TDT_TipPanel:SetPoint("TOPLEFT", TDT_HeaderPanel, "BOTTOMLEFT", 0, 0)
+	TDT_TipPanel:SetPoint("TOPRIGHT", TDT_HeaderPanel, "BOTTOMRIGHT", 0, 0)
+	TDT_TipPanel:SetPoint("BOTTOMLEFT", TDT_ParentFrame, "BOTTOMLEFT", 0, 0)
+	TDT_TipPanel:SetPoint("BOTTOMRIGHT", TDT_ParentFrame, "BOTTOMRIGHT", 0, 0)
 	
 	-- Tip Texture
-	QE_TipPanelTexture = QE_TipPanel:CreateTexture(nil, "Background")
-	--QE_TipPanelTexture:SetWidth(128)
-	--QE_TipPanelTexture:SetHeight(64)
-	QE_TipPanelTexture:ClearAllPoints()
-	QE_TipPanelTexture:SetColorTexture(55/255, 55/255, 55/255, 0.45)
-	QE_TipPanelTexture:SetAllPoints(QE_TipPanel)
+	TDT_TipPanelTexture = TDT_TipPanel:CreateTexture(nil, "Background")
+	--TDT_TipPanelTexture:SetWidth(128)
+	--TDT_TipPanelTexture:SetHeight(64)
+	TDT_TipPanelTexture:ClearAllPoints()
+	TDT_TipPanelTexture:SetColorTexture(55/255, 55/255, 55/255, 0.45)
+	TDT_TipPanelTexture:SetAllPoints(TDT_TipPanel)
 	
 	
-	QE_TipPanel:Show()
+	TDT_TipPanel:Show()
 	
 	
 
-	QE_MobName = QE_TipPanel:CreateFontString("QE_MobName", nil, nil)
-	QE_MobName:SetPoint("TOPLEFT", 5, -5)
-	QE_MobName:SetPoint("TOPRIGHT", 5, -5)
-	QE_MobName:SetWordWrap(true)
-	QE_MobName:SetFont("Fonts\\ARIALN.ttf", 16, "OUTLINE")
-	QE_MobName:SetJustifyH("LEFT")
-	QE_MobName:SetJustifyV("TOP")
-	QE_MobName:SetText(" ")
+	TDT_MobName = TDT_TipPanel:CreateFontString("TDT_MobName", nil, nil)
+	TDT_MobName:SetPoint("TOPLEFT", 5, -5)
+	TDT_MobName:SetPoint("TOPRIGHT", 5, -5)
+	TDT_MobName:SetWordWrap(true)
+	TDT_MobName:SetFont("Fonts\\ARIALN.ttf", 16, "OUTLINE")
+	TDT_MobName:SetJustifyH("LEFT")
+	TDT_MobName:SetJustifyV("TOP")
+	TDT_MobName:SetText(" ")
 
 	-- Frame Tip Text
-	QE_TipText = QE_TipPanel:CreateFontString("QE_TipText", nil, GameFontNormal)
-	QE_TipText:SetPoint("TOPLEFT", QE_MobName, "BOTTOMLEFT", 0, -3)
-	QE_TipText:SetPoint("TOPRIGHT", QE_MobName, "BOTTOMRIGHT", -3, -3)
-	QE_TipText:SetPoint("BOTTOMLEFT", QE_ParentFrame, "BOTTOMLEFT", 0, 0)
-	QE_TipText:SetPoint("BOTTOMRIGHT", QE_ParentFrame, "BOTTOMRIGHT", 0, 0)
-	--QE_TipText:SetFont("Fonts\\ARIALN.ttf", 14, nil)
-	QE_TipText:SetFontObject(GameFontWhite);
-	local p,_,_ = QE_TipText:GetFont();
-	--print("Creating Frame" .. QEConfig.FontSize)
-	QE_TipText:SetFont(p, QEConfig.FontSize, nil)
-	QE_TipText:SetWidth(445)
-	QE_TipText:SetJustifyH("LEFT")
-	QE_TipText:SetJustifyV("TOP")
-	QE_TipText:SetText(" ")
+	TDT_TipText = TDT_TipPanel:CreateFontString("TDT_TipText", nil, GameFontNormal)
+	TDT_TipText:SetPoint("TOPLEFT", TDT_MobName, "BOTTOMLEFT", 0, -3)
+	TDT_TipText:SetPoint("TOPRIGHT", TDT_MobName, "BOTTOMRIGHT", -3, -3)
+	TDT_TipText:SetPoint("BOTTOMLEFT", TDT_ParentFrame, "BOTTOMLEFT", 0, 0)
+	TDT_TipText:SetPoint("BOTTOMRIGHT", TDT_ParentFrame, "BOTTOMRIGHT", 0, 0)
+	--TDT_TipText:SetFont("Fonts\\ARIALN.ttf", 14, nil)
+	TDT_TipText:SetFontObject(GameFontWhite);
+	local p,_,_ = TDT_TipText:GetFont();
+	--print("Creating Frame" .. TDTConfig.FontSize)
+	TDT_TipText:SetFont(p, TDTConfig.FontSize, nil)
+	TDT_TipText:SetWidth(445)
+	TDT_TipText:SetJustifyH("LEFT")
+	TDT_TipText:SetJustifyV("TOP")
+	TDT_TipText:SetText(" ")
 	-----------------------
 	
 	
 	-- Show Frame
-	QE_ParentFrame:SetPoint("CENTER", UIParent)
-	QE_ParentFrame:Show()	
+	TDT_ParentFrame:SetPoint("CENTER", UIParent)
+	TDT_ParentFrame:Show()
 	
 	
-	QE_ParentFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
-	QE_ParentFrame:RegisterEvent("PLAYER_TARGET_CHANGED")
-	QE_ParentFrame:RegisterEvent("ENCOUNTER_START")
-	QE_ParentFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
-	QE_ParentFrame:RegisterEvent("INSTANCE_ENCOUNTER_ENGAGE_UNIT")
-	QE_ParentFrame:SetScript("OnEvent", function(self, event, ...)
+	TDT_ParentFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
+	TDT_ParentFrame:RegisterEvent("PLAYER_TARGET_CHANGED")
+	TDT_ParentFrame:RegisterEvent("ENCOUNTER_START")
+	TDT_ParentFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
+	TDT_ParentFrame:RegisterEvent("INSTANCE_ENCOUNTER_ENGAGE_UNIT")
+	TDT_ParentFrame:SetScript("OnEvent", function(self, event, ...)
 
 		if event == "PLAYER_ENTERING_WORLD" then
 			C_Timer.After(2, function() addon:setEnabled() end)
 			--addon:setEnabled()
 		elseif event == "PLAYER_TARGET_CHANGED" then
-			--print("Player target changed" .. QEConfig.TargetTrigger .. QE_onBoss)
-			if QEConfig.TargetTrigger == "Show targeted mob" and not QE_onBoss then addon:getTarget("target") end	
+			--print("Player target changed" .. TDTConfig.TargetTrigger .. TDT_onBoss)
+			if TDTConfig.TargetTrigger == "Show targeted mob" and not TDT_onBoss then addon:getTarget("target") end
 			
 		elseif event == "INSTANCE_ENCOUNTER_ENGAGE_UNIT" and UnitExists("boss1") then
-			--QE_onBoss = true
+			--TDT_onBoss = true
 			
-			if QEConfig.ShowFrame == "Show in separate frame" then 
-				addon:colorFrame(QE_onBoss)
+			if TDTConfig.ShowFrame == "Show in separate frame" then
+				addon:colorFrame(TDT_onBoss)
 				addon:getTarget("boss1") 
 			end
 			
 		elseif event == "PLAYER_REGEN_ENABLED" then
-			QE_onBoss = false
-			addon:colorFrame(QE_onBoss)
+			TDT_onBoss = false
+			addon:colorFrame(TDT_onBoss)
 		end
 		
 		
@@ -208,7 +208,7 @@ function createQEFrame()
 	end)
 	
 	
-	--QE_ParentFrame:SetClampedToScreen(true)
+	--TDT_ParentFrame:SetClampedToScreen(true)
 	
 	--[[
 	
@@ -218,25 +218,25 @@ function createQEFrame()
 
 	-- Create slim header panel to hold title.
 	
-	QE_HeaderPanel:SetFrameStrata("Background")
-	QE_HeaderPanel:SetWidth(450)
-	QE_HeaderPanel:SetHeight(22)
-	QE_HeaderPanel:EnableMouse(true)
-	QE_HeaderPanel:SetMovable(true)
-	QE_HeaderPanel:RegisterForDrag("LeftButton")
-	QE_HeaderPanel:SetScript("OnDragStart", function(self) self:StartMoving() end)
-	QE_HeaderPanel:SetScript("OnDragStop", function(self) self:StopMovingOrSizing() end)
+	TDT_HeaderPanel:SetFrameStrata("Background")
+	TDT_HeaderPanel:SetWidth(450)
+	TDT_HeaderPanel:SetHeight(22)
+	TDT_HeaderPanel:EnableMouse(true)
+	TDT_HeaderPanel:SetMovable(true)
+	TDT_HeaderPanel:RegisterForDrag("LeftButton")
+	TDT_HeaderPanel:SetScript("OnDragStart", function(self) self:StartMoving() end)
+	TDT_HeaderPanel:SetScript("OnDragStop", function(self) self:StopMovingOrSizing() end)
 
-	QE_ParentFrameTexture = QE_HeaderPanel:CreateTexture(nil, "Background")
-	--QE_TipPanelTexture:SetWidth(128)
-	--QE_TipPanelTexture:SetHeight(64)
-	QE_ParentFrameTexture:ClearAllPoints()
-	QE_ParentFrameTexture:SetColorTexture(35/255, 35/255, 35/255, 0.55)
-	QE_ParentFrameTexture:SetAllPoints(QE_HeaderPanel)
+	TDT_ParentFrameTexture = TDT_HeaderPanel:CreateTexture(nil, "Background")
+	--TDT_TipPanelTexture:SetWidth(128)
+	--TDT_TipPanelTexture:SetHeight(64)
+	TDT_ParentFrameTexture:ClearAllPoints()
+	TDT_ParentFrameTexture:SetColorTexture(35/255, 35/255, 35/255, 0.55)
+	TDT_ParentFrameTexture:SetAllPoints(TDT_HeaderPanel)
 
-	QE_HeaderPanel:SetPoint("CENTER", UIParent)
-	QE_HeaderPanel:Show()
-	QE_HeaderPanel:SetClampedToScreen(true)
+	TDT_HeaderPanel:SetPoint("CENTER", UIParent)
+	TDT_HeaderPanel:Show()
+	TDT_HeaderPanel:SetClampedToScreen(true)
 
 
 	
@@ -247,26 +247,26 @@ function createQEFrame()
 
 
 
-	QE_ConfigBtn = CreateFrame("Button", "QE_ConfigButton", QE_HeaderPanel)
-	QE_ConfigBtn:SetFrameLevel(5)
-	QE_ConfigBtn:ClearAllPoints()
-	QE_ConfigBtn:SetHeight(16)
-	QE_ConfigBtn:SetWidth(16)
-	QE_ConfigBtn:SetNormalTexture("Interface\\Buttons\\UI-OptionsButton")
-	QE_ConfigBtn:SetHighlightTexture("Interface\\Buttons\\UI-OptionsButton", 1.0)
-	QE_ConfigBtn:SetAlpha(0.45)
-	QE_ConfigBtn:SetPoint("TOPRIGHT", QE_HeaderPanel, "TOPRIGHT", -4, -2)
+	TDT_ConfigBtn = CreateFrame("Button", "TDT_ConfigButton", TDT_HeaderPanel)
+	TDT_ConfigBtn:SetFrameLevel(5)
+	TDT_ConfigBtn:ClearAllPoints()
+	TDT_ConfigBtn:SetHeight(16)
+	TDT_ConfigBtn:SetWidth(16)
+	TDT_ConfigBtn:SetNormalTexture("Interface\\Buttons\\UI-OptionsButton")
+	TDT_ConfigBtn:SetHighlightTexture("Interface\\Buttons\\UI-OptionsButton", 1.0)
+	TDT_ConfigBtn:SetAlpha(0.45)
+	TDT_ConfigBtn:SetPoint("TOPRIGHT", TDT_HeaderPanel, "TOPRIGHT", -4, -2)
 
-	QE_ConfigBtn:RegisterForClicks("LeftButtonUp", "RightButtonUp")
-	QE_ConfigBtn:SetScript("OnClick", function()
+	TDT_ConfigBtn:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+	TDT_ConfigBtn:SetScript("OnClick", function()
 		InterfaceOptionsFrame_OpenToCategory(addon.configPanel)
 		InterfaceOptionsFrame_OpenToCategory(addon.configPanel)
 		
 	end)
-	QE_ConfigBtn:Show()
+	TDT_ConfigBtn:Show()
 	
 	-- Minimize Button
-	minimizeBtn = CreateFrame("Button", "minimize", QE_HeaderPanel)
+	minimizeBtn = CreateFrame("Button", "minimize", TDT_HeaderPanel)
 	minimizeBtn:SetFrameLevel(5)
 	minimizeBtn:ClearAllPoints()
 	minimizeBtn:SetHeight(30)
@@ -274,7 +274,7 @@ function createQEFrame()
 	minimizeBtn:SetNormalTexture("Interface\\Buttons\\UI-MultiCheck-Up")
 	minimizeBtn:SetHighlightTexture("Interface\\Buttons\\UI-MultiCheck-Up", 1.0)
 	minimizeBtn:SetAlpha(0.45)
-	minimizeBtn:SetPoint("TOPRIGHT", QE_HeaderPanel, "TOPRIGHT", -17, 5)
+	minimizeBtn:SetPoint("TOPRIGHT", TDT_HeaderPanel, "TOPRIGHT", -17, 5)
 	minimizeBtn:SetScript("OnClick", function()
 		addon:setMinimized()
 		
@@ -288,7 +288,7 @@ end
 
 
 --[[
-lockBtn = CreateFrame("Button", "lock", QE_HeaderPanel)
+lockBtn = CreateFrame("Button", "lock", TDT_HeaderPanel)
 lockBtn:SetFrameLevel(5)
 lockBtn:ClearAllPoints()
 lockBtn:SetHeight(25)
@@ -296,7 +296,7 @@ lockBtn:SetWidth(25)
 lockBtn:SetNormalTexture("Interface\\Buttons\\LockButton-Unlocked-Up")
 lockBtn:SetHighlightTexture("Interface\\Buttons\\LockButton-Unlocked-Up", 1.0)
 lockBtn:SetAlpha(0.35)
-lockBtn:SetPoint("TOPRIGHT", QE_HeaderPanel, "TOPRIGHT", -17, 0)
+lockBtn:SetPoint("TOPRIGHT", TDT_HeaderPanel, "TOPRIGHT", -17, 0)
 
 lockBtn:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 lockBtn:SetScript("OnClick", function()
@@ -315,13 +315,13 @@ function addon:checkInstance()
 	
 	local instanceAllowed = true
 	if difficultyID == 8 then 
-		if QEConfig.MythicPlusToggle then
+		if TDTConfig.MythicPlusToggle then
 			instanceAllowed = true
 		else
 			instanceAllowed = false
 		end
 	elseif instanceType == "raid" then
-		if QEConfig.RaidToggle then
+		if TDTConfig.RaidToggle then
 			instanceAllowed = true
 		else
 			instanceAllowed = false
@@ -335,53 +335,53 @@ function addon:setEnabled()
 	local inInstance, instanceType = IsInInstance()
 	local mapID = C_Map.GetBestMapForUnit("player")
 	local instanceMapID = select(8,GetInstanceInfo())
-	--QE_MobName:SetText("")
-	--QE_TipText:SetText("")
+	--TDT_MobName:SetText("")
+	--TDT_TipText:SetText("")
 	
 
-	if inInstance and QEConfig.ShowFrame == "Show in separate frame" and (
+	if inInstance and TDTConfig.ShowFrame == "Show in separate frame" and (
 		addon.acceptedDungeons[mapID] or (instanceMapID == 269 or instanceMapID == 560)) -- Torghast Maps
 		 then
 		if addon:checkInstance() then
-			--QE_HeaderPanel:Show()
-			QE_ParentFrame:Show()
+			--TDT_HeaderPanel:Show()
+			TDT_ParentFrame:Show()
 		else
-			QE_ParentFrame:Hide()
+			TDT_ParentFrame:Hide()
 		end
 	
 		--elseif difficultyID == 
 			
 		--local mapID = C_Map.GetBestMapForUnit("player")
 		--if not acceptedDungeons[mapID] then return end	
-		--local isShown = QE_TipPanel:IsVisible()
+		--local isShown = TDT_TipPanel:IsVisible()
 		--print(isShown)
 		
 		
 		--if not isShown then
-		--	QE_TipPanel:Hide()
+		--	TDT_TipPanel:Hide()
 		--end
 	else
-		QE_ParentFrame:Hide()
+		TDT_ParentFrame:Hide()
 	end
 end
 
 
 function addon:setMinimized(forceShow)
-	--if not QE_TipText:IsVisible() or forceShow then
-	if QE_TipPanel:GetHeight() <= 26 then
-		QE_TipPanel:SetHeight(175)
-		QE_TipText:Show()
+	--if not TDT_TipText:IsVisible() or forceShow then
+	if TDT_TipPanel:GetHeight() <= 26 then
+		TDT_TipPanel:SetHeight(175)
+		TDT_TipText:Show()
 		
 	else
-		--QE_TipPanel:Hide()
-		QE_TipPanel:SetHeight(25)
-		QE_TipText:Hide()
+		--TDT_TipPanel:Hide()
+		TDT_TipPanel:SetHeight(25)
+		TDT_TipText:Hide()
 	end
 end
 		
 		
 function addon:setDropdownEnabled()
-	if QEConfig.ShowFrame == "Show in separate frame" then
+	if TDTConfig.ShowFrame == "Show in separate frame" then
 		--targetDD:Show()
 		addon.targetFS:Show()
 		addon.chkTarget:Show()
@@ -395,21 +395,21 @@ function addon:setDropdownEnabled()
 end
 
 
-function addon:colorFrame(QE_onBoss) 
-	if QE_onBoss then		
-		QE_TipPanelTexture:SetColorTexture(100/255, 80/255, 0/255, 0.55)	
-		QE_ParentFrameTexture:SetColorTexture(70/255, 50/255, 0/255, 0.55)		
+function addon:colorFrame(TDT_onBoss)
+	if TDT_onBoss then
+		TDT_TipPanelTexture:SetColorTexture(100/255, 80/255, 0/255, 0.55)
+		TDT_ParentFrameTexture:SetColorTexture(70/255, 50/255, 0/255, 0.55)
 	else
-		QE_TipPanelTexture:SetColorTexture(55/255, 55/255, 55/255, 0.55)	
-		QE_ParentFrameTexture:SetColorTexture(35/255, 35/255, 35/255, 0.55)
+		TDT_TipPanelTexture:SetColorTexture(55/255, 55/255, 55/255, 0.55)
+		TDT_ParentFrameTexture:SetColorTexture(35/255, 35/255, 35/255, 0.55)
 	end
 end
 
 
 
-QE_onBoss = false
+TDT_onBoss = false
 
---createQEFrame()
+--createTDTFrame()
 
 
 

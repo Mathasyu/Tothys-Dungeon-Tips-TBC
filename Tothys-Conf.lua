@@ -17,7 +17,7 @@ TothysConf = {}
 
 
 -- Saved Variables
-QEConfig = {	
+TDTConfig = {
 	["Important"] = true,
 	["PriorityTargets"] = true,
 	["Defensives"] = true,
@@ -40,7 +40,7 @@ QEConfig = {
 
 -- Create Checkboxes
 local function createCheck(label, description, frame, onClick)
-	local check = CreateFrame("CheckButton", "QECheck" .. label, frame, "InterfaceOptionsCheckButtonTemplate")
+	local check = CreateFrame("CheckButton", "TDTCheck" .. label, frame, "InterfaceOptionsCheckButtonTemplate")
 	check:SetScript("OnClick", function(self)
 		onClick(self)
 	end)
@@ -64,9 +64,9 @@ local function createString(frame, text, font, size)
 end
 
 local function updateTextSize(size)
-	local p,_,_ = QE_TipText:GetFont();
-	--print("Resetting Font Size" .. QEConfig.FontSize)
-	QE_TipText:SetFont(p, QEConfig.FontSize, nil)
+	local p,_,_ = TDT_TipText:GetFont();
+	--print("Resetting Font Size" .. TDTConfig.FontSize)
+	TDT_TipText:SetFont(p, TDTConfig.FontSize, nil)
 
 end
 
@@ -78,7 +78,7 @@ function createDropdown(frame, label, option1, option2, changingVar)
 	
 	local function dd_OnClick(self, arg1, arg2, checked)
 		UIDropDownMenu_SetText(dd, arg1)
-		QEConfig[changingVar] = arg1
+		TDTConfig[changingVar] = arg1
 		setEnabled() -- This just clears the addons frame.
 		setDropdownEnabled() -- This shows / hides a second dropdown based on the current selection.
 	end
@@ -86,9 +86,9 @@ function createDropdown(frame, label, option1, option2, changingVar)
 	function ddMenu(frame, level, menuList)
 		local info = UIDropDownMenu_CreateInfo()
 		info.func = dd_OnClick
-		info.text, info.arg1, info.checked = option1, option1, QEConfig[changingVar] == option1
+		info.text, info.arg1, info.checked = option1, option1, TDTConfig[changingVar] == option1
 		UIDropDownMenu_AddButton(info)
-		info.text, info.arg1, info.checked = option2, option2, QEConfig[changingVar] == option2
+		info.text, info.arg1, info.checked = option2, option2, TDTConfig[changingVar] == option2
 		UIDropDownMenu_AddButton(info)
 	
 	end
@@ -125,19 +125,19 @@ local function createConfigMenu()
 	chkGeneral:SetEnabled(false)
 	chkGeneral:SetChecked(true)
 	
-	local chkPriority = createCheck("PriorityTargets", "Show Priority Targets", addon.configPanel, function(self, value) QEConfig.PriorityTargets = self:GetChecked() end)
+	local chkPriority = createCheck("PriorityTargets", "Show Priority Targets", addon.configPanel, function(self, value) TDTConfig.PriorityTargets = self:GetChecked() end)
 	chkPriority:SetPoint("TOPLEFT", chkGeneral, "BOTTOMLEFT", 0, -8)
 	
-	local chkInterrupts = createCheck("Interrupts", "Show Priority Interrupts", addon.configPanel, function(self, value) QEConfig.Interrupts = self:GetChecked() end)
+	local chkInterrupts = createCheck("Interrupts", "Show Priority Interrupts", addon.configPanel, function(self, value) TDTConfig.Interrupts = self:GetChecked() end)
 	chkInterrupts:SetPoint("TOPLEFT", chkPriority, "BOTTOMLEFT", 0, -8)
 	
-	local chkDefensives = createCheck("Defensives", "Show Defensive Recommendations", addon.configPanel, function(self, value) QEConfig.Defensives = self:GetChecked() end)
+	local chkDefensives = createCheck("Defensives", "Show Defensive Recommendations", addon.configPanel, function(self, value) TDTConfig.Defensives = self:GetChecked() end)
 	chkDefensives:SetPoint("TOPLEFT", chkInterrupts, "BOTTOMLEFT", 0, -8)
 	
-	local chkFluff = createCheck("Fluff", "Show Fluff", addon.configPanel, function(self, value) QEConfig.Fluff = self:GetChecked() end)
+	local chkFluff = createCheck("Fluff", "Show Fluff", addon.configPanel, function(self, value) TDTConfig.Fluff = self:GetChecked() end)
 	chkFluff:SetPoint("TOPLEFT", chkDefensives, "BOTTOMLEFT", 0, -8)
 	
-	local chkAdvanced = createCheck("Advanced", "Show advanced tips for high level keys", addon.configPanel, function(self, value) QEConfig.Advanced = self:GetChecked() end)
+	local chkAdvanced = createCheck("Advanced", "Show advanced tips for high level keys", addon.configPanel, function(self, value) TDTConfig.Advanced = self:GetChecked() end)
 	chkAdvanced:SetPoint("TOPLEFT", chkFluff, "BOTTOMLEFT", 0, -8)
 	
 	
@@ -157,9 +157,9 @@ local function createConfigMenu()
 	local locCB = createCheck("Location", "Show tips in separate frame", addon.configPanel, 
 			function(self, value)
 				if self:GetChecked() then
-					QEConfig.ShowFrame = "Show in separate frame"
+					TDTConfig.ShowFrame = "Show in separate frame"
 				else
-					QEConfig.ShowFrame = "Show in mob tooltips"
+					TDTConfig.ShowFrame = "Show in mob tooltips"
 				end
 				addon:setEnabled() -- This just clears the addons frame.
 				--addon:setMinimized(true) -- Ensures the tip frame is showing.
@@ -178,9 +178,9 @@ local function createConfigMenu()
 	addon.chkTarget = createCheck("Target", "Show Targeted Mob", addon.configPanel, 
 			function(self, value)
 				if self:GetChecked() then
-					QEConfig.TargetTrigger = "Show targeted mob"
+					TDTConfig.TargetTrigger = "Show targeted mob"
 				else
-					QEConfig.TargetTrigger = "Show mouseover"
+					TDTConfig.TargetTrigger = "Show mouseover"
 				end
 			end)
 	addon.chkTarget:SetPoint("TOPLEFT", addon.targetFS, "BOTTOMLEFT", 0, -8)
@@ -195,9 +195,9 @@ local function createConfigMenu()
 	local chkRole = createCheck("Role", "Show all roles", addon.configPanel, 
 			function(self, value)
 				if self:GetChecked() then
-					QEConfig.RoleChoice = "Show all roles"
+					TDTConfig.RoleChoice = "Show all roles"
 				else
-					QEConfig.RoleChoice = "Show my role only"
+					TDTConfig.RoleChoice = "Show my role only"
 				end
 			end)
 	chkRole:SetPoint("TOPLEFT", roleFS, "BOTTOMLEFT", 0, -8)
@@ -211,9 +211,9 @@ local function createConfigMenu()
 	local chkClass = createCheck("Class", "Show all classes", addon.configPanel, 
 			function(self, value)
 				if self:GetChecked() then
-					QEConfig.ClassChoice = "Show all classes"
+					TDTConfig.ClassChoice = "Show all classes"
 				else
-					QEConfig.ClassChoice = "Show my class only"
+					TDTConfig.ClassChoice = "Show my class only"
 				end
 			end)	
 	chkClass:SetPoint("TOPLEFT", classFS, "BOTTOMLEFT", 0, -8)
@@ -229,13 +229,13 @@ local function createConfigMenu()
 	chkRegDungeons:SetChecked(true)
 	
 	--[[local chkMythicPlus = createCheck("MythicPlus", "Show Tips in Mythic+", addon.configPanel, function(self, value) 
-		QEConfig.MythicPlusToggle = self:GetChecked() 
+		TDTConfig.MythicPlusToggle = self:GetChecked()
 		addon:setEnabled()
 		end)
 	chkMythicPlus:SetPoint("TOPLEFT", chkRegDungeons, "BOTTOMLEFT", 0, -8)]]--
 	
 	local chkRaid = createCheck("Raid", "Show Tips in Raid", addon.configPanel, function(self, value) 
-		QEConfig.RaidToggle = self:GetChecked() 
+		TDTConfig.RaidToggle = self:GetChecked()
 		addon:setEnabled()
 	end)
 	chkRaid:SetPoint("TOPLEFT", chkRegDungeons, "BOTTOMLEFT", 0, -8)
@@ -255,7 +255,7 @@ local function createConfigMenu()
 	fontEdit:SetHeight(20)
 	fontEdit:SetOrientation('HORIZONTAL')
 	fontEdit:SetMinMaxValues(8, 18)
-	fontEdit:SetValue(QEConfig.FontSize)
+	fontEdit:SetValue(TDTConfig.FontSize)
 	fontEdit:SetValueStep(1)
 	
 	fontEdit.textLow = _G[sliderName.."Low"]
@@ -264,7 +264,7 @@ local function createConfigMenu()
 	fontEdit.minValue, fontEdit.maxValue = fontEdit:GetMinMaxValues() 
 	fontEdit.textLow:SetText(fontEdit.minValue)
 	fontEdit.textHigh:SetText(fontEdit.maxValue)
-	fontEdit.text:SetText(QEConfig.FontSize)
+	fontEdit.text:SetText(TDTConfig.FontSize)
 	
 	fontEdit.textLow = 8
 	fontEdit.textHigh = 14
@@ -275,10 +275,10 @@ local function createConfigMenu()
 	fontEdit:Enable()
 	fontEdit:SetScript("OnValueChanged", function(self,event,arg1) 
 		
-		QEConfig.FontSize = math.floor(event + 0.5)
+		TDTConfig.FontSize = math.floor(event + 0.5)
 		updateTextSize()
-		--print(QEConfig.FontSize)
-		self.text:SetText(QEConfig.FontSize)
+		--print(TDTConfig.FontSize)
+		self.text:SetText(TDTConfig.FontSize)
 			end)
 	
 	--[[
@@ -301,42 +301,42 @@ local function createConfigMenu()
 	addon.configPanel:SetScript("OnEvent", function(self, event, arg1)
 		if event == "ADDON_LOADED" then
 			-- Check for new variables added in a later release
-			QEConfig.ShowFrame = QEConfig.ShowFrame or "Show in separate frame"
-			QEConfig.TargetTrigger = QEConfig.TargetTrigger or "Show targeted mob"
+			TDTConfig.ShowFrame = TDTConfig.ShowFrame or "Show in separate frame"
+			TDTConfig.TargetTrigger = TDTConfig.TargetTrigger or "Show targeted mob"
 			
 			-- More variables added in a later release
-			if QEConfig.RaidToggle == nil then QEConfig.RaidToggle = true end
-			if QEConfig.MythicPlusToggle == nil then QEConfig.MythicPlusToggle = true end
-			QEConfig.FrameOpacity = QEConfig.FrameOpacity or 0.55
-			QEConfig.FrameWidth = QEConfig.FrameWidth or 450
-			QEConfig.FrameHeight = QEConfig.FrameHeight or 175
-			QEConfig.FontSize = QEConfig.FontSize or 14
-			--print(QEConfig.FontSize)
+			if TDTConfig.RaidToggle == nil then TDTConfig.RaidToggle = true end
+			if TDTConfig.MythicPlusToggle == nil then TDTConfig.MythicPlusToggle = true end
+			TDTConfig.FrameOpacity = TDTConfig.FrameOpacity or 0.55
+			TDTConfig.FrameWidth = TDTConfig.FrameWidth or 450
+			TDTConfig.FrameHeight = TDTConfig.FrameHeight or 175
+			TDTConfig.FontSize = TDTConfig.FontSize or 14
+			--print(TDTConfig.FontSize)
 			
 			-- Set default checkbox behaviour
-			chkPriority:SetChecked(QEConfig.PriorityTargets)
-			chkInterrupts:SetChecked(QEConfig.Interrupts)
-			chkDefensives:SetChecked(QEConfig.Defensives)
-			chkFluff:SetChecked(QEConfig.Fluff)
-			chkAdvanced:SetChecked(QEConfig.Advanced)
-			--chkMythicPlus:SetChecked(QEConfig.MythicPlusToggle)
+			chkPriority:SetChecked(TDTConfig.PriorityTargets)
+			chkInterrupts:SetChecked(TDTConfig.Interrupts)
+			chkDefensives:SetChecked(TDTConfig.Defensives)
+			chkFluff:SetChecked(TDTConfig.Fluff)
+			chkAdvanced:SetChecked(TDTConfig.Advanced)
+			--chkMythicPlus:SetChecked(TDTConfig.MythicPlusToggle)
 			
-			chkRaid:SetChecked(QEConfig.RaidToggle)
+			chkRaid:SetChecked(TDTConfig.RaidToggle)
 			
 			-- Set default Drop Down text
-			--UIDropDownMenu_SetText(locDD, QEConfig.ShowFrame)
-			--UIDropDownMenu_SetText(targetDD, QEConfig.TargetTrigger)
-			--UIDropDownMenu_SetText(roleDD, QEConfig.RoleChoice)
-			--UIDropDownMenu_SetText(classDD, QEConfig.ClassChoice)
+			--UIDropDownMenu_SetText(locDD, TDTConfig.ShowFrame)
+			--UIDropDownMenu_SetText(targetDD, TDTConfig.TargetTrigger)
+			--UIDropDownMenu_SetText(roleDD, TDTConfig.RoleChoice)
+			--UIDropDownMenu_SetText(classDD, TDTConfig.ClassChoice)
 			-- "Drop downs"
-			locCB:SetChecked(QEConfig.ShowFrame == "Show in separate frame")
-			addon.chkTarget:SetChecked(QEConfig.TargetTrigger == "Show targeted mob")		
-			chkRole:SetChecked(QEConfig.RoleChoice == "Show all roles")
-			chkClass:SetChecked(QEConfig.ClassChoice == "Show all classes")
+			locCB:SetChecked(TDTConfig.ShowFrame == "Show in separate frame")
+			addon.chkTarget:SetChecked(TDTConfig.TargetTrigger == "Show targeted mob")
+			chkRole:SetChecked(TDTConfig.RoleChoice == "Show all roles")
+			chkClass:SetChecked(TDTConfig.ClassChoice == "Show all classes")
 			
 			updateTextSize()
-			fontEdit.text:SetText(QEConfig.FontSize)
-			fontEdit:SetValue(QEConfig.FontSize)
+			fontEdit.text:SetText(TDTConfig.FontSize)
+			fontEdit:SetValue(TDTConfig.FontSize)
 			
 			addon:setEnabled()
 			addon:setDropdownEnabled()
@@ -351,7 +351,7 @@ local function createConfigMenu()
 	end
 	
 	-- Proceed
-	createQEFrame()
+	createTDTFrame()
 end
 
 createConfigMenu()
