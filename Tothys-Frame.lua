@@ -108,7 +108,7 @@ function createTDTFrame()
 	headerTDT:SetTextColor(239/255, 191/255, 90/255)
 	headerTDT:SetJustifyH("LEFT")
 	headerTDT:SetJustifyV("MIDDLE")
-	headerTDT:SetText("Tothys Dungeon Tips TBC")
+	headerTDT:SetText("Tothys Dungeon Kiesels : Tips TBC")
 	headerTDT:SetWordWrap(true)
 	
 	TDT_HeaderPanel:SetPoint("TOPLEFT", TDT_ParentFrame, "TOPLEFT", 0, 0)
