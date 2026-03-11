@@ -147,7 +147,7 @@ local function createConfigMenu()
 
 	-- Setup Panel --
 	addon.configPanel = CreateFrame("Frame", "TothysDungeonTipsConfiguration", UIParent)
-	addon.configPanel.name = "Tothys Dungeon Tips TBC";
+	addon.configPanel.name = "Tothys Dungeon Kiesels : Tips TBC";
 	addon.configPanel.okay = function (self) return end
 	addon.configPanel.cancel = function (self) return end
 	
@@ -156,7 +156,7 @@ local function createConfigMenu()
 	ddTitleString:SetPoint("TOPLEFT", 10, -10)
 	ddTitleString:SetFont("Fonts\\MORPHEUS.ttf", 22, "OUTLINE")
 	ddTitleString:SetTextColor(0.9, 0.68, 0.22, 1)
-	ddTitleString:SetText("Tothys Dungeon Tips TBC - Config")
+	ddTitleString:SetText("Tothys Dungeon Kiesels - Config")
 
 	
 	-----------------------
