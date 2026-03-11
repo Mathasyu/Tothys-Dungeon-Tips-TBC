@@ -1,12 +1,17 @@
 --[[
-Tothys Dungeon Tips TBC
+Tothys Dungeon Tips TBC (former QE Dungeon Tips)
 Configuration Page
 
-Version: 4.8
+Version: 0.9
 Developed by: Voulk
+Forked by: Mathasyu 2026-03-09
 Contact: 
 	Discord: Voulk#1858
 	Email: itsvoulk@gmail.com
+Changelog:
+    0.9 - 2026-03
+        - The Addon works now in the TBC Anniversary Client
+        - New Slash Commands: /tdt config, /tdt show, /tdt hide, /tdt test
 ]]--
 
 local _, addon = ...;
