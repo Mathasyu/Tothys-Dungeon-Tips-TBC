@@ -11,28 +11,98 @@ local function createCycleButton(frame, name, values, onChange)
     button.values = values
     button.currentIndex = 1
 
+    function button:SetValues(values)
+        self.values = values or {}
+        if self.currentIndex > #self.values then
+            self.currentIndex = 1
+        end
+    end
+
     function button:SetCurrentValue(value)
+        if not self.values or #self.values == 0 then
+            self.currentIndex = 1
+            self:SetText("-")
+            return
+        end
+
         for index, candidate in ipairs(self.values) do
             if candidate == value then
                 self.currentIndex = index
                 break
             end
         end
-        self:SetText(localeDisplayNames[self.values[self.currentIndex]] or self.values[self.currentIndex])
+
+        local currentValue = self.values[self.currentIndex]
+        local displayText
+        if self.labelForValue then
+            displayText = self.labelForValue(currentValue)
+        end
+        self:SetText(displayText or localeDisplayNames[currentValue] or currentValue)
     end
 
     button:SetScript("OnClick", function(self)
+        if not self.values or #self.values == 0 then
+            return
+        end
+
         self.currentIndex = self.currentIndex + 1
         if self.currentIndex > #self.values then
             self.currentIndex = 1
         end
 
         local value = self.values[self.currentIndex]
-        self:SetText(localeDisplayNames[value] or value)
+        local displayText
+        if self.labelForValue then
+            displayText = self.labelForValue(value)
+        end
+        self:SetText(displayText or localeDisplayNames[value] or value)
         onChange(value)
     end)
 
     return button
+end
+
+local function createValueDropdown(frame, name, width, onChange)
+    local dropdown = CreateFrame("Frame", "TDTDropdown" .. name, frame, "UIDropDownMenuTemplate")
+    dropdown:SetWidth(width or 180)
+    dropdown.values = {}
+    dropdown.currentValue = nil
+
+    function dropdown:SetValues(values)
+        self.values = values or {}
+    end
+
+    function dropdown:SetCurrentValue(value)
+        self.currentValue = value
+
+        local label = "-"
+        if value and self.labelForValue then
+            label = self.labelForValue(value) or "-"
+        elseif value then
+            label = tostring(value)
+        end
+
+        UIDropDownMenu_SetText(self, label)
+    end
+
+    UIDropDownMenu_SetWidth(dropdown, width or 180)
+    UIDropDownMenu_Initialize(dropdown, function(self, level)
+        local info
+
+        for _, value in ipairs(dropdown.values or {}) do
+            info = UIDropDownMenu_CreateInfo()
+            info.text = dropdown.labelForValue and dropdown.labelForValue(value) or tostring(value)
+            info.value = value
+            info.checked = value == dropdown.currentValue
+            info.func = function()
+                dropdown:SetCurrentValue(value)
+                onChange(value)
+            end
+            UIDropDownMenu_AddButton(info, level)
+        end
+    end)
+
+    return dropdown
 end
 
 --[[
@@ -77,7 +147,10 @@ local defaultConfig = {
     ["FrameHeight"] = 175,
     ["FontSize"] = 12,
     ["FrameOpacity"] = 0.55,
-    ["LocaleChoice"] = "Auto"
+    ["LocaleChoice"] = "Auto",
+    ["BrowserExpansionKey"] = "tbc",
+    ["BrowserInstanceKey"] = "auchenai_crypts",
+    ["BrowserNpcID"] = 18371,
 }
 
 local function applyConfigDefaults(config)
@@ -100,6 +173,14 @@ function addon:registerConfigPanel()
 			category.ID = category.ID or addon.configPanel.name
 			Settings.RegisterAddOnCategory(category)
 			addon.configCategory = category
+			if addon.contentBrowserPanel and Settings.RegisterCanvasLayoutSubcategory then
+				local subcategory = Settings.RegisterCanvasLayoutSubcategory(category, addon.contentBrowserPanel, addon.contentBrowserPanel.name, addon.contentBrowserPanel.name)
+				if subcategory then
+					subcategory.ID = subcategory.ID or addon.contentBrowserPanel.name
+					Settings.RegisterAddOnCategory(subcategory)
+					addon.contentBrowserCategory = subcategory
+				end
+			end
 			addon.configPanelRegistered = true
 			return
 		end
@@ -107,9 +188,17 @@ function addon:registerConfigPanel()
 
 	if InterfaceOptions_AddCategory then
 		InterfaceOptions_AddCategory(addon.configPanel)
+		if addon.contentBrowserPanel then
+			addon.contentBrowserPanel.parent = addon.configPanel.name
+			InterfaceOptions_AddCategory(addon.contentBrowserPanel)
+		end
 		addon.configPanelRegistered = true
 	elseif InterfaceOptionsFrame_AddCategory then
 		InterfaceOptionsFrame_AddCategory(addon.configPanel)
+		if addon.contentBrowserPanel then
+			addon.contentBrowserPanel.parent = addon.configPanel.name
+			InterfaceOptionsFrame_AddCategory(addon.contentBrowserPanel)
+		end
 		addon.configPanelRegistered = true
 	end
 end
@@ -153,6 +242,211 @@ local function updateTextSize(size)
 
 end
 
+local function getConfigLocale()
+    local preferredLocale = TDTConfig and TDTConfig.LocaleChoice or "Auto"
+    if preferredLocale == "Auto" then
+        preferredLocale = GetLocale() or "enUS"
+    end
+
+    if preferredLocale ~= "deDE" then
+        preferredLocale = "enUS"
+    end
+
+    return preferredLocale
+end
+
+local function getOrderedKeys(entries)
+    local keys = {}
+    for key in pairs(entries or {}) do
+        keys[#keys + 1] = key
+    end
+
+    table.sort(keys, function(left, right)
+        local leftEntry = entries[left] or {}
+        local rightEntry = entries[right] or {}
+        local leftOrder = leftEntry.order or 9999
+        local rightOrder = rightEntry.order or 9999
+
+        if leftOrder == rightOrder then
+            return tostring(left) < tostring(right)
+        end
+
+        return leftOrder < rightOrder
+    end)
+
+    return keys
+end
+
+local function getLocalizedLabel(labelData, fallback)
+    if type(labelData) == "table" then
+        local locale = getConfigLocale()
+        return labelData[locale] or labelData.enUS or fallback
+    end
+
+    return labelData or fallback
+end
+
+local function getRawNpcTips(npcID)
+    local locale = getConfigLocale()
+    local localizedMap = locale == "deDE" and tipsMap_deDE or tipsMap_enUS
+
+    if localizedMap and localizedMap[npcID] then
+        return localizedMap[npcID]
+    end
+
+    if tipsMap_enUS then
+        return tipsMap_enUS[npcID]
+    end
+end
+
+local function getRawInstanceTips(instanceKey)
+    local locale = getConfigLocale()
+    local localizedMap = locale == "deDE" and instanceInfo_deDE or instanceInfo_enUS
+
+    if localizedMap and localizedMap[instanceKey] then
+        return localizedMap[instanceKey]
+    end
+
+    if instanceInfo_enUS then
+        return instanceInfo_enUS[instanceKey]
+    end
+end
+
+local function normalizeRawTips(rawTips)
+    local normalizedTips = {}
+    if not rawTips then
+        return normalizedTips
+    end
+
+    local legacyTipCount = #rawTips
+    for index, tip in ipairs(rawTips) do
+        local tipType
+        local tipText
+        local tipWeight
+
+        if #tip >= 4 and type(tip[2]) == "string" and type(tip[3]) == "string" then
+            tipType = tip[2]
+            tipText = tip[3]
+            tipWeight = tonumber(tip[4]) or 0
+        else
+            tipType = tip[1]
+            tipText = tip[2]
+            tipWeight = (legacyTipCount - index + 1) * 10
+        end
+
+        normalizedTips[#normalizedTips + 1] = {
+            type = tipType,
+            text = tipText,
+            weight = tipWeight,
+            order = index,
+        }
+    end
+
+    table.sort(normalizedTips, function(left, right)
+        if left.weight == right.weight then
+            return left.order < right.order
+        end
+
+        return left.weight > right.weight
+    end)
+
+    return normalizedTips
+end
+
+local function formatTipsPreview(rawTips, maxLines)
+    local previewLines = {}
+    local normalizedTips = normalizeRawTips(rawTips)
+    local lineCount = math.min(#normalizedTips, maxLines or 4)
+
+    for index = 1, lineCount do
+        local tip = normalizedTips[index]
+        previewLines[#previewLines + 1] = string.format("[%s] %s", tip.type or "?", tip.text or "")
+    end
+
+    if #normalizedTips > lineCount then
+        previewLines[#previewLines + 1] = string.format("... %d more", #normalizedTips - lineCount)
+    end
+
+    if #previewLines == 0 then
+        previewLines[#previewLines + 1] = "No entries found."
+    end
+
+    return table.concat(previewLines, "\n")
+end
+
+local function getExpansionKeys()
+    return getOrderedKeys(addon.contentCatalog or {})
+end
+
+local function getExpansionData(expansionKey)
+    if not addon.contentCatalog then
+        return nil
+    end
+
+    return addon.contentCatalog[expansionKey]
+end
+
+local function getInstanceKeys(expansionKey)
+    local expansionData = getExpansionData(expansionKey)
+    if not expansionData then
+        return {}
+    end
+
+    return getOrderedKeys(expansionData.instances or {})
+end
+
+local function getInstanceData(expansionKey, instanceKey)
+    local expansionData = getExpansionData(expansionKey)
+    if not expansionData or not expansionData.instances then
+        return nil
+    end
+
+    return expansionData.instances[instanceKey]
+end
+
+local function getNpcIDs(expansionKey, instanceKey)
+    local instanceData = getInstanceData(expansionKey, instanceKey)
+    if not instanceData or not instanceData.npcIDs then
+        return {}
+    end
+
+    local npcIDs = {}
+    for _, npcID in ipairs(instanceData.npcIDs) do
+        npcIDs[#npcIDs + 1] = npcID
+    end
+
+    table.sort(npcIDs, function(left, right)
+        return tonumber(left) < tonumber(right)
+    end)
+
+    return npcIDs
+end
+
+local function getNpcCommentName(rawTips)
+    return nil
+end
+
+local function getNpcBrowserLabel(expansionKey, instanceKey, npcID)
+    local instanceData = getInstanceData(expansionKey, instanceKey)
+    local localizedName
+
+    if instanceData and instanceData.npcNames and instanceData.npcNames[npcID] then
+        localizedName = getLocalizedLabel(instanceData.npcNames[npcID], nil)
+    end
+
+    if localizedName then
+        return string.format("%s (%d)", localizedName, npcID)
+    end
+
+    local rawTips = getRawNpcTips(npcID)
+    local commentName = getNpcCommentName(rawTips)
+    if commentName then
+        return string.format("%s (%d)", commentName, npcID)
+    end
+
+    return tostring(npcID)
+end
+
 
 --[[
 function createDropdown(frame, label, option1, option2, changingVar)
@@ -184,11 +478,208 @@ end
 ]]--
 
 -- Create Panels
+local function createContentBrowserMenu()
+    addon.contentBrowserPanel = CreateFrame("Frame", "TothysDungeonTipsContentBrowser", UIParent)
+    addon.contentBrowserPanel.name = "Content Browser"
+    addon.contentBrowserPanel.okay = function(self) return end
+    addon.contentBrowserPanel.cancel = function(self) return end
+
+    local headerFont = "Fonts\\MORPHEUS.ttf"
+    local headerSize = 16
+
+    local title = addon.contentBrowserPanel:CreateFontString()
+    title:SetPoint("TOPLEFT", 10, -10)
+    title:SetFont("Fonts\\MORPHEUS.ttf", 22, "OUTLINE")
+    title:SetTextColor(0.9, 0.68, 0.22, 1)
+    title:SetText("Kiesel Dungeon Tool - Content Browser")
+
+    local subtitle = createString(addon.contentBrowserPanel, "Browse the hardcoded expansion, instance and NPC structure before we add editing.", "Fonts\\FRIZQT__.TTF", 11)
+    subtitle:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -8)
+    subtitle:SetWidth(540)
+
+    local expansionFS = createString(addon.contentBrowserPanel, "Expansion", headerFont, headerSize)
+    expansionFS:SetPoint("TOPLEFT", subtitle, "BOTTOMLEFT", 0, -20)
+
+    local instanceFS = createString(addon.contentBrowserPanel, "Dungeon / Raid", headerFont, headerSize)
+    instanceFS:SetPoint("TOPLEFT", expansionButton or subtitle, "BOTTOMLEFT", 0, -24)
+
+    local npcFS = createString(addon.contentBrowserPanel, "NPC", headerFont, headerSize)
+    npcFS:SetPoint("TOPLEFT", instanceFS, "BOTTOMLEFT", 0, -26)
+
+    local browserState = {
+        expansionKey = TDTConfig.BrowserExpansionKey,
+        instanceKey = TDTConfig.BrowserInstanceKey,
+        npcID = TDTConfig.BrowserNpcID,
+    }
+
+    local expansionButton
+    local instanceDropdown
+    local npcDropdown
+    local selectionSummary
+    local npcSelectionLabel
+    local instancePreview
+    local npcPreview
+
+    local function ensureBrowserSelection()
+        local expansionKeys = getExpansionKeys()
+        if #expansionKeys == 0 then
+            browserState.expansionKey = nil
+            browserState.instanceKey = nil
+            browserState.npcID = nil
+            return
+        end
+
+        local hasExpansion = false
+        for _, key in ipairs(expansionKeys) do
+            if key == browserState.expansionKey then
+                hasExpansion = true
+                break
+            end
+        end
+        if not hasExpansion then
+            browserState.expansionKey = expansionKeys[1]
+        end
+
+        local instanceKeys = getInstanceKeys(browserState.expansionKey)
+        local hasInstance = false
+        for _, key in ipairs(instanceKeys) do
+            if key == browserState.instanceKey then
+                hasInstance = true
+                break
+            end
+        end
+        if not hasInstance then
+            browserState.instanceKey = instanceKeys[1]
+        end
+
+        local npcIDs = getNpcIDs(browserState.expansionKey, browserState.instanceKey)
+        local hasNpc = false
+        for _, npcID in ipairs(npcIDs) do
+            if npcID == browserState.npcID then
+                hasNpc = true
+                break
+            end
+        end
+        if not hasNpc then
+            browserState.npcID = npcIDs[1]
+        end
+
+        TDTConfig.BrowserExpansionKey = browserState.expansionKey
+        TDTConfig.BrowserInstanceKey = browserState.instanceKey
+        TDTConfig.BrowserNpcID = browserState.npcID
+    end
+
+    local function updateBrowserUI()
+        ensureBrowserSelection()
+
+        local expansionKeys = getExpansionKeys()
+        expansionButton:SetValues(expansionKeys)
+        expansionButton:SetCurrentValue(browserState.expansionKey)
+
+        local instanceKeys = getInstanceKeys(browserState.expansionKey)
+        instanceDropdown:SetValues(instanceKeys)
+        instanceDropdown:SetCurrentValue(browserState.instanceKey)
+
+        local npcIDs = getNpcIDs(browserState.expansionKey, browserState.instanceKey)
+        npcDropdown:SetValues(npcIDs)
+        npcDropdown:SetCurrentValue(browserState.npcID)
+
+        local expansionData = getExpansionData(browserState.expansionKey)
+        local instanceData = getInstanceData(browserState.expansionKey, browserState.instanceKey)
+        local expansionLabel = getLocalizedLabel(expansionData and expansionData.name, browserState.expansionKey or "-")
+        local instanceLabel = getLocalizedLabel(instanceData and instanceData.name, browserState.instanceKey or "-")
+        local instanceType = instanceData and instanceData.type or "Unknown"
+        local npcLabel = browserState.npcID and getNpcBrowserLabel(browserState.expansionKey, browserState.instanceKey, browserState.npcID) or "-"
+
+        selectionSummary:SetText(string.format("Selected: %s -> %s (%s) -> %s", expansionLabel, instanceLabel, instanceType, npcLabel))
+        npcSelectionLabel:SetText(string.format("NPC: %s", npcLabel))
+        instancePreview:SetText(formatTipsPreview(getRawInstanceTips(browserState.instanceKey), 5))
+        npcPreview:SetText(formatTipsPreview(getRawNpcTips(browserState.npcID), 6))
+    end
+
+    expansionButton = createCycleButton(addon.contentBrowserPanel, "BrowserExpansion", getExpansionKeys(), function(value)
+        browserState.expansionKey = value
+        browserState.instanceKey = nil
+        browserState.npcID = nil
+        updateBrowserUI()
+    end)
+    expansionButton:SetPoint("TOPLEFT", expansionFS, "BOTTOMLEFT", 0, -8)
+    expansionButton.labelForValue = function(value)
+        local expansionData = getExpansionData(value)
+        return getLocalizedLabel(expansionData and expansionData.name, value)
+    end
+
+    instanceFS:ClearAllPoints()
+    instanceFS:SetPoint("TOPLEFT", expansionButton, "BOTTOMLEFT", 0, -24)
+
+    instanceDropdown = createValueDropdown(addon.contentBrowserPanel, "BrowserInstance", 220, function(value)
+        browserState.instanceKey = value
+        browserState.npcID = nil
+        updateBrowserUI()
+    end)
+    instanceDropdown:SetPoint("TOPLEFT", instanceFS, "BOTTOMLEFT", -16, -2)
+    instanceDropdown.labelForValue = function(value)
+        local instanceData = getInstanceData(browserState.expansionKey, value)
+        if not instanceData then
+            return value or "-"
+        end
+
+        return string.format("%s (%s)", getLocalizedLabel(instanceData.name, value), instanceData.type or "Unknown")
+    end
+
+    npcFS:ClearAllPoints()
+    npcFS:SetPoint("TOPLEFT", instanceDropdown, "BOTTOMLEFT", 16, -18)
+
+    npcDropdown = createValueDropdown(addon.contentBrowserPanel, "BrowserNpc", 240, function(value)
+        browserState.npcID = value
+        updateBrowserUI()
+    end)
+    npcDropdown:SetPoint("TOPLEFT", npcFS, "BOTTOMLEFT", -16, -2)
+    npcDropdown.labelForValue = function(value)
+        return getNpcBrowserLabel(browserState.expansionKey, browserState.instanceKey, value)
+    end
+
+    selectionSummary = createString(addon.contentBrowserPanel, "", "Fonts\\FRIZQT__.TTF", 11)
+    selectionSummary:SetPoint("TOPLEFT", npcDropdown, "BOTTOMLEFT", 16, -18)
+    selectionSummary:SetWidth(620)
+
+    npcSelectionLabel = createString(addon.contentBrowserPanel, "", "Fonts\\FRIZQT__.TTF", 11)
+    npcSelectionLabel:SetPoint("TOPLEFT", selectionSummary, "BOTTOMLEFT", 0, -8)
+    npcSelectionLabel:SetWidth(620)
+
+    local instancePreviewFS = createString(addon.contentBrowserPanel, "Instance Info Preview", headerFont, headerSize)
+    instancePreviewFS:SetPoint("TOPLEFT", npcSelectionLabel, "BOTTOMLEFT", 0, -18)
+
+    instancePreview = createString(addon.contentBrowserPanel, "", "Fonts\\FRIZQT__.TTF", 11)
+    instancePreview:SetPoint("TOPLEFT", instancePreviewFS, "BOTTOMLEFT", 0, -6)
+    instancePreview:SetWidth(620)
+
+    local npcPreviewFS = createString(addon.contentBrowserPanel, "NPC Tips Preview", headerFont, headerSize)
+    npcPreviewFS:SetPoint("TOPLEFT", instancePreview, "BOTTOMLEFT", 0, -18)
+
+    npcPreview = createString(addon.contentBrowserPanel, "", "Fonts\\FRIZQT__.TTF", 11)
+    npcPreview:SetPoint("TOPLEFT", npcPreviewFS, "BOTTOMLEFT", 0, -6)
+    npcPreview:SetWidth(620)
+
+    addon.contentBrowserPanel:RegisterEvent("ADDON_LOADED")
+    addon.contentBrowserPanel:SetScript("OnEvent", function(self, event, arg1)
+        if event == "ADDON_LOADED" and arg1 == "Tothys-Dungeon-Tips-TBC" then
+            TDTConfig = applyConfigDefaults(TDTConfig)
+            browserState.expansionKey = TDTConfig.BrowserExpansionKey
+            browserState.instanceKey = TDTConfig.BrowserInstanceKey
+            browserState.npcID = TDTConfig.BrowserNpcID
+            updateBrowserUI()
+        end
+    end)
+
+    updateBrowserUI()
+end
+
 local function createConfigMenu()
 
 	-- Setup Panel --
 	addon.configPanel = CreateFrame("Frame", "TothysDungeonTipsConfiguration", UIParent)
-	addon.configPanel.name = "Tothys Dungeon Kiesels : Tips TBC";
+	addon.configPanel.name = "Kiesel Dungeon Tool";
 	addon.configPanel.okay = function (self) return end
 	addon.configPanel.cancel = function (self) return end
 	
@@ -197,7 +688,7 @@ local function createConfigMenu()
 	ddTitleString:SetPoint("TOPLEFT", 10, -10)
 	ddTitleString:SetFont("Fonts\\MORPHEUS.ttf", 22, "OUTLINE")
 	ddTitleString:SetTextColor(0.9, 0.68, 0.22, 1)
-	ddTitleString:SetText("Tothys Dungeon Kiesels - Config")
+	ddTitleString:SetText("Kiesel Dungeon Tool - Config")
 
 	
 	-----------------------
@@ -445,6 +936,7 @@ local function createConfigMenu()
 	createTDTFrame()
 end
 
+createContentBrowserMenu()
 createConfigMenu()
 
 

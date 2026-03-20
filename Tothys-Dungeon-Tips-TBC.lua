@@ -483,7 +483,7 @@ end
 
 local function tdtPrint(message)
 	if DEFAULT_CHAT_FRAME then
-		DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99TDT:|r " .. message)
+		DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99KDT:|r " .. message)
 	end
 end
 
@@ -523,12 +523,12 @@ function addon:showTestFrame()
 		TDT_MobName:SetText("TDT Test Target")
 	end
 	if TDT_TipText then
-		TDT_TipText:SetText(" |cff33ff99Addon loaded successfully.|r\n |cffffd166Use /tdt show, /tdt hide, or target a dungeon mob.|r")
+		TDT_TipText:SetText(" |cff33ff99Kiesel Dungeon Tool loaded successfully.|r\n |cffffd166Use /kdt show, /kdt hide, or target a dungeon mob.|r")
 	end
 end
 
-SLASH_TDTCOMMAND1 = "/tdt"
-SlashCmdList["TDTCOMMAND"] = function(msg)
+SLASH_KDTCOMMAND1 = "/kdt"
+SlashCmdList["KDTCOMMAND"] = function(msg)
 	msg = string.lower(msg or "")
 
 	if msg == "config" then
@@ -546,7 +546,7 @@ SlashCmdList["TDTCOMMAND"] = function(msg)
 	elseif msg == "test" then
 		addon:showTestFrame()
 	else
-        tdtPrint("Commands: /tdt config, /tdt show, /tdt hide, /tdt test")
+        tdtPrint("Commands: /kdt config, /kdt show, /kdt hide, /kdt test")
 	end
 end
 
