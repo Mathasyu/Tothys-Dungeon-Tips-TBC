@@ -83,6 +83,12 @@ local classList =  {
 	WARLOCK = true
 }
 
+local roleTipList = {
+	HEALER = true,
+	TANK = true,
+	DAMAGE = true,
+}
+
 local iconList = {
 	PriorityTargets = "ability_hunter_snipershot",
 	Interrupts = "ability_kick",
@@ -289,8 +295,44 @@ function addon:showCurrentInstanceInfo()
 	end
 
 	TDT_TipText:SetText("")
+	if addon.refreshTipScroll then addon:refreshTipScroll() end
 	TDT_MobName:SetText(string.format("%s (Instance)", instanceName))
 	addFrameLine(TDT_TipPanel, instanceTips, "INSTANCE INFO:", class)
+end
+
+function addon:showBrowserSelectionInFrame(instanceName, npcName, npcID, instanceTips, npcTips)
+	if not TDT_MobName or not TDT_TipText or not TDT_TipPanel then
+		return
+	end
+
+	if not TDTConfig or TDTConfig.ShowFrame ~= "Show in separate frame" then
+		return
+	end
+
+	if TDT_ParentFrame then
+		TDT_ParentFrame:Show()
+	end
+
+	local _, class = UnitClass("player")
+
+	local displayTitle = npcName or instanceName or "Preview"
+	if npcID then
+		displayTitle = string.format("%s (NPC ID: %d)", displayTitle, npcID)
+	elseif instanceName then
+		displayTitle = string.format("%s (Instance)", instanceName)
+	end
+
+	TDT_TipText:SetText("")
+	if addon.refreshTipScroll then addon:refreshTipScroll() end
+	TDT_MobName:SetText(displayTitle)
+
+	if instanceTips then
+		addFrameLine(TDT_TipPanel, instanceTips, "INSTANCE INFO:", class)
+	end
+
+	if npcTips then
+		addFrameLine(TDT_TipPanel, npcTips, "NPC INFO:", class)
+	end
 end
 
 function addon:getTipsForNpc(id)
@@ -316,6 +358,59 @@ local function RGBToHex(r, g, b)
 	return string.format("%02x%02x%02x", r*255, g*255, b*255)
 end
 
+local function getPlayerRoleTipKey()
+	local role = UnitGroupRolesAssigned and UnitGroupRolesAssigned("player") or "NONE"
+
+	if role == "HEALER" or role == "TANK" or role == "DAMAGER" then
+		if role == "DAMAGER" then
+			return "DAMAGE"
+		end
+
+		return role
+	end
+
+	-- Fallback for Classic/TBC cases where role assignment may be unavailable.
+	if UnitPowerType and UnitPowerType("player") == 0 then
+		local _, class = UnitClass("player")
+		if class == "PRIEST" or class == "SHAMAN" or class == "PALADIN" or class == "DRUID" then
+			return "HEALER"
+		end
+	end
+
+	return "DAMAGE"
+end
+
+local function shouldShowTipForDisplay(tipType, class, forceAll)
+	if forceAll then
+		return true
+	end
+
+	local roleFilters = TDTConfig.RoleFilters or {}
+	local classFilters = TDTConfig.ClassFilters or {}
+
+	if TDTConfig[tipType] or tipType == "Legion" or tipType == "Dodge" then
+		return true
+	end
+
+	if roleTipList[tipType] then
+		if roleFilters.MYROLEONLY then
+			return tipType == getPlayerRoleTipKey()
+		end
+
+		return roleFilters[tipType] == true
+	end
+
+	if classList[tipType] then
+		if classFilters.MYCLASSONLY then
+			return tipType == class
+		end
+
+		return classFilters[tipType] == true
+	end
+
+	return false
+end
+
 
 -- The addline function hooks into the WoW API to add a line to an NPC's tooltip.
 local function addLine(tooltip, tips, type, class)
@@ -335,9 +430,7 @@ local function addLine(tooltip, tips, type, class)
 		for i, tip in ipairs(tips) do
 			-- tip[1] is the category indicator and we'll use that to decide whether we should show this tooltip or not.
 			
-			if TDTConfig[tip[1]] or tip[1] == "Legion" or tip[1] == "Dodge" or -- Show if tip type turned on, or if it's using an old Legion tag.
-				(tip[1] == class and TDTConfig["ClassChoice"] == "Show my class only") or
-				(classList[tip[1]] and TDTConfig["ClassChoice"] == "Show all classes") then
+			if shouldShowTipForDisplay(tip[1], class, false) then
 				
 					local r,g,b = tipsColors[tip[1]][1], tipsColors[tip[1]][2], tipsColors[tip[1]][3]
 					
@@ -356,7 +449,7 @@ local function addLine(tooltip, tips, type, class)
 end
 
 -- The addline function hooks into the WoW API to add a line to an NPC's tooltip.
-addFrameLine = function(tooltip, tips, type, class)
+addFrameLine = function(tooltip, tips, type, class, forceAll)
 	local found = false
 	-- Check if we already added to this tooltip. This prevents writing the same thing to the tooltip multiple times.
 	if not TDT_HeaderPanel:IsVisible() then addon:setEnabled() end
@@ -375,9 +468,7 @@ addFrameLine = function(tooltip, tips, type, class)
 		for i, tip in ipairs(tips) do
 			-- tip[1] is the category indicator and we'll use that to decide whether we should show this tooltip or not.
 
-			if TDTConfig[tip[1]] or tip[1] == "Legion" or tip[1] == "Dodge" or -- Show if tip type turned on, or if it's using an old Legion tag.
-				(tip[1] == class and TDTConfig["ClassChoice"] == "Show my class only") or
-				(classList[tip[1]] and TDTConfig["ClassChoice"] == "Show all classes") then
+			if shouldShowTipForDisplay(tip[1], class, forceAll) then
 				
 					local r,g,b = tipsColors[tip[1]][1], tipsColors[tip[1]][2], tipsColors[tip[1]][3]
 					local lineHex = RGBToHex(r, g, b)
@@ -387,12 +478,15 @@ addFrameLine = function(tooltip, tips, type, class)
 						--tooltip:AddLine((("|T%s:0|t"):format("Interface\\Icons\\"..iconList[tip[1]])..tip[2]),r,g,b)
 						
 						TDT_TipText:SetText(tipBase .. ((("|T%s:0|t"):format("Interface\\Icons\\"..iconList[tip[1]]).. "|cff" .. lineHex .. " " .. tip[2] .. "|r" .. "\n")))
+						if addon.refreshTipScroll then addon:refreshTipScroll() end
 						
 					elseif tipsColors[tip[1]] then -- Check if color exists
 						TDT_TipText:SetText(tipBase .. "|cff" .. lineHex .. " " .. tip[2] .. "|r" .. "\n")
+						if addon.refreshTipScroll then addon:refreshTipScroll() end
 						--tooltip:AddLine(tip[2],r,g,b)
 					else -- There is no icon or color assigned to the category so a plain line will be added instead.
 						TDT_TipText:SetText(tipBase .. " " .. tip[2] .. "\n")
+						if addon.refreshTipScroll then addon:refreshTipScroll() end
 						--tooltip:AddLine(tip[2])
 					end
 			end
@@ -426,6 +520,7 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 		if npcTips then
 			-- Don't remove active tip if you accidentally mouse over ally.
 			TDT_TipText:SetText("")
+			if addon.refreshTipScroll then addon:refreshTipScroll() end
 			TDT_MobName:SetText(string.format("%s (NPC ID: %d)", name, id))
 		
 			if TDTConfig.ShowFrame == "Show in separate frame" then addFrameLine(TDT_TipPanel, npcTips, "NPC ID:", class)
@@ -434,6 +529,7 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 		
 		elseif UnitIsEnemy(unit, "player") then
 			TDT_TipText:SetText("")
+			if addon.refreshTipScroll then addon:refreshTipScroll() end
 			TDT_MobName:SetText(name)
 		elseif TDTConfig.ShowFrame == "Show in separate frame" then
 			addon:showCurrentInstanceInfo()
@@ -463,12 +559,14 @@ function addon:getTarget(mobType)
 		-- Don't remove active tip if you accidentally mouse over ally.
 		
 		TDT_TipText:SetText("")
+		if addon.refreshTipScroll then addon:refreshTipScroll() end
 		TDT_MobName:SetText(string.format("%s (NPC ID: %d)", name, id))
 		addFrameLine(TDT_TipPanel, npcTips, "NPC ID:", class)
 		--addLine(GameTooltip, tipsMap[id], "NPC ID:", role, class)		
 
 	elseif 	UnitIsEnemy(mobType, "player") then
 		TDT_TipText:SetText("")
+		if addon.refreshTipScroll then addon:refreshTipScroll() end
 		TDT_MobName:SetText(name)
 	else
 		addon:showCurrentInstanceInfo()
@@ -524,6 +622,7 @@ function addon:showTestFrame()
 	end
 	if TDT_TipText then
 		TDT_TipText:SetText(" |cff33ff99Kiesel Dungeon Tool loaded successfully.|r\n |cffffd166Use /kdt show, /kdt hide, or target a dungeon mob.|r")
+		if addon.refreshTipScroll then addon:refreshTipScroll() end
 	end
 end
 

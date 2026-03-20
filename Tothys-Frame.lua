@@ -47,6 +47,16 @@ function createTDTFrame()
 	TDT_ParentFrame:RegisterForDrag("LeftButton")
 	TDT_ParentFrame:SetScript("OnDragStart", function(self) self:StartMoving() end)
 	TDT_ParentFrame:SetScript("OnDragStop", function(self) self:StopMovingOrSizing() end)
+	TDT_ParentFrame:SetScript("OnSizeChanged", function(self)
+		if TDT_TipScrollChild then
+			local childWidth = math.max(self:GetWidth() - 40, 220)
+			TDT_TipScrollChild:SetWidth(childWidth)
+		end
+		if TDT_TipText then
+			TDT_TipText:SetWidth(math.max(self:GetWidth() - 45, 215))
+		end
+		if addon.refreshTipScroll then addon:refreshTipScroll() end
+	end)
 	
 	
 	-- Texture
@@ -153,21 +163,51 @@ function createTDTFrame()
 	TDT_MobName:SetJustifyV("TOP")
 	TDT_MobName:SetText(" ")
 
+	TDT_TipScrollFrame = CreateFrame("ScrollFrame", "TDT_TipScrollFrame", TDT_TipPanel)
+	TDT_TipScrollFrame:SetPoint("TOPLEFT", TDT_MobName, "BOTTOMLEFT", 0, -3)
+	TDT_TipScrollFrame:SetPoint("TOPRIGHT", TDT_TipPanel, "TOPRIGHT", -26, -28)
+	TDT_TipScrollFrame:SetPoint("BOTTOMLEFT", TDT_TipPanel, "BOTTOMLEFT", 0, 4)
+	TDT_TipScrollFrame:SetPoint("BOTTOMRIGHT", TDT_TipPanel, "BOTTOMRIGHT", -26, 4)
+	TDT_TipScrollFrame:EnableMouseWheel(true)
+
+	TDT_TipScrollChild = CreateFrame("Frame", "TDT_TipScrollChild", TDT_TipScrollFrame)
+	TDT_TipScrollChild:SetWidth(410)
+	TDT_TipScrollChild:SetHeight(1)
+	TDT_TipScrollFrame:SetScrollChild(TDT_TipScrollChild)
+
 	-- Frame Tip Text
-	TDT_TipText = TDT_TipPanel:CreateFontString("TDT_TipText", nil, nil)
-	TDT_TipText:SetPoint("TOPLEFT", TDT_MobName, "BOTTOMLEFT", 0, -3)
-	TDT_TipText:SetPoint("TOPRIGHT", TDT_MobName, "BOTTOMRIGHT", -3, -3)
-	TDT_TipText:SetPoint("BOTTOMLEFT", TDT_ParentFrame, "BOTTOMLEFT", 0, 0)
-	TDT_TipText:SetPoint("BOTTOMRIGHT", TDT_ParentFrame, "BOTTOMRIGHT", 0, 0)
+	TDT_TipText = TDT_TipScrollChild:CreateFontString("TDT_TipText", nil, nil)
+	TDT_TipText:SetPoint("TOPLEFT", TDT_TipScrollChild, "TOPLEFT", 0, 0)
+	TDT_TipText:SetPoint("TOPRIGHT", TDT_TipScrollChild, "TOPRIGHT", -3, 0)
 	--TDT_TipText:SetFont("Fonts\\ARIALN.ttf", 14, nil)
 	TDT_TipText:SetFontObject(GameFontWhite);
 	local p,_,_ = TDT_TipText:GetFont();
 	--print("Creating Frame" .. TDTConfig.FontSize)
 	TDT_TipText:SetFont(p, TDTConfig.FontSize, nil)
-	TDT_TipText:SetWidth(445)
+	TDT_TipText:SetWidth(405)
 	TDT_TipText:SetJustifyH("LEFT")
 	TDT_TipText:SetJustifyV("TOP")
 	TDT_TipText:SetText(" ")
+	if addon.refreshTipScroll then addon:refreshTipScroll() end
+
+	TDT_TipScrollBar = CreateFrame("Slider", "TDT_TipScrollBar", TDT_TipPanel, "UIPanelScrollBarTemplate")
+	TDT_TipScrollBar:SetPoint("TOPRIGHT", TDT_TipPanel, "TOPRIGHT", -4, -28)
+	TDT_TipScrollBar:SetPoint("BOTTOMRIGHT", TDT_TipPanel, "BOTTOMRIGHT", -4, 16)
+	TDT_TipScrollBar:SetMinMaxValues(0, 0)
+	TDT_TipScrollBar:SetValueStep(8)
+	TDT_TipScrollBar:SetValue(0)
+	TDT_TipScrollBar:SetScript("OnValueChanged", function(self, value)
+		TDT_TipScrollFrame:SetVerticalScroll(value)
+	end)
+
+	TDT_TipScrollFrame:SetScript("OnMouseWheel", function(self, delta)
+		local currentValue = TDT_TipScrollBar:GetValue()
+		local minValue, maxValue = TDT_TipScrollBar:GetMinMaxValues()
+		local nextValue = currentValue - (delta * 24)
+		if nextValue < minValue then nextValue = minValue end
+		if nextValue > maxValue then nextValue = maxValue end
+		TDT_TipScrollBar:SetValue(nextValue)
+	end)
 	-----------------------
 	
 	
@@ -382,11 +422,15 @@ function addon:setMinimized(forceShow)
 	if TDT_TipPanel:GetHeight() <= 26 then
 		TDT_TipPanel:SetHeight(175)
 		TDT_TipText:Show()
+		if TDT_TipScrollFrame then TDT_TipScrollFrame:Show() end
+		if TDT_TipScrollBar then TDT_TipScrollBar:Show() end
 		
 	else
 		--TDT_TipPanel:Hide()
 		TDT_TipPanel:SetHeight(25)
 		TDT_TipText:Hide()
+		if TDT_TipScrollFrame then TDT_TipScrollFrame:Hide() end
+		if TDT_TipScrollBar then TDT_TipScrollBar:Hide() end
 	end
 end
 		
@@ -413,6 +457,30 @@ function addon:colorFrame(TDT_onBoss)
 	else
 		TDT_TipPanelTexture:SetColorTexture(55/255, 55/255, 55/255, 0.55)
 		TDT_ParentFrameTexture:SetColorTexture(35/255, 35/255, 35/255, 0.55)
+	end
+end
+
+function addon:refreshTipScroll()
+	if not TDT_TipText or not TDT_TipScrollFrame or not TDT_TipScrollBar or not TDT_TipScrollChild then
+		return
+	end
+
+	local contentHeight = math.max(TDT_TipText:GetStringHeight() + 8, 1)
+	local viewHeight = TDT_TipScrollFrame:GetHeight()
+	local maxScroll = math.max(contentHeight - viewHeight, 0)
+
+	TDT_TipScrollChild:SetHeight(contentHeight)
+	TDT_TipScrollBar:SetMinMaxValues(0, maxScroll)
+	if maxScroll == 0 then
+		TDT_TipScrollBar:SetValue(0)
+		TDT_TipScrollBar:Hide()
+	else
+		local currentValue = TDT_TipScrollBar:GetValue()
+		if currentValue > maxScroll then
+			currentValue = maxScroll
+		end
+		TDT_TipScrollBar:SetValue(currentValue)
+		TDT_TipScrollBar:Show()
 	end
 end
 

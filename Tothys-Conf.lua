@@ -4,6 +4,28 @@ local localeDisplayNames = {
     deDE = "Deutsch",
 }
 
+local browserIconList = {
+    PriorityTargets = "ability_hunter_snipershot",
+    Interrupts = "ability_kick",
+    Defensives = "inv_shield_05",
+    Important = "ability_dualwield",
+    Legion = "ability_dualwield",
+    Dodge = "ability_dualwield",
+    DRUID = "classicon_druid",
+    HUNTER = "classicon_hunter",
+    MAGE = "classicon_mage",
+    MONK = "classicon_monk",
+    PALADIN = "classicon_paladin",
+    PRIEST = "classicon_priest",
+    ROGUE = "classicon_rogue",
+    SHAMAN = "classicon_shaman",
+    WARRIOR = "classicon_warrior",
+    WARLOCK = "classicon_warlock",
+    HEALER = "spell_nature_healingtouch",
+    TANK = "inv_shield_06",
+    DAMAGE = "inv_sword_01",
+}
+
 local function createCycleButton(frame, name, values, onChange)
     local button = CreateFrame("Button", "TDTButton" .. name, frame, "UIPanelButtonTemplate")
     button:SetWidth(140)
@@ -137,8 +159,6 @@ local defaultConfig = {
     ["Fluff"] = false,
     ["Advanced"] = true,
     ["Dodge"] = true,
-    ["RoleChoice"] = "Show my role only",
-    ["ClassChoice"] = "Show my class only",
     ["ShowFrame"] = "Show in separate frame",
     ["TargetTrigger"] = "Show targeted mob",
     ["RaidToggle"] = true,
@@ -151,13 +171,104 @@ local defaultConfig = {
     ["BrowserExpansionKey"] = "tbc",
     ["BrowserInstanceKey"] = "auchenai_crypts",
     ["BrowserNpcID"] = 18371,
+    ["RoleFilters"] = {
+        MYROLEONLY = true,
+        TANK = false,
+        HEALER = false,
+        DAMAGE = false,
+    },
+    ["ClassFilters"] = {
+        MYCLASSONLY = true,
+        DRUID = false,
+        HUNTER = false,
+        MAGE = false,
+        PALADIN = false,
+        PRIEST = false,
+        ROGUE = false,
+        SHAMAN = false,
+        WARRIOR = false,
+        WARLOCK = false,
+    },
 }
+
+local roleFilterKeys = {"MYROLEONLY", "TANK", "HEALER", "DAMAGE"}
+local classFilterKeys = {"MYCLASSONLY", "DRUID", "HUNTER", "MAGE", "PALADIN", "PRIEST", "ROGUE", "SHAMAN", "WARRIOR", "WARLOCK"}
+
+local function copyTable(source)
+    local result = {}
+    for key, value in pairs(source or {}) do
+        if type(value) == "table" then
+            result[key] = copyTable(value)
+        else
+            result[key] = value
+        end
+    end
+
+    return result
+end
 
 local function applyConfigDefaults(config)
     for key, value in pairs(defaultConfig) do
         if config[key] == nil then
-            config[key] = value
+            if type(value) == "table" then
+                config[key] = copyTable(value)
+            else
+                config[key] = value
+            end
         end
+    end
+
+    if type(config.RoleFilters) ~= "table" then
+        config.RoleFilters = copyTable(defaultConfig.RoleFilters)
+    end
+    if type(config.ClassFilters) ~= "table" then
+        config.ClassFilters = copyTable(defaultConfig.ClassFilters)
+    end
+
+    for _, key in ipairs(roleFilterKeys) do
+        if config.RoleFilters[key] == nil then
+            config.RoleFilters[key] = defaultConfig.RoleFilters[key]
+        end
+    end
+
+    for _, key in ipairs(classFilterKeys) do
+        if config.ClassFilters[key] == nil then
+            config.ClassFilters[key] = defaultConfig.ClassFilters[key]
+        end
+    end
+
+    if config.RoleChoice then
+        if config.RoleChoice == "Show all roles" then
+            config.RoleFilters.MYROLEONLY = false
+            config.RoleFilters.TANK = true
+            config.RoleFilters.HEALER = true
+            config.RoleFilters.DAMAGE = true
+        else
+            config.RoleFilters.MYROLEONLY = true
+            config.RoleFilters.TANK = false
+            config.RoleFilters.HEALER = false
+            config.RoleFilters.DAMAGE = false
+        end
+        config.RoleChoice = nil
+    end
+
+    if config.ClassChoice then
+        if config.ClassChoice == "Show all classes" then
+            config.ClassFilters.MYCLASSONLY = false
+            for _, key in ipairs(classFilterKeys) do
+                if key ~= "MYCLASSONLY" then
+                    config.ClassFilters[key] = true
+                end
+            end
+        else
+            config.ClassFilters.MYCLASSONLY = true
+            for _, key in ipairs(classFilterKeys) do
+                if key ~= "MYCLASSONLY" then
+                    config.ClassFilters[key] = false
+                end
+            end
+        end
+        config.ClassChoice = nil
     end
 
     return config
@@ -239,6 +350,7 @@ local function updateTextSize(size)
 	local p,_,_ = TDT_TipText:GetFont();
 	--print("Resetting Font Size" .. TDTConfig.FontSize)
 	TDT_TipText:SetFont(p, TDTConfig.FontSize, nil)
+	if addon.refreshTipScroll then addon:refreshTipScroll() end
 
 end
 
@@ -360,7 +472,13 @@ local function formatTipsPreview(rawTips, maxLines)
 
     for index = 1, lineCount do
         local tip = normalizedTips[index]
-        previewLines[#previewLines + 1] = string.format("[%s] %s", tip.type or "?", tip.text or "")
+        local iconMarkup = ""
+        local iconName = browserIconList[tip.type or ""]
+        if iconName then
+            iconMarkup = string.format("|TInterface\\Icons\\%s:0|t ", iconName)
+        end
+
+        previewLines[#previewLines + 1] = string.format("%s[%s] %s", iconMarkup, tip.type or "?", tip.text or "")
     end
 
     if #normalizedTips > lineCount then
@@ -372,6 +490,17 @@ local function formatTipsPreview(rawTips, maxLines)
     end
 
     return table.concat(previewLines, "\n")
+end
+
+local function toDisplayTips(rawTips)
+    local displayTips = {}
+    local normalizedTips = normalizeRawTips(rawTips)
+
+    for _, tip in ipairs(normalizedTips) do
+        displayTips[#displayTips + 1] = {tip.type, tip.text}
+    end
+
+    return displayTips
 end
 
 local function getExpansionKeys()
@@ -445,6 +574,15 @@ local function getNpcBrowserLabel(expansionKey, instanceKey, npcID)
     end
 
     return tostring(npcID)
+end
+
+local function getNpcDisplayName(expansionKey, instanceKey, npcID)
+    local browserLabel = getNpcBrowserLabel(expansionKey, instanceKey, npcID)
+    return browserLabel:gsub("%s*%(%d+%)$", "")
+end
+
+local function createFilterCheck(name, description, frame, onClick)
+    return createCheck(name, description, frame, onClick)
 end
 
 
@@ -590,11 +728,22 @@ local function createContentBrowserMenu()
         local instanceLabel = getLocalizedLabel(instanceData and instanceData.name, browserState.instanceKey or "-")
         local instanceType = instanceData and instanceData.type or "Unknown"
         local npcLabel = browserState.npcID and getNpcBrowserLabel(browserState.expansionKey, browserState.instanceKey, browserState.npcID) or "-"
+        local npcDisplayName = browserState.npcID and getNpcDisplayName(browserState.expansionKey, browserState.instanceKey, browserState.npcID) or nil
 
         selectionSummary:SetText(string.format("Selected: %s -> %s (%s) -> %s", expansionLabel, instanceLabel, instanceType, npcLabel))
         npcSelectionLabel:SetText(string.format("NPC: %s", npcLabel))
         instancePreview:SetText(formatTipsPreview(getRawInstanceTips(browserState.instanceKey), 5))
         npcPreview:SetText(formatTipsPreview(getRawNpcTips(browserState.npcID), 6))
+
+        if addon.showBrowserSelectionInFrame then
+            addon:showBrowserSelectionInFrame(
+                instanceLabel,
+                npcDisplayName,
+                browserState.npcID,
+                toDisplayTips(getRawInstanceTips(browserState.instanceKey)),
+                toDisplayTips(getRawNpcTips(browserState.npcID))
+            )
+        end
     end
 
     expansionButton = createCycleButton(addon.contentBrowserPanel, "BrowserExpansion", getExpansionKeys(), function(value)
@@ -763,37 +912,70 @@ local function createConfigMenu()
 	-- Role Selector --
 	local roleFS = createString(addon.configPanel, "Role Specific Tips", headerFont, headerSize)
 	roleFS:SetPoint("TOPLEFT", locCB, "BOTTOMLEFT", 0, -14)
-	
-	--roleDD = createDropdown(addon.configPanel, "RoleSelector", "Show my role only", "Show all roles", "RoleChoice")
-	--roleDD:SetPoint("TOPLEFT", roleFS, "BOTTOMLEFT", 0, -8)
-	local chkRole = createCheck("Role", "Show all roles", addon.configPanel, 
+
+	local chkMyRoleOnly = createFilterCheck("MyRoleOnly", "Show MYROLEONLY", addon.configPanel,
 			function(self, value)
-				if self:GetChecked() then
-					TDTConfig.RoleChoice = "Show all roles"
-				else
-					TDTConfig.RoleChoice = "Show my role only"
-				end
+				TDTConfig.RoleFilters.MYROLEONLY = self:GetChecked()
 			end)
-	chkRole:SetPoint("TOPLEFT", roleFS, "BOTTOMLEFT", 0, -8)
+	chkMyRoleOnly:SetPoint("TOPLEFT", roleFS, "BOTTOMLEFT", 0, -8)
+
+	local chkTankRole = createFilterCheck("RoleTank", "Show TANK", addon.configPanel,
+			function(self, value)
+				TDTConfig.RoleFilters.TANK = self:GetChecked()
+			end)
+	chkTankRole:SetPoint("TOPLEFT", chkMyRoleOnly, "BOTTOMLEFT", 0, -6)
+
+	local chkHealerRole = createFilterCheck("RoleHealer", "Show HEALER", addon.configPanel,
+			function(self, value)
+				TDTConfig.RoleFilters.HEALER = self:GetChecked()
+			end)
+	chkHealerRole:SetPoint("TOPLEFT", chkTankRole, "BOTTOMLEFT", 0, -6)
+
+	local chkDamageRole = createFilterCheck("RoleDamage", "Show DAMAGE", addon.configPanel,
+			function(self, value)
+				TDTConfig.RoleFilters.DAMAGE = self:GetChecked()
+			end)
+	chkDamageRole:SetPoint("TOPLEFT", chkHealerRole, "BOTTOMLEFT", 0, -6)
 	
 	-- Class Selector --
 	local classFS = createString(addon.configPanel, "Class Specific Tips", headerFont, headerSize)
 	classFS:SetPoint("TOPLEFT", roleFS, "TOPRIGHT", 70, 0)
-	
-	--classDD = createDropdown(addon.configPanel, "ClassSelector", "Show my class only", "Show all classes", "ClassChoice")
-	--classDD:SetPoint("TOPLEFT", classFS, "BOTTOMLEFT", 0, -8)
-	local chkClass = createCheck("Class", "Show all classes", addon.configPanel, 
+
+	local chkMyClassOnly = createFilterCheck("MyClassOnly", "Show MYCLASSONLY", addon.configPanel,
 			function(self, value)
-				if self:GetChecked() then
-					TDTConfig.ClassChoice = "Show all classes"
-				else
-					TDTConfig.ClassChoice = "Show my class only"
-				end
-			end)	
-	chkClass:SetPoint("TOPLEFT", classFS, "BOTTOMLEFT", 0, -8)
+				TDTConfig.ClassFilters.MYCLASSONLY = self:GetChecked()
+			end)
+	chkMyClassOnly:SetPoint("TOPLEFT", classFS, "BOTTOMLEFT", 0, -8)
+
+	local classCheckRows = {
+		{"ClassDruid", "Show DRUID", "DRUID"},
+		{"ClassHunter", "Show HUNTER", "HUNTER"},
+		{"ClassMage", "Show MAGE", "MAGE"},
+		{"ClassPaladin", "Show PALADIN", "PALADIN"},
+		{"ClassPriest", "Show PRIEST", "PRIEST"},
+		{"ClassRogue", "Show ROGUE", "ROGUE"},
+		{"ClassShaman", "Show SHAMAN", "SHAMAN"},
+		{"ClassWarrior", "Show WARRIOR", "WARRIOR"},
+		{"ClassWarlock", "Show WARLOCK", "WARLOCK"},
+	}
+
+	local classFilterChecks = {}
+	local previousClassCheck = chkMyClassOnly
+	for _, classCheck in ipairs(classCheckRows) do
+		local checkboxName = classCheck[1]
+		local checkboxLabel = classCheck[2]
+		local classKey = classCheck[3]
+		local chk = createFilterCheck(checkboxName, checkboxLabel, addon.configPanel,
+				function(self, value)
+					TDTConfig.ClassFilters[classKey] = self:GetChecked()
+				end)
+		chk:SetPoint("TOPLEFT", previousClassCheck, "BOTTOMLEFT", 0, -6)
+		classFilterChecks[classKey] = chk
+		previousClassCheck = chk
+	end
 	
 	local localeFS = createString(addon.configPanel, "Language", headerFont, headerSize)
-	localeFS:SetPoint("TOPLEFT", chkRole, "BOTTOMLEFT", 0, -24)
+	localeFS:SetPoint("TOPLEFT", chkDamageRole, "BOTTOMLEFT", 0, -24)
 
 	local localeHelp = createString(addon.configPanel, "Auto uses the client locale. English is the fallback if no translation exists.", "Fonts\\FRIZQT__.TTF", 11)
 	localeHelp:SetPoint("TOPLEFT", localeFS, "BOTTOMLEFT", 0, -4)
@@ -916,8 +1098,14 @@ local function createConfigMenu()
 			-- "Drop downs"
 			locCB:SetChecked(TDTConfig.ShowFrame == "Show in separate frame")
 			addon.chkTarget:SetChecked(TDTConfig.TargetTrigger == "Show targeted mob")
-			chkRole:SetChecked(TDTConfig.RoleChoice == "Show all roles")
-			chkClass:SetChecked(TDTConfig.ClassChoice == "Show all classes")
+			chkMyRoleOnly:SetChecked(TDTConfig.RoleFilters.MYROLEONLY)
+			chkTankRole:SetChecked(TDTConfig.RoleFilters.TANK)
+			chkHealerRole:SetChecked(TDTConfig.RoleFilters.HEALER)
+			chkDamageRole:SetChecked(TDTConfig.RoleFilters.DAMAGE)
+			chkMyClassOnly:SetChecked(TDTConfig.ClassFilters.MYCLASSONLY)
+			for classKey, checkbox in pairs(classFilterChecks) do
+				checkbox:SetChecked(TDTConfig.ClassFilters[classKey])
+			end
 			localeButton:SetCurrentValue(TDTConfig.LocaleChoice)
 			
 			updateTextSize()
