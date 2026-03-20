@@ -19,8 +19,57 @@ addon.contentCatalog = addon.contentCatalog or {
 			deDE = "The Burning Crusade",
 		},
 		instances = {
-			auchenai_crypts = {
+			hellfire_ramparts = {
 				order = 1,
+				type = "Dungeon",
+				name = {
+					enUS = "Hellfire Ramparts",
+					deDE = "Hellfire Ramparts",
+				},
+				npcNames = {
+					[17259] = { enUS = "Bonechewer Hungerer" },
+					[17264] = { enUS = "Bonechewer Ravener" },
+					[17269] = { enUS = "Bleeding Hollow Darkcaster" },
+					[17270] = { enUS = "Bleeding Hollow Archer" },
+					[17271] = { enUS = "Bonechewer Destroyer" },
+					[17280] = { enUS = "Shattered Hand Warhound" },
+					[17281] = { enUS = "Bonechewer Ripper" },
+					[17306] = { enUS = "Watchkeeper Gargolmar" },
+					[17308] = { enUS = "Omor the Unscarred" },
+					[17309] = { enUS = "Hellfire Watcher" },
+					[17455] = { enUS = "Bonechewer Beastmaster" },
+					[17478] = { enUS = "Bleeding Hollow Scryer" },
+					[17517] = { enUS = "Hellfire Sentry" },
+					[17536] = { enUS = "Nazan" },
+					[17537] = { enUS = "Vazruden" },
+					[17540] = { enUS = "Fiendish Hound" },
+				},
+				npcIDs = {
+					17259, 17264, 17269, 17270, 17271, 17280, 17281,
+					17306, 17308, 17309, 17455, 17478, 17517, 17536, 17537, 17540,
+				},
+			},
+			blood_furnace = {
+				order = 2,
+				type = "Dungeon",
+				name = {
+					enUS = "The Blood Furnace",
+					deDE = "The Blood Furnace",
+				},
+				npcNames = {
+					[17377] = { enUS = "Keli'dan the Breaker" },
+					[17380] = { enUS = "Broggok" },
+					[17381] = { enUS = "The Maker" },
+					[17429] = { enUS = "Fel Orc Neophyte" },
+					[17477] = { enUS = "Hellfire Imp" },
+					[19016] = { enUS = "Hellfire Familiar" },
+				},
+				npcIDs = {
+					17377, 17380, 17381, 17429, 17477, 19016,
+				},
+			},
+			auchenai_crypts = {
+				order = 3,
 				type = "Dungeon",
 				mapIDs = {256, 257},
 				name = {
@@ -74,6 +123,166 @@ addon.contentCatalog = addon.contentCatalog or {
 					18702, -- Auchenai Necromancer
 				},
 			},
+			sethekk_halls = {
+				order = 4,
+				type = "Dungeon",
+				name = {
+					enUS = "Sethekk Halls",
+					deDE = "Sethekk Halls",
+				},
+				npcNames = {
+					[18318] = { enUS = "Sethekk Initiate" },
+					[18319] = { enUS = "Time-Lost Scryer" },
+					[18320] = { enUS = "Time-Lost Shadowmage" },
+					[18321] = { enUS = "Sethekk Talon Lord" },
+					[18322] = { enUS = "Sethekk Ravenguard" },
+					[18323] = { enUS = "Sethekk Guard" },
+					[18325] = { enUS = "Sethekk Prophet" },
+					[18326] = { enUS = "Sethekk Shaman" },
+					[18327] = { enUS = "Time-Lost Controller" },
+					[18328] = { enUS = "Sethekk Oracle" },
+					[18472] = { enUS = "Darkweaver Syth" },
+					[18473] = { enUS = "Talon King Ikiss" },
+					[18701] = { enUS = "Dark Vortex" },
+					[19203] = { enUS = "Syth Fire Elemental" },
+					[19204] = { enUS = "Syth Frost Elemental" },
+					[19205] = { enUS = "Syth Arcane Elemental" },
+					[19206] = { enUS = "Syth Shadow Elemental" },
+					[19428] = { enUS = "Cobalt Serpent" },
+					[19429] = { enUS = "Avian Darkhawk" },
+					[20343] = { enUS = "Charming Totem" },
+					[21891] = { enUS = "Avian Ripper" },
+					[21904] = { enUS = "Avian Warhawk" },
+					[23035] = { enUS = "Anzu" },
+					[23132] = { enUS = "Brood of Anzu" },
+				},
+				npcIDs = {
+					18318, 18319, 18320, 18321, 18322, 18323, 18325, 18326, 18327, 18328,
+					18472, 18473, 18701, 19203, 19204, 19205, 19206, 19428, 19429, 20343,
+					21891, 21904, 23035, 23132,
+				},
+			},
+			shadow_labyrinth = {
+				order = 5,
+				type = "Dungeon",
+				name = {
+					enUS = "Shadow Labyrinth",
+					deDE = "Shadow Labyrinth",
+				},
+				npcNames = {
+					[18667] = { enUS = "Blackheart the Inciter" },
+					[18708] = { enUS = "Murmur" },
+					[18731] = { enUS = "Ambassador Hellmaw" },
+					[18732] = { enUS = "Grandmaster Vorpil" },
+				},
+				npcIDs = {
+					18667, 18708, 18731, 18732,
+				},
+			},
+			karazhan = {
+				order = 6,
+				type = "Raid",
+				name = {
+					enUS = "Karazhan",
+					deDE = "Karazhan",
+				},
+				npcNames = {
+					[15687] = { enUS = "Moroes" },
+					[15688] = { enUS = "Terestian Illhoof" },
+					[15691] = { enUS = "The Curator" },
+					[16151] = { enUS = "Midnight" },
+					[16152] = { enUS = "Attumen the Huntsman" },
+					[16457] = { enUS = "Maiden of Virtue" },
+					[16812] = { enUS = "Barnes" },
+				},
+				npcIDs = {
+					15687, 15688, 15691, 16151, 16152, 16457, 16812,
+				},
+			},
+			gruuls_lair = {
+				order = 7,
+				type = "Raid",
+				name = {
+					enUS = "Gruul's Lair",
+					deDE = "Gruul's Lair",
+				},
+				npcNames = {
+					[18831] = { enUS = "High King Maulgar" },
+					[18832] = { enUS = "Krosh Firehand" },
+					[18834] = { enUS = "Olm the Summoner" },
+					[18835] = { enUS = "Kiggler the Crazed" },
+					[18836] = { enUS = "Blindeye the Seer" },
+					[18847] = { enUS = "Wild Fel Stalker" },
+					[19044] = { enUS = "Gruul the Dragonkiller" },
+					[19389] = { enUS = "Lair Brute" },
+					[21350] = { enUS = "Gronn-Priest" },
+				},
+				npcIDs = {
+					18831, 18832, 18834, 18835, 18836, 18847, 19044, 19389, 21350,
+				},
+			},
+			magtheridons_lair = {
+				order = 8,
+				type = "Raid",
+				name = {
+					enUS = "Magtheridon's Lair",
+					deDE = "Magtheridon's Lair",
+				},
+				npcNames = {
+					[17256] = { enUS = "Hellfire Channeler" },
+					[17257] = { enUS = "Magtheridon" },
+					[17454] = { enUS = "Burning Abyssal" },
+					[18829] = { enUS = "Hellfire Warder" },
+				},
+				npcIDs = {
+					17256, 17257, 17454, 18829,
+				},
+			},
+			zulaman = {
+				order = 9,
+				type = "Raid",
+				name = {
+					enUS = "Zul'Aman",
+					deDE = "Zul'Aman",
+				},
+				npcNames = {
+					[23542] = { enUS = "Amani'shi Axe Thrower" },
+					[23574] = { enUS = "Akil'zon" },
+					[23576] = { enUS = "Nalorakk" },
+					[23577] = { enUS = "Halazzi" },
+					[23578] = { enUS = "Jan'alai" },
+					[23580] = { enUS = "Amani'shi Warbringer" },
+					[23581] = { enUS = "Amani'shi Medicine Man" },
+					[23582] = { enUS = "Amani'shi Tribesman" },
+					[23584] = { enUS = "Amani Bear" },
+					[23586] = { enUS = "Amani'shi Scout" },
+					[23596] = { enUS = "Amani'shi Flame Caster" },
+					[23597] = { enUS = "Amani'shi Guardian" },
+					[23774] = { enUS = "Amani'shi Trainer" },
+					[23834] = { enUS = "Amani Dragonhawk" },
+					[23863] = { enUS = "Zul'jin" },
+					[23889] = { enUS = "Amani'shi Savage" },
+					[24043] = { enUS = "Amani Lynx" },
+					[24047] = { enUS = "Amani Crocolisk" },
+					[24059] = { enUS = "Amani'shi Beast Tamer" },
+					[24064] = { enUS = "Amani Lynx Cub" },
+					[24065] = { enUS = "Amani'shi Handler" },
+					[24138] = { enUS = "Tamed Amani Crocolisk" },
+					[24175] = { enUS = "Amani'shi Lookout" },
+					[24179] = { enUS = "Amani'shi Wind Walker" },
+					[24180] = { enUS = "Amani'shi Protector" },
+					[24217] = { enUS = "Amani Bear Mount" },
+					[24239] = { enUS = "Hex Lord Malacrass" },
+					[24374] = { enUS = "Amani'shi Berserker" },
+					[24530] = { enUS = "Amani Elder Lynx" },
+					[24549] = { enUS = "Amani'shi Tempest" },
+				},
+				npcIDs = {
+					23542, 23574, 23576, 23577, 23578, 23580, 23581, 23582, 23584, 23586,
+					23596, 23597, 23774, 23834, 23863, 23889, 24043, 24047, 24059, 24064,
+					24065, 24138, 24175, 24179, 24180, 24217, 24239, 24374, 24530, 24549,
+				},
+			},
 		},
 	},
 }
@@ -85,11 +294,124 @@ addon.instanceKeyByMapID = addon.instanceKeyByMapID or {
 
 instanceInfo_enUS = instanceInfo_enUS or {}
 instanceInfo_deDE = instanceInfo_deDE or {}
+instanceDetails_enUS = instanceDetails_enUS or {}
+instanceDetails_deDE = instanceDetails_deDE or {}
+
+instanceDetails_enUS.hellfire_ramparts = instanceDetails_enUS.hellfire_ramparts or {
+	travel = "Hellfire Citadel in Hellfire Peninsula.",
+	attunement = "No attunement required.",
+	notes = "Compact first TBC dungeon with straightforward pacing and some dangerous ranged trash.",
+	lore = "The Alliance and Horde push into Hellfire Citadel by breaching its outer defenses.",
+}
+
+instanceDetails_enUS.blood_furnace = instanceDetails_enUS.blood_furnace or {
+	travel = "Hellfire Citadel in Hellfire Peninsula.",
+	attunement = "No attunement required.",
+	notes = "More chaotic than Ramparts, with heavier caster pressure and volatile pulls.",
+	lore = "Magtheridon's fel orcs are forged here in the industrial heart of the citadel.",
+}
+
+instanceInfo_enUS.hellfire_ramparts = instanceInfo_enUS.hellfire_ramparts or {
+	{"ramparts_instance_001", "Important", "Expect frequent pulls with ranged pressure, knockbacks, and patrol risks in narrow spaces.", 30},
+	{"ramparts_instance_002", "TANK", "Try to keep dangerous trash faced away from the party and be careful near edges and corners.", 20},
+	{"ramparts_instance_003", "Interrupts", "Clean interrupts and controlled pulls are often more valuable here than raw damage.", 10},
+}
+
+instanceInfo_enUS.blood_furnace = instanceInfo_enUS.blood_furnace or {
+	{"bloodfurnace_instance_001", "Important", "Blood Furnace has several pulls where positioning and crowd control smooth out incoming damage a lot.", 30},
+	{"bloodfurnace_instance_002", "HEALER", "Be ready for sudden spikes from explosives, poison, and chaotic multi-target pulls.", 20},
+	{"bloodfurnace_instance_003", "PriorityTargets", "Watch for casters and support mobs that can destabilize the pull if left alone too long.", 10},
+}
 
 instanceInfo_enUS.auchenai_crypts = instanceInfo_enUS.auchenai_crypts or {
 	{"auchenai_instance_001", "Important", "TEST: Auchenai Crypts instance notes are now loaded through instanceKey and mapID lookup.", 30},
 	{"auchenai_instance_002", "Important", "Use this area later for personal dungeon notes and shared baseline instance reminders.", 20},
 	{"auchenai_instance_003", "HEALER", "HEALER TEST: Watch for fear, burst damage, and awkward bridge knockbacks in this dungeon.", 10},
+}
+
+instanceDetails_enUS.auchenai_crypts = instanceDetails_enUS.auchenai_crypts or {
+	travel = "Auchindoun in Terokkar Forest.",
+	attunement = "No attunement required.",
+	notes = "Short but awkward instance with fears, bridges, knockbacks, and punishing caster trash.",
+	lore = "A sacred draenei burial complex later corrupted by dark rituals and restless dead.",
+}
+
+instanceInfo_enUS.sethekk_halls = instanceInfo_enUS.sethekk_halls or {
+	{"sethekk_instance_001", "Important", "Sethekk Halls mixes caster pressure, crowd control, and dangerous add phases across multiple pulls.", 30},
+	{"sethekk_instance_002", "PriorityTargets", "Respect healer and controller mobs so the run does not get derailed by avoidable casts or mind control.", 20},
+	{"sethekk_instance_003", "Dodge", "Line-of-sight and movement matter a lot in boss mechanics and caster-heavy trash packs here.", 10},
+}
+
+instanceDetails_enUS.sethekk_halls = instanceDetails_enUS.sethekk_halls or {
+	travel = "Auchindoun in Terokkar Forest.",
+	attunement = "No attunement required. Heroic access still follows the usual key rules.",
+	notes = "Known for dangerous caster trash, mind control, and boss mechanics that punish slow reactions.",
+	lore = "The arakkoa turned these halls into a haunt of dark magic, summoning and scheming in the shadows.",
+}
+
+instanceInfo_enUS.shadow_labyrinth = instanceInfo_enUS.shadow_labyrinth or {
+	{"slabs_instance_001", "Important", "Shadow Labyrinth rewards controlled positioning and awareness more than rushing pulls.", 30},
+	{"slabs_instance_002", "HEALER", "Expect fear effects, burst windows, and moments where line of sight can make healing awkward.", 20},
+	{"slabs_instance_003", "TANK", "Use corners and tunnel space to keep dangerous mobs stable and facing away from the group.", 10},
+}
+
+instanceDetails_enUS.shadow_labyrinth = instanceDetails_enUS.shadow_labyrinth or {
+	travel = "Auchindoun in Terokkar Forest.",
+	attunement = "No attunement required. Heroic access still follows the usual key rules.",
+	notes = "A slower, more punishing dungeon where positioning, line of sight, and fear management matter a lot.",
+	lore = "These depths hide cabals, demons, and the terrible resonance of Murmur itself.",
+}
+
+instanceInfo_enUS.karazhan = instanceInfo_enUS.karazhan or {
+	{"kara_instance_001", "Important", "Karazhan is a long raid where preparation, assignments, and clean transitions matter as much as raw throughput.", 30},
+	{"kara_instance_002", "Advanced", "Many encounters reward clear phase calls and disciplined threat management during transitions.", 20},
+	{"kara_instance_003", "HEALER", "Plan healer assignments early, especially on fights with split damage patterns or sudden raid-wide pressure.", 10},
+}
+
+instanceDetails_enUS.karazhan = instanceDetails_enUS.karazhan or {
+	travel = "Deadwind Pass.",
+	attunement = "Requires the Karazhan key chain in the original TBC progression model.",
+	notes = "Long introductory raid with strong atmosphere, varied encounters, and many iconic progression lessons.",
+	lore = "Medivh's haunted tower is a nexus of arcane secrets, ghosts, opera, and old disasters waiting upstairs.",
+}
+
+instanceInfo_enUS.gruuls_lair = instanceInfo_enUS.gruuls_lair or {
+	{"gruul_instance_001", "Important", "Gruul's Lair is compact but punishes sloppy positioning and threat mistakes quickly.", 30},
+	{"gruul_instance_002", "TANK", "Threat order and boss facing are central to keeping both encounters under control.", 20},
+	{"gruul_instance_003", "HEALER", "Be ready for heavy tank focus healing and punishing damage spikes during progression pulls.", 10},
+}
+
+instanceDetails_enUS.gruuls_lair = instanceDetails_enUS.gruuls_lair or {
+	travel = "Blade's Edge Mountains.",
+	attunement = "No attunement required.",
+	notes = "Short raid with very direct mechanics where positioning and execution get tested immediately.",
+	lore = "Gruul rules a brutal ogre stronghold carved into the blades of the mountains.",
+}
+
+instanceInfo_enUS.magtheridons_lair = instanceInfo_enUS.magtheridons_lair or {
+	{"mag_instance_001", "Important", "Magtheridon's Lair depends heavily on assignments, coordination, and players knowing their exact jobs.", 30},
+	{"mag_instance_002", "Advanced", "Rotation planning and execution matter as much as damage output on this encounter.", 20},
+	{"mag_instance_003", "HEALER", "Be prepared to support assigned groups and react quickly during high-pressure transition moments.", 10},
+}
+
+instanceDetails_enUS.magtheridons_lair = instanceDetails_enUS.magtheridons_lair or {
+	travel = "Hellfire Citadel in Hellfire Peninsula.",
+	attunement = "No attunement required.",
+	notes = "Assignment-heavy one-boss raid where discipline matters more than improvisation.",
+	lore = "Deep under the citadel, Magtheridon is chained and bled by Illidan's fel industry.",
+}
+
+instanceInfo_enUS.zulaman = instanceInfo_enUS.zulaman or {
+	{"za_instance_001", "Important", "Zul'Aman combines fast trash pacing with boss fights that punish poor awareness and slow reactions.", 30},
+	{"za_instance_002", "PriorityTargets", "Pay close attention to dangerous support and trash mobs so the run stays controlled between bosses.", 20},
+	{"za_instance_003", "DAMAGE", "Good target swaps and mechanics discipline usually save more time than greedy damage tunneling.", 10},
+}
+
+instanceDetails_enUS.zulaman = instanceDetails_enUS.zulaman or {
+	travel = "Ghostlands, eastern Zul'Aman entrance.",
+	attunement = "No attunement required.",
+	notes = "A timed raid with fast movement, compact boss progression, and a strong reward for clean execution.",
+	lore = "The Amani return in force under Zul'jin, turning the old troll city into a brutal warfront.",
 }
 
 

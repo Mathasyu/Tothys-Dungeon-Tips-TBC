@@ -4,6 +4,27 @@ local localeDisplayNames = {
     deDE = "Deutsch",
 }
 
+local browserLocaleStrings = {
+	enUS = {
+		additional_details = "Additional Details",
+		travel = "Travel",
+		attunement = "Attunement",
+		extra_notes = "Extra Notes",
+		lore = "Lore / RP",
+		no_details = "No additional details yet.",
+		info_page = "Info",
+	},
+	deDE = {
+		additional_details = "Zusatzinfos",
+		travel = "Anfahrt",
+		attunement = "Attunement",
+		extra_notes = "Zusatzinfos",
+		lore = "RP/Lore",
+		no_details = "Noch keine Zusatzinfos vorhanden.",
+		info_page = "Info",
+	},
+}
+
 local browserIconList = {
     PriorityTargets = "ability_hunter_snipershot",
     Interrupts = "ability_kick",
@@ -292,6 +313,14 @@ function addon:registerConfigPanel()
 					addon.contentBrowserCategory = subcategory
 				end
 			end
+			if addon.infoPanel and Settings.RegisterCanvasLayoutSubcategory then
+				local subcategory = Settings.RegisterCanvasLayoutSubcategory(category, addon.infoPanel, addon.infoPanel.name, addon.infoPanel.name)
+				if subcategory then
+					subcategory.ID = subcategory.ID or addon.infoPanel.name
+					Settings.RegisterAddOnCategory(subcategory)
+					addon.infoCategory = subcategory
+				end
+			end
 			addon.configPanelRegistered = true
 			return
 		end
@@ -303,6 +332,10 @@ function addon:registerConfigPanel()
 			addon.contentBrowserPanel.parent = addon.configPanel.name
 			InterfaceOptions_AddCategory(addon.contentBrowserPanel)
 		end
+		if addon.infoPanel then
+			addon.infoPanel.parent = addon.configPanel.name
+			InterfaceOptions_AddCategory(addon.infoPanel)
+		end
 		addon.configPanelRegistered = true
 	elseif InterfaceOptionsFrame_AddCategory then
 		InterfaceOptionsFrame_AddCategory(addon.configPanel)
@@ -310,9 +343,25 @@ function addon:registerConfigPanel()
 			addon.contentBrowserPanel.parent = addon.configPanel.name
 			InterfaceOptionsFrame_AddCategory(addon.contentBrowserPanel)
 		end
+		if addon.infoPanel then
+			addon.infoPanel.parent = addon.configPanel.name
+			InterfaceOptionsFrame_AddCategory(addon.infoPanel)
+		end
 		addon.configPanelRegistered = true
 	end
 end
+
+local function getBrowserLocaleString(key)
+	local locale = "enUS"
+	if TDTConfig and TDTConfig.LocaleChoice == "deDE" then
+		locale = "deDE"
+	elseif TDTConfig and TDTConfig.LocaleChoice == "Auto" and GetLocale and GetLocale() == "deDE" then
+		locale = "deDE"
+	end
+	local localeStrings = browserLocaleStrings[locale] or browserLocaleStrings.enUS
+	return localeStrings[key] or browserLocaleStrings.enUS[key] or key
+end
+
 TDTConfig = applyConfigDefaults(TDTConfig or QEConfig or {})
 if type(TDTConfig.FontSize) ~= "number" then
     TDTConfig.FontSize = tonumber(TDTConfig.FontSize) or defaultConfig.FontSize
@@ -422,6 +471,46 @@ local function getRawInstanceTips(instanceKey)
     if instanceInfo_enUS then
         return instanceInfo_enUS[instanceKey]
     end
+end
+
+local function getInstanceDetails(instanceKey)
+    local locale = getConfigLocale()
+    local localizedMap = locale == "deDE" and instanceDetails_deDE or instanceDetails_enUS
+
+    if localizedMap and localizedMap[instanceKey] then
+        return localizedMap[instanceKey]
+    end
+
+    if instanceDetails_enUS then
+        return instanceDetails_enUS[instanceKey]
+    end
+end
+
+local function formatInstanceDetails(details)
+    if not details then
+        return getBrowserLocaleString("no_details")
+    end
+
+    local sections = {}
+
+    if details.travel and details.travel ~= "" then
+        sections[#sections + 1] = string.format("%s: %s", getBrowserLocaleString("travel"), details.travel)
+    end
+    if details.attunement and details.attunement ~= "" then
+        sections[#sections + 1] = string.format("%s: %s", getBrowserLocaleString("attunement"), details.attunement)
+    end
+    if details.notes and details.notes ~= "" then
+        sections[#sections + 1] = string.format("%s: %s", getBrowserLocaleString("extra_notes"), details.notes)
+    end
+    if details.lore and details.lore ~= "" then
+        sections[#sections + 1] = string.format("%s: %s", getBrowserLocaleString("lore"), details.lore)
+    end
+
+    if #sections == 0 then
+        return getBrowserLocaleString("no_details")
+    end
+
+    return table.concat(sections, "\n")
 end
 
 local function normalizeRawTips(rawTips)
@@ -585,6 +674,67 @@ local function createFilterCheck(name, description, frame, onClick)
     return createCheck(name, description, frame, onClick)
 end
 
+local function setupScrollablePanel(panel, prefix, contentHeight)
+    local scrollFrame = CreateFrame("ScrollFrame", prefix .. "ScrollFrame", panel)
+    scrollFrame:SetPoint("TOPLEFT", panel, "TOPLEFT", 0, -8)
+    scrollFrame:SetPoint("TOPRIGHT", panel, "TOPRIGHT", -28, -8)
+    scrollFrame:SetPoint("BOTTOMLEFT", panel, "BOTTOMLEFT", 0, 8)
+    scrollFrame:SetPoint("BOTTOMRIGHT", panel, "BOTTOMRIGHT", -28, 8)
+    scrollFrame:EnableMouseWheel(true)
+
+    local content = CreateFrame("Frame", prefix .. "ScrollChild", scrollFrame)
+    content:SetWidth(700)
+    content:SetHeight(contentHeight or 1200)
+    scrollFrame:SetScrollChild(content)
+
+    local scrollBar = CreateFrame("Slider", prefix .. "ScrollBar", panel, "UIPanelScrollBarTemplate")
+    scrollBar:SetPoint("TOPRIGHT", panel, "TOPRIGHT", -4, -24)
+    scrollBar:SetPoint("BOTTOMRIGHT", panel, "BOTTOMRIGHT", -4, 24)
+    scrollBar:SetMinMaxValues(0, 0)
+    scrollBar:SetValueStep(24)
+    scrollBar:SetValue(0)
+    scrollBar:SetScript("OnValueChanged", function(self, value)
+        scrollFrame:SetVerticalScroll(value)
+    end)
+
+    scrollFrame:SetScript("OnMouseWheel", function(self, delta)
+        local currentValue = scrollBar:GetValue()
+        local minValue, maxValue = scrollBar:GetMinMaxValues()
+        local nextValue = currentValue - (delta * 36)
+        if nextValue < minValue then nextValue = minValue end
+        if nextValue > maxValue then nextValue = maxValue end
+        scrollBar:SetValue(nextValue)
+    end)
+
+    panel.refreshScroll = function()
+        local maxScroll = math.max((contentHeight or 1200) - scrollFrame:GetHeight(), 0)
+        scrollBar:SetMinMaxValues(0, maxScroll)
+        if maxScroll == 0 then
+            scrollBar:SetValue(0)
+            scrollBar:Hide()
+        else
+            if scrollBar:GetValue() > maxScroll then
+                scrollBar:SetValue(maxScroll)
+            end
+            scrollBar:Show()
+        end
+    end
+
+    panel:SetScript("OnShow", function(self)
+        if self.refreshScroll then
+            self:refreshScroll()
+        end
+    end)
+
+    panel:HookScript("OnSizeChanged", function(self)
+        if self.refreshScroll then
+            self:refreshScroll()
+        end
+    end)
+
+    return content
+end
+
 
 --[[
 function createDropdown(frame, label, option1, option2, changingVar)
@@ -621,27 +771,28 @@ local function createContentBrowserMenu()
     addon.contentBrowserPanel.name = "Content Browser"
     addon.contentBrowserPanel.okay = function(self) return end
     addon.contentBrowserPanel.cancel = function(self) return end
+    local browserContent = setupScrollablePanel(addon.contentBrowserPanel, "TDTContentBrowser", 1400)
 
     local headerFont = "Fonts\\MORPHEUS.ttf"
     local headerSize = 16
 
-    local title = addon.contentBrowserPanel:CreateFontString()
+    local title = browserContent:CreateFontString()
     title:SetPoint("TOPLEFT", 10, -10)
     title:SetFont("Fonts\\MORPHEUS.ttf", 22, "OUTLINE")
     title:SetTextColor(0.9, 0.68, 0.22, 1)
     title:SetText("Kiesel Dungeon Tool - Content Browser")
 
-    local subtitle = createString(addon.contentBrowserPanel, "Browse the hardcoded expansion, instance and NPC structure before we add editing.", "Fonts\\FRIZQT__.TTF", 11)
+    local subtitle = createString(browserContent, "Browse the hardcoded expansion, instance and NPC structure before we add editing.", "Fonts\\FRIZQT__.TTF", 11)
     subtitle:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -8)
     subtitle:SetWidth(540)
 
-    local expansionFS = createString(addon.contentBrowserPanel, "Expansion", headerFont, headerSize)
+    local expansionFS = createString(browserContent, "Expansion", headerFont, headerSize)
     expansionFS:SetPoint("TOPLEFT", subtitle, "BOTTOMLEFT", 0, -20)
 
-    local instanceFS = createString(addon.contentBrowserPanel, "Dungeon / Raid", headerFont, headerSize)
+    local instanceFS = createString(browserContent, "Dungeon / Raid", headerFont, headerSize)
     instanceFS:SetPoint("TOPLEFT", expansionButton or subtitle, "BOTTOMLEFT", 0, -24)
 
-    local npcFS = createString(addon.contentBrowserPanel, "NPC", headerFont, headerSize)
+    local npcFS = createString(browserContent, "NPC", headerFont, headerSize)
     npcFS:SetPoint("TOPLEFT", instanceFS, "BOTTOMLEFT", 0, -26)
 
     local browserState = {
@@ -656,6 +807,7 @@ local function createContentBrowserMenu()
     local selectionSummary
     local npcSelectionLabel
     local instancePreview
+    local instanceDetailsPreview
     local npcPreview
 
     local function ensureBrowserSelection()
@@ -733,6 +885,7 @@ local function createContentBrowserMenu()
         selectionSummary:SetText(string.format("Selected: %s -> %s (%s) -> %s", expansionLabel, instanceLabel, instanceType, npcLabel))
         npcSelectionLabel:SetText(string.format("NPC: %s", npcLabel))
         instancePreview:SetText(formatTipsPreview(getRawInstanceTips(browserState.instanceKey), 5))
+        instanceDetailsPreview:SetText(formatInstanceDetails(getInstanceDetails(browserState.instanceKey)))
         npcPreview:SetText(formatTipsPreview(getRawNpcTips(browserState.npcID), 6))
 
         if addon.showBrowserSelectionInFrame then
@@ -746,7 +899,7 @@ local function createContentBrowserMenu()
         end
     end
 
-    expansionButton = createCycleButton(addon.contentBrowserPanel, "BrowserExpansion", getExpansionKeys(), function(value)
+    expansionButton = createCycleButton(browserContent, "BrowserExpansion", getExpansionKeys(), function(value)
         browserState.expansionKey = value
         browserState.instanceKey = nil
         browserState.npcID = nil
@@ -761,7 +914,7 @@ local function createContentBrowserMenu()
     instanceFS:ClearAllPoints()
     instanceFS:SetPoint("TOPLEFT", expansionButton, "BOTTOMLEFT", 0, -24)
 
-    instanceDropdown = createValueDropdown(addon.contentBrowserPanel, "BrowserInstance", 220, function(value)
+    instanceDropdown = createValueDropdown(browserContent, "BrowserInstance", 220, function(value)
         browserState.instanceKey = value
         browserState.npcID = nil
         updateBrowserUI()
@@ -779,7 +932,7 @@ local function createContentBrowserMenu()
     npcFS:ClearAllPoints()
     npcFS:SetPoint("TOPLEFT", instanceDropdown, "BOTTOMLEFT", 16, -18)
 
-    npcDropdown = createValueDropdown(addon.contentBrowserPanel, "BrowserNpc", 240, function(value)
+    npcDropdown = createValueDropdown(browserContent, "BrowserNpc", 240, function(value)
         browserState.npcID = value
         updateBrowserUI()
     end)
@@ -788,25 +941,32 @@ local function createContentBrowserMenu()
         return getNpcBrowserLabel(browserState.expansionKey, browserState.instanceKey, value)
     end
 
-    selectionSummary = createString(addon.contentBrowserPanel, "", "Fonts\\FRIZQT__.TTF", 11)
+    selectionSummary = createString(browserContent, "", "Fonts\\FRIZQT__.TTF", 11)
     selectionSummary:SetPoint("TOPLEFT", npcDropdown, "BOTTOMLEFT", 16, -18)
     selectionSummary:SetWidth(620)
 
-    npcSelectionLabel = createString(addon.contentBrowserPanel, "", "Fonts\\FRIZQT__.TTF", 11)
+    npcSelectionLabel = createString(browserContent, "", "Fonts\\FRIZQT__.TTF", 11)
     npcSelectionLabel:SetPoint("TOPLEFT", selectionSummary, "BOTTOMLEFT", 0, -8)
     npcSelectionLabel:SetWidth(620)
 
-    local instancePreviewFS = createString(addon.contentBrowserPanel, "Instance Info Preview", headerFont, headerSize)
+    local instancePreviewFS = createString(browserContent, "Instance Info Preview", headerFont, headerSize)
     instancePreviewFS:SetPoint("TOPLEFT", npcSelectionLabel, "BOTTOMLEFT", 0, -18)
 
-    instancePreview = createString(addon.contentBrowserPanel, "", "Fonts\\FRIZQT__.TTF", 11)
+    instancePreview = createString(browserContent, "", "Fonts\\FRIZQT__.TTF", 11)
     instancePreview:SetPoint("TOPLEFT", instancePreviewFS, "BOTTOMLEFT", 0, -6)
     instancePreview:SetWidth(620)
 
-    local npcPreviewFS = createString(addon.contentBrowserPanel, "NPC Tips Preview", headerFont, headerSize)
-    npcPreviewFS:SetPoint("TOPLEFT", instancePreview, "BOTTOMLEFT", 0, -18)
+    local instanceDetailsFS = createString(browserContent, getBrowserLocaleString("additional_details"), headerFont, headerSize)
+    instanceDetailsFS:SetPoint("TOPLEFT", instancePreview, "BOTTOMLEFT", 0, -18)
 
-    npcPreview = createString(addon.contentBrowserPanel, "", "Fonts\\FRIZQT__.TTF", 11)
+    instanceDetailsPreview = createString(browserContent, "", "Fonts\\FRIZQT__.TTF", 11)
+    instanceDetailsPreview:SetPoint("TOPLEFT", instanceDetailsFS, "BOTTOMLEFT", 0, -6)
+    instanceDetailsPreview:SetWidth(620)
+
+    local npcPreviewFS = createString(browserContent, "NPC Tips Preview", headerFont, headerSize)
+    npcPreviewFS:SetPoint("TOPLEFT", instanceDetailsPreview, "BOTTOMLEFT", 0, -18)
+
+    npcPreview = createString(browserContent, "", "Fonts\\FRIZQT__.TTF", 11)
     npcPreview:SetPoint("TOPLEFT", npcPreviewFS, "BOTTOMLEFT", 0, -6)
     npcPreview:SetWidth(620)
 
@@ -818,10 +978,65 @@ local function createContentBrowserMenu()
             browserState.instanceKey = TDTConfig.BrowserInstanceKey
             browserState.npcID = TDTConfig.BrowserNpcID
             updateBrowserUI()
+            if self.refreshScroll then self:refreshScroll() end
         end
     end)
 
     updateBrowserUI()
+end
+
+local function createInfoMenu()
+    addon.infoPanel = CreateFrame("Frame", "TothysDungeonTipsInfo", UIParent)
+    addon.infoPanel.name = getBrowserLocaleString("info_page")
+    addon.infoPanel.okay = function(self) return end
+    addon.infoPanel.cancel = function(self) return end
+    local infoContent = setupScrollablePanel(addon.infoPanel, "TDTInfo", 900)
+
+    local title = infoContent:CreateFontString()
+    title:SetPoint("TOPLEFT", 10, -10)
+    title:SetFont("Fonts\\MORPHEUS.ttf", 22, "OUTLINE")
+    title:SetTextColor(0.9, 0.68, 0.22, 1)
+    title:SetText("Kiesel Dungeon Tool - Info")
+
+    local intro = createString(infoContent, "Kiesel Dungeon Tool is a successor to QE Dungeon Tips.", "Fonts\\FRIZQT__.TTF", 12)
+    intro:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -10)
+    intro:SetWidth(620)
+
+    local originHeader = createString(infoContent, "Background", "Fonts\\MORPHEUS.ttf", 16)
+    originHeader:SetPoint("TOPLEFT", intro, "BOTTOMLEFT", 0, -18)
+
+    local originText = createString(infoContent,
+        "QE Dungeon Tips did great groundwork and provided the base inspiration for this addon. The original project helped establish the structure and the idea of contextual dungeon and NPC guidance.\n\nThis addon exists because QE Dungeon Tips no longer worked reliably for TBC Anniversary, so we are rebuilding and extending the concept in a form that fits the current project goals.",
+        "Fonts\\FRIZQT__.TTF",
+        11)
+    originText:SetPoint("TOPLEFT", originHeader, "BOTTOMLEFT", 0, -8)
+    originText:SetWidth(620)
+
+    local statusHeader = createString(infoContent, "Project Status", "Fonts\\MORPHEUS.ttf", 16)
+    statusHeader:SetPoint("TOPLEFT", originText, "BOTTOMLEFT", 0, -18)
+
+    local statusText = createString(infoContent,
+        "Kiesel Dungeon Tool is still actively in development and is not complete yet.\n\nSome instances and NPCs are already structured in the new browser and data model, but the addon is still being expanded, cleaned up, and documented. Expect missing content, placeholder areas, and ongoing iteration while the new system is built out.",
+        "Fonts\\FRIZQT__.TTF",
+        11)
+    statusText:SetPoint("TOPLEFT", statusHeader, "BOTTOMLEFT", 0, -8)
+    statusText:SetWidth(620)
+
+    local roadmapHeader = createString(infoContent, "Current Focus", "Fonts\\MORPHEUS.ttf", 16)
+    roadmapHeader:SetPoint("TOPLEFT", statusText, "BOTTOMLEFT", 0, -18)
+
+    local roadmapText = createString(infoContent,
+        "Current work focuses on:\n- structured expansion, instance, and NPC browsing\n- tactical instance info and browser-only Zusatzinfos\n- locale-aware data handling\n- a future user override layer that stays update-safe",
+        "Fonts\\FRIZQT__.TTF",
+        11)
+    roadmapText:SetPoint("TOPLEFT", roadmapHeader, "BOTTOMLEFT", 0, -8)
+    roadmapText:SetWidth(620)
+
+    addon.infoPanel:SetScript("OnShow", function(self)
+        if self.refreshScroll then
+            self:refreshScroll()
+        end
+    end)
 end
 
 local function createConfigMenu()
@@ -831,9 +1046,10 @@ local function createConfigMenu()
 	addon.configPanel.name = "Kiesel Dungeon Tool";
 	addon.configPanel.okay = function (self) return end
 	addon.configPanel.cancel = function (self) return end
+	local configContent = setupScrollablePanel(addon.configPanel, "TDTMainConfig", 1500)
 	
 	-- Set up Title --
-	local ddTitleString = addon.configPanel:CreateFontString()
+	local ddTitleString = configContent:CreateFontString()
 	ddTitleString:SetPoint("TOPLEFT", 10, -10)
 	ddTitleString:SetFont("Fonts\\MORPHEUS.ttf", 22, "OUTLINE")
 	ddTitleString:SetTextColor(0.9, 0.68, 0.22, 1)
@@ -843,24 +1059,24 @@ local function createConfigMenu()
 	-----------------------
 	-- Set up Checkboxes --
 	-----------------------
-	local chkGeneral = createCheck("General", "Show Important General Information", addon.configPanel, function(self, value) end)
+	local chkGeneral = createCheck("General", "Show Important General Information", configContent, function(self, value) end)
 	chkGeneral:SetPoint("TOPLEFT", ddTitleString, "BOTTOMLEFT", 0, -10)
 	chkGeneral:SetEnabled(false)
 	chkGeneral:SetChecked(true)
 	
-	local chkPriority = createCheck("PriorityTargets", "Show Priority Targets", addon.configPanel, function(self, value) TDTConfig.PriorityTargets = self:GetChecked() end)
+	local chkPriority = createCheck("PriorityTargets", "Show Priority Targets", configContent, function(self, value) TDTConfig.PriorityTargets = self:GetChecked() end)
 	chkPriority:SetPoint("TOPLEFT", chkGeneral, "BOTTOMLEFT", 0, -8)
 	
-	local chkInterrupts = createCheck("Interrupts", "Show Priority Interrupts", addon.configPanel, function(self, value) TDTConfig.Interrupts = self:GetChecked() end)
+	local chkInterrupts = createCheck("Interrupts", "Show Priority Interrupts", configContent, function(self, value) TDTConfig.Interrupts = self:GetChecked() end)
 	chkInterrupts:SetPoint("TOPLEFT", chkPriority, "BOTTOMLEFT", 0, -8)
 	
-	local chkDefensives = createCheck("Defensives", "Show Defensive Recommendations", addon.configPanel, function(self, value) TDTConfig.Defensives = self:GetChecked() end)
+	local chkDefensives = createCheck("Defensives", "Show Defensive Recommendations", configContent, function(self, value) TDTConfig.Defensives = self:GetChecked() end)
 	chkDefensives:SetPoint("TOPLEFT", chkInterrupts, "BOTTOMLEFT", 0, -8)
 	
-	local chkFluff = createCheck("Fluff", "Show Fluff", addon.configPanel, function(self, value) TDTConfig.Fluff = self:GetChecked() end)
+	local chkFluff = createCheck("Fluff", "Show Fluff", configContent, function(self, value) TDTConfig.Fluff = self:GetChecked() end)
 	chkFluff:SetPoint("TOPLEFT", chkDefensives, "BOTTOMLEFT", 0, -8)
 	
-	local chkAdvanced = createCheck("Advanced", "Show advanced tips for high level keys", addon.configPanel, function(self, value) TDTConfig.Advanced = self:GetChecked() end)
+	local chkAdvanced = createCheck("Advanced", "Show advanced tips for high level keys", configContent, function(self, value) TDTConfig.Advanced = self:GetChecked() end)
 	chkAdvanced:SetPoint("TOPLEFT", chkFluff, "BOTTOMLEFT", 0, -8)
 	
 	
@@ -872,12 +1088,12 @@ local function createConfigMenu()
 	local headerSize = 16
 	
 	-- Tip Location Selector --
-	local locFS = createString(addon.configPanel, "Tip Location", headerFont, headerSize)
+	local locFS = createString(configContent, "Tip Location", headerFont, headerSize)
 	locFS:SetPoint("TOPLEFT", chkAdvanced, "BOTTOMLEFT", 0, -30)
 	
 	--locDD = createDropdown(addon.configPanel, "TipLocation", "Show in separate frame", "Show in mob tooltips", "ShowFrame")
 	--locDD:SetPoint("TOPLEFT", locFS, "BOTTOMLEFT", 0, -8)
-	local locCB = createCheck("Location", "Show tips in separate frame", addon.configPanel, 
+	local locCB = createCheck("Location", "Show tips in separate frame", configContent, 
 			function(self, value)
 				if self:GetChecked() then
 					TDTConfig.ShowFrame = "Show in separate frame"
@@ -893,12 +1109,12 @@ local function createConfigMenu()
 	
 	
 	-- Target / Mouseover Selector --
-	addon.targetFS = createString(addon.configPanel, "Show Target or Mouseover", headerFont, headerSize)
+	addon.targetFS = createString(configContent, "Show Target or Mouseover", headerFont, headerSize)
 	addon.targetFS:SetPoint("TOPLEFT", locFS, "TOPRIGHT", 70, 0)
 	
 	--targetDD = createDropdown(addon.configPanel, "TargetMouseover", "Show targeted mob", "Show mouseover", "TargetTrigger")
 	--targetDD:SetPoint("TOPLEFT", targetFS, "BOTTOMLEFT", 0, -8)
-	addon.chkTarget = createCheck("Target", "Show Targeted Mob", addon.configPanel, 
+	addon.chkTarget = createCheck("Target", "Show Targeted Mob", configContent, 
 			function(self, value)
 				if self:GetChecked() then
 					TDTConfig.TargetTrigger = "Show targeted mob"
@@ -910,38 +1126,38 @@ local function createConfigMenu()
 	
 	
 	-- Role Selector --
-	local roleFS = createString(addon.configPanel, "Role Specific Tips", headerFont, headerSize)
+	local roleFS = createString(configContent, "Role Specific Tips", headerFont, headerSize)
 	roleFS:SetPoint("TOPLEFT", locCB, "BOTTOMLEFT", 0, -14)
 
-	local chkMyRoleOnly = createFilterCheck("MyRoleOnly", "Show MYROLEONLY", addon.configPanel,
+	local chkMyRoleOnly = createFilterCheck("MyRoleOnly", "Show MYROLEONLY", configContent,
 			function(self, value)
 				TDTConfig.RoleFilters.MYROLEONLY = self:GetChecked()
 			end)
 	chkMyRoleOnly:SetPoint("TOPLEFT", roleFS, "BOTTOMLEFT", 0, -8)
 
-	local chkTankRole = createFilterCheck("RoleTank", "Show TANK", addon.configPanel,
+	local chkTankRole = createFilterCheck("RoleTank", "Show TANK", configContent,
 			function(self, value)
 				TDTConfig.RoleFilters.TANK = self:GetChecked()
 			end)
 	chkTankRole:SetPoint("TOPLEFT", chkMyRoleOnly, "BOTTOMLEFT", 0, -6)
 
-	local chkHealerRole = createFilterCheck("RoleHealer", "Show HEALER", addon.configPanel,
+	local chkHealerRole = createFilterCheck("RoleHealer", "Show HEALER", configContent,
 			function(self, value)
 				TDTConfig.RoleFilters.HEALER = self:GetChecked()
 			end)
 	chkHealerRole:SetPoint("TOPLEFT", chkTankRole, "BOTTOMLEFT", 0, -6)
 
-	local chkDamageRole = createFilterCheck("RoleDamage", "Show DAMAGE", addon.configPanel,
+	local chkDamageRole = createFilterCheck("RoleDamage", "Show DAMAGE", configContent,
 			function(self, value)
 				TDTConfig.RoleFilters.DAMAGE = self:GetChecked()
 			end)
 	chkDamageRole:SetPoint("TOPLEFT", chkHealerRole, "BOTTOMLEFT", 0, -6)
 	
 	-- Class Selector --
-	local classFS = createString(addon.configPanel, "Class Specific Tips", headerFont, headerSize)
+	local classFS = createString(configContent, "Class Specific Tips", headerFont, headerSize)
 	classFS:SetPoint("TOPLEFT", roleFS, "TOPRIGHT", 70, 0)
 
-	local chkMyClassOnly = createFilterCheck("MyClassOnly", "Show MYCLASSONLY", addon.configPanel,
+	local chkMyClassOnly = createFilterCheck("MyClassOnly", "Show MYCLASSONLY", configContent,
 			function(self, value)
 				TDTConfig.ClassFilters.MYCLASSONLY = self:GetChecked()
 			end)
@@ -965,7 +1181,7 @@ local function createConfigMenu()
 		local checkboxName = classCheck[1]
 		local checkboxLabel = classCheck[2]
 		local classKey = classCheck[3]
-		local chk = createFilterCheck(checkboxName, checkboxLabel, addon.configPanel,
+		local chk = createFilterCheck(checkboxName, checkboxLabel, configContent,
 				function(self, value)
 					TDTConfig.ClassFilters[classKey] = self:GetChecked()
 				end)
@@ -974,24 +1190,24 @@ local function createConfigMenu()
 		previousClassCheck = chk
 	end
 	
-	local localeFS = createString(addon.configPanel, "Language", headerFont, headerSize)
+	local localeFS = createString(configContent, "Language", headerFont, headerSize)
 	localeFS:SetPoint("TOPLEFT", chkDamageRole, "BOTTOMLEFT", 0, -24)
 
-	local localeHelp = createString(addon.configPanel, "Auto uses the client locale. English is the fallback if no translation exists.", "Fonts\\FRIZQT__.TTF", 11)
+	local localeHelp = createString(configContent, "Auto uses the client locale. English is the fallback if no translation exists.", "Fonts\\FRIZQT__.TTF", 11)
 	localeHelp:SetPoint("TOPLEFT", localeFS, "BOTTOMLEFT", 0, -4)
 	localeHelp:SetWidth(250)
 
-	local localeButton = createCycleButton(addon.configPanel, "Locale", {"Auto", "enUS", "deDE"}, function(value)
+	local localeButton = createCycleButton(configContent, "Locale", {"Auto", "enUS", "deDE"}, function(value)
 		TDTConfig.LocaleChoice = value
 	end)
 	localeButton:SetPoint("TOPLEFT", localeHelp, "BOTTOMLEFT", 0, -8)
 
 	-- Activate in
 	-- Tip Location Selector --
-	local showinFS = createString(addon.configPanel, "Content", headerFont, headerSize)
+	local showinFS = createString(configContent, "Content", headerFont, headerSize)
 	showinFS:SetPoint("TOPLEFT", localeButton, "BOTTOMLEFT", 0, -24)
 	
-	local chkRegDungeons = createCheck("RegDungeons", "Show Tips in Dungeons", addon.configPanel, function(self, value) end)
+	local chkRegDungeons = createCheck("RegDungeons", "Show Tips in Dungeons", configContent, function(self, value) end)
 	chkRegDungeons:SetPoint("TOPLEFT", showinFS, "BOTTOMLEFT", 0, -8)
 	chkRegDungeons:SetEnabled(false)
 	chkRegDungeons:SetChecked(true)
@@ -1002,7 +1218,7 @@ local function createConfigMenu()
 		end)
 	chkMythicPlus:SetPoint("TOPLEFT", chkRegDungeons, "BOTTOMLEFT", 0, -8)]]--
 	
-	local chkRaid = createCheck("Raid", "Show Tips in Raid", addon.configPanel, function(self, value) 
+	local chkRaid = createCheck("Raid", "Show Tips in Raid", configContent, function(self, value) 
 		TDTConfig.RaidToggle = self:GetChecked()
 		addon:setEnabled()
 	end)
@@ -1010,14 +1226,14 @@ local function createConfigMenu()
 	
 
 	-- Other Stuff
-	local OtherFS = createString(addon.configPanel, "Font Size", headerFont, headerSize)
-	OtherFS:SetPoint("TOPLEFT", classFS, "BOTTOMLEFT", 0, -54)
+	local OtherFS = createString(configContent, "Font Size", headerFont, headerSize)
+	OtherFS:SetPoint("TOPLEFT", previousClassCheck, "BOTTOMLEFT", 0, -24)
 	
 	--local deleteme = createString(addon.configPanel, "Delete me after", headerFont, headerSize)
 	--deleteme:SetPoint("TOPLEFT", OtherFS, "BOTTOMLEFT", 0, -16)
 	
 	local sliderName = "FontSizeS"
-	local fontEdit = CreateFrame("Slider", sliderName, addon.configPanel, "OptionsSliderTemplate")
+	local fontEdit = CreateFrame("Slider", sliderName, configContent, "OptionsSliderTemplate")
 	
 	fontEdit:SetWidth(120)
 	fontEdit:SetHeight(20)
@@ -1114,6 +1330,7 @@ local function createConfigMenu()
 			
 			addon:setEnabled()
 			addon:setDropdownEnabled()
+			if addon.configPanel.refreshScroll then addon.configPanel:refreshScroll() end
 		end
 	end);
 	
@@ -1125,6 +1342,7 @@ local function createConfigMenu()
 end
 
 createContentBrowserMenu()
+createInfoMenu()
 createConfigMenu()
 
 
