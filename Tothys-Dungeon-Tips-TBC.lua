@@ -33,6 +33,8 @@ Druid: Shapeshift the Arcane Lockdown debuff
 
 local _, addon = ...;
 
+local addFrameLine
+
 
 
 -- Color code information for the different types of tips:
@@ -174,6 +176,123 @@ local function getSelectedLocale()
 	return preferredLocale
 end
 
+local function normalizeTipsForDisplay(rawTips)
+	if not rawTips then
+		return nil
+	end
+
+	local normalizedTips = {}
+	local legacyTipCount = #rawTips
+
+	for index, tip in ipairs(rawTips) do
+		local tipID
+		local tipType
+		local tipText
+		local tipWeight
+
+		if #tip >= 4 and type(tip[1]) == "string" and type(tip[2]) == "string" and type(tip[3]) == "string" then
+			tipID = tip[1]
+			tipType = tip[2]
+			tipText = tip[3]
+			tipWeight = tonumber(tip[4]) or 0
+		else
+			tipID = nil
+			tipType = tip[1]
+			tipText = tip[2]
+			tipWeight = (legacyTipCount - index + 1) * 10
+		end
+
+		normalizedTips[#normalizedTips + 1] = {
+			id = tipID,
+			type = tipType,
+			text = tipText,
+			weight = tipWeight,
+			order = index,
+		}
+	end
+
+	table.sort(normalizedTips, function(left, right)
+		if left.weight == right.weight then
+			return left.order < right.order
+		end
+
+		return left.weight > right.weight
+	end)
+
+	local displayTips = {}
+	for _, tip in ipairs(normalizedTips) do
+		displayTips[#displayTips + 1] = {tip.type, tip.text}
+	end
+
+	return displayTips
+end
+
+function addon:getCurrentInstanceKey()
+	local mapID = C_Map.GetBestMapForUnit("player")
+	if mapID and addon.instanceKeyByMapID then
+		return addon.instanceKeyByMapID[mapID]
+	end
+end
+
+function addon:getInstanceInfo()
+	local localeMaps = {
+		enUS = instanceInfo_enUS,
+		deDE = instanceInfo_deDE,
+	}
+	local instanceKey = addon:getCurrentInstanceKey()
+	if not instanceKey then
+		return nil, nil
+	end
+
+	local selectedLocale = getSelectedLocale()
+	local localizedMap = localeMaps[selectedLocale] or instanceInfo_enUS
+
+	if localizedMap and localizedMap[instanceKey] then
+		return normalizeTipsForDisplay(localizedMap[instanceKey]), instanceKey
+	end
+
+	if instanceInfo_enUS then
+		return normalizeTipsForDisplay(instanceInfo_enUS[instanceKey]), instanceKey
+	end
+
+	return nil, instanceKey
+end
+
+function addon:showCurrentInstanceInfo()
+	if not TDT_MobName or not TDT_TipText then
+		return
+	end
+
+	if not addon:checkInstance() then
+		return
+	end
+
+	local instanceTips, instanceKey = addon:getInstanceInfo()
+	if not instanceTips or not instanceKey then
+		return
+	end
+
+	local _, class = UnitClass("player")
+	local instanceData
+
+	for _, expansion in pairs(addon.contentCatalog or {}) do
+		if expansion.instances and expansion.instances[instanceKey] then
+			instanceData = expansion.instances[instanceKey]
+			break
+		end
+	end
+
+	local selectedLocale = getSelectedLocale()
+	local instanceName = instanceKey
+	if instanceData and instanceData.name then
+		instanceName = instanceData.name[selectedLocale] or instanceData.name.enUS or instanceName
+	end
+
+	TDT_TipText:SetText("")
+	TDT_MobName:SetText(string.format("%s (Instance)", instanceName))
+	addFrameLine(TDT_TipPanel, instanceTips, "INSTANCE INFO:", class)
+end
+
 function addon:getTipsForNpc(id)
 	local localeMaps = {
 		enUS = tipsMap_enUS,
@@ -183,11 +302,11 @@ function addon:getTipsForNpc(id)
 	local localizedMap = localeMaps[selectedLocale] or tipsMap_enUS
 
 	if localizedMap and localizedMap[id] then
-		return localizedMap[id]
+		return normalizeTipsForDisplay(localizedMap[id])
 	end
 
 	if tipsMap_enUS then
-		return tipsMap_enUS[id]
+		return normalizeTipsForDisplay(tipsMap_enUS[id])
 	end
 end
 local function RGBToHex(r, g, b)
@@ -237,7 +356,7 @@ local function addLine(tooltip, tips, type, class)
 end
 
 -- The addline function hooks into the WoW API to add a line to an NPC's tooltip.
-local function addFrameLine(tooltip, tips, type, class)
+addFrameLine = function(tooltip, tips, type, class)
 	local found = false
 	-- Check if we already added to this tooltip. This prevents writing the same thing to the tooltip multiple times.
 	if not TDT_HeaderPanel:IsVisible() then addon:setEnabled() end
@@ -307,7 +426,7 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 		if npcTips then
 			-- Don't remove active tip if you accidentally mouse over ally.
 			TDT_TipText:SetText("")
-			TDT_MobName:SetText(name)
+			TDT_MobName:SetText(string.format("%s (NPC ID: %d)", name, id))
 		
 			if TDTConfig.ShowFrame == "Show in separate frame" then addFrameLine(TDT_TipPanel, npcTips, "NPC ID:", class)
 			else addLine(GameTooltip, npcTips, "NPC ID:", class)
@@ -316,6 +435,8 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 		elseif UnitIsEnemy(unit, "player") then
 			TDT_TipText:SetText("")
 			TDT_MobName:SetText(name)
+		elseif TDTConfig.ShowFrame == "Show in separate frame" then
+			addon:showCurrentInstanceInfo()
 		end
 		
 	
@@ -342,14 +463,15 @@ function addon:getTarget(mobType)
 		-- Don't remove active tip if you accidentally mouse over ally.
 		
 		TDT_TipText:SetText("")
-		TDT_MobName:SetText(name)
+		TDT_MobName:SetText(string.format("%s (NPC ID: %d)", name, id))
 		addFrameLine(TDT_TipPanel, npcTips, "NPC ID:", class)
 		--addLine(GameTooltip, tipsMap[id], "NPC ID:", role, class)		
 
 	elseif 	UnitIsEnemy(mobType, "player") then
 		TDT_TipText:SetText("")
 		TDT_MobName:SetText(name)
-		
+	else
+		addon:showCurrentInstanceInfo()
 	end
 	
 

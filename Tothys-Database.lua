@@ -3,6 +3,72 @@
 
 local _, addon = ...;
 
+addon.contentCatalog = addon.contentCatalog or {
+	classic = {
+		order = 1,
+		name = {
+			enUS = "Classic",
+			deDE = "Classic",
+		},
+		instances = {},
+	},
+	tbc = {
+		order = 2,
+		name = {
+			enUS = "The Burning Crusade",
+			deDE = "The Burning Crusade",
+		},
+		instances = {
+			auchenai_crypts = {
+				order = 1,
+				type = "Dungeon",
+				mapIDs = {256, 257},
+				name = {
+					enUS = "Auchenai Crypts",
+					deDE = "Auchenaikrypta",
+				},
+				npcIDs = {
+					18371, -- Shirrak the Dead Watcher
+					18373, -- Exarch Maladaar
+					18441, -- Stolen Soul
+					18478, -- Avatar of the Martyred
+					18493, -- Auchenai Soulpriest
+					18495, -- Auchenai Vindicator
+					18497, -- Auchenai Monk
+					18498, -- Unliving Soldier
+					18499, -- Unliving Sorcerer
+					18500, -- Unliving Cleric
+					18501, -- Unliving Stalker
+					18503, -- Phantasmal Possessor
+					18506, -- Raging Soul
+					18521, -- Raging Skeleton
+					18524, -- Angered Skeleton
+					18556, -- Phasing Soldier
+					18557, -- Phasing Cleric
+					18558, -- Phasing Sorcerer
+					18559, -- Phasing Stalker
+					18700, -- Reanimated Bones
+					18702, -- Auchenai Necromancer
+				},
+			},
+		},
+	},
+}
+
+addon.instanceKeyByMapID = addon.instanceKeyByMapID or {
+	[256] = "auchenai_crypts",
+	[257] = "auchenai_crypts",
+}
+
+instanceInfo_enUS = instanceInfo_enUS or {}
+instanceInfo_deDE = instanceInfo_deDE or {}
+
+instanceInfo_enUS.auchenai_crypts = instanceInfo_enUS.auchenai_crypts or {
+	{"auchenai_instance_001", "Important", "TEST: Auchenai Crypts instance notes are now loaded through instanceKey and mapID lookup.", 30},
+	{"auchenai_instance_002", "Important", "Use this area later for personal dungeon notes and shared baseline instance reminders.", 20},
+	{"auchenai_instance_003", "HEALER", "HEALER TEST: Watch for fear, burst damage, and awkward bridge knockbacks in this dungeon.", 10},
+}
+
 
 -- The Tips maps holds tooltip information and mob ID's for all 13 legion dungeons, 10 BFA dungeons and the 8 Shadowlands dungeons. This is basically the database.
 -- Each array uses the format: {{"Type", "Tip1"}, {"Type", "Tip2"}}
@@ -1450,28 +1516,29 @@ tipsMap_enUS = {
 	------- Dungeon: Auchenai Crypts ----------------
 
 	---Bosses
-	[18371] = {{"TANK", "Tank the boss away from ranged DPS/Healers"},
-				{"Important", "Casters should stand at max range due to Inhibit Magic (passive aura that slows casting speed the closer you get to boss"},
-				{"Dodge", "Watch for emote of 'Shirrak the Dead Watchers focuses on...' Players (including the player name the boss emotes) need to run away as boss will begin to shoot fire damage at the flare location"},
-				{"Important", "Group should burn boss down quickly before Carnivorous Bite bleed stacks get too high on tank"},
-				{"Important", "Run away from boss during Attract Magic (Boss will pull party members to it)"}}, 
+	[18371] = {{"shirrak_001", "TANK", "Tank the boss away from ranged DPS/Healers", 50},
+				{"shirrak_002", "Important", "Casters should stand at max range due to Inhibit Magic (passive aura that slows casting speed the closer you get to boss", 40},
+				{"shirrak_003", "Dodge", "Watch for emote of 'Shirrak the Dead Watchers focuses on...' Players (including the player name the boss emotes) need to run away as boss will begin to shoot fire damage at the flare location", 30},
+				{"shirrak_004", "Important", "Group should burn boss down quickly before Carnivorous Bite bleed stacks get too high on tank", 20},
+				{"shirrak_005", "Important", "Run away from boss during Attract Magic (Boss will pull party members to it)", 10}}, 
 				-- Shirrak the Dead Watcher
-	[18373] = {{"Important", "Save CDs for when boss is at 25% health due to increased damage dealt"},
-				{"Important", "Boss deals an AoE Fear called Soul Scream"},
-				{"SHAMAN", "Drop Tremor Totem to negate boss' AoE fear"},
-				{"Important", "Focus down any shadow images that appear and tank should pickup Avatar of the Martyred when he spawns"}}, 
+	[18373] = {{"maladaar_001", "Important", "Save CDs for when boss is at 25% health due to increased damage dealt", 40},
+				{"maladaar_002", "Important", "Boss deals an AoE Fear called Soul Scream", 30},
+				{"maladaar_003", "SHAMAN", "Drop Tremor Totem to negate boss' AoE fear", 20},
+				{"maladaar_004", "Important", "Focus down any shadow images that appear and tank should pickup Avatar of the Martyred when he spawns", 10}}, 
 				-- Exarch Maladaar
 
 	---Trash Mobs
 	[18441] = {{"PriorityTargets", "Focus on this mob when summoned by Maladaar"}}, -- Stolen Soul
 	[18478] = {{"Legion", ""}}, -- Avatar of the Martyred
-	[18493] = {{"Important", "Dispel Touch of the Forgotten (esp from tank) as it reduces their heals taken for 3 minutes"}}, 
+	[18493] = {{"soulpriest_001", "Important", "Dispel Touch of the Forgotten (esp from tank) as it reduces their heals taken for 3 minutes", 10}}, 
 				-- Auchenai Soulpriest
-	[18495] = {{"Legion", ""}}, -- Auchenai Vindicator
-	[18497] = {{"TANK", "Monk should be tanked away from group!"},
-				{"Important", "Deals an AoE Knockback - keep backs against walls to avoid pulling unplanned groups"},
-				{"Important", "Immune to polymorph & rogue sapping"},
-				{"Important", "Casters/Healers should not stand in melee range of this mob due to the interrupt and spell lock from Counter Kick"}}, 
+	[18495] = {{"vindicator_001", "Important", "TEST: Auchenai Vindicator uses the new tip format with tip IDs and weight.", 20},
+				{"vindicator_002", "TANK", "Keep this mob faced away from the group if it is hitting hard during the pull.", 10}}, -- Auchenai Vindicator
+	[18497] = {{"monk_001", "TANK", "Monk should be tanked away from group!", 40},
+				{"monk_002", "Important", "Deals an AoE Knockback - keep backs against walls to avoid pulling unplanned groups", 30},
+				{"monk_003", "Important", "Immune to polymorph & rogue sapping", 20},
+				{"monk_004", "Important", "Casters/Healers should not stand in melee range of this mob due to the interrupt and spell lock from Counter Kick", 10}}, 
 				-- Auchenai Monk
 	[18498] = {{"Important", "DPS/TANK: Avoid using abilities that are not instant-cast as this mob will shield bash players and spell lock them"},
 				{"HEALER", "This mob has will Shield Bash players (Interrupts player cast and spell locks) - Apply HoT to tank if possible"}}, 

@@ -184,11 +184,21 @@ function createTDTFrame()
 	TDT_ParentFrame:SetScript("OnEvent", function(self, event, ...)
 
 		if event == "PLAYER_ENTERING_WORLD" then
-			C_Timer.After(2, function() addon:setEnabled() end)
+			C_Timer.After(2, function()
+				addon:setEnabled()
+				if TDTConfig and TDTConfig.ShowFrame == "Show in separate frame" then
+					addon:showCurrentInstanceInfo()
+				end
+			end)
 			--addon:setEnabled()
 		elseif event == "PLAYER_TARGET_CHANGED" then
 			--print("Player target changed" .. TDTConfig.TargetTrigger .. TDT_onBoss)
-			if TDTConfig.TargetTrigger == "Show targeted mob" and not TDT_onBoss then addon:getTarget("target") end
+			if TDTConfig.TargetTrigger == "Show targeted mob" and not TDT_onBoss then
+				addon:getTarget("target")
+				if not UnitExists("target") then
+					addon:showCurrentInstanceInfo()
+				end
+			end
 			
 		elseif event == "INSTANCE_ENCOUNTER_ENGAGE_UNIT" and UnitExists("boss1") then
 			--TDT_onBoss = true

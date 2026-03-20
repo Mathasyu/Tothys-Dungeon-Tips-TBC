@@ -302,7 +302,7 @@ local function createConfigMenu()
 	chkClass:SetPoint("TOPLEFT", classFS, "BOTTOMLEFT", 0, -8)
 	
 	local localeFS = createString(addon.configPanel, "Language", headerFont, headerSize)
-	localeFS:SetPoint("TOPLEFT", chkClass, "BOTTOMLEFT", 0, -24)
+	localeFS:SetPoint("TOPLEFT", chkRole, "BOTTOMLEFT", 0, -24)
 
 	local localeHelp = createString(addon.configPanel, "Auto uses the client locale. English is the fallback if no translation exists.", "Fonts\\FRIZQT__.TTF", 11)
 	localeHelp:SetPoint("TOPLEFT", localeFS, "BOTTOMLEFT", 0, -4)
