@@ -32,8 +32,12 @@ Druid: Shapeshift the Arcane Lockdown debuff
 ]]--
 
 local _, addon = ...;
+TDTUserData = TDTUserData or {}
+TDTUserData.npcs = TDTUserData.npcs or {}
+TDTUserData.instances = TDTUserData.instances or {}
 
 local addFrameLine
+local buildFrameTextFromTips
 
 
 
@@ -51,6 +55,7 @@ local tipsColors = {
 	["PriorityTargets"] = {1, 1, 0},
 	["Fluff"] = {1, 1, 1},
 	["Advanced"] = {0.75, 0.55, 0.35},
+	["Personal"] = {1, 0.84, 0},
 	
 	["HEALER"] = {0.2, 0.98, 0.25},
 	["TANK"] = {0.8, 0.6, 0},	
@@ -96,6 +101,7 @@ local iconList = {
 	Important = "ability_dualwield",
 	Legion = "ability_dualwield",
 	Dodge = "ability_dualwield",
+	Personal = "inv_misc_note_01",
 	
 	DRUID = "classicon_druid",		
 	HUNTER = "classicon_hunter",
@@ -233,6 +239,331 @@ local function normalizeTipsForDisplay(rawTips)
 	return displayTips
 end
 
+local function normalizeTipsToEntries(rawTips)
+	if not rawTips then
+		return {}
+	end
+
+	local normalizedTips = {}
+	local legacyTipCount = #rawTips
+
+	for index, tip in ipairs(rawTips) do
+		local tipID
+		local tipType
+		local tipText
+		local tipWeight
+
+		if #tip >= 4 and type(tip[1]) == "string" and type(tip[2]) == "string" and type(tip[3]) == "string" then
+			tipID = tip[1]
+			tipType = tip[2]
+			tipText = tip[3]
+			tipWeight = tonumber(tip[4]) or 0
+		else
+			tipID = nil
+			tipType = tip[1]
+			tipText = tip[2]
+			tipWeight = (legacyTipCount - index + 1) * 10
+		end
+
+		normalizedTips[#normalizedTips + 1] = {
+			id = tipID,
+			type = tipType,
+			text = tipText,
+			weight = tipWeight,
+			order = index,
+		}
+	end
+
+	return normalizedTips
+end
+
+local function cloneTipEntry(entry)
+	return {
+		id = entry.id,
+		type = entry.type,
+		text = entry.text,
+		weight = entry.weight,
+		order = entry.order,
+	}
+end
+
+local function sortTipEntries(entries)
+	table.sort(entries, function(left, right)
+		if left.weight == right.weight then
+			return left.order < right.order
+		end
+
+		return left.weight > right.weight
+	end)
+end
+
+local function getUserContainer(scope, key)
+	if not TDTUserData then
+		return nil
+	end
+
+	local bucket = TDTUserData[scope]
+	if not bucket then
+		return nil
+	end
+
+	return bucket[key]
+end
+
+local function ensureUserContainer(scope, key)
+	TDTUserData = TDTUserData or {}
+	TDTUserData[scope] = TDTUserData[scope] or {}
+	TDTUserData[scope][key] = TDTUserData[scope][key] or {}
+
+	local container = TDTUserData[scope][key]
+	container.overrides = container.overrides or {}
+	container.disabled = container.disabled or {}
+	container.additions = container.additions or {}
+
+	return container
+end
+
+local function createUserTipID(prefix, key)
+	local timestamp = date and date("%Y%m%d%H%M%S") or tostring(time and time() or 0)
+	return string.format("%s_%s_%s", prefix, tostring(key), tostring(timestamp))
+end
+
+local function mergeTipsWithUserData(rawTips, userContainer)
+	local entries = normalizeTipsToEntries(rawTips)
+	if not userContainer then
+		sortTipEntries(entries)
+		return entries
+	end
+
+	local mergedEntries = {}
+	local disabled = userContainer.disabled or {}
+	local overrides = userContainer.overrides or {}
+	local additions = userContainer.additions or {}
+	local nextOrder = #entries
+
+	for _, entry in ipairs(entries) do
+		if not (entry.id and disabled[entry.id]) then
+			local mergedEntry = cloneTipEntry(entry)
+			local override = entry.id and overrides[entry.id] or nil
+			if override then
+				if override.type then
+					mergedEntry.type = override.type
+				end
+				if override.text then
+					mergedEntry.text = override.text
+				end
+				if override.weight ~= nil then
+					mergedEntry.weight = tonumber(override.weight) or mergedEntry.weight
+				end
+			end
+			mergedEntries[#mergedEntries + 1] = mergedEntry
+		end
+	end
+
+	for additionID, addition in pairs(additions) do
+		if type(addition) == "table" and addition.type and addition.text and addition.hidden ~= true then
+			nextOrder = nextOrder + 1
+			mergedEntries[#mergedEntries + 1] = {
+				id = addition.id or additionID,
+				type = addition.type,
+				text = addition.text,
+				weight = tonumber(addition.weight) or 0,
+				order = nextOrder,
+			}
+		end
+	end
+
+	sortTipEntries(mergedEntries)
+	return mergedEntries
+end
+
+local function entriesToDisplayTips(entries)
+	if not entries or #entries == 0 then
+		return nil
+	end
+
+	local displayTips = {}
+	for _, tip in ipairs(entries) do
+		displayTips[#displayTips + 1] = {tip.type, tip.text}
+	end
+
+	return displayTips
+end
+
+function addon:getMergedNpcTipEntries(id)
+	local localeMaps = {
+		enUS = tipsMap_enUS,
+		deDE = tipsMap_deDE,
+	}
+	local selectedLocale = getSelectedLocale()
+	local localizedMap = localeMaps[selectedLocale] or tipsMap_enUS
+	local rawTips
+
+	if localizedMap and localizedMap[id] then
+		rawTips = localizedMap[id]
+	elseif tipsMap_enUS then
+		rawTips = tipsMap_enUS[id]
+	end
+
+	if not rawTips and not getUserContainer("npcs", id) then
+		return nil
+	end
+
+	return mergeTipsWithUserData(rawTips, getUserContainer("npcs", id))
+end
+
+function addon:getMergedInstanceTipEntries(instanceKey)
+	local localeMaps = {
+		enUS = instanceInfo_enUS,
+		deDE = instanceInfo_deDE,
+	}
+	local selectedLocale = getSelectedLocale()
+	local localizedMap = localeMaps[selectedLocale] or instanceInfo_enUS
+	local rawTips
+
+	if localizedMap and localizedMap[instanceKey] then
+		rawTips = localizedMap[instanceKey]
+	elseif instanceInfo_enUS then
+		rawTips = instanceInfo_enUS[instanceKey]
+	end
+
+	if not rawTips and not getUserContainer("instances", instanceKey) then
+		return nil
+	end
+
+	return mergeTipsWithUserData(rawTips, getUserContainer("instances", instanceKey))
+end
+
+function addon:addNpcUserTip(npcID, tipType, text, weight, tipID)
+	if not npcID or not tipType or not text or text == "" then
+		return nil
+	end
+
+	local container = ensureUserContainer("npcs", npcID)
+	local additionID = tipID or createUserTipID("user_npc", npcID)
+	container.additions[additionID] = {
+		id = additionID,
+		type = tipType,
+		text = text,
+		weight = tonumber(weight) or 0,
+		hidden = false,
+	}
+
+	return additionID
+end
+
+function addon:addInstanceUserTip(instanceKey, tipType, text, weight, tipID)
+	if not instanceKey or not tipType or not text or text == "" then
+		return nil
+	end
+
+	local container = ensureUserContainer("instances", instanceKey)
+	local additionID = tipID or createUserTipID("user_instance", instanceKey)
+	container.additions[additionID] = {
+		id = additionID,
+		type = tipType,
+		text = text,
+		weight = tonumber(weight) or 0,
+		hidden = false,
+	}
+
+	return additionID
+end
+
+function addon:resetNpcUserData(npcID)
+	if not TDTUserData or not TDTUserData.npcs then
+		return
+	end
+
+	TDTUserData.npcs[npcID] = nil
+end
+
+function addon:resetInstanceUserData(instanceKey)
+	if not TDTUserData or not TDTUserData.instances then
+		return
+	end
+
+	TDTUserData.instances[instanceKey] = nil
+end
+
+function addon:resetAllUserData()
+	TDTUserData = {
+		npcs = {},
+		instances = {},
+	}
+end
+
+function addon:getNpcUserAdditions(npcID)
+	local container = getUserContainer("npcs", npcID)
+	local additions = {}
+
+	if not container or not container.additions then
+		return additions
+	end
+
+	for additionID, addition in pairs(container.additions) do
+		if type(addition) == "table" then
+			additions[#additions + 1] = {
+				id = addition.id or additionID,
+				type = addition.type,
+				text = addition.text,
+				weight = tonumber(addition.weight) or 0,
+				hidden = addition.hidden == true,
+			}
+		end
+	end
+
+	table.sort(additions, function(left, right)
+		if left.weight == right.weight then
+			return tostring(left.id) < tostring(right.id)
+		end
+
+		return left.weight > right.weight
+	end)
+
+	return additions
+end
+
+function addon:setNpcUserTipHidden(npcID, tipID, hidden)
+	local container = getUserContainer("npcs", npcID)
+	if not container or not container.additions or not container.additions[tipID] then
+		return false
+	end
+
+	container.additions[tipID].hidden = hidden == true
+	return true
+end
+
+function addon:deleteNpcUserTip(npcID, tipID)
+	local container = getUserContainer("npcs", npcID)
+	if not container or not container.additions or not container.additions[tipID] then
+		return false
+	end
+
+	container.additions[tipID] = nil
+	return true
+end
+
+function addon:updateNpcUserTip(npcID, tipID, tipType, text, weight)
+	local container = getUserContainer("npcs", npcID)
+	if not container or not container.additions or not container.additions[tipID] then
+		return false
+	end
+
+	local tip = container.additions[tipID]
+	if tipType and tipType ~= "" then
+		tip.type = tipType
+	end
+	if text and text ~= "" then
+		tip.text = text
+	end
+	if weight ~= nil then
+		tip.weight = tonumber(weight) or tip.weight or 0
+	end
+
+	return true
+end
+
 function addon:getCurrentInstanceKey()
 	local mapID = C_Map.GetBestMapForUnit("player")
 	if mapID and addon.instanceKeyByMapID then
@@ -241,27 +572,12 @@ function addon:getCurrentInstanceKey()
 end
 
 function addon:getInstanceInfo()
-	local localeMaps = {
-		enUS = instanceInfo_enUS,
-		deDE = instanceInfo_deDE,
-	}
 	local instanceKey = addon:getCurrentInstanceKey()
 	if not instanceKey then
 		return nil, nil
 	end
 
-	local selectedLocale = getSelectedLocale()
-	local localizedMap = localeMaps[selectedLocale] or instanceInfo_enUS
-
-	if localizedMap and localizedMap[instanceKey] then
-		return normalizeTipsForDisplay(localizedMap[instanceKey]), instanceKey
-	end
-
-	if instanceInfo_enUS then
-		return normalizeTipsForDisplay(instanceInfo_enUS[instanceKey]), instanceKey
-	end
-
-	return nil, instanceKey
+	return entriesToDisplayTips(addon:getMergedInstanceTipEntries(instanceKey)), instanceKey
 end
 
 function addon:showCurrentInstanceInfo()
@@ -326,30 +642,27 @@ function addon:showBrowserSelectionInFrame(instanceName, npcName, npcID, instanc
 	if addon.refreshTipScroll then addon:refreshTipScroll() end
 	TDT_MobName:SetText(displayTitle)
 
-	if instanceTips then
-		addFrameLine(TDT_TipPanel, instanceTips, "INSTANCE INFO:", class)
+	local combinedSections = {}
+	if instanceTips and #instanceTips > 0 then
+		local instanceText = buildFrameTextFromTips(instanceTips, class, false)
+		if instanceText ~= "" then
+			combinedSections[#combinedSections + 1] = instanceText
+		end
 	end
 
-	if npcTips then
-		addFrameLine(TDT_TipPanel, npcTips, "NPC INFO:", class)
+	if npcTips and #npcTips > 0 then
+		local npcText = buildFrameTextFromTips(npcTips, class, false)
+		if npcText ~= "" then
+			combinedSections[#combinedSections + 1] = npcText
+		end
 	end
+
+	TDT_TipText:SetText(table.concat(combinedSections, "\n"))
+	if addon.refreshTipScroll then addon:refreshTipScroll() end
 end
 
 function addon:getTipsForNpc(id)
-	local localeMaps = {
-		enUS = tipsMap_enUS,
-		deDE = tipsMap_deDE,
-	}
-	local selectedLocale = getSelectedLocale()
-	local localizedMap = localeMaps[selectedLocale] or tipsMap_enUS
-
-	if localizedMap and localizedMap[id] then
-		return normalizeTipsForDisplay(localizedMap[id])
-	end
-
-	if tipsMap_enUS then
-		return normalizeTipsForDisplay(tipsMap_enUS[id])
-	end
+	return entriesToDisplayTips(addon:getMergedNpcTipEntries(id))
 end
 local function RGBToHex(r, g, b)
 	r = r <= 1 and r >= 0 and r or 0
@@ -409,6 +722,30 @@ local function shouldShowTipForDisplay(tipType, class, forceAll)
 	end
 
 	return false
+end
+
+buildFrameTextFromTips = function(tips, class, forceAll)
+	local lines = {}
+
+	for _, tip in ipairs(tips or {}) do
+		if shouldShowTipForDisplay(tip[1], class, forceAll) then
+			local color = tipsColors[tip[1]]
+			local lineHex
+			if color then
+				lineHex = string.format("%02x%02x%02x", color[1] * 255, color[2] * 255, color[3] * 255)
+			end
+			local iconMarkup = iconList[tip[1]] and (("|T%s:0|t"):format("Interface\\Icons\\" .. iconList[tip[1]])) or ""
+			local lineText = tip[2] or ""
+
+			if lineHex then
+				lines[#lines + 1] = string.format("%s|cff%s %s|r", iconMarkup, lineHex, lineText)
+			else
+				lines[#lines + 1] = string.format("%s %s", iconMarkup, lineText)
+			end
+		end
+	end
+
+	return table.concat(lines, "\n")
 end
 
 

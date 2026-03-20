@@ -71,6 +71,7 @@ The agreed supported tip types are:
 - `Interrupts`
 - `Dodge`
 - `Advanced`
+- `Personal`
 - `HEALER`
 - `TANK`
 - `DAMAGE`
@@ -196,7 +197,15 @@ Rules:
 
 ## Planned user data layer
 
-The planned SavedVariables layer should keep all personal changes separate from shipped addon data.
+The SavedVariables layer keeps all personal changes separate from shipped addon data.
+
+Groundwork status:
+
+- `TDTUserData` now exists as a SavedVariable
+- empty tables for `npcs` and `instances` are initialized
+- runtime merge helpers now exist for NPC tips and instance info
+- helper functions now exist for adding NPC tips, adding instance tips, and resetting user data
+- with empty user data, shipped behavior remains unchanged
 
 Target shape:
 
@@ -215,9 +224,11 @@ TDTUserData = {
       },
       additions = {
         user_001 = {
+          id = "user_001",
           type = "HEALER",
           text = "My added note",
           weight = 25,
+          hidden = false,
         },
       },
     },
@@ -226,15 +237,91 @@ TDTUserData = {
     karazhan = {
       additions = {
         note_001 = {
+          id = "note_001",
           type = "Important",
           text = "My personal raid note",
           weight = 25,
+          hidden = false,
         },
       },
     },
   },
 }
 ```
+
+Current runtime behavior:
+
+- NPC tip lookup goes through a merged path
+- instance info lookup goes through a merged path
+- Content Browser previews now use the merged path as well
+- `disabled`, `overrides`, and `additions` are respected when present
+- legacy shipped tips without stable `tip_id` values can still be displayed, but are not yet ideal override targets
+
+## Editing rules
+
+The editor should treat shipped addon tips and user-created tips differently.
+
+### Base tips
+
+Base tips are the shipped addon entries.
+
+Allowed actions:
+
+- override `text`
+- override `weight`
+- hide / unhide
+- reset
+
+Not allowed:
+
+- changing the shipped `type`
+- hard deleting the shipped entry
+
+Storage model:
+
+```lua
+overrides[tipID] = {
+  text = "Edited text",
+  weight = 21,
+}
+
+disabled[tipID] = true
+```
+
+Important editor rule:
+
+- hidden base tips must still be shown inside the editor so the user can unhide or reset them
+- hidden base tips should not appear in the normal live display
+
+### Personal tips
+
+Personal tips are user-created additions.
+
+Allowed actions:
+
+- change `type`
+- change `text`
+- change `weight`
+- hide / unhide
+- hard delete
+
+Suggested storage model:
+
+```lua
+additions[userTipID] = {
+  id = "user_npc_18495_...",
+  type = "Personal",
+  text = "My note",
+  weight = 15,
+  hidden = false,
+}
+```
+
+Important editor rule:
+
+- personal tips can be hidden without being deleted
+- personal tips may also be hard deleted by removing them from `additions`
+- personal tips may be edited in place by updating their `type`, `text`, and `weight`
 
 ## Why shipped tips need stable IDs
 
@@ -261,6 +348,12 @@ The future reset options should operate on user data only:
 - reset all changes for an NPC
 - reset all changes for an instance
 - reset all personal addon data
+
+Practical meaning:
+
+- resetting a base tip removes its override and/or disabled flag
+- resetting a personal tip is not the same as deleting it
+- a personal tip can be hidden, unhidden, or hard deleted
 
 ## Filter model
 

@@ -25,6 +25,16 @@ Future Versions - Content
 
 local _, addon = ...;
 
+function addon:updateFrameButtons()
+	if TDT_MinimizeBtn and TDT_TipPanel then
+		if addon.frameCollapsed then
+			TDT_MinimizeBtn:SetText("+")
+		else
+			TDT_MinimizeBtn:SetText("-")
+		end
+	end
+end
+
 -- Create a frame
 function createTDTFrame()
 	--addon.isShowing = true
@@ -113,7 +123,7 @@ function createTDTFrame()
 	-- Header Text
 	headerTDT = TDT_HeaderPanel:CreateFontString("TDT_HeaderText", nil, nil)
 	headerTDT:SetPoint("TOPLEFT", 5, -4)
-	headerTDT:SetPoint("TOPRIGHT", 5, -4)
+	headerTDT:SetPoint("TOPRIGHT", -52, -4)
 	headerTDT:SetFont("Fonts\\SKURRI.TTF", 16, "OUTLINE")
 	headerTDT:SetTextColor(239/255, 191/255, 90/255)
 	headerTDT:SetJustifyH("LEFT")
@@ -126,6 +136,30 @@ function createTDTFrame()
 	TDT_HeaderPanel:SetHeight(22)
 	TDT_HeaderPanel:SetWidth(450)
 	TDT_HeaderPanel:Show()
+
+	TDT_MinimizeBtn = CreateFrame("Button", "TDT_MinimizeBtn", TDT_HeaderPanel, "UIPanelButtonTemplate")
+	TDT_MinimizeBtn:SetSize(20, 18)
+	TDT_MinimizeBtn:SetPoint("TOPRIGHT", TDT_HeaderPanel, "TOPRIGHT", -26, -2)
+	TDT_MinimizeBtn:SetFrameStrata("DIALOG")
+	TDT_MinimizeBtn:SetFrameLevel(TDT_HeaderPanel:GetFrameLevel() + 10)
+	TDT_MinimizeBtn:SetText("-")
+	TDT_MinimizeBtn:RegisterForClicks("LeftButtonUp")
+	TDT_MinimizeBtn:SetScript("OnClick", function()
+		addon:setMinimized()
+	end)
+
+	TDT_CloseBtn = CreateFrame("Button", "TDT_CloseBtn", TDT_HeaderPanel, "UIPanelButtonTemplate")
+	TDT_CloseBtn:SetSize(20, 18)
+	TDT_CloseBtn:SetPoint("TOPRIGHT", TDT_HeaderPanel, "TOPRIGHT", -4, -2)
+	TDT_CloseBtn:SetFrameStrata("DIALOG")
+	TDT_CloseBtn:SetFrameLevel(TDT_HeaderPanel:GetFrameLevel() + 10)
+	TDT_CloseBtn:SetText("X")
+	TDT_CloseBtn:RegisterForClicks("LeftButtonUp")
+	TDT_CloseBtn:SetScript("OnClick", function()
+		if TDT_ParentFrame then
+			TDT_ParentFrame:Hide()
+		end
+	end)
 	
 	
 	-----------------
@@ -214,6 +248,7 @@ function createTDTFrame()
 	-- Show Frame
 	TDT_ParentFrame:SetPoint("CENTER", UIParent)
 	TDT_ParentFrame:Show()
+	addon:updateFrameButtons()
 	
 	
 	TDT_ParentFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -418,20 +453,26 @@ end
 
 
 function addon:setMinimized(forceShow)
-	--if not TDT_TipText:IsVisible() or forceShow then
-	if TDT_TipPanel:GetHeight() <= 26 then
-		TDT_TipPanel:SetHeight(175)
+	if forceShow then
+		addon.frameCollapsed = false
+	elseif addon.frameCollapsed then
+		addon.frameCollapsed = false
+	else
+		addon.frameCollapsed = true
+	end
+
+	if addon.frameCollapsed then
+		addon.expandedFrameHeight = TDT_ParentFrame:GetHeight()
+		TDT_TipPanel:Hide()
+		TDT_ParentFrame:SetHeight(26)
+	else
+		TDT_TipPanel:Show()
 		TDT_TipText:Show()
 		if TDT_TipScrollFrame then TDT_TipScrollFrame:Show() end
 		if TDT_TipScrollBar then TDT_TipScrollBar:Show() end
-		
-	else
-		--TDT_TipPanel:Hide()
-		TDT_TipPanel:SetHeight(25)
-		TDT_TipText:Hide()
-		if TDT_TipScrollFrame then TDT_TipScrollFrame:Hide() end
-		if TDT_TipScrollBar then TDT_TipScrollBar:Hide() end
+		TDT_ParentFrame:SetHeight(addon.expandedFrameHeight or TDTConfig.FrameHeight or 120)
 	end
+	addon:updateFrameButtons()
 end
 		
 		

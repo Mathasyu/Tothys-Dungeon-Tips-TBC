@@ -35,6 +35,7 @@ An instance may still contain multiple `mapIDs`.
 
 - locale-aware NPC tip lookup with `enUS` fallback
 - separate `Content Browser` config subpage
+- separate `Editor` config subpage
 - separate `Info` config subpage
 - hardcoded content catalog groundwork
 - instance lookup via `mapID -> instanceKey`
@@ -46,13 +47,14 @@ An instance may still contain multiple `mapIDs`.
 - browser selection mirrored into the main frame
 - role/class filter refactor
 - main tip window scrollbar
+- SavedVariables groundwork for a future user override layer
 
 ## Next planned implementation steps
 
 1. Keep the config layout stable and scrollable.
 2. Expand the hardcoded `contentCatalog` beyond the current test instance.
 3. Gradually migrate shipped tips from the legacy format to the new weighted format.
-4. Introduce a separate user data layer for:
+4. Expand the separate user data layer for:
    - tip overrides
    - disabled shipped tips
    - user-added NPC tips
@@ -68,6 +70,13 @@ An instance may still contain multiple `mapIDs`.
 ## UI decisions
 
 The `Content Browser` is intentionally a full preview and should show all relevant tips.
+
+The `Editor` page is the place for future write workflows such as personal NPC tips, while the `Content Browser` remains focused on reading and browsing.
+
+Editing model:
+
+- base tips may be overridden or hidden, but not deleted
+- personal tips may be edited, hidden, or hard deleted
 
 The addon also has a dedicated `Info` page for project background and development status.
 
@@ -95,6 +104,7 @@ The main addon frame follows the user's config filters for:
 - Localized NPC names can come from the WoW client.
 - `Instance Info` is the short tactical text shown in the main frame.
 - `Zusatzinfos` are browser-only and should not clutter the live dungeon entry display.
+- The `Editor` page is intentionally separate from the `Content Browser`.
 - The `Info` page explains that Kiesel Dungeon Tool is the successor to QE Dungeon Tips and that development is still in progress.
 - Expansion, instance, and content structure are defined by code, not by a free-form editor.
 - Large structural changes should be discussed and approved before implementation.
