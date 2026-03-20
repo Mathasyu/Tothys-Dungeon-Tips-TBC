@@ -36,14 +36,19 @@ local function createCycleButton(frame, name, values, onChange)
 end
 
 --[[
-Tothys Dungeon Tips TBC
+Tothys Dungeon Tips TBC (former QE Dungeon Tips)
 Configuration Page
 
-Version: 4.8
+Version: 0.9
 Developed by: Voulk
+Forked by: Mathasyu 2026-03-09
 Contact: 
 	Discord: Voulk#1858
 	Email: itsvoulk@gmail.com
+Changelog:
+    0.9 - 2026-03
+        - The Addon works now in the TBC Anniversary Client
+        - New Slash Commands: /tdt config, /tdt show, /tdt hide, /tdt test
 ]]--
 
 local _, addon = ...;
@@ -183,7 +188,7 @@ local function createConfigMenu()
 
 	-- Setup Panel --
 	addon.configPanel = CreateFrame("Frame", "TothysDungeonTipsConfiguration", UIParent)
-	addon.configPanel.name = "Tothys Dungeon Tips TBC";
+	addon.configPanel.name = "Tothys Dungeon Kiesels : Tips TBC";
 	addon.configPanel.okay = function (self) return end
 	addon.configPanel.cancel = function (self) return end
 	
@@ -192,7 +197,7 @@ local function createConfigMenu()
 	ddTitleString:SetPoint("TOPLEFT", 10, -10)
 	ddTitleString:SetFont("Fonts\\MORPHEUS.ttf", 22, "OUTLINE")
 	ddTitleString:SetTextColor(0.9, 0.68, 0.22, 1)
-	ddTitleString:SetText("Tothys Dungeon Tips TBC - Config")
+	ddTitleString:SetText("Tothys Dungeon Kiesels - Config")
 
 	
 	-----------------------

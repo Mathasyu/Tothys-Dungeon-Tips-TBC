@@ -1,8 +1,8 @@
 ## Interface: 20501
 ## Title: Tothys Dungeon Tips TBC
 ## Author: Voulk (Discord: Voulk#1858)
-## Notes: Tothys Dungeon Tips highlights information about dangerous trash mobs in Burning Crusade dungeons and raids.
-## Version: 1.1
+## Notes: Tothys Dungeon Tips (former QE Dungeon Tips by Voulk) highlights information about dangerous trash mobs in Burning Crusade dungeons and raids. Id like to point out that most of the wonderful tips are not from me - they are from QE Dungeon Tips - one of the coolest Addons I know and I thought it would be nice to make it work in the TBC Anniversary Client.
+## Version: 0.9
 ## SavedVariables: TDTConfig, QEConfig
 
 Tothys-Database.lua

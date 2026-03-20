@@ -1,7 +1,8 @@
 --[[
-Tothys Dungeon Tips TBC
+Tothys Dungeon Tips TBC (former QE Dungeon Tips)
 Version: 0.5 (Burning Crusade Classic Alpha)
 Developed by: Voulk
+Forked by: Mathasyu 2026-03-09
 Contact: 
 	Discord: Voulk#1858
 	Email: itsvoulk@gmail.com

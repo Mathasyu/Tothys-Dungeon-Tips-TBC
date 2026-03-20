@@ -1,9 +1,10 @@
 --[[
-Tothys Dungeon Tips TBC
+Tothys Dungeon Tips TBC (former QE Dungeon Tips)
 Configuration Page
 
-Version: 4.8
+Version: 0.9
 Developed by: Voulk
+Forked by: Mathasyu 2026-03-09
 Contact: 
 	Discord: Voulk#1858
 	Email: itsvoulk@gmail.com
@@ -13,7 +14,7 @@ Future Versions - Engine
  - Tooltips on all config options
  - Lock button on frame
  - Alpha channel config
- - /TDT Slash command to bring up config.
+ - /TDT Slash command to bring up config. - DONE
  - Add an icon to fluff
  
 Future Versions - Content
@@ -107,7 +108,7 @@ function createTDTFrame()
 	headerTDT:SetTextColor(239/255, 191/255, 90/255)
 	headerTDT:SetJustifyH("LEFT")
 	headerTDT:SetJustifyV("MIDDLE")
-	headerTDT:SetText("Tothys Dungeon Tips TBC")
+	headerTDT:SetText("Tothys Dungeon Kiesels : Tips TBC")
 	headerTDT:SetWordWrap(true)
 	
 	TDT_HeaderPanel:SetPoint("TOPLEFT", TDT_ParentFrame, "TOPLEFT", 0, 0)
