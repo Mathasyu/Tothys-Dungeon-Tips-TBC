@@ -1560,38 +1560,38 @@ tipsMap_enUS = {
 	------- Raid: Zul'Aman -----------------
 
 	---Bosses
-	[23863] = {{"Important", ""}}, -- Zul'jin
-	[24239] = {{"Important", ""}}, -- Hex Lord Malacrass
-	[23574] = {{"Important", ""}}, -- Akil'zon <Eagle Avatar>
-	[23576] = {{"Important", ""}}, -- Nalorakk <Bear Avatar>
-	[23577] = {{"Important", ""}}, -- Halazzi <Lynx Avatar>
-	[23578] = {{"Important", ""}}, -- Jan'alai <Dragonhawk Avatar>
+	[23863] = {{"zulaman_23863_01", "Important", "", 10}}, -- Zul'jin
+	[24239] = {{"zulaman_24239_01", "Important", "", 10}}, -- Hex Lord Malacrass
+	[23574] = {{"zulaman_23574_01", "Important", "", 10}}, -- Akil'zon <Eagle Avatar>
+	[23576] = {{"zulaman_23576_01", "Important", "", 10}}, -- Nalorakk <Bear Avatar>
+	[23577] = {{"zulaman_23577_01", "Important", "", 10}}, -- Halazzi <Lynx Avatar>
+	[23578] = {{"zulaman_23578_01", "Important", "", 10}}, -- Jan'alai <Dragonhawk Avatar>
 
 	---Trash Mobs
-	[23542] = {{"Important", ""}}, -- Amani'shi Axe Thrower
-	[23580] = {{"Important", ""}}, -- Amani'shi Warbringer
-	[23581] = {{"Important", ""}}, -- Amani'shi Medicine Man
-	[23582] = {{"Important", ""}}, -- Amani'shi Tribesman
-	[23584] = {{"Important", ""}}, -- Amani Bear
-	[23586] = {{"Important", ""}}, -- Amani'shi Scout
-	[23596] = {{"Important", ""}}, -- Amani'shi Flame Caster
-	[23597] = {{"Important", ""}}, -- Amani'shi Guardian
-	[23774] = {{"Important", ""}}, -- Amani'shi Trainer
-	[23834] = {{"Important", ""}}, -- Amani Dragonhawk
-	[23889] = {{"Important", ""}}, -- Amani'shi Savage
-	[24043] = {{"Important", ""}}, -- Amani Lynx
-	[24047] = {{"Important", ""}}, -- Amani Crocolisk
-	[24059] = {{"Important", ""}}, -- Amani'shi Beast Tamer
-	[24064] = {{"Important", ""}}, -- Amani Lynx Cub
-	[24065] = {{"Important", ""}}, -- Amani'shi Handler
-	[24138] = {{"Important", ""}}, -- Tamed Amani Crocolisk
-	[24175] = {{"Legion", ""}}, -- Amani'shi Lookout
-	[24179] = {{"Important", ""}}, -- Amani'shi Wind Walker
-	[24180] = {{"Important", ""}}, -- Amani'shi Protector
-	[24217] = {{"Important", ""}}, -- Amani Bear Mount
-	[24374] = {{"Important", ""}}, -- Amani'shi Berserker
-	[24530] = {{"Important", ""}}, -- Amani Elder Lynx
-	[24549] = {{"Important", ""}}, -- Amani'shi Tempest
+	[23542] = {{"zulaman_23542_01", "Important", "", 10}}, -- Amani'shi Axe Thrower
+	[23580] = {{"zulaman_23580_01", "Important", "", 10}}, -- Amani'shi Warbringer
+	[23581] = {{"zulaman_23581_01", "Important", "", 10}}, -- Amani'shi Medicine Man
+	[23582] = {{"zulaman_23582_01", "Important", "", 10}}, -- Amani'shi Tribesman
+	[23584] = {{"zulaman_23584_01", "Important", "", 10}}, -- Amani Bear
+	[23586] = {{"zulaman_23586_01", "Important", "", 10}}, -- Amani'shi Scout
+	[23596] = {{"zulaman_23596_01", "Important", "", 10}}, -- Amani'shi Flame Caster
+	[23597] = {{"zulaman_23597_01", "Important", "", 10}}, -- Amani'shi Guardian
+	[23774] = {{"zulaman_23774_01", "Important", "", 10}}, -- Amani'shi Trainer
+	[23834] = {{"zulaman_23834_01", "Important", "", 10}}, -- Amani Dragonhawk
+	[23889] = {{"zulaman_23889_01", "Important", "", 10}}, -- Amani'shi Savage
+	[24043] = {{"zulaman_24043_01", "Important", "", 10}}, -- Amani Lynx
+	[24047] = {{"zulaman_24047_01", "Important", "", 10}}, -- Amani Crocolisk
+	[24059] = {{"zulaman_24059_01", "Important", "", 10}}, -- Amani'shi Beast Tamer
+	[24064] = {{"zulaman_24064_01", "Important", "", 10}}, -- Amani Lynx Cub
+	[24065] = {{"zulaman_24065_01", "Important", "", 10}}, -- Amani'shi Handler
+	[24138] = {{"zulaman_24138_01", "Important", "", 10}}, -- Tamed Amani Crocolisk
+	[24175] = {{"zulaman_24175_01", "Legion", "", 10}}, -- Amani'shi Lookout
+	[24179] = {{"zulaman_24179_01", "Important", "", 10}}, -- Amani'shi Wind Walker
+	[24180] = {{"zulaman_24180_01", "Important", "", 10}}, -- Amani'shi Protector
+	[24217] = {{"zulaman_24217_01", "Important", "", 10}}, -- Amani Bear Mount
+	[24374] = {{"zulaman_24374_01", "Important", "", 10}}, -- Amani'shi Berserker
+	[24530] = {{"zulaman_24530_01", "Important", "", 10}}, -- Amani Elder Lynx
+	[24549] = {{"zulaman_24549_01", "Important", "", 10}}, -- Amani'shi Tempest
 
 
 	------- Raid: Gruul's Lair -------------
