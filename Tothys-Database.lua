@@ -658,11 +658,47 @@ addon.contentCatalog = addon.contentCatalog or {
 					enUS = "Magisters' Terrace",
 					deDE = "Magisters' Terrace",
 				},
+				npcNames = {
+					[24552] = { enUS = "Sliver" },
+					[24553] = { enUS = "Apoko" },
+					[24554] = { enUS = "Eramas Brightblaze" },
+					[24555] = { enUS = "Garaxxas" },
+					[24556] = { enUS = "Zelfan" },
+					[24557] = { enUS = "Kagani Nightstrike" },
+					[24558] = { enUS = "Ellrys Duskhallow" },
+					[24559] = { enUS = "Warlord Salaris" },
+					[24560] = { enUS = "Priestess Delrissa" },
+					[24561] = { enUS = "Yazzai" },
+					[24656] = { enUS = "Fizzle" },
+					[24664] = { enUS = "Kael'thas Sunstrider" },
+					[24674] = { enUS = "Phoenix" },
+					[24675] = { enUS = "Phoenix Egg" },
+					[24683] = { enUS = "Sunblade Mage Guard" },
+					[24684] = { enUS = "Sunblade Blood Knight" },
+					[24685] = { enUS = "Sunblade Magister" },
+					[24686] = { enUS = "Sunblade Warlock" },
+					[24687] = { enUS = "Sunblade Physician" },
+					[24688] = { enUS = "Wretched Skulker" },
+					[24689] = { enUS = "Wretched Bruiser" },
+					[24690] = { enUS = "Wretched Husk" },
+					[24696] = { enUS = "Coilskar Witch" },
+					[24697] = { enUS = "Sister of Torment" },
+					[24698] = { enUS = "Ethereum Smuggler" },
+					[24722] = { enUS = "Fel Crystal" },
+					[24723] = { enUS = "Selin Fireheart" },
+					[24744] = { enUS = "Vexallus" },
+					[24745] = { enUS = "Pure Energy" },
+					[24761] = { enUS = "Brightscale Wyrm" },
+					[24762] = { enUS = "Sunblade Keeper" },
+					[24777] = { enUS = "Sunblade Sentinel" },
+					[24781] = { enUS = "Nether Energy" },
+					[24815] = { enUS = "Sunblade Imp" },
+				},
 				npcIDs = {
 					24723, 24744, 24560, 24664, 24552, 24553, 24554, 24555, 24556, 24557,
-					24558, 24559, 24561, 24656, 24674, 24683, 24684, 24685, 24696, 24697,
-					24698, 24699, 24722, 24745, 24777, 24795, 24815, 24826, 24849, 24853,
-					24864, 24865, 24871, 24882, 24891,
+					24558, 24559, 24561, 24656, 24674, 24675, 24683, 24684, 24685, 24686,
+					24687, 24688, 24689, 24690, 24696, 24697, 24698, 24722, 24745, 24761,
+					24762, 24777, 24781, 24815,
 				},
 			},
 			serpentshrine_cavern = {
@@ -3114,44 +3150,44 @@ tipsMap_enUS = {
 	------- Dungeon: Magister’s Terrace -------------
 
 	---Bosses
-	[24723] = {{"Important", ""}}, -- Selin Fireheart
-	[24744] = {{"Important", ""}}, -- Vexallus
-	[24560] = {{"Important", ""}}, -- Priestess Delrissa
-	[24664] = {{"Important", ""}}, -- Kael'thas Sunstrider <Lord of the Blood Elves>
+	[24723] = {{"magisters_terrace_24723_01", "Important", "", 10}}, -- Selin Fireheart
+	[24744] = {{"magisters_terrace_24744_01", "Important", "", 10}}, -- Vexallus
+	[24560] = {{"magisters_terrace_24560_01", "Important", "", 10}}, -- Priestess Delrissa
+	[24664] = {{"magisters_terrace_24664_01", "Important", "", 10}}, -- Kael'thas Sunstrider <Lord of the Blood Elves>
 
 	---Priestess Delrissa' Minions
-	[24552] = {{"Important", ""}}, -- Sliver <Garaxxas' Pet>
-	[24553] = {{"Important", ""}}, -- Apoko
-	[24554] = {{"Important", ""}}, -- Eramas Brightblaze
-	[24555] = {{"Important", ""}}, -- Garaxxas
-	[24556] = {{"Important", ""}}, -- Zelfan
-	[24557] = {{"Important", ""}}, -- Kagani Nightstrike
-	[24558] = {{"Important", ""}}, -- Ellrys Duskhallow
-	[24559] = {{"Important", ""}}, -- Warlord Salaris
-	[24561] = {{"Important", ""}}, -- Yazzai
+	[24552] = {{"magisters_terrace_24552_01", "Important", "", 10}}, -- Sliver <Garaxxas' Pet>
+	[24553] = {{"magisters_terrace_24553_01", "Important", "", 10}}, -- Apoko
+	[24554] = {{"magisters_terrace_24554_01", "Important", "", 10}}, -- Eramas Brightblaze
+	[24555] = {{"magisters_terrace_24555_01", "Important", "", 10}}, -- Garaxxas
+	[24556] = {{"magisters_terrace_24556_01", "Important", "", 10}}, -- Zelfan
+	[24557] = {{"magisters_terrace_24557_01", "Important", "", 10}}, -- Kagani Nightstrike
+	[24558] = {{"magisters_terrace_24558_01", "Important", "", 10}}, -- Ellrys Duskhallow
+	[24559] = {{"magisters_terrace_24559_01", "Important", "", 10}}, -- Warlord Salaris
+	[24561] = {{"magisters_terrace_24561_01", "Important", "", 10}}, -- Yazzai
 
 	---Trash Mobs
-	[24656] = {{"Important", ""}}, -- Fizzle
-	[24674] = {{"Important", ""}}, -- Phoenix
-	[24675] = {{"Legion", ""}}, -- Phoenix Egg
-	[24683] = {{"Important", ""}}, -- Sunblade Mage Guard
-	[24684] = {{"Important", ""}}, -- Sunblade Blood Knight
-	[24685] = {{"Important", ""}}, -- Sunblade Magister
-	[24686] = {{"Important", ""}}, -- Sunblade Warlock
-	[24687] = {{"Important", ""}}, -- Sunblade Physician
-	[24688] = {{"Important", ""}}, -- Wretched Skulker
-	[24689] = {{"Important", ""}}, -- Wretched Bruiser
-	[24690] = {{"Important", ""}}, -- Wretched Husk
-	[24696] = {{"Important", ""}}, -- Coilskar Witch
-	[24697] = {{"Important", ""}}, -- Sister of Torment
-	[24698] = {{"Important", ""}}, -- Ethereum Smuggler
-	[24722] = {{"Legion", ""}}, -- Fel Crystal
-	[24745] = {{"Legion", ""}}, -- Pure Energy
-	[24761] = {{"Important", ""}}, -- Brightscale Wyrm
-	[24762] = {{"Important", ""}}, -- Sunblade Keeper
-	[24777] = {{"Important", ""}}, -- Sunblade Sentinel
-	[24781] = {{"Legion", ""}}, -- Nether Energy
-	[24815] = {{"Important", ""}}, -- Sunblade Imp
+	[24656] = {{"magisters_terrace_24656_01", "Important", "", 10}}, -- Fizzle
+	[24674] = {{"magisters_terrace_24674_01", "Important", "", 10}}, -- Phoenix
+	[24675] = {{"magisters_terrace_24675_01", "Legion", "", 10}}, -- Phoenix Egg
+	[24683] = {{"magisters_terrace_24683_01", "Important", "", 10}}, -- Sunblade Mage Guard
+	[24684] = {{"magisters_terrace_24684_01", "Important", "", 10}}, -- Sunblade Blood Knight
+	[24685] = {{"magisters_terrace_24685_01", "Important", "", 10}}, -- Sunblade Magister
+	[24686] = {{"magisters_terrace_24686_01", "Important", "", 10}}, -- Sunblade Warlock
+	[24687] = {{"magisters_terrace_24687_01", "Important", "", 10}}, -- Sunblade Physician
+	[24688] = {{"magisters_terrace_24688_01", "Important", "", 10}}, -- Wretched Skulker
+	[24689] = {{"magisters_terrace_24689_01", "Important", "", 10}}, -- Wretched Bruiser
+	[24690] = {{"magisters_terrace_24690_01", "Important", "", 10}}, -- Wretched Husk
+	[24696] = {{"magisters_terrace_24696_01", "Important", "", 10}}, -- Coilskar Witch
+	[24697] = {{"magisters_terrace_24697_01", "Important", "", 10}}, -- Sister of Torment
+	[24698] = {{"magisters_terrace_24698_01", "Important", "", 10}}, -- Ethereum Smuggler
+	[24722] = {{"magisters_terrace_24722_01", "Legion", "", 10}}, -- Fel Crystal
+	[24745] = {{"magisters_terrace_24745_01", "Legion", "", 10}}, -- Pure Energy
+	[24761] = {{"magisters_terrace_24761_01", "Important", "", 10}}, -- Brightscale Wyrm
+	[24762] = {{"magisters_terrace_24762_01", "Important", "", 10}}, -- Sunblade Keeper
+	[24777] = {{"magisters_terrace_24777_01", "Important", "", 10}}, -- Sunblade Sentinel
+	[24781] = {{"magisters_terrace_24781_01", "Legion", "", 10}}, -- Nether Energy
+	[24815] = {{"magisters_terrace_24815_01", "Important", "", 10}}, -- Sunblade Imp
 
 
 	-------------0--------------	
