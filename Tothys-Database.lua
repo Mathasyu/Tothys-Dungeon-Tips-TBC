@@ -1597,32 +1597,32 @@ tipsMap_enUS = {
 	------- Raid: Gruul's Lair -------------
 
 	---Bosses
-	[19044] = {{"Advanced", "POSITIONING: The fight favors ranged DPS over melee! Tanks, DPS and Healers should NOT stack on each other, and instead spread out"},
-				{"Important", "Make sure that MT and OT are #1 and #2 respectively on the threat meter as the Hurtful Strike hits the player with the second-highest threat"},
-				{"Important", "Gruul uses Growth every 30 sec (stacking to 30) which increases damage done by 15% per stack - This is a HIGH Stam/High DPS race!"},
-				{"TANK", "DEFENSIVES: Hurtful Strike (which is applied ~20 sec) is applied to off-tank"},
-				{"HEALER", "Keep HoTs refreshed on MT and OT as a zone-wide Silence will be cast by Gruul lasting 4 seconds"},
-				{"DODGE", "Run out of Cave-ins (usually on top of himself and will occur more freqently as fight continues). Cave In deals ~3k AoE damage every 3 seconds"},
-				{"Important", "Gruul will do a random direction knockback. Players that get knocked back and find themselves close together need to spread as they will be turned to stone within a few seconds. After being turned to stone, those players will shatter dealing AoE damage to yourself and nearby players"},
-				{"HEALER", "Due to silences (4 sec silence), knockbacks and turning into stone, refresh tank HoTs VERY regularly and keep them at 100%, even if it means overhealing"},
-				{"Important", "Gruul doesn't use Magic abilities, so it can be helpful to have a Mage buff raid with Amplify Magic"},
-				{"Important", "A Paladin in your raid with Improved Concentration Aura should be placed in a group composed of healers to reduce healer silence time"}}, 
+	[19044] = {{"gruul_19044_01", "Advanced", "POSITIONING: The fight favors ranged DPS over melee! Tanks, DPS and Healers should NOT stack on each other, and instead spread out", 100},
+				{"gruul_19044_02", "Important", "Make sure that MT and OT are #1 and #2 respectively on the threat meter as the Hurtful Strike hits the player with the second-highest threat", 90},
+				{"gruul_19044_03", "Important", "Gruul uses Growth every 30 sec (stacking to 30) which increases damage done by 15% per stack - This is a HIGH Stam/High DPS race!", 80},
+				{"gruul_19044_04", "TANK", "DEFENSIVES: Hurtful Strike (which is applied ~20 sec) is applied to off-tank", 70},
+				{"gruul_19044_05", "HEALER", "Keep HoTs refreshed on MT and OT as a zone-wide Silence will be cast by Gruul lasting 4 seconds", 60},
+				{"gruul_19044_06", "DODGE", "Run out of Cave-ins (usually on top of himself and will occur more freqently as fight continues). Cave In deals ~3k AoE damage every 3 seconds", 50},
+				{"gruul_19044_07", "Important", "Gruul will do a random direction knockback. Players that get knocked back and find themselves close together need to spread as they will be turned to stone within a few seconds. After being turned to stone, those players will shatter dealing AoE damage to yourself and nearby players", 40},
+				{"gruul_19044_08", "HEALER", "Due to silences (4 sec silence), knockbacks and turning into stone, refresh tank HoTs VERY regularly and keep them at 100%, even if it means overhealing", 30},
+				{"gruul_19044_09", "Important", "Gruul doesn't use Magic abilities, so it can be helpful to have a Mage buff raid with Amplify Magic", 20},
+				{"gruul_19044_10", "Important", "A Paladin in your raid with Improved Concentration Aura should be placed in a group composed of healers to reduce healer silence time", 10}},
 				-- Gruul the Dragonkiller
 
 	---Council Fight
-	[18831] = {{"Important", ""}}, -- High King Maulgar <Lord of the Ogres>
-	[18832] = {{"Important", ""}}, -- Krosh Firehand
-	[18834] = {{"Important", ""}}, -- Olm the Summoner
-	[18847] = {{"Important", ""}}, -- Wild Fel Stalker
-	[18835] = {{"Important", ""}}, -- Kiggler the Crazed
-	[18836] = {{"Important", ""}}, -- Blindeye the Seer
+	[18831] = {{"gruul_18831_01", "Important", "", 10}}, -- High King Maulgar <Lord of the Ogres>
+	[18832] = {{"gruul_18832_01", "Important", "", 10}}, -- Krosh Firehand
+	[18834] = {{"gruul_18834_01", "Important", "", 10}}, -- Olm the Summoner
+	[18847] = {{"gruul_18847_01", "Important", "", 10}}, -- Wild Fel Stalker
+	[18835] = {{"gruul_18835_01", "Important", "", 10}}, -- Kiggler the Crazed
+	[18836] = {{"gruul_18836_01", "Important", "", 10}}, -- Blindeye the Seer
 
 	---Trash Mobs
-	[19389] = {{"Important", "Immune to stuns and snares"},
-				{"HEALER", "To prevent being cleaved/charged, stand as close to mob's backside as possible"},
-				{"TANK", "Due to mob's cleave, the tank should face this mob away from raid"},
-				{"DAMAGE", "To prevent being cleaved/charged, stand as close to mob's backside as possible"}}, -- Lair Brute
-	[21350] = {{"Interrupts", "Interrupt: Heal (2 sec cast; Large heal that restores ~50% of mob's health)"}}, -- Gronn-Priest
+	[19389] = {{"gruul_19389_01", "Important", "Immune to stuns and snares", 40},
+				{"gruul_19389_02", "HEALER", "To prevent being cleaved/charged, stand as close to mob's backside as possible", 30},
+				{"gruul_19389_03", "TANK", "Due to mob's cleave, the tank should face this mob away from raid", 20},
+				{"gruul_19389_04", "DAMAGE", "To prevent being cleaved/charged, stand as close to mob's backside as possible", 10}}, -- Lair Brute
+	[21350] = {{"gruul_21350_01", "Interrupts", "Interrupt: Heal (2 sec cast; Large heal that restores ~50% of mob's health)", 10}}, -- Gronn-Priest
 
 
 	------- Raid: Magtheridon's Lair -------
@@ -2088,100 +2088,100 @@ tipsMap_enUS = {
 	------- Dungeon: The Shattered Halls ------------
 
 	---Bosses
-	[16807] = {{"Important", "The fight will start when the last/fourth Fel Orc Convert dies (this can be killed by players, or may be killed by the boss if group is taking too much time to pull"},
-				{"Legion", "Shadow Resistance Buffs/Aura are helpful here if you run into trouble."},
-				{"Advanced", "PHASE 1:"},
-				{"Dodge", "DODGE: Players inside Void zones (starting out as circular red graphic will appear around a player) will need to run out of them ASAP!"},
-				{"Important", "Boss will cast Death Coil on random players dealing Shadow Damage +4 sec fear!"},
-				{"SHAMAN", "Fear Totem can be helpful to protect healer from getting 4 sec Death Coil fear"},
-				{"Advanced", "PHASE 2 (starts at boss 20% health):"},
-				{"Important", "Boss will begin channeling Dark Spin WW dealing Physical Damage in melee plus firing Shadow Bolts at random players. Burn him down QUICKLY in phase 2!"},
-				{"ROGUE", "Save Cloak of Shadows and Evasion until things get dangerous for you during Phase 2"}}, 
+	[16807] = {{"shattered_halls_16807_01", "Important", "The fight will start when the last/fourth Fel Orc Convert dies (this can be killed by players, or may be killed by the boss if group is taking too much time to pull", 90},
+				{"shattered_halls_16807_02", "Legion", "Shadow Resistance Buffs/Aura are helpful here if you run into trouble.", 80},
+				{"shattered_halls_16807_03", "Advanced", "PHASE 1:", 70},
+				{"shattered_halls_16807_04", "Dodge", "DODGE: Players inside Void zones (starting out as circular red graphic will appear around a player) will need to run out of them ASAP!", 60},
+				{"shattered_halls_16807_05", "Important", "Boss will cast Death Coil on random players dealing Shadow Damage +4 sec fear!", 50},
+				{"shattered_halls_16807_06", "SHAMAN", "Fear Totem can be helpful to protect healer from getting 4 sec Death Coil fear", 40},
+				{"shattered_halls_16807_07", "Advanced", "PHASE 2 (starts at boss 20% health):", 30},
+				{"shattered_halls_16807_08", "Important", "Boss will begin channeling Dark Spin WW dealing Physical Damage in melee plus firing Shadow Bolts at random players. Burn him down QUICKLY in phase 2!", 20},
+				{"shattered_halls_16807_09", "ROGUE", "Save Cloak of Shadows and Evasion until things get dangerous for you during Phase 2", 10}},
 				-- Grand Warlock Nethekurse
-	[20923] = {{"TANK", "Tank the boss against a wall"},
-				{"Important", "Has a brief fear"},
-				{"Important", "Due to high-hitting melee cleave, the players standing close to boss will take increased damage and will need more heals"}}, 
+	[20923] = {{"shattered_halls_20923_01", "TANK", "Tank the boss against a wall", 30},
+				{"shattered_halls_20923_02", "Important", "Has a brief fear", 20},
+				{"shattered_halls_20923_03", "Important", "Due to high-hitting melee cleave, the players standing close to boss will take increased damage and will need more heals", 10}},
 				-- Blood Guard Porung (Heroic-Only)
-	[16809] = {{"Legion", "HEROIC MODE: It is best to have TANK put on DPS gear due to being untauntable. Tank and 2 DPS having a buffed HP of 8500 is helpful here. The third 'DPS' should go off-heals to help out main spec healer"},
-				{"TANK", "Tank the boss in the middle of the room and be prepared to pickup stealthed assassins that may strike when boss unleashes fear"},
-				{"Important", "Untauntable (using high threat abilities causes him to focus on that player"},
-				{"Important", "BEATDOWN: When boss emotes, he will wipe aggro table and attack random player"},
-				{"PALADIN", "If tank, use Seal of Vengeance! Maintaining that 5th tick of debuff on boss will help pull aggro back to you during aggro switch"},
-				{"WARRIOR", "If tank, make sure to keep Sunder Armor stacked to help pull aggro back to you when aggro table is wiped."},
-				{"DRUID", "If tank, keep Lacerate applied to boss to help pull aggro back to you when aggro table is wiped"},
-				{"Defensives", "When boss' weapon glows red he will deal increased fire damage to target and unleash an AoE Blast Wave (Fire Damage +Movement Speed Slow)"},
-				{"Important", "FEAR: Boss dishes out an AoE 3 sec fear"},
-				{"SHAMAN", "Fear Totem will be helpful in contending with boss' AoE Fear"},
-				{"Important", "Boss will occasionally Thunder Clap (-35% attack speed and -35% movement speed to players for 10 sec) melee-ranged players. This should be removed."}}, 
+	[16809] = {{"shattered_halls_16809_01", "Legion", "HEROIC MODE: It is best to have TANK put on DPS gear due to being untauntable. Tank and 2 DPS having a buffed HP of 8500 is helpful here. The third 'DPS' should go off-heals to help out main spec healer", 110},
+				{"shattered_halls_16809_02", "TANK", "Tank the boss in the middle of the room and be prepared to pickup stealthed assassins that may strike when boss unleashes fear", 100},
+				{"shattered_halls_16809_03", "Important", "Untauntable (using high threat abilities causes him to focus on that player", 90},
+				{"shattered_halls_16809_04", "Important", "BEATDOWN: When boss emotes, he will wipe aggro table and attack random player", 80},
+				{"shattered_halls_16809_05", "PALADIN", "If tank, use Seal of Vengeance! Maintaining that 5th tick of debuff on boss will help pull aggro back to you during aggro switch", 70},
+				{"shattered_halls_16809_06", "WARRIOR", "If tank, make sure to keep Sunder Armor stacked to help pull aggro back to you when aggro table is wiped.", 60},
+				{"shattered_halls_16809_07", "DRUID", "If tank, keep Lacerate applied to boss to help pull aggro back to you when aggro table is wiped", 50},
+				{"shattered_halls_16809_08", "Defensives", "When boss' weapon glows red he will deal increased fire damage to target and unleash an AoE Blast Wave (Fire Damage +Movement Speed Slow)", 40},
+				{"shattered_halls_16809_09", "Important", "FEAR: Boss dishes out an AoE 3 sec fear", 30},
+				{"shattered_halls_16809_10", "SHAMAN", "Fear Totem will be helpful in contending with boss' AoE Fear", 20},
+				{"shattered_halls_16809_11", "Important", "Boss will occasionally Thunder Clap (-35% attack speed and -35% movement speed to players for 10 sec) melee-ranged players. This should be removed.", 10}},
 				-- Warbringer O'mrogg
-	[16808] = {{"Advanced", "POSITIONING: TANK boss near entrance to his 'platform' and facing that same direction. When fight begins, HEALER should stand in the opposite side of the platform, and DPS should stand between boss and Healer. Players should spread as much as possible"},
-				{"Legion", "ASSIGNMENTS (to keep healer from going oom): Have 1 DPS dedicated to adds, another DPS switching between Boss and helping deal with the Adds, and another focusing on boss"},
-				{"Important", "ADDS: ~30 sec into the fight (increasing in frequency over the fight), boss will call for adds that will come up the stairs to entrance of platform. Tank should swap to these targets to pick up aggro while DPS focuses on adds as priority"},
-				{"Important", "If group is not able to balance dealing with increased number of adds, this boss fight can overwhelm group and result in a wipe"},
-				{"Important", "BLADE DANCE/CHARGE: ~30 sec after fight begins and every 30 sec thereafter, boss will charge random player and strike them (+1 sec stun). As the fight continues, boss will charge an increased number of players dealing damage to them."},
-				{"HEALER", "During boss' SWEEPING STRIKES, boss' next 5 melee attacks will strike an additional player"}}, 
+	[16808] = {{"shattered_halls_16808_01", "Advanced", "POSITIONING: TANK boss near entrance to his 'platform' and facing that same direction. When fight begins, HEALER should stand in the opposite side of the platform, and DPS should stand between boss and Healer. Players should spread as much as possible", 60},
+				{"shattered_halls_16808_02", "Legion", "ASSIGNMENTS (to keep healer from going oom): Have 1 DPS dedicated to adds, another DPS switching between Boss and helping deal with the Adds, and another focusing on boss", 50},
+				{"shattered_halls_16808_03", "Important", "ADDS: ~30 sec into the fight (increasing in frequency over the fight), boss will call for adds that will come up the stairs to entrance of platform. Tank should swap to these targets to pick up aggro while DPS focuses on adds as priority", 40},
+				{"shattered_halls_16808_04", "Important", "If group is not able to balance dealing with increased number of adds, this boss fight can overwhelm group and result in a wipe", 30},
+				{"shattered_halls_16808_05", "Important", "BLADE DANCE/CHARGE: ~30 sec after fight begins and every 30 sec thereafter, boss will charge random player and strike them (+1 sec stun). As the fight continues, boss will charge an increased number of players dealing damage to them.", 20},
+				{"shattered_halls_16808_06", "HEALER", "During boss' SWEEPING STRIKES, boss' next 5 melee attacks will strike an additional player", 10}},
 				-- Warchief Kargath Bladefist
 
 	---Kargath Bladefist's Buddies
-	[17621] = {{"Legion", "Fury Warrior-type mob"},
-				{"Important", "BLOODTHIRST: Next 5 successful attacks restore health to mob"},
-				{"Defensives", "ENRAGE: Increased Physical Dmg + attack speed by 30% for 1 minute"}}, 
+	[17621] = {{"shattered_halls_17621_01", "Legion", "Fury Warrior-type mob", 30},
+				{"shattered_halls_17621_02", "Important", "BLOODTHIRST: Next 5 successful attacks restore health to mob", 20},
+				{"shattered_halls_17621_03", "Defensives", "ENRAGE: Increased Physical Dmg + attack speed by 30% for 1 minute", 10}},
 				-- Heathen Guard
-	[17622] = {{"Legion", "Hunter-type-mob"}, 
-				{"Important", "SCATTER SHOT: Deals Physical Damage +4 sec disorient to player."},
-				{"Important", "INCENDIARY SHOT: Applies fire DoT to player"}}, -- Sharpshooter Guard
-	[17623] = {{"Legion", "Arms Warrior-type mob"}, 
-				{"Important", "KNOCKBACK ability: When fighting mob, try to stand with back against wall"},
-				{"Important", "CLEAVE: Mob will deal Physical damage to player and their closest ally"},
-				{"Defensives", "ENRAGE: Increased Physical Dmg + attack speed by 30% for 1 minute"}}, 
+	[17622] = {{"shattered_halls_17622_01", "Legion", "Hunter-type-mob", 30},
+				{"shattered_halls_17622_02", "Important", "SCATTER SHOT: Deals Physical Damage +4 sec disorient to player.", 20},
+				{"shattered_halls_17622_03", "Important", "INCENDIARY SHOT: Applies fire DoT to player", 10}}, -- Sharpshooter Guard
+	[17623] = {{"shattered_halls_17623_01", "Legion", "Arms Warrior-type mob", 40},
+				{"shattered_halls_17623_02", "Important", "KNOCKBACK ability: When fighting mob, try to stand with back against wall", 30},
+				{"shattered_halls_17623_03", "Important", "CLEAVE: Mob will deal Physical damage to player and their closest ally", 20},
+				{"shattered_halls_17623_04", "Defensives", "ENRAGE: Increased Physical Dmg + attack speed by 30% for 1 minute", 10}},
 				-- Reaver Guard
 
 	---Trash Mobs
-	[16507] = {{"Important", "Immune to MC on Heroic; Will charge opponent stunning them for 2 sec"}}, -- Shattered Hand Sentry
-	[16523] = {{"Legion", "Arms Warrior-Type Mob"},
-				{"Defensives", "Use defensives as needed when mob is buffed with Slice and Dice (Increased attack speed by 30% for 8 sec)"}}, 
+	[16507] = {{"shattered_halls_16507_01", "Important", "Immune to MC on Heroic; Will charge opponent stunning them for 2 sec", 10}}, -- Shattered Hand Sentry
+	[16523] = {{"shattered_halls_16523_01", "Legion", "Arms Warrior-Type Mob", 20},
+				{"shattered_halls_16523_02", "Defensives", "Use defensives as needed when mob is buffed with Slice and Dice (Increased attack speed by 30% for 8 sec)", 10}},
 				-- Shattered Hand Savage
-	[16593] = {{"Important", "Immune to MC in Heroic"},
-				{"Important", "Remove Curse of the Shattered Hand (Damage taken increased by 15%, damage done increased by 5%) from tank"}}, 
+	[16593] = {{"shattered_halls_16593_01", "Important", "Immune to MC in Heroic", 20},
+				{"shattered_halls_16593_02", "Important", "Remove Curse of the Shattered Hand (Damage taken increased by 15%, damage done increased by 5%) from tank", 10}},
 				-- Shattered Hand Brawler
-	[16594] = {{"Legion", "Healing Priest-Type Mobs"},
-				{"Interrupts", "Interrupt: Prayer of Healing (3 sec AoE Heal); Mob can also be CC'd"}}, 
+	[16594] = {{"shattered_halls_16594_01", "Legion", "Healing Priest-Type Mobs", 20},
+				{"shattered_halls_16594_02", "Interrupts", "Interrupt: Prayer of Healing (3 sec AoE Heal); Mob can also be CC'd", 10}},
 				-- Shadowmoon Acolyte
-	[16699] = {{"Legion", "Immune to Mind Control on Normal and Heroic difficulties"},
-				{"Important", "Hand Reaver will knock back player. Tank should have back against wall when fighting when this mob is present"}}, 
+	[16699] = {{"shattered_halls_16699_01", "Legion", "Immune to Mind Control on Normal and Heroic difficulties", 20},
+				{"shattered_halls_16699_02", "Important", "Hand Reaver will knock back player. Tank should have back against wall when fighting when this mob is present", 10}},
 				-- Shattered Hand Reaver
-	[16700] = {{"PriorityTargets", "When one of his squad dies, he will call for a replacement. If you kill this mob first, replacements won't come for the others anymore"}}, 
+	[16700] = {{"shattered_halls_16700_01", "PriorityTargets", "When one of his squad dies, he will call for a replacement. If you kill this mob first, replacements won't come for the others anymore", 10}},
 				-- Shattered Hand Legionnaire
-	[16704] = {{"Important", "Dispel Viper Sting (Poison; Drains mana from player) from mana-user (esp if it's healer)"}}, 
+	[16704] = {{"shattered_halls_16704_01", "Important", "Dispel Viper Sting (Poison; Drains mana from player) from mana-user (esp if it's healer)", 10}},
 				-- Shattered Hand Sharpshooter
-	[17083] = {{"Legion", ""}}, -- Fel Orc Convert
-	[17301] = {{"Important", "HEROIC-only mob. Due to the quest present on this difficulty, this mob needs to die quickly to ensure people on quest can make timer."}}, 
+	[17083] = {{"shattered_halls_17083_01", "Legion", "", 10}}, -- Fel Orc Convert
+	[17301] = {{"shattered_halls_17301_01", "Important", "HEROIC-only mob. Due to the quest present on this difficulty, this mob needs to die quickly to ensure people on quest can make timer.", 10}},
 				-- Shattered Hand Executioner
-	[17356] = {{"Legion", "AoE mobs down"},
-				{"TANK", "Use AoE threat ability (ie Thunder Clap/Consecration) to aggro packs while DPS AoE them"}}, 
+	[17356] = {{"shattered_halls_17356_01", "Legion", "AoE mobs down", 20},
+				{"shattered_halls_17356_02", "TANK", "Use AoE threat ability (ie Thunder Clap/Consecration) to aggro packs while DPS AoE them", 10}},
 				-- Creeping Ooze
-	[17357] = {{"Legion", "AoE mobs down"}, 
-				{"TANK", "Use AoE threat ability (ie Thunder Clap/Consecration) to aggro packs while DPS AoE them"}}, 
+	[17357] = {{"shattered_halls_17357_01", "Legion", "AoE mobs down", 20},
+				{"shattered_halls_17357_02", "TANK", "Use AoE threat ability (ie Thunder Clap/Consecration) to aggro packs while DPS AoE them", 10}},
 				-- Creeping Oozeling
-	[17420] = {{"Legion", ""}}, -- Shattered Hand Heathen
-	[17427] = {{"Dodge", "DODGE: Casts Flaming Arrows. You should run around these during the gauntlet event"}}, 
+	[17420] = {{"shattered_halls_17420_01", "Legion", "", 10}}, -- Shattered Hand Heathen
+	[17427] = {{"shattered_halls_17427_01", "Dodge", "DODGE: Casts Flaming Arrows. You should run around these during the gauntlet event", 10}},
 				-- Shattered Hand Archer
-	[17461] = {{"Legion", ""}}, -- Shattered Hand Blood Guard
-	[17462] = {{"Important", "Applies Hamstring to player (Physical damage +reduced movement speed)"}}, -- Shattered Hand Zealot
-	[17464] = {{"Defensives", "Applies Mortal Strike to target reducing healing effectiveness by 50% for 5 sec"}}, 
+	[17461] = {{"shattered_halls_17461_01", "Legion", "", 10}}, -- Shattered Hand Blood Guard
+	[17462] = {{"shattered_halls_17462_01", "Important", "Applies Hamstring to player (Physical damage +reduced movement speed)", 10}}, -- Shattered Hand Zealot
+	[17464] = {{"shattered_halls_17464_01", "Defensives", "Applies Mortal Strike to target reducing healing effectiveness by 50% for 5 sec", 10}},
 				-- Shattered Hand Gladiator
-	[17465] = {{"Important", "On Heroic-mode, when dealing with timer, skip these mobs"}}, -- Shattered Hand Centurion
-	[17578] = {{"Legion", ""}}, -- Hellfire Training Dummy
-	[17669] = {{"Legion", ""}}, -- Rabid Warhound
-	[17670] = {{"Important", "Ranged mob with pets; Can't be CC'd in Heroic difficulty"}}, -- Shattered Hand Houndmaster
-	[17671] = {{"Important", "Mob will use Concussion Blow (5 sec stun). This can cause issues for tank building threat if dealt at the start of fight. Once freed, the tank needs to move to pickup/continue to build aggro!"}},
+	[17465] = {{"shattered_halls_17465_01", "Important", "On Heroic-mode, when dealing with timer, skip these mobs", 10}}, -- Shattered Hand Centurion
+	[17578] = {{"shattered_halls_17578_01", "Legion", "", 10}}, -- Hellfire Training Dummy
+	[17669] = {{"shattered_halls_17669_01", "Legion", "", 10}}, -- Rabid Warhound
+	[17670] = {{"shattered_halls_17670_01", "Important", "Ranged mob with pets; Can't be CC'd in Heroic difficulty", 10}}, -- Shattered Hand Houndmaster
+	[17671] = {{"shattered_halls_17671_01", "Important", "Mob will use Concussion Blow (5 sec stun). This can cause issues for tank building threat if dealt at the start of fight. Once freed, the tank needs to move to pickup/continue to build aggro!", 10}},
 				-- Shattered Hand Champion
-	[17693] = {{"Legion", ""}}, -- Shattered Hand Scout
-	[17694] = {{"Important", "Warlock-Type Mob"},
-				{"Interrupts", "Interrupt: Fear"},
-				{"Dodge", "Run out of Rain of Fire when mob casts it at selected location"}}, -- Shadowmoon Darkcaster
-	[17695] = {{"Legion", "Stealthed/Rogue-Type Mobs"},
-				{"Important", "When they first aggro they will sap a random player (usually the player taking point) and proceed to assault other players. This mob should be CC'd while the tank/healer is sapped"}}, 
+	[17693] = {{"shattered_halls_17693_01", "Legion", "", 10}}, -- Shattered Hand Scout
+	[17694] = {{"shattered_halls_17694_01", "Important", "Warlock-Type Mob", 30},
+				{"shattered_halls_17694_02", "Interrupts", "Interrupt: Fear", 20},
+				{"shattered_halls_17694_03", "Dodge", "Run out of Rain of Fire when mob casts it at selected location", 10}}, -- Shadowmoon Darkcaster
+	[17695] = {{"shattered_halls_17695_01", "Legion", "Stealthed/Rogue-Type Mobs", 20},
+				{"shattered_halls_17695_02", "Important", "When they first aggro they will sap a random player (usually the player taking point) and proceed to assault other players. This mob should be CC'd while the tank/healer is sapped", 10}},
 				-- Shattered Hand Assassin
 
 
