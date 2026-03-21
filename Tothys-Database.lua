@@ -529,10 +529,38 @@ addon.contentCatalog = addon.contentCatalog or {
 					enUS = "Old Hillsbrad Foothills",
 					deDE = "Old Hillsbrad Foothills",
 				},
+				npcNames = {
+					[17814] = { enUS = "Lordaeron Watchman" },
+					[17815] = { enUS = "Lordaeron Sentry" },
+					[17819] = { enUS = "Durnholde Sentry" },
+					[17820] = { enUS = "Durnholde Rifleman" },
+					[17833] = { enUS = "Durnholde Warden" },
+					[17840] = { enUS = "Durnholde Tracking Hound" },
+					[17846] = { enUS = "Pit Spectator" },
+					[17848] = { enUS = "Lieutenant Drake" },
+					[17860] = { enUS = "Durnholde Veteran" },
+					[17862] = { enUS = "Captain Skarloc" },
+					[18092] = { enUS = "Tarren Mill Guardsman" },
+					[18093] = { enUS = "Tarren Mill Protector" },
+					[18094] = { enUS = "Tarren Mill Lookout" },
+					[18096] = { enUS = "Epoch Hunter" },
+					[18170] = { enUS = "Infinite Slayer" },
+					[18171] = { enUS = "Infinite Defiler" },
+					[18172] = { enUS = "Infinite Saboteur" },
+					[18673] = { enUS = "Pit Announcer" },
+					[18725] = { enUS = "Brazen" },
+					[18764] = { enUS = "Durnholde Armorer" },
+					[18765] = { enUS = "Durnholde Cook" },
+					[18786] = { enUS = "Thrall" },
+					[18934] = { enUS = "Durnholde Mage" },
+					[26650] = { enUS = "Durnholde Captain" },
+					[28132] = { enUS = "Don Carlos" },
+					[28163] = { enUS = "Guerrero" },
+				},
 				npcIDs = {
 					17848, 17862, 18096, 18725, 18786, 17814, 17815, 17819, 17820, 17833,
-					17840, 17846, 17860, 18092, 18093, 18094, 18095, 18096, 18097, 20569,
-					20570, 20571, 20572, 20573, 20574, 23175,
+					17840, 17846, 17860, 18092, 18093, 18094, 18170, 18171, 18172, 18673,
+					18764, 18765, 18934, 26650, 28132, 28163,
 				},
 			},
 			black_morass = {
@@ -543,9 +571,30 @@ addon.contentCatalog = addon.contentCatalog or {
 					enUS = "The Black Morass",
 					deDE = "The Black Morass",
 				},
+				npcNames = {
+					[15608] = { enUS = "Medivh" },
+					[17023] = { enUS = "Shadow Council Enforcer" },
+					[17835] = { enUS = "Infinite Assassin" },
+					[17839] = { enUS = "Rift Lord" },
+					[17879] = { enUS = "Chrono Lord Deja" },
+					[17880] = { enUS = "Temporus" },
+					[17881] = { enUS = "Aeonus" },
+					[17892] = { enUS = "Infinite Chronomancer" },
+					[17918] = { enUS = "Time Keeper" },
+					[17952] = { enUS = "Darkwater Crocolisk" },
+					[18982] = { enUS = "Sable Jaguar" },
+					[18983] = { enUS = "Blackfang Tarantula" },
+					[18994] = { enUS = "Infinite Executioner" },
+					[18995] = { enUS = "Infinite Vanquisher" },
+					[20201] = { enUS = "Sa'at" },
+					[21104] = { enUS = "Rift Keeper" },
+					[21697] = { enUS = "Infinite Chrono-Lord" },
+					[21698] = { enUS = "Infinite Timereaver" },
+					[21818] = { enUS = "Infinite Whelp" },
+				},
 				npcIDs = {
 					15608, 17023, 17918, 20201, 17879, 17880, 17881, 17839, 21104, 21697,
-					21698, 17835, 17892, 18994, 18995, 18996, 18997, 19048, 21148,
+					21698, 17835, 17892, 18994, 18995, 21818, 17952, 18982, 18983,
 				},
 			},
 			mechanar = {
@@ -2683,159 +2732,159 @@ tipsMap_enUS = {
 	------- Dungeon: Escape from Durnholde (Old Hillsbrad Foothills) ----------
 
 	---Bosses
-	[17848] = {{"Legion", "Tank n Spank fight, but be sure trash has been cleared so you aren't feared into a pat"},
-				{"Important", "Boss will cast Frightening Shout (AoE Fear w/10 yd range [as of Patch 2.3] lasting 6 sec) - Standing beyond this range to negate fear and his WW ability."}, 
-				{"Defensives", "Drake applies Mortal Strike to target reducing their healing effectiveness. Tank may need to use defensive CDs to help party healer during this part."}},
-				-- Lieutenant Drake
-	[17862] = {{"Legion", "Paladin-Type Mob"},
-				{"Advanced", "KILL ORDER: Warden (Healer), Veteran (Rogue), then Skarloc (Boss)"},
-				{"TANK", "Be quick to pick up boss and use AoE to hold aggro on Veteran (Rogue)"},
-				{"DAMAGE", "Focus down Warden (Healer) before going after Veteran or Boss (tank should be focusing on these two targets at start of fight)"},
-				{"Interrupts", "INTERRUPT: Holy Light (Heals an ally)"},
-				{"HEALER", "When Tank is struck by Hammer of Justice (5 sec stun) be sure to focus your heals to keep tank topped off!"},
-				{"WARLOCK", "Immune to Curse of Tongues."},
-				{"Important", "Stay out of Consecration at all times. If the tank, it's your job to kite the boss out of it!"}}, 
-				-- Captain Skarloc
-	[18096] = {{"Advanced", "PHASE ONE - Trash Waves"},
-				{"Legion", "1st Wave (Trash from west/same direction as boss)"},
-				{"Legion", "2nd Wave (Trash from south - direction Thrall and players entered Tarren Mill)"},
-				{"Legion", "3rd Wave (Trash from west/same direction as boss and 1st wave)"},
-				{"Important", "After 3rd wave goes down, group should use food/water to get health/mana back up - Save your POTS!"},
-				{"Advanced", "PHASE TWO - After brief intermission, boss will land"},
-				{"TANK", "When boss lands, tank him near NW small house of Tarren Mill under the outside roof of building & keep boss faced away from group due to frontal cone Sand Breath (Reduces movement speed +reduced attack for 10 sec)"},
-				{"Important", "Players should stand as far from boss as possible due to Wing Buffet (Knocks back players w/in 15 yds)"},
-				{"Important", "Boss has Magic Distruption Aura which will periodically dispel magical effects (buffs) from players"},
-				{"Defensives", "While under the effect of Impending Death you will take increased damage. Pop Defensives. Healer focus on this player!"}}, 
-				-- Epoch Hunter
+		[17848] = {{"old_hillsbrad_17848_01", "Legion", "Tank n Spank fight, but be sure trash has been cleared so you aren't feared into a pat", 30},
+					{"old_hillsbrad_17848_02", "Important", "Boss will cast Frightening Shout (AoE Fear w/10 yd range [as of Patch 2.3] lasting 6 sec) - Standing beyond this range to negate fear and his WW ability.", 20},
+					{"old_hillsbrad_17848_03", "Defensives", "Drake applies Mortal Strike to target reducing their healing effectiveness. Tank may need to use defensive CDs to help party healer during this part.", 10}},
+					-- Lieutenant Drake
+		[17862] = {{"old_hillsbrad_17862_01", "Legion", "Paladin-Type Mob", 80},
+					{"old_hillsbrad_17862_02", "Advanced", "KILL ORDER: Warden (Healer), Veteran (Rogue), then Skarloc (Boss)", 70},
+					{"old_hillsbrad_17862_03", "TANK", "Be quick to pick up boss and use AoE to hold aggro on Veteran (Rogue)", 60},
+					{"old_hillsbrad_17862_04", "DAMAGE", "Focus down Warden (Healer) before going after Veteran or Boss (tank should be focusing on these two targets at start of fight)", 50},
+					{"old_hillsbrad_17862_05", "Interrupts", "INTERRUPT: Holy Light (Heals an ally)", 40},
+					{"old_hillsbrad_17862_06", "HEALER", "When Tank is struck by Hammer of Justice (5 sec stun) be sure to focus your heals to keep tank topped off!", 30},
+					{"old_hillsbrad_17862_07", "WARLOCK", "Immune to Curse of Tongues.", 20},
+					{"old_hillsbrad_17862_08", "Important", "Stay out of Consecration at all times. If the tank, it's your job to kite the boss out of it!", 10}},
+					-- Captain Skarloc
+		[18096] = {{"old_hillsbrad_18096_01", "Advanced", "PHASE ONE - Trash Waves", 100},
+					{"old_hillsbrad_18096_02", "Legion", "1st Wave (Trash from west/same direction as boss)", 90},
+					{"old_hillsbrad_18096_03", "Legion", "2nd Wave (Trash from south - direction Thrall and players entered Tarren Mill)", 80},
+					{"old_hillsbrad_18096_04", "Legion", "3rd Wave (Trash from west/same direction as boss and 1st wave)", 70},
+					{"old_hillsbrad_18096_05", "Important", "After 3rd wave goes down, group should use food/water to get health/mana back up - Save your POTS!", 60},
+					{"old_hillsbrad_18096_06", "Advanced", "PHASE TWO - After brief intermission, boss will land", 50},
+					{"old_hillsbrad_18096_07", "TANK", "When boss lands, tank him near NW small house of Tarren Mill under the outside roof of building & keep boss faced away from group due to frontal cone Sand Breath (Reduces movement speed +reduced attack for 10 sec)", 40},
+					{"old_hillsbrad_18096_08", "Important", "Players should stand as far from boss as possible due to Wing Buffet (Knocks back players w/in 15 yds)", 30},
+					{"old_hillsbrad_18096_09", "Important", "Boss has Magic Distruption Aura which will periodically dispel magical effects (buffs) from players", 20},
+					{"old_hillsbrad_18096_10", "Defensives", "While under the effect of Impending Death you will take increased damage. Pop Defensives. Healer focus on this player!", 10}},
+					-- Epoch Hunter
 
 	---Friendly NPCs
-	[18725] = {{"Important", "Click to be flown to the other side of the instance"}}, -- Brazen
-	[18786] = {{"Important", "Escort and Protect Thrall"}}, -- Thrall (Friendly)
+		[18725] = {{"old_hillsbrad_18725_01", "Important", "Click to be flown to the other side of the instance", 10}}, -- Brazen
+		[18786] = {{"old_hillsbrad_18786_01", "Important", "Escort and Protect Thrall", 10}}, -- Thrall (Friendly)
 
 	---Trash Mobs
-	[17814] = {{"Legion", "Protection Warrior-Type Mob"},
-				{"Important", "After mob casts Shield Block, only the first melee attack might be blocked for the next 5 sec. Avoid using big CD abilities during this 5 sec window"}}, 
-				-- Lordaeron Watchman
-	[17815] = {{"Legion", "Ranged mobs that Shoot players"}}, -- Lordaeron Sentry
-	[17819] = {{"Important", "Mobs will cleave nearest ally to their target, so tank should pull this mob away from ranged DPS/healer. Melee DPS may need extra heals"}}, 
-				-- Durnholde Sentry
-	[17820] = {{"Important", "Potentially dangerous with Scatter Shot (Disorients player); These mobs can be CC'd"}}, 
-				-- Durnholde Rifleman
-	[17833] = {{"PriorityTargets", "(Priest) Healer-Type Mob"},
-				{"Important", "Can be CC'd"},
-				{"Interrupts", "INTERRUPT: Heal (Heals an ally)"},
-				{"Interrupts", "INTERRUPT: Psychic Scream (4 sec AoE Fear)"}}, -- Durnholde Warden
-	[17840] = {{"Defensives", "During Frenzy, tank may need to pop defensive CDs to mitigate some of the damage"}},
-				-- Durnholde Tracking Hound
-	[17846] = {{"Legion", ""}}, -- Pit Spectator
-	[17860] = {{"Legion", "Rogue-Type Mob"},
-				{"Important", "Can be CC'd"},
-				{"Important", "KIDNEY SHOT (Stuns player for 4 sec)"},
-				{"Important", "BACKSTAB (Increased damage if mob is standing behind target)"}}, -- Durnholde Veteran
-	[18092] = {{"Important", "Will apply Mortal Strike debuff on player (Reduced healing effectiveness)"}}, 
-				-- Tarren Mill Guardsman
-	[18093] = {{"PriorityTargets", "Mob heals, cleanses and stuns"},
-				{"Interrupts", "Interrupt: Heal"}}, -- Tarren Mill Protector
-	[18094] = {{"Important", "Dispel Curse of Infinity from player - usually the tank. (Debuff causing increased damage taken by 50%)"}}, 
-				-- Tarren Mill Lookout
-	[18170] = {{"Defensives", "Defensive: Applies Mortal Wounds debuff to target (reduces effectiveness of healing taken by 50% for 5 sec)"}}, 
-				-- Infinite Slayer
-	[18171] = {{"Important", "Dispel Curse of Infinity from player - usually the tank. (Debuff causing increased damage taken by 50%)"}}, 
-				-- Infinite Defiler
-	[18172] = {{"Important", "Inflicts Shadow & Physical Damage; Cleave also hits a nearby player"}}, -- Infinite Saboteur
-	[18673] = {{"Legion", ""}}, -- Pit Announcer
-	[18764] = {{"Legion", ""}}, -- Durnholde Armorer
-	[18765] = {{"Legion", ""}}, -- Durnholde Cook
-	[18934] = {{"Important", "Mage dealing combo of Frost and Fire damage"},
-				{"Important", "CC this mob and avoid AoE - mob will Polymorph a player"}}, -- Durnholde Mage
-	[26650] = {{"Legion", ""}}, -- Durnholde Captain
-	[28132] = {{"Legion", "Ranged mob that uses Net to root players and disorient them with Scatter Shot"}}, -- Don Carlos
-	[28163] = {{"Important", "Reduces enemy's strength and agility by 10% for 30 sec"}}, -- Guerrero
+		[17814] = {{"old_hillsbrad_17814_01", "Legion", "Protection Warrior-Type Mob", 20},
+					{"old_hillsbrad_17814_02", "Important", "After mob casts Shield Block, only the first melee attack might be blocked for the next 5 sec. Avoid using big CD abilities during this 5 sec window", 10}},
+					-- Lordaeron Watchman
+		[17815] = {{"old_hillsbrad_17815_01", "Legion", "Ranged mobs that Shoot players", 10}}, -- Lordaeron Sentry
+		[17819] = {{"old_hillsbrad_17819_01", "Important", "Mobs will cleave nearest ally to their target, so tank should pull this mob away from ranged DPS/healer. Melee DPS may need extra heals", 10}},
+					-- Durnholde Sentry
+		[17820] = {{"old_hillsbrad_17820_01", "Important", "Potentially dangerous with Scatter Shot (Disorients player); These mobs can be CC'd", 10}},
+					-- Durnholde Rifleman
+		[17833] = {{"old_hillsbrad_17833_01", "PriorityTargets", "(Priest) Healer-Type Mob", 40},
+					{"old_hillsbrad_17833_02", "Important", "Can be CC'd", 30},
+					{"old_hillsbrad_17833_03", "Interrupts", "INTERRUPT: Heal (Heals an ally)", 20},
+					{"old_hillsbrad_17833_04", "Interrupts", "INTERRUPT: Psychic Scream (4 sec AoE Fear)", 10}}, -- Durnholde Warden
+		[17840] = {{"old_hillsbrad_17840_01", "Defensives", "During Frenzy, tank may need to pop defensive CDs to mitigate some of the damage", 10}},
+					-- Durnholde Tracking Hound
+		[17846] = {{"old_hillsbrad_17846_01", "Legion", "", 10}}, -- Pit Spectator
+		[17860] = {{"old_hillsbrad_17860_01", "Legion", "Rogue-Type Mob", 40},
+					{"old_hillsbrad_17860_02", "Important", "Can be CC'd", 30},
+					{"old_hillsbrad_17860_03", "Important", "KIDNEY SHOT (Stuns player for 4 sec)", 20},
+					{"old_hillsbrad_17860_04", "Important", "BACKSTAB (Increased damage if mob is standing behind target)", 10}}, -- Durnholde Veteran
+		[18092] = {{"old_hillsbrad_18092_01", "Important", "Will apply Mortal Strike debuff on player (Reduced healing effectiveness)", 10}},
+					-- Tarren Mill Guardsman
+		[18093] = {{"old_hillsbrad_18093_01", "PriorityTargets", "Mob heals, cleanses and stuns", 20},
+					{"old_hillsbrad_18093_02", "Interrupts", "Interrupt: Heal", 10}}, -- Tarren Mill Protector
+		[18094] = {{"old_hillsbrad_18094_01", "Important", "Dispel Curse of Infinity from player - usually the tank. (Debuff causing increased damage taken by 50%)", 10}},
+					-- Tarren Mill Lookout
+		[18170] = {{"old_hillsbrad_18170_01", "Defensives", "Defensive: Applies Mortal Wounds debuff to target (reduces effectiveness of healing taken by 50% for 5 sec)", 10}},
+					-- Infinite Slayer
+		[18171] = {{"old_hillsbrad_18171_01", "Important", "Dispel Curse of Infinity from player - usually the tank. (Debuff causing increased damage taken by 50%)", 10}},
+					-- Infinite Defiler
+		[18172] = {{"old_hillsbrad_18172_01", "Important", "Inflicts Shadow & Physical Damage; Cleave also hits a nearby player", 10}}, -- Infinite Saboteur
+		[18673] = {{"old_hillsbrad_18673_01", "Legion", "", 10}}, -- Pit Announcer
+		[18764] = {{"old_hillsbrad_18764_01", "Legion", "", 10}}, -- Durnholde Armorer
+		[18765] = {{"old_hillsbrad_18765_01", "Legion", "", 10}}, -- Durnholde Cook
+		[18934] = {{"old_hillsbrad_18934_01", "Important", "Mage dealing combo of Frost and Fire damage", 20},
+					{"old_hillsbrad_18934_02", "Important", "CC this mob and avoid AoE - mob will Polymorph a player", 10}}, -- Durnholde Mage
+		[26650] = {{"old_hillsbrad_26650_01", "Legion", "", 10}}, -- Durnholde Captain
+		[28132] = {{"old_hillsbrad_28132_01", "Legion", "Ranged mob that uses Net to root players and disorient them with Scatter Shot", 10}}, -- Don Carlos
+		[28163] = {{"old_hillsbrad_28163_01", "Important", "Reduces enemy's strength and agility by 10% for 30 sec", 10}}, -- Guerrero
 
 
 	------- Dungeon: Opening of the Dark Portal (Black Morass) -----
 
 	---Friendly NPCs
-	[15608] = {{"Legion", ""}}, -- Medivh
-	[17023] = {{"Legion", ""}}, -- Shadow Council Enforcer
-	[17918] = {{"Legion", "Summoned using Chrono-Beacon (can deal with whelps during boss portals) - speak with Sa'at for each party member to receive one"}}, 
+	[15608] = {{"black_morass_15608_01", "Legion", "", 10}}, -- Medivh
+	[17023] = {{"black_morass_17023_01", "Legion", "", 10}}, -- Shadow Council Enforcer
+	[17918] = {{"black_morass_17918_01", "Legion", "Summoned using Chrono-Beacon (can deal with whelps during boss portals) - speak with Sa'at for each party member to receive one", 10}},
 				-- Time Keeper
-	[20201] = {{"Important", "Speak with him in order to receive Chrono-Beacon - you will need this to deal with small whelps that come out during boss portals and attack Medivh"}}, 
+	[20201] = {{"black_morass_20201_01", "Important", "Speak with him in order to receive Chrono-Beacon - you will need this to deal with small whelps that come out during boss portals and attack Medivh", 10}},
 				-- Sa'at
 
 	---Bosses
-	[17879] = {{"Important", "CHRONO-BEACON: Stand between boss portal and Medivh and use ONE Chrono-Beacon to summon a Time Keeper to deal with the whelps that leave the portal to attack Medivh (if you spawn your dragon too close to boss, boss will cause your dragon to despawn)!"}, 
-				{"Important", "HEROISM is a good idea for THIS boss - Arcane Discharge has a 50 yd range and also increases damage from next Arcane Discharge."},
-				{"Important", "Arcane Blast (Deals Arcane Damage +Knockback)"},
-				{"TANK", "Stand with your back against a tree, or other such object to avoid boss' knockback"}},
+	[17879] = {{"black_morass_17879_01", "Important", "CHRONO-BEACON: Stand between boss portal and Medivh and use ONE Chrono-Beacon to summon a Time Keeper to deal with the whelps that leave the portal to attack Medivh (if you spawn your dragon too close to boss, boss will cause your dragon to despawn)!", 40},
+				{"black_morass_17879_02", "Important", "HEROISM is a good idea for THIS boss - Arcane Discharge has a 50 yd range and also increases damage from next Arcane Discharge.", 30},
+				{"black_morass_17879_03", "Important", "Arcane Blast (Deals Arcane Damage +Knockback)", 20},
+				{"black_morass_17879_04", "TANK", "Stand with your back against a tree, or other such object to avoid boss' knockback", 10}},
 				-- Chrono Lord Deja
-	[17880] = {{"Important", "CHRONO-BEACON: Stand between boss portal and Medivh and use ONE Chrono-Beacon to summon a Time Keeper to deal with the whelps that leave the portal to attack Medivh (if you spawn your dragon too close to boss, boss will cause your dragon to despawn)!"},
-				{"Important", "Dispel HASTEN (Magic Effect) from boss to reduce boss' damage dealt"},
-				{"Important", "Mortal Wound can be mitigated with the tank's dodge/parry/block/miss, but also with a priest's PW: Shield ability"},
-				{"Advanced", "OFF-TANK STRATEGY:"},
-				{"Important", "Boss is not tauntable. If using an off-tank, that off-tank/dps can create high threat thru specific abilities. Doing this could allow tank's Mortal Wound a chance to fall off"},
-				{"DRUID", "If off-tanking, use BEAR FORM to build threat"},
-				{"SHAMAN", "If off-tanking, use shield +Frost Shock +melee attacks to build threat"},
-				{"HUNTER", "If off-tanking, DISTRACTING SHOT can help build threat and ASPECT OF THE MONKEY +DETERRENCE can mitigate damage"},
-				{"WARLOCK", "If off-tanking, use SEARING PAIN to build threat, SOUL LINK to mitigate damage and SOUL SHATTER to drop threat"},
-				{"PALADIN", "If off-tanking, use RIGHTEOUS FURY +JUDGMENT +CONSECRATION to build threat"},
-				{"WARRIOR", "If off-tanking, use DEFENSIVE STANCE to build threat"}}, 
+	[17880] = {{"black_morass_17880_01", "Important", "CHRONO-BEACON: Stand between boss portal and Medivh and use ONE Chrono-Beacon to summon a Time Keeper to deal with the whelps that leave the portal to attack Medivh (if you spawn your dragon too close to boss, boss will cause your dragon to despawn)!", 110},
+				{"black_morass_17880_02", "Important", "Dispel HASTEN (Magic Effect) from boss to reduce boss' damage dealt", 100},
+				{"black_morass_17880_03", "Important", "Mortal Wound can be mitigated with the tank's dodge/parry/block/miss, but also with a priest's PW: Shield ability", 90},
+				{"black_morass_17880_04", "Advanced", "OFF-TANK STRATEGY:", 80},
+				{"black_morass_17880_05", "Important", "Boss is not tauntable. If using an off-tank, that off-tank/dps can create high threat thru specific abilities. Doing this could allow tank's Mortal Wound a chance to fall off", 70},
+				{"black_morass_17880_06", "DRUID", "If off-tanking, use BEAR FORM to build threat", 60},
+				{"black_morass_17880_07", "SHAMAN", "If off-tanking, use shield +Frost Shock +melee attacks to build threat", 50},
+				{"black_morass_17880_08", "HUNTER", "If off-tanking, DISTRACTING SHOT can help build threat and ASPECT OF THE MONKEY +DETERRENCE can mitigate damage", 40},
+				{"black_morass_17880_09", "WARLOCK", "If off-tanking, use SEARING PAIN to build threat, SOUL LINK to mitigate damage and SOUL SHATTER to drop threat", 30},
+				{"black_morass_17880_10", "PALADIN", "If off-tanking, use RIGHTEOUS FURY +JUDGMENT +CONSECRATION to build threat", 20},
+				{"black_morass_17880_11", "WARRIOR", "If off-tanking, use DEFENSIVE STANCE to build threat", 10}},
 				-- Temporus
-	[17881] = {{"Important", "Using Chrono-Beacons aren't viable on this boss as the boss will destroy summoned dragons with an AoE dispel!"},
-				{"TANK", "Keep boss faced away from group so other players don't get hit by Sand Breath (frontal-cone attack dealing Nature Damage)"},
-				{"WARRIOR", "Using SPELL REFLECTION can grant immunity from Time Stop - just be sure to time this so spell reflect is active prior to TIME STOP"},
-				{"HUNTER", "Using THE BEAST WITHIN can grant immunity from Time Stop - just be sure to time this so spell reflect is active prior to TIME STOP"},
-				{"ROGUE", "Using CLOAK OF SHADOWS can grant immunity from Time Stop - just be sure to time this so spell reflect is active prior to TIME STOP"},
-				{"Important", "DPS and HEALER should stand on side of boss to avoid Sand Breath (frontal-cone attack)"},
-				{"Defensives", "Use Defensive CDs during Enrage phase. Tank may also need increased heals!"},
-				{"HUNTER", "Dispel Frenzy from boss using Tranquilizing Shot"},
-				{"Important", "Boss will occasionally STOP TIME (6 sec time stop). Some abilities and trinkets can remove this ability, such as PVP Trinkets"},
-				{"HEALER", "Keep tank as close to max health as often as possible during boss fight!"}}, 
+	[17881] = {{"black_morass_17881_01", "Important", "Using Chrono-Beacons aren't viable on this boss as the boss will destroy summoned dragons with an AoE dispel!", 100},
+				{"black_morass_17881_02", "TANK", "Keep boss faced away from group so other players don't get hit by Sand Breath (frontal-cone attack dealing Nature Damage)", 90},
+				{"black_morass_17881_03", "WARRIOR", "Using SPELL REFLECTION can grant immunity from Time Stop - just be sure to time this so spell reflect is active prior to TIME STOP", 80},
+				{"black_morass_17881_04", "HUNTER", "Using THE BEAST WITHIN can grant immunity from Time Stop - just be sure to time this so spell reflect is active prior to TIME STOP", 70},
+				{"black_morass_17881_05", "ROGUE", "Using CLOAK OF SHADOWS can grant immunity from Time Stop - just be sure to time this so spell reflect is active prior to TIME STOP", 60},
+				{"black_morass_17881_06", "Important", "DPS and HEALER should stand on side of boss to avoid Sand Breath (frontal-cone attack)", 50},
+				{"black_morass_17881_07", "Defensives", "Use Defensive CDs during Enrage phase. Tank may also need increased heals!", 40},
+				{"black_morass_17881_08", "HUNTER", "Dispel Frenzy from boss using Tranquilizing Shot", 30},
+				{"black_morass_17881_09", "Important", "Boss will occasionally STOP TIME (6 sec time stop). Some abilities and trinkets can remove this ability, such as PVP Trinkets", 20},
+				{"black_morass_17881_10", "HEALER", "Keep tank as close to max health as often as possible during boss fight!", 10}},
 				-- Aeonus
 
 	---Mini Bosses
-	[17839] = {{"TANK", "DEFENSIVE: Mob applies Mortal Strike (Healing Effects reduced)"},
-				{"Important", "Rift Lord should be tanked away from players due to its Thunder Clap (Nature) AoE ability"},
-				{"Important", "Mob deals Knockdown (Stun for 2 seconds) on target"},
-				{"Defensives", "DEFENSIVE/HEALS: When Frenzy is applied, tank will be taking increased damage"}}, 
+	[17839] = {{"black_morass_17839_01", "TANK", "DEFENSIVE: Mob applies Mortal Strike (Healing Effects reduced)", 40},
+				{"black_morass_17839_02", "Important", "Rift Lord should be tanked away from players due to its Thunder Clap (Nature) AoE ability", 30},
+				{"black_morass_17839_03", "Important", "Mob deals Knockdown (Stun for 2 seconds) on target", 20},
+				{"black_morass_17839_04", "Defensives", "DEFENSIVE/HEALS: When Frenzy is applied, tank will be taking increased damage", 10}},
 				-- Rift Lord
-	[21104] = {{"Legion", "Mage-Type deals Fire Damage & Warlock-Type deals Shadow Damage - use appropriate Auras/Buffs to mitigate damage"},
-				{"Advanced", "WARLOCK-TYPE MOB (Shadow):"},
-				{"Important", "DISPEL: Curse of Vulnerability from player (player takes 50% increased magical damage for 30 sec)"},
-				{"Interrupts", "Interrupt: Fear (20 yd range; 1.5 sec cast; Fears player for 4 sec"},
-				{"Interrupts", "Interrupt: Shadow Bolt Volley (Main attack; may only need to worry about interrupting if tank has Curse of Vulnerability that can't be dispelled."},
-				{"Advanced", "MAGE-TYPE MOB (Fire):"},
-				{"Important", "Dispel POLYMORPH magic from player when applied (esp to tank/healer)"},
-				{"Advanced", "BOTH-TYPES:"},
-				{"Defensives", "DEFENSIVE/HEALS: When Frenzy is applied, tank will be taking increased damage"}}, 
+	[21104] = {{"black_morass_21104_01", "Legion", "Mage-Type deals Fire Damage & Warlock-Type deals Shadow Damage - use appropriate Auras/Buffs to mitigate damage", 90},
+				{"black_morass_21104_02", "Advanced", "WARLOCK-TYPE MOB (Shadow):", 80},
+				{"black_morass_21104_03", "Important", "DISPEL: Curse of Vulnerability from player (player takes 50% increased magical damage for 30 sec)", 70},
+				{"black_morass_21104_04", "Interrupts", "Interrupt: Fear (20 yd range; 1.5 sec cast; Fears player for 4 sec)", 60},
+				{"black_morass_21104_05", "Interrupts", "Interrupt: Shadow Bolt Volley (Main attack; may only need to worry about interrupting if tank has Curse of Vulnerability that can't be dispelled.)", 50},
+				{"black_morass_21104_06", "Advanced", "MAGE-TYPE MOB (Fire):", 40},
+				{"black_morass_21104_07", "Important", "Dispel POLYMORPH magic from player when applied (esp to tank/healer)", 30},
+				{"black_morass_21104_08", "Advanced", "BOTH-TYPES:", 20},
+				{"black_morass_21104_09", "Defensives", "DEFENSIVE/HEALS: When Frenzy is applied, tank will be taking increased damage", 10}},
 				-- Rift Keeper
-	[21697] = {{"Legion", "If group wiped to Chrono-Lord Deja, this 'boss' will take its place and not drop loot"}}, 
+	[21697] = {{"black_morass_21697_01", "Legion", "If group wiped to Chrono-Lord Deja, this 'boss' will take its place and not drop loot", 10}},
 				-- Infinite Chrono-Lord
-	[21698] = {{"Legion", "If group wiped to Temporus, this 'boss' will take its place"}},
+	[21698] = {{"black_morass_21698_01", "Legion", "If group wiped to Temporus, this 'boss' will take its place", 10}},
 				-- Infinite Timereaver
 
 	---Trash Mobs (Infinite Dragonflight)
-	[17835] = {{"Legion", "Rogue-type mob"},
-				{"PriorityTargets", "Mob will head for Medivh and may cause a wipe forcing group to start over at Portal 1 if Medivh's shield breaks to these mob's attacks"},
-				{"Important", "Uses Backstab ability from behind their target."}}, 
+	[17835] = {{"black_morass_17835_01", "Legion", "Rogue-type mob", 30},
+				{"black_morass_17835_02", "PriorityTargets", "Mob will head for Medivh and may cause a wipe forcing group to start over at Portal 1 if Medivh's shield breaks to these mob's attacks", 20},
+				{"black_morass_17835_03", "Important", "Uses Backstab ability from behind their target.", 10}},
 				-- Infinite Assassin
-	[17892] = {{"Legion", "Deals Arcane Damage; using appropriate pots can be helpful to mitigate damage (esp if poorly geared)"},
-				{"PriorityTargets", "Mob will head for Medivh and may cause a wipe forcing group to start over at Portal 1 if Medivh's shield breaks to these mob's attacks"},
-				{"Important", "Pet classes (esp with pet taunting) can pick these mobs up as they deal Arcane Explosion to nearby players"}, 
-				{"HEALER", "Be aware that any players w/in range of Chromomancer (esp melee) will take increased damage from mob's AoE"}},
+	[17892] = {{"black_morass_17892_01", "Legion", "Deals Arcane Damage; using appropriate pots can be helpful to mitigate damage (esp if poorly geared)", 40},
+				{"black_morass_17892_02", "PriorityTargets", "Mob will head for Medivh and may cause a wipe forcing group to start over at Portal 1 if Medivh's shield breaks to these mob's attacks", 30},
+				{"black_morass_17892_03", "Important", "Pet classes (esp with pet taunting) can pick these mobs up as they deal Arcane Explosion to nearby players", 20},
+				{"black_morass_17892_04", "HEALER", "Be aware that any players w/in range of Chromomancer (esp melee) will take increased damage from mob's AoE", 10}},
 				-- Infinite Chronomancer
-	[18994] = {{"PriorityTargets", "Mob will head for Medivh and may cause a wipe forcing group to start over at Portal 1 if Medivh's shield breaks to these mob's attacks"}}, 
+	[18994] = {{"black_morass_18994_01", "PriorityTargets", "Mob will head for Medivh and may cause a wipe forcing group to start over at Portal 1 if Medivh's shield breaks to these mob's attacks", 10}},
 				-- Infinite Executioner
-	[18995] = {{"Legion", "Deals Fire & Shadow Damage (use appropriate buffs/auras to mitigate damage from this mob)"},
-				{"PriorityTargets", "Mob will head for Medivh and may cause a wipe forcing group to start over at Portal 1 if Medivh's shield breaks to these mob's attacks"}}, -- Infinite Vanquisher
-	[21818] = {{"PriorityTargets", "Mob will head for Medivh and may cause a wipe forcing group to start over at Portal 1 if Medivh's shield breaks to these mob's attacks"}, 
-				{"Important", "Mobs come out of portal in quick succession! Tank should pickup aggro using AoE tanking abilities (ie Thunder Clap/Consecration), but as making sure that they don't reach Medivh is a priority, all DPS should be burning these down and not worry about aggroing them"}}, 
+	[18995] = {{"black_morass_18995_01", "Legion", "Deals Fire & Shadow Damage (use appropriate buffs/auras to mitigate damage from this mob)", 20},
+				{"black_morass_18995_02", "PriorityTargets", "Mob will head for Medivh and may cause a wipe forcing group to start over at Portal 1 if Medivh's shield breaks to these mob's attacks", 10}}, -- Infinite Vanquisher
+	[21818] = {{"black_morass_21818_01", "PriorityTargets", "Mob will head for Medivh and may cause a wipe forcing group to start over at Portal 1 if Medivh's shield breaks to these mob's attacks", 20},
+				{"black_morass_21818_02", "Important", "Mobs come out of portal in quick succession! Tank should pickup aggro using AoE tanking abilities (ie Thunder Clap/Consecration), but as making sure that they don't reach Medivh is a priority, all DPS should be burning these down and not worry about aggroing them", 10}},
 				-- Infinite Whelp
 
 	---Trash Mobs (Animals)
-	[17952] = {{"Legion", ""}}, -- Darkwater Crocolisk
-	[18982] = {{"Legion", ""}}, -- Sable Jaguar
-	[18983] = {{"Important", "Deals Ebon Poison (Nature DoT Poison +Reduced healing by 23% for 12 sec) - can be dispelled"}}, -- Blackfang Tarantula
+	[17952] = {{"black_morass_17952_01", "Legion", "", 10}}, -- Darkwater Crocolisk
+	[18982] = {{"black_morass_18982_01", "Legion", "", 10}}, -- Sable Jaguar
+	[18983] = {{"black_morass_18983_01", "Important", "Deals Ebon Poison (Nature DoT Poison +Reduced healing by 23% for 12 sec) - can be dispelled", 10}}, -- Blackfang Tarantula
 
 
 	------- Dungeon: The Mechanar -------------------
