@@ -8,19 +8,39 @@ local browserLocaleStrings = {
 	enUS = {
 		additional_details = "Additional Details",
 		add_npc_tip = "Add Personal NPC Tip",
-		editor_page = "Editor",
-		editor_title = "Kiesel Dungeon Tool - Editor",
-		editor_subtitle = "Add personal NPC tips without changing the shipped addon data.",
+		editor_page = "Tip Editor",
+		editor_title = "Kiesel Dungeon Tool - Tip Editor",
+		editor_subtitle = "Add or manage NPC tips without changing the shipped addon data.",
+		dungeon_editor_page = "Dungeon Editor",
+		dungeon_editor_title = "Kiesel Dungeon Tool - Dungeon Editor",
+		dungeon_editor_subtitle = "Add or manage instance notes without changing the shipped addon data.",
+		add_instance_tip = "Add Personal Instance Note",
+		instance_tips_preview = "Instance Tips Preview",
+		instance_summary_prefix = "Selected",
+		user_instance_tips = "User Instance Notes",
+		no_user_instance_tips = "No personal instance notes for this dungeon or raid yet.",
+		saved_instance_tip = "Personal instance note saved.",
+		updated_instance_tip = "Personal instance note updated.",
+		instance_edit_loaded = "Personal instance note loaded into editor.",
 		tip_type = "Tip Type",
 		tip_weight = "Weight",
 		tip_text = "Tip Text",
 		save_tip = "Save Tip",
 		edit = "Edit",
+		edit_base = "Override",
 		update_tip = "Update Tip",
+		update_base_tip = "Save Override",
 		cancel_edit = "Cancel Edit",
 		edit_loaded = "Personal tip loaded into editor.",
+		base_edit_loaded = "Base tip loaded into editor override mode.",
 		updated_tip = "Personal tip updated.",
-		personal_tips = "Personal Tips",
+		updated_base_tip = "Base tip override updated.",
+		personal_tips = "User Tips",
+		base_tips = "Addon Tips",
+		no_base_tips = "No addon tips found for this NPC.",
+		reset = "Reset",
+		overridden_tip = "overridden",
+		legacy_tip = "legacy read-only",
 		hidden_tip = "hidden",
 		hide = "Hide",
 		unhide = "Unhide",
@@ -39,19 +59,39 @@ local browserLocaleStrings = {
 	deDE = {
 		additional_details = "Zusatzinfos",
 		add_npc_tip = "Persoenlichen NPC-Tipp hinzufuegen",
-		editor_page = "Editor",
-		editor_title = "Kiesel Dungeon Tool - Editor",
-		editor_subtitle = "Persoenliche NPC-Tipps hinzufuegen, ohne die mitgelieferten Addon-Daten zu veraendern.",
+		editor_page = "Tip Editor",
+		editor_title = "Kiesel Dungeon Tool - Tip Editor",
+		editor_subtitle = "NPC-Tipps hinzufuegen oder verwalten, ohne die mitgelieferten Addon-Daten zu veraendern.",
+		dungeon_editor_page = "Dungeon Editor",
+		dungeon_editor_title = "Kiesel Dungeon Tool - Dungeon Editor",
+		dungeon_editor_subtitle = "Instanz-Notizen hinzufuegen oder verwalten, ohne die mitgelieferten Addon-Daten zu veraendern.",
+		add_instance_tip = "Persoenliche Instanz-Notiz hinzufuegen",
+		instance_tips_preview = "Instanz-Tipps Vorschau",
+		instance_summary_prefix = "Ausgewaehlt",
+		user_instance_tips = "Persoenliche Instanz-Notizen",
+		no_user_instance_tips = "Fuer diesen Dungeon oder Raid gibt es noch keine persoenlichen Instanz-Notizen.",
+		saved_instance_tip = "Persoenliche Instanz-Notiz gespeichert.",
+		updated_instance_tip = "Persoenliche Instanz-Notiz aktualisiert.",
+		instance_edit_loaded = "Persoenliche Instanz-Notiz in den Editor geladen.",
 		tip_type = "Tipp-Typ",
 		tip_weight = "Gewichtung",
 		tip_text = "Tipp-Text",
 		save_tip = "Tipp speichern",
 		edit = "Bearbeiten",
+		edit_base = "Override",
 		update_tip = "Tipp aktualisieren",
+		update_base_tip = "Override speichern",
 		cancel_edit = "Bearbeiten abbrechen",
 		edit_loaded = "Persoenlicher Tipp in den Editor geladen.",
+		base_edit_loaded = "Basis-Tipp in den Override-Editor geladen.",
 		updated_tip = "Persoenlicher Tipp aktualisiert.",
-		personal_tips = "Persoenliche Tipps",
+		updated_base_tip = "Basis-Tipp-Override aktualisiert.",
+		personal_tips = "Nutzer-Tipps",
+		base_tips = "Addon-Tipps",
+		no_base_tips = "Fuer diesen NPC wurden keine Addon-Tipps gefunden.",
+		reset = "Zuruecksetzen",
+		overridden_tip = "ueberschrieben",
+		legacy_tip = "legacy schreibgeschuetzt",
 		hidden_tip = "ausgeblendet",
 		hide = "Ausblenden",
 		unhide = "Einblenden",
@@ -423,6 +463,14 @@ function addon:registerConfigPanel()
 					addon.contentBrowserCategory = subcategory
 				end
 			end
+			if addon.dungeonEditorPanel and Settings.RegisterCanvasLayoutSubcategory then
+				local subcategory = Settings.RegisterCanvasLayoutSubcategory(category, addon.dungeonEditorPanel, addon.dungeonEditorPanel.name, addon.dungeonEditorPanel.name)
+				if subcategory then
+					subcategory.ID = subcategory.ID or addon.dungeonEditorPanel.name
+					Settings.RegisterAddOnCategory(subcategory)
+					addon.dungeonEditorCategory = subcategory
+				end
+			end
 			if addon.editorPanel and Settings.RegisterCanvasLayoutSubcategory then
 				local subcategory = Settings.RegisterCanvasLayoutSubcategory(category, addon.editorPanel, addon.editorPanel.name, addon.editorPanel.name)
 				if subcategory then
@@ -450,6 +498,10 @@ function addon:registerConfigPanel()
 			addon.contentBrowserPanel.parent = addon.configPanel.name
 			InterfaceOptions_AddCategory(addon.contentBrowserPanel)
 		end
+		if addon.dungeonEditorPanel then
+			addon.dungeonEditorPanel.parent = addon.configPanel.name
+			InterfaceOptions_AddCategory(addon.dungeonEditorPanel)
+		end
 		if addon.editorPanel then
 			addon.editorPanel.parent = addon.configPanel.name
 			InterfaceOptions_AddCategory(addon.editorPanel)
@@ -464,6 +516,10 @@ function addon:registerConfigPanel()
 		if addon.contentBrowserPanel then
 			addon.contentBrowserPanel.parent = addon.configPanel.name
 			InterfaceOptionsFrame_AddCategory(addon.contentBrowserPanel)
+		end
+		if addon.dungeonEditorPanel then
+			addon.dungeonEditorPanel.parent = addon.configPanel.name
+			InterfaceOptionsFrame_AddCategory(addon.dungeonEditorPanel)
 		end
 		if addon.editorPanel then
 			addon.editorPanel.parent = addon.configPanel.name
@@ -1131,7 +1187,7 @@ local function createEditorMenu()
     addon.editorPanel.name = getBrowserLocaleString("editor_page")
     addon.editorPanel.okay = function(self) return end
     addon.editorPanel.cancel = function(self) return end
-    local editorContent = setupScrollablePanel(addon.editorPanel, "TDTEditor", 1350)
+    local editorContent = setupScrollablePanel(addon.editorPanel, "TDTEditor", 2100)
 
     local headerFont = "Fonts\\MORPHEUS.ttf"
     local headerSize = 16
@@ -1166,7 +1222,36 @@ local function createEditorMenu()
     local addTipStatus
     local personalTipsHeader
     local personalTipRows = {}
+    local baseTipsHeader
+    local baseTipRows = {}
     local editingTipID = nil
+    local editingBaseTipID = nil
+
+    local function setTipTypeDropdownInteractive(enabled)
+        local alpha = enabled and 1 or 0.5
+        addTipTypeDropdown:SetAlpha(alpha)
+        local button = _G[addTipTypeDropdown:GetName() .. "Button"]
+        if button then
+            button:SetEnabled(enabled)
+            button:SetAlpha(alpha)
+        end
+    end
+
+    local function anchorBaseTipsHeader()
+        local anchor = addTipStatus
+        local offset = -22
+
+        for index = #personalTipRows, 1, -1 do
+            if personalTipRows[index]:IsShown() then
+                anchor = personalTipRows[index]
+                offset = -14
+                break
+            end
+        end
+
+        baseTipsHeader:ClearAllPoints()
+        baseTipsHeader:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, offset)
+    end
 
     local function ensureEditorSelection()
         local expansionKeys = getExpansionKeys()
@@ -1230,6 +1315,7 @@ local function createEditorMenu()
         local npcLabel = editorState.npcID and getNpcBrowserLabel(editorState.expansionKey, editorState.instanceKey, editorState.npcID) or "-"
         local mergedNpcEntries = addon.getMergedNpcTipEntries and addon:getMergedNpcTipEntries(editorState.npcID) or normalizeRawTips(getRawNpcTips(editorState.npcID))
         local personalTips = addon.getNpcUserAdditions and addon:getNpcUserAdditions(editorState.npcID) or {}
+        local baseTips = addon.getNpcBaseTipsForEditor and addon:getNpcBaseTipsForEditor(editorState.npcID) or {}
 
         selectionSummary:SetText(string.format("Selected: %s -> %s -> %s", expansionLabel, instanceLabel, npcLabel))
         npcPreview:SetText(formatTipEntriesPreview(mergedNpcEntries))
@@ -1237,30 +1323,93 @@ local function createEditorMenu()
         for _, row in ipairs(personalTipRows) do
             row:Hide()
         end
+        for _, row in ipairs(baseTipRows) do
+            row:Hide()
+        end
 
         if #personalTips == 0 then
             if personalTipRows[1] then
                 personalTipRows[1].text:SetText(getBrowserLocaleString("no_personal_tips"))
                 personalTipRows[1].toggle:Hide()
+                personalTipRows[1].edit:Hide()
                 personalTipRows[1].delete:Hide()
                 personalTipRows[1]:Show()
             end
-            return
+        else
+            for index, tip in ipairs(personalTips) do
+                local row = personalTipRows[index]
+                if row then
+                    local hiddenLabel = tip.hidden and (" (" .. getBrowserLocaleString("hidden_tip") .. ")") or ""
+                    row.text:SetText(string.format("[%s] %s (%d)%s\n%s", tip.type or "?", tip.id or "?", tip.weight or 0, hiddenLabel, tip.text or ""))
+                    row.edit.tipID = tip.id
+                    row.toggle:SetText(tip.hidden and getBrowserLocaleString("unhide") or getBrowserLocaleString("hide"))
+                    row.toggle.tipID = tip.id
+                    row.delete.tipID = tip.id
+                    row.edit:Show()
+                    row.toggle:Show()
+                    row.delete:Show()
+                    row:Show()
+                end
+            end
         end
 
-        for index, tip in ipairs(personalTips) do
-            local row = personalTipRows[index]
-            if row then
-                local hiddenLabel = tip.hidden and (" (" .. getBrowserLocaleString("hidden_tip") .. ")") or ""
-                row.text:SetText(string.format("[%s] %s (%d)%s\n%s", tip.type or "?", tip.id or "?", tip.weight or 0, hiddenLabel, tip.text or ""))
-                row.edit.tipID = tip.id
-                row.toggle:SetText(tip.hidden and getBrowserLocaleString("unhide") or getBrowserLocaleString("hide"))
-                row.toggle.tipID = tip.id
-                row.delete.tipID = tip.id
-                row.edit:Show()
-                row.toggle:Show()
-                row.delete:Show()
-                row:Show()
+        anchorBaseTipsHeader()
+
+        if #baseTips == 0 then
+            if baseTipRows[1] then
+                baseTipRows[1].text:SetText(getBrowserLocaleString("no_base_tips"))
+                baseTipRows[1].edit:Hide()
+                baseTipRows[1].toggle:Hide()
+                baseTipRows[1].reset:Hide()
+                baseTipRows[1]:Show()
+            end
+        else
+            for index, tip in ipairs(baseTips) do
+                local row = baseTipRows[index]
+                if row then
+                    local statusBits = {}
+                    if tip.hidden then
+                        statusBits[#statusBits + 1] = getBrowserLocaleString("hidden_tip")
+                    end
+                    if tip.overridden then
+                        statusBits[#statusBits + 1] = getBrowserLocaleString("overridden_tip")
+                    end
+                    if not tip.canModify then
+                        statusBits[#statusBits + 1] = getBrowserLocaleString("legacy_tip")
+                    end
+                    local statusLabel = #statusBits > 0 and (" (" .. table.concat(statusBits, ", ") .. ")") or ""
+                    local displayText
+                    if tip.overridden and tip.overrideText then
+                        local overrideWeight = tip.overrideWeight ~= nil and tip.overrideWeight or tip.weight or 0
+                        displayText = string.format(
+                            "[%s] %s (%d)%s\nOverride: %s\nOriginal (%d): %s",
+                            tip.type or "?",
+                            tip.id or "-",
+                            overrideWeight,
+                            statusLabel,
+                            tip.overrideText or "",
+                            tip.weight or 0,
+                            tip.text or ""
+                        )
+                    else
+                        displayText = string.format("[%s] %s (%d)%s\n%s", tip.type or "?", tip.id or "-", tip.weight or 0, statusLabel, tip.text or "")
+                    end
+                    row.text:SetText(displayText)
+                    row.edit.tipID = tip.id
+                    row.toggle.tipID = tip.id
+                    row.reset.tipID = tip.id
+                    if tip.canModify then
+                        row.edit:Show()
+                        row.toggle:SetText(tip.hidden and getBrowserLocaleString("unhide") or getBrowserLocaleString("hide"))
+                        row.toggle:Show()
+                        row.reset:Show()
+                    else
+                        row.edit:Hide()
+                        row.toggle:Hide()
+                        row.reset:Hide()
+                    end
+                    row:Show()
+                end
             end
         end
     end
@@ -1386,7 +1535,9 @@ local function createEditorMenu()
             local additions = addon:getNpcUserAdditions(editorState.npcID)
             for _, addition in ipairs(additions) do
                 if addition.id == self.tipID then
+                    editingBaseTipID = nil
                     editingTipID = addition.id
+                    setTipTypeDropdownInteractive(true)
                     addTipTypeDropdown:SetCurrentValue(addition.type or "Personal")
                     addTipWeightEdit:SetText(tostring(addition.weight or 15))
                     addTipTextBox:SetText(addition.text or "")
@@ -1437,11 +1588,91 @@ local function createEditorMenu()
         personalTipRows[index] = row
     end
 
+    baseTipsHeader = createString(editorContent, getBrowserLocaleString("base_tips"), headerFont, headerSize)
+    baseTipsHeader:SetPoint("TOPLEFT", addTipStatus, "BOTTOMLEFT", 0, -22)
+
+    for index = 1, 14 do
+        local row = CreateFrame("Frame", nil, editorContent)
+        row:SetSize(620, 78)
+        if index == 1 then
+            row:SetPoint("TOPLEFT", baseTipsHeader, "BOTTOMLEFT", 0, -8)
+        else
+            row:SetPoint("TOPLEFT", baseTipRows[index - 1], "BOTTOMLEFT", 0, -10)
+        end
+
+        row.text = createString(row, "", "Fonts\\FRIZQT__.TTF", 11)
+        row.text:SetPoint("TOPLEFT", row, "TOPLEFT", 0, 0)
+        row.text:SetWidth(430)
+
+        row.toggle = CreateFrame("Button", nil, row, "UIPanelButtonTemplate")
+        row.toggle:SetSize(80, 22)
+        row.toggle:SetPoint("TOPRIGHT", row, "TOPRIGHT", 0, 0)
+        row.toggle:SetScript("OnClick", function(self)
+            if addon.setNpcBaseTipHidden and editorState.npcID and self.tipID then
+                local baseTips = addon:getNpcBaseTipsForEditor(editorState.npcID)
+                for _, baseTip in ipairs(baseTips) do
+                    if baseTip.id == self.tipID then
+                        addon:setNpcBaseTipHidden(editorState.npcID, self.tipID, not baseTip.hidden)
+                        updateEditorUI()
+                        break
+                    end
+                end
+            end
+        end)
+
+        row.reset = CreateFrame("Button", nil, row, "UIPanelButtonTemplate")
+        row.reset:SetSize(80, 22)
+        row.reset:SetPoint("TOPRIGHT", row.toggle, "BOTTOMRIGHT", 0, -6)
+        row.reset:SetText(getBrowserLocaleString("reset"))
+        row.reset:SetScript("OnClick", function(self)
+            if addon.resetNpcBaseTip and editorState.npcID and self.tipID then
+                if editingBaseTipID == self.tipID then
+                    editingBaseTipID = nil
+                    addTipTextBox:SetText("")
+                    addTipWeightEdit:SetText("15")
+                    addTipTypeDropdown:SetCurrentValue("Personal")
+                    setTipTypeDropdownInteractive(true)
+                    saveTipButton:SetText(getBrowserLocaleString("save_tip"))
+                    cancelEditButton:Hide()
+                end
+                addon:resetNpcBaseTip(editorState.npcID, self.tipID)
+                updateEditorUI()
+            end
+        end)
+
+        row.edit = CreateFrame("Button", nil, row, "UIPanelButtonTemplate")
+        row.edit:SetSize(80, 22)
+        row.edit:SetPoint("TOPRIGHT", row.reset, "BOTTOMRIGHT", 0, -6)
+        row.edit:SetText(getBrowserLocaleString("edit_base"))
+        row.edit:SetScript("OnClick", function(self)
+            local baseTips = addon:getNpcBaseTipsForEditor(editorState.npcID)
+            for _, baseTip in ipairs(baseTips) do
+                if baseTip.id == self.tipID and baseTip.canModify then
+                    editingTipID = nil
+                    editingBaseTipID = baseTip.id
+                    addTipTypeDropdown:SetCurrentValue(baseTip.type or "Important")
+                    setTipTypeDropdownInteractive(false)
+                    addTipWeightEdit:SetText(tostring(baseTip.overrideWeight or baseTip.weight or 0))
+                    addTipTextBox:SetText(baseTip.overrideText or baseTip.text or "")
+                    saveTipButton:SetText(getBrowserLocaleString("update_base_tip"))
+                    cancelEditButton:Show()
+                    addTipStatus:SetText(getBrowserLocaleString("base_edit_loaded"))
+                    break
+                end
+            end
+        end)
+
+        row:Hide()
+        baseTipRows[index] = row
+    end
+
     cancelEditButton:SetScript("OnClick", function()
         editingTipID = nil
+        editingBaseTipID = nil
         addTipTextBox:SetText("")
         addTipWeightEdit:SetText("15")
         addTipTypeDropdown:SetCurrentValue("Personal")
+        setTipTypeDropdownInteractive(true)
         saveTipButton:SetText(getBrowserLocaleString("save_tip"))
         cancelEditButton:Hide()
         addTipStatus:SetText("")
@@ -1462,15 +1693,20 @@ local function createEditorMenu()
             if editingTipID and addon.updateNpcUserTip then
                 addon:updateNpcUserTip(editorState.npcID, editingTipID, selectedType, tipText, weight)
                 addTipStatus:SetText(getBrowserLocaleString("updated_tip"))
+            elseif editingBaseTipID and addon.updateNpcBaseTipOverride then
+                addon:updateNpcBaseTipOverride(editorState.npcID, editingBaseTipID, tipText, weight)
+                addTipStatus:SetText(getBrowserLocaleString("updated_base_tip"))
             elseif addon.addNpcUserTip then
                 addon:addNpcUserTip(editorState.npcID, selectedType, tipText, weight)
                 addTipStatus:SetText(getBrowserLocaleString("saved_tip"))
             end
 
             editingTipID = nil
+            editingBaseTipID = nil
             addTipTextBox:SetText("")
             addTipWeightEdit:SetText("15")
             addTipTypeDropdown:SetCurrentValue("Personal")
+            setTipTypeDropdownInteractive(true)
             saveTipButton:SetText(getBrowserLocaleString("save_tip"))
             cancelEditButton:Hide()
             updateEditorUI()
@@ -1493,6 +1729,342 @@ local function createEditorMenu()
     end)
 
     updateEditorUI()
+end
+
+local function createDungeonEditorMenu()
+    addon.dungeonEditorPanel = CreateFrame("Frame", "TothysDungeonTipsDungeonEditor", UIParent)
+    addon.dungeonEditorPanel.name = getBrowserLocaleString("dungeon_editor_page")
+    addon.dungeonEditorPanel.okay = function(self) return end
+    addon.dungeonEditorPanel.cancel = function(self) return end
+    local editorContent = setupScrollablePanel(addon.dungeonEditorPanel, "TDTDungeonEditor", 1700)
+
+    local headerFont = "Fonts\\MORPHEUS.ttf"
+    local headerSize = 16
+
+    local title = editorContent:CreateFontString()
+    title:SetPoint("TOPLEFT", 10, -10)
+    title:SetFont("Fonts\\MORPHEUS.ttf", 22, "OUTLINE")
+    title:SetTextColor(0.9, 0.68, 0.22, 1)
+    title:SetText(getBrowserLocaleString("dungeon_editor_title"))
+
+    local subtitle = createString(editorContent, getBrowserLocaleString("dungeon_editor_subtitle"), "Fonts\\FRIZQT__.TTF", 11)
+    subtitle:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -8)
+    subtitle:SetWidth(620)
+
+    local editorState = {
+        expansionKey = TDTConfig.BrowserExpansionKey,
+        instanceKey = TDTConfig.BrowserInstanceKey,
+    }
+
+    local expansionButton
+    local instanceDropdown
+    local selectionSummary
+    local instancePreview
+    local addTipTypeDropdown
+    local addTipWeightEdit
+    local addTipTextBox
+    local addTipStatus
+    local personalTipsHeader
+    local personalTipRows = {}
+    local editingTipID = nil
+
+    local function ensureEditorSelection()
+        local expansionKeys = getExpansionKeys()
+        if #expansionKeys == 0 then
+            editorState.expansionKey = nil
+            editorState.instanceKey = nil
+            return
+        end
+
+        local hasExpansion = false
+        for _, key in ipairs(expansionKeys) do
+            if key == editorState.expansionKey then
+                hasExpansion = true
+                break
+            end
+        end
+        if not hasExpansion then
+            editorState.expansionKey = expansionKeys[1]
+        end
+
+        local instanceKeys = getInstanceKeys(editorState.expansionKey)
+        local hasInstance = false
+        for _, key in ipairs(instanceKeys) do
+            if key == editorState.instanceKey then
+                hasInstance = true
+                break
+            end
+        end
+        if not hasInstance then
+            editorState.instanceKey = instanceKeys[1]
+        end
+    end
+
+    local function updateDungeonEditorUI()
+        ensureEditorSelection()
+
+        expansionButton:SetValues(getExpansionKeys())
+        expansionButton:SetCurrentValue(editorState.expansionKey)
+        instanceDropdown:SetValues(getInstanceKeys(editorState.expansionKey))
+        instanceDropdown:SetCurrentValue(editorState.instanceKey)
+
+        local expansionData = getExpansionData(editorState.expansionKey)
+        local instanceData = getInstanceData(editorState.expansionKey, editorState.instanceKey)
+        local expansionLabel = getLocalizedLabel(expansionData and expansionData.name, editorState.expansionKey or "-")
+        local instanceLabel = getLocalizedLabel(instanceData and instanceData.name, editorState.instanceKey or "-")
+        local mergedInstanceEntries = addon.getMergedInstanceTipEntries and addon:getMergedInstanceTipEntries(editorState.instanceKey) or {}
+        local userTips = addon.getInstanceUserAdditions and addon:getInstanceUserAdditions(editorState.instanceKey) or {}
+
+        selectionSummary:SetText(string.format("%s: %s -> %s", getBrowserLocaleString("instance_summary_prefix"), expansionLabel, instanceLabel))
+        instancePreview:SetText(formatTipEntriesPreview(mergedInstanceEntries))
+
+        for _, row in ipairs(personalTipRows) do
+            row:Hide()
+        end
+
+        if #userTips == 0 then
+            if personalTipRows[1] then
+                personalTipRows[1].text:SetText(getBrowserLocaleString("no_user_instance_tips"))
+                personalTipRows[1].toggle:Hide()
+                personalTipRows[1].edit:Hide()
+                personalTipRows[1].delete:Hide()
+                personalTipRows[1]:Show()
+            end
+        else
+            for index, tip in ipairs(userTips) do
+                local row = personalTipRows[index]
+                if row then
+                    local hiddenLabel = tip.hidden and (" (" .. getBrowserLocaleString("hidden_tip") .. ")") or ""
+                    row.text:SetText(string.format("[%s] %s (%d)%s\n%s", tip.type or "?", tip.id or "?", tip.weight or 0, hiddenLabel, tip.text or ""))
+                    row.edit.tipID = tip.id
+                    row.toggle:SetText(tip.hidden and getBrowserLocaleString("unhide") or getBrowserLocaleString("hide"))
+                    row.toggle.tipID = tip.id
+                    row.delete.tipID = tip.id
+                    row.edit:Show()
+                    row.toggle:Show()
+                    row.delete:Show()
+                    row:Show()
+                end
+            end
+        end
+    end
+
+    local expansionFS = createString(editorContent, "Expansion", headerFont, headerSize)
+    expansionFS:SetPoint("TOPLEFT", subtitle, "BOTTOMLEFT", 0, -20)
+
+    expansionButton = createCycleButton(editorContent, "DungeonEditorExpansion", getExpansionKeys(), function(value)
+        editorState.expansionKey = value
+        editorState.instanceKey = nil
+        updateDungeonEditorUI()
+    end)
+    expansionButton:SetPoint("TOPLEFT", expansionFS, "BOTTOMLEFT", 0, -8)
+    expansionButton.labelForValue = function(value)
+        local expansionData = getExpansionData(value)
+        return getLocalizedLabel(expansionData and expansionData.name, value)
+    end
+
+    local instanceFS = createString(editorContent, "Dungeon / Raid", headerFont, headerSize)
+    instanceFS:SetPoint("TOPLEFT", expansionButton, "BOTTOMLEFT", 0, -24)
+
+    instanceDropdown = createValueDropdown(editorContent, "DungeonEditorInstance", 220, function(value)
+        editorState.instanceKey = value
+        updateDungeonEditorUI()
+    end)
+    instanceDropdown:SetPoint("TOPLEFT", instanceFS, "BOTTOMLEFT", -16, -2)
+    instanceDropdown.labelForValue = function(value)
+        local instanceData = getInstanceData(editorState.expansionKey, value)
+        if not instanceData then
+            return value or "-"
+        end
+
+        return string.format("%s (%s)", getLocalizedLabel(instanceData.name, value), instanceData.type or "Unknown")
+    end
+
+    selectionSummary = createString(editorContent, "", "Fonts\\FRIZQT__.TTF", 11)
+    selectionSummary:SetPoint("TOPLEFT", instanceDropdown, "BOTTOMLEFT", 16, -18)
+    selectionSummary:SetWidth(620)
+
+    local instancePreviewFS = createString(editorContent, getBrowserLocaleString("instance_tips_preview"), headerFont, headerSize)
+    instancePreviewFS:SetPoint("TOPLEFT", selectionSummary, "BOTTOMLEFT", 0, -18)
+
+    instancePreview = createString(editorContent, "", "Fonts\\FRIZQT__.TTF", 11)
+    instancePreview:SetPoint("TOPLEFT", instancePreviewFS, "BOTTOMLEFT", 0, -6)
+    instancePreview:SetWidth(620)
+
+    local addTipHeader = createString(editorContent, getBrowserLocaleString("add_instance_tip"), headerFont, headerSize)
+    addTipHeader:SetPoint("TOPLEFT", instancePreview, "BOTTOMLEFT", 0, -22)
+
+    local addTipTypeLabel = createString(editorContent, getBrowserLocaleString("tip_type"), "Fonts\\FRIZQT__.TTF", 11)
+    addTipTypeLabel:SetPoint("TOPLEFT", addTipHeader, "BOTTOMLEFT", 0, -8)
+
+    addTipTypeDropdown = createValueDropdown(editorContent, "DungeonEditorAddTipType", 220, function(value) end)
+    addTipTypeDropdown:SetPoint("TOPLEFT", addTipTypeLabel, "BOTTOMLEFT", -16, -2)
+    addTipTypeDropdown:SetValues(authorTipTypes)
+    addTipTypeDropdown.labelForValue = function(value)
+        return tostring(value or "-")
+    end
+    addTipTypeDropdown:SetCurrentValue("Personal")
+
+    local addTipWeightLabel = createString(editorContent, getBrowserLocaleString("tip_weight"), "Fonts\\FRIZQT__.TTF", 11)
+    addTipWeightLabel:SetPoint("TOPLEFT", addTipTypeDropdown, "TOPRIGHT", 40, 2)
+
+    addTipWeightEdit = createSingleLineInput(editorContent, 70, 24)
+    addTipWeightEdit:SetPoint("TOPLEFT", addTipWeightLabel, "BOTTOMLEFT", 0, -6)
+    addTipWeightEdit:SetText("15")
+
+    local addTipTextLabel = createString(editorContent, getBrowserLocaleString("tip_text"), "Fonts\\FRIZQT__.TTF", 11)
+    addTipTextLabel:SetPoint("TOPLEFT", addTipTypeDropdown, "BOTTOMLEFT", 16, -18)
+
+    local addTipTextContainer
+    addTipTextContainer, addTipTextBox = createMultiLineInput(editorContent, 620, 96)
+    addTipTextContainer:SetPoint("TOPLEFT", addTipTextLabel, "BOTTOMLEFT", 0, -8)
+    addTipTextBox:SetText(getBrowserLocaleString("default_tip_text"))
+
+    local saveTipButton = CreateFrame("Button", "TDTDungeonEditorSaveTip", editorContent, "UIPanelButtonTemplate")
+    saveTipButton:SetSize(140, 24)
+    saveTipButton:SetPoint("TOPLEFT", addTipTextContainer, "BOTTOMLEFT", 0, -12)
+    saveTipButton:SetText(getBrowserLocaleString("save_tip"))
+
+    local cancelEditButton = CreateFrame("Button", "TDTDungeonEditorCancelTipEdit", editorContent, "UIPanelButtonTemplate")
+    cancelEditButton:SetSize(140, 24)
+    cancelEditButton:SetPoint("LEFT", saveTipButton, "RIGHT", 12, 0)
+    cancelEditButton:SetText(getBrowserLocaleString("cancel_edit"))
+    cancelEditButton:Hide()
+
+    addTipStatus = createString(editorContent, "", "Fonts\\FRIZQT__.TTF", 11)
+    addTipStatus:SetPoint("TOPLEFT", saveTipButton, "BOTTOMLEFT", 0, -8)
+    addTipStatus:SetWidth(620)
+
+    personalTipsHeader = createString(editorContent, getBrowserLocaleString("user_instance_tips"), headerFont, headerSize)
+    personalTipsHeader:SetPoint("TOPLEFT", addTipStatus, "BOTTOMLEFT", 0, -22)
+
+    for index = 1, 10 do
+        local row = CreateFrame("Frame", nil, editorContent)
+        row:SetSize(620, 58)
+        if index == 1 then
+            row:SetPoint("TOPLEFT", personalTipsHeader, "BOTTOMLEFT", 0, -8)
+        else
+            row:SetPoint("TOPLEFT", personalTipRows[index - 1], "BOTTOMLEFT", 0, -10)
+        end
+
+        row.text = createString(row, "", "Fonts\\FRIZQT__.TTF", 11)
+        row.text:SetPoint("TOPLEFT", row, "TOPLEFT", 0, 0)
+        row.text:SetWidth(340)
+
+        row.edit = CreateFrame("Button", nil, row, "UIPanelButtonTemplate")
+        row.edit:SetSize(80, 22)
+        row.edit:SetPoint("TOPRIGHT", row, "TOPRIGHT", 0, 0)
+        row.edit:SetText(getBrowserLocaleString("edit"))
+        row.edit:SetScript("OnClick", function(self)
+            local additions = addon:getInstanceUserAdditions(editorState.instanceKey)
+            for _, addition in ipairs(additions) do
+                if addition.id == self.tipID then
+                    editingTipID = addition.id
+                    addTipTypeDropdown:SetCurrentValue(addition.type or "Personal")
+                    addTipWeightEdit:SetText(tostring(addition.weight or 15))
+                    addTipTextBox:SetText(addition.text or "")
+                    saveTipButton:SetText(getBrowserLocaleString("update_tip"))
+                    cancelEditButton:Show()
+                    addTipStatus:SetText(getBrowserLocaleString("instance_edit_loaded"))
+                    break
+                end
+            end
+        end)
+
+        row.toggle = CreateFrame("Button", nil, row, "UIPanelButtonTemplate")
+        row.toggle:SetSize(80, 22)
+        row.toggle:SetPoint("TOPRIGHT", row.edit, "BOTTOMRIGHT", 0, -6)
+        row.toggle:SetScript("OnClick", function(self)
+            if addon.setInstanceUserTipHidden and editorState.instanceKey and self.tipID then
+                local additions = addon:getInstanceUserAdditions(editorState.instanceKey)
+                for _, addition in ipairs(additions) do
+                    if addition.id == self.tipID then
+                        addon:setInstanceUserTipHidden(editorState.instanceKey, self.tipID, not addition.hidden)
+                        updateDungeonEditorUI()
+                        break
+                    end
+                end
+            end
+        end)
+
+        row.delete = CreateFrame("Button", nil, row, "UIPanelButtonTemplate")
+        row.delete:SetSize(80, 22)
+        row.delete:SetPoint("TOPRIGHT", row.toggle, "BOTTOMRIGHT", 0, -6)
+        row.delete:SetText(getBrowserLocaleString("delete"))
+        row.delete:SetScript("OnClick", function(self)
+            if addon.deleteInstanceUserTip and editorState.instanceKey and self.tipID then
+                if editingTipID == self.tipID then
+                    editingTipID = nil
+                    addTipTextBox:SetText("")
+                    addTipWeightEdit:SetText("15")
+                    addTipTypeDropdown:SetCurrentValue("Personal")
+                    saveTipButton:SetText(getBrowserLocaleString("save_tip"))
+                    cancelEditButton:Hide()
+                end
+                addon:deleteInstanceUserTip(editorState.instanceKey, self.tipID)
+                updateDungeonEditorUI()
+            end
+        end)
+
+        row:Hide()
+        personalTipRows[index] = row
+    end
+
+    cancelEditButton:SetScript("OnClick", function()
+        editingTipID = nil
+        addTipTextBox:SetText("")
+        addTipWeightEdit:SetText("15")
+        addTipTypeDropdown:SetCurrentValue("Personal")
+        saveTipButton:SetText(getBrowserLocaleString("save_tip"))
+        cancelEditButton:Hide()
+        addTipStatus:SetText("")
+    end)
+
+    saveTipButton:SetScript("OnClick", function()
+        local selectedType = addTipTypeDropdown.currentValue or "Personal"
+        local tipText = addTipTextBox:GetText() or ""
+        tipText = tipText:gsub("^%s+", ""):gsub("%s+$", "")
+        local weight = tonumber(addTipWeightEdit:GetText()) or 15
+
+        if tipText == "" or tipText == getBrowserLocaleString("default_tip_text") then
+            addTipStatus:SetText(getBrowserLocaleString("missing_tip"))
+            return
+        end
+
+        if editorState.instanceKey then
+            if editingTipID and addon.updateInstanceUserTip then
+                addon:updateInstanceUserTip(editorState.instanceKey, editingTipID, selectedType, tipText, weight)
+                addTipStatus:SetText(getBrowserLocaleString("updated_instance_tip"))
+            elseif addon.addInstanceUserTip then
+                addon:addInstanceUserTip(editorState.instanceKey, selectedType, tipText, weight)
+                addTipStatus:SetText(getBrowserLocaleString("saved_instance_tip"))
+            end
+
+            editingTipID = nil
+            addTipTextBox:SetText("")
+            addTipWeightEdit:SetText("15")
+            addTipTypeDropdown:SetCurrentValue("Personal")
+            saveTipButton:SetText(getBrowserLocaleString("save_tip"))
+            cancelEditButton:Hide()
+            updateDungeonEditorUI()
+            if addon.dungeonEditorPanel.refreshScroll then
+                addon.dungeonEditorPanel:refreshScroll()
+            end
+        end
+    end)
+
+    addon.dungeonEditorPanel:RegisterEvent("ADDON_LOADED")
+    addon.dungeonEditorPanel:SetScript("OnEvent", function(self, event, arg1)
+        if event == "ADDON_LOADED" and arg1 == "Tothys-Dungeon-Tips-TBC" then
+            TDTConfig = applyConfigDefaults(TDTConfig)
+            editorState.expansionKey = TDTConfig.BrowserExpansionKey
+            editorState.instanceKey = TDTConfig.BrowserInstanceKey
+            updateDungeonEditorUI()
+            if self.refreshScroll then self:refreshScroll() end
+        end
+    end)
+
+    updateDungeonEditorUI()
 end
 
 local function createInfoMenu()
@@ -1879,6 +2451,7 @@ local function createConfigMenu()
 end
 
 createContentBrowserMenu()
+createDungeonEditorMenu()
 createEditorMenu()
 createInfoMenu()
 createConfigMenu()

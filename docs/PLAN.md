@@ -38,6 +38,7 @@ An instance may still contain multiple `mapIDs`.
 - separate `Editor` config subpage
 - separate `Info` config subpage
 - hardcoded content catalog groundwork
+- broad TBC catalog coverage for raids and dungeons
 - instance lookup via `mapID -> instanceKey`
 - mixed support for old and new tip formats
 - weighted tips in the new format
@@ -48,24 +49,27 @@ An instance may still contain multiple `mapIDs`.
 - role/class filter refactor
 - main tip window scrollbar
 - SavedVariables groundwork for a future user override layer
+- working editor flows for personal NPC tips
+- first editor controls for base NPC tips
 
 ## Next planned implementation steps
 
 1. Keep the config layout stable and scrollable.
 2. Expand the hardcoded `contentCatalog` beyond the current test instance.
-3. Gradually migrate shipped tips from the legacy format to the new weighted format.
-4. Expand the separate user data layer for:
+3. Keep expanding `Classic` metadata as content is added there.
+4. Gradually migrate shipped tips from the legacy format to the new weighted format.
+5. Expand the separate user data layer for:
    - tip overrides
    - disabled shipped tips
    - user-added NPC tips
    - user-added instance notes
-5. Add reset actions:
+6. Add reset actions:
    - single tip
    - whole NPC
    - whole instance
    - all user data
-6. Add editor workflows only after the user data layer is stable.
-7. Plan export/import for user data only.
+7. Add editor workflows only after the user data layer is stable.
+8. Plan export/import for user data only.
 
 ## UI decisions
 
@@ -77,6 +81,12 @@ Editing model:
 
 - base tips may be overridden or hidden, but not deleted
 - personal tips may be edited, hidden, or hard deleted
+
+Current editor status:
+
+- personal NPC tips can already be added, edited, hidden, and hard deleted
+- base NPC tips can already be listed, hidden, reset, and overridden for `text` and `weight`
+- base NPC tip `type` stays fixed to the shipped addon value
 
 The addon also has a dedicated `Info` page for project background and development status.
 

@@ -205,6 +205,8 @@ Groundwork status:
 - empty tables for `npcs` and `instances` are initialized
 - runtime merge helpers now exist for NPC tips and instance info
 - helper functions now exist for adding NPC tips, adding instance tips, and resetting user data
+- the editor already supports personal NPC tips with add, edit, hide / unhide, and hard delete
+- the editor already supports base NPC tips with show, hide / unhide, reset, and text / weight override
 - with empty user data, shipped behavior remains unchanged
 
 Target shape:
@@ -292,6 +294,7 @@ Important editor rule:
 
 - hidden base tips must still be shown inside the editor so the user can unhide or reset them
 - hidden base tips should not appear in the normal live display
+- legacy shipped tips without a stable `tip_id` remain visible but read-only in the editor
 
 ### Personal tips
 

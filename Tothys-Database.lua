@@ -22,6 +22,7 @@ addon.contentCatalog = addon.contentCatalog or {
 			hellfire_ramparts = {
 				order = 1,
 				type = "Dungeon",
+				mapIDs = {347},
 				name = {
 					enUS = "Hellfire Ramparts",
 					deDE = "Hellfire Ramparts",
@@ -52,6 +53,7 @@ addon.contentCatalog = addon.contentCatalog or {
 			blood_furnace = {
 				order = 2,
 				type = "Dungeon",
+				mapIDs = {261},
 				name = {
 					enUS = "The Blood Furnace",
 					deDE = "The Blood Furnace",
@@ -126,6 +128,7 @@ addon.contentCatalog = addon.contentCatalog or {
 			sethekk_halls = {
 				order = 4,
 				type = "Dungeon",
+				mapIDs = {258, 259},
 				name = {
 					enUS = "Sethekk Halls",
 					deDE = "Sethekk Halls",
@@ -165,6 +168,7 @@ addon.contentCatalog = addon.contentCatalog or {
 			shadow_labyrinth = {
 				order = 5,
 				type = "Dungeon",
+				mapIDs = {260},
 				name = {
 					enUS = "Shadow Labyrinth",
 					deDE = "Shadow Labyrinth",
@@ -182,6 +186,7 @@ addon.contentCatalog = addon.contentCatalog or {
 			karazhan = {
 				order = 6,
 				type = "Raid",
+				mapIDs = {350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366},
 				name = {
 					enUS = "Karazhan",
 					deDE = "Karazhan",
@@ -283,13 +288,280 @@ addon.contentCatalog = addon.contentCatalog or {
 					24065, 24138, 24175, 24179, 24180, 24217, 24239, 24374, 24530, 24549,
 				},
 			},
+			shattered_halls = {
+				order = 10,
+				type = "Dungeon",
+				mapIDs = {246},
+				name = {
+					enUS = "The Shattered Halls",
+					deDE = "The Shattered Halls",
+				},
+				npcIDs = {
+					16807, 20923, 16809, 16808, 17621, 17622, 17623, 16507, 16523, 16593,
+					16594, 16699, 16700, 16704, 17083, 17420, 17461, 17624, 17626, 17653,
+					17654, 17655, 17656, 17657, 17658, 19412, 19413, 19414, 19415, 19632,
+					20060,
+				},
+			},
+			slave_pens = {
+				order = 11,
+				type = "Dungeon",
+				mapIDs = {265},
+				name = {
+					enUS = "The Slave Pens",
+					deDE = "The Slave Pens",
+				},
+				npcIDs = {
+					17893, 17941, 17991, 17942, 18176, 18177, 18179, 20208, 17816, 17817,
+					17938, 17940, 17957, 17958, 17959, 17960, 17961, 17963, 17964, 17965,
+					17975, 17976, 21126,
+				},
+			},
+			underbog = {
+				order = 12,
+				type = "Dungeon",
+				mapIDs = {262},
+				name = {
+					enUS = "The Underbog",
+					deDE = "The Underbog",
+				},
+				npcIDs = {
+					17770, 18105, 17826, 17827, 17882, 18107, 22299, 17723, 17724, 17725,
+					17726, 17727, 17728, 17729, 17730, 17731, 17734, 17735, 17736, 17871,
+					17938, 17990, 20465, 20720,
+				},
+			},
+			steamvaults = {
+				order = 13,
+				type = "Dungeon",
+				mapIDs = {263, 264},
+				name = {
+					enUS = "The Steamvault",
+					deDE = "The Steamvault",
+				},
+				npcIDs = {
+					17797, 17796, 17798, 17917, 17951, 17954, 17721, 17722, 17800, 17801,
+					17802, 17803, 17805, 17799, 21338, 21543, 21694, 21915, 21916,
+				},
+			},
+			mana_tombs = {
+				order = 14,
+				type = "Dungeon",
+				mapIDs = {272},
+				name = {
+					enUS = "Mana-Tombs",
+					deDE = "Mana-Tombs",
+				},
+				npcIDs = {
+					18341, 18343, 18344, 22930, 18431, 18430, 18309, 18311, 18312, 18313,
+					18314, 18315, 18317, 18331, 18394, 18432, 19307, 19308,
+				},
+			},
+			old_hillsbrad = {
+				order = 15,
+				type = "Dungeon",
+				mapIDs = {274},
+				name = {
+					enUS = "Old Hillsbrad Foothills",
+					deDE = "Old Hillsbrad Foothills",
+				},
+				npcIDs = {
+					17848, 17862, 18096, 18725, 18786, 17814, 17815, 17819, 17820, 17833,
+					17840, 17846, 17860, 18092, 18093, 18094, 18095, 18096, 18097, 20569,
+					20570, 20571, 20572, 20573, 20574, 23175,
+				},
+			},
+			black_morass = {
+				order = 16,
+				type = "Dungeon",
+				mapIDs = {173, 733},
+				name = {
+					enUS = "The Black Morass",
+					deDE = "The Black Morass",
+				},
+				npcIDs = {
+					15608, 17023, 17918, 20201, 17879, 17880, 17881, 17839, 21104, 21697,
+					21698, 17835, 17892, 18994, 18995, 18996, 18997, 19048, 21148,
+				},
+			},
+			mechanar = {
+				order = 17,
+				type = "Dungeon",
+				mapIDs = {267, 268},
+				name = {
+					enUS = "The Mechanar",
+					deDE = "The Mechanar",
+				},
+				npcIDs = {
+					19219, 19221, 19220, 19218, 19710, 20481, 21062, 19166, 19167, 19168,
+					19231, 19510, 19712, 19713, 19716, 19735, 19740, 19746, 20988, 21586,
+				},
+			},
+			botanica = {
+				order = 18,
+				type = "Dungeon",
+				mapIDs = {266},
+				name = {
+					enUS = "The Botanica",
+					deDE = "The Botanica",
+				},
+				npcIDs = {
+					17976, 17975, 17978, 17980, 17977, 20078, 20083, 19953, 19958, 19962,
+					19964, 19969, 19919, 19920, 19949, 19952, 19956, 19957, 19959, 19960,
+					19961, 19963, 19967, 19968, 19972, 19973, 19981, 19982, 19983, 19984,
+					19985, 19986, 19987, 19988, 19989, 19990, 19991, 20059, 20299, 20475,
+				},
+			},
+			arcatraz = {
+				order = 19,
+				type = "Dungeon",
+				mapIDs = {269, 270, 271},
+				name = {
+					enUS = "The Arcatraz",
+					deDE = "The Arcatraz",
+				},
+				npcIDs = {
+					20870, 20885, 20886, 20912, 20905, 20905, 20906, 20977, 20908, 20909,
+					20910, 20911, 20857, 20859, 20864, 20865, 20867, 20868, 20869, 20873,
+					20875, 20880, 20883, 20896, 20900, 20901, 20904, 20927, 20928, 20983,
+					20985, 20988, 20990, 20991, 20993, 21021, 21101, 21104,
+				},
+			},
+			magisters_terrace = {
+				order = 20,
+				type = "Dungeon",
+				name = {
+					enUS = "Magisters' Terrace",
+					deDE = "Magisters' Terrace",
+				},
+				npcIDs = {
+					24723, 24744, 24560, 24664, 24552, 24553, 24554, 24555, 24556, 24557,
+					24558, 24559, 24561, 24656, 24674, 24683, 24684, 24685, 24696, 24697,
+					24698, 24699, 24722, 24745, 24777, 24795, 24815, 24826, 24849, 24853,
+					24864, 24865, 24871, 24882, 24891,
+				},
+			},
+			serpentshrine_cavern = {
+				order = 21,
+				type = "Raid",
+				name = {
+					enUS = "Serpentshrine Cavern",
+					deDE = "Serpentshrine Cavern",
+				},
+				npcIDs = {
+					21216, 21217, 21215, 21214, 21213, 21212, 21964, 21965, 21966, 21218,
+					21220, 21221, 21224, 21225, 21226, 21227, 21228, 21229, 21230, 21231,
+					21232, 21246, 21247, 21248, 21249, 21250, 21251, 21263, 21298, 21301,
+					21339, 21395, 21863, 21865, 21873, 21920, 21956, 21958, 21963, 21967,
+					22009, 22035, 22036, 22055, 22056, 22091, 22140, 22347, 23028, 23030,
+				},
+			},
+			tempest_keep_the_eye = {
+				order = 22,
+				type = "Raid",
+				name = {
+					enUS = "Tempest Keep: The Eye",
+					deDE = "Tempest Keep: The Eye",
+				},
+				npcIDs = {
+					19516, 19514, 18805, 19622, 20060, 20062, 20063, 20064, 21268, 21269,
+					21270, 21271, 21272, 21273, 21274, 21275, 21276, 21296, 21297, 21337,
+					21357, 21362, 21376, 21582, 21585, 21586, 21587, 21588, 21589, 21590,
+					21591, 21592, 21593, 21594, 21595, 21596, 21597, 21838, 21839, 21840,
+					21904, 22140,
+				},
+			},
+			hyjal_summit = {
+				order = 23,
+				type = "Raid",
+				name = {
+					enUS = "Hyjal Summit",
+					deDE = "Hyjal Summit",
+				},
+				npcIDs = {
+					17767, 17808, 17888, 17842, 17968, 17818, 17864, 17895, 17897, 17898,
+					17899, 17902, 17903, 17905, 17906, 17907, 17908, 17909,
+				},
+			},
+			black_temple = {
+				order = 24,
+				type = "Raid",
+				name = {
+					enUS = "Black Temple",
+					deDE = "Black Temple",
+				},
+				npcIDs = {
+					22887, 22898, 22841, 22871, 22948, 23418, 23419, 23420, 22947, 22949,
+					22950, 22951, 22952, 22917, 22844, 22845, 22846, 22847, 22848, 22849,
+					22853, 22855, 22869, 22873, 22874, 22875, 22876, 22877, 22878, 22879,
+					22880, 22881, 22883, 22884, 22885, 22890, 22891, 22893, 22894, 22895,
+					22896, 22945, 22946, 22953, 22954, 22955, 22956, 22957, 22959, 22960,
+					22961, 22962, 22963, 22964, 22965, 22985, 22990, 22991, 22994, 23018,
+					23028, 23047, 23049, 23083, 23111, 23147, 23196, 23215, 23222, 23232,
+					23235, 23236, 23237, 23239, 23261, 23264, 23269, 23271, 23281, 23282,
+					23285, 23286, 23287, 23318, 23374, 23375, 23394, 23398, 23400, 23421,
+					23436, 23523, 23524, 23542, 23574, 23576,
+				},
+			},
+			sunwell_plateau = {
+				order = 25,
+				type = "Raid",
+				name = {
+					enUS = "Sunwell Plateau",
+					deDE = "Sunwell Plateau",
+				},
+				npcIDs = {
+					24850, 24892, 24882, 25038, 25166, 25165, 25741, 25840, 25315, 25268,
+					25363, 25367, 25368, 25369, 25370, 25371, 25372, 25373, 25374, 25375,
+					25376, 25377, 25378, 25379, 25380, 25381, 25382, 25383, 25384, 25385,
+					25386, 25387, 25388, 25389, 25390, 25391, 25392, 25393, 25394, 25395,
+					25396, 25397, 25398, 25399, 25879, 25955,
+				},
+			},
 		},
 	},
 }
 
 addon.instanceKeyByMapID = addon.instanceKeyByMapID or {
+	[173] = "black_morass",
+	[246] = "shattered_halls",
 	[256] = "auchenai_crypts",
 	[257] = "auchenai_crypts",
+	[258] = "sethekk_halls",
+	[259] = "sethekk_halls",
+	[260] = "shadow_labyrinth",
+	[261] = "blood_furnace",
+	[262] = "underbog",
+	[263] = "steamvaults",
+	[264] = "steamvaults",
+	[265] = "slave_pens",
+	[266] = "botanica",
+	[267] = "mechanar",
+	[268] = "mechanar",
+	[269] = "arcatraz",
+	[270] = "arcatraz",
+	[271] = "arcatraz",
+	[272] = "mana_tombs",
+	[274] = "old_hillsbrad",
+	[347] = "hellfire_ramparts",
+	[350] = "karazhan",
+	[351] = "karazhan",
+	[352] = "karazhan",
+	[353] = "karazhan",
+	[354] = "karazhan",
+	[355] = "karazhan",
+	[356] = "karazhan",
+	[357] = "karazhan",
+	[358] = "karazhan",
+	[359] = "karazhan",
+	[360] = "karazhan",
+	[361] = "karazhan",
+	[362] = "karazhan",
+	[363] = "karazhan",
+	[364] = "karazhan",
+	[365] = "karazhan",
+	[366] = "karazhan",
+	[733] = "black_morass",
 }
 
 instanceInfo_enUS = instanceInfo_enUS or {}
@@ -1337,63 +1609,63 @@ tipsMap_enUS = {
 	------- Dungeon: Hellfire Ramparts --------------
 
 	---Bosses
-	[17306] = {{"Important", "Focus on killing adds FIRST as they will heal boss!"},
-				{"Important", "Spread out to avoid knockback from Surge"}}, -- Watchkeeper Gargolmar
-	[17309] = {{"PriorityTargets", "INTERRUPT: Heal (Heals boss, will also use Renew)"}},
-				-- Hellfire Watcher <Watchkeeper's Subordinate>
-	[17308] = {{"Dodge", "If inflicted with Bane of Treachery run away from group. If healer or tank gets Bane, DPS needs to run away from them. Lasts 15 sec"},
-				{"Important", "~40% health, the boss casts Demonic Shield on self reducing physical and magical damage taken by 75% for 10 sec"},
-				{"Important", "CC boss' hounds or have tank taunt them"}}, -- Omor the Unscarred
-	[17540] = {{"TANK", "Taunt pets to avoid them going after other players!"},
-				{"Important", "CC/Burn down adds"},
-				{"Interrupts", "Interrupt: Drain Life"}}, -- Fiendish Hound <Omar's Pets>
-	[17537] = {{"Important", "Party members should spread out to minimize multiple people being hit with AoE Fireball from Nazan"},
-				{"Dodge", "DODGE: If hit by Fireball from Nazan, run away to avoid continuing ticks of damage!"},
-				{"TANK", "Be quick to pick up boss as he will run quickly to highest threat upon landing"},
-				{"Advanced", "VAZRUDEN (Orc) Strategy (Phase 1)"},
-				{"Important", "Player afflicted with Vazruden's Mark will be the focus of Vazruden's attacks for 6 sec. Pop Defensives."},
-				{"HEALER", "Provide extra heals to the player afflicted with Vazruden's Mark"},
-				{"Advanced", "NAZAN (Mount) Strategy (Phase 2)"},
-				{"Important", "Nazan will land when he is at 20% health or when Vazruden (orc) reaches ~40-50% health"},
-				{"TANK", "When Nazan lands, the tank should turn the boss away from the group to avoid fire AoE hitting the group"},
-				{"Important", "Nazan will do a Bellowing Roar (AoE fear)"},
-				{"DAMAGE", "Don't stand in front of Nazan!"}}, -- Vazruden
-	[17536] = {{"Important", "Party members should spread out to minimize multiple people being hit with AoE Fireball from Nazan"},
-				{"Dodge", "DODGE: If hit by Fireball from Nazan, run away to avoid continuing ticks of damage!"},
-				{"TANK", "Be quick to pick up boss as he will run quickly to highest threat upon landing"},
-				{"Advanced", "VAZRUDEN (Orc) Strategy (Phase 1)"},
-				{"Important", "Player afflicted with Vazruden's Mark will be the focus of Vazruden's attacks for 6 sec. Pop Defensives."},
-				{"HEALER", "Provide extra heals to the player afflicted with Vazruden's Mark"},
-				{"Advanced", "NAZAN (Mount) Strategy (Phase 2)"},
-				{"Important", "Nazan will land when he is at 20% health or when Vazruden (orc) reaches ~40-50% health"},
-				{"TANK", "When Nazan lands, the tank should turn the boss away from the group to avoid fire AoE hitting the group"},
-				{"Important", "Nazan will do a Bellowing Roar (AoE fear)"},
-				{"DAMAGE", "Don't stand in front of Nazan!"}}, -- Nazan <Vazruden's Mount>
+		[17306] = {{"ramparts_17306_01", "Important", "Focus on killing adds FIRST as they will heal boss!", 20},
+					{"ramparts_17306_02", "Important", "Spread out to avoid knockback from Surge", 10}}, -- Watchkeeper Gargolmar
+		[17309] = {{"ramparts_17309_01", "PriorityTargets", "INTERRUPT: Heal (Heals boss, will also use Renew)", 10}},
+					-- Hellfire Watcher <Watchkeeper's Subordinate>
+		[17308] = {{"ramparts_17308_01", "Dodge", "If inflicted with Bane of Treachery run away from group. If healer or tank gets Bane, DPS needs to run away from them. Lasts 15 sec", 30},
+					{"ramparts_17308_02", "Important", "~40% health, the boss casts Demonic Shield on self reducing physical and magical damage taken by 75% for 10 sec", 20},
+					{"ramparts_17308_03", "Important", "CC boss' hounds or have tank taunt them", 10}}, -- Omor the Unscarred
+		[17540] = {{"ramparts_17540_01", "TANK", "Taunt pets to avoid them going after other players!", 30},
+					{"ramparts_17540_02", "Important", "CC/Burn down adds", 20},
+					{"ramparts_17540_03", "Interrupts", "Interrupt: Drain Life", 10}}, -- Fiendish Hound <Omar's Pets>
+		[17537] = {{"ramparts_17537_01", "Important", "Party members should spread out to minimize multiple people being hit with AoE Fireball from Nazan", 110},
+					{"ramparts_17537_02", "Dodge", "DODGE: If hit by Fireball from Nazan, run away to avoid continuing ticks of damage!", 100},
+					{"ramparts_17537_03", "TANK", "Be quick to pick up boss as he will run quickly to highest threat upon landing", 90},
+					{"ramparts_17537_04", "Advanced", "VAZRUDEN (Orc) Strategy (Phase 1)", 80},
+					{"ramparts_17537_05", "Important", "Player afflicted with Vazruden's Mark will be the focus of Vazruden's attacks for 6 sec. Pop Defensives.", 70},
+					{"ramparts_17537_06", "HEALER", "Provide extra heals to the player afflicted with Vazruden's Mark", 60},
+					{"ramparts_17537_07", "Advanced", "NAZAN (Mount) Strategy (Phase 2)", 50},
+					{"ramparts_17537_08", "Important", "Nazan will land when he is at 20% health or when Vazruden (orc) reaches ~40-50% health", 40},
+					{"ramparts_17537_09", "TANK", "When Nazan lands, the tank should turn the boss away from the group to avoid fire AoE hitting the group", 30},
+					{"ramparts_17537_10", "Important", "Nazan will do a Bellowing Roar (AoE fear)", 20},
+					{"ramparts_17537_11", "DAMAGE", "Don't stand in front of Nazan!", 10}}, -- Vazruden
+		[17536] = {{"ramparts_17536_01", "Important", "Party members should spread out to minimize multiple people being hit with AoE Fireball from Nazan", 110},
+					{"ramparts_17536_02", "Dodge", "DODGE: If hit by Fireball from Nazan, run away to avoid continuing ticks of damage!", 100},
+					{"ramparts_17536_03", "TANK", "Be quick to pick up boss as he will run quickly to highest threat upon landing", 90},
+					{"ramparts_17536_04", "Advanced", "VAZRUDEN (Orc) Strategy (Phase 1)", 80},
+					{"ramparts_17536_05", "Important", "Player afflicted with Vazruden's Mark will be the focus of Vazruden's attacks for 6 sec. Pop Defensives.", 70},
+					{"ramparts_17536_06", "HEALER", "Provide extra heals to the player afflicted with Vazruden's Mark", 60},
+					{"ramparts_17536_07", "Advanced", "NAZAN (Mount) Strategy (Phase 2)", 50},
+					{"ramparts_17536_08", "Important", "Nazan will land when he is at 20% health or when Vazruden (orc) reaches ~40-50% health", 40},
+					{"ramparts_17536_09", "TANK", "When Nazan lands, the tank should turn the boss away from the group to avoid fire AoE hitting the group", 30},
+					{"ramparts_17536_10", "Important", "Nazan will do a Bellowing Roar (AoE fear)", 20},
+					{"ramparts_17536_11", "DAMAGE", "Don't stand in front of Nazan!", 10}}, -- Nazan <Vazruden's Mount>
 
 	---Trash Mobs
-	[17259] = {{"Important", "Has a disarm and an attack power debuff. Don't worry, being melee will get better."}}, 
-				-- Bonechewer Hungerer
-	[17264] = {{"Important", "Beware: Has a dangerous single target stun (Kidney Shot)."}}, -- Bonechewer Ravener
-	[17269] = {{"Legion", "Mob uses Fire Damage abilities"},
-				{"Dodge", "Run out of Rain of Fire AoE"}},
-				-- Bleeding Hollow Darkcaster
-	[17270] = {{"Important", "Tank should turn these mobs away from the group to avoid party members from being hit by Aimed Shot & Multi-Shot"}}, 
-				-- Bleeding Hollow Archer
-	[17271] = {{"Important", "Tank should watch direction their back is as this mob will do a knockback and you want to avoid pulling unwanted groups."},
-				{"Defensives", "Mortal Strike will also be applied to target reducing the effectiveness of healing received"}}, 
-				-- Bonechewer Destroyer
-	[17280] = {{"Legion", "Non-elites; Deals heavy damage to cloth wearers"},
-				{"Important", "Vulnerable to CCs such as Polymorph, Trap and Hibernate"}}, -- Shattered Hand Warhound
-	[17281] = {{"Defensives", "Has an enrage when they become larger. Tank popping Defensive CDs may be necessary here and have healing ready."}}, 
-				-- Bonechewer Ripper
-	[17455] = {{"Important", "Beastmaster summons Warhounds to aid them, and also deals Uppercut (knockback to a player)."}}, 
-				-- Bonechewer Beastmaster
-	[17478] = {{"Important", "Scryers buff Bonechewer Rippers - kill the Scyers quickly after LoS pulling them."},
-				{"Interrupts", "Interrupt: Fear (1 sec cast; 20 yd range)"},
-				{"SHAMAN", "Use Tremor Totem to break party members out of Fear (esp tank/healer)"},
-				{"WARLOCK", "Applying Curse of Tongues on these mobs could allow your team to do more interrupts on Fears, esp if Shaman w/Tremor Totem isn't available"}}, 
-				-- Bleeding Hollow Scryer
-	[17517] = {{"Legion", "Killing the last Sentry will result in the boss fight starting"}}, -- Hellfire Sentry <Herald's Sentry>
+		[17259] = {{"ramparts_17259_01", "Important", "Has a disarm and an attack power debuff. Don't worry, being melee will get better.", 10}}, 
+					-- Bonechewer Hungerer
+		[17264] = {{"ramparts_17264_01", "Important", "Beware: Has a dangerous single target stun (Kidney Shot).", 10}}, -- Bonechewer Ravener
+		[17269] = {{"ramparts_17269_01", "Legion", "Mob uses Fire Damage abilities", 20},
+					{"ramparts_17269_02", "Dodge", "Run out of Rain of Fire AoE", 10}},
+					-- Bleeding Hollow Darkcaster
+		[17270] = {{"ramparts_17270_01", "Important", "Tank should turn these mobs away from the group to avoid party members from being hit by Aimed Shot & Multi-Shot", 10}}, 
+					-- Bleeding Hollow Archer
+		[17271] = {{"ramparts_17271_01", "Important", "Tank should watch direction their back is as this mob will do a knockback and you want to avoid pulling unwanted groups.", 20},
+					{"ramparts_17271_02", "Defensives", "Mortal Strike will also be applied to target reducing the effectiveness of healing received", 10}}, 
+					-- Bonechewer Destroyer
+		[17280] = {{"ramparts_17280_01", "Legion", "Non-elites; Deals heavy damage to cloth wearers", 20},
+					{"ramparts_17280_02", "Important", "Vulnerable to CCs such as Polymorph, Trap and Hibernate", 10}}, -- Shattered Hand Warhound
+		[17281] = {{"ramparts_17281_01", "Defensives", "Has an enrage when they become larger. Tank popping Defensive CDs may be necessary here and have healing ready.", 10}}, 
+					-- Bonechewer Ripper
+		[17455] = {{"ramparts_17455_01", "Important", "Beastmaster summons Warhounds to aid them, and also deals Uppercut (knockback to a player).", 10}}, 
+					-- Bonechewer Beastmaster
+		[17478] = {{"ramparts_17478_01", "Important", "Scryers buff Bonechewer Rippers - kill the Scyers quickly after LoS pulling them.", 40},
+					{"ramparts_17478_02", "Interrupts", "Interrupt: Fear (1 sec cast; 20 yd range)", 30},
+					{"ramparts_17478_03", "SHAMAN", "Use Tremor Totem to break party members out of Fear (esp tank/healer)", 20},
+					{"ramparts_17478_04", "WARLOCK", "Applying Curse of Tongues on these mobs could allow your team to do more interrupts on Fears, esp if Shaman w/Tremor Totem isn't available", 10}}, 
+					-- Bleeding Hollow Scryer
+		[17517] = {{"ramparts_17517_01", "Legion", "Killing the last Sentry will result in the boss fight starting", 10}}, -- Hellfire Sentry <Herald's Sentry>
 
 
 
@@ -1874,8 +2146,8 @@ tipsMap_enUS = {
 				-- Exarch Maladaar
 
 	---Trash Mobs
-	[18441] = {{"PriorityTargets", "Focus on this mob when summoned by Maladaar"}}, -- Stolen Soul
-	[18478] = {{"Legion", ""}}, -- Avatar of the Martyred
+	[18441] = {{"auchenai_18441_01", "PriorityTargets", "Focus on this mob when summoned by Maladaar", 10}}, -- Stolen Soul
+	[18478] = {{"auchenai_18478_01", "Legion", "", 10}}, -- Avatar of the Martyred
 	[18493] = {{"soulpriest_001", "Important", "Dispel Touch of the Forgotten (esp from tank) as it reduces their heals taken for 3 minutes", 10}}, 
 				-- Auchenai Soulpriest
 	[18495] = {{"vindicator_001", "Important", "TEST: Auchenai Vindicator uses the new tip format with tip IDs and weight.", 20},
@@ -1885,120 +2157,120 @@ tipsMap_enUS = {
 				{"monk_003", "Important", "Immune to polymorph & rogue sapping", 20},
 				{"monk_004", "Important", "Casters/Healers should not stand in melee range of this mob due to the interrupt and spell lock from Counter Kick", 10}}, 
 				-- Auchenai Monk
-	[18498] = {{"Important", "DPS/TANK: Avoid using abilities that are not instant-cast as this mob will shield bash players and spell lock them"},
-				{"HEALER", "This mob has will Shield Bash players (Interrupts player cast and spell locks) - Apply HoT to tank if possible"}}, 
+	[18498] = {{"auchenai_18498_01", "Important", "DPS/TANK: Avoid using abilities that are not instant-cast as this mob will shield bash players and spell lock them", 20},
+				{"auchenai_18498_02", "HEALER", "This mob has will Shield Bash players (Interrupts player cast and spell locks) - Apply HoT to tank if possible", 10}}, 
 				-- Unliving Soldier
-	[18499] = {{"Legion", ""}}, -- Unliving Sorcerer
-	[18500] = {{"PriorityTargets", "This mob is a healer"},
-				{"Interrupts", "Interrupt: Major Heal (3 sec cast; Heals ally)"}}, 
+	[18499] = {{"auchenai_18499_01", "Legion", "", 10}}, -- Unliving Sorcerer
+	[18500] = {{"auchenai_18500_01", "PriorityTargets", "This mob is a healer", 20},
+				{"auchenai_18500_02", "Interrupts", "Interrupt: Major Heal (3 sec cast; Heals ally)", 10}}, 
 				-- Unliving Cleric
-	[18501] = {{"Important", "Dispel Spirit Vengeance (magic) from mob (increases mob attack attack speed by 50% and movement speed by 40%"}}, 
+	[18501] = {{"auchenai_18501_01", "Important", "Dispel Spirit Vengeance (magic) from mob (increases mob attack attack speed by 50% and movement speed by 40%)", 10}}, 
 				-- Unliving Stalker
-	[18503] = {{"PriorityTargets", "Due to them being able to cast a 60 sec MC on a player, these should be burned down ASAP"}}, 
+	[18503] = {{"auchenai_18503_01", "PriorityTargets", "Due to them being able to cast a 60 sec MC on a player, these should be burned down ASAP", 10}}, 
 				-- Phantasmal Possessor
-	[18506] = {{"Important", "Casts RAGE (4.5 sec cast dealing AoE Knockback). This can be unpleasant esp when on the bridge to Shirrak as it could knock you to your death"}}, 
+	[18506] = {{"auchenai_18506_01", "Important", "Casts RAGE (4.5 sec cast dealing AoE Knockback). This can be unpleasant esp when on the bridge to Shirrak as it could knock you to your death", 10}}, 
 				-- Raging Soul
-	[18521] = {{"Legion", ""}}, -- Raging Skeleton
-	[18524] = {{"Legion", ""}}, -- Angered Skeleton
-	[18556] = {{"Important", "DPS/TANK: Avoid using abilities that are not instant-cast as this mob will shield bash players and spell lock them"},
-				{"HEALER", "This mob has will Shield Bash players (Interrupts player cast and spell locks) - Apply HoT to tank if possible"}}, 
+	[18521] = {{"auchenai_18521_01", "Legion", "", 10}}, -- Raging Skeleton
+	[18524] = {{"auchenai_18524_01", "Legion", "", 10}}, -- Angered Skeleton
+	[18556] = {{"auchenai_18556_01", "Important", "DPS/TANK: Avoid using abilities that are not instant-cast as this mob will shield bash players and spell lock them", 20},
+				{"auchenai_18556_02", "HEALER", "This mob has will Shield Bash players (Interrupts player cast and spell locks) - Apply HoT to tank if possible", 10}}, 
 				-- Phasing Soldier
-	[18557] = {{"PriorityTargets", "This mob is a healer"},
-				{"Interrupts", "Interrupt: Major Heal (3 sec cast; Heals ally)"}}, 
+	[18557] = {{"auchenai_18557_01", "PriorityTargets", "This mob is a healer", 20},
+				{"auchenai_18557_02", "Interrupts", "Interrupt: Major Heal (3 sec cast; Heals ally)", 10}}, 
 				-- Phasing Cleric
-	[18558] = {{"Legion", ""}}, -- Phasing Sorcerer
-	[18559] = {{"Important", "Dispel Spirit Vengeance (magic) from mob (increases mob attack attack speed by 50% and movement speed by 40%"}}, 
+	[18558] = {{"auchenai_18558_01", "Legion", "", 10}}, -- Phasing Sorcerer
+	[18559] = {{"auchenai_18559_01", "Important", "Dispel Spirit Vengeance (magic) from mob (increases mob attack attack speed by 50% and movement speed by 40%)", 10}}, 
 				-- Phasing Stalker
-	[18700] = {{"Important", "Mob will sunder target's armor reducing its effectiveness"}}, 
+	[18700] = {{"auchenai_18700_01", "Important", "Mob will sunder target's armor reducing its effectiveness", 10}}, 
 				-- Reanimated Bones
-	[18702] = {{"Important", "Dispel magic from player struck by Seed of Corruption. If no dispellers, have this player run away from other party members (or have party members run away if it is the tank that was hit by it)"}}, 
+	[18702] = {{"auchenai_18702_01", "Important", "Dispel magic from player struck by Seed of Corruption. If no dispellers, have this player run away from other party members (or have party members run away if it is the tank that was hit by it)", 10}}, 
 				-- Auchenai Necromancer
 
 
 	------- Dungeon: Sethekk Halls ------------------
 
 	---Bosses
-	[18472] = {{"Legion", "Boss has two phase encounter - a boss only phase and add phase. Depending on grp makeup, plan kill order on elementals during add phase"},
-				{"Advanced", "PHASE 1"},
-				{"Important", "Players should spread as much as possible to mitigate some of the group damage taken from Chain Lightning"},
-				{"Advanced", "PHASE 2 - Adds Phase (occurs when boss at 90%, 55% and 10% HP)"},
-				{"Important", "Each add is immune to damage from their type (Fire Mage shouldn't attack Fire Elemental, and Warlock shouldn't deal Shadow damage to Shadow Elemental) & Shadow Elemental is immune to Fear and Banish from a Warlock - It is best to assist tank and DPS these mobs one at a time, rather than cleave/AoEing them down"},
-				{"TANK", "When ADD phase begins, tank should use AoE taunting abilities (such as Consecration/Thunder Clap) to pick up adds"},
-				{"DAMAGE", "Focus down summoned elementals before swapping back to the boss. Alternatively, a Priest or Warlock can do an AoE Fear to the Fire, Frost and Arcane elementals when they spawn"}},
+	[18472] = {{"sethekk_18472_01", "Legion", "Boss has two phase encounter - a boss only phase and add phase. Depending on grp makeup, plan kill order on elementals during add phase", 70},
+				{"sethekk_18472_02", "Advanced", "PHASE 1", 60},
+				{"sethekk_18472_03", "Important", "Players should spread as much as possible to mitigate some of the group damage taken from Chain Lightning", 50},
+				{"sethekk_18472_04", "Advanced", "PHASE 2 - Adds Phase (occurs when boss at 90%, 55% and 10% HP)", 40},
+				{"sethekk_18472_05", "Important", "Each add is immune to damage from their type (Fire Mage shouldn't attack Fire Elemental, and Warlock shouldn't deal Shadow damage to Shadow Elemental) & Shadow Elemental is immune to Fear and Banish from a Warlock - It is best to assist tank and DPS these mobs one at a time, rather than cleave/AoEing them down", 30},
+				{"sethekk_18472_06", "TANK", "When ADD phase begins, tank should use AoE taunting abilities (such as Consecration/Thunder Clap) to pick up adds", 20},
+				{"sethekk_18472_07", "DAMAGE", "Focus down summoned elementals before swapping back to the boss. Alternatively, a Priest or Warlock can do an AoE Fear to the Fire, Frost and Arcane elementals when they spawn", 10}},
 				-- Darkweaver Syth
-	[18473] = {{"PriorityTargets", "When boss reaches 80%, 50% and 25%, he'll blink to a random player location and begin casting Arcane Explosion. Line-of-sight MUST be broken by standing behind a pillar not in sight of boss or it will one-shot you!"},
-				{"Important", "Boss will apply Polymorph to a random party member (can be tank or healer) and lasts 5 seconds. DPS should make sure to not push Arcane Explosion phase transition while party member is sheeped, as they will be vulnerable to being one-shot."},
-				{"SHAMAN", "Shaman using GROUNDING TOTEM on HEROIC can prevent tank, or other player from being polymorphed!"},
-				{"Important", "Healer and Tank can have a PVP trinket to break themselves free of Polymorph (if you don't have a Shaman w/Grounding Totem). If healer can't be broken from Polymorph (based on group dynamic and healer trinket choices), you should plan ahead to utilize a secondary healer if the main healer is sheeped"}}, -- Talon King Ikiss
-	[23035] = {{"Legion", "Boss deals a combo of Physical Damage and Shadow Damage (having resistance aura/pots) can be helpful to help mitigate"},
-				{"Advanced", "Players should stack on the boss to deal AoE during bird phase."},
-				{"Important", "Casters (esp healers) afflicted with Spell Bomb need to STOP using their abilities as it will drain mana and cause damage to that player. If the healer is afflicted with this, an off-healer should pick up the slack during the 8 sec debuff"},
-				{"Important", "At 66% and 33%, boss will banish itself and summon birds (boss unbanishes when all birds are dead or after 1 min, whichever comes first)."},
-				{"DAMAGE", "While summoned birds are active, DPS should focus on AoE'ing them down before swapping back to a potentially unbanished boss"},
-				{"TANK", "Be ready to pick up Anzu when it is unbanished!"},
-				{"Important", "If Druid is in party, their using a HoT on these statues will allow them to assist you. Keeping Eagle, Hawk and Falcon Spirits alive can provide benefits you during boss fight. They are the Eagle (AoE damage), Hawk (mitigation) and Falcon (Haste) Spirits"}}, 
+	[18473] = {{"sethekk_18473_01", "PriorityTargets", "When boss reaches 80%, 50% and 25%, he'll blink to a random player location and begin casting Arcane Explosion. Line-of-sight MUST be broken by standing behind a pillar not in sight of boss or it will one-shot you!", 40},
+				{"sethekk_18473_02", "Important", "Boss will apply Polymorph to a random party member (can be tank or healer) and lasts 5 seconds. DPS should make sure to not push Arcane Explosion phase transition while party member is sheeped, as they will be vulnerable to being one-shot.", 30},
+				{"sethekk_18473_03", "SHAMAN", "Shaman using GROUNDING TOTEM on HEROIC can prevent tank, or other player from being polymorphed!", 20},
+				{"sethekk_18473_04", "Important", "Healer and Tank can have a PVP trinket to break themselves free of Polymorph (if you don't have a Shaman w/Grounding Totem). If healer can't be broken from Polymorph (based on group dynamic and healer trinket choices), you should plan ahead to utilize a secondary healer if the main healer is sheeped", 10}}, -- Talon King Ikiss
+	[23035] = {{"sethekk_23035_01", "Legion", "Boss deals a combo of Physical Damage and Shadow Damage (having resistance aura/pots) can be helpful to help mitigate", 70},
+				{"sethekk_23035_02", "Advanced", "Players should stack on the boss to deal AoE during bird phase.", 60},
+				{"sethekk_23035_03", "Important", "Casters (esp healers) afflicted with Spell Bomb need to STOP using their abilities as it will drain mana and cause damage to that player. If the healer is afflicted with this, an off-healer should pick up the slack during the 8 sec debuff", 50},
+				{"sethekk_23035_04", "Important", "At 66% and 33%, boss will banish itself and summon birds (boss unbanishes when all birds are dead or after 1 min, whichever comes first).", 40},
+				{"sethekk_23035_05", "DAMAGE", "While summoned birds are active, DPS should focus on AoE'ing them down before swapping back to a potentially unbanished boss", 30},
+				{"sethekk_23035_06", "TANK", "Be ready to pick up Anzu when it is unbanished!", 20},
+				{"sethekk_23035_07", "Important", "If Druid is in party, their using a HoT on these statues will allow them to assist you. Keeping Eagle, Hawk and Falcon Spirits alive can provide benefits you during boss fight. They are the Eagle (AoE damage), Hawk (mitigation) and Falcon (Haste) Spirits", 10}}, 
 				-- Anzu (Heroic-Only)
 
 	---Darkweaver Syth Summoned Elementals
-	[19203] = {{"PriorityTargets", "Focus on elemental adds when they're up before going back to boss!"},
-				{"Legion", "Immune to Fire Damage!"},
-				{"Important", "Deals Fire damage (+Fire DoT) with stacking debuff to players that increases their Fire damage taken"}}, 
+	[19203] = {{"sethekk_19203_01", "PriorityTargets", "Focus on elemental adds when they're up before going back to boss!", 30},
+				{"sethekk_19203_02", "Legion", "Immune to Fire Damage!", 20},
+				{"sethekk_19203_03", "Important", "Deals Fire damage (+Fire DoT) with stacking debuff to players that increases their Fire damage taken", 10}}, 
 				-- Syth Fire Elemental
-	[19204] = {{"PriorityTargets", "Focus on elemental adds when they're up before going back to boss!"},
-				{"Legion", "Immune to Frost Damage!"},
-				{"Important", "Deals Frost damage with stacking debuff to players that increases their Frost damage taken"}}, 
+	[19204] = {{"sethekk_19204_01", "PriorityTargets", "Focus on elemental adds when they're up before going back to boss!", 30},
+				{"sethekk_19204_02", "Legion", "Immune to Frost Damage!", 20},
+				{"sethekk_19204_03", "Important", "Deals Frost damage with stacking debuff to players that increases their Frost damage taken", 10}}, 
 				-- Syth Frost Elemental
-	[19205] = {{"PriorityTargets", "Focus on elemental adds when they're up before going back to boss!"},
-				{"Legion", "Immune to Arcane Damage!"},
-				{"Important", "Deals Arcane damage with stacking debuff to players that increases their Arcane damage taken"}}, 
+	[19205] = {{"sethekk_19205_01", "PriorityTargets", "Focus on elemental adds when they're up before going back to boss!", 30},
+				{"sethekk_19205_02", "Legion", "Immune to Arcane Damage!", 20},
+				{"sethekk_19205_03", "Important", "Deals Arcane damage with stacking debuff to players that increases their Arcane damage taken", 10}}, 
 				-- Syth Arcane Elemental
-	[19206] = {{"PriorityTargets", "Focus on elemental adds when they're up before going back to boss!"},
-				{"Legion", "Immune to Shadow Damage and only elemental immune to Fear & Banish!"},
-				{"Important", "Deals Shadow damage with stacking debuff to players that increases their Shadow damage taken"}}, 
+	[19206] = {{"sethekk_19206_01", "PriorityTargets", "Focus on elemental adds when they're up before going back to boss!", 30},
+				{"sethekk_19206_02", "Legion", "Immune to Shadow Damage and only elemental immune to Fear & Banish!", 20},
+				{"sethekk_19206_03", "Important", "Deals Shadow damage with stacking debuff to players that increases their Shadow damage taken", 10}}, 
 				-- Syth Shadow Elemental
 
 	---Trash Mobs
-	[18318] = {{"Important", "When Spell Reflection is applied, stop casting against this mob and melee instead"}}, 
+	[18318] = {{"sethekk_18318_01", "Important", "When Spell Reflection is applied, stop casting against this mob and melee instead", 10}}, 
 				-- Sethekk Initiate
-	[18319] = {{"Interrupts", "INTERRUPT: Flash Heal"},
-				{"PriorityTargets", "If no priest/hunter is present to CC this mob, it should be priority kill due to instant heal Rejuvenation"},
-				{"PRIEST", "Can be Shackled"},
-				{"HUNTER", "Can be Trapped"}}, -- Time-Lost Scryer
-	[18320] = {{"Important", "Dispel Curse of the Dark Talon from player (Debuff causes player to take increased physical damage +Reduces player stamina)"},
-				{"Important", "If player has Curse of the Dark Talon, they should stop DPS until it falls off or is dispelled as their attacks can trigger Rend on themselves (Physical Bleed)"},
-				{"MAGE", "Spellsteal (lvl 70 ability) Arcane Destruction buff"},
-				{"PRIEST", "Can be Shackled"},
-				{"HUNTER", "Can be Trapped"}}, -- Time-Lost Shadowmage
-	[18321] = {{"Important", "Casts Avenger Shield causing multiple players to become dazed"},
-				{"Important", "Dispel magic Talon of Justice (Stuns player for 5 sec from player (esp if tank/healer)"}}, 
+	[18319] = {{"sethekk_18319_01", "Interrupts", "INTERRUPT: Flash Heal", 40},
+				{"sethekk_18319_02", "PriorityTargets", "If no priest/hunter is present to CC this mob, it should be priority kill due to instant heal Rejuvenation", 30},
+				{"sethekk_18319_03", "PRIEST", "Can be Shackled", 20},
+				{"sethekk_18319_04", "HUNTER", "Can be Trapped", 10}}, -- Time-Lost Scryer
+	[18320] = {{"sethekk_18320_01", "Important", "Dispel Curse of the Dark Talon from player (Debuff causes player to take increased physical damage +Reduces player stamina)", 50},
+				{"sethekk_18320_02", "Important", "If player has Curse of the Dark Talon, they should stop DPS until it falls off or is dispelled as their attacks can trigger Rend on themselves (Physical Bleed)", 40},
+				{"sethekk_18320_03", "MAGE", "Spellsteal (lvl 70 ability) Arcane Destruction buff", 30},
+				{"sethekk_18320_04", "PRIEST", "Can be Shackled", 20},
+				{"sethekk_18320_05", "HUNTER", "Can be Trapped", 10}}, -- Time-Lost Shadowmage
+	[18321] = {{"sethekk_18321_01", "Important", "Casts Avenger Shield causing multiple players to become dazed", 20},
+				{"sethekk_18321_02", "Important", "Dispel magic Talon of Justice (Stuns player for 5 sec from player (esp if tank/healer)", 10}}, 
 				-- Sethekk Talon Lord
-	[18322] = {{"Important", "Howling Screech is applied to player (magic ability reducing movmement speed and damage dealt; Dispellable if another more dangerous debuff isn't going to be applied to tank/healer)"},
-				{"Important", "Has an Enrage effect, use debuffs such as Warlock's Curse of Weakness to reduce damage these mobs deal to tank."}}, 
+	[18322] = {{"sethekk_18322_01", "Important", "Howling Screech is applied to player (magic ability reducing movmement speed and damage dealt; Dispellable if another more dangerous debuff isn't going to be applied to tank/healer)", 20},
+				{"sethekk_18322_02", "Important", "Has an Enrage effect, use debuffs such as Warlock's Curse of Weakness to reduce damage these mobs deal to tank.", 10}}, 
 				-- Sethekk Ravenguard
-	[18323] = {{"Important", "Deals Thunder Clap AoE (10 yd range); HEROIC version also is immune to CC"},
-				{"TANK", "These should be tanked away from ranged DPS and Healer"}}, -- Sethekk Guard
-	[18325] = {{"PriorityTargets", "DPS this down ASAP or use CC - Fears up to 4 players w/in 8 yards."}}, 
+	[18323] = {{"sethekk_18323_01", "Important", "Deals Thunder Clap AoE (10 yd range); HEROIC version also is immune to CC", 20},
+				{"sethekk_18323_02", "TANK", "These should be tanked away from ranged DPS and Healer", 10}}, -- Sethekk Guard
+	[18325] = {{"sethekk_18325_01", "PriorityTargets", "DPS this down ASAP or use CC - Fears up to 4 players w/in 8 yards.", 10}}, 
 				-- Sethekk Prophet
-	[18326] = {{"Legion", ""}}, -- Sethekk Shaman
-	[18327] = {{"PriorityTargets", "Mob drops a Charm Totem that mind-controls player for 30 sec"},
-				{"Important", "Vulnerable to Shackle Undead"},
-				{"MAGE", "Spellsteal (lvl 70 ability) Arcane Destruction buff"}}, 
+	[18326] = {{"sethekk_18326_01", "Legion", "", 10}}, -- Sethekk Shaman
+	[18327] = {{"sethekk_18327_01", "PriorityTargets", "Mob drops a Charm Totem that mind-controls player for 30 sec", 30},
+				{"sethekk_18327_02", "Important", "Vulnerable to Shackle Undead", 20},
+				{"sethekk_18327_03", "MAGE", "Spellsteal (lvl 70 ability) Arcane Destruction buff", 10}}, 
 				-- Time-Lost Controller
-	[18328] = {{"Interrupts", "INTERRUPT: Arcane Lightning (1.5 sec cast; Chain Lightning-Type ability w/4 sec spell silence) - If no interrupts available, casters should STOP casting to avoid spell school being silenced (esp healer)"}}, 
+	[18328] = {{"sethekk_18328_01", "Interrupts", "INTERRUPT: Arcane Lightning (1.5 sec cast; Chain Lightning-Type ability w/4 sec spell silence) - If no interrupts available, casters should STOP casting to avoid spell school being silenced (esp healer)", 10}}, 
 				-- Sethekk Oracle
-	[18701] = {{"Legion", "Elemental add summoned by Sethekk Shaman"}}, -- Dark Vortex
-	[19428] = {{"Legion", "Deals Nature damage in form of Lightning Breath"},
-				{"Important", "Wing Buffet deals knockback to players in front of mob"},
-				{"Important", "When dealing with a pack/individual with this mob present, tank mob away from ranged DPS and Healer & have your back close against a wall to counteract mob's knockback"}}, 
+	[18701] = {{"sethekk_18701_01", "Legion", "Elemental add summoned by Sethekk Shaman", 10}}, -- Dark Vortex
+	[19428] = {{"sethekk_19428_01", "Legion", "Deals Nature damage in form of Lightning Breath", 30},
+				{"sethekk_19428_02", "Important", "Wing Buffet deals knockback to players in front of mob", 20},
+				{"sethekk_19428_03", "Important", "When dealing with a pack/individual with this mob present, tank mob away from ranged DPS and Healer & have your back close against a wall to counteract mob's knockback", 10}}, 
 				-- Cobalt Serpent
-	[19429] = {{"Important", "Sonic Charge rushes a player dealing damage +knockback to player - can get serious if mob is left alive too long!"},
-				{"Important", "Players can counteract knockback by having everyone stand with their backs to the wall."}}, -- Avian Darkhawk
-	[20343] = {{"PriorityTargets", "Summoned by Time-Lost Controller; Totem Mind-Controls players for 30 seconds"}}, 
+	[19429] = {{"sethekk_19429_01", "Important", "Sonic Charge rushes a player dealing damage +knockback to player - can get serious if mob is left alive too long!", 20},
+				{"sethekk_19429_02", "Important", "Players can counteract knockback by having everyone stand with their backs to the wall.", 10}}, -- Avian Darkhawk
+	[20343] = {{"sethekk_20343_01", "PriorityTargets", "Summoned by Time-Lost Controller; Totem Mind-Controls players for 30 seconds", 10}}, 
 				-- Charming Totem
-	[21891] = {{"Legion", ""}}, -- Avian Ripper
-	[21904] = {{"Important", "Swoop is an ability that deals frontal-cone damage +applies 2 sec stun to ones struck - Stand behind mob unless you're the tank!"}}, 
+	[21891] = {{"sethekk_21891_01", "Legion", "", 10}}, -- Avian Ripper
+	[21904] = {{"sethekk_21904_01", "Important", "Swoop is an ability that deals frontal-cone damage +applies 2 sec stun to ones struck - Stand behind mob unless you're the tank!", 10}}, 
 				-- Avian Warhawk
-	[23132] = {{"PriorityTargets", "Screech ability reduces attack power of players w/in 20 yds for 8 seconds"}}, 
+	[23132] = {{"sethekk_23132_01", "PriorityTargets", "Screech ability reduces attack power of players w/in 20 yds for 8 seconds", 10}}, 
 				-- Brood of Anzu
 
 

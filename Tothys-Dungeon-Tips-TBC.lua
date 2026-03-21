@@ -310,6 +310,23 @@ local function getUserContainer(scope, key)
 	return bucket[key]
 end
 
+local function getLocalizedRawNpcTips(id)
+	local localeMaps = {
+		enUS = tipsMap_enUS,
+		deDE = tipsMap_deDE,
+	}
+	local selectedLocale = getSelectedLocale()
+	local localizedMap = localeMaps[selectedLocale] or tipsMap_enUS
+
+	if localizedMap and localizedMap[id] then
+		return localizedMap[id]
+	end
+
+	if tipsMap_enUS then
+		return tipsMap_enUS[id]
+	end
+end
+
 local function ensureUserContainer(scope, key)
 	TDTUserData = TDTUserData or {}
 	TDTUserData[scope] = TDTUserData[scope] or {}
@@ -391,19 +408,7 @@ local function entriesToDisplayTips(entries)
 end
 
 function addon:getMergedNpcTipEntries(id)
-	local localeMaps = {
-		enUS = tipsMap_enUS,
-		deDE = tipsMap_deDE,
-	}
-	local selectedLocale = getSelectedLocale()
-	local localizedMap = localeMaps[selectedLocale] or tipsMap_enUS
-	local rawTips
-
-	if localizedMap and localizedMap[id] then
-		rawTips = localizedMap[id]
-	elseif tipsMap_enUS then
-		rawTips = tipsMap_enUS[id]
-	end
+	local rawTips = getLocalizedRawNpcTips(id)
 
 	if not rawTips and not getUserContainer("npcs", id) then
 		return nil
@@ -470,6 +475,37 @@ function addon:addInstanceUserTip(instanceKey, tipType, text, weight, tipID)
 	return additionID
 end
 
+function addon:getInstanceUserAdditions(instanceKey)
+	local container = getUserContainer("instances", instanceKey)
+	local additions = {}
+
+	if not container or not container.additions then
+		return additions
+	end
+
+	for additionID, addition in pairs(container.additions) do
+		if type(addition) == "table" then
+			additions[#additions + 1] = {
+				id = addition.id or additionID,
+				type = addition.type,
+				text = addition.text,
+				weight = tonumber(addition.weight) or 0,
+				hidden = addition.hidden == true,
+			}
+		end
+	end
+
+	table.sort(additions, function(left, right)
+		if left.weight == right.weight then
+			return tostring(left.id) < tostring(right.id)
+		end
+
+		return left.weight > right.weight
+	end)
+
+	return additions
+end
+
 function addon:resetNpcUserData(npcID)
 	if not TDTUserData or not TDTUserData.npcs then
 		return
@@ -524,6 +560,27 @@ function addon:getNpcUserAdditions(npcID)
 	return additions
 end
 
+function addon:getNpcBaseTipsForEditor(npcID)
+	local rawTips = getLocalizedRawNpcTips(npcID)
+	local entries = normalizeTipsToEntries(rawTips)
+	local container = getUserContainer("npcs", npcID)
+	local disabled = container and container.disabled or {}
+	local overrides = container and container.overrides or {}
+
+	for _, entry in ipairs(entries) do
+		local override = entry.id and overrides[entry.id] or nil
+		entry.hidden = entry.id and disabled[entry.id] == true or false
+		entry.overridden = override ~= nil
+		entry.canModify = entry.id ~= nil
+		if override then
+			entry.overrideText = override.text
+			entry.overrideWeight = override.weight
+		end
+	end
+
+	return entries
+end
+
 function addon:setNpcUserTipHidden(npcID, tipID, hidden)
 	local container = getUserContainer("npcs", npcID)
 	if not container or not container.additions or not container.additions[tipID] then
@@ -531,6 +588,76 @@ function addon:setNpcUserTipHidden(npcID, tipID, hidden)
 	end
 
 	container.additions[tipID].hidden = hidden == true
+	return true
+end
+
+function addon:setNpcBaseTipHidden(npcID, tipID, hidden)
+	if not tipID then
+		return false
+	end
+
+	local container = ensureUserContainer("npcs", npcID)
+	if hidden then
+		container.disabled[tipID] = true
+	else
+		container.disabled[tipID] = nil
+	end
+
+	return true
+end
+
+function addon:resetNpcBaseTip(npcID, tipID)
+	if not tipID then
+		return false
+	end
+
+	local container = getUserContainer("npcs", npcID)
+	if not container then
+		return false
+	end
+
+	if container.disabled then
+		container.disabled[tipID] = nil
+	end
+	if container.overrides then
+		container.overrides[tipID] = nil
+	end
+
+	return true
+end
+
+function addon:updateNpcBaseTipOverride(npcID, tipID, text, weight)
+	if not npcID or not tipID then
+		return false
+	end
+
+	local rawTips = getLocalizedRawNpcTips(npcID)
+	local entries = normalizeTipsToEntries(rawTips)
+	local baseEntry
+	for _, entry in ipairs(entries) do
+		if entry.id == tipID then
+			baseEntry = entry
+			break
+		end
+	end
+
+	if not baseEntry then
+		return false
+	end
+
+	local container = ensureUserContainer("npcs", npcID)
+	container.overrides[tipID] = container.overrides[tipID] or {}
+
+	if text and text ~= "" then
+		container.overrides[tipID].text = text
+	else
+		container.overrides[tipID].text = baseEntry.text
+	end
+
+	if weight ~= nil then
+		container.overrides[tipID].weight = tonumber(weight) or baseEntry.weight or 0
+	end
+
 	return true
 end
 
@@ -546,6 +673,46 @@ end
 
 function addon:updateNpcUserTip(npcID, tipID, tipType, text, weight)
 	local container = getUserContainer("npcs", npcID)
+	if not container or not container.additions or not container.additions[tipID] then
+		return false
+	end
+
+	local tip = container.additions[tipID]
+	if tipType and tipType ~= "" then
+		tip.type = tipType
+	end
+	if text and text ~= "" then
+		tip.text = text
+	end
+	if weight ~= nil then
+		tip.weight = tonumber(weight) or tip.weight or 0
+	end
+
+	return true
+end
+
+function addon:setInstanceUserTipHidden(instanceKey, tipID, hidden)
+	local container = getUserContainer("instances", instanceKey)
+	if not container or not container.additions or not container.additions[tipID] then
+		return false
+	end
+
+	container.additions[tipID].hidden = hidden == true
+	return true
+end
+
+function addon:deleteInstanceUserTip(instanceKey, tipID)
+	local container = getUserContainer("instances", instanceKey)
+	if not container or not container.additions or not container.additions[tipID] then
+		return false
+	end
+
+	container.additions[tipID] = nil
+	return true
+end
+
+function addon:updateInstanceUserTip(instanceKey, tipID, tipType, text, weight)
+	local container = getUserContainer("instances", instanceKey)
 	if not container or not container.additions or not container.additions[tipID] then
 		return false
 	end
