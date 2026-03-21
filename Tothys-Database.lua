@@ -1627,113 +1627,113 @@ tipsMap_enUS = {
 				{"kara_17225_26", "Important", "After Flight phase, Nighbane will land again until you've defeated it", 10}}, -- Nightbane
 
 	---Servant Quarters
-	[16179] = {{"Important", "Tanks should be #1 and #2 on threat meters"},
-				{"Important", "Boss will apply webbing (magic debuff) to MT and swap to OT"},
-				{"Important", "Boss will apply Acidic Wound (Reduces armor and Nature DoT"}}, -- Hyakiss the Lurker
-	[16180] = {{"Important", "Tank and spank fight"}}, -- Shadikith the Glider
-	[16181] = {{"Important", "Pull boss into the room leading into his room"},
-				{"Important", "Due to AoE knockback, MT should stand with back against wall and Ranged DPS, Healers should stand with back against adjacent wall"}, 
-				{"Important", "Boss will charge furthest member of raid, this player should be OT due to this being a hard-hitting ability"},
-				{"Important", "MT should have their back should be against wall to avoid being knocked back, while OT should stand with back against adjacent wall furthest from boss (due to his hard-hitting charge on furthest player)"},
-				{"Important", "Boss does cast Sonic Burst (5 sec AoE Silence with 20 yd range)"}}, -- Rokad the Ravager
+	[16179] = {{"kara_16179_01", "Important", "Tanks should be #1 and #2 on threat meters", 30},
+				{"kara_16179_02", "Important", "Boss will apply webbing (magic debuff) to MT and swap to OT", 20},
+				{"kara_16179_03", "Important", "Boss will apply Acidic Wound (Reduces armor and Nature DoT", 10}}, -- Hyakiss the Lurker
+	[16180] = {{"kara_16180_01", "Important", "Tank and spank fight", 10}}, -- Shadikith the Glider
+	[16181] = {{"kara_16181_01", "Important", "Pull boss into the room leading into his room", 50},
+				{"kara_16181_02", "Important", "Due to AoE knockback, MT should stand with back against wall and Ranged DPS, Healers should stand with back against adjacent wall", 40}, 
+				{"kara_16181_03", "Important", "Boss will charge furthest member of raid, this player should be OT due to this being a hard-hitting ability", 30},
+				{"kara_16181_04", "Important", "MT should have their back should be against wall to avoid being knocked back, while OT should stand with back against adjacent wall furthest from boss (due to his hard-hitting charge on furthest player)", 20},
+				{"kara_16181_05", "Important", "Boss does cast Sonic Burst (5 sec AoE Silence with 20 yd range)", 10}}, -- Rokad the Ravager
 
 	---Moroes' Dinner Guests
-	[17007] = {{"Legion", "HOLY PALADIN-Type Mob"},
-				{"PriorityTargets", "Kill/CC Priority: 2nd"},
-				{"Important", "Keep target CC'd unless group is fighting this mob"},
-				{"Important", "Mob will heal and buff other dinner guests w/Holy Light heal & Blessing of Might"}}, -- Lady Keira Berrybuck
-	[19872] = {{"Legion", "HOLY PRIEST-Type Mob"},
-				{"PriorityTargets", "Kill/CC Priority: 2nd"},
-				{"Important", "Keep target CC'd unless group is fighting this mob"},
-				{"Important", "Mob will heal and buff other dinner guests w/Greater Heal & PW: Shield"}}, -- Lady Catriona Von'Indi
-	[19873] = {{"Legion", "PROTECTION WARRIOR-Type Mob"},
-				{"PriorityTargets", "Kill/CC Priority: 6th (Least priority mob of Moroes fight)"},
-				{"Important", "Will occasionally cast Disarm on player"}}, -- Lord Crispin Ference
-	[19874] = {{"Legion", "PROT/RET PALADIN-Type Mob"},
-				{"PriorityTargets", "Kill/CC Priority: 3rd"},
-				{"Important", "Should be OT or CC'd as mob will stun player with Hammer of Justice"}}, -- Baron Rafe Dreuger
-	[19875] = {{"Legion", "SHADOW PRIEST-Type Mob"},
-				{"PriorityTargets", "Kill/CC Priority: 1st"},
-				{"Important", "Due to Mana Burn, this target should remain CC'd"}}, -- Baroness Dorothea Millstipe
-	[19876] = {{"Legion", "MORTAL STRIKE WARRIOR-Type Mob"},
-				{"PriorityTargets", "Kill/CC Priority: 4th"},
-				{"Important", "Due to mob's Whirlwind ability, players should not stand close to him"},
-				{"TANK", "If Robin is OT, should place this target away from MT, Moroes and other players due to WW Damage"}}, -- Lord Robin Daris
+	[17007] = {{"kara_17007_01", "Legion", "HOLY PALADIN-Type Mob", 40},
+				{"kara_17007_02", "PriorityTargets", "Kill/CC Priority: 2nd", 30},
+				{"kara_17007_03", "Important", "Keep target CC'd unless group is fighting this mob", 20},
+				{"kara_17007_04", "Important", "Mob will heal and buff other dinner guests w/Holy Light heal & Blessing of Might", 10}}, -- Lady Keira Berrybuck
+	[19872] = {{"kara_19872_01", "Legion", "HOLY PRIEST-Type Mob", 40},
+				{"kara_19872_02", "PriorityTargets", "Kill/CC Priority: 2nd", 30},
+				{"kara_19872_03", "Important", "Keep target CC'd unless group is fighting this mob", 20},
+				{"kara_19872_04", "Important", "Mob will heal and buff other dinner guests w/Greater Heal & PW: Shield", 10}}, -- Lady Catriona Von'Indi
+	[19873] = {{"kara_19873_01", "Legion", "PROTECTION WARRIOR-Type Mob", 30},
+				{"kara_19873_02", "PriorityTargets", "Kill/CC Priority: 6th (Least priority mob of Moroes fight)", 20},
+				{"kara_19873_03", "Important", "Will occasionally cast Disarm on player", 10}}, -- Lord Crispin Ference
+	[19874] = {{"kara_19874_01", "Legion", "PROT/RET PALADIN-Type Mob", 30},
+				{"kara_19874_02", "PriorityTargets", "Kill/CC Priority: 3rd", 20},
+				{"kara_19874_03", "Important", "Should be OT or CC'd as mob will stun player with Hammer of Justice", 10}}, -- Baron Rafe Dreuger
+	[19875] = {{"kara_19875_01", "Legion", "SHADOW PRIEST-Type Mob", 30},
+				{"kara_19875_02", "PriorityTargets", "Kill/CC Priority: 1st", 20},
+				{"kara_19875_03", "Important", "Due to Mana Burn, this target should remain CC'd", 10}}, -- Baroness Dorothea Millstipe
+	[19876] = {{"kara_19876_01", "Legion", "MORTAL STRIKE WARRIOR-Type Mob", 40},
+				{"kara_19876_02", "PriorityTargets", "Kill/CC Priority: 4th", 30},
+				{"kara_19876_03", "Important", "Due to mob's Whirlwind ability, players should not stand close to him", 20},
+				{"kara_19876_04", "TANK", "If Robin is OT, should place this target away from MT, Moroes and other players due to WW Damage", 10}}, -- Lord Robin Daris
 
 	---Opera Event
-	[17603] = {{"Important", "Only 1 tank is needed; best that this is a warrior due to their Berserker Rage during Boss' Fear ability"},
-				{"TANK", "Tank wolf along one wall medium distance away from rest of raid"},
-				{"Important", "Ranged DPS and HEALERS should stand a third to a half-stage length from boss on adjacent wall to allow reaction time for RED RIDING HOOD stage"},
-				{"Important", "Prior to Wolf casting RED RIDING HOOD on a player, boss will briefly target the player that will receive debuff before swapping back to tank and applying RED RIDING HOOD debuff.  This should give player (esp melee) advanced warning of the application of debuff"},
-				{"Important", "RED RIDING HOOD (20 sec debuff; Player is turned into Little Red Riding Hood and their armor & resistance drops to 0.  Little Red Riding Hood should circle the outside of the room, running away from the Big Bad Wolf"},
-				{"HEALER", "Make sure to watch your aggro up on Wolf during RED RIDING HOOD as wolf will go to highest threat player when that phase ends!"},
-				{"TANK", "Make sure to keep your aggro up on Wolf during RED RIDING HOOD as wolf will go to highest threat player when that phase ends!"},
-				{"DAMAGE", "Make sure to watch your aggro up on Wolf during RED RIDING HOOD as wolf will go to highest threat player when that phase ends!"},
-				{"Important", "Casts Terrifying Howl (10 yd range; 3 sec AoE Fear)"},
-				{"WARRIOR", "If feared, can use Berserker Rage to drop fear (will need to be in Berserker Stance first)"}}, 
+	[17603] = {{"kara_17603_01", "Important", "Only 1 tank is needed; best that this is a warrior due to their Berserker Rage during Boss' Fear ability", 100},
+				{"kara_17603_02", "TANK", "Tank wolf along one wall medium distance away from rest of raid", 90},
+				{"kara_17603_03", "Important", "Ranged DPS and HEALERS should stand a third to a half-stage length from boss on adjacent wall to allow reaction time for RED RIDING HOOD stage", 80},
+				{"kara_17603_04", "Important", "Prior to Wolf casting RED RIDING HOOD on a player, boss will briefly target the player that will receive debuff before swapping back to tank and applying RED RIDING HOOD debuff.  This should give player (esp melee) advanced warning of the application of debuff", 70},
+				{"kara_17603_05", "Important", "RED RIDING HOOD (20 sec debuff; Player is turned into Little Red Riding Hood and their armor & resistance drops to 0.  Little Red Riding Hood should circle the outside of the room, running away from the Big Bad Wolf", 60},
+				{"kara_17603_06", "HEALER", "Make sure to watch your aggro up on Wolf during RED RIDING HOOD as wolf will go to highest threat player when that phase ends!", 50},
+				{"kara_17603_07", "TANK", "Make sure to keep your aggro up on Wolf during RED RIDING HOOD as wolf will go to highest threat player when that phase ends!", 40},
+				{"kara_17603_08", "DAMAGE", "Make sure to watch your aggro up on Wolf during RED RIDING HOOD as wolf will go to highest threat player when that phase ends!", 30},
+				{"kara_17603_09", "Important", "Casts Terrifying Howl (10 yd range; 3 sec AoE Fear)", 20},
+				{"kara_17603_10", "WARRIOR", "If feared, can use Berserker Rage to drop fear (will need to be in Berserker Stance first)", 10}}, 
 				-- Grandmother (Wolf in Disguise)
-	[17521] = {{"Important", "Only 1 tank is needed; best that this is a warrior due to their Berserker Rage during Boss' Fear ability"},
-				{"TANK", "Tank wolf along one wall medium distance away from rest of raid"},
-				{"Important", "Ranged DPS and HEALERS should stand a third to a half-stage length from boss on adjacent wall to allow reaction time for RED RIDING HOOD stage"},
-				{"Important", "Prior to Wolf casting RED RIDING HOOD on a player, boss will briefly target the player that will receive debuff before swapping back to tank and applying RED RIDING HOOD debuff.  This should give player (esp melee) advanced warning of the application of debuff"},
-				{"Important", "RED RIDING HOOD (20 sec debuff; Player is turned into Little Red Riding Hood and their armor & resistance drops to 0.  Little Red Riding Hood should circle the outside of the room, running away from the Big Bad Wolf"},
-				{"HEALER", "Make sure to watch your aggro up on Wolf during RED RIDING HOOD as wolf will go to highest threat player when that phase ends!"},
-				{"TANK", "Make sure to keep your aggro up on Wolf during RED RIDING HOOD as wolf will go to highest threat player when that phase ends!"},
-				{"DAMAGE", "Make sure to watch your aggro up on Wolf during RED RIDING HOOD as wolf will go to highest threat player when that phase ends!"},
-				{"Important", "Casts Terrifying Howl (10 yd range; 3 sec AoE Fear)"},
-				{"WARRIOR", "If feared, can use Berserker Rage to drop fear (will need to be in Berserker Stance first)"}}, 
+	[17521] = {{"kara_17521_01", "Important", "Only 1 tank is needed; best that this is a warrior due to their Berserker Rage during Boss' Fear ability", 100},
+				{"kara_17521_02", "TANK", "Tank wolf along one wall medium distance away from rest of raid", 90},
+				{"kara_17521_03", "Important", "Ranged DPS and HEALERS should stand a third to a half-stage length from boss on adjacent wall to allow reaction time for RED RIDING HOOD stage", 80},
+				{"kara_17521_04", "Important", "Prior to Wolf casting RED RIDING HOOD on a player, boss will briefly target the player that will receive debuff before swapping back to tank and applying RED RIDING HOOD debuff.  This should give player (esp melee) advanced warning of the application of debuff", 70},
+				{"kara_17521_05", "Important", "RED RIDING HOOD (20 sec debuff; Player is turned into Little Red Riding Hood and their armor & resistance drops to 0.  Little Red Riding Hood should circle the outside of the room, running away from the Big Bad Wolf", 60},
+				{"kara_17521_06", "HEALER", "Make sure to watch your aggro up on Wolf during RED RIDING HOOD as wolf will go to highest threat player when that phase ends!", 50},
+				{"kara_17521_07", "TANK", "Make sure to keep your aggro up on Wolf during RED RIDING HOOD as wolf will go to highest threat player when that phase ends!", 40},
+				{"kara_17521_08", "DAMAGE", "Make sure to watch your aggro up on Wolf during RED RIDING HOOD as wolf will go to highest threat player when that phase ends!", 30},
+				{"kara_17521_09", "Important", "Casts Terrifying Howl (10 yd range; 3 sec AoE Fear)", 20},
+				{"kara_17521_10", "WARRIOR", "If feared, can use Berserker Rage to drop fear (will need to be in Berserker Stance first)", 10}}, 
 				-- The Big Bad Wolf
-	[17533] = {{"PriorityTargets", "In Phase 3 (fighting both Romulo and Julianne, they MUST die within 10 seconds of each other otherwise they will rez the other to full health. DPS should be aware of this so that targets can be adjusted during this fight!"},
-				{"Advanced", "PHASE ONE - Fight Julianne"},
-				{"Important", "It is best to use a Warrior-Tank for Romulo for the Disarms"},
-				{"Important", "Dispel MAGIC (from MOB): Devotion (50% increase to Physical damage dealt; 50% increase to caster's attack speed)"},
-				{"MAGE", "Devotion: Dispel magic from MOB with SPELLSTEAL"},
-				{"PRIEST", "Devotion: Dispel Magic from MOB"},
-				{"SHAMAN", "Devotion: Dispel Magic from MOB with PURGE"},
-				{"WARLOCK", "Devotion: Dispel Magic from MOB with DEVOUR MAGIC (Felhunter Pet Only)"},
-				{"WARRIOR", "Devotion: Dispel magic from MOB with SHIELD SLAM"},
-				{"TANK", "It is best to have Julianne die in corner away from Romulo to make it easier for tank to pick her up in phase 3"},
-				{"Advanced", "PHASE TWO - Fight Romulo"},
-				{"Important", "Romulo should be tanked with his back against wall away from where Julianne died and no players should stand behind Romulo"},
-				{"Important", "Coordinate with others for Disarming Romulo during DARING"},
-				{"Advanced", "PHASE THREE - Fight Romulo and Julianne"},
-				{"Important", "Romulo group is generally ranged/casters due to boss' melee abilities and Julianne group should be mostly melee/interrupters/dispellers"}}, 
+	[17533] = {{"kara_17533_01", "PriorityTargets", "In Phase 3 (fighting both Romulo and Julianne, they MUST die within 10 seconds of each other otherwise they will rez the other to full health. DPS should be aware of this so that targets can be adjusted during this fight!", 140},
+				{"kara_17533_02", "Advanced", "PHASE ONE - Fight Julianne", 130},
+				{"kara_17533_03", "Important", "It is best to use a Warrior-Tank for Romulo for the Disarms", 120},
+				{"kara_17533_04", "Important", "Dispel MAGIC (from MOB): Devotion (50% increase to Physical damage dealt; 50% increase to caster's attack speed)", 110},
+				{"kara_17533_05", "MAGE", "Devotion: Dispel magic from MOB with SPELLSTEAL", 100},
+				{"kara_17533_06", "PRIEST", "Devotion: Dispel Magic from MOB", 90},
+				{"kara_17533_07", "SHAMAN", "Devotion: Dispel Magic from MOB with PURGE", 80},
+				{"kara_17533_08", "WARLOCK", "Devotion: Dispel Magic from MOB with DEVOUR MAGIC (Felhunter Pet Only)", 70},
+				{"kara_17533_09", "WARRIOR", "Devotion: Dispel magic from MOB with SHIELD SLAM", 60},
+				{"kara_17533_10", "TANK", "It is best to have Julianne die in corner away from Romulo to make it easier for tank to pick her up in phase 3", 50},
+				{"kara_17533_11", "Advanced", "PHASE TWO - Fight Romulo", 40},
+				{"kara_17533_12", "Important", "Romulo should be tanked with his back against wall away from where Julianne died and no players should stand behind Romulo", 30},
+				{"kara_17533_13", "Important", "Coordinate with others for Disarming Romulo during DARING", 20},
+				{"kara_17533_14", "Advanced", "PHASE THREE - Fight Romulo and Julianne", 15},
+				{"kara_17533_15", "Important", "Romulo group is generally ranged/casters due to boss' melee abilities and Julianne group should be mostly melee/interrupters/dispellers", 10}}, 
 				-- Romulo
-	[17534] = {{"PriorityTargets", "In Phase 3 (fighting both Romulo and Julianne, they MUST die within 10 seconds of each other otherwise they will rez the other to full health. DPS should be aware of this so that targets can be adjusted during this fight!"},
-				{"Advanced", "PHASE ONE - Fight Julianne"},
-				{"Important", "It is best to use a Warrior-Tank for Romulo for the Disarms"},
-				{"Important", "Dispel MAGIC (from MOB): Devotion (50% increase to Physical damage dealt; 50% increase to caster's attack speed)"},
-				{"MAGE", "Devotion: Dispel magic from MOB with SPELLSTEAL"},
-				{"PRIEST", "Devotion: Dispel Magic from MOB"},
-				{"SHAMAN", "Devotion: Dispel Magic from MOB with PURGE"},
-				{"WARLOCK", "Devotion: Dispel Magic from MOB with DEVOUR MAGIC (Felhunter Pet Only)"},
-				{"WARRIOR", "Devotion: Dispel magic from MOB with SHIELD SLAM"},
-				{"TANK", "It is best to have Julianne die in corner away from Romulo to make it easier for tank to pick her up in phase 3"},
-				{"Advanced", "PHASE TWO - Fight Romulo"},
-				{"Important", "Romulo should be tanked with his back against wall away from where Julianne died and no players should stand behind Romulo"},
-				{"Important", "Coordinate with others for Disarming Romulo during DARING"},
-				{"Advanced", "PHASE THREE - Fight Romulo and Julianne"},
-				{"Important", "Romulo group is generally ranged/casters due to boss' melee abilities and Julianne group should be mostly melee/interrupters/dispellers"}}, 
+	[17534] = {{"kara_17534_01", "PriorityTargets", "In Phase 3 (fighting both Romulo and Julianne, they MUST die within 10 seconds of each other otherwise they will rez the other to full health. DPS should be aware of this so that targets can be adjusted during this fight!", 140},
+				{"kara_17534_02", "Advanced", "PHASE ONE - Fight Julianne", 130},
+				{"kara_17534_03", "Important", "It is best to use a Warrior-Tank for Romulo for the Disarms", 120},
+				{"kara_17534_04", "Important", "Dispel MAGIC (from MOB): Devotion (50% increase to Physical damage dealt; 50% increase to caster's attack speed)", 110},
+				{"kara_17534_05", "MAGE", "Devotion: Dispel magic from MOB with SPELLSTEAL", 100},
+				{"kara_17534_06", "PRIEST", "Devotion: Dispel Magic from MOB", 90},
+				{"kara_17534_07", "SHAMAN", "Devotion: Dispel Magic from MOB with PURGE", 80},
+				{"kara_17534_08", "WARLOCK", "Devotion: Dispel Magic from MOB with DEVOUR MAGIC (Felhunter Pet Only)", 70},
+				{"kara_17534_09", "WARRIOR", "Devotion: Dispel magic from MOB with SHIELD SLAM", 60},
+				{"kara_17534_10", "TANK", "It is best to have Julianne die in corner away from Romulo to make it easier for tank to pick her up in phase 3", 50},
+				{"kara_17534_11", "Advanced", "PHASE TWO - Fight Romulo", 40},
+				{"kara_17534_12", "Important", "Romulo should be tanked with his back against wall away from where Julianne died and no players should stand behind Romulo", 30},
+				{"kara_17534_13", "Important", "Coordinate with others for Disarming Romulo during DARING", 20},
+				{"kara_17534_14", "Advanced", "PHASE THREE - Fight Romulo and Julianne", 15},
+				{"kara_17534_15", "Important", "Romulo group is generally ranged/casters due to boss' melee abilities and Julianne group should be mostly melee/interrupters/dispellers", 10}}, 
 				-- Julianne
-	[17535] = {{"PriorityTargets", "Dorothee can't be tanked/interrupted and should be killed first"},
-				{"Important", "Attacking Dorothee will start the encounter"},
-				{"Important", "Casts Frightened Scream (Fears 3 random players for 2 seconds)"}}, -- Dorothee
-	[17543] = {{"Important", "Use Highest Rank, Non-AoE/DoT Fire spells (or Fire damage Wand) on Strawman to trigger Burning Straw debuff, which will disorient boss for 6 seconds"},
-				{"TANK", "Roar's Tank should taunt Strawman"},
-				{"MAGE", "Molten Armor will not trigger Burning Straw debuff"},
-				{"WARLOCK", "Immolate is considered a DoT and will not trigger Burning Straw debuff"}}, -- Strawman
-	[17546] = {{"Important", "Susceptible to Fear, Death Coil and Scare Beast (but NOT Hibernate). A warlock and tank should be able to control him"},
-				{"Important", "Casts an AoE Fear"}}, -- Roar
-	[17547] = {{"Important", "Due to high amount of damage, main-tank should be on this target"},
-				{"Important", "As encounter continues, mob develops rust slowing him down and allowing him to be kited"}}, -- Tinhead
-	[17548] = {{"PriorityTargets", "Should be killed AFTER Dorothee as killing Tito first will cause Dorothee to ENRAGE"},
-				{"Important", "Tank should be assigned to Tito"},
-				{"Important", "Interrupts/Silences casters"}}, -- Tito
-	[18168] = {{"Legion", "Appears when Dorothee, Roar, Strawman and Tinhead are defeated"},
-				{"Important", "Main-Tank should pick up boss immediately!"},
-				{"Important", "Assign a raid member to call out cyclones"},
-				{"Important", "Summons Cyclones that move around and across the center of the stage; Cyclones will knock raid members into the air. Players will then fall to the ground, so a slow fall can be helpful here"},
-				{"HEALER", "Priority Heals to cycloned players due to their incoming fall damage"}}, -- The Crone
+	[17535] = {{"kara_17535_01", "PriorityTargets", "Dorothee can't be tanked/interrupted and should be killed first", 30},
+				{"kara_17535_02", "Important", "Attacking Dorothee will start the encounter", 20},
+				{"kara_17535_03", "Important", "Casts Frightened Scream (Fears 3 random players for 2 seconds)", 10}}, -- Dorothee
+	[17543] = {{"kara_17543_01", "Important", "Use Highest Rank, Non-AoE/DoT Fire spells (or Fire damage Wand) on Strawman to trigger Burning Straw debuff, which will disorient boss for 6 seconds", 40},
+				{"kara_17543_02", "TANK", "Roar's Tank should taunt Strawman", 30},
+				{"kara_17543_03", "MAGE", "Molten Armor will not trigger Burning Straw debuff", 20},
+				{"kara_17543_04", "WARLOCK", "Immolate is considered a DoT and will not trigger Burning Straw debuff", 10}}, -- Strawman
+	[17546] = {{"kara_17546_01", "Important", "Susceptible to Fear, Death Coil and Scare Beast (but NOT Hibernate). A warlock and tank should be able to control him", 20},
+				{"kara_17546_02", "Important", "Casts an AoE Fear", 10}}, -- Roar
+	[17547] = {{"kara_17547_01", "Important", "Due to high amount of damage, main-tank should be on this target", 20},
+				{"kara_17547_02", "Important", "As encounter continues, mob develops rust slowing him down and allowing him to be kited", 10}}, -- Tinhead
+	[17548] = {{"kara_17548_01", "PriorityTargets", "Should be killed AFTER Dorothee as killing Tito first will cause Dorothee to ENRAGE", 30},
+				{"kara_17548_02", "Important", "Tank should be assigned to Tito", 20},
+				{"kara_17548_03", "Important", "Interrupts/Silences casters", 10}}, -- Tito
+	[18168] = {{"kara_18168_01", "Legion", "Appears when Dorothee, Roar, Strawman and Tinhead are defeated", 50},
+				{"kara_18168_02", "Important", "Main-Tank should pick up boss immediately!", 40},
+				{"kara_18168_03", "Important", "Assign a raid member to call out cyclones", 30},
+				{"kara_18168_04", "Important", "Summons Cyclones that move around and across the center of the stage; Cyclones will knock raid members into the air. Players will then fall to the ground, so a slow fall can be helpful here", 20},
+				{"kara_18168_05", "HEALER", "Priority Heals to cycloned players due to their incoming fall damage", 10}}, -- The Crone
 
 	---Chess Event
 	[16816] = {{"Legion", "Healing Cheat (Heals Medivh's king and possibly other pieces to full HP)"},
