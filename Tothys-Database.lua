@@ -189,13 +189,37 @@ addon.contentCatalog = addon.contentCatalog or {
 					deDE = "Shadow Labyrinth",
 				},
 				npcNames = {
+					[18631] = { enUS = "Cabal Cultist" },
+					[18632] = { enUS = "Cabal Executioner" },
+					[18633] = { enUS = "Cabal Acolyte" },
+					[18634] = { enUS = "Cabal Summoner" },
+					[18635] = { enUS = "Cabal Deathsworn" },
+					[18636] = { enUS = "Cabal Assassin" },
+					[18637] = { enUS = "Cabal Shadow Priest" },
+					[18638] = { enUS = "Cabal Zealot" },
+					[18639] = { enUS = "Cabal Spellbinder" },
+					[18640] = { enUS = "Cabal Warlock" },
+					[18641] = { enUS = "Cabal Familiar" },
+					[18642] = { enUS = "Maiden of Discipline" },
+					[18663] = { enUS = "Maiden of Discipline" },
 					[18667] = { enUS = "Blackheart the Inciter" },
 					[18708] = { enUS = "Murmur" },
 					[18731] = { enUS = "Ambassador Hellmaw" },
 					[18732] = { enUS = "Grandmaster Vorpil" },
+					[18794] = { enUS = "Cabal Ritualist" },
+					[18796] = { enUS = "Fel Overseer" },
+					[18797] = { enUS = "Tortured Skeleton" },
+					[18830] = { enUS = "Cabal Fanatic" },
+					[18848] = { enUS = "Malicious Instructor" },
+					[19208] = { enUS = "Summoned Cabal Acolyte" },
+					[19209] = { enUS = "Summoned Cabal Deathsworn" },
+					[19226] = { enUS = "Void Traveler" },
+					[22890] = { enUS = "First Fragment Guardian" },
 				},
 				npcIDs = {
-					18667, 18708, 18731, 18732,
+					18731, 18667, 18732, 18708, 19226, 18631, 18632, 18633, 18634, 18635,
+					18636, 18637, 18638, 18639, 18640, 18641, 18642, 18663, 18794, 18796,
+					18797, 18830, 18848, 19208, 19209, 22890,
 				},
 			},
 			karazhan = {
@@ -472,9 +496,29 @@ addon.contentCatalog = addon.contentCatalog or {
 					enUS = "Mana-Tombs",
 					deDE = "Mana-Tombs",
 				},
+				npcNames = {
+					[18309] = { enUS = "Ethereal Scavenger" },
+					[18311] = { enUS = "Ethereal Crypt Raider" },
+					[18312] = { enUS = "Ethereal Spellbinder" },
+					[18313] = { enUS = "Ethereal Sorcerer" },
+					[18314] = { enUS = "Nexus Stalker" },
+					[18315] = { enUS = "Ethereal Theurgist" },
+					[18317] = { enUS = "Ethereal Priest" },
+					[18331] = { enUS = "Ethereal Darkcaster" },
+					[18341] = { enUS = "Pandemonius" },
+					[18343] = { enUS = "Tavarok" },
+					[18344] = { enUS = "Nexus-Prince Shaffar" },
+					[18394] = { enUS = "Ethereal Wraith" },
+					[18429] = { enUS = "Arcane Fiend" },
+					[18430] = { enUS = "Ethereal Apprentice" },
+					[18431] = { enUS = "Ethereal Beacon" },
+					[19306] = { enUS = "Mana Leech" },
+					[19307] = { enUS = "Nexus Terror" },
+					[22930] = { enUS = "Yor" },
+				},
 				npcIDs = {
 					18341, 18343, 18344, 22930, 18431, 18430, 18309, 18311, 18312, 18313,
-					18314, 18315, 18317, 18331, 18394, 18432, 19307, 19308,
+					18314, 18315, 18317, 18331, 18394, 18429, 19306, 19307,
 				},
 			},
 			old_hillsbrad = {
@@ -2320,76 +2364,76 @@ tipsMap_enUS = {
 	------- Dungeon: Mana-Tombs ---------------------
 
 	---Bosses
-	[18341] = {{"Important", "Pulling this boss will also pull the trash in the room!"},
-				{"Important", "VOID BLAST (Volley of Void Bolts dealing Shadow damage +Knock back to players) - Fight mob with back against wall."},
-				{"SHAMAN", "Keep Grounding Totem active as it will absorb Shadow Bolts"},
-				{"WARRIOR", "If you don't have a Shaman that can apply Grounding Totem, use SPELL REFLECTION to reflect the Void Blast back to boss"},
-				{"Important", "DARK SHELL - ALL STOP ATTACKING! (Reflects melee and spell attacks back to player, but not Hunter's ranged abilities)"},
-				{"Legion", "Watch for emote: 'Pandemonius shifts into the void...' to know when you should stop DPS due to Dark Shell"},
-				{"DRUID", "Thorns should NOT be applied to the tank due to Dark Shell"},
-				{"PALADIN", "Retribution Aura should NOT be used due to Dark Shell"},
-				{"Legion", "Shadow Resistance Buffs/Aura will be helpful with this boss"}}, 
+	[18341] = {{"mana_tombs_18341_01", "Important", "Pulling this boss will also pull the trash in the room!", 90},
+				{"mana_tombs_18341_02", "Important", "VOID BLAST (Volley of Void Bolts dealing Shadow damage +Knock back to players) - Fight mob with back against wall.", 80},
+				{"mana_tombs_18341_03", "SHAMAN", "Keep Grounding Totem active as it will absorb Shadow Bolts", 70},
+				{"mana_tombs_18341_04", "WARRIOR", "If you don't have a Shaman that can apply Grounding Totem, use SPELL REFLECTION to reflect the Void Blast back to boss", 60},
+				{"mana_tombs_18341_05", "Important", "DARK SHELL - ALL STOP ATTACKING! (Reflects melee and spell attacks back to player, but not Hunter's ranged abilities)", 50},
+				{"mana_tombs_18341_06", "Legion", "Watch for emote: 'Pandemonius shifts into the void...' to know when you should stop DPS due to Dark Shell", 40},
+				{"mana_tombs_18341_07", "DRUID", "Thorns should NOT be applied to the tank due to Dark Shell", 30},
+				{"mana_tombs_18341_08", "PALADIN", "Retribution Aura should NOT be used due to Dark Shell", 20},
+				{"mana_tombs_18341_09", "Legion", "Shadow Resistance Buffs/Aura will be helpful with this boss", 10}},
 				-- Pandemonius
-	[18343] = {{"Advanced", "POSITIONING: Melee should be behind boss, with ranged standing at max range. Tank boss away from party members to avoid Arcing Smash frontal attack"},
-				{"Important", "Earthquake (Deals AoE Nature damage +3 sec stun)"},
-				{"HEALER", "Make sure party members are topped off when Earthquake is being cast"}, 
-				{"Important", "Crystal Prison (Stuns random player in crystal; Dealing 50% of your health in damage over 5 sec as nature damage)"},
-				{"HEALER", "Heal up the player that is in the Crystal Prison!"}}, -- Tavarok
-	[18344] = {{"Legion", "Boss & Apprentice adds deal combo of Fire & Frost damage; Beacons deal Arcane Damage."},
-				{"PALADIN", "Use Fire Resistance Aura (second pally can use Frost Resist Aura)"},
-				{"PRIEST", "Use Shadow Protection on party members"},
-				{"PriorityTargets", "Make sure that the Ethereal Beacons are being focused down anytime they're active!"},
-				{"Legion", "Watch for when boss says: 'I have such fascinating things to show you.' This is the group's warning to switch to the Beacons about to spawn"},
-				{"Important", "Boss often casts Frost Nova and Blinks out of melee range - bringing a group with strong ranged attacks is helpful."},
-				{"Important", "Dispel Frost Nova (magic-effect) from group, or at least the tank"},
-				{"TANK", "When Frost Nova wears off move quickly to boss to get aggro back!"}}, 
+	[18343] = {{"mana_tombs_18343_01", "Advanced", "POSITIONING: Melee should be behind boss, with ranged standing at max range. Tank boss away from party members to avoid Arcing Smash frontal attack", 50},
+				{"mana_tombs_18343_02", "Important", "Earthquake (Deals AoE Nature damage +3 sec stun)", 40},
+				{"mana_tombs_18343_03", "HEALER", "Make sure party members are topped off when Earthquake is being cast", 30},
+				{"mana_tombs_18343_04", "Important", "Crystal Prison (Stuns random player in crystal; Dealing 50% of your health in damage over 5 sec as nature damage)", 20},
+				{"mana_tombs_18343_05", "HEALER", "Heal up the player that is in the Crystal Prison!", 10}}, -- Tavarok
+	[18344] = {{"mana_tombs_18344_01", "Legion", "Boss & Apprentice adds deal combo of Fire & Frost damage; Beacons deal Arcane Damage.", 80},
+				{"mana_tombs_18344_02", "PALADIN", "Use Fire Resistance Aura (second pally can use Frost Resist Aura)", 70},
+				{"mana_tombs_18344_03", "PRIEST", "Use Shadow Protection on party members", 60},
+				{"mana_tombs_18344_04", "PriorityTargets", "Make sure that the Ethereal Beacons are being focused down anytime they're active!", 50},
+				{"mana_tombs_18344_05", "Legion", "Watch for when boss says: 'I have such fascinating things to show you.' This is the group's warning to switch to the Beacons about to spawn", 40},
+				{"mana_tombs_18344_06", "Important", "Boss often casts Frost Nova and Blinks out of melee range - bringing a group with strong ranged attacks is helpful.", 30},
+				{"mana_tombs_18344_07", "Important", "Dispel Frost Nova (magic-effect) from group, or at least the tank", 20},
+				{"mana_tombs_18344_08", "TANK", "When Frost Nova wears off move quickly to boss to get aggro back!", 10}},
 				-- Nexus-Prince Shaffar
-	[22930] = {{"Legion", "Summonable only on HEROIC mode by a party member that has Shaffar's Stasis Chamber Key or The Eye of Haramad (the eye is not consumed on use)"},
-				{"Legion", "TANK: Fire Resistance gear/pots will be helpful to mitigate some boss damage during frontal-cone DOUBLE BREATH"},				
-				{"TANK", "Tank should turn boss away from group as Yor's DOUBLE BREATH deals frontal cone of Fire Damage"},
-				{"Important", "Yor will use Stomp (Knockback w/10 yd range)"},
-				{"Important", "DPS and Healer should stand as far from boss as possible on his backside to avoid frontal fire damage +knockback"}}, 
+	[22930] = {{"mana_tombs_22930_01", "Legion", "Summonable only on HEROIC mode by a party member that has Shaffar's Stasis Chamber Key or The Eye of Haramad (the eye is not consumed on use)", 50},
+				{"mana_tombs_22930_02", "Legion", "TANK: Fire Resistance gear/pots will be helpful to mitigate some boss damage during frontal-cone DOUBLE BREATH", 40},
+				{"mana_tombs_22930_03", "TANK", "Tank should turn boss away from group as Yor's DOUBLE BREATH deals frontal cone of Fire Damage", 30},
+				{"mana_tombs_22930_04", "Important", "Yor will use Stomp (Knockback w/10 yd range)", 20},
+				{"mana_tombs_22930_05", "Important", "DPS and Healer should stand as far from boss as possible on his backside to avoid frontal fire damage +knockback", 10}},
 				-- Yor <Void Hound of Shaffar> (Heroic-Only)
 
 	---Nexus-Prince Shaffar Summoned Adds
-	[18431] = {{"PriorityTargets", "DPS should burn down these mobs down ASAP (Spawns every ~10 sec)"}}, -- Ethereal Beacon
-	[18430] = {{"PriorityTargets", "If Ethereal Beacons are not destroyed quickly enough, these mobs will take their place"},
-				{"Important", "Deal HEAVY Fire & Frost damage"},
-				{"Legion", "Vulnerable to CC such as Polymorph"}}, -- Ethereal Apprentice
+	[18431] = {{"mana_tombs_18431_01", "PriorityTargets", "DPS should burn down these mobs down ASAP (Spawns every ~10 sec)", 10}}, -- Ethereal Beacon
+	[18430] = {{"mana_tombs_18430_01", "PriorityTargets", "If Ethereal Beacons are not destroyed quickly enough, these mobs will take their place", 30},
+				{"mana_tombs_18430_02", "Important", "Deal HEAVY Fire & Frost damage", 20},
+				{"mana_tombs_18430_03", "Legion", "Vulnerable to CC such as Polymorph", 10}}, -- Ethereal Apprentice
 
 	---Trash Mobs
-	[18309] = {{"Important", "Mobs will use Shield Bash (spell locks player from casting that magic school for 8 sec), mob will sometimes leave tank to interrupt your ability"}, 
-				{"HEALER", "Healer should stand some distance when dealing with these mobs to allow for advance notice of this mob approaching you"}},
+	[18309] = {{"mana_tombs_18309_01", "Important", "Mobs will use Shield Bash (spell locks player from casting that magic school for 8 sec), mob will sometimes leave tank to interrupt your ability", 20},
+				{"mana_tombs_18309_02", "HEALER", "Healer should stand some distance when dealing with these mobs to allow for advance notice of this mob approaching you", 10}},
 				-- Ethereal Scavenger
-	[18311] = {{"Important", "Tank should LoS pull mob to walk into melee range, otherwise it could charge and stun a player for 2 sec."},
-				{"Defensives", "Mob will apply Soul Strike (likely to tank; lasting 5 sec) which cuts the effectivess of heals received by 50%. Tanks may need to pop additional CDs and will require extra heals to stay alive"}}, 
+	[18311] = {{"mana_tombs_18311_01", "Important", "Tank should LoS pull mob to walk into melee range, otherwise it could charge and stun a player for 2 sec.", 20},
+				{"mana_tombs_18311_02", "Defensives", "Mob will apply Soul Strike (likely to tank; lasting 5 sec) which cuts the effectivess of heals received by 50%. Tanks may need to pop additional CDs and will require extra heals to stay alive", 10}},
 				-- Ethereal Crypt Raider
-	[18312] = {{"PriorityTargets", "Main threat from this mob actually comes from the Ethereal Wraith that they summon. Burn adds and this mob down quickly!"}, 
-				{"Important", "Casters should stand at max range to avoid Counterspell (3 sec spell locking)"}},
+	[18312] = {{"mana_tombs_18312_01", "PriorityTargets", "Main threat from this mob actually comes from the Ethereal Wraith that they summon. Burn adds and this mob down quickly!", 20},
+				{"mana_tombs_18312_02", "Important", "Casters should stand at max range to avoid Counterspell (3 sec spell locking)", 10}},
 				-- Ethereal Spellbinder
-	[18313] = {{"PriorityTargets", "Tank should LoS pull these ranged mobs. Group should DPS mob down quickly due to heavy damage from Arcane Missiles. Sorcerer summons an Arcane Fiend."}}, 
+	[18313] = {{"mana_tombs_18313_01", "PriorityTargets", "Tank should LoS pull these ranged mobs. Group should DPS mob down quickly due to heavy damage from Arcane Missiles. Sorcerer summons an Arcane Fiend.", 10}},
 				-- Ethereal Sorcerer
-	[18314] = {{"Important", "Mob will apply Gouge (likely on tank; lasting 4 sec). Mobs will then go after #2 on the threat meter. Use of slows/kiting will be helpful until tank can pick up aggro again"}}, 
+	[18314] = {{"mana_tombs_18314_01", "Important", "Mob will apply Gouge (likely on tank; lasting 4 sec). Mobs will then go after #2 on the threat meter. Use of slows/kiting will be helpful until tank can pick up aggro again", 10}},
 				-- Nexus Stalker
-	[18315] = {{"Legion", "Deals mostly Fire & Physical damage"},
-				{"Interrupts", "INTERRUPT: Polymorph (sheeps random player)"},
-				{"Important", "Slow/Kite mob if it successfully Polymorphs tank"}}, -- Ethereal Theurgist
-	[18317] = {{"PriorityTargets", "Due to Holy Nova doing good sized heal to allies and damage to players, it is best to focus these adds down or DPS them quickly."},
-				{"Interrupts", "INTERRUPT: Heal"}}, -- Ethereal Priest
-	[18331] = {{"Important", "LoS pull these ranged mobs"},
-				{"Interrupts", "INTERRUPT: Mana Burn"}}, -- Ethereal Darkcaster
-	[18394] = {{"PriorityTargets", "Summoned from Ethereal Spellbinders; DPS should focus this mob down quickly as high damage Shadow Bolt Volley hits nearby players"}}, 
+	[18315] = {{"mana_tombs_18315_01", "Legion", "Deals mostly Fire & Physical damage", 30},
+				{"mana_tombs_18315_02", "Interrupts", "INTERRUPT: Polymorph (sheeps random player)", 20},
+				{"mana_tombs_18315_03", "Important", "Slow/Kite mob if it successfully Polymorphs tank", 10}}, -- Ethereal Theurgist
+	[18317] = {{"mana_tombs_18317_01", "PriorityTargets", "Due to Holy Nova doing good sized heal to allies and damage to players, it is best to focus these adds down or DPS them quickly.", 20},
+				{"mana_tombs_18317_02", "Interrupts", "INTERRUPT: Heal", 10}}, -- Ethereal Priest
+	[18331] = {{"mana_tombs_18331_01", "Important", "LoS pull these ranged mobs", 20},
+				{"mana_tombs_18331_02", "Interrupts", "INTERRUPT: Mana Burn", 10}}, -- Ethereal Darkcaster
+	[18394] = {{"mana_tombs_18394_01", "PriorityTargets", "Summoned from Ethereal Spellbinders; DPS should focus this mob down quickly as high damage Shadow Bolt Volley hits nearby players", 10}},
 				-- Ethereal Wraith
-	[18429] = {{"PriorityTargets", "Deals Arcane Explosion & Counterspell on casters"}}, -- Arcane Fiend
-	[19306] = {{"Important", "LoS pull this mob; Ranged DPS/Healer should stand at least 10 yds away to avoid Arcane Explosion AoE"},
-				{"PriorityTargets", "INTERRUPT: Mana Burn"},
-				{"Important", "Dispel Faerie Fire from especially from melee player (magic effect; reduces armor for 20 sec)"},
-				{"Important", "When mob dies, it will deal an Arcane Explosion AoE"}}, -- Mana Leech
-	[19307] = {{"PriorityTargets", "Deals Shadow Damage - Having Shadow resistance buffs/auras can help mitigate some of the damage this mob deals to group"},
-				{"Important", "Dispel Curse of Impotence (magical damage dealt reduced for 60 sec) from mana-using player"},
-				{"Defensives", "Defensive/Extra Heals when mob applies Shadows Embrace to player (40 yd range; Shadow DoT over 6 sec; Physical damage dealt decreased by 50%)."},
-				{"Important", "LoS pull these mobs to safe area as this mob will cast Psychic Scream (AoE Fear) as well as Death Coil fear"},
-				{"SHAMAN", "Use Tremor Totem to negate Psychic Scream & Death Coil fears"}}, -- Nexus Terror
+	[18429] = {{"mana_tombs_18429_01", "PriorityTargets", "Deals Arcane Explosion & Counterspell on casters", 10}}, -- Arcane Fiend
+	[19306] = {{"mana_tombs_19306_01", "Important", "LoS pull this mob; Ranged DPS/Healer should stand at least 10 yds away to avoid Arcane Explosion AoE", 40},
+				{"mana_tombs_19306_02", "PriorityTargets", "INTERRUPT: Mana Burn", 30},
+				{"mana_tombs_19306_03", "Important", "Dispel Faerie Fire from especially from melee player (magic effect; reduces armor for 20 sec)", 20},
+				{"mana_tombs_19306_04", "Important", "When mob dies, it will deal an Arcane Explosion AoE", 10}}, -- Mana Leech
+	[19307] = {{"mana_tombs_19307_01", "PriorityTargets", "Deals Shadow Damage - Having Shadow resistance buffs/auras can help mitigate some of the damage this mob deals to group", 50},
+				{"mana_tombs_19307_02", "Important", "Dispel Curse of Impotence (magical damage dealt reduced for 60 sec) from mana-using player", 40},
+				{"mana_tombs_19307_03", "Defensives", "Defensive/Extra Heals when mob applies Shadows Embrace to player (40 yd range; Shadow DoT over 6 sec; Physical damage dealt decreased by 50%).", 30},
+				{"mana_tombs_19307_04", "Important", "LoS pull these mobs to safe area as this mob will cast Psychic Scream (AoE Fear) as well as Death Coil fear", 20},
+				{"mana_tombs_19307_05", "SHAMAN", "Use Tremor Totem to negate Psychic Scream & Death Coil fears", 10}}, -- Nexus Terror
 
 
 	------- Dungeon: Auchenai Crypts ----------------
@@ -2539,101 +2583,101 @@ tipsMap_enUS = {
 	------- Dungeon: Shadow Labyrinth ---------------
 
 	---Bosses
-	[18731] = {{"Advanced", "POSITIONING: Tank boss in tunnel leading into room so that healer won't lose LoS. Tank should face boss away from group so that tank is only one taking Corrosive Acid. DPS and Healer should stand behind boss. Note that if tank is feared Corrosive Acid DoT may be applied to multiple players"},
-				{"Important", "Boss does an AoE Fear (1.5 sec cast time), which has a 45 yd range and lasts 6 sec"},
-				{"SHAMAN", "Use Tremor Totem when you see boss cast Fear so that this can be quickly removed from group"},
-				{"WARRIOR", "Use Spell Reflection to avoid getting Feared and giving your group Corrosive Acid when boss chases you"}}, 
-				-- Ambassador Hellmaw
-	[18667] = {{"Important", "Make sure that the room is cleared of ALL trash before pulling boss!"},
-				{"Advanced", "POSITIONING: Tank should pull boss to a corner with back against the wall to avoid AoE knockback."},
-				{"Important", "DPS should blow their damaging CDs at start of fight as Incite Chaos (mind control) will cause these big CDs to activate at that time"},
-				{"Important", "Incite Chaos is a 15 sec MC boss applies to all players. When boss makes the statement 'Time for fun', know that the MC is coming!"},
-				{"Important", "To deal with Incite Chaos, players can remove their weapons, Pets can be placed on passive, Hunter can drop a freezing trap under healer, can also use Major Dreamless Sleep Potion (2 min CD) to avoid some of the Incite Chaos"},
-				{"Important", "WAR STOMP: Boss knockbacks players w/in 20 yards"},
-				{"Important", "CHARGE: Boss charges random player stunning them for 2 sec"}}, 
-				-- Blackheart the Inciter
-	[18732] = {{"Legion", "Boss deals combo of Fire and Shadow Damage; Buffs/Auras can help mitigate boss' spell damage"},
-				{"TANK", "Kite boss if Void Traveler add approaches so DPS can burn add down (Add coming into contact w/boss deals damage +knockback +heals boss)!"},
-				{"DAMAGE", "When Void Travelers appear from the Void Rifts, the adds need to be killed quickly (Add coming into contact w/boss deals damage +knockback +heals boss)"},
-				{"Important", "When boss casts Draw Shadows, players will be teleported to his platform and he will cast a hard hitting Rain of Fire AoE on players!"}, 
-				{"Important", "HEROIC ONLY: Boss will Banish a random player making them invulnerable, but unable to attack for 6 sec"}},
-				-- Grandmaster Vorpil
-	[18708] = {{"Important", "Nature Protection potions can be helpful to mitigate some of the damage during fight"},
-				{"Advanced", "POSITIONING: Except for during Sonic Boom, players should stand less than 25 yds from boss to avoid any player receiving Thundering Storm (Nature damage to target standing 25 yds or more away)"},
-				{"Important", "After fight starts watch for emote 'Murmur draws energy from the air...' This will be the signal for all players (including tank) to run at least 34 yds away to avoid Sonic Boom damage."},
-				{"ROGUE", "Rogues can use Cloak of Shadows to avoid a Sonic Boom (if correctly timed)."},
-				{"Important", "Due to Resonance ability (deals Nature damage to all players when no melee in range w/increase to Nature damage), tank needs to get back in to fight boss IMMEDIATELY after Sonic Boom"},
-				{"Dodge", "Watch for Touch of Murmur debuff and be sure to run away from player that has the debuff. When debuff goes off, that player and any allies w/in 20 yds will be silenced"},
-				{"HEALER", "If the healer is afflicted by Touch of Murmur, make sure that group (esp tank) is healed up before it goes off, as will silence you for 6 sec"}}, 
-				-- Murmur
+		[18731] = {{"shadow_lab_18731_01", "Advanced", "POSITIONING: Tank boss in tunnel leading into room so that healer won't lose LoS. Tank should face boss away from group so that tank is only one taking Corrosive Acid. DPS and Healer should stand behind boss. Note that if tank is feared Corrosive Acid DoT may be applied to multiple players", 40},
+					{"shadow_lab_18731_02", "Important", "Boss does an AoE Fear (1.5 sec cast time), which has a 45 yd range and lasts 6 sec", 30},
+					{"shadow_lab_18731_03", "SHAMAN", "Use Tremor Totem when you see boss cast Fear so that this can be quickly removed from group", 20},
+					{"shadow_lab_18731_04", "WARRIOR", "Use Spell Reflection to avoid getting Feared and giving your group Corrosive Acid when boss chases you", 10}},
+					-- Ambassador Hellmaw
+		[18667] = {{"shadow_lab_18667_01", "Important", "Make sure that the room is cleared of ALL trash before pulling boss!", 70},
+					{"shadow_lab_18667_02", "Advanced", "POSITIONING: Tank should pull boss to a corner with back against the wall to avoid AoE knockback.", 60},
+					{"shadow_lab_18667_03", "Important", "DPS should blow their damaging CDs at start of fight as Incite Chaos (mind control) will cause these big CDs to activate at that time", 50},
+					{"shadow_lab_18667_04", "Important", "Incite Chaos is a 15 sec MC boss applies to all players. When boss makes the statement 'Time for fun', know that the MC is coming!", 40},
+					{"shadow_lab_18667_05", "Important", "To deal with Incite Chaos, players can remove their weapons, Pets can be placed on passive, Hunter can drop a freezing trap under healer, can also use Major Dreamless Sleep Potion (2 min CD) to avoid some of the Incite Chaos", 30},
+					{"shadow_lab_18667_06", "Important", "WAR STOMP: Boss knockbacks players w/in 20 yards", 20},
+					{"shadow_lab_18667_07", "Important", "CHARGE: Boss charges random player stunning them for 2 sec", 10}},
+					-- Blackheart the Inciter
+		[18732] = {{"shadow_lab_18732_01", "Legion", "Boss deals combo of Fire and Shadow Damage; Buffs/Auras can help mitigate boss' spell damage", 50},
+					{"shadow_lab_18732_02", "TANK", "Kite boss if Void Traveler add approaches so DPS can burn add down (Add coming into contact w/boss deals damage +knockback +heals boss)!", 40},
+					{"shadow_lab_18732_03", "DAMAGE", "When Void Travelers appear from the Void Rifts, the adds need to be killed quickly (Add coming into contact w/boss deals damage +knockback +heals boss)", 30},
+					{"shadow_lab_18732_04", "Important", "When boss casts Draw Shadows, players will be teleported to his platform and he will cast a hard hitting Rain of Fire AoE on players!", 20},
+					{"shadow_lab_18732_05", "Important", "HEROIC ONLY: Boss will Banish a random player making them invulnerable, but unable to attack for 6 sec", 10}},
+					-- Grandmaster Vorpil
+		[18708] = {{"shadow_lab_18708_01", "Important", "Nature Protection potions can be helpful to mitigate some of the damage during fight", 70},
+					{"shadow_lab_18708_02", "Advanced", "POSITIONING: Except for during Sonic Boom, players should stand less than 25 yds from boss to avoid any player receiving Thundering Storm (Nature damage to target standing 25 yds or more away)", 60},
+					{"shadow_lab_18708_03", "Important", "After fight starts watch for emote 'Murmur draws energy from the air...' This will be the signal for all players (including tank) to run at least 34 yds away to avoid Sonic Boom damage.", 50},
+					{"shadow_lab_18708_04", "ROGUE", "Rogues can use Cloak of Shadows to avoid a Sonic Boom (if correctly timed).", 40},
+					{"shadow_lab_18708_05", "Important", "Due to Resonance ability (deals Nature damage to all players when no melee in range w/increase to Nature damage), tank needs to get back in to fight boss IMMEDIATELY after Sonic Boom", 30},
+					{"shadow_lab_18708_06", "Dodge", "Watch for Touch of Murmur debuff and be sure to run away from player that has the debuff. When debuff goes off, that player and any allies w/in 20 yds will be silenced", 20},
+					{"shadow_lab_18708_07", "HEALER", "If the healer is afflicted by Touch of Murmur, make sure that group (esp tank) is healed up before it goes off, as will silence you for 6 sec", 10}},
+					-- Murmur
 
 	---Grandmaster Vorpil Add
-	[19226] = {{"PriorityTargets", "If Void Traveler reaches boss, it will explode dealing Shadow damage and knockback, also healing boss"},
-				{"TANK", "If DPS is slow in burning down Void Travelers, kite the boss to avoid them coming into contact!"}}, -- Void Traveler
+		[19226] = {{"shadow_lab_19226_01", "PriorityTargets", "If Void Traveler reaches boss, it will explode dealing Shadow damage and knockback, also healing boss", 20},
+					{"shadow_lab_19226_02", "TANK", "If DPS is slow in burning down Void Travelers, kite the boss to avoid them coming into contact!", 10}}, -- Void Traveler
 
 	---Trash Mobs
-	[18631] = {{"Important", "Tank should use instant-cast abilities as mob can interrupt cast using Kick.  If aggro is lost, use slows on the mob to keep it from interrupting a caster"}}, 
-				-- Cabal Cultist
-	[18632] = {{"Important", "Mobs should be tanked away from group as tank will usually have two at a time"},
-				{"Important", "Immune to most forms of CC"},
-				{"Dodge", "DODGE: Whirlwind is a channeled ability that players should run from while being cast!"},
-				{"DAMAGE", "When Executioner is being fought in pairs, DPS should focus each one at a time as the WW can be dangerous even to some tanks"}},
-				-- Cabal Executioner
-	[18633] = {{"PriorityTargets", "Healer-type mob that should be CC'd or Focused down by DPS"},
-				{"Interrupts", "Interrupt: Heal"}}, -- Cabal Acolyte
-	[18634] = {{"PriorityTargets", "Mob will summon two adds to assist. The Summoner should be quickly CC'd before this, or killed before other non-summoned adds in the pack. While summoned mobs are active, these take priority."}},
-				-- Cabal Summoner
-	[18635] = {{"Important", "It is best for tank to fight this mob away from group due to AoE Physical damage. Melee DPS may need additional heals when engaging this type of mob"}}, 
-				-- Cabal Deathsworn
-	[18636] = {{"Important", "Will quickly down non-tanks, which is why tank should take point."},
-				{"WARLOCK", "After defeating first boss, warlocks should use their Succubus pet to CC assassin if they become stunned by these stealthed mobs"}}, 
-				-- Cabal Assassin
-	[18637] = {{"Important", "Dispel Shadow Word: Pain (magic effect; Shadow DoT)"},
-				{"Interrupts", "Interrupt: Mind Flay"}}, -- Cabal Shadow Priest
-	[18638] = {{"Important", "Dispel Shape of the Beast from mob (Magic effect that reduces time between attacks, increased attack power, but can't cast spells). Because this buff prevents spell casting, a Warlock Felhunter's ability Devour Magic should be used. If no one can effectively remove the beneficial magic from enemy, tank may need additional heals/pop defensive CDs"}}, 
-				-- Cabal Zealot
-	[18639] = {{"Important", "CC player who is mind-controlled from Brain Wash"},
-				{"Defensives", "Defensives may be needed if either the tank or healer gets MC'd"}},
-				-- Cabal Spellbinder
-	[18640] = {{"Important", "Dispel Seed of Corruption from players (magic effect dealing AoE shadow damage)"},
-				{"Important", "If no dispeller, the player struck by Seed of Corruption should run out of group. If tank is the one hit by it, players need to run 10 yds from tank to avoid AoE"}}, 
-				-- Cabal Warlock
-	[18641] = {{"Legion", ""}}, -- Cabal Familiar
-	[18642] = {{"PriorityTargets", "Felhounds that can spell lock players for 4 sec. Use slows while DPS focuses these mobs down"}},
-				-- Fel Guardhound
-	[18663] = {{"PriorityTargets", "Non-elite mob that can mind-control a player for 6 sec"},
-				{"WARLOCK", "This mob is vulnerable to Banish & Enslave Demon"},
-				{"Important", "Dispel Seduction (mind-control magic effect from player/CC that player"}}, 
-				-- Maiden of Discipline
-	[18794] = {{"Legion", "This could be either the rogue-type (equipped with daggers) or a caster type (carries staff)"},
-				{"Advanced", "Caster-Type w/Staff"},
-				{"Legion", "Mob deals a combination of Fire/Frost damage"},
-				{"Important", "Dispel Frost Nova (AoE Magic Root) from tank (if only can do one dispel) or players (if using priest's Mass Dispel"},
-				{"Advanced", "Rogue-Type w/Daggers"},
-				{"Important", "Will frequently use Gouge (3 sec stun) on the tank. While tank is unable to use avoidance, they will need extra heals!"}}, 
-				-- Cabal Ritualist
-	[18796] = {{"Important", "These Felguards should be pulled away from other packs and backs against wall due to AoE Fear and Knockback"},
-				{"TANK", "If this mob is patrolling around the room of Hellmaw (1st boss), it is best to fight mob in the curved cooridor leading into 1st boss' room.  If you're pulling this mob from the hallway connecting Hellmaw's and Blackheart's room, they can be pulled into the now empty room where 1st boss' adds were located"}}, 
-				-- Fel Overseer
-	[18797] = {{"Legion", ""}}, -- Tortured Skeleton
-	[18830] = {{"Important", "Use CCs or Slows on this mob; Immune to MC on Heroic"},
-				{"Important", "Fanatic will fixate on a player and that player will need to kite mob for 5 sec while Fixate active on that player"}},
-				-- Cabal Fanatic
-	[18848] = {{"Legion", "Shivarra deals mostly Shadow Damage - having appropriate auras/buffs/pots/gear can be helpful in dealing with some of mob's abilities"}, 
-				{"Defensives", "Watch for Mark of the Malice (Places 5 stacks of debuff w/1 going away each time player is hit. If all 5 are expended w/in 30 sec, player receives Shadow damage)"},
-				{"Important", "This mob should be fought away from the group due to Shadow Nova (AoE Shadow Damage)"},
-				{"Important", "HEROIC-ONLY: Shivarra will Disarm the tank (lasts 5 sec) reducing tank's ability to hold threat. DPS need to watch their aggro when this happens so they don't pull off of tank. Tank may need to react quickly after disarm ends to pick aggro back up."}},
-				-- Malicious Instructor
-	[19208] = {{"PriorityTargets", "Summoned by Cabal Summoner"},
-				{"Legion", "Healer-Type Mob"},
-				{"Interrupts", "Interrupt: Heal"}}, -- Summoned Cabal Acolyte
-	[19209] = {{"PriorityTargets", "Summoned by Cabal Summoner"},
-				{"Legion", "Warrior-Type Mob"},
-				{"Important", "DPS and Healer should avoid standing too close to mob as Black Cleave deals Shadow Damage and applies a DoT"},
-				{"HEALER", "Deathsworn will periodically Knockdown which stuns player for 2 sec. If/when applied to tank, they will need additional heals."}}, 
-				-- Summoned Cabal Deathsworn
+		[18631] = {{"shadow_lab_18631_01", "Important", "Tank should use instant-cast abilities as mob can interrupt cast using Kick.  If aggro is lost, use slows on the mob to keep it from interrupting a caster", 10}},
+					-- Cabal Cultist
+		[18632] = {{"shadow_lab_18632_01", "Important", "Mobs should be tanked away from group as tank will usually have two at a time", 40},
+					{"shadow_lab_18632_02", "Important", "Immune to most forms of CC", 30},
+					{"shadow_lab_18632_03", "Dodge", "DODGE: Whirlwind is a channeled ability that players should run from while being cast!", 20},
+					{"shadow_lab_18632_04", "DAMAGE", "When Executioner is being fought in pairs, DPS should focus each one at a time as the WW can be dangerous even to some tanks", 10}},
+					-- Cabal Executioner
+		[18633] = {{"shadow_lab_18633_01", "PriorityTargets", "Healer-type mob that should be CC'd or Focused down by DPS", 20},
+					{"shadow_lab_18633_02", "Interrupts", "Interrupt: Heal", 10}}, -- Cabal Acolyte
+		[18634] = {{"shadow_lab_18634_01", "PriorityTargets", "Mob will summon two adds to assist. The Summoner should be quickly CC'd before this, or killed before other non-summoned adds in the pack. While summoned mobs are active, these take priority.", 10}},
+					-- Cabal Summoner
+		[18635] = {{"shadow_lab_18635_01", "Important", "It is best for tank to fight this mob away from group due to AoE Physical damage. Melee DPS may need additional heals when engaging this type of mob", 10}},
+					-- Cabal Deathsworn
+		[18636] = {{"shadow_lab_18636_01", "Important", "Will quickly down non-tanks, which is why tank should take point.", 20},
+					{"shadow_lab_18636_02", "WARLOCK", "After defeating first boss, warlocks should use their Succubus pet to CC assassin if they become stunned by these stealthed mobs", 10}},
+					-- Cabal Assassin
+		[18637] = {{"shadow_lab_18637_01", "Important", "Dispel Shadow Word: Pain (magic effect; Shadow DoT)", 20},
+					{"shadow_lab_18637_02", "Interrupts", "Interrupt: Mind Flay", 10}}, -- Cabal Shadow Priest
+		[18638] = {{"shadow_lab_18638_01", "Important", "Dispel Shape of the Beast from mob (Magic effect that reduces time between attacks, increased attack power, but can't cast spells). Because this buff prevents spell casting, a Warlock Felhunter's ability Devour Magic should be used. If no one can effectively remove the beneficial magic from enemy, tank may need additional heals/pop defensive CDs", 10}},
+					-- Cabal Zealot
+		[18639] = {{"shadow_lab_18639_01", "Important", "CC player who is mind-controlled from Brain Wash", 20},
+					{"shadow_lab_18639_02", "Defensives", "Defensives may be needed if either the tank or healer gets MC'd", 10}},
+					-- Cabal Spellbinder
+		[18640] = {{"shadow_lab_18640_01", "Important", "Dispel Seed of Corruption from players (magic effect dealing AoE shadow damage)", 20},
+					{"shadow_lab_18640_02", "Important", "If no dispeller, the player struck by Seed of Corruption should run out of group. If tank is the one hit by it, players need to run 10 yds from tank to avoid AoE", 10}},
+					-- Cabal Warlock
+		[18641] = {{"shadow_lab_18641_01", "Legion", "", 10}}, -- Cabal Familiar
+		[18642] = {{"shadow_lab_18642_01", "PriorityTargets", "Felhounds that can spell lock players for 4 sec. Use slows while DPS focuses these mobs down", 10}},
+					-- Fel Guardhound
+		[18663] = {{"shadow_lab_18663_01", "PriorityTargets", "Non-elite mob that can mind-control a player for 6 sec", 30},
+					{"shadow_lab_18663_02", "WARLOCK", "This mob is vulnerable to Banish & Enslave Demon", 20},
+					{"shadow_lab_18663_03", "Important", "Dispel Seduction (mind-control magic effect) from player or CC that player", 10}},
+					-- Maiden of Discipline
+		[18794] = {{"shadow_lab_18794_01", "Legion", "This could be either the rogue-type (equipped with daggers) or a caster type (carries staff)", 60},
+					{"shadow_lab_18794_02", "Advanced", "Caster-Type w/Staff", 50},
+					{"shadow_lab_18794_03", "Legion", "Mob deals a combination of Fire/Frost damage", 40},
+					{"shadow_lab_18794_04", "Important", "Dispel Frost Nova (AoE Magic Root) from tank (if only can do one dispel) or players (if using priest's Mass Dispel)", 30},
+					{"shadow_lab_18794_05", "Advanced", "Rogue-Type w/Daggers", 20},
+					{"shadow_lab_18794_06", "Important", "Will frequently use Gouge (3 sec stun) on the tank. While tank is unable to use avoidance, they will need extra heals!", 10}},
+					-- Cabal Ritualist
+		[18796] = {{"shadow_lab_18796_01", "Important", "These Felguards should be pulled away from other packs and backs against wall due to AoE Fear and Knockback", 20},
+					{"shadow_lab_18796_02", "TANK", "If this mob is patrolling around the room of Hellmaw (1st boss), it is best to fight mob in the curved cooridor leading into 1st boss' room.  If you're pulling this mob from the hallway connecting Hellmaw's and Blackheart's room, they can be pulled into the now empty room where 1st boss' adds were located", 10}},
+					-- Fel Overseer
+		[18797] = {{"shadow_lab_18797_01", "Legion", "", 10}}, -- Tortured Skeleton
+		[18830] = {{"shadow_lab_18830_01", "Important", "Use CCs or Slows on this mob; Immune to MC on Heroic", 20},
+					{"shadow_lab_18830_02", "Important", "Fanatic will fixate on a player and that player will need to kite mob for 5 sec while Fixate active on that player", 10}},
+					-- Cabal Fanatic
+		[18848] = {{"shadow_lab_18848_01", "Legion", "Shivarra deals mostly Shadow Damage - having appropriate auras/buffs/pots/gear can be helpful in dealing with some of mob's abilities", 40},
+					{"shadow_lab_18848_02", "Defensives", "Watch for Mark of the Malice (Places 5 stacks of debuff w/1 going away each time player is hit. If all 5 are expended w/in 30 sec, player receives Shadow damage)", 30},
+					{"shadow_lab_18848_03", "Important", "This mob should be fought away from the group due to Shadow Nova (AoE Shadow Damage)", 20},
+					{"shadow_lab_18848_04", "Important", "HEROIC-ONLY: Shivarra will Disarm the tank (lasts 5 sec) reducing tank's ability to hold threat. DPS need to watch their aggro when this happens so they don't pull off of tank. Tank may need to react quickly after disarm ends to pick aggro back up.", 10}},
+					-- Malicious Instructor
+		[19208] = {{"shadow_lab_19208_01", "PriorityTargets", "Summoned by Cabal Summoner", 30},
+					{"shadow_lab_19208_02", "Legion", "Healer-Type Mob", 20},
+					{"shadow_lab_19208_03", "Interrupts", "Interrupt: Heal", 10}}, -- Summoned Cabal Acolyte
+		[19209] = {{"shadow_lab_19209_01", "PriorityTargets", "Summoned by Cabal Summoner", 40},
+					{"shadow_lab_19209_02", "Legion", "Warrior-Type Mob", 30},
+					{"shadow_lab_19209_03", "Important", "DPS and Healer should avoid standing too close to mob as Black Cleave deals Shadow Damage and applies a DoT", 20},
+					{"shadow_lab_19209_04", "HEALER", "Deathsworn will periodically Knockdown which stuns player for 2 sec. If/when applied to tank, they will need additional heals.", 10}},
+					-- Summoned Cabal Deathsworn
 
-	[22890] = {{"Legion", ""}}, -- First Fragment Guardian
+		[22890] = {{"shadow_lab_22890_01", "Legion", "", 10}}, -- First Fragment Guardian
 
 
 	------- Dungeon: Escape from Durnholde (Old Hillsbrad Foothills) ----------
