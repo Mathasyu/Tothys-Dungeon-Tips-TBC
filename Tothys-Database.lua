@@ -512,9 +512,31 @@ addon.contentCatalog = addon.contentCatalog or {
 					enUS = "The Mechanar",
 					deDE = "The Mechanar",
 				},
+				npcNames = {
+					[19166] = { enUS = "Tempest-Forge Patroller" },
+					[19167] = { enUS = "Bloodwarder Slayer" },
+					[19168] = { enUS = "Sunseeker Astromage" },
+					[19218] = { enUS = "Gatewatcher Gyro-Kill" },
+					[19219] = { enUS = "Mechano-Lord Capacitus" },
+					[19220] = { enUS = "Pathaleon the Calculator" },
+					[19221] = { enUS = "Nethermancer Sepethrea" },
+					[19231] = { enUS = "Mechanar Crusher" },
+					[19510] = { enUS = "Bloodwarder Centurion" },
+					[19710] = { enUS = "Gatewatcher Iron-Hand" },
+					[19712] = { enUS = "Mechanar Driller" },
+					[19713] = { enUS = "Mechanar Wrecker" },
+					[19716] = { enUS = "Mechanar Tinkerer" },
+					[19735] = { enUS = "Tempest-Forge Destroyer" },
+					[20059] = { enUS = "Sunseeker Netherbinder" },
+					[20478] = { enUS = "Arcane Servant" },
+					[20481] = { enUS = "Nether Charge" },
+					[20988] = { enUS = "Sunseeker Engineer" },
+					[20990] = { enUS = "Bloodwarder Physician" },
+					[21062] = { enUS = "Nether Wraith" },
+				},
 				npcIDs = {
 					19219, 19221, 19220, 19218, 19710, 20481, 21062, 19166, 19167, 19168,
-					19231, 19510, 19712, 19713, 19716, 19735, 19740, 19746, 20988, 21586,
+					19231, 19510, 19712, 19713, 19716, 19735, 20059, 20478, 20988, 20990,
 				},
 			},
 			botanica = {
@@ -525,11 +547,53 @@ addon.contentCatalog = addon.contentCatalog or {
 					enUS = "The Botanica",
 					deDE = "The Botanica",
 				},
+				npcNames = {
+					[17975] = { enUS = "High Botanist Freywinn" },
+					[17976] = { enUS = "Commander Sarannis" },
+					[17977] = { enUS = "Warp Splinter" },
+					[17978] = { enUS = "Thorngrin the Tender" },
+					[17980] = { enUS = "Laj" },
+					[17993] = { enUS = "Bloodwarder Protector" },
+					[17994] = { enUS = "Bloodwarder Falconer" },
+					[18155] = { enUS = "Bloodfalcon" },
+					[18404] = { enUS = "Bloodwarder Steward" },
+					[18405] = { enUS = "Tempest-Forge Peacekeeper" },
+					[18419] = { enUS = "Bloodwarder Greenkeeper" },
+					[18420] = { enUS = "Sunseeker Geomancer" },
+					[18421] = { enUS = "Sunseeker Researcher" },
+					[18422] = { enUS = "Sunseeker Botanist" },
+					[18587] = { enUS = "Frayer" },
+					[19486] = { enUS = "Sunseeker Chemist" },
+					[19505] = { enUS = "Sunseeker Channeler" },
+					[19507] = { enUS = "Sunseeker Gene-Splicer" },
+					[19508] = { enUS = "Sunseeker Herbalist" },
+					[19509] = { enUS = "Sunseeker Harvester" },
+					[19511] = { enUS = "Nethervine Inciter" },
+					[19512] = { enUS = "Nethervine Reaper" },
+					[19513] = { enUS = "Mutate Fear-Shrieker" },
+					[19557] = { enUS = "Greater Frayer" },
+					[19598] = { enUS = "Mutate Fleshlasher" },
+					[19608] = { enUS = "Frayer Wildling" },
+					[19633] = { enUS = "Bloodwarder Mender" },
+					[19843] = { enUS = "Nethervine Trickster" },
+					[19865] = { enUS = "Mutate Horror" },
+					[19919] = { enUS = "Thorn Lasher" },
+					[19920] = { enUS = "Thorn Flayer" },
+					[19949] = { enUS = "Sapling" },
+					[19953] = { enUS = "Frayer Protector" },
+					[19958] = { enUS = "White Seedling" },
+					[19962] = { enUS = "Blue Seedling" },
+					[19964] = { enUS = "Red Seedling" },
+					[19969] = { enUS = "Green Seedling" },
+					[20078] = { enUS = "Summoned Bloodwarder Reservist" },
+					[20083] = { enUS = "Summoned Bloodwarder Mender" },
+					[25354] = { enUS = "Mutate Fleshlasher" },
+				},
 				npcIDs = {
 					17976, 17975, 17978, 17980, 17977, 20078, 20083, 19953, 19958, 19962,
-					19964, 19969, 19919, 19920, 19949, 19952, 19956, 19957, 19959, 19960,
-					19961, 19963, 19967, 19968, 19972, 19973, 19981, 19982, 19983, 19984,
-					19985, 19986, 19987, 19988, 19989, 19990, 19991, 20059, 20299, 20475,
+					19964, 19969, 19919, 19920, 19949, 17993, 17994, 18155, 18404, 18405,
+					18419, 18420, 18421, 18422, 18587, 19486, 19505, 19507, 19508, 19509,
+					19511, 19512, 19513, 19557, 19598, 19608, 19633, 19843, 19865, 25354,
 				},
 			},
 			arcatraz = {
@@ -540,11 +604,51 @@ addon.contentCatalog = addon.contentCatalog or {
 					enUS = "The Arcatraz",
 					deDE = "The Arcatraz",
 				},
+				npcNames = {
+					[20857] = { enUS = "Arcatraz Defender" },
+					[20859] = { enUS = "Arcatraz Warder" },
+					[20864] = { enUS = "Protean Nightmare" },
+					[20865] = { enUS = "Protean Horror" },
+					[20866] = { enUS = "Soul Devourer" },
+					[20867] = { enUS = "Death Watcher" },
+					[20868] = { enUS = "Entropic Eye" },
+					[20869] = { enUS = "Arcatraz Sentinel" },
+					[20870] = { enUS = "Zereketh the Unbound" },
+					[20873] = { enUS = "Negaton Warp-Master" },
+					[20875] = { enUS = "Negaton Screamer" },
+					[20879] = { enUS = "Eredar Soul-Eater" },
+					[20880] = { enUS = "Eredar Deathbringer" },
+					[20881] = { enUS = "Unbound Devastator" },
+					[20882] = { enUS = "Skulking Witch" },
+					[20883] = { enUS = "Spiteful Temptress" },
+					[20885] = { enUS = "Dalliah the Doomsayer" },
+					[20886] = { enUS = "Wrath-Scryer Soccothrates" },
+					[20896] = { enUS = "Ethereum Slayer" },
+					[20897] = { enUS = "Ethereum Wave-Caster" },
+					[20898] = { enUS = "Gargantuan Abyssal" },
+					[20900] = { enUS = "Unchained Doombringer" },
+					[20901] = { enUS = "Sargeron Archer" },
+					[20902] = { enUS = "Sargeron Hellcaller" },
+					[20904] = { enUS = "Warden Mellichar" },
+					[20905] = { enUS = "Blazing Trickster" },
+					[20906] = { enUS = "Phase-Hunter" },
+					[20908] = { enUS = "Akkiris Lightning-Waker" },
+					[20909] = { enUS = "Sulfuron Magma-Thrower" },
+					[20910] = { enUS = "Twilight Drakonaar" },
+					[20911] = { enUS = "Blackwing Drakonaar" },
+					[20912] = { enUS = "Harbinger Skyriss" },
+					[20977] = { enUS = "Millhouse Manastorm" },
+					[21303] = { enUS = "Defender Corpse" },
+					[21346] = { enUS = "Sightless Eye" },
+					[21395] = { enUS = "Protean Spawn" },
+					[21702] = { enUS = "Ethereum Life-Binder" },
+					[22892] = { enUS = "Third Fragment Guardian" },
+				},
 				npcIDs = {
-					20870, 20885, 20886, 20912, 20905, 20905, 20906, 20977, 20908, 20909,
-					20910, 20911, 20857, 20859, 20864, 20865, 20867, 20868, 20869, 20873,
-					20875, 20880, 20883, 20896, 20900, 20901, 20904, 20927, 20928, 20983,
-					20985, 20988, 20990, 20991, 20993, 21021, 21101, 21104,
+					20870, 20885, 20886, 20912, 20904, 20905, 20906, 20977, 20908, 20909,
+					20910, 20911, 20857, 20859, 20864, 20865, 20866, 20867, 20868, 20869,
+					20873, 20875, 20879, 20880, 20881, 20882, 20883, 20896, 20897, 20898,
+					20900, 20901, 20902, 21303, 21346, 21395, 21702, 22892,
 				},
 			},
 			magisters_terrace = {
@@ -2657,353 +2761,353 @@ tipsMap_enUS = {
 	------- Dungeon: The Mechanar -------------------
 
 	---Bosses
-	[19219] = {{"Advanced", "POSITIONING: Players should spread out as much as possible to mitigate some of the damage caused by Nether Charges (summoned by boss every ~15 sec and explodes dealing Arcane AoE)"},
-				{"Important", "Players (including tank and healer) need to watch for which Polarity shift they have and stand by players with the same polarity"},
-				{"Important", "Stop melee DPS if boss has Reflective DAMAGE Shield"},
-				{"Important", "Stop caster DPS if boss has Reflective MAGIC Shield"},
-				{"Dodge", "DODGE: Players should avoid areas being struck by Netherbombs while standing close to anyone with same polarity"}}, 
+	[19219] = {{"mechanar_19219_01", "Advanced", "POSITIONING: Players should spread out as much as possible to mitigate some of the damage caused by Nether Charges (summoned by boss every ~15 sec and explodes dealing Arcane AoE)", 50},
+				{"mechanar_19219_02", "Important", "Players (including tank and healer) need to watch for which Polarity shift they have and stand by players with the same polarity", 40},
+				{"mechanar_19219_03", "Important", "Stop melee DPS if boss has Reflective DAMAGE Shield", 30},
+				{"mechanar_19219_04", "Important", "Stop caster DPS if boss has Reflective MAGIC Shield", 20},
+				{"mechanar_19219_05", "Dodge", "DODGE: Players should avoid areas being struck by Netherbombs while standing close to anyone with same polarity", 10}},
 				-- Mechano-Lord Capacitus
-	[19221] = {{"Advanced", "OPTIONAL BOSS; Be sure to clear the boss' room before engaging as you will need room to kite adds. Also, do NOT go down hallway to 3rd boss, during the fight, as trash there will cause problems for group."},
-				{"Important", "Player with aggro on a fire elemental needs to kite away from (but NOT through) the group due to fire patches it places on the ground as it moves"},
-				{"Important", "All players will be moving during much of this fight between kiting of the elemental adds and players avoiding the fire that they leave on the ground"},
-				{"Important", "Tank boss faced away from the group as Dragon's Breath is a frontal-cone attack that disorients player for 4 sec."},
-				{"Important", "Dispel Dragon's Breath from Tank (Magic Effect) as after tank is struck by Dragon's Breath, boss will run to another player with threat (likely the healer)."},
-				{"TANK", "After recovering from the effects of Dragon's Breath, pick aggro back up on the boss ASAP!"}, 
-				{"Legion", "Fire resistance aura is helpful in dealing with this boss and her summoned fire adds"}},
+	[19221] = {{"mechanar_19221_01", "Advanced", "OPTIONAL BOSS; Be sure to clear the boss' room before engaging as you will need room to kite adds. Also, do NOT go down hallway to 3rd boss, during the fight, as trash there will cause problems for group.", 70},
+				{"mechanar_19221_02", "Important", "Player with aggro on a fire elemental needs to kite away from (but NOT through) the group due to fire patches it places on the ground as it moves", 60},
+				{"mechanar_19221_03", "Important", "All players will be moving during much of this fight between kiting of the elemental adds and players avoiding the fire that they leave on the ground", 50},
+				{"mechanar_19221_04", "Important", "Tank boss faced away from the group as Dragon's Breath is a frontal-cone attack that disorients player for 4 sec.", 40},
+				{"mechanar_19221_05", "Important", "Dispel Dragon's Breath from Tank (Magic Effect) as after tank is struck by Dragon's Breath, boss will run to another player with threat (likely the healer).", 30},
+				{"mechanar_19221_06", "TANK", "After recovering from the effects of Dragon's Breath, pick aggro back up on the boss ASAP!", 20},
+				{"mechanar_19221_07", "Legion", "Fire resistance aura is helpful in dealing with this boss and her summoned fire adds", 10}},
 				-- Nethermancer Sepethrea
-	[19220] = {{"Advanced", "POSITIONING: Players (esp mana users) MUST stand at least 25 yds from boss to avoid Arcane Torrent silencing them and stealing their mana"},
-				{"Important", "Nether Wraith adds will be summoned frequently to help boss. DPS should focus and AoE these down anytime they're up, before shifting damage back to the boss"},
-				{"TANK", "Focus on the boss; the Nether Wraith adds don't need to be tanked"},
-				{"Important", "When player is struck with Domination (5 sec mind-control), that player needs be stunned/CC'd ASAP!"},
-				{"Defensives", "If tank is MC'd, boss will likely go after healer. Either way, be prepared to pop a defensive or other helpful CD"}}, 
+	[19220] = {{"mechanar_19220_01", "Advanced", "POSITIONING: Players (esp mana users) MUST stand at least 25 yds from boss to avoid Arcane Torrent silencing them and stealing their mana", 50},
+				{"mechanar_19220_02", "Important", "Nether Wraith adds will be summoned frequently to help boss. DPS should focus and AoE these down anytime they're up, before shifting damage back to the boss", 40},
+				{"mechanar_19220_03", "TANK", "Focus on the boss; the Nether Wraith adds don't need to be tanked", 30},
+				{"mechanar_19220_04", "Important", "When player is struck with Domination (5 sec mind-control), that player needs be stunned/CC'd ASAP!", 20},
+				{"mechanar_19220_05", "Defensives", "If tank is MC'd, boss will likely go after healer. Either way, be prepared to pop a defensive or other helpful CD", 10}},
 				-- Pathaleon the Calculator
 
 	---Mini Bosses
-	[19218] = {{"Important", "Mini-boss should be tanked faced away from the group"},
-				{"Advanced", "POSITIONING: DPS & Healer should spread out so multiple players don't receive Sawblade Bleed (Spread on Heroic-Only)"},
-				{"HEALER", "Watch for players that are struck with Sawblade as they will need increased heals for the 8 sec bleed."},
-				{"Important", "Dispel Shadow Power (Magic buff that increases mob attack speed by 100% for 15 sec) from mob."},
-				{"Important", "Dispel Stream of Machine Fluid (Poison debuff increases time between attacks and reducing armor by 35%) from tank."}},
+	[19218] = {{"mechanar_19218_01", "Important", "Mini-boss should be tanked faced away from the group", 50},
+				{"mechanar_19218_02", "Advanced", "POSITIONING: DPS & Healer should spread out so multiple players don't receive Sawblade Bleed (Spread on Heroic-Only)", 40},
+				{"mechanar_19218_03", "HEALER", "Watch for players that are struck with Sawblade as they will need increased heals for the 8 sec bleed.", 30},
+				{"mechanar_19218_04", "Important", "Dispel Shadow Power (Magic buff that increases mob attack speed by 100% for 15 sec) from mob.", 20},
+				{"mechanar_19218_05", "Important", "Dispel Stream of Machine Fluid (Poison debuff increases time between attacks and reducing armor by 35%) from tank.", 10}},
 				-- Gatewatcher Gyro-Kill
-	[19710] = {{"Dodge", "DODGE: When boss starts casting Jack Hammer, all players need to run from it (including tank) as this does AoE damage centered on himself"},
-				{"Important", "Dispel Shadow Power (Magic buff that increases mob attack speed by 100% for 15 sec) from mob."},
-				{"Important", "Dispel Stream of Machine Fluid (Poison debuff increases time between attacks and reducing armor by 35%) from tank."}},
+	[19710] = {{"mechanar_19710_01", "Dodge", "DODGE: When boss starts casting Jack Hammer, all players need to run from it (including tank) as this does AoE damage centered on himself", 30},
+				{"mechanar_19710_02", "Important", "Dispel Shadow Power (Magic buff that increases mob attack speed by 100% for 15 sec) from mob.", 20},
+				{"mechanar_19710_03", "Important", "Dispel Stream of Machine Fluid (Poison debuff increases time between attacks and reducing armor by 35%) from tank.", 10}},
 				-- Gatewatcher Iron-Hand
 
 	---Nethermancer Sepethrea's summoned adds
-	[20481] = {{"Important", "Player targeted by mob needs to kite them away from group. They will place fire patches on the ground."}}, -- Raging Flames
+	[20481] = {{"mechanar_20481_01", "Important", "Player targeted by mob needs to kite them away from group. They will place fire patches on the ground.", 10}}, -- Raging Flames
 
 	---Pathaleon's Summoned adds
-	[21062] = {{"PriorityTargets", "Summoned every 30-45 sec; Despawn when boss reaches 20% health."},
-				{"Interrupts", "INTERRUPT: Casts Arcane Bolt at players dealing Arcane Damage"}}, 
+	[21062] = {{"mechanar_21062_01", "PriorityTargets", "Summoned every 30-45 sec; Despawn when boss reaches 20% health.", 20},
+				{"mechanar_21062_02", "Interrupts", "INTERRUPT: Casts Arcane Bolt at players dealing Arcane Damage", 10}},
 				-- Nether Wraith
 
 	---Trash Mobs
-	[19166] = {{"Legion", "Mob deals mostly Arcane Damage"},
-				{"TANK", "Pull this mob away from other mobs to prevent other trash from also being pulled"},
-				{"Important", "Ranged DPS and Healer should stand at least 5 yds from Patroller as it has a 2 sec AoE Stun"}}, 
+	[19166] = {{"mechanar_19166_01", "Legion", "Mob deals mostly Arcane Damage", 30},
+				{"mechanar_19166_02", "TANK", "Pull this mob away from other mobs to prevent other trash from also being pulled", 20},
+				{"mechanar_19166_03", "Important", "Ranged DPS and Healer should stand at least 5 yds from Patroller as it has a 2 sec AoE Stun", 10}},
 				-- Tempest-Forge Patroller
-	[19167] = {{"Defensives", "When fighting these mobs, healers will need to pay extra attention to tank's health as mob's Solar Strike reduces healing effectiveness, as well as Melt Armor (reducing nearby player's armor). Tank may also need to pop a defensive CD"}}, 
+	[19167] = {{"mechanar_19167_01", "Defensives", "When fighting these mobs, healers will need to pay extra attention to tank's health as mob's Solar Strike reduces healing effectiveness, as well as Melt Armor (reducing nearby player's armor). Tank may also need to pop a defensive CD", 10}},
 				-- Bloodwarder Slayer
-	[19168] = {{"Legion", "Fire Mage-Type Mob"},
-				{"Important", "It is best to use ranged DPS to burn these mobs down as Fire Shield deals AoE Fire Damage to nearby players"}},
+	[19168] = {{"mechanar_19168_01", "Legion", "Fire Mage-Type Mob", 20},
+				{"mechanar_19168_02", "Important", "It is best to use ranged DPS to burn these mobs down as Fire Shield deals AoE Fire Damage to nearby players", 10}},
 				-- Sunseeker Astromage
-	[19231] = {{"Legion", "Mob will disarm their target with the Claw ability"},
-				{"Important", "Dispel Poison (Glob of Machine Fluid) from players (Nature DoT over 10 sec; +Reduced movement speed"}}, 
+	[19231] = {{"mechanar_19231_01", "Legion", "Mob will disarm their target with the Claw ability", 20},
+				{"mechanar_19231_02", "Important", "Dispel Poison (Glob of Machine Fluid) from players (Nature DoT over 10 sec; +Reduced movement speed)", 10}},
 				-- Mechanar Crusher
-	[19510] = {{"Important", "Warrior-Type Mobs that decrease nearby players' armor and increase attack and movement speed."},
-				{"Defensives", "When Centurion's are up and in the group that is being fought, tank may need to pop extra defensive CDs due to Melt Armor ability, and may also need additonal heals"}}, 
+	[19510] = {{"mechanar_19510_01", "Important", "Warrior-Type Mobs that decrease nearby players' armor and increase attack and movement speed.", 20},
+				{"mechanar_19510_02", "Defensives", "When Centurion's are up and in the group that is being fought, tank may need to pop extra defensive CDs due to Melt Armor ability, and may also need additonal heals", 10}},
 				-- Bloodwarder Centurion
-	[19712] = {{"Important", "DPS and Healer needs to watch their threat as Driller applies stacking debuff that reduces movement speed and armor of their target!"}, 
-				{"WARLOCK", "This mob is vulnerable to Banish and Fear"},
-				{"Important", "Driller applies debuff that will reduce armor by 20% per stack, stacking up to 5 times. This mob should be killed quickly as it can overwhelm tank & healer at higher stacks"}},
+	[19712] = {{"mechanar_19712_01", "Important", "DPS and Healer needs to watch their threat as Driller applies stacking debuff that reduces movement speed and armor of their target!", 30},
+				{"mechanar_19712_02", "WARLOCK", "This mob is vulnerable to Banish and Fear", 20},
+				{"mechanar_19712_03", "Important", "Driller applies debuff that will reduce armor by 20% per stack, stacking up to 5 times. This mob should be killed quickly as it can overwhelm tank & healer at higher stacks", 10}},
 				-- Mechanar Driller
-	[19713] = {{"Legion", "Mob will disorient their target for 5 sec with the Pound ability"},
-				{"Important", "Dispel Poison (Glob of Machine Fluid) from players (Nature DoT over 10 sec; +Reduced movement speed"}}, 
+	[19713] = {{"mechanar_19713_01", "Legion", "Mob will disorient their target for 5 sec with the Pound ability", 20},
+				{"mechanar_19713_02", "Important", "Dispel Poison (Glob of Machine Fluid) from players (Nature DoT over 10 sec; +Reduced movement speed)", 10}},
 				-- Mechanar Wrecker
-	[19716] = {{"Important", "Players should spread out when this mob is in a pull as Netherbomb deals Arcane AoE to selected area"},
-				{"Important", "Ranged DPS are preferred for this mob as Nether Explosion deals heavy AoE in their melee range"}},
+	[19716] = {{"mechanar_19716_01", "Important", "Players should spread out when this mob is in a pull as Netherbomb deals Arcane AoE to selected area", 20},
+				{"mechanar_19716_02", "Important", "Ranged DPS are preferred for this mob as Nether Explosion deals heavy AoE in their melee range", 10}},
 				-- Mechanar Tinkerer
-	[19735] = {{"Legion", "Mob deals mostly Arcane Damage"},
-				{"TANK", "Pull this mob away from other mobs to prevent other trash from also being pulled"},
-				{"Important", "Ranged DPS and Healer should stand at least 5 yds from Destroy as it has a 2 sec AoE Stun, and Destroyer has melee range AoE"}}, 
+	[19735] = {{"mechanar_19735_01", "Legion", "Mob deals mostly Arcane Damage", 30},
+				{"mechanar_19735_02", "TANK", "Pull this mob away from other mobs to prevent other trash from also being pulled", 20},
+				{"mechanar_19735_03", "Important", "Ranged DPS and Healer should stand at least 5 yds from Destroy as it has a 2 sec AoE Stun, and Destroyer has melee range AoE", 10}},
 				-- Tempest-Forge Destroyer
-	[20059] = {{"PriorityTargets", "Mob should be CC'd or killed quickly due to Arcane Nova (AoE Arcane Damage that also heals its allies)."},
-				{"Important", "When Netherbinder summons their Arcane Servant, this should be DPS'd down quickly due to its low health and AoE damage"}}, 
+	[20059] = {{"mechanar_20059_01", "PriorityTargets", "Mob should be CC'd or killed quickly due to Arcane Nova (AoE Arcane Damage that also heals its allies).", 20},
+				{"mechanar_20059_02", "Important", "When Netherbinder summons their Arcane Servant, this should be DPS'd down quickly due to its low health and AoE damage", 10}},
 				-- Sunseeker Netherbinder
-	[20478] = {{"PriorityTargets", "Summoned by Sunseeker Netherbinder; Deals AoE damage."}}, -- Arcane Servant
-	[20988] = {{"PriorityTargets", "These mobs can be dangerous as they buff their allies. Use CC abilities or focus them down quickly"}}, -- Sunseeker Engineer
-	[20990] = {{"PriorityTargets", "Mob should be crowd-controlled or killed first"},
-				{"Interrupts", "INTERRUPT: Bandage (8 sec Channeled; Healing an ally)"},
-				{"Important", "Dispel player that is put to sleep by mob (esp if it's the healer) - this lasts 6 sec. If no dispel available, an off-healer may need to step up to fill healer's role during that time"},
-				{"SHAMAN", "Use your Tremor Totem to remove sleep"}},
+	[20478] = {{"mechanar_20478_01", "PriorityTargets", "Summoned by Sunseeker Netherbinder; Deals AoE damage.", 10}}, -- Arcane Servant
+	[20988] = {{"mechanar_20988_01", "PriorityTargets", "These mobs can be dangerous as they buff their allies. Use CC abilities or focus them down quickly", 10}}, -- Sunseeker Engineer
+	[20990] = {{"mechanar_20990_01", "PriorityTargets", "Mob should be crowd-controlled or killed first", 40},
+				{"mechanar_20990_02", "Interrupts", "INTERRUPT: Bandage (8 sec Channeled; Healing an ally)", 30},
+				{"mechanar_20990_03", "Important", "Dispel player that is put to sleep by mob (esp if it's the healer) - this lasts 6 sec. If no dispel available, an off-healer may need to step up to fill healer's role during that time", 20},
+				{"mechanar_20990_04", "SHAMAN", "Use your Tremor Totem to remove sleep", 10}},
 				-- Bloodwarder Physician
 
 
 	------- Dungeon: The Botanica -------------------
 
 	---Bosses
-	[17976] = {{"Important", "Make sure to pull adds before engaging the boss (boss will pat back and forth over a bridge"},
-				{"Legion", "Arcane resistance pots and gear could be helpful for this fight, but debuffs still need to be watched/dispelled."},
-				{"Important", "Dispel Arcane Resonance (increases target's Arcane damage taken) as often as possible."},
-				{"TANK", "Maintain strong defensives, esp if you don't have a group that can dispel Arcane Resonance as Arcane Devastation hit hard!"},
-				{"PriorityTargets", "When adds appear, focus them down first. The Mender (healer) is elite and can be CC'd or Feared. When not feared, her heals must be interrupted"}}, -- Commander Sarannis
-	[17975] = {{"PriorityTargets", "Focus DPS on adds when they spawn before shifting back to boss"},
-				{"Important", "When boss shapeshifts into Tree Form, boss becomes immune (this happens with greater frequency as fight goes on). At this point, 3 Frayer Protectors are summoned and begin channeling Tranquility (heal) to boss. When tank pulls them away from boss, DPS should focus down these adds"},
-				{"TANK", "When boss changes into Tree Form, drag the Frayer Protectors away from boss"},
-				{"Important", "During add phases (esp), DPS should focus on the tank's target (boss/adds) to burn mobs down quickly else the fight will be very long and healer will run out of mana"}}, -- High Botanist Freywinn
-	[17978] = {{"Legion", "Optional Boss"},
-				{"Legion", "Boss deals a combination of Fire AoE Damage and Shadow damage DoT during Sacrifice phase. Use of auras/buffs/pots can help mitigate this damage (use fire if you have only one choice)."},
-				{"Important", "Boss casts Hellfire which deals AoE fire damage. Healers should take note of this as melee will take increased damage"},
-				{"Important", "Clear room by killing the adds near boss and two stealthed mobs in the direction of Laj's chambers"},
-				{"Advanced", "POSITIONING: Tank should fight boss in the middle of the room (to avoid LoS issues with healer). It's reccomended to assign an off-healer in case healer is being sacrificed"},
-				{"Important", "If healer is being Sacrificed (8 sec stun +Shadow DoT +boss leeches sacrificed player's health), use your 'off-healer' to assist with heals, and melee DPS should run out of range of boss' Hellfire AoE to mitigate group damage (if off-healer isn't well geared or off-healer not present)"},
-				{"TANK", "DEFENSIVES: If healer is being Sacrificed be prepared to pop defensives to assist off-healer, or esp if an off-healer isn't available"},
-				{"Defensives", "DEFENSIVES: Use defensive CD if boss is enraging against you (likely tank)."},
-				{"HEALER", "Healer will need to keep 'enraged' player at max health (or as close to as possible)."}}, -- Thorngrin the Tender
-	[17980] = {{"Important", "Watch for and dispel Allergic Reaction (Disease) from tank."},
-				{"Important", "Watch for the color that Laj turns to see which school of magic it becomes immune to & don't cast from that school."},
-				{"Legion", "[BLUE] Frost; [RED] Fire; [GREEN] Nature; [BLACK] Shadow; [WHITE] Arcane"},
-				{"PriorityTargets", "When boss teleports to original platform, adds will appear that must be focused down"}}, 
+	[17976] = {{"botanica_17976_01", "Important", "Make sure to pull adds before engaging the boss (boss will pat back and forth over a bridge", 50},
+				{"botanica_17976_02", "Legion", "Arcane resistance pots and gear could be helpful for this fight, but debuffs still need to be watched/dispelled.", 40},
+				{"botanica_17976_03", "Important", "Dispel Arcane Resonance (increases target's Arcane damage taken) as often as possible.", 30},
+				{"botanica_17976_04", "TANK", "Maintain strong defensives, esp if you don't have a group that can dispel Arcane Resonance as Arcane Devastation hit hard!", 20},
+				{"botanica_17976_05", "PriorityTargets", "When adds appear, focus them down first. The Mender (healer) is elite and can be CC'd or Feared. When not feared, her heals must be interrupted", 10}}, -- Commander Sarannis
+	[17975] = {{"botanica_17975_01", "PriorityTargets", "Focus DPS on adds when they spawn before shifting back to boss", 40},
+				{"botanica_17975_02", "Important", "When boss shapeshifts into Tree Form, boss becomes immune (this happens with greater frequency as fight goes on). At this point, 3 Frayer Protectors are summoned and begin channeling Tranquility (heal) to boss. When tank pulls them away from boss, DPS should focus down these adds", 30},
+				{"botanica_17975_03", "TANK", "When boss changes into Tree Form, drag the Frayer Protectors away from boss", 20},
+				{"botanica_17975_04", "Important", "During add phases (esp), DPS should focus on the tank's target (boss/adds) to burn mobs down quickly else the fight will be very long and healer will run out of mana", 10}}, -- High Botanist Freywinn
+	[17978] = {{"botanica_17978_01", "Legion", "Optional Boss", 90},
+				{"botanica_17978_02", "Legion", "Boss deals a combination of Fire AoE Damage and Shadow damage DoT during Sacrifice phase. Use of auras/buffs/pots can help mitigate this damage (use fire if you have only one choice).", 80},
+				{"botanica_17978_03", "Important", "Boss casts Hellfire which deals AoE fire damage. Healers should take note of this as melee will take increased damage", 70},
+				{"botanica_17978_04", "Important", "Clear room by killing the adds near boss and two stealthed mobs in the direction of Laj's chambers", 60},
+				{"botanica_17978_05", "Advanced", "POSITIONING: Tank should fight boss in the middle of the room (to avoid LoS issues with healer). It's reccomended to assign an off-healer in case healer is being sacrificed", 50},
+				{"botanica_17978_06", "Important", "If healer is being Sacrificed (8 sec stun +Shadow DoT +boss leeches sacrificed player's health), use your 'off-healer' to assist with heals, and melee DPS should run out of range of boss' Hellfire AoE to mitigate group damage (if off-healer isn't well geared or off-healer not present)", 40},
+				{"botanica_17978_07", "TANK", "DEFENSIVES: If healer is being Sacrificed be prepared to pop defensives to assist off-healer, or esp if an off-healer isn't available", 30},
+				{"botanica_17978_08", "Defensives", "DEFENSIVES: Use defensive CD if boss is enraging against you (likely tank).", 20},
+				{"botanica_17978_09", "HEALER", "Healer will need to keep 'enraged' player at max health (or as close to as possible).", 10}}, -- Thorngrin the Tender
+	[17980] = {{"botanica_17980_01", "Important", "Watch for and dispel Allergic Reaction (Disease) from tank.", 40},
+				{"botanica_17980_02", "Important", "Watch for the color that Laj turns to see which school of magic it becomes immune to & don't cast from that school.", 30},
+				{"botanica_17980_03", "Legion", "[BLUE] Frost; [RED] Fire; [GREEN] Nature; [BLACK] Shadow; [WHITE] Arcane", 20},
+				{"botanica_17980_04", "PriorityTargets", "When boss teleports to original platform, adds will appear that must be focused down", 10}},
 				-- Laj
-	[17977] = {{"Important", "DPS and Healer should be at maximum range (if possible) when dealing with boss to avoid Stomp (25 yd range; Deals AoE Physical damage +5 sec stun)"},
-				{"WARRIOR", "Use Berserker Rage to grant brief immunity to Stomp's stun effect"},
-				{"PriorityTargets", "Focus down Sapling adds when summoned as they will heal boss. Some abilities from hunter (Aimed Shot), warrior (Mortal Strike) and rogue (Wound Poison) can reduce healing effects."},
-				{"Important", "Sapling adds can also be CC'd using a mage's Frost Nova or a priest's Psychic Scream."}}, 
+	[17977] = {{"botanica_17977_01", "Important", "DPS and Healer should be at maximum range (if possible) when dealing with boss to avoid Stomp (25 yd range; Deals AoE Physical damage +5 sec stun)", 40},
+				{"botanica_17977_02", "WARRIOR", "Use Berserker Rage to grant brief immunity to Stomp's stun effect", 30},
+				{"botanica_17977_03", "PriorityTargets", "Focus down Sapling adds when summoned as they will heal boss. Some abilities from hunter (Aimed Shot), warrior (Mortal Strike) and rogue (Wound Poison) can reduce healing effects.", 20},
+				{"botanica_17977_04", "Important", "Sapling adds can also be CC'd using a mage's Frost Nova or a priest's Psychic Scream.", 10}},
 				-- Warp Splinter
 
 	---Sarannis' Adds
-	[20078] = {{"Legion", "Deals Arcane melee damage"}}, -- Summoned Bloodwarder Reservist (Non-Elite)
-	[20083] = {{"PriorityTargets", "Fear/Burn Down mob asap as it will heal allies (including boss)"}}, -- Summoned Bloodwarder Mender (Elite)
+	[20078] = {{"botanica_20078_01", "Legion", "Deals Arcane melee damage", 10}}, -- Summoned Bloodwarder Reservist (Non-Elite)
+	[20083] = {{"botanica_20083_01", "PriorityTargets", "Fear/Burn Down mob asap as it will heal allies (including boss)", 10}}, -- Summoned Bloodwarder Mender (Elite)
 
 	---Freywinn Seedlings
-	[19953] = {{"PriorityTargets", ""}}, -- Frayer Protector
-	[19958] = {{"Important", "Dispel magic-effect from player that is encased in block of ice (Freezing Touch)"}}, -- White Seedling
-	[19962] = {{"Important", "AoE ability that reduces movement speed of players for 4 sec"}}, -- Blue Seedling
-	[19964] = {{"Important", "Deals Fire damage to random player"}}, -- Red Seedling
-	[19969] = {{"Important", "Deals AoE Nature damage"}}, -- Green Seedling
+	[19953] = {{"botanica_19953_01", "PriorityTargets", "", 10}}, -- Frayer Protector
+	[19958] = {{"botanica_19958_01", "Important", "Dispel magic-effect from player that is encased in block of ice (Freezing Touch)", 10}}, -- White Seedling
+	[19962] = {{"botanica_19962_01", "Important", "AoE ability that reduces movement speed of players for 4 sec", 10}}, -- Blue Seedling
+	[19964] = {{"botanica_19964_01", "Important", "Deals Fire damage to random player", 10}}, -- Red Seedling
+	[19969] = {{"botanica_19969_01", "Important", "Deals AoE Nature damage", 10}}, -- Green Seedling
 
 	---Laj's Adds
-	[19919] = {{"PriorityTargets", "Shots Thorn Missiles at player applying a Physical damage bleed"}}, -- Thorn Lasher
-	[19920] = {{"PriorityTargets", "Casts Mind Flay at player applying Shadow damage +movement speed reduction to that player"}}, -- Thorn Flayer
+	[19919] = {{"botanica_19919_01", "PriorityTargets", "Shots Thorn Missiles at player applying a Physical damage bleed", 10}}, -- Thorn Lasher
+	[19920] = {{"botanica_19920_01", "PriorityTargets", "Casts Mind Flay at player applying Shadow damage +movement speed reduction to that player", 10}}, -- Thorn Flayer
 
 	---Warp Splinter Adds
-	[19949] = {{"PriorityTargets", "Burn these adds down to prevent boss from being healed"}}, -- Sapling
+	[19949] = {{"botanica_19949_01", "PriorityTargets", "Burn these adds down to prevent boss from being healed", 10}}, -- Sapling
 
 	---Trash Mobs
-	[17993] = {{"PriorityTargets", "CC/DPS these mobs down quickly before they can put up Spell Reflection"},
-				{"Important", "Immune to Mind Control"}}, 
+	[17993] = {{"botanica_17993_01", "PriorityTargets", "CC/DPS these mobs down quickly before they can put up Spell Reflection", 20},
+				{"botanica_17993_02", "Important", "Immune to Mind Control", 10}},
 				-- Bloodwarder Protector
-	[17994] = {{"Defensives", "Player with Call of the Falcon mark will take extra damage from Bloodfalcons"}}, 
+	[17994] = {{"botanica_17994_01", "Defensives", "Player with Call of the Falcon mark will take extra damage from Bloodfalcons", 10}},
 				-- Bloodwarder Falconer
-	[18155] = {{"Legion", ""}}, -- Bloodfalcon
-	[18404] = {{"Dodge", "DODGE: Arcane Flurry (AoE/WW Ability) when mob begins channeling, or stun this mob"}}, 
+	[18155] = {{"botanica_18155_01", "Legion", "", 10}}, -- Bloodfalcon
+	[18404] = {{"botanica_18404_01", "Dodge", "DODGE: Arcane Flurry (AoE/WW Ability) when mob begins channeling, or stun this mob", 10}},
 				-- Bloodwarder Steward
-	[18405] = {{"Legion", "Deal AoE damage and drain player mana from nearby players"}}, -- Tempest-Forge Peacekeeper
-	[18419] = {{"Legion", "Mobs deal primarily Nature Damage"},
-				{"Important", "Dispel Impending Coma (Poison) from tank (increases time between attacks +reduces movement speed +puts target to sleep"}, 
-				{"Interrupts", "Interrupt: Greenkeeper's Fury (Lightning Bolt dealing Nature damage)"}}, 
+	[18405] = {{"botanica_18405_01", "Legion", "Deal AoE damage and drain player mana from nearby players", 10}}, -- Tempest-Forge Peacekeeper
+	[18419] = {{"botanica_18419_01", "Legion", "Mobs deal primarily Nature Damage", 30},
+				{"botanica_18419_02", "Important", "Dispel Impending Coma (Poison) from tank (increases time between attacks +reduces movement speed +puts target to sleep)", 20},
+				{"botanica_18419_03", "Interrupts", "Interrupt: Greenkeeper's Fury (Lightning Bolt dealing Nature damage)", 10}},
 				-- Bloodwarder Greenkeeper
-	[18420] = {{"Important", "Casts Arcane Explosion AoE (melee players may need extra heals)"},
-				{"Important", "Immune to Crowd Control"}}, -- Sunseeker Geomancer
-	[18421] = {{"Important", "Applies Frost/Fire/Nature DoT (magic debuff) to players that can be dispelled"}}, 
+	[18420] = {{"botanica_18420_01", "Important", "Casts Arcane Explosion AoE (melee players may need extra heals)", 20},
+				{"botanica_18420_02", "Important", "Immune to Crowd Control", 10}}, -- Sunseeker Geomancer
+	[18421] = {{"botanica_18421_01", "Important", "Applies Frost/Fire/Nature DoT (magic debuff) to players that can be dispelled", 10}},
 				-- Sunseeker Researcher
-	[18422] = {{"Legion", "Resto Druid-Type Mob"},
-				{"PriorityTargets", "INTERRUPT: Regrowth & Rejuvenate Plant (Both 2 sec cast time that heal/apply HoTs to their allies"}}, 
+	[18422] = {{"botanica_18422_01", "Legion", "Resto Druid-Type Mob", 20},
+				{"botanica_18422_02", "PriorityTargets", "INTERRUPT: Regrowth & Rejuvenate Plant (Both 2 sec cast time that heal/apply HoTs to their allies", 10}},
 				-- Sunseeker Botanist
-	[18587] = {{"Important", "Mob applies buff to itself making it immune to either Arcane, Fire, Frost, or Shadow - players should switch to alternate spell types to counter immunities"}}, 
+	[18587] = {{"botanica_18587_01", "Important", "Mob applies buff to itself making it immune to either Arcane, Fire, Frost, or Shadow - players should switch to alternate spell types to counter immunities", 10}},
 				-- Frayer
-	[19486] = {{"Important", "These mobs should be tanked away from the group"},
-				{"Dodge", "Move out of poison clouds from Vial of Poison"}}, -- Sunseeker Chemist
-	[19505] = {{"PriorityTargets", "Mob applies damage buff to nearby allies. This mob is fairly weak when it is alone"},
-				{"Important", "Dispel: Soul Channel (magic ability leeching health and mana over 6 sec)"}}, 
+	[19486] = {{"botanica_19486_01", "Important", "These mobs should be tanked away from the group", 20},
+				{"botanica_19486_02", "Dodge", "Move out of poison clouds from Vial of Poison", 10}}, -- Sunseeker Chemist
+	[19505] = {{"botanica_19505_01", "PriorityTargets", "Mob applies damage buff to nearby allies. This mob is fairly weak when it is alone", 20},
+				{"botanica_19505_02", "Important", "Dispel: Soul Channel (magic ability leeching health and mana over 6 sec)", 10}},
 				-- Sunseeker Channeler
-	[19507] = {{"Legion", "Death Knight-Type Mob"},
-				{"Dodge", "DODGE/RUN from area that Death & Decay is cast (AoE targeted at a selected location"}}, 
+	[19507] = {{"botanica_19507_01", "Legion", "Death Knight-Type Mob", 20},
+				{"botanica_19507_02", "Dodge", "DODGE/RUN from area that Death & Decay is cast (AoE targeted at a selected location)", 10}},
 				-- Sunseeker Gene-Splicer
-	[19508] = {{"Important", "Herbalists will summon Mutate Fleshlashers that should be DPS'd down quickly!"}, 
-				{"Important", "Dispel Entangling Roots from players (Roots player and deals Nature DoT over 6 sec)"}},
+	[19508] = {{"botanica_19508_01", "Important", "Herbalists will summon Mutate Fleshlashers that should be DPS'd down quickly!", 20},
+				{"botanica_19508_02", "Important", "Dispel Entangling Roots from players (Roots player and deals Nature DoT over 6 sec)", 10}},
 				-- Sunseeker Herbalist
-	[19509] = {{"Important", "These mobs should be CC'd or burned down quickly as their casting of Polymorph could be very dangerous to the group if done to tank/healer"}}, 
+	[19509] = {{"botanica_19509_01", "Important", "These mobs should be CC'd or burned down quickly as their casting of Polymorph could be very dangerous to the group if done to tank/healer", 10}},
 				-- Sunseeker Harvester
-	[19511] = {{"Important", "Immune to Enslave, but vulnerable to Banish"},
-				{"Important", "Dispel Deadly Poison from player (Nature DoT lasting 60 sec)"}}, 
+	[19511] = {{"botanica_19511_01", "Important", "Immune to Enslave, but vulnerable to Banish", 20},
+				{"botanica_19511_02", "Important", "Dispel Deadly Poison from player (Nature DoT lasting 60 sec)", 10}},
 				-- Nethervine Inciter
-	[19512] = {{"Important", "Dispel Pale Death (curse effect reducing stamina by 35% for 60 sec) from tank ASAP!"},
-				{"Defensives", "Due to cleave AoE, melee ranged players will take increased damage and will need additional heals"}}, 
+	[19512] = {{"botanica_19512_01", "Important", "Dispel Pale Death (curse effect reducing stamina by 35% for 60 sec) from tank ASAP!", 20},
+				{"botanica_19512_02", "Defensives", "Due to cleave AoE, melee ranged players will take increased damage and will need additional heals", 10}},
 				-- Nethervine Reaper
-	[19513] = {{"Important", "Immune to most forms of CC; Vulnerable to a hunter's Ice Trap slows"},
-				{"Important", "Fear-Shrieker has an AoE Fear, it should be pulled clear of other mobs so you don't pull unwanted groups."}}, 
+	[19513] = {{"botanica_19513_01", "Important", "Immune to most forms of CC; Vulnerable to a hunter's Ice Trap slows", 20},
+				{"botanica_19513_02", "Important", "Fear-Shrieker has an AoE Fear, it should be pulled clear of other mobs so you don't pull unwanted groups.", 10}},
 				-- Mutate Fear-Shrieker
-	[19557] = {{"Legion", ""}}, -- Greater Frayer
-	[19598] = {{"Legion", ""}}, -- Mutate Fleshlasher
-	[19608] = {{"Important", "These mobs should be defeated prior to engaging Warp Splinter (boss)"}}, 
+	[19557] = {{"botanica_19557_01", "Legion", "", 10}}, -- Greater Frayer
+	[19598] = {{"botanica_19598_01", "Legion", "", 10}}, -- Mutate Fleshlasher
+	[19608] = {{"botanica_19608_01", "Important", "These mobs should be defeated prior to engaging Warp Splinter (boss)", 10}},
 				-- Frayer Wildling
-	[19633] = {{"PriorityTargets", "INTERRUPT: Greater Heal (mob will cast this on self or ally)"}}, 
+	[19633] = {{"botanica_19633_01", "PriorityTargets", "INTERRUPT: Greater Heal (mob will cast this on self or ally)", 10}},
 				-- Bloodwarder Mender
-	[19843] = {{"Legion", "Rogue-Type Mob"},
-				{"Important", "Mob starts Stealthed, deals increased damage from behind target"}}, 
+	[19843] = {{"botanica_19843_01", "Legion", "Rogue-Type Mob", 20},
+				{"botanica_19843_02", "Important", "Mob starts Stealthed, deals increased damage from behind target", 10}},
 				-- Nethervine Trickster
-	[19865] = {{"Important", "Use Stuns/Ice Trap; Mob is immune to Polymorph and Fear"}}, -- Mutate Horror
-	[25354] = {{"PriorityTargets", "Hard hitting non-elites summoned by Sunseeker Herbalists"}}, -- Mutate Fleshlasher
+	[19865] = {{"botanica_19865_01", "Important", "Use Stuns/Ice Trap; Mob is immune to Polymorph and Fear", 10}}, -- Mutate Horror
+	[25354] = {{"botanica_25354_01", "PriorityTargets", "Hard hitting non-elites summoned by Sunseeker Herbalists", 10}}, -- Mutate Fleshlasher
 
 
 	------- Dungeon: The Arcatraz -------------------
 
 	---Bosses
-	[20870] = {{"TANK", "Tank the boss with your back against the wall to avoid knockback"},
-				{"Dodge", "DODGE/RUN from Void Zones boss spawns (Purple swirl on ground dealing Shadow damage to players"},
-				{"Dodge", "DODGE: If you are afflicted with Seed of Corruption, run out of group as AoE Shadow damage will be dealt to players w/in 10 yards and applying a Shadow DoT to those players. If the tank is the one afflicted, all other players must run away from tank."},
-				{"Legion", "Boss deals Shadow damage - having Shadow resistance auras/buffs can help mitigate damage taken"},
-				{"Important", "Players can minimize the knockback from Shadow Nova by standing with backs close to a wall, but still need to be aware of void zones that will spawn"}}, 
+	[20870] = {{"arcatraz_20870_01", "TANK", "Tank the boss with your back against the wall to avoid knockback", 50},
+				{"arcatraz_20870_02", "Dodge", "DODGE/RUN from Void Zones boss spawns (Purple swirl on ground dealing Shadow damage to players)", 40},
+				{"arcatraz_20870_03", "Dodge", "DODGE: If you are afflicted with Seed of Corruption, run out of group as AoE Shadow damage will be dealt to players w/in 10 yards and applying a Shadow DoT to those players. If the tank is the one afflicted, all other players must run away from tank.", 30},
+				{"arcatraz_20870_04", "Legion", "Boss deals Shadow damage - having Shadow resistance auras/buffs can help mitigate damage taken", 20},
+				{"arcatraz_20870_05", "Important", "Players can minimize the knockback from Shadow Nova by standing with backs close to a wall, but still need to be aware of void zones that will spawn", 10}},
 				-- Zereketh the Unbound
-	[20885] = {{"Dodge", "DODGE: ~30 sec into the fight, boss will do a Whirlwind (lasts 6 sec), be sure to run out of this as it deals massive AoE Physical damage"},
-				{"PriorityTargets", "INTERRUPT: After boss' Whirlwind ends, she will cast a heal on herself"},
-				{"Important", "Boss applies Gift of the Doomsayer to player (looks like Shadow Protection buff from a priest and has a chance to heal boss if player with debuff is healed this includes healing pots)"},
-				{"SHAMAN", "Avoid using Earth Shield on a player, during this fight"},
-				{"PRIEST", "Power Word: Shield is okay to use, but do NOT use Vampiric Embrace during this fight as it could result in boss getting healed."},
-				{"Legion", "Boss deals Shadow damage - having Shadow resistance auras/buffs can help mitigate damage taken"},
-				{"Important", "Using Wound Poison (rogue), Aimed Shot (hunter) or Mortal Strike (warrior) can reduce the amount of healing boss receives, if she manages to get a cast off."}}, 
+	[20885] = {{"arcatraz_20885_01", "Dodge", "DODGE: ~30 sec into the fight, boss will do a Whirlwind (lasts 6 sec), be sure to run out of this as it deals massive AoE Physical damage", 70},
+				{"arcatraz_20885_02", "PriorityTargets", "INTERRUPT: After boss' Whirlwind ends, she will cast a heal on herself", 60},
+				{"arcatraz_20885_03", "Important", "Boss applies Gift of the Doomsayer to player (looks like Shadow Protection buff from a priest and has a chance to heal boss if player with debuff is healed this includes healing pots)", 50},
+				{"arcatraz_20885_04", "SHAMAN", "Avoid using Earth Shield on a player, during this fight", 40},
+				{"arcatraz_20885_05", "PRIEST", "Power Word: Shield is okay to use, but do NOT use Vampiric Embrace during this fight as it could result in boss getting healed.", 30},
+				{"arcatraz_20885_06", "Legion", "Boss deals Shadow damage - having Shadow resistance auras/buffs can help mitigate damage taken", 20},
+				{"arcatraz_20885_07", "Important", "Using Wound Poison (rogue), Aimed Shot (hunter) or Mortal Strike (warrior) can reduce the amount of healing boss receives, if she manages to get a cast off.", 10}},
 				-- Dalliah the Doomsayer
-	[20886] = {{"Important", "Boss should be tanked with tank's back against the wall to mitigate Knockback"},
-				{"Dodge", "After boss does Knockback, he will charge a random player and apply a Felfire trail that must be moved out of!"},
-				{"HEALER", "Boss applies Fel Immolation Aura that deals AoE fire damage to players w/in 15 yds. If you have melee DPS in your group, be aware that these ones will take increased damage as a result"},
-				{"Important", "Dispel player afflicted ith Felfire Shock (Fire DoT)"},
-				{"PALADIN", "Boss deals mostly Fire damage - consider Fire Resistance Aura"}}, 
+	[20886] = {{"arcatraz_20886_01", "Important", "Boss should be tanked with tank's back against the wall to mitigate Knockback", 50},
+				{"arcatraz_20886_02", "Dodge", "After boss does Knockback, he will charge a random player and apply a Felfire trail that must be moved out of!", 40},
+				{"arcatraz_20886_03", "HEALER", "Boss applies Fel Immolation Aura that deals AoE fire damage to players w/in 15 yds. If you have melee DPS in your group, be aware that these ones will take increased damage as a result", 30},
+				{"arcatraz_20886_04", "Important", "Dispel player afflicted ith Felfire Shock (Fire DoT)", 20},
+				{"arcatraz_20886_05", "PALADIN", "Boss deals mostly Fire damage - consider Fire Resistance Aura", 10}},
 				-- Wrath-Scryer Soccothrates
-	[20912] = {{"Advanced", "PHASE ONE - 4 Cells will open, the 1st, 3rd and 4th will be one of two possibility enemies"},
-				{"Legion", "First Cell: Mobs deal Fire/Physical Damage"},
-				{"Legion", "Second Cell: Millhouse Manastorm (Helps players)"},
-				{"Legion", "Third Cell: Mobs deal Fire/Physical for Blackwing or Fire/Frost/Arcane for Twilight Drakonaar"},
-				{"Advanced", "PHASE TWO - Begins once 4th cell's mob is defeated and Skyriss becomes active."},
-				{"Legion", "Boss deals primarily Shadow/Physical Damage to players"},
-				{"Important", "During fight, boss will mind-control a player that needs to be CC'd ASAP!"}, 
-				{"Important", "Boss will create illusions of himself at 66% and 33%. Boss and illusions use Mind Rend (Channeled Shadow Damage against players)"},
-				{"TANK", "Make sure to pick up and hold aggro of boss and his clones so that healer won't get hit by multiple Mind Rend's and die"},
-				{"Important", "Boss will also fear a random player. Use of Fear Ward or a Tremor Totem can mitigate problems, esp if it is done to a healer/tank"}},
+	[20912] = {{"arcatraz_20912_01", "Advanced", "PHASE ONE - 4 Cells will open, the 1st, 3rd and 4th will be one of two possibility enemies", 100},
+				{"arcatraz_20912_02", "Legion", "First Cell: Mobs deal Fire/Physical Damage", 90},
+				{"arcatraz_20912_03", "Legion", "Second Cell: Millhouse Manastorm (Helps players)", 80},
+				{"arcatraz_20912_04", "Legion", "Third Cell: Mobs deal Fire/Physical for Blackwing or Fire/Frost/Arcane for Twilight Drakonaar", 70},
+				{"arcatraz_20912_05", "Advanced", "PHASE TWO - Begins once 4th cell's mob is defeated and Skyriss becomes active.", 60},
+				{"arcatraz_20912_06", "Legion", "Boss deals primarily Shadow/Physical Damage to players", 50},
+				{"arcatraz_20912_07", "Important", "During fight, boss will mind-control a player that needs to be CC'd ASAP!", 40},
+				{"arcatraz_20912_08", "Important", "Boss will create illusions of himself at 66% and 33%. Boss and illusions use Mind Rend (Channeled Shadow Damage against players)", 30},
+				{"arcatraz_20912_09", "TANK", "Make sure to pick up and hold aggro of boss and his clones so that healer won't get hit by multiple Mind Rend's and die", 20},
+				{"arcatraz_20912_10", "Important", "Boss will also fear a random player. Use of Fear Ward or a Tremor Totem can mitigate problems, esp if it is done to a healer/tank", 10}},
 				-- Harbinger Skyriss
 
 	-- Warden Mellichar
-	[20905] = {{"Important", "Once you approach Warden, players will enter combat and fight will soon begin. Make sure that your group is aware of boss strategy before entering 'combat range'"}}, 
+	[20904] = {{"arcatraz_20904_01", "Important", "Once you approach Warden, players will enter combat and fight will soon begin. Make sure that your group is aware of boss strategy before entering 'combat range'", 10}},
 				-- Warden Mellichar
 
 	-- Warden Mellich's Prisons
-	[20905] = {{"Legion", "Deals Fire Damage"},
-				{"Important", "Use non-Fire spells against this mob as they have increased Fire resistance"}}, 
+	[20905] = {{"arcatraz_20905_01", "Legion", "Deals Fire Damage", 20},
+				{"arcatraz_20905_02", "Important", "Use non-Fire spells against this mob as they have increased Fire resistance", 10}},
 				-- Blazing Trickster (1st Cell)
-	[20906] = {{"Important", "Mob will cast Warp and appear behind a player"},
-				{"Important", "Mob will deal increased damage when attacking a player from behind"}}, 
+	[20906] = {{"arcatraz_20906_01", "Important", "Mob will cast Warp and appear behind a player", 20},
+				{"arcatraz_20906_02", "Important", "Mob will deal increased damage when attacking a player from behind", 10}},
 				-- Phase-Hunter (1st Cell)
-	[20977] = {{"Legion", "Friendly; Helps players"}}, -- Millhouse Manastorm (2nd Cell)
-	[20908] = {{"Legion", "Deals mostly Nature damage"},
-				{"Important", "Dispel Magic Grounding (applies buff that mob takes 50% reduced magic damage for 30 sec)"},
-				{"HEALER", "Apply extra heals to player afflicted with Lightning Jump (causes player to receive increased damage from all schools of magic for 60 sec)."},
-				{"Important", "Lightning Discharge is a chain lightning dealing nature damage all to players w/in 50 yds"}}, 
+	[20977] = {{"arcatraz_20977_01", "Legion", "Friendly; Helps players", 10}}, -- Millhouse Manastorm (2nd Cell)
+	[20908] = {{"arcatraz_20908_01", "Legion", "Deals mostly Nature damage", 40},
+				{"arcatraz_20908_02", "Important", "Dispel Magic Grounding (applies buff that mob takes 50% reduced magic damage for 30 sec)", 30},
+				{"arcatraz_20908_03", "HEALER", "Apply extra heals to player afflicted with Lightning Jump (causes player to receive increased damage from all schools of magic for 60 sec).", 20},
+				{"arcatraz_20908_04", "Important", "Lightning Discharge is a chain lightning dealing nature damage all to players w/in 50 yds", 10}},
 				-- Akkiris Lightning-Waker (3rd Cell)
-	[20909] = {{"Important", "Deals mostly Fire (AoE) & Shadow (single-target) damage"},
-				{"Important", "Dispel curse from player of Magma-Thrower's Curse (curse reduces effectiveness of healing received)"},
-				{"Important", "Casts Rain of Fire (10 yd AoE), which deals damage every 2 sec for 8 sec"},
-				{"Dodge", "Run out of Rain of Fire!"},
-				{"Important", "Casts Shadow Bolt at a player"}}, 
+	[20909] = {{"arcatraz_20909_01", "Important", "Deals mostly Fire (AoE) & Shadow (single-target) damage", 50},
+				{"arcatraz_20909_02", "Important", "Dispel curse from player of Magma-Thrower's Curse (curse reduces effectiveness of healing received)", 40},
+				{"arcatraz_20909_03", "Important", "Casts Rain of Fire (10 yd AoE), which deals damage every 2 sec for 8 sec", 30},
+				{"arcatraz_20909_04", "Dodge", "Run out of Rain of Fire!", 20},
+				{"arcatraz_20909_05", "Important", "Casts Shadow Bolt at a player", 10}},
 				-- Sulfuron Magma-Thrower (3rd Cell)
-	[20910] = {{"Legion", "ONLY the tank should be standing in front of the mob so rest can avoid damage mob deals!"},
-				{"Important", "Mob will deal certain type of damage depending on color buff it has:"},
-				{"Important", "BROOD POWER: Green (Stuns players in front of mob for 1 sec)"},
-				{"Important", "BROOD POWER: Black (Deals Fire damage to players in front of it)"},
-				{"Important", "BROOD POWER: Blue (Deals Frost damage to players in front of it destroying player mana and increasing player time between attacks)"},
-				{"Important", "BROOD POWER: Bronze (Deals Arcane damage +reduced casting +increased time between attacks to players in front of it)"},
-				{"Important", "BROOD POWER: Red (Applies Fire DoT to players in front of it)"}}, 
+	[20910] = {{"arcatraz_20910_01", "Legion", "ONLY the tank should be standing in front of the mob so rest can avoid damage mob deals!", 70},
+				{"arcatraz_20910_02", "Important", "Mob will deal certain type of damage depending on color buff it has:", 60},
+				{"arcatraz_20910_03", "Important", "BROOD POWER: Green (Stuns players in front of mob for 1 sec)", 50},
+				{"arcatraz_20910_04", "Important", "BROOD POWER: Black (Deals Fire damage to players in front of it)", 40},
+				{"arcatraz_20910_05", "Important", "BROOD POWER: Blue (Deals Frost damage to players in front of it destroying player mana and increasing player time between attacks)", 30},
+				{"arcatraz_20910_06", "Important", "BROOD POWER: Bronze (Deals Arcane damage +reduced casting +increased time between attacks to players in front of it)", 20},
+				{"arcatraz_20910_07", "Important", "BROOD POWER: Red (Applies Fire DoT to players in front of it)", 10}},
 				-- Twilight Drakonaar (4th Cell)
-	[20911] = {{"Legion", "Mob deals mostly Fire damage"},
-				{"Important", "Deals frontal-cone Fire damage (only tank should be standing in front of mob)"},
-				{"Important", "Mob applies Mortal Wounds debuff to target causing reduced effectiveness to heals received"},
-				{"Important", "Mob deals AoE Fire damage thru Blsat Wave ability"}}, 
+	[20911] = {{"arcatraz_20911_01", "Legion", "Mob deals mostly Fire damage", 40},
+				{"arcatraz_20911_02", "Important", "Deals frontal-cone Fire damage (only tank should be standing in front of mob)", 30},
+				{"arcatraz_20911_03", "Important", "Mob applies Mortal Wounds debuff to target causing reduced effectiveness to heals received", 20},
+				{"arcatraz_20911_04", "Important", "Mob deals AoE Fire damage thru Blsat Wave ability", 10}},
 				-- Blackwing Drakonaar (4th Cell)
 
 	---Trash Mobs
-	[20857] = {{"Legion", "Deals a combination of Fire and Nature damage in form of DoTs"},
-				{"Important", "Immolate (Fire DoT; Magic-ability can be dispelled from tank)"},
-				{"Important", "Infected Blood (Nature DoT; Disease-ability can be dispelled from tank)"}}, -- Arcatraz Defender
-	[20859] = {{"Legion", "Ranged Hunter-type mobs"},
-				{"Important", "Make sure to defeat these mobs. Leaving them alone will result in adds continuing to spawn, which will be very problematic if DPS/Healer need to run back after a wipe."}}, 
+	[20857] = {{"arcatraz_20857_01", "Legion", "Deals a combination of Fire and Nature damage in form of DoTs", 30},
+				{"arcatraz_20857_02", "Important", "Immolate (Fire DoT; Magic-ability can be dispelled from tank)", 20},
+				{"arcatraz_20857_03", "Important", "Infected Blood (Nature DoT; Disease-ability can be dispelled from tank)", 10}}, -- Arcatraz Defender
+	[20859] = {{"arcatraz_20859_01", "Legion", "Ranged Hunter-type mobs", 20},
+				{"arcatraz_20859_02", "Important", "Make sure to defeat these mobs. Leaving them alone will result in adds continuing to spawn, which will be very problematic if DPS/Healer need to run back after a wipe.", 10}},
 				-- Arcatraz Warder
-	[20864] = {{"Legion", "Deals Nature damage and some physical damage"},
-				{"Important", "Group should try to fight this at range w/only the tank in melee range due to Incubation (AoE explosion)"}}, 
+	[20864] = {{"arcatraz_20864_01", "Legion", "Deals Nature damage and some physical damage", 20},
+				{"arcatraz_20864_02", "Important", "Group should try to fight this at range w/only the tank in melee range due to Incubation (AoE explosion)", 10}},
 				-- Protean Nightmare
-	[20865] = {{"Legion", "Triggered when group gets too close to these mobs. Tank should pickup aggro and group focus them down"}}, 
+	[20865] = {{"arcatraz_20865_01", "Legion", "Triggered when group gets too close to these mobs. Tank should pickup aggro and group focus them down", 10}},
 				-- Protean Horror
-	[20866] = {{"Legion", "Deals combination of Fire and Shadow Damage"},
-				{"Important", "Only the tank should be in front of this mob due to frontal cone Fel Breath (Fire Damage)"},
-				{"Important", "Mob will summon Sightless Eyes that DPS should focus on killing as they apply a movement speed and casting/attack speed debuff to players"}}, 
+	[20866] = {{"arcatraz_20866_01", "Legion", "Deals combination of Fire and Shadow Damage", 30},
+				{"arcatraz_20866_02", "Important", "Only the tank should be in front of this mob due to frontal cone Fel Breath (Fire Damage)", 20},
+				{"arcatraz_20866_03", "Important", "Mob will summon Sightless Eyes that DPS should focus on killing as they apply a movement speed and casting/attack speed debuff to players", 10}},
 				-- Soul Devourer
-	[20867] = {{"PriorityTargets", "Once boss reaches 50% health, group has 15 sec to finish mob off as massive dmg is dealt to those with the debuff when timer goes out"},
-				{"Important", "If your group is lacking in the DPS needed to bring mob down from 50% to 0 in 15 sec, DPS and Healer can drop LoS from boss prior to 50% to prevent debuff from being applied to them."},
-				{"ROGUE", "Using Cloak of Shadows can drop Mark of Death debuff from you"},
-				{"Important", "Dispel Drain Life (Magic) from Tank"}}, -- Death Watcher
-	[20868] = {{"Important", "Mob deals big damage to players in front of him, so only the tank should be in front."},
-				{"Important", "After tank takes Chaos Breath make sure to dispel curse, poison and magics from tank ASAP that this ability puts on them."},
-				{"Important", "If Healer or Tank are Hexed (5 sec CC against players), an off-tank or off-healer may need to pick up the slack during the sheeping"}}, 
+	[20867] = {{"arcatraz_20867_01", "PriorityTargets", "Once boss reaches 50% health, group has 15 sec to finish mob off as massive dmg is dealt to those with the debuff when timer goes out", 40},
+				{"arcatraz_20867_02", "Important", "If your group is lacking in the DPS needed to bring mob down from 50% to 0 in 15 sec, DPS and Healer can drop LoS from boss prior to 50% to prevent debuff from being applied to them.", 30},
+				{"arcatraz_20867_03", "ROGUE", "Using Cloak of Shadows can drop Mark of Death debuff from you", 20},
+				{"arcatraz_20867_04", "Important", "Dispel Drain Life (Magic) from Tank", 10}}, -- Death Watcher
+	[20868] = {{"arcatraz_20868_01", "Important", "Mob deals big damage to players in front of him, so only the tank should be in front.", 30},
+				{"arcatraz_20868_02", "Important", "After tank takes Chaos Breath make sure to dispel curse, poison and magics from tank ASAP that this ability puts on them.", 20},
+				{"arcatraz_20868_03", "Important", "If Healer or Tank are Hexed (5 sec CC against players), an off-tank or off-healer may need to pick up the slack during the sheeping", 10}},
 				-- Entropic Eye
-	[20869] = {{"Important", "Mob sparks AoE Arcane Damage"},
-				{"TANK", "When/If mob comes back to life, tank should be quick to pick up aggro (these mobs will regularly reset aggro also"},
-				{"ROGUE", "Sentinels are vulnerable to Cheap Shot and Kidney Shot to mitigate some of the damage being dealt to tank"},
-				{"Important", "Ranged DPS/Healer should stand 40 yds away from mob to avoid Energy Discharge while alive"},
-				{"Dodge", "RUN AWAY: When mob reaches low health they will try to explode dealing AoE Damage"}}, 
+	[20869] = {{"arcatraz_20869_01", "Important", "Mob sparks AoE Arcane Damage", 50},
+				{"arcatraz_20869_02", "TANK", "When/If mob comes back to life, tank should be quick to pick up aggro (these mobs will regularly reset aggro also)", 40},
+				{"arcatraz_20869_03", "ROGUE", "Sentinels are vulnerable to Cheap Shot and Kidney Shot to mitigate some of the damage being dealt to tank", 30},
+				{"arcatraz_20869_04", "Important", "Ranged DPS/Healer should stand 40 yds away from mob to avoid Energy Discharge while alive", 20},
+				{"arcatraz_20869_05", "Dodge", "RUN AWAY: When mob reaches low health they will try to explode dealing AoE Damage", 10}},
 				-- Arcatraz Sentinel
-	[20873] = {{"Important", "When mob places glowing purple AoE below them, tank will need to kite boss away as it heals mob for large amount, and increases the damage they deal"}}, 
+	[20873] = {{"arcatraz_20873_01", "Important", "When mob places glowing purple AoE below them, tank will need to kite boss away as it heals mob for large amount, and increases the damage they deal", 10}},
 				-- Negaton Warp-Master
-	[20875] = {{"Important", "Players need to pay attention to the Elemental Response buff that mob applies to itself. This buff reduces certain magic schools/physical abilities it takes by 75%. Make sure to coordinate (if poss) switching magic schools cast to keep boss guessing"},
-				{"Important", "When tank is about to pull, players should first strike boss with an ability that the tank isn't primarily using (Holy for Prot Paladin, Physical for Prot Warrior), so that Tank can quickly grab & maintain aggro"},
-				{"TANK", "Threat building/maintaining might be issue if mob resists your type of attack (Holy, Physical, etc). If that's the case, wait for mob to switch to different resistance before using an abilities it isn't resisting"},
-				{"Important", "Shaman using Tremor Totem or Priest applying Fear Ward to the tank is helpful to mitigate issues during Psychic Scream (AoE Fear)"}}, 
+	[20875] = {{"arcatraz_20875_01", "Important", "Players need to pay attention to the Elemental Response buff that mob applies to itself. This buff reduces certain magic schools/physical abilities it takes by 75%. Make sure to coordinate (if poss) switching magic schools cast to keep boss guessing", 40},
+				{"arcatraz_20875_02", "Important", "When tank is about to pull, players should first strike boss with an ability that the tank isn't primarily using (Holy for Prot Paladin, Physical for Prot Warrior), so that Tank can quickly grab & maintain aggro", 30},
+				{"arcatraz_20875_03", "TANK", "Threat building/maintaining might be issue if mob resists your type of attack (Holy, Physical, etc). If that's the case, wait for mob to switch to different resistance before using an abilities it isn't resisting", 20},
+				{"arcatraz_20875_04", "Important", "Shaman using Tremor Totem or Priest applying Fear Ward to the tank is helpful to mitigate issues during Psychic Scream (AoE Fear)", 10}},
 				-- Negaton Screamer
-	[20879] = {{"Important", "Dispel Soul Steal (magic buff) from tank (reduces stats & damage done by 45% for 20 sec)"},
-				{"MAGE", "Dispel Soul Steal (magic buff) from mob (increases mob stats & damage done by 45% for 20%."},
-				{"Defensives", "If there is no mage in the grp to dispel Soul Steal from enemy mob, tank will need to pop extra CDs and need extra heals to deal with damage"}}, 
+	[20879] = {{"arcatraz_20879_01", "Important", "Dispel Soul Steal (magic buff) from tank (reduces stats & damage done by 45% for 20 sec)", 30},
+				{"arcatraz_20879_02", "MAGE", "Dispel Soul Steal (magic buff) from mob (increases mob stats & damage done by 45% for 20%).", 20},
+				{"arcatraz_20879_03", "Defensives", "If there is no mage in the grp to dispel Soul Steal from enemy mob, tank will need to pop extra CDs and need extra heals to deal with damage", 10}},
 				-- Eredar Soul-Eater
-	[20880] = {{"PriorityTargets", "Mob casts Diminish Soul on player (stacks up to 10) for 12 sec. If stacks get too high on tank because fight is taking too long, tank could quickly become overwhelmed resulting in a wipe"},
-				{"Legion", "Mob deals AoE shadow damage to players (~40 yd range); Consider Shadow Resistance auras & buffs."},
-				{"Important", "Forceful Cleave is an AoE knockback, players (esp tank) should stand with backs against a wall."}}, 
+	[20880] = {{"arcatraz_20880_01", "PriorityTargets", "Mob casts Diminish Soul on player (stacks up to 10) for 12 sec. If stacks get too high on tank because fight is taking too long, tank could quickly become overwhelmed resulting in a wipe", 30},
+				{"arcatraz_20880_02", "Legion", "Mob deals AoE shadow damage to players (~40 yd range); Consider Shadow Resistance auras & buffs.", 20},
+				{"arcatraz_20880_03", "Important", "Forceful Cleave is an AoE knockback, players (esp tank) should stand with backs against a wall.", 10}},
 				-- Eredar Deathbringer
-	[20881] = {{"Legion", "Mob deals Physical and Shadow damage"},
-				{"WARLOCK", "Felguard is immune to Enslave and Banish"},
-				{"Important", "Mob should be tanked with tank's back against wall due to Devastate"},
-				{"Important", "Mob will cast Deafening Roar (AoE Interrupt); Healers and DPS can LoS until after this mob casts Deafening Roar on the tank to minimize chances that they will get hit by a second one"}}, 
+	[20881] = {{"arcatraz_20881_01", "Legion", "Mob deals Physical and Shadow damage", 40},
+				{"arcatraz_20881_02", "WARLOCK", "Felguard is immune to Enslave and Banish", 30},
+				{"arcatraz_20881_03", "Important", "Mob should be tanked with tank's back against wall due to Devastate", 20},
+				{"arcatraz_20881_04", "Important", "Mob will cast Deafening Roar (AoE Interrupt); Healers and DPS can LoS until after this mob casts Deafening Roar on the tank to minimize chances that they will get hit by a second one", 10}},
 				-- Unbound Devastator
-	[20882] = {{"Important", "Mob begins stealthed, and will Gouge (stun) the tank regularly. When this happens, mob will attack second highest player on the threat table."}}, 
+	[20882] = {{"arcatraz_20882_01", "Important", "Mob begins stealthed, and will Gouge (stun) the tank regularly. When this happens, mob will attack second highest player on the threat table.", 10}},
 				-- Skulking Witch
-	[20883] = {{"Important", "Mob will cast Domination on player mind-controlling them for 6 sec. MC'd player needs to be stunned/CC'd ASAP!"}}, 
+	[20883] = {{"arcatraz_20883_01", "Important", "Mob will cast Domination on player mind-controlling them for 6 sec. MC'd player needs to be stunned/CC'd ASAP!", 10}},
 				-- Spiteful Temptress
-	[20896] = {{"Legion", "Rogue-type mob with Evasion ability"},
-				{"Important", "When Evasion is active on mob, its Dodge abilities are increased (save big attacks when buff not active)"},
-				{"Important", "Dispel Impaired Poison when mob applies this to players"}, 
-				{"Important", "Immune to Mind Control on Heroic difficulty"}}, -- Ethereum Slayer
-	[20897] = {{"Legion", "Arcane Mage-Type Mob"},
-				{"Important", "Dispel polymorph from tank/healer"},
-				{"Important", "Sonic Boom is AoE Arcane Explosion ability w/45 yd range. This ability also disrupts casting of spells from a school of magic that were being cast when this was activated for 4 seconds"},
-				{"HEALER", "If possibly try to use instant cast heals, totems or healing spells with as short of a cast time as possible to minimize risk of becoming spell silenced."},
-				{"Important", "If Healer is spell silenced from Sonic Boom, an off-healer may be needed as well as tank popping extra defensive CDs"}}, 
+	[20896] = {{"arcatraz_20896_01", "Legion", "Rogue-type mob with Evasion ability", 40},
+				{"arcatraz_20896_02", "Important", "When Evasion is active on mob, its Dodge abilities are increased (save big attacks when buff not active)", 30},
+				{"arcatraz_20896_03", "Important", "Dispel Impaired Poison when mob applies this to players", 20},
+				{"arcatraz_20896_04", "Important", "Immune to Mind Control on Heroic difficulty", 10}}, -- Ethereum Slayer
+	[20897] = {{"arcatraz_20897_01", "Legion", "Arcane Mage-Type Mob", 50},
+				{"arcatraz_20897_02", "Important", "Dispel polymorph from tank/healer", 40},
+				{"arcatraz_20897_03", "Important", "Sonic Boom is AoE Arcane Explosion ability w/45 yd range. This ability also disrupts casting of spells from a school of magic that were being cast when this was activated for 4 seconds", 30},
+				{"arcatraz_20897_04", "HEALER", "If possibly try to use instant cast heals, totems or healing spells with as short of a cast time as possible to minimize risk of becoming spell silenced.", 20},
+				{"arcatraz_20897_05", "Important", "If Healer is spell silenced from Sonic Boom, an off-healer may be needed as well as tank popping extra defensive CDs", 10}},
 				-- Ethereum Wave-Caster
-	[20898] = {{"Important", "Players need to stack to split damage from Meteor!"},
-				{"Important", "When Meteor isn't being used, ranged DPS and Healer should be at least 20 yds away to avoid Fire Shield AoE that will impact those in melee range"}, 
-				{"WARLOCK", "Abyssal is immune to Banish & Enslave"},
-				{"Legion", "Mob deals mostly Fire-type damage - consider Fire Resistance aura."}}, -- Gargantuan Abyssal
-	[20900] = {{"Important", "Players need to watch their threat when dealing with this target. If non-tank pulls aggro just before War Stomp (5 sec AoE stun) goes off, it could result in a wipe."}, 
-				{"WARLOCK", "Doomguard is immune to Enslave Demon"}}, -- Unchained Doombringer
-	[20901] = {{"Important", "Ranged mobs that root tank and disorient players with Hooked Net and Scatter Shot"},
-				{"Important", "Immune to Freezing Trap, Banish, Fear, Enslave Demon and most stuns"}}, 
+	[20898] = {{"arcatraz_20898_01", "Important", "Players need to stack to split damage from Meteor!", 40},
+				{"arcatraz_20898_02", "Important", "When Meteor isn't being used, ranged DPS and Healer should be at least 20 yds away to avoid Fire Shield AoE that will impact those in melee range", 30},
+				{"arcatraz_20898_03", "WARLOCK", "Abyssal is immune to Banish & Enslave", 20},
+				{"arcatraz_20898_04", "Legion", "Mob deals mostly Fire-type damage - consider Fire Resistance aura.", 10}}, -- Gargantuan Abyssal
+	[20900] = {{"arcatraz_20900_01", "Important", "Players need to watch their threat when dealing with this target. If non-tank pulls aggro just before War Stomp (5 sec AoE stun) goes off, it could result in a wipe.", 20},
+				{"arcatraz_20900_02", "WARLOCK", "Doomguard is immune to Enslave Demon", 10}}, -- Unchained Doombringer
+	[20901] = {{"arcatraz_20901_01", "Important", "Ranged mobs that root tank and disorient players with Hooked Net and Scatter Shot", 20},
+				{"arcatraz_20901_02", "Important", "Immune to Freezing Trap, Banish, Fear, Enslave Demon and most stuns", 10}},
 				-- Sargeron Archer
-	[20902] = {{"Legion", "Mob deals mostly Fire Damage"},
-				{"Important", "Immune to Freezing Trap, Banish, Fear, Enslave Demon and most stuns"},
-				{"Dodge", "When mob casts Hellfire (AoE Damage) at random location/player, players need to run out this ability!"}}, 
+	[20902] = {{"arcatraz_20902_01", "Legion", "Mob deals mostly Fire Damage", 30},
+				{"arcatraz_20902_02", "Important", "Immune to Freezing Trap, Banish, Fear, Enslave Demon and most stuns", 20},
+				{"arcatraz_20902_03", "Dodge", "When mob casts Hellfire (AoE Damage) at random location/player, players need to run out this ability!", 10}},
 				-- Sargeron Hellcaller
-	[21303] = {{"Legion", ""}}, -- Defender Corpse
-	[21346] = {{"PriorityTargets", "Applies Sightless Touch to players (Reduced movement speed by 40% +Reduced attack/casting speed by 50%"}}, 
+	[21303] = {{"arcatraz_21303_01", "Legion", "", 10}}, -- Defender Corpse
+	[21346] = {{"arcatraz_21346_01", "PriorityTargets", "Applies Sightless Touch to players (Reduced movement speed by 40% +Reduced attack/casting speed by 50%)", 10}},
 				-- Sightless Eye
-	[21395] = {{"Legion", ""}}, -- Protean Spawn
-	[21702] = {{"Legion", "Shadow Priest-Type Mob dealing mostly Shadow damage"},
-				{"Important", "Immobilizes players with Shackle and Bind"}}, -- Ethereum Life-Binder
-	[22892] = {{"Important", "Can be stunned, blinded and gouged"}}, -- Third Fragment Guardian
+	[21395] = {{"arcatraz_21395_01", "Legion", "", 10}}, -- Protean Spawn
+	[21702] = {{"arcatraz_21702_01", "Legion", "Shadow Priest-Type Mob dealing mostly Shadow damage", 20},
+				{"arcatraz_21702_02", "Important", "Immobilizes players with Shackle and Bind", 10}}, -- Ethereum Life-Binder
+	[22892] = {{"arcatraz_22892_01", "Important", "Can be stunned, blinded and gouged", 10}}, -- Third Fragment Guardian
 
 
 
