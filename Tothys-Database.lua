@@ -926,9 +926,29 @@ addon.contentCatalog = addon.contentCatalog or {
 					enUS = "Hyjal Summit",
 					deDE = "Hyjal Summit",
 				},
+				npcNames = {
+					[17767] = { enUS = "Rage Winterchill" },
+					[17808] = { enUS = "Anetheron" },
+					[17818] = { enUS = "Towering Infernal" },
+					[17842] = { enUS = "Azgalor" },
+					[17864] = { enUS = "Lesser Doomguard" },
+					[17888] = { enUS = "Kaz'rogal" },
+					[17895] = { enUS = "Ghoul" },
+					[17897] = { enUS = "Crypt Fiend" },
+					[17898] = { enUS = "Abomination" },
+					[17899] = { enUS = "Shadowy Necromancer" },
+					[17902] = { enUS = "Skeleton Invader" },
+					[17903] = { enUS = "Skeleton Mage" },
+					[17905] = { enUS = "Banshee" },
+					[17906] = { enUS = "Gargoyle" },
+					[17907] = { enUS = "Frost Wyrm" },
+					[17908] = { enUS = "Giant Infernal" },
+					[17916] = { enUS = "Fel Stalker" },
+					[17968] = { enUS = "Archimonde" },
+				},
 				npcIDs = {
 					17767, 17808, 17888, 17842, 17968, 17818, 17864, 17895, 17897, 17898,
-					17899, 17902, 17903, 17905, 17906, 17907, 17908, 17909,
+					17899, 17902, 17903, 17905, 17906, 17907, 17908, 17916,
 				},
 			},
 			black_temple = {
@@ -1875,26 +1895,26 @@ tipsMap_enUS = {
 	------- Raid: Hyjal Summit -------------
 
 	---Bosses
-	[17767] = {{"Important", ""}}, -- Rage Winterchill
-	[17808] = {{"Important", ""}}, -- Anetheron
-	[17888] = {{"Important", ""}}, -- Kaz'rogal
-	[17842] = {{"Important", ""}}, -- Azgalor
-	[17968] = {{"Important", ""}}, -- Archimonde
+	[17767] = {{"hyjal_17767_01", "Important", "", 10}}, -- Rage Winterchill
+	[17808] = {{"hyjal_17808_01", "Important", "", 10}}, -- Anetheron
+	[17888] = {{"hyjal_17888_01", "Important", "", 10}}, -- Kaz'rogal
+	[17842] = {{"hyjal_17842_01", "Important", "", 10}}, -- Azgalor
+	[17968] = {{"hyjal_17968_01", "Important", "", 10}}, -- Archimonde
 
 	---Trash Mobs
-	[17818] = {{"Important", ""}}, -- Towering Infernal
-	[17864] = {{"Important", ""}}, -- Lesser Doomguard
-	[17895] = {{"Important", ""}}, -- Ghoul
-	[17897] = {{"Important", ""}}, -- Crypt Fiend
-	[17898] = {{"Important", ""}}, -- Abomination
-	[17899] = {{"Important", ""}}, -- Shadowy Necromancer
-	[17902] = {{"Important", ""}}, -- Skeleton Invader
-	[17903] = {{"Important", ""}}, -- Skeleton Mage
-	[17905] = {{"Important", ""}}, -- Banshee
-	[17906] = {{"Important", ""}}, -- Gargoyle
-	[17907] = {{"Important", ""}}, -- Frost Wyrm
-	[17908] = {{"Important", ""}}, -- Giant Infernal
-	[17916] = {{"Important", ""}}, -- Fel Stalker
+	[17818] = {{"hyjal_17818_01", "Important", "", 10}}, -- Towering Infernal
+	[17864] = {{"hyjal_17864_01", "Important", "", 10}}, -- Lesser Doomguard
+	[17895] = {{"hyjal_17895_01", "Important", "", 10}}, -- Ghoul
+	[17897] = {{"hyjal_17897_01", "Important", "", 10}}, -- Crypt Fiend
+	[17898] = {{"hyjal_17898_01", "Important", "", 10}}, -- Abomination
+	[17899] = {{"hyjal_17899_01", "Important", "", 10}}, -- Shadowy Necromancer
+	[17902] = {{"hyjal_17902_01", "Important", "", 10}}, -- Skeleton Invader
+	[17903] = {{"hyjal_17903_01", "Important", "", 10}}, -- Skeleton Mage
+	[17905] = {{"hyjal_17905_01", "Important", "", 10}}, -- Banshee
+	[17906] = {{"hyjal_17906_01", "Important", "", 10}}, -- Gargoyle
+	[17907] = {{"hyjal_17907_01", "Important", "", 10}}, -- Frost Wyrm
+	[17908] = {{"hyjal_17908_01", "Important", "", 10}}, -- Giant Infernal
+	[17916] = {{"hyjal_17916_01", "Important", "", 10}}, -- Fel Stalker
 
 
 	------- Raid: Black Temple -------------
