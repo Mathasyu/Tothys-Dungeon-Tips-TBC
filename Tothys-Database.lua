@@ -801,12 +801,64 @@ addon.contentCatalog = addon.contentCatalog or {
 					enUS = "Serpentshrine Cavern",
 					deDE = "Serpentshrine Cavern",
 				},
+				npcNames = {
+					[21212] = { enUS = "Lady Vashj" },
+					[21213] = { enUS = "Morogrim Tidewalker" },
+					[21214] = { enUS = "Fathom-Lord Karathress" },
+					[21215] = { enUS = "Leotheras the Blind" },
+					[21216] = { enUS = "Hydross the Unstable" },
+					[21217] = { enUS = "The Lurker Below" },
+					[21218] = { enUS = "Vashj'ir Honor Guard" },
+					[21220] = { enUS = "Coilfang Priestess" },
+					[21221] = { enUS = "Coilfang Beast-Tamer" },
+					[21224] = { enUS = "Tidewalker Depth-Seer" },
+					[21225] = { enUS = "Tidewalker Warrior" },
+					[21226] = { enUS = "Tidewalker Shaman" },
+					[21227] = { enUS = "Tidewalker Harpooner" },
+					[21228] = { enUS = "Tidewalker Hydromancer" },
+					[21229] = { enUS = "Greyheart Tidecaller" },
+					[21230] = { enUS = "Greyheart Nether-Mage" },
+					[21231] = { enUS = "Greyheart Shield-Bearer" },
+					[21232] = { enUS = "Greyheart Skulker" },
+					[21246] = { enUS = "Serpentshrine Sporebat" },
+					[21251] = { enUS = "Underbog Colossus" },
+					[21253] = { enUS = "Tainted Water Elemental" },
+					[21263] = { enUS = "Greyheart Technician" },
+					[21298] = { enUS = "Coilfang Serpentguard" },
+					[21299] = { enUS = "Coilfang Fathom-Witch" },
+					[21301] = { enUS = "Coilfang Shatterer" },
+					[21339] = { enUS = "Coilfang Hate-Screamer" },
+					[21508] = { enUS = "Coilfang Frenzy" },
+					[21806] = { enUS = "Greyheart Spellbinder" },
+					[21857] = { enUS = "Inner Demon" },
+					[21863] = { enUS = "Serpentshrine Lurker" },
+					[21865] = { enUS = "Coilfang Ambusher" },
+					[21873] = { enUS = "Coilfang Guardian" },
+					[21875] = { enUS = "Shadow of Leotheras" },
+					[21920] = { enUS = "Tidewalker Lurker" },
+					[21958] = { enUS = "Enchanted Elemental" },
+					[21964] = { enUS = "Fathom-Guard Caribdis" },
+					[21965] = { enUS = "Fathom-Guard Tidalvess" },
+					[21966] = { enUS = "Fathom-Guard Sharkkis" },
+					[22009] = { enUS = "Tainted Elemental" },
+					[22035] = { enUS = "Pure Spawn of Hydross" },
+					[22036] = { enUS = "Tainted Spawn of Hydross" },
+					[22055] = { enUS = "Coilfang Elite" },
+					[22056] = { enUS = "Coilfang Strider" },
+					[22119] = { enUS = "Fathom Lurker" },
+					[22120] = { enUS = "Fathom Sporebat" },
+					[22238] = { enUS = "Serpentshrine Tidecaller" },
+					[22250] = { enUS = "Rancid Mushroom" },
+					[22347] = { enUS = "Colossus Lurker" },
+					[22352] = { enUS = "Colossus Rager" },
+					[22820] = { enUS = "Seer Olum" },
+				},
 				npcIDs = {
 					21216, 21217, 21215, 21214, 21213, 21212, 21964, 21965, 21966, 21218,
 					21220, 21221, 21224, 21225, 21226, 21227, 21228, 21229, 21230, 21231,
-					21232, 21246, 21247, 21248, 21249, 21250, 21251, 21263, 21298, 21301,
-					21339, 21395, 21863, 21865, 21873, 21920, 21956, 21958, 21963, 21967,
-					22009, 22035, 22036, 22055, 22056, 22091, 22140, 22347, 23028, 23030,
+					21232, 21246, 21251, 21253, 21263, 21298, 21299, 21301, 21339, 21508,
+					21806, 21857, 21863, 21865, 21873, 21875, 21920, 21958, 22009, 22035,
+					22036, 22055, 22056, 22119, 22120, 22238, 22250, 22347, 22352, 22820,
 				},
 			},
 			tempest_keep_the_eye = {
@@ -1669,60 +1721,60 @@ tipsMap_enUS = {
 	------- Raid: Serpentshrine Cavern -----
 
 	---Bosses
-	[21216] = {{"Important", ""}}, -- Hydross the Unstable <Duke of Currents>
-	[21217] = {{"Important", ""}}, -- The Lurker Below
-	[21215] = {{"Important", ""}}, -- Leotheras the Blind
-	[21214] = {{"Important", ""}}, -- Fathom-Lord Karathress
-	[21213] = {{"Important", ""}}, -- Morogrim Tidewalker
-	[21212] = {{"Important", ""}}, -- Lady Vashj <Coilfang Matron>
+	[21216] = {{"ssc_21216_01", "Important", "", 10}}, -- Hydross the Unstable <Duke of Currents>
+	[21217] = {{"ssc_21217_01", "Important", "", 10}}, -- The Lurker Below
+	[21215] = {{"ssc_21215_01", "Important", "", 10}}, -- Leotheras the Blind
+	[21214] = {{"ssc_21214_01", "Important", "", 10}}, -- Fathom-Lord Karathress
+	[21213] = {{"ssc_21213_01", "Important", "", 10}}, -- Morogrim Tidewalker
+	[21212] = {{"ssc_21212_01", "Important", "", 10}}, -- Lady Vashj <Coilfang Matron>
 
 	---Fathom Guards
-	[21964] = {{"Important", ""}}, -- Fathom-Guard Caribdis
-	[21965] = {{"Important", ""}}, -- Fathom-Guard Tidalvess
-	[21966] = {{"Important", ""}}, -- Fathom-Guard Sharkkis
+	[21964] = {{"ssc_21964_01", "Important", "", 10}}, -- Fathom-Guard Caribdis
+	[21965] = {{"ssc_21965_01", "Important", "", 10}}, -- Fathom-Guard Tidalvess
+	[21966] = {{"ssc_21966_01", "Important", "", 10}}, -- Fathom-Guard Sharkkis
 
 	---Trash Mobs
-	[21218] = {{"Important", ""}}, -- Vashj'ir Honor Guard
-	[21220] = {{"Important", ""}}, -- Coilfang Priestess
-	[21221] = {{"Important", ""}}, -- Coilfang Beast-Tamer
-	[21224] = {{"Important", ""}}, -- Tidewalker Depth-Seer
-	[21225] = {{"Important", ""}}, -- Tidewalker Warrior
-	[21226] = {{"Important", ""}}, -- Tidewalker Shaman
-	[21227] = {{"Important", ""}}, -- Tidewalker Harpooner
-	[21228] = {{"Important", ""}}, -- Tidewalker Hydromancer
-	[21229] = {{"Important", ""}}, -- Greyheart Tidecaller
-	[21230] = {{"Important", ""}}, -- Greyheart Nether-Mage
-	[21231] = {{"Important", ""}}, -- Greyheart Shield-Bearer
-	[21232] = {{"Important", ""}}, -- Greyheart Skulker
-	[21246] = {{"Important", ""}}, -- Serpentshrine Sporebat
-	[21251] = {{"Important", ""}}, -- Underbog Colossus
-	[21253] = {{"Important", ""}}, -- Tainted Water Elemental
-	[21263] = {{"Important", ""}}, -- Greyheart Technician
-	[21298] = {{"Important", ""}}, -- Coilfang Serpentguard
-	[21299] = {{"Important", ""}}, -- Coilfang Fathom-Witch
-	[21301] = {{"Important", ""}}, -- Coilfang Shatterer
-	[21339] = {{"Important", ""}}, -- Coilfang Hate-Screamer
-	[21508] = {{"Important", ""}}, -- Coilfang Frenzy
-	[21806] = {{"Important", ""}}, -- Greyheart Spellbinder
-	[21857] = {{"Legion", ""}}, -- Inner Demon
-	[21863] = {{"Important", ""}}, -- Serpentshrine Lurker
-	[21865] = {{"Important", ""}}, -- Coilfang Ambusher
-	[21873] = {{"Important", ""}}, -- Coilfang Guardian
-	[21875] = {{"Important", ""}}, -- Shadow of Leotheras
-	[21920] = {{"Important", ""}}, -- Tidewalker Lurker
-	[21958] = {{"Important", ""}}, -- Enchanted Elemental
-	[22009] = {{"Important", ""}}, -- Tainted Elemental
-	[22035] = {{"Important", ""}}, -- Pure Spawn of Hydross
-	[22036] = {{"Important", ""}}, -- Tainted Spawn of Hydross
-	[22055] = {{"Important", ""}}, -- Coilfang Elite
-	[22056] = {{"Important", ""}}, -- Coilfang Strider
-	[22119] = {{"Important", ""}}, -- Fathom Lurker
-	[22120] = {{"Important", ""}}, -- Fathom Sporebat
-	[22238] = {{"Important", ""}}, -- Serpentshrine Tidecaller
-	[22250] = {{"Important", ""}}, -- Rancid Mushroom
-	[22347] = {{"Important", ""}}, -- Colossus Lurker
-	[22352] = {{"Important", ""}}, -- Colossus Rager
-	[22820] = {{"Legion", ""}}, -- Seer Olum
+	[21218] = {{"ssc_21218_01", "Important", "", 10}}, -- Vashj'ir Honor Guard
+	[21220] = {{"ssc_21220_01", "Important", "", 10}}, -- Coilfang Priestess
+	[21221] = {{"ssc_21221_01", "Important", "", 10}}, -- Coilfang Beast-Tamer
+	[21224] = {{"ssc_21224_01", "Important", "", 10}}, -- Tidewalker Depth-Seer
+	[21225] = {{"ssc_21225_01", "Important", "", 10}}, -- Tidewalker Warrior
+	[21226] = {{"ssc_21226_01", "Important", "", 10}}, -- Tidewalker Shaman
+	[21227] = {{"ssc_21227_01", "Important", "", 10}}, -- Tidewalker Harpooner
+	[21228] = {{"ssc_21228_01", "Important", "", 10}}, -- Tidewalker Hydromancer
+	[21229] = {{"ssc_21229_01", "Important", "", 10}}, -- Greyheart Tidecaller
+	[21230] = {{"ssc_21230_01", "Important", "", 10}}, -- Greyheart Nether-Mage
+	[21231] = {{"ssc_21231_01", "Important", "", 10}}, -- Greyheart Shield-Bearer
+	[21232] = {{"ssc_21232_01", "Important", "", 10}}, -- Greyheart Skulker
+	[21246] = {{"ssc_21246_01", "Important", "", 10}}, -- Serpentshrine Sporebat
+	[21251] = {{"ssc_21251_01", "Important", "", 10}}, -- Underbog Colossus
+	[21253] = {{"ssc_21253_01", "Important", "", 10}}, -- Tainted Water Elemental
+	[21263] = {{"ssc_21263_01", "Important", "", 10}}, -- Greyheart Technician
+	[21298] = {{"ssc_21298_01", "Important", "", 10}}, -- Coilfang Serpentguard
+	[21299] = {{"ssc_21299_01", "Important", "", 10}}, -- Coilfang Fathom-Witch
+	[21301] = {{"ssc_21301_01", "Important", "", 10}}, -- Coilfang Shatterer
+	[21339] = {{"ssc_21339_01", "Important", "", 10}}, -- Coilfang Hate-Screamer
+	[21508] = {{"ssc_21508_01", "Important", "", 10}}, -- Coilfang Frenzy
+	[21806] = {{"ssc_21806_01", "Important", "", 10}}, -- Greyheart Spellbinder
+	[21857] = {{"ssc_21857_01", "Legion", "", 10}}, -- Inner Demon
+	[21863] = {{"ssc_21863_01", "Important", "", 10}}, -- Serpentshrine Lurker
+	[21865] = {{"ssc_21865_01", "Important", "", 10}}, -- Coilfang Ambusher
+	[21873] = {{"ssc_21873_01", "Important", "", 10}}, -- Coilfang Guardian
+	[21875] = {{"ssc_21875_01", "Important", "", 10}}, -- Shadow of Leotheras
+	[21920] = {{"ssc_21920_01", "Important", "", 10}}, -- Tidewalker Lurker
+	[21958] = {{"ssc_21958_01", "Important", "", 10}}, -- Enchanted Elemental
+	[22009] = {{"ssc_22009_01", "Important", "", 10}}, -- Tainted Elemental
+	[22035] = {{"ssc_22035_01", "Important", "", 10}}, -- Pure Spawn of Hydross
+	[22036] = {{"ssc_22036_01", "Important", "", 10}}, -- Tainted Spawn of Hydross
+	[22055] = {{"ssc_22055_01", "Important", "", 10}}, -- Coilfang Elite
+	[22056] = {{"ssc_22056_01", "Important", "", 10}}, -- Coilfang Strider
+	[22119] = {{"ssc_22119_01", "Important", "", 10}}, -- Fathom Lurker
+	[22120] = {{"ssc_22120_01", "Important", "", 10}}, -- Fathom Sporebat
+	[22238] = {{"ssc_22238_01", "Important", "", 10}}, -- Serpentshrine Tidecaller
+	[22250] = {{"ssc_22250_01", "Important", "", 10}}, -- Rancid Mushroom
+	[22347] = {{"ssc_22347_01", "Important", "", 10}}, -- Colossus Lurker
+	[22352] = {{"ssc_22352_01", "Important", "", 10}}, -- Colossus Rager
+	[22820] = {{"ssc_22820_01", "Legion", "", 10}}, -- Seer Olum
 
 
 	------- Raid: Tempest Keep The Eye -----
