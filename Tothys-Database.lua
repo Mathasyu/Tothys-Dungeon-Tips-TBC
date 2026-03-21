@@ -1818,106 +1818,106 @@ tipsMap_enUS = {
 				-- Warchief Blackhand
 
 	---Trash Mobs
-	[15547] = {{"Important", "Charges furthest player & casts Fear (4 sec AoE Fear; Should be pulled away from packs that raid is not yet in combat with)"}}, -- Spectral Charger
-	[15548] = {{"Legion", ""}}, -- Spectral Stallion
-	[15551] = {{"PriorityTargets", ""},
-				{"Interrupts", "Interrupt: Mend Pet (Heals Spectral Chargers & Stallions)"}}, -- Spectral Stable Hand
-	[16170] = {{"Legion", "Stealthed Mob"}}, -- Coldmist Stalker
-	[16171] = {{"Legion", "Except for patrols, this mob will be accompanied by 2 stealthed Coldmist Stalkers"}}, -- Coldmist Widow
-	[16173] = {{"Important", "Casts AoE Spell Interrupt/Spell Lock"},
-				{"TANK", "Due to AoE Spell Interrupt, keep mob away from casters"}}, -- Shadowbat
-	[16174] = {{"Legion", ""}}, -- Greater Shadowbat
-	[16175] = {{"Legion", ""}}, -- Vampiric Shadowbat
-	[16176] = {{"Important", "Casts Howl of the Broken Hills (10 yd range; 5 min curse draining mana, energy rage)"}}, -- Shadowbeast
-	[16177] = {{"Important", "Mob casts Cleave - only tank should be standing in front of mob!"}}, -- Dreadbeast
-	[16178] = {{"Important", "Phasing (Similar ability as Warp Stalker, can keep mob visible with Hunter's Mark)"}}, -- Phase Hound
-	[16389] = {{"Legion", "Weak melee mob"}}, -- Spectral Apprentice
-	[16406] = {{"Important", "Due to their healing ability and coming with packs of Spectral Retainers, CC is a must for these mobs"}}, -- Phantom Attendant
-	[16407] = {{"Legion", "Weak melee attack"},
-				{"Important", "Casts Curse of Past Burdens (Reduces movement speed and strength by 70%)"}}, -- Spectral Servant
-	[16408] = {{"Legion", "Mobs are immune to taunt and deal high melee DPS"},
-				{"Important", "Casts Demoralizing Shout (Reduces nearby player attack power)"}}, -- Phantom Valet
-	[16409] = {{"TANK", "Pull this mob with nearby group and use an AoE Taunt such Consecration or Thunder Clap"},
-				{"Important", "AoE this mob and it's group down AFTER tank has picked up aggro on all engaged enemies to avoid many raid members taking damage"}}, -- Phantom Guest
-	[16410] = {{"Important", "Casts a non dispellable Mind Control (Player that gets MC'd should be sheeped)"},
-				{"Important", "IMMUNE to Shackle!"}}, -- Spectral Retainer
-	[16411] = {{"Legion", ""}}, -- Spectral Chef
-	[16412] = {{"Important", "Inflicts fire damage +2 sec knockdown"}}, -- Ghostly Baker
-	[16414] = {{"Important", "Applies Drunken Skull Crack (40 yd range; 4 sec stun)"},
-				{"Important", "Usually in packs of two that should be pulled separate from other mobs by main-tank and off-tank"},
-				{"HEALER", "Target hit by Drunken Skull Crack will take high damage while debuff is active"}}, -- Ghostly Steward
-	[16415] = {{"Legion", "Tanks should mark these targets so as to pull them individually"},
-				{"Important", "Casts Brittle Bones on player (2 min debuff periodically removing all armor of one with debuff). Brittle Bones can only be removed by Paladin's Divine Shield, or ability absorbed with Shaman's Grounding Totem"}}, -- Skeletal Waiter
-	[16424] = {{"Legion", "Ranged Mob vulnerable to Shackle"}}, -- Spectral Sentry
-	[16425] = {{"Legion", "Can be shackled/stunned"},
-				{"Important", "Shield Slam (Stuns player for 3 sec)"}}, -- Phantom Guardsman
-	[16459] = {{"Important", "Alluring Aura (pre-tranform; reduces physical damage taken by 50%)"},
-				{"Important", "Wipes debuffs at 50% when transforms into true form"},
-				{"Important", "Bewitching Aura (post-transform; reduces magic damage taken by 50%)"},
-				{"Important", "Banshee Wail (Short range AoE silence that is used when transformed)"}}, -- Wanton Hostess
-	[16460] = {{"PriorityTargets", ""},
-				{"WARLOCK", "Immune to Curse of Tongues"},
-				{"Important", "Casts Impending Betrayal (Deals 3k damage after 10 sec)"},
-				{"Important", "Wipes debuffs at 50% when transforms into true form"}}, -- Night Mistress
-	[16461] = {{"Important", "AoE Seduce (Lasts 6 sec; OT should stand away from this mob and pickup when MT is seduced)"},
-				{"Important", "Wipes debuffs at 50% when transforms into true form"}}, -- Concubine
-	[16468] = {{"Legion", ""}}, -- Spectral Patron
-	[16470] = {{"Important", "Immune to taunt/CC; Careful with use of AoE as this can result to pulling additional groups!"}}, -- Ghostly Philanthropist
-	[16471] = {{"Legion", "Immune to taunt, turn undead, freeze trap, stuns and cyclone; Vulnerable to shackle"},
-				{"Important", "When these mobs are in pairs, one should be shackled"},
-				{"TANK", "Warrior should be MT and should cast Spell Reflect after receiving Frost Shock in order to spell reflect the stun part of the spell back to mob"}}, -- Skeletal Usher
-	[16472] = {{"Important", "Immune to snare, shackle and stuns"},
-				{"Important", "Should be disarmed by warrior/rogue"}}, -- Phantom Stagehand
-	[16473] = {{"TANK", "Pull mob out of Spotlight as this will increase damage done by the one standing in spotlight"},
-				{"Important", "Immune to freezing trap and shackle"},
-				{"DAMAGE", "Stand in Spotlight to receive a damage boost"}}, -- Spectral Performer
-	[16481] = {{"Legion", ""}}, -- Ghastly Haunt
-	[16482] = {{"Legion", "Immune to Shackle & Stun"}}, -- Trapped Soul
-	[16485] = {{"Important", "When these mobs come in packs, don't split DPS - fight them one at a time"},
-				{"Important", "Player that receives Overload (Arcane debuff dealing increased AoE damage per tick) should run away from raid members"}}, -- Arcane Watchman
-	[16488] = {{"PriorityTargets", "Upon death Loose Mana will restore player mana"},
-				{"Important", "DPS mob through it's mana shield and mob will die when it runs out of mana"}}, -- Arcane Anomaly
-	[16489] = {{"Advanced", "Strategy: Range pull nearby Mana-Feeders and have tank pull Chaotic Sentience away from raid members"},
-				{"Important", "Applies Unstable Magic debuff to players (Increased spell damage done by 300 and spell damage taken by 600; Lasts 2 minutes)"},
-				{"Important", "Immune to banish and stuns"}}, -- Chaotic Sentience
-	[16491] = {{"Important", "Mobs are immune to most magic effects, including wands; use Physical damage attacks (even casters)"}}, -- Mana Feeder
-	[16492] = {{"Important", "Casts Drain Mana (Channeled ability) - Best to defeat nearby Arcane Anomaly as Loose Mana will restore player mana upon its death helping with defeating this mob"}}, -- Syphoner
-	[16504] = {{"TANK", "Kite mob during Fist of Stone (Hard/Slow hitting ability: +35% melee damage, -75% movement speed on Arcane Protector, -35% attack speed)"},
-				{"Important", "During Return Fire deals an arcane ability depending upon what it announces:"},
-				{"Legion", "EL-2S (Retaliates against spells)"},
-				{"Legion", "EL-5R (Retaliates against ranged projectiles)"},
-				{"Legion", "EL-7M (Retaliates against melee)"}}, -- Arcane Protector
-	[16525] = {{"Legion", "Mob phases in and out. Use Detect Invisibility or Elixir of Detect Lesser Invisibility to continue to see this mob"},
-				{"Important", "Vulnerable to Curse of Tongues, Shackle Undead, and Turn Undead"}}, -- Spell Shade
-	[16526] = {{"Important", "Burn these mobs first; the volleys have a 20 yd range"},
-				{"Important", "Immune to Shackle Undead & Curse of Tongues"}}, -- Sorcerous Shade
-	[16529] = {{"PriorityTargets", "Focus on this mob before Mana Warps due to its Arcane Volley AoE ability"},
-				{"Important", "Immune to Banish"}}, -- Magical Horror
-	[16530] = {{"Important", "Mobs cast Warp Breach growing and dealing Arcane AoE damage when near death. These mobs should be Feared/Stunned at approx 8-15% health to avoid Arcane AoE"}}, -- Mana Warp
-	[16539] = {{"Legion", "Vulnerable to Enslave Demon and Banish"}}, -- Homunculus
-	[16540] = {{"Legion", "Immune to all forms of Crown Control"}}, -- Shadow Pillager
-	[16544] = {{"Important", "Make sure that MT and OT are #1 and #2 on the threat meter as they are immune to taunt and can deal large damage to non-tank players"},
-				{"Important", "Mob will disarm highest aggro target and lowering that player's aggro on mob"}}, -- Ethereal Thief
-	[16545] = {{"PriorityTargets", "Stacking debuff on raid of 3% less intel/spirit per stack (Stacks up to 15)"},
-				{"Important", "Casts Transference (Magic debuff that transfers heals from one player onto mob)"},
-				{"Important", "Arcane Volley (Multi-target Arcane spell hitting at 2k per hit)"}}, -- Ethereal Spellfilcher
-	[16595] = {{"Important", "Immune to all forms of CC"},
-				{"Important", "Frontal Cleave (Avoid standing in front of mob unless you're its tank). If multiple mobs, each one should have its own tank and should be separated slightly to avoid double cleaves"}}, -- Fleshbeast
-	[16596] = {{"Important", "Gaping Maw (AoE Bleed effect to players in melee range)"},
-				{"Important", "Infectious Poison (10 yd range; AoE Nature DoT)"}}, -- Greater Fleshbeast
-	[17067] = {{"Legion", "Summoned by Phantom Guardsman"},
-				{"Important", "Applies Rend (Bleed) - these mobs can be OT or burned down with DoTs"}}, -- Phantom Hound
-	[17096] = {{"PriorityTargets", "Spawns every 10 seconds"}}, -- Astral Flare
-	[17167] = {{"PriorityTargets", "Last for 90 sec being despawning. Frost Resist gear helpful."},
-				{"Important", "Immune to frost damage"},
-				{"WARLOCK", "Vulnerable to Fear/Banish"}}, -- Conjured Elemental
-	[17229] = {{"PriorityTargets", "Respawns every ~45 seconds"},
-				{"Important", "After mob dies it places debuff on Terestian Illhoof which increases damage boss takes from players"},
-				{"PALADIN", "Immune to Turn Evil"}}, -- Kil'rek
-	[17248] = {{"PriorityTargets", "Appears on raid member during Terestian Illhoof fight; Destroy these ASAP!"}}, -- Demon Chains
-	[17261] = {{"Legion", ""}}, -- Restless Skeleton
-	[17267] = {{"Legion", ""}}, -- Fiendish Imp
-	[17283] = {{"Legion", ""}}, -- Astral Spark
+	[15547] = {{"kara_15547_01", "Important", "Charges furthest player & casts Fear (4 sec AoE Fear; Should be pulled away from packs that raid is not yet in combat with)", 10}}, -- Spectral Charger
+	[15548] = {{"kara_15548_01", "Legion", "", 10}}, -- Spectral Stallion
+	[15551] = {{"kara_15551_01", "PriorityTargets", "", 20},
+				{"kara_15551_02", "Interrupts", "Interrupt: Mend Pet (Heals Spectral Chargers & Stallions)", 10}}, -- Spectral Stable Hand
+	[16170] = {{"kara_16170_01", "Legion", "Stealthed Mob", 10}}, -- Coldmist Stalker
+	[16171] = {{"kara_16171_01", "Legion", "Except for patrols, this mob will be accompanied by 2 stealthed Coldmist Stalkers", 10}}, -- Coldmist Widow
+	[16173] = {{"kara_16173_01", "Important", "Casts AoE Spell Interrupt/Spell Lock", 20},
+				{"kara_16173_02", "TANK", "Due to AoE Spell Interrupt, keep mob away from casters", 10}}, -- Shadowbat
+	[16174] = {{"kara_16174_01", "Legion", "", 10}}, -- Greater Shadowbat
+	[16175] = {{"kara_16175_01", "Legion", "", 10}}, -- Vampiric Shadowbat
+	[16176] = {{"kara_16176_01", "Important", "Casts Howl of the Broken Hills (10 yd range; 5 min curse draining mana, energy rage)", 10}}, -- Shadowbeast
+	[16177] = {{"kara_16177_01", "Important", "Mob casts Cleave - only tank should be standing in front of mob!", 10}}, -- Dreadbeast
+	[16178] = {{"kara_16178_01", "Important", "Phasing (Similar ability as Warp Stalker, can keep mob visible with Hunter's Mark)", 10}}, -- Phase Hound
+	[16389] = {{"kara_16389_01", "Legion", "Weak melee mob", 10}}, -- Spectral Apprentice
+	[16406] = {{"kara_16406_01", "Important", "Due to their healing ability and coming with packs of Spectral Retainers, CC is a must for these mobs", 10}}, -- Phantom Attendant
+	[16407] = {{"kara_16407_01", "Legion", "Weak melee attack", 20},
+				{"kara_16407_02", "Important", "Casts Curse of Past Burdens (Reduces movement speed and strength by 70%)", 10}}, -- Spectral Servant
+	[16408] = {{"kara_16408_01", "Legion", "Mobs are immune to taunt and deal high melee DPS", 20},
+				{"kara_16408_02", "Important", "Casts Demoralizing Shout (Reduces nearby player attack power)", 10}}, -- Phantom Valet
+	[16409] = {{"kara_16409_01", "TANK", "Pull this mob with nearby group and use an AoE Taunt such Consecration or Thunder Clap", 20},
+				{"kara_16409_02", "Important", "AoE this mob and it's group down AFTER tank has picked up aggro on all engaged enemies to avoid many raid members taking damage", 10}}, -- Phantom Guest
+	[16410] = {{"kara_16410_01", "Important", "Casts a non dispellable Mind Control (Player that gets MC'd should be sheeped)", 20},
+				{"kara_16410_02", "Important", "IMMUNE to Shackle!", 10}}, -- Spectral Retainer
+	[16411] = {{"kara_16411_01", "Legion", "", 10}}, -- Spectral Chef
+	[16412] = {{"kara_16412_01", "Important", "Inflicts fire damage +2 sec knockdown", 10}}, -- Ghostly Baker
+	[16414] = {{"kara_16414_01", "Important", "Applies Drunken Skull Crack (40 yd range; 4 sec stun)", 30},
+				{"kara_16414_02", "Important", "Usually in packs of two that should be pulled separate from other mobs by main-tank and off-tank", 20},
+				{"kara_16414_03", "HEALER", "Target hit by Drunken Skull Crack will take high damage while debuff is active", 10}}, -- Ghostly Steward
+	[16415] = {{"kara_16415_01", "Legion", "Tanks should mark these targets so as to pull them individually", 20},
+				{"kara_16415_02", "Important", "Casts Brittle Bones on player (2 min debuff periodically removing all armor of one with debuff). Brittle Bones can only be removed by Paladin's Divine Shield, or ability absorbed with Shaman's Grounding Totem", 10}}, -- Skeletal Waiter
+	[16424] = {{"kara_16424_01", "Legion", "Ranged Mob vulnerable to Shackle", 10}}, -- Spectral Sentry
+	[16425] = {{"kara_16425_01", "Legion", "Can be shackled/stunned", 20},
+				{"kara_16425_02", "Important", "Shield Slam (Stuns player for 3 sec)", 10}}, -- Phantom Guardsman
+	[16459] = {{"kara_16459_01", "Important", "Alluring Aura (pre-tranform; reduces physical damage taken by 50%)", 40},
+				{"kara_16459_02", "Important", "Wipes debuffs at 50% when transforms into true form", 30},
+				{"kara_16459_03", "Important", "Bewitching Aura (post-transform; reduces magic damage taken by 50%)", 20},
+				{"kara_16459_04", "Important", "Banshee Wail (Short range AoE silence that is used when transformed)", 10}}, -- Wanton Hostess
+	[16460] = {{"kara_16460_01", "PriorityTargets", "", 40},
+				{"kara_16460_02", "WARLOCK", "Immune to Curse of Tongues", 30},
+				{"kara_16460_03", "Important", "Casts Impending Betrayal (Deals 3k damage after 10 sec)", 20},
+				{"kara_16460_04", "Important", "Wipes debuffs at 50% when transforms into true form", 10}}, -- Night Mistress
+	[16461] = {{"kara_16461_01", "Important", "AoE Seduce (Lasts 6 sec; OT should stand away from this mob and pickup when MT is seduced)", 20},
+				{"kara_16461_02", "Important", "Wipes debuffs at 50% when transforms into true form", 10}}, -- Concubine
+	[16468] = {{"kara_16468_01", "Legion", "", 10}}, -- Spectral Patron
+	[16470] = {{"kara_16470_01", "Important", "Immune to taunt/CC; Careful with use of AoE as this can result to pulling additional groups!", 10}}, -- Ghostly Philanthropist
+	[16471] = {{"kara_16471_01", "Legion", "Immune to taunt, turn undead, freeze trap, stuns and cyclone; Vulnerable to shackle", 30},
+				{"kara_16471_02", "Important", "When these mobs are in pairs, one should be shackled", 20},
+				{"kara_16471_03", "TANK", "Warrior should be MT and should cast Spell Reflect after receiving Frost Shock in order to spell reflect the stun part of the spell back to mob", 10}}, -- Skeletal Usher
+	[16472] = {{"kara_16472_01", "Important", "Immune to snare, shackle and stuns", 20},
+				{"kara_16472_02", "Important", "Should be disarmed by warrior/rogue", 10}}, -- Phantom Stagehand
+	[16473] = {{"kara_16473_01", "TANK", "Pull mob out of Spotlight as this will increase damage done by the one standing in spotlight", 30},
+				{"kara_16473_02", "Important", "Immune to freezing trap and shackle", 20},
+				{"kara_16473_03", "DAMAGE", "Stand in Spotlight to receive a damage boost", 10}}, -- Spectral Performer
+	[16481] = {{"kara_16481_01", "Legion", "", 10}}, -- Ghastly Haunt
+	[16482] = {{"kara_16482_01", "Legion", "Immune to Shackle & Stun", 10}}, -- Trapped Soul
+	[16485] = {{"kara_16485_01", "Important", "When these mobs come in packs, don't split DPS - fight them one at a time", 20},
+				{"kara_16485_02", "Important", "Player that receives Overload (Arcane debuff dealing increased AoE damage per tick) should run away from raid members", 10}}, -- Arcane Watchman
+	[16488] = {{"kara_16488_01", "PriorityTargets", "Upon death Loose Mana will restore player mana", 20},
+				{"kara_16488_02", "Important", "DPS mob through it's mana shield and mob will die when it runs out of mana", 10}}, -- Arcane Anomaly
+	[16489] = {{"kara_16489_01", "Advanced", "Strategy: Range pull nearby Mana-Feeders and have tank pull Chaotic Sentience away from raid members", 30},
+				{"kara_16489_02", "Important", "Applies Unstable Magic debuff to players (Increased spell damage done by 300 and spell damage taken by 600; Lasts 2 minutes)", 20},
+				{"kara_16489_03", "Important", "Immune to banish and stuns", 10}}, -- Chaotic Sentience
+	[16491] = {{"kara_16491_01", "Important", "Mobs are immune to most magic effects, including wands; use Physical damage attacks (even casters)", 10}}, -- Mana Feeder
+	[16492] = {{"kara_16492_01", "Important", "Casts Drain Mana (Channeled ability) - Best to defeat nearby Arcane Anomaly as Loose Mana will restore player mana upon its death helping with defeating this mob", 10}}, -- Syphoner
+	[16504] = {{"kara_16504_01", "TANK", "Kite mob during Fist of Stone (Hard/Slow hitting ability: +35% melee damage, -75% movement speed on Arcane Protector, -35% attack speed)", 50},
+				{"kara_16504_02", "Important", "During Return Fire deals an arcane ability depending upon what it announces:", 40},
+				{"kara_16504_03", "Legion", "EL-2S (Retaliates against spells)", 30},
+				{"kara_16504_04", "Legion", "EL-5R (Retaliates against ranged projectiles)", 20},
+				{"kara_16504_05", "Legion", "EL-7M (Retaliates against melee)", 10}}, -- Arcane Protector
+	[16525] = {{"kara_16525_01", "Legion", "Mob phases in and out. Use Detect Invisibility or Elixir of Detect Lesser Invisibility to continue to see this mob", 20},
+				{"kara_16525_02", "Important", "Vulnerable to Curse of Tongues, Shackle Undead, and Turn Undead", 10}}, -- Spell Shade
+	[16526] = {{"kara_16526_01", "Important", "Burn these mobs first; the volleys have a 20 yd range", 20},
+				{"kara_16526_02", "Important", "Immune to Shackle Undead & Curse of Tongues", 10}}, -- Sorcerous Shade
+	[16529] = {{"kara_16529_01", "PriorityTargets", "Focus on this mob before Mana Warps due to its Arcane Volley AoE ability", 20},
+				{"kara_16529_02", "Important", "Immune to Banish", 10}}, -- Magical Horror
+	[16530] = {{"kara_16530_01", "Important", "Mobs cast Warp Breach growing and dealing Arcane AoE damage when near death. These mobs should be Feared/Stunned at approx 8-15% health to avoid Arcane AoE", 10}}, -- Mana Warp
+	[16539] = {{"kara_16539_01", "Legion", "Vulnerable to Enslave Demon and Banish", 10}}, -- Homunculus
+	[16540] = {{"kara_16540_01", "Legion", "Immune to all forms of Crown Control", 10}}, -- Shadow Pillager
+	[16544] = {{"kara_16544_01", "Important", "Make sure that MT and OT are #1 and #2 on the threat meter as they are immune to taunt and can deal large damage to non-tank players", 20},
+				{"kara_16544_02", "Important", "Mob will disarm highest aggro target and lowering that player's aggro on mob", 10}}, -- Ethereal Thief
+	[16545] = {{"kara_16545_01", "PriorityTargets", "Stacking debuff on raid of 3% less intel/spirit per stack (Stacks up to 15)", 30},
+				{"kara_16545_02", "Important", "Casts Transference (Magic debuff that transfers heals from one player onto mob)", 20},
+				{"kara_16545_03", "Important", "Arcane Volley (Multi-target Arcane spell hitting at 2k per hit)", 10}}, -- Ethereal Spellfilcher
+	[16595] = {{"kara_16595_01", "Important", "Immune to all forms of CC", 20},
+				{"kara_16595_02", "Important", "Frontal Cleave (Avoid standing in front of mob unless you're its tank). If multiple mobs, each one should have its own tank and should be separated slightly to avoid double cleaves", 10}}, -- Fleshbeast
+	[16596] = {{"kara_16596_01", "Important", "Gaping Maw (AoE Bleed effect to players in melee range)", 20},
+				{"kara_16596_02", "Important", "Infectious Poison (10 yd range; AoE Nature DoT)", 10}}, -- Greater Fleshbeast
+	[17067] = {{"kara_17067_01", "Legion", "Summoned by Phantom Guardsman", 20},
+				{"kara_17067_02", "Important", "Applies Rend (Bleed) - these mobs can be OT or burned down with DoTs", 10}}, -- Phantom Hound
+	[17096] = {{"kara_17096_01", "PriorityTargets", "Spawns every 10 seconds", 10}}, -- Astral Flare
+	[17167] = {{"kara_17167_01", "PriorityTargets", "Last for 90 sec being despawning. Frost Resist gear helpful.", 30},
+				{"kara_17167_02", "Important", "Immune to frost damage", 20},
+				{"kara_17167_03", "WARLOCK", "Vulnerable to Fear/Banish", 10}}, -- Conjured Elemental
+	[17229] = {{"kara_17229_01", "PriorityTargets", "Respawns every ~45 seconds", 30},
+				{"kara_17229_02", "Important", "After mob dies it places debuff on Terestian Illhoof which increases damage boss takes from players", 20},
+				{"kara_17229_03", "PALADIN", "Immune to Turn Evil", 10}}, -- Kil'rek
+	[17248] = {{"kara_17248_01", "PriorityTargets", "Appears on raid member during Terestian Illhoof fight; Destroy these ASAP!", 10}}, -- Demon Chains
+	[17261] = {{"kara_17261_01", "Legion", "", 10}}, -- Restless Skeleton
+	[17267] = {{"kara_17267_01", "Legion", "", 10}}, -- Fiendish Imp
+	[17283] = {{"kara_17283_01", "Legion", "", 10}}, -- Astral Spark
 
 
 	------- Raid: Zul'Aman -----------------
