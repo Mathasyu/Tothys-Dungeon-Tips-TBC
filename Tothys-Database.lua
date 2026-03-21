@@ -1076,12 +1076,60 @@ addon.contentCatalog = addon.contentCatalog or {
 					enUS = "Sunwell Plateau",
 					deDE = "Sunwell Plateau",
 				},
+				npcNames = {
+					[24850] = { enUS = "Kalecgos" },
+					[24882] = { enUS = "Brutallus" },
+					[24892] = { enUS = "Sathrovarr the Corruptor" },
+					[25038] = { enUS = "Felmyst" },
+					[25165] = { enUS = "Lady Sacrolash" },
+					[25166] = { enUS = "Grand Warlock Alythess" },
+					[25268] = { enUS = "Unyielding Dead" },
+					[25315] = { enUS = "Kil'jaeden" },
+					[25363] = { enUS = "Sunblade Cabalist" },
+					[25367] = { enUS = "Sunblade Arch Mage" },
+					[25368] = { enUS = "Sunblade Slayer" },
+					[25369] = { enUS = "Sunblade Vindicator" },
+					[25370] = { enUS = "Sunblade Dusk Priest" },
+					[25371] = { enUS = "Sunblade Dawn Priest" },
+					[25372] = { enUS = "Sunblade Scout" },
+					[25373] = { enUS = "Shadowsword Soulbinder" },
+					[25483] = { enUS = "Shadowsword Manafiend" },
+					[25484] = { enUS = "Shadowsword Assassin" },
+					[25485] = { enUS = "Shadowsword Deathbringer" },
+					[25486] = { enUS = "Shadowsword Vanquisher" },
+					[25502] = { enUS = "Shield Orb" },
+					[25506] = { enUS = "Shadowsword Lifeshaper" },
+					[25507] = { enUS = "Sunblade Protector" },
+					[25508] = { enUS = "Shadowsword Guardian" },
+					[25509] = { enUS = "Priestess of Torment" },
+					[25588] = { enUS = "Hand of the Deceiver" },
+					[25591] = { enUS = "Painbringer" },
+					[25592] = { enUS = "Doomfire Destroyer" },
+					[25593] = { enUS = "Apocalypse Guard" },
+					[25595] = { enUS = "Chaos Gazer" },
+					[25597] = { enUS = "Oblivion Mage" },
+					[25598] = { enUS = "Volatile Felfire Fiend" },
+					[25599] = { enUS = "Cataclysm Hound" },
+					[25708] = { enUS = "Sinister Reflection" },
+					[25741] = { enUS = "M'uru" },
+					[25744] = { enUS = "Dark Fiend" },
+					[25772] = { enUS = "Void Sentinel" },
+					[25798] = { enUS = "Shadowsword Berserker" },
+					[25799] = { enUS = "Shadowsword Fury Mage" },
+					[25824] = { enUS = "Void Spawn" },
+					[25837] = { enUS = "Shadowsword Commander" },
+					[25840] = { enUS = "Entropius" },
+					[25851] = { enUS = "Volatile Fiend" },
+					[25867] = { enUS = "Sunblade Dragonhawk" },
+					[25948] = { enUS = "Doomfire Shard" },
+					[26101] = { enUS = "Fire Fiend" },
+				},
 				npcIDs = {
 					24850, 24892, 24882, 25038, 25166, 25165, 25741, 25840, 25315, 25268,
-					25363, 25367, 25368, 25369, 25370, 25371, 25372, 25373, 25374, 25375,
-					25376, 25377, 25378, 25379, 25380, 25381, 25382, 25383, 25384, 25385,
-					25386, 25387, 25388, 25389, 25390, 25391, 25392, 25393, 25394, 25395,
-					25396, 25397, 25398, 25399, 25879, 25955,
+					25363, 25367, 25368, 25369, 25370, 25371, 25372, 25373, 25483, 25484,
+					25485, 25486, 25502, 25506, 25507, 25508, 25509, 25588, 25591, 25592,
+					25593, 25595, 25597, 25598, 25599, 25708, 25744, 25772, 25798, 25799,
+					25824, 25837, 25851, 25867, 25948, 26101,
 				},
 			},
 		},
@@ -2121,54 +2169,54 @@ tipsMap_enUS = {
 	------- Raid: Sunwell Plateau ----------
 
 	---Bosses
-	[24850] = {{"Important", ""}}, -- Kalecgos
-	[24892] = {{"Important", ""}}, -- Sathrovarr the Corruptor
-	[24882] = {{"Important", ""}}, -- Brutallus
-	[25038] = {{"Important", ""}}, -- Felmyst
-	[25166] = {{"Important", ""}}, -- Grand Warlock Alythess
-	[25165] = {{"Important", ""}}, -- Lady Sacrolash
-	[25741] = {{"Important", ""}}, -- M'uru
-	[25840] = {{"Important", ""}}, -- Entropius
-	[25315] = {{"Important", ""}}, -- Kil'jaeden <The Deceiver>
+	[24850] = {{"sunwell_24850_01", "Important", "", 10}}, -- Kalecgos
+	[24892] = {{"sunwell_24892_01", "Important", "", 10}}, -- Sathrovarr the Corruptor
+	[24882] = {{"sunwell_24882_01", "Important", "", 10}}, -- Brutallus
+	[25038] = {{"sunwell_25038_01", "Important", "", 10}}, -- Felmyst
+	[25166] = {{"sunwell_25166_01", "Important", "", 10}}, -- Grand Warlock Alythess
+	[25165] = {{"sunwell_25165_01", "Important", "", 10}}, -- Lady Sacrolash
+	[25741] = {{"sunwell_25741_01", "Important", "", 10}}, -- M'uru
+	[25840] = {{"sunwell_25840_01", "Important", "", 10}}, -- Entropius
+	[25315] = {{"sunwell_25315_01", "Important", "", 10}}, -- Kil'jaeden <The Deceiver>
 
 	---Trash Mobs
-	[25268] = {{"Legion", ""}}, -- Unyielding Dead
-	[25363] = {{"Important", ""}}, -- Sunblade Cabalist
-	[25367] = {{"Important", ""}}, -- Sunblade Arch Mage
-	[25368] = {{"Important", ""}}, -- Sunblade Slayer
-	[25369] = {{"Important", ""}}, -- Sunblade Vindicator
-	[25370] = {{"Important", ""}}, -- Sunblade Dusk Priest
-	[25371] = {{"Important", ""}}, -- Sunblade Dawn Priest
-	[25372] = {{"Important", ""}}, -- Sunblade Scout
-	[25373] = {{"Important", ""}}, -- Shadowsword Soulbinder
-	[25483] = {{"Important", ""}}, -- Shadowsword Manafiend
-	[25484] = {{"Important", ""}}, -- Shadowsword Assassin
-	[25485] = {{"Important", ""}}, -- Shadowsword Deathbringer
-	[25486] = {{"Important", ""}}, -- Shadowsword Vanquisher
-	[25502] = {{"Important", ""}}, -- Shield Orb
-	[25506] = {{"Important", ""}}, -- Shadowsword Lifeshaper
-	[25507] = {{"Important", ""}}, -- Sunblade Protector
-	[25508] = {{"Important", ""}}, -- Shadowsword Guardian
-	[25509] = {{"Important", ""}}, -- Priestess of Torment
-	[25588] = {{"Important", ""}}, -- Hand of the Deceiver
-	[25591] = {{"Important", ""}}, -- Painbringer
-	[25592] = {{"Important", ""}}, -- Doomfire Destroyer
-	[25593] = {{"Important", ""}}, -- Apocalypse Guard
-	[25595] = {{"Important", ""}}, -- Chaos Gazer
-	[25597] = {{"Important", ""}}, -- Oblivion Mage
-	[25598] = {{"Important", ""}}, -- Volatile Felfire Fiend
-	[25599] = {{"Important", ""}}, -- Cataclysm Hound
-	[25708] = {{"Important", ""}}, -- Sinister Reflection
-	[25744] = {{"Important", ""}}, -- Dark Fiend
-	[25772] = {{"Important", ""}}, -- Void Sentinel
-	[25798] = {{"Important", ""}}, -- Shadowsword Berserker
-	[25799] = {{"Important", ""}}, -- Shadowsword Fury Mage
-	[25824] = {{"Important", ""}}, -- Void Spawn
-	[25837] = {{"Important", ""}}, -- Shadowsword Commander
-	[25851] = {{"Important", ""}}, -- Volatile Fiend
-	[25867] = {{"Important", ""}}, -- Sunblade Dragonhawk
-	[25948] = {{"Important", ""}}, -- Doomfire Shard
-	[26101] = {{"Important", ""}}, -- Fire Fiend
+	[25268] = {{"sunwell_25268_01", "Legion", "", 10}}, -- Unyielding Dead
+	[25363] = {{"sunwell_25363_01", "Important", "", 10}}, -- Sunblade Cabalist
+	[25367] = {{"sunwell_25367_01", "Important", "", 10}}, -- Sunblade Arch Mage
+	[25368] = {{"sunwell_25368_01", "Important", "", 10}}, -- Sunblade Slayer
+	[25369] = {{"sunwell_25369_01", "Important", "", 10}}, -- Sunblade Vindicator
+	[25370] = {{"sunwell_25370_01", "Important", "", 10}}, -- Sunblade Dusk Priest
+	[25371] = {{"sunwell_25371_01", "Important", "", 10}}, -- Sunblade Dawn Priest
+	[25372] = {{"sunwell_25372_01", "Important", "", 10}}, -- Sunblade Scout
+	[25373] = {{"sunwell_25373_01", "Important", "", 10}}, -- Shadowsword Soulbinder
+	[25483] = {{"sunwell_25483_01", "Important", "", 10}}, -- Shadowsword Manafiend
+	[25484] = {{"sunwell_25484_01", "Important", "", 10}}, -- Shadowsword Assassin
+	[25485] = {{"sunwell_25485_01", "Important", "", 10}}, -- Shadowsword Deathbringer
+	[25486] = {{"sunwell_25486_01", "Important", "", 10}}, -- Shadowsword Vanquisher
+	[25502] = {{"sunwell_25502_01", "Important", "", 10}}, -- Shield Orb
+	[25506] = {{"sunwell_25506_01", "Important", "", 10}}, -- Shadowsword Lifeshaper
+	[25507] = {{"sunwell_25507_01", "Important", "", 10}}, -- Sunblade Protector
+	[25508] = {{"sunwell_25508_01", "Important", "", 10}}, -- Shadowsword Guardian
+	[25509] = {{"sunwell_25509_01", "Important", "", 10}}, -- Priestess of Torment
+	[25588] = {{"sunwell_25588_01", "Important", "", 10}}, -- Hand of the Deceiver
+	[25591] = {{"sunwell_25591_01", "Important", "", 10}}, -- Painbringer
+	[25592] = {{"sunwell_25592_01", "Important", "", 10}}, -- Doomfire Destroyer
+	[25593] = {{"sunwell_25593_01", "Important", "", 10}}, -- Apocalypse Guard
+	[25595] = {{"sunwell_25595_01", "Important", "", 10}}, -- Chaos Gazer
+	[25597] = {{"sunwell_25597_01", "Important", "", 10}}, -- Oblivion Mage
+	[25598] = {{"sunwell_25598_01", "Important", "", 10}}, -- Volatile Felfire Fiend
+	[25599] = {{"sunwell_25599_01", "Important", "", 10}}, -- Cataclysm Hound
+	[25708] = {{"sunwell_25708_01", "Important", "", 10}}, -- Sinister Reflection
+	[25744] = {{"sunwell_25744_01", "Important", "", 10}}, -- Dark Fiend
+	[25772] = {{"sunwell_25772_01", "Important", "", 10}}, -- Void Sentinel
+	[25798] = {{"sunwell_25798_01", "Important", "", 10}}, -- Shadowsword Berserker
+	[25799] = {{"sunwell_25799_01", "Important", "", 10}}, -- Shadowsword Fury Mage
+	[25824] = {{"sunwell_25824_01", "Important", "", 10}}, -- Void Spawn
+	[25837] = {{"sunwell_25837_01", "Important", "", 10}}, -- Shadowsword Commander
+	[25851] = {{"sunwell_25851_01", "Important", "", 10}}, -- Volatile Fiend
+	[25867] = {{"sunwell_25867_01", "Important", "", 10}}, -- Sunblade Dragonhawk
+	[25948] = {{"sunwell_25948_01", "Important", "", 10}}, -- Doomfire Shard
+	[26101] = {{"sunwell_26101_01", "Important", "", 10}}, -- Fire Fiend
 
 
 	------- Dungeon: Hellfire Ramparts --------------
