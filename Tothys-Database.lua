@@ -59,15 +59,30 @@ addon.contentCatalog = addon.contentCatalog or {
 					deDE = "The Blood Furnace",
 				},
 				npcNames = {
+					[17370] = { enUS = "Laughing Skull Enforcer" },
+					[17371] = { enUS = "Shadowmoon Warlock" },
 					[17377] = { enUS = "Keli'dan the Breaker" },
 					[17380] = { enUS = "Broggok" },
 					[17381] = { enUS = "The Maker" },
+					[17395] = { enUS = "Shadowmoon Summoner" },
+					[17397] = { enUS = "Shadowmoon Adept" },
+					[17398] = { enUS = "Nascent Fel Orc" },
+					[17399] = { enUS = "Seductress" },
+					[17400] = { enUS = "Felguard Annihilator" },
+					[17401] = { enUS = "Felhound Manastalker" },
+					[17414] = { enUS = "Shadowmoon Technician" },
 					[17429] = { enUS = "Fel Orc Neophyte" },
 					[17477] = { enUS = "Hellfire Imp" },
+					[17491] = { enUS = "Laughing Skull Rogue" },
+					[17624] = { enUS = "Laughing Skull Warden" },
+					[17626] = { enUS = "Laughing Skull Legionnaire" },
+					[17653] = { enUS = "Shadowmoon Channeler" },
+					[18894] = { enUS = "Felguard Brute" },
 					[19016] = { enUS = "Hellfire Familiar" },
 				},
 				npcIDs = {
-					17377, 17380, 17381, 17429, 17477, 19016,
+					17370, 17371, 17377, 17380, 17381, 17395, 17397, 17398, 17399, 17400,
+					17401, 17414, 17429, 17477, 17491, 17624, 17626, 17653, 18894, 19016,
 				},
 			},
 			auchenai_crypts = {
@@ -296,11 +311,44 @@ addon.contentCatalog = addon.contentCatalog or {
 					enUS = "The Shattered Halls",
 					deDE = "The Shattered Halls",
 				},
+				npcNames = {
+					[16507] = { enUS = "Shattered Hand Sentry" },
+					[16523] = { enUS = "Shattered Hand Savage" },
+					[16593] = { enUS = "Shattered Hand Brawler" },
+					[16594] = { enUS = "Shadowmoon Acolyte" },
+					[16699] = { enUS = "Shattered Hand Reaver" },
+					[16700] = { enUS = "Shattered Hand Legionnaire" },
+					[16704] = { enUS = "Shattered Hand Sharpshooter" },
+					[16807] = { enUS = "Grand Warlock Nethekurse" },
+					[16808] = { enUS = "Warchief Kargath Bladefist" },
+					[16809] = { enUS = "Warbringer O'mrogg" },
+					[17083] = { enUS = "Fel Orc Convert" },
+					[17301] = { enUS = "Shattered Hand Executioner" },
+					[17356] = { enUS = "Creeping Ooze" },
+					[17357] = { enUS = "Creeping Oozeling" },
+					[17420] = { enUS = "Shattered Hand Heathen" },
+					[17427] = { enUS = "Shattered Hand Archer" },
+					[17461] = { enUS = "Shattered Hand Blood Guard" },
+					[17462] = { enUS = "Shattered Hand Zealot" },
+					[17464] = { enUS = "Shattered Hand Gladiator" },
+					[17465] = { enUS = "Shattered Hand Centurion" },
+					[17578] = { enUS = "Hellfire Training Dummy" },
+					[17621] = { enUS = "Heathen Guard" },
+					[17622] = { enUS = "Sharpshooter Guard" },
+					[17623] = { enUS = "Reaver Guard" },
+					[17669] = { enUS = "Rabid Warhound" },
+					[17670] = { enUS = "Shattered Hand Houndmaster" },
+					[17671] = { enUS = "Shattered Hand Champion" },
+					[17693] = { enUS = "Shattered Hand Scout" },
+					[17694] = { enUS = "Shadowmoon Darkcaster" },
+					[17695] = { enUS = "Shattered Hand Assassin" },
+					[20923] = { enUS = "Blood Guard Porung" },
+				},
 				npcIDs = {
 					16807, 20923, 16809, 16808, 17621, 17622, 17623, 16507, 16523, 16593,
-					16594, 16699, 16700, 16704, 17083, 17420, 17461, 17624, 17626, 17653,
-					17654, 17655, 17656, 17657, 17658, 19412, 19413, 19414, 19415, 19632,
-					20060,
+					16594, 16699, 16700, 16704, 17083, 17301, 17356, 17357, 17420, 17427,
+					17461, 17462, 17464, 17465, 17578, 17669, 17670, 17671, 17693, 17694,
+					17695,
 				},
 			},
 			slave_pens = {
@@ -1672,62 +1720,64 @@ tipsMap_enUS = {
 	------- Dungeon: The Blood Furnace --------------
 
 	---Bosses
-	[17381] = {{"Legion", "Players should spread at least 8 yds apart to avoid multiple players being hit with Exploding Beaker (Nature damage +AoE knockback)"},
-				{"Important", "Boss will Mind Control random player. The MC'd player should be CC'd asap. If MC is on the tank, the boss will go straight for the healer!"},
-				{"Important", "Boss will spew an AoE Acid Spray within melee range"}}, 
+		[17381] = {{"bloodfurnace_17381_01", "Legion", "Players should spread at least 8 yds apart to avoid multiple players being hit with Exploding Beaker (Nature damage +AoE knockback)", 30},
+				{"bloodfurnace_17381_02", "Important", "Boss will Mind Control random player. The MC'd player should be CC'd asap. If MC is on the tank, the boss will go straight for the healer!", 20},
+				{"bloodfurnace_17381_03", "Important", "Boss will spew an AoE Acid Spray within melee range", 10}}, 
 				-- The Maker
-	[17380] = {{"TANK", "Kite boss out of Poison Cloud"},
-				{"Important", "Only the tank should stand in front of boss due to boss' Slime Spray frontal cone attack"},
-				{"HEALER", "Watch for players hit by Poison Bolt as this is a Nature damage DoT"}}, 
+		[17380] = {{"bloodfurnace_17380_01", "TANK", "Kite boss out of Poison Cloud", 30},
+				{"bloodfurnace_17380_02", "Important", "Only the tank should stand in front of boss due to boss' Slime Spray frontal cone attack", 20},
+				{"bloodfurnace_17380_03", "HEALER", "Watch for players hit by Poison Bolt as this is a Nature damage DoT", 10}}, 
 				-- Broggok
-	[17429] = {{"Legion", "4 waves, first wave activated by clicking Cell Door Lever"},
-				{"TANK", "Tank should be the closest one to the cage that is to open. Pop an AoE high threat ability (such as Consecration, Thunder Clap, Swipe as Bear Druid to pull adds to you."},
-				{"Important", "Mobs can be feared/trapped/slowed, which allows players to receive less damage from mass of orcs"},
-				{"Important", "When mob from each wave dies, the next cell door will automatically open. Boss' door will open after last orc from 4th wave goes down."}}, -- Fel Orc Neophyte <Broggok's Buddies>
-	[17377] = {{"Important", "Spread out as much as possible to mitigate group damage from Shadow Bolt Volley (30 yd shadow AoE - mostly helpful for ranged players/healer)"},
-				{"Important", "Run away when you hear boss saying 'CLOSER...COME CLOSER AND BURN' as he is about to do a HEAVY Fire damage AoE"}}, 
+		[17429] = {{"bloodfurnace_17429_01", "Legion", "4 waves, first wave activated by clicking Cell Door Lever", 40},
+				{"bloodfurnace_17429_02", "TANK", "Tank should be the closest one to the cage that is to open. Pop an AoE high threat ability (such as Consecration, Thunder Clap, Swipe as Bear Druid to pull adds to you.", 30},
+				{"bloodfurnace_17429_03", "Important", "Mobs can be feared/trapped/slowed, which allows players to receive less damage from mass of orcs", 20},
+				{"bloodfurnace_17429_04", "Important", "When mob from each wave dies, the next cell door will automatically open. Boss' door will open after last orc from 4th wave goes down.", 10}}, 
+				-- Fel Orc Neophyte <Broggok's Buddies>
+		[17377] = {{"bloodfurnace_17377_01", "Important", "Spread out as much as possible to mitigate group damage from Shadow Bolt Volley (30 yd shadow AoE - mostly helpful for ranged players/healer)", 20},
+				{"bloodfurnace_17377_02", "Important", "Run away when you hear boss saying 'CLOSER...COME CLOSER AND BURN' as he is about to do a HEAVY Fire damage AoE", 10}}, 
 				-- Keli'dan the Breaker
-	[17653] = {{"Important", "After Adds go down, boss will come after group"}}, 
+		[17653] = {{"bloodfurnace_17653_01", "Important", "After Adds go down, boss will come after group", 10}}, 
 				-- Shadowmoon Channeler
 
 	---Trash Mobs
-	[17370] = {{"Important", "Shield Bash will stun player for 2 sec"}}, -- Laughing Skull Enforcer
-	[17371] = {{"Important", "Affliction Warlock-Type Mob dealing Shadow Damage"},
-				{"Important", "Dispel Curse of Tongues from player (Increases casting time of abilities)"}}, 
+		[17370] = {{"bloodfurnace_17370_01", "Important", "Shield Bash will stun player for 2 sec", 10}}, -- Laughing Skull Enforcer
+		[17371] = {{"bloodfurnace_17371_01", "Important", "Affliction Warlock-Type Mob dealing Shadow Damage", 20},
+				{"bloodfurnace_17371_02", "Important", "Dispel Curse of Tongues from player (Increases casting time of abilities)", 10}}, 
 				-- Shadowmoon Warlock
-	[17395] = {{"PriorityTargets", "Warlock-Type Mob dealing Fire damage that summons pets"},
-				{"Important", "Interrupt: Summon Felhound Manastalker/Seductress"}}, -- Shadowmoon Summoner
-	[17397] = {{"Important", "When dealing with multiples of these it is best to CC one of them as Thrash can be have some very hard hitting damage"}}, 
+		[17395] = {{"bloodfurnace_17395_01", "PriorityTargets", "Warlock-Type Mob dealing Fire damage that summons pets", 20},
+					{"bloodfurnace_17395_02", "Important", "Interrupt: Summon Felhound Manastalker/Seductress", 10}}, -- Shadowmoon Summoner
+		[17397] = {{"bloodfurnace_17397_01", "Important", "When dealing with multiples of these it is best to CC one of them as Thrash can be have some very hard hitting damage", 10}}, 
 				-- Shadowmoon Adept
-	[17398] = {{"Important", "Deals AoE Damage to melee in form of Stomp and also uses Concussion Blow (5 sec stun)"}}, 
+		[17398] = {{"bloodfurnace_17398_01", "Important", "Deals AoE Damage to melee in form of Stomp and also uses Concussion Blow (5 sec stun)", 10}}, 
 				-- Nascent Fel Orc
-	[17399] = {{"Important", "Charms players for 6 sec (magic can be dispelled)"},
-				{"Important", "If no one can dispel charm, the charmed player should be CC'd or stunned"}}, 
+		[17399] = {{"bloodfurnace_17399_01", "Important", "Charms players for 6 sec (magic can be dispelled)", 20},
+				{"bloodfurnace_17399_02", "Important", "If no one can dispel charm, the charmed player should be CC'd or stunned", 10}}, 
 				-- Seductress
-	[17400] = {{"Important", "Pull these packs one at a time. They deal VERY high damage."}}, -- Felguard Annihilator
-	[17401] = {{"Important", "Will Spell Lock casters & burn mana users"},
-				{"PALADIN", "If tanking, can use Seal of Wisdom after sufficient threat has been built up"}}, 
+		[17400] = {{"bloodfurnace_17400_01", "Important", "Pull these packs one at a time. They deal VERY high damage.", 10}}, -- Felguard Annihilator
+		[17401] = {{"bloodfurnace_17401_01", "Important", "Will Spell Lock casters & burn mana users", 20},
+				{"bloodfurnace_17401_02", "PALADIN", "If tanking, can use Seal of Wisdom after sufficient threat has been built up", 10}}, 
 				-- Felhound Manastalker
-	[17414] = {{"Important", "Players should spread out when dealing with this mob to avoid AoE Fire damage from Throw Dynamite"},
-				{"Important", "These mobs will also place Proximity Mines on the ground. Avoid these mines! These can be cleared by Rogues, Hunters and Warlocks"}, 
-				{"ROGUE", "Use Disarm Trap to deactivate Proximity Mines"},
-				{"HUNTER", "Using Eye of the Beast can allow your pet to trigger mines (esp helpful if using pet with high stamina)"},
-				{"WARLOCK", "Use your Eye of Kilrogg to clear mines ahead of group after a pull (may aggro mobs, so be careful"}, 
-				{"MAGE", "Use Fire Ward to trigger Proximity Mines"},
-				{"Defensives", "Mobs will cast a silence on player. If Healer is hit by 5 sec silence, Tank may need to pop extra defensive CDs"}},
+		[17414] = {{"bloodfurnace_17414_01", "Important", "Players should spread out when dealing with this mob to avoid AoE Fire damage from Throw Dynamite", 70},
+				{"bloodfurnace_17414_02", "Important", "These mobs will also place Proximity Mines on the ground. Avoid these mines! These can be cleared by Rogues, Hunters and Warlocks", 60}, 
+				{"bloodfurnace_17414_03", "ROGUE", "Use Disarm Trap to deactivate Proximity Mines", 50},
+				{"bloodfurnace_17414_04", "HUNTER", "Using Eye of the Beast can allow your pet to trigger mines (esp helpful if using pet with high stamina)", 40},
+				{"bloodfurnace_17414_05", "WARLOCK", "Use your Eye of Kilrogg to clear mines ahead of group after a pull (may aggro mobs, so be careful", 30}, 
+				{"bloodfurnace_17414_06", "MAGE", "Use Fire Ward to trigger Proximity Mines", 20},
+				{"bloodfurnace_17414_07", "Defensives", "Mobs will cast a silence on player. If Healer is hit by 5 sec silence, Tank may need to pop extra defensive CDs", 10}},
 				-- Shadowmoon Technician
-	[17477] = {{"Important", "Imp that deals Fire damage"}}, -- Hellfire Imp
-	[17491] = {{"Legion", "~6-7 mobs of this type will be found in this instance"},
-				{"Important", "These are stealthed mobs that can be exposed by a Hunter's Flare. DPS should avoid running ahead of tank"},
-				{"Important", "Dispel Poison from player (Nature DoT over 15 sec}"}, 
-				{"Important", "If tank gets hit by Kidney Shot (stun), DPS should slow/kite mob until tank can get back the aggro"}},
-				-- Laughing Skull Rogue
-	[17624] = {{"Legion", "Buffs allies w/its Battle Shout"}}, -- Laughing Skull Warden
-	[17626] = {{"Important", "Uppercut inflicts weapon damage +knockback - Tank should have back to the wall, or know place they will be knocked back won't pull unwanted mobs"}}, 
-				-- Laughing Skull Legionnaire
-	[18894] = {{"Important", "Uppercut inflicts weapon damage +knockback - Tank should have back to the wall, or know place they will be knocked back won't pull unwanted mobs"}}, 
-				-- Felguard Brute
-	[19016] = {{"Important", "Imp that deals Fire damage"}}, -- Hellfire Familiar
+		[17477] = {{"bloodfurnace_17477_01", "Important", "Imp that deals Fire damage", 10}},
+		        -- Hellfire Imp
+		[17491] = {{"bloodfurnace_17491_01", "Legion", "~6-7 mobs of this type will be found in this instance", 40},
+					{"bloodfurnace_17491_02", "Important", "These are stealthed mobs that can be exposed by a Hunter's Flare. DPS should avoid running ahead of tank", 30},
+					{"bloodfurnace_17491_03", "Important", "Dispel Poison from player (Nature DoT over 15 sec}", 20}, 
+					{"bloodfurnace_17491_04", "Important", "If tank gets hit by Kidney Shot (stun), DPS should slow/kite mob until tank can get back the aggro", 10}},
+					-- Laughing Skull Rogue
+		[17624] = {{"bloodfurnace_17624_01", "Legion", "Buffs allies w/its Battle Shout", 10}}, -- Laughing Skull Warden
+		[17626] = {{"bloodfurnace_17626_01", "Important", "Uppercut inflicts weapon damage +knockback - Tank should have back to the wall, or know place they will be knocked back won't pull unwanted mobs", 10}}, 
+					-- Laughing Skull Legionnaire
+		[18894] = {{"bloodfurnace_18894_01", "Important", "Uppercut inflicts weapon damage +knockback - Tank should have back to the wall, or know place they will be knocked back won't pull unwanted mobs", 10}}, 
+					-- Felguard Brute
+		[19016] = {{"bloodfurnace_19016_01", "Important", "Imp that deals Fire damage", 10}}, -- Hellfire Familiar
 
 
 	------- Dungeon: The Shattered Halls ------------
