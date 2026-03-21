@@ -1,4 +1,4 @@
-   # Kiesel Dungeon Tool Plan
+# Kiesel Dungeon Tool Plan
 
 ## Current direction
 
@@ -10,7 +10,8 @@ The addon is moving from a single flat tip database toward a structured content 
 - instance-wide notes
 - browser-only instance details
 - localized content
-- a future user override layer that does not modify shipped addon data
+- a user override layer that does not modify shipped addon data
+- locale-scoped user data tied to the language selected inside the addon
 
 The current visible addon name is `Kiesel Dungeon Tool`.
 Internal file names and legacy identifiers can remain unchanged for now.
@@ -35,47 +36,72 @@ An instance may still contain multiple `mapIDs`.
 
 - locale-aware NPC tip lookup with `enUS` fallback
 - separate `Content Browser` config subpage
-- separate `Editor` config subpage
+- separate `Dungeon Editor` config subpage
+- separate `Tip Editor` config subpage
 - separate `Info` config subpage
 - hardcoded content catalog groundwork
 - broad TBC catalog coverage for raids and dungeons
 - instance lookup via `mapID -> instanceKey`
 - mixed support for old and new tip formats
 - weighted tips in the new format
+- `tipsMap_enUS` fully migrated to the new shipped format
 - instance info display in the main frame
 - browser preview for instance info and NPC tips
 - browser-only instance detail section for travel, attunement, extra notes, and lore
 - browser selection mirrored into the main frame
 - role/class filter refactor
+- default config aligned to the current intended player-facing setup:
+  - all categories on except `Fluff`
+  - `MYROLEONLY` off
+  - `MYCLASSONLY` off
+  - all explicit role/class filters on
+  - font size `13`
+  - language `Auto`
 - main tip window scrollbar
-- SavedVariables groundwork for a future user override layer
+- frame show/hide via config and frame header controls
+- SavedVariables user data layer groundwork
 - working editor flows for personal NPC tips
-- first editor controls for base NPC tips
+- working editor flows for personal instance notes
+- working editor controls for shipped NPC tips
+- verification script for legacy DB vs current DB vs catalog IDs
 
 ## Next planned implementation steps
 
-1. Keep the config layout stable and scrollable.
-2. Expand the hardcoded `contentCatalog` beyond the current test instance.
-3. Keep expanding `Classic` metadata as content is added there.
-4. Gradually migrate shipped tips from the legacy format to the new weighted format.
-5. Expand the separate user data layer for:
-   - tip overrides
-   - disabled shipped tips
-   - user-added NPC tips
-   - user-added instance notes
-6. Add reset actions:
-   - single tip
+1. Keep the config layout stable and scrollable as more editor controls are added.
+2. Finish documenting and validating the current TBC data model and workflows.
+3. Expand `Classic` metadata and content as work begins there.
+4. Extend shipped instance-tip editing so `Dungeon Editor` can handle shipped instance info as well as personal notes.
+5. Treat browser-only dungeon extra details similarly to base tips:
+   - editable in `Dungeon Editor`
+   - overrideable without changing shipped addon data
+   - resettable back to shipped state
+6. Add broader reset actions in the UI:
    - whole NPC
    - whole instance
    - all user data
-7. Add editor workflows only after the user data layer is stable.
+7. Extend validation scripts:
+   - per-instance catalog vs shipped DB checks
+   - catalog IDs without tips
+   - tip IDs without catalog entries
+   - optional later comparison with verified external references
 8. Plan export/import for user data only.
+   - user data should be exportable per locale
+   - the addon should only show user data for the currently selected addon language
+9. Revisit config profiles later for display settings only, not for user-authored tips.
+10. Add a config option `Show NPC IDs` so users can decide whether IDs are shown in browser/editor labels and in the live frame.
+11. Keep config toggles truly editable when exposed in the UI.
+    `Show Tips in Dungeons` is now meant to be a real user setting, not a locked placeholder.
 
 ## UI decisions
 
 The `Content Browser` is intentionally a full preview and should show all relevant tips.
 
-The `Editor` page is the place for future write workflows such as personal NPC tips, while the `Content Browser` remains focused on reading and browsing.
+The editor area is now intentionally split:
+
+- `Dungeon Editor` for instance-level notes
+- `Tip Editor` for NPC-level notes
+
+while the `Content Browser` remains focused on reading and browsing.
 
 Editing model:
 
@@ -85,12 +111,14 @@ Editing model:
 Current editor status:
 
 - personal NPC tips can already be added, edited, hidden, and hard deleted
+- personal instance notes can already be added, edited, hidden, and hard deleted
 - base NPC tips can already be listed, hidden, reset, and overridden for `text` and `weight`
 - base NPC tip `type` stays fixed to the shipped addon value
+- shipped instance info does not yet have the same override editor path
 
 The addon also has a dedicated `Info` page for project background and development status.
 
-The `Content Browser` may also show browser-only `Zusatzinfos` for an instance, such as:
+The `Content Browser` may also show browser-only `More Infos` for an instance, such as:
 
 - how to get there
 - attunement requirements
@@ -113,8 +141,13 @@ The main addon frame follows the user's config filters for:
 
 - Localized NPC names can come from the WoW client.
 - `Instance Info` is the short tactical text shown in the main frame.
-- `Zusatzinfos` are browser-only and should not clutter the live dungeon entry display.
-- The `Editor` page is intentionally separate from the `Content Browser`.
+- `More Infos` are browser-only and should not clutter the live dungeon entry display.
+- `Content Browser`, `Dungeon Editor`, and `Tip Editor` are intentionally separate.
 - The `Info` page explains that Kiesel Dungeon Tool is the successor to QE Dungeon Tips and that development is still in progress.
 - Expansion, instance, and content structure are defined by code, not by a free-form editor.
+- `npcIDs` in the catalog must come from the corresponding instance section in the shipped DB.
+- Runtime display still resolves tips primarily by NPC ID; the catalog drives browsing and editing.
+- The current validation script confirms that legacy and current shipped tip IDs match 1:1 and highlights catalog IDs without shipped entries.
+- Shipped content may fall back from `deDE` to `enUS`, but user-authored content must stay locale-specific and must not mix across addon languages.
+- `Show NPC IDs` is now a real config setting and should affect browser/editor labels and the live frame consistently.
 - Large structural changes should be discussed and approved before implementation.

@@ -33,8 +33,6 @@ Druid: Shapeshift the Arcane Lockdown debuff
 
 local _, addon = ...;
 TDTUserData = TDTUserData or {}
-TDTUserData.npcs = TDTUserData.npcs or {}
-TDTUserData.instances = TDTUserData.instances or {}
 
 local addFrameLine
 local buildFrameTextFromTips
@@ -188,6 +186,72 @@ local function getSelectedLocale()
 	return preferredLocale
 end
 
+local function shouldShowNpcIDs()
+    return not TDTConfig or TDTConfig.ShowNpcIDs ~= false
+end
+
+local function copyTableDeep(source)
+    if type(source) ~= "table" then
+        return source
+    end
+
+    local result = {}
+    for key, value in pairs(source) do
+        result[key] = copyTableDeep(value)
+    end
+    return result
+end
+
+local function ensureUserDataRoot()
+    TDTUserData = TDTUserData or {}
+    TDTUserData.locales = TDTUserData.locales or {}
+
+    -- Migrate pre-locale user data into the currently active addon locale once.
+    if (TDTUserData.npcs or TDTUserData.instances) and not TDTUserData._localeMigrationDone then
+        local selectedLocale = getSelectedLocale()
+        TDTUserData.locales[selectedLocale] = TDTUserData.locales[selectedLocale] or {
+            npcs = {},
+            instances = {},
+        }
+
+        local localeBucket = TDTUserData.locales[selectedLocale]
+        if TDTUserData.npcs then
+            localeBucket.npcs = copyTableDeep(TDTUserData.npcs)
+        end
+        if TDTUserData.instances then
+            localeBucket.instances = copyTableDeep(TDTUserData.instances)
+        end
+
+        TDTUserData.npcs = nil
+        TDTUserData.instances = nil
+        TDTUserData._localeMigrationDone = true
+    end
+
+    return TDTUserData
+end
+
+local function getCurrentUserLocaleBucket(createIfMissing)
+    ensureUserDataRoot()
+
+    local selectedLocale = getSelectedLocale()
+    local localeBucket = TDTUserData.locales[selectedLocale]
+
+    if not localeBucket and createIfMissing then
+        localeBucket = {
+            npcs = {},
+            instances = {},
+        }
+        TDTUserData.locales[selectedLocale] = localeBucket
+    end
+
+    if localeBucket then
+        localeBucket.npcs = localeBucket.npcs or {}
+        localeBucket.instances = localeBucket.instances or {}
+    end
+
+    return localeBucket
+end
+
 local function normalizeTipsForDisplay(rawTips)
 	if not rawTips then
 		return nil
@@ -298,11 +362,12 @@ local function sortTipEntries(entries)
 end
 
 local function getUserContainer(scope, key)
-	if not TDTUserData then
+	local localeBucket = getCurrentUserLocaleBucket(false)
+	if not localeBucket then
 		return nil
 	end
 
-	local bucket = TDTUserData[scope]
+	local bucket = localeBucket[scope]
 	if not bucket then
 		return nil
 	end
@@ -328,11 +393,11 @@ local function getLocalizedRawNpcTips(id)
 end
 
 local function ensureUserContainer(scope, key)
-	TDTUserData = TDTUserData or {}
-	TDTUserData[scope] = TDTUserData[scope] or {}
-	TDTUserData[scope][key] = TDTUserData[scope][key] or {}
+	local localeBucket = getCurrentUserLocaleBucket(true)
+	localeBucket[scope] = localeBucket[scope] or {}
+	localeBucket[scope][key] = localeBucket[scope][key] or {}
 
-	local container = TDTUserData[scope][key]
+	local container = localeBucket[scope][key]
 	container.overrides = container.overrides or {}
 	container.disabled = container.disabled or {}
 	container.additions = container.additions or {}
@@ -394,6 +459,27 @@ local function mergeTipsWithUserData(rawTips, userContainer)
 	return mergedEntries
 end
 
+local function mergeInstanceDetailsWithUserData(rawDetails, userContainer)
+    local mergedDetails = {}
+
+    if type(rawDetails) == "table" then
+        for key, value in pairs(rawDetails) do
+            mergedDetails[key] = value
+        end
+    end
+
+    local overrides = userContainer and userContainer.detailsOverrides or nil
+    if overrides then
+        for _, key in ipairs({"travel", "attunement", "notes", "lore"}) do
+            if overrides[key] ~= nil then
+                mergedDetails[key] = overrides[key]
+            end
+        end
+    end
+
+    return mergedDetails
+end
+
 local function entriesToDisplayTips(entries)
 	if not entries or #entries == 0 then
 		return nil
@@ -439,6 +525,29 @@ function addon:getMergedInstanceTipEntries(instanceKey)
 	return mergeTipsWithUserData(rawTips, getUserContainer("instances", instanceKey))
 end
 
+function addon:getMergedInstanceDetails(instanceKey)
+	local localeMaps = {
+		enUS = instanceDetails_enUS,
+		deDE = instanceDetails_deDE,
+	}
+	local selectedLocale = getSelectedLocale()
+	local localizedMap = localeMaps[selectedLocale] or instanceDetails_enUS
+	local rawDetails
+
+	if localizedMap and localizedMap[instanceKey] then
+		rawDetails = localizedMap[instanceKey]
+	elseif instanceDetails_enUS then
+		rawDetails = instanceDetails_enUS[instanceKey]
+	end
+
+	local container = getUserContainer("instances", instanceKey)
+	if not rawDetails and not container then
+		return nil
+	end
+
+	return mergeInstanceDetailsWithUserData(rawDetails, container)
+end
+
 function addon:addNpcUserTip(npcID, tipType, text, weight, tipID)
 	if not npcID or not tipType or not text or text == "" then
 		return nil
@@ -450,7 +559,7 @@ function addon:addNpcUserTip(npcID, tipType, text, weight, tipID)
 		id = additionID,
 		type = tipType,
 		text = text,
-		weight = tonumber(weight) or 0,
+		weight = tonumber(weight) or 5,
 		hidden = false,
 	}
 
@@ -468,7 +577,7 @@ function addon:addInstanceUserTip(instanceKey, tipType, text, weight, tipID)
 		id = additionID,
 		type = tipType,
 		text = text,
-		weight = tonumber(weight) or 0,
+		weight = tonumber(weight) or 5,
 		hidden = false,
 	}
 
@@ -506,26 +615,94 @@ function addon:getInstanceUserAdditions(instanceKey)
 	return additions
 end
 
+function addon:getInstanceBaseTipsForEditor(instanceKey)
+	local localeMaps = {
+		enUS = instanceInfo_enUS,
+		deDE = instanceInfo_deDE,
+	}
+	local selectedLocale = getSelectedLocale()
+	local localizedMap = localeMaps[selectedLocale] or instanceInfo_enUS
+	local rawTips
+
+	if localizedMap and localizedMap[instanceKey] then
+		rawTips = localizedMap[instanceKey]
+	elseif instanceInfo_enUS then
+		rawTips = instanceInfo_enUS[instanceKey]
+	end
+
+	local entries = normalizeTipsToEntries(rawTips)
+	local container = getUserContainer("instances", instanceKey)
+	local disabled = container and container.disabled or {}
+	local overrides = container and container.overrides or {}
+
+	for _, entry in ipairs(entries) do
+		local override = entry.id and overrides[entry.id] or nil
+		entry.hidden = entry.id and disabled[entry.id] == true or false
+		entry.overridden = override ~= nil
+		entry.canModify = entry.id ~= nil
+		if override then
+			entry.overrideText = override.text
+			entry.overrideWeight = override.weight
+		end
+	end
+
+	return entries
+end
+
+function addon:getInstanceDetailsForEditor(instanceKey)
+	local localeMaps = {
+		enUS = instanceDetails_enUS,
+		deDE = instanceDetails_deDE,
+	}
+	local selectedLocale = getSelectedLocale()
+	local localizedMap = localeMaps[selectedLocale] or instanceDetails_enUS
+	local rawDetails
+
+	if localizedMap and localizedMap[instanceKey] then
+		rawDetails = localizedMap[instanceKey]
+	elseif instanceDetails_enUS then
+		rawDetails = instanceDetails_enUS[instanceKey]
+	end
+
+	local container = getUserContainer("instances", instanceKey)
+	local overrides = container and container.detailsOverrides or {}
+	local result = {}
+
+	for _, key in ipairs({"travel", "attunement", "notes", "lore"}) do
+		local baseValue = rawDetails and rawDetails[key] or ""
+		local overrideValue = overrides and overrides[key]
+		result[key] = {
+			base = baseValue or "",
+			current = overrideValue ~= nil and overrideValue or (baseValue or ""),
+			overridden = overrideValue ~= nil,
+		}
+	end
+
+	return result
+end
+
 function addon:resetNpcUserData(npcID)
-	if not TDTUserData or not TDTUserData.npcs then
+	local localeBucket = getCurrentUserLocaleBucket(false)
+	if not localeBucket or not localeBucket.npcs then
 		return
 	end
 
-	TDTUserData.npcs[npcID] = nil
+	localeBucket.npcs[npcID] = nil
 end
 
 function addon:resetInstanceUserData(instanceKey)
-	if not TDTUserData or not TDTUserData.instances then
+	local localeBucket = getCurrentUserLocaleBucket(false)
+	if not localeBucket or not localeBucket.instances then
 		return
 	end
 
-	TDTUserData.instances[instanceKey] = nil
+	localeBucket.instances[instanceKey] = nil
 end
 
 function addon:resetAllUserData()
 	TDTUserData = {
-		npcs = {},
-		instances = {},
+		locales = {},
+		_localeMigrationDone = true,
 	}
 end
 
@@ -731,6 +908,127 @@ function addon:updateInstanceUserTip(instanceKey, tipID, tipType, text, weight)
 	return true
 end
 
+function addon:setInstanceBaseTipHidden(instanceKey, tipID, hidden)
+	if not tipID then
+		return false
+	end
+
+	local container = ensureUserContainer("instances", instanceKey)
+	if hidden then
+		container.disabled[tipID] = true
+	else
+		container.disabled[tipID] = nil
+	end
+
+	return true
+end
+
+function addon:resetInstanceBaseTip(instanceKey, tipID)
+	if not tipID then
+		return false
+	end
+
+	local container = getUserContainer("instances", instanceKey)
+	if not container then
+		return false
+	end
+
+	if container.disabled then
+		container.disabled[tipID] = nil
+	end
+	if container.overrides then
+		container.overrides[tipID] = nil
+	end
+
+	return true
+end
+
+function addon:updateInstanceBaseTipOverride(instanceKey, tipID, text, weight)
+	if not instanceKey or not tipID then
+		return false
+	end
+
+	local localeMaps = {
+		enUS = instanceInfo_enUS,
+		deDE = instanceInfo_deDE,
+	}
+	local selectedLocale = getSelectedLocale()
+	local localizedMap = localeMaps[selectedLocale] or instanceInfo_enUS
+	local rawTips
+
+	if localizedMap and localizedMap[instanceKey] then
+		rawTips = localizedMap[instanceKey]
+	elseif instanceInfo_enUS then
+		rawTips = instanceInfo_enUS[instanceKey]
+	end
+
+	local entries = normalizeTipsToEntries(rawTips)
+	local baseEntry
+	for _, entry in ipairs(entries) do
+		if entry.id == tipID then
+			baseEntry = entry
+			break
+		end
+	end
+
+	if not baseEntry then
+		return false
+	end
+
+	local container = ensureUserContainer("instances", instanceKey)
+	container.overrides[tipID] = container.overrides[tipID] or {}
+
+	if text and text ~= "" then
+		container.overrides[tipID].text = text
+	else
+		container.overrides[tipID].text = baseEntry.text
+	end
+
+	if weight ~= nil then
+		container.overrides[tipID].weight = tonumber(weight) or baseEntry.weight or 0
+	end
+
+	return true
+end
+
+function addon:updateInstanceDetailsOverrides(instanceKey, details)
+	if not instanceKey or type(details) ~= "table" then
+		return false
+	end
+
+	local container = ensureUserContainer("instances", instanceKey)
+	container.detailsOverrides = container.detailsOverrides or {}
+
+	for _, key in ipairs({"travel", "attunement", "notes", "lore"}) do
+		if details[key] ~= nil then
+			container.detailsOverrides[key] = details[key]
+		end
+	end
+
+	return true
+end
+
+function addon:resetInstanceDetailsOverrides(instanceKey, detailKey)
+	local container = getUserContainer("instances", instanceKey)
+	if not container then
+		return false
+	end
+
+	if detailKey then
+		if not container.detailsOverrides then
+			return false
+		end
+		container.detailsOverrides[detailKey] = nil
+		if not next(container.detailsOverrides) then
+			container.detailsOverrides = nil
+		end
+		return true
+	end
+
+	container.detailsOverrides = nil
+	return true
+end
+
 function addon:getCurrentInstanceKey()
 	local mapID = C_Map.GetBestMapForUnit("player")
 	if mapID and addon.instanceKeyByMapID then
@@ -799,7 +1097,7 @@ function addon:showBrowserSelectionInFrame(instanceName, npcName, npcID, instanc
 	local _, class = UnitClass("player")
 
 	local displayTitle = npcName or instanceName or "Preview"
-	if npcID then
+	if npcID and shouldShowNpcIDs() then
 		displayTitle = string.format("%s (NPC ID: %d)", displayTitle, npcID)
 	elseif instanceName then
 		displayTitle = string.format("%s (Instance)", instanceName)
@@ -1025,10 +1323,14 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 			-- Don't remove active tip if you accidentally mouse over ally.
 			TDT_TipText:SetText("")
 			if addon.refreshTipScroll then addon:refreshTipScroll() end
-			TDT_MobName:SetText(string.format("%s (NPC ID: %d)", name, id))
+			if shouldShowNpcIDs() then
+				TDT_MobName:SetText(string.format("%s (NPC ID: %d)", name, id))
+			else
+				TDT_MobName:SetText(name)
+			end
 		
-			if TDTConfig.ShowFrame == "Show in separate frame" then addFrameLine(TDT_TipPanel, npcTips, "NPC ID:", class)
-			else addLine(GameTooltip, npcTips, "NPC ID:", class)
+			if TDTConfig.ShowFrame == "Show in separate frame" then addFrameLine(TDT_TipPanel, npcTips, shouldShowNpcIDs() and "NPC ID:" or "NPC:", class)
+			else addLine(GameTooltip, npcTips, shouldShowNpcIDs() and "NPC ID:" or "NPC:", class)
 			end
 		
 		elseif UnitIsEnemy(unit, "player") then
@@ -1064,8 +1366,12 @@ function addon:getTarget(mobType)
 		
 		TDT_TipText:SetText("")
 		if addon.refreshTipScroll then addon:refreshTipScroll() end
-		TDT_MobName:SetText(string.format("%s (NPC ID: %d)", name, id))
-		addFrameLine(TDT_TipPanel, npcTips, "NPC ID:", class)
+		if shouldShowNpcIDs() then
+			TDT_MobName:SetText(string.format("%s (NPC ID: %d)", name, id))
+		else
+			TDT_MobName:SetText(name)
+		end
+		addFrameLine(TDT_TipPanel, npcTips, shouldShowNpcIDs() and "NPC ID:" or "NPC:", class)
 		--addLine(GameTooltip, tipsMap[id], "NPC ID:", role, class)		
 
 	elseif 	UnitIsEnemy(mobType, "player") then

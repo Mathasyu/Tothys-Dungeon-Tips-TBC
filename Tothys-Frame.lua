@@ -406,6 +406,12 @@ function addon:checkInstance()
 		else
 			instanceAllowed = false
 		end
+	elseif instanceType == "party" then
+		if TDTConfig.DungeonToggle then
+			instanceAllowed = true
+		else
+			instanceAllowed = false
+		end
 	elseif instanceType == "raid" then
 		if TDTConfig.RaidToggle then
 			instanceAllowed = true

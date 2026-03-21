@@ -1238,6 +1238,174 @@ addon.contentCatalog = addon.contentCatalog or {
 	},
 }
 
+addon.npcGroups = addon.npcGroups or {
+    hellfire_ramparts = {
+        [17306] = "boss",
+        [17308] = "boss",
+        [17536] = "boss",
+        [17537] = "boss",
+    },
+    blood_furnace = {
+        [17377] = "boss",
+        [17380] = "boss",
+        [17381] = "boss",
+    },
+    auchenai_crypts = {
+        [18371] = "boss",
+        [18373] = "boss",
+    },
+    sethekk_halls = {
+        [18472] = "boss",
+        [18473] = "boss",
+        [23035] = "boss",
+    },
+    shadow_labyrinth = {
+        [18667] = "boss",
+        [18708] = "boss",
+        [18731] = "boss",
+        [18732] = "boss",
+    },
+    mana_tombs = {
+        [18341] = "boss",
+        [18343] = "boss",
+        [18344] = "boss",
+    },
+    slave_pens = {
+        [17941] = "boss",
+        [17991] = "boss",
+        [17942] = "boss",
+    },
+    underbog = {
+        [17770] = "boss",
+        [17826] = "boss",
+        [17827] = "boss",
+        [17882] = "boss",
+    },
+    steamvault = {
+        [17797] = "boss",
+        [17796] = "boss",
+        [17798] = "boss",
+    },
+    old_hillsbrad = {
+        [17848] = "boss",
+        [17862] = "boss",
+        [18096] = "boss",
+    },
+    black_morass = {
+        [17879] = "boss",
+        [17880] = "boss",
+        [17881] = "boss",
+    },
+    shattered_halls = {
+        [16807] = "boss",
+        [20923] = "boss",
+        [16809] = "boss",
+        [16808] = "boss",
+    },
+    mechanar = {
+        [19219] = "boss",
+        [19220] = "boss",
+        [19221] = "boss",
+        [19710] = "boss",
+    },
+    botanica = {
+        [17976] = "boss",
+        [17975] = "boss",
+        [17978] = "boss",
+        [17980] = "boss",
+        [17977] = "boss",
+    },
+    arcatraz = {
+        [20870] = "boss",
+        [20885] = "boss",
+        [20912] = "boss",
+        [20904] = "boss",
+    },
+    magisters_terrace = {
+        [24723] = "boss",
+        [24744] = "boss",
+        [24560] = "boss",
+        [24664] = "boss",
+    },
+    karazhan = {
+        [16151] = "boss",
+        [16152] = "boss",
+        [15687] = "boss",
+        [16457] = "boss",
+        [15691] = "boss",
+        [15688] = "boss",
+        [16524] = "boss",
+        [15689] = "boss",
+        [15690] = "boss",
+        [17225] = "boss",
+        [16179] = "boss",
+        [16180] = "boss",
+        [16181] = "boss",
+        [17603] = "boss",
+        [17521] = "boss",
+        [17533] = "boss",
+        [17534] = "boss",
+        [17535] = "boss",
+        [18168] = "boss",
+        [16816] = "boss",
+    },
+    gruuls_lair = {
+        [18831] = "boss",
+        [19044] = "boss",
+    },
+    magtheridons_lair = {
+        [17257] = "boss",
+    },
+    zulaman = {
+        [23574] = "boss",
+        [23576] = "boss",
+        [23577] = "boss",
+        [24239] = "boss",
+        [23863] = "boss",
+        [24240] = "boss",
+    },
+    serpentshrine_cavern = {
+        [21212] = "boss",
+        [21213] = "boss",
+        [21214] = "boss",
+        [21215] = "boss",
+        [21216] = "boss",
+        [21217] = "boss",
+    },
+    tempest_keep_the_eye = {
+        [19514] = "boss",
+        [19516] = "boss",
+        [18805] = "boss",
+        [19622] = "boss",
+    },
+    hyjal_summit = {
+        [17767] = "boss",
+        [17808] = "boss",
+        [17888] = "boss",
+        [17842] = "boss",
+        [17968] = "boss",
+    },
+    black_temple = {
+        [22887] = "boss",
+        [22898] = "boss",
+        [22841] = "boss",
+        [22871] = "boss",
+        [22948] = "boss",
+        [23418] = "boss",
+        [22947] = "boss",
+        [22949] = "boss",
+        [22950] = "boss",
+    },
+    sunwell_plateau = {
+        [24850] = "boss",
+        [24882] = "boss",
+        [25038] = "boss",
+        [25166] = "boss",
+        [25315] = "boss",
+        [24892] = "boss",
+    },
+}
+
 addon.instanceKeyByMapID = addon.instanceKeyByMapID or {
 	[173] = "black_morass",
 	[246] = "shattered_halls",
@@ -1407,12 +1575,12 @@ instanceDetails_enUS.zulaman = instanceDetails_enUS.zulaman or {
 -- Each array uses the format: {{"Type", "Tip1"}, {"Type", "Tip2"}}
 tipsMap_enUS = {
 	-- Example
-	[126389] = {{"Blank", "A+ Tip right here. \n It's a shame it's so damn long eh? It just goes on and on and on and ooon"}, 
-				{"Interrupts", "INTERRUPT: Stone Bolt"}}, -- In this example case, all roles will see "A+ Tip right here" on the mobs tooltip but only Healers will see the second tip.
+	[126389] = {{"example_126389_01", "Blank", "A+ Tip right here. \n It's a shame it's so damn long eh? It just goes on and on and on and ooon", 20},
+				{"example_126389_02", "Interrupts", "INTERRUPT: Stone Bolt", 10}}, -- In this example case, all roles will see "A+ Tip right here" on the mobs tooltip but only Healers will see the second tip.
 	
 		--
-	[99999] = {{"Important", "PlaceholderImportant"}, {"Important", "PlaceholderImportant"},
-				{"Advanced", "PlaceholderAdvanced"}}, -- Tirnenn Villager	
+	[99999] = {{"example_99999_01", "Important", "PlaceholderImportant", 30}, {"example_99999_02", "Important", "PlaceholderImportant", 20},
+				{"example_99999_03", "Advanced", "PlaceholderAdvanced", 10}}, -- Tirnenn Villager	
 
 
 
@@ -1422,8 +1590,8 @@ tipsMap_enUS = {
 
 	------- World Boss -----------------
 
-	[17711] = {{"Legion", ""}}, -- Doomwalker
-	[18728] = {{"Legion", ""}}, -- Doom Lord Kazzak
+	[17711] = {{"worldboss_17711_01", "Legion", "", 10}}, -- Doomwalker
+	[18728] = {{"worldboss_18728_01", "Legion", "", 10}}, -- Doom Lord Kazzak
 
 
 	------- Raid: Karazhan -----------------
@@ -1469,27 +1637,27 @@ tipsMap_enUS = {
 				{"kara_16152_18", "HEALER", "STOP Heals at start of phase 3 as Attumen wipes threat at start of transition", 30},
 				{"kara_16152_19", "DAMAGE", "STOP DPS at start of phase 3 as Attumen wipes threat at start of transition", 20},
 				{"kara_16152_20", "TANK", "OT that was assigned to Midnight should swap to DPS'ing Attumen", 10}}, -- Attumen the Huntsman
-	[15687] = {{"kara_15687_01", "Important", "Clear room before engaging Moroes so that you'll have room to deal with boss", 100},
-				{"kara_15687_02", "Important", "Mark Boss and his 4 dinner guests and assign MT/OT/CC of those targets", 90},
-				{"kara_15687_03", "Important", "When fight starts, MT should be on Moroes, CC targets should be applied when on their initial platform or one side of room, while OT should be on Top Kill Prio Dinner guest & remain #2 on Moroes threat", 80},
-				{"kara_15687_04", "PriorityTargets", "CC/Kill Priority for Moroes' Dinner Guests:", 70},
-				{"kara_15687_05", "Important", "1) Baroness Dorothea Millstipe (mana burner)", 60},
-				{"kara_15687_06", "Important", "2) Lady Catriona Von'Indi and Lady Keira Berrybuck (healers that will buff/heal other dinner guests)", 50},
-				{"kara_15687_07", "Important", "3) Baron Rafe Dreuger (stunner that can result in loss of aggro)", 40},
-				{"Important", "4) Lord Robin Daris (warrior-type mob that should be fought away from other raid members due to his Whirlwind ability)"},
-				{"Important", "5) Moroes (boss)"},
-				{"Important", "6) Lord Crispin Ference (survivalist, takes long time to kill, deal with this guy AFTER Moroes)"},
-				{"Advanced", "DEALING WITH GARROTE"},
-				{"Important", "GARROTE: Every 30 seconds, Moroes vanishes and applies this LARGE bleed on random raid target. This player should be called out so that they can receive heal priority."},
-				{"Important", "Dwarves can use STONEFORM racial to remove their own bleed"},
-				{"PALADIN", "Remove garrote using Divine Shield (from self) / Blessing of Protection (from raid member)"},
-				{"MAGE", "Remove garrote using Ice Block"},
-				{"Advanced", "DEALING WITH GOUGE"},
-				{"Important", "MT and OT should remain #1 and #2 on threat meters"},
-				{"Important", "Moroes will Gouge/Stun MT and then swap to #2 threat, during that stun."},
-				{"Advanced", "DEALING WITH BLIND"},
-				{"Important", "Assign a non-tank player to stand on top of Moroes at all times to receive the Blind (10 sec CC)"},
-				{"Important", "Paladins, Druids, Shamans can remove Blinds (disease)"}}, -- Moroes <Tower Steward>
+	[15687] = {{"kara_15687_01", "Important", "Clear room before engaging Moroes so that you'll have room to deal with boss", 210},
+				{"kara_15687_02", "Important", "Mark Boss and his 4 dinner guests and assign MT/OT/CC of those targets", 200},
+				{"kara_15687_03", "Important", "When fight starts, MT should be on Moroes, CC targets should be applied when on their initial platform or one side of room, while OT should be on Top Kill Prio Dinner guest & remain #2 on Moroes threat", 190},
+				{"kara_15687_04", "PriorityTargets", "CC/Kill Priority for Moroes' Dinner Guests:", 180},
+				{"kara_15687_05", "Important", "1) Baroness Dorothea Millstipe (mana burner)", 170},
+				{"kara_15687_06", "Important", "2) Lady Catriona Von'Indi and Lady Keira Berrybuck (healers that will buff/heal other dinner guests)", 160},
+				{"kara_15687_07", "Important", "3) Baron Rafe Dreuger (stunner that can result in loss of aggro)", 150},
+				{"kara_15687_08", "Important", "4) Lord Robin Daris (warrior-type mob that should be fought away from other raid members due to his Whirlwind ability)", 140},
+				{"kara_15687_09", "Important", "5) Moroes (boss)", 130},
+				{"kara_15687_10", "Important", "6) Lord Crispin Ference (survivalist, takes long time to kill, deal with this guy AFTER Moroes)", 120},
+				{"kara_15687_11", "Advanced", "DEALING WITH GARROTE", 110},
+				{"kara_15687_12", "Important", "GARROTE: Every 30 seconds, Moroes vanishes and applies this LARGE bleed on random raid target. This player should be called out so that they can receive heal priority.", 100},
+				{"kara_15687_13", "Important", "Dwarves can use STONEFORM racial to remove their own bleed", 90},
+				{"kara_15687_14", "PALADIN", "Remove garrote using Divine Shield (from self) / Blessing of Protection (from raid member)", 80},
+				{"kara_15687_15", "MAGE", "Remove garrote using Ice Block", 70},
+				{"kara_15687_16", "Advanced", "DEALING WITH GOUGE", 60},
+				{"kara_15687_17", "Important", "MT and OT should remain #1 and #2 on threat meters", 50},
+				{"kara_15687_18", "Important", "Moroes will Gouge/Stun MT and then swap to #2 threat, during that stun.", 40},
+				{"kara_15687_19", "Advanced", "DEALING WITH BLIND", 30},
+				{"kara_15687_20", "Important", "Assign a non-tank player to stand on top of Moroes at all times to receive the Blind (10 sec CC)", 20},
+				{"kara_15687_21", "Important", "Paladins, Druids, Shamans can remove Blinds (disease)", 10}}, -- Moroes <Tower Steward>
 	[16812] = {{"kara_16812_01", "Legion", "Speak to Barnes when ready to start Opera boss event", 10}}, -- Barnes <The Stage Manager>
 	[16457] = {{"kara_16457_01", "Important", "Maiden is immune to taunt, so allow tank(s) chance to build up aggro on boss before others engage. Maiden's abilities are used at random and not a strict timer, but knowing her ability CD can help plan for dealing with Repentance", 220},
 				{"kara_16457_02", "Advanced", "POSITIONING", 210},
@@ -2023,10 +2191,10 @@ tipsMap_enUS = {
 	[17454] = {{"magtheridon_17454_01", "PriorityTargets", "When channelers drop these Infernals, focus DPS on them", 30},
 				{"magtheridon_17454_02", "Important", "Warlocks can Banish these Infernals", 20},
 				{"magtheridon_17454_03", "TANK", "If not enough locks in the raid to deal with the Infernals, they should be picked up by an off-tank", 10}}, -- Burning Abyssal
-	[18829] = {{"Interrupts", "Assign interrupters on each of the Warders per pull to interrupt Shadow Bolt Volley (Shadow Damage hitting nearby players)"},
-				{"TANK", "When mob casts Shadow Burst, it will knockback nearby players and reset threat. Be ready with your taunt for when this goes off"},
-				{"Important", "Do NOT Dispel Unstable Affliction as it will direct some damage to the dispeler and silence them for 5 seconds!"},
-				{"Dodge", "DODGE: Rain of Fire (AoE Fire Damage)"}}, -- Hellfire Warder
+	[18829] = {{"magtheridon_18829_01", "Interrupts", "Assign interrupters on each of the Warders per pull to interrupt Shadow Bolt Volley (Shadow Damage hitting nearby players)", 40},
+				{"magtheridon_18829_02", "TANK", "When mob casts Shadow Burst, it will knockback nearby players and reset threat. Be ready with your taunt for when this goes off", 30},
+				{"magtheridon_18829_03", "Important", "Do NOT Dispel Unstable Affliction as it will direct some damage to the dispeler and silence them for 5 seconds!", 20},
+				{"magtheridon_18829_04", "Dodge", "DODGE: Rain of Fire (AoE Fire Damage)", 10}}, -- Hellfire Warder
 
 
 	------- Raid: Serpentshrine Cavern -----

@@ -6,22 +6,49 @@ local localeDisplayNames = {
 
 local browserLocaleStrings = {
 	enUS = {
-		additional_details = "Additional Details",
+		content_browser_page = "Content Browser",
+		content_browser_title = "Kiesel Dungeon Tool - Content Browser",
+		content_browser_subtitle = "Browse expansions, dungeons, raids, and NPC tips here. This is the easiest place to look up encounters and check notes before a run.",
+		config_page = "Kiesel Dungeon Tool",
+		config_title = "Kiesel Dungeon Tool - Config",
+		info_title = "Kiesel Dungeon Tool - Info",
+		info_intro = "Kiesel Dungeon Tool is a successor to QE Dungeon Tips.",
+		info_background = "Background",
+		info_background_text = "QE Dungeon Tips did great groundwork and provided the base inspiration for this addon. The original project helped establish the structure and the idea of contextual dungeon and NPC guidance.\n\nThis addon exists because QE Dungeon Tips no longer worked reliably for TBC Anniversary, so we are rebuilding and extending the concept in a form that fits the current project goals.",
+		info_status = "Project Status",
+		info_status_text = "Kiesel Dungeon Tool is still actively in development and is not complete yet.\n\nSome instances and NPCs are already structured in the new browser and data model, but the addon is still being expanded, cleaned up, and documented. Expect missing content, placeholder areas, and ongoing iteration while the new system is built out.",
+		info_focus = "Current Focus",
+		info_focus_text = "Current work focuses on:\n- structured expansion, instance, and NPC browsing\n- tactical dungeon info and browser-only extra details\n- locale-aware data handling\n- update-safe personal editing and overrides",
+		locale_reload_text = "Changing the language will reload the UI. Continue?",
+		locale_reload_accept = "Reload UI",
+		locale_reload_cancel = "Cancel",
+		info_how_it_works_text = "Use the browser to look up dungeon info, extra details, and NPC tips. In the editors, Addon Tips are the built-in notes that come with the addon. They can be adjusted or hidden without changing the original addon data. Personal Tips are your own notes and can use different tip types, custom text, and custom weights.\n\nWeight controls the order of tips. Higher values appear first. The built-in addon tips usually start at 10 and go up in steps of 10, which makes it easy to place your own notes in between them when needed.",
+		additional_details = "More Infos",
 		add_npc_tip = "Add Personal NPC Tip",
 		editor_page = "Tip Editor",
 		editor_title = "Kiesel Dungeon Tool - Tip Editor",
-		editor_subtitle = "Add or manage NPC tips without changing the shipped addon data.",
+		editor_subtitle = "Add your own NPC tips or adjust existing addon tips here. This is useful for raid leads, group notes, and encounter reminders.",
 		dungeon_editor_page = "Dungeon Editor",
 		dungeon_editor_title = "Kiesel Dungeon Tool - Dungeon Editor",
-		dungeon_editor_subtitle = "Add or manage instance notes without changing the shipped addon data.",
-		add_instance_tip = "Add Personal Instance Note",
-		instance_tips_preview = "Instance Tips Preview",
+		dungeon_editor_subtitle = "Add your own dungeon notes or adjust existing dungeon info here. This is useful for route notes, reminders, and group preparation.",
+		add_instance_tip = "Add Personal Dungeon Tip",
+		instance_tips_preview = "Dungeon Tips",
 		instance_summary_prefix = "Selected",
-		user_instance_tips = "User Instance Notes",
-		no_user_instance_tips = "No personal instance notes for this dungeon or raid yet.",
-		saved_instance_tip = "Personal instance note saved.",
-		updated_instance_tip = "Personal instance note updated.",
-		instance_edit_loaded = "Personal instance note loaded into editor.",
+		user_instance_tips = "Personal Dungeon Tips",
+		addon_instance_tips = "Addon Dungeon Tips",
+		no_addon_instance_tips = "No addon dungeon tips found for this dungeon or raid.",
+		no_user_instance_tips = "No personal dungeon tips for this dungeon or raid yet.",
+		saved_instance_tip = "Personal dungeon tip saved.",
+		updated_instance_tip = "Personal dungeon tip updated.",
+		instance_edit_loaded = "Personal dungeon tip loaded into editor.",
+		base_instance_edit_loaded = "Addon dungeon tip loaded into override mode.",
+		updated_base_instance_tip = "Addon dungeon tip override updated.",
+		edit_more_infos = "Edit More Infos",
+		save_more_infos = "Save More Infos",
+		reset_more_infos = "Reset More Infos",
+		more_infos_saved = "More Infos overrides saved.",
+		more_infos_reset = "More Infos overrides reset.",
+		original_text = "Original",
 		tip_type = "Tip Type",
 		tip_weight = "Weight",
 		tip_text = "Tip Text",
@@ -47,32 +74,113 @@ local browserLocaleStrings = {
 		delete = "Delete",
 		no_personal_tips = "No personal tips for this NPC yet.",
 		default_tip_text = "Write a personal NPC tip here...",
+		default_instance_tip_text = "Write a personal dungeon tip here...",
 		saved_tip = "Personal NPC tip saved.",
 		missing_tip = "Please choose a tip type and enter text first.",
 		travel = "Travel",
 		attunement = "Attunement",
-		extra_notes = "Extra Notes",
+		extra_notes = "More Infos",
 		lore = "Lore / RP",
-		no_details = "No additional details yet.",
+		no_details = "No extra dungeon info yet.",
 		info_page = "Info",
+		dungeon_info = "Dungeon Info",
+		npc_tips = "NPC Tips",
+		info_how_it_works = "How It Works",
+		expansion = "Expansion",
+		dungeon_or_raid = "Dungeon / Raid",
+		npc = "NPC",
+		bosses = "Bosses",
+		npc_ids = "NPC IDs",
+		npcs_a_i = "NPCs A-I",
+		npcs_j_r = "NPCs J-R",
+		npcs_s_z = "NPCs S-Z",
+		selected_with_type = "Selected: %s -> %s (%s) -> %s",
+		selected_npc_path = "Selected: %s -> %s -> %s",
+		selected_npc = "NPC: %s",
+		selected_instance = "Selected: %s -> %s",
+		config_tip_location = "Tip Location",
+		config_show_separate_frame = "Show tips in separate frame",
+		config_show_prefix = "Show",
+		config_show_separate_frame_tooltip = "Uncheck to have tips appear in mob tooltips instead",
+		config_show_frame = "Show Frame",
+		config_hide_frame = "Hide Frame",
+		config_target_mouseover = "Show Target or Mouseover",
+		config_show_target = "Show Targeted Mob",
+		config_role_specific = "Role Specific Tips",
+		config_show_myroleonly = "Show My Role Only",
+		config_show_tank = "Show Tank",
+		config_show_healer = "Show Healer",
+		config_show_damage = "Show Damage Dealer",
+		config_class_specific = "Class Specific Tips",
+		config_show_myclassonly = "Show My Class Only",
+		class_druid = "Druid",
+		class_hunter = "Hunter",
+		class_mage = "Mage",
+		class_paladin = "Paladin",
+		class_priest = "Priest",
+		class_rogue = "Rogue",
+		class_shaman = "Shaman",
+		class_warrior = "Warrior",
+		class_warlock = "Warlock",
+		config_language = "Language",
+		config_language_help = "Auto uses the client locale. English is the fallback if no translation exists.",
+		config_content = "Content",
+		config_show_in_dungeons = "Show Tips in Dungeons",
+		config_show_in_raid = "Show Tips in Raid",
+		config_show_npc_ids = "Show NPC IDs",
+		config_font_size = "Font Size",
+		config_general = "Show Important General Information",
+		config_priority = "Show Priority Targets",
+		config_interrupts = "Show Priority Interrupts",
+		config_defensives = "Show Defensive Recommendations",
+		config_fluff = "Show Fluff",
+		config_advanced = "Show advanced tips for high level keys",
+		config_personal = "Show Personal Notes",
 	},
 	deDE = {
-		additional_details = "Zusatzinfos",
+		content_browser_page = "Inhaltsbrowser",
+		content_browser_title = "Kiesel Dungeon Tool - Inhaltsbrowser",
+		content_browser_subtitle = "Hier kannst du Erweiterungen, Dungeons, Raids und NPC-Tipps durchsehen. Das ist der einfachste Ort, um Begegnungen und Notizen vor einem Run nachzuschlagen.",
+		config_page = "Kiesel Dungeon Tool",
+		config_title = "Kiesel Dungeon Tool - Konfiguration",
+		info_title = "Kiesel Dungeon Tool - Info",
+		info_intro = "Kiesel Dungeon Tool ist ein Nachfolger von QE Dungeon Tips.",
+		info_background = "Hintergrund",
+		info_background_text = "QE Dungeon Tips hat tolle Vorarbeit geleistet und die Grundlage fuer dieses Addon geschaffen. Das urspruengliche Projekt hat die Idee von kontextbezogenen Dungeon- und NPC-Hinweisen etabliert.\n\nDieses Addon existiert, weil QE Dungeon Tips fuer TBC Anniversary nicht mehr verlaesslich funktioniert hat. Deshalb bauen wir das Konzept in einer Form neu auf und erweitern es weiter, die besser zu den heutigen Projektzielen passt.",
+		info_status = "Projektstatus",
+		info_status_text = "Kiesel Dungeon Tool ist weiterhin aktiv in Entwicklung und noch nicht vollstaendig.\n\nEinige Instanzen und NPCs sind bereits in der neuen Browser- und Datenstruktur vorhanden, aber das Addon wird noch weiter ausgebaut, bereinigt und dokumentiert. Es ist also normal, wenn Inhalte fehlen oder sich noch veraendern.",
+		info_focus = "Aktueller Fokus",
+		info_focus_text = "Der aktuelle Fokus liegt auf:\n- strukturierter Navigation fuer Erweiterungen, Instanzen und NPCs\n- taktischen Dungeon-Infos und zusaetzlichen Browser-Infos\n- lokalisierungsfaehigen Daten\n- updatesicheren persoenlichen Bearbeitungen und Overrides",
+		locale_reload_text = "Das Aendern der Sprache laedt das Interface neu. Fortfahren?",
+		locale_reload_accept = "Interface neu laden",
+		locale_reload_cancel = "Abbrechen",
+		info_how_it_works_text = "Im Browser kannst du Dungeon-Infos, Zusatzinfos und NPC-Tipps nachschlagen. In den Editoren sind Addon-Tipps die eingebauten Hinweise, die mit dem Addon geliefert werden. Sie koennen angepasst oder ausgeblendet werden, ohne die urspruenglichen Addon-Daten zu veraendern. Persoenliche Tipps sind deine eigenen Notizen und koennen verschiedene Tipp-Arten, eigenen Text und eigene Gewichtungen haben.\n\nDie Gewichtung steuert die Reihenfolge der Tipps. Hoehere Werte erscheinen weiter oben. Die eingebauten Addon-Tipps beginnen meist bei 10 und steigen in 10er-Schritten, damit du eigene Notizen leicht dazwischen einsortieren kannst.",
+		additional_details = "Mehr Infos",
 		add_npc_tip = "Persoenlichen NPC-Tipp hinzufuegen",
-		editor_page = "Tip Editor",
-		editor_title = "Kiesel Dungeon Tool - Tip Editor",
-		editor_subtitle = "NPC-Tipps hinzufuegen oder verwalten, ohne die mitgelieferten Addon-Daten zu veraendern.",
-		dungeon_editor_page = "Dungeon Editor",
-		dungeon_editor_title = "Kiesel Dungeon Tool - Dungeon Editor",
-		dungeon_editor_subtitle = "Instanz-Notizen hinzufuegen oder verwalten, ohne die mitgelieferten Addon-Daten zu veraendern.",
-		add_instance_tip = "Persoenliche Instanz-Notiz hinzufuegen",
-		instance_tips_preview = "Instanz-Tipps Vorschau",
+		editor_page = "Tipp-Editor",
+		editor_title = "Kiesel Dungeon Tool - Tipp-Editor",
+		editor_subtitle = "Hier kannst du eigene NPC-Tipps hinzufuegen oder vorhandene Addon-Tipps anpassen. Ideal fuer Raid-Leads, Gruppennotizen und Begegnungserinnerungen.",
+		dungeon_editor_page = "Dungeon-Editor",
+		dungeon_editor_title = "Kiesel Dungeon Tool - Dungeon-Editor",
+		dungeon_editor_subtitle = "Hier kannst du eigene Dungeon-Notizen hinzufuegen oder vorhandene Dungeon-Infos anpassen. Ideal fuer Routen, Erinnerungen und Gruppenvorbereitung.",
+		add_instance_tip = "Persoenlichen Dungeon-Tipp hinzufuegen",
+		instance_tips_preview = "Dungeon-Tipps",
 		instance_summary_prefix = "Ausgewaehlt",
-		user_instance_tips = "Persoenliche Instanz-Notizen",
-		no_user_instance_tips = "Fuer diesen Dungeon oder Raid gibt es noch keine persoenlichen Instanz-Notizen.",
-		saved_instance_tip = "Persoenliche Instanz-Notiz gespeichert.",
-		updated_instance_tip = "Persoenliche Instanz-Notiz aktualisiert.",
-		instance_edit_loaded = "Persoenliche Instanz-Notiz in den Editor geladen.",
+		user_instance_tips = "Persoenliche Dungeon-Tipps",
+		addon_instance_tips = "Addon-Dungeon-Tipps",
+		no_addon_instance_tips = "Fuer diesen Dungeon oder Raid wurden keine Addon-Dungeon-Tipps gefunden.",
+		no_user_instance_tips = "Fuer diesen Dungeon oder Raid gibt es noch keine persoenlichen Dungeon-Tipps.",
+		saved_instance_tip = "Persoenlicher Dungeon-Tipp gespeichert.",
+		updated_instance_tip = "Persoenlicher Dungeon-Tipp aktualisiert.",
+		instance_edit_loaded = "Persoenlicher Dungeon-Tipp in den Editor geladen.",
+		base_instance_edit_loaded = "Addon-Dungeon-Tipp im Override-Modus geladen.",
+		updated_base_instance_tip = "Addon-Dungeon-Tipp-Override aktualisiert.",
+		edit_more_infos = "Mehr Infos bearbeiten",
+		save_more_infos = "Mehr Infos speichern",
+		reset_more_infos = "Mehr Infos zuruecksetzen",
+		more_infos_saved = "Mehr-Infos-Overrides gespeichert.",
+		more_infos_reset = "Mehr-Infos-Overrides zurueckgesetzt.",
+		original_text = "Original",
 		tip_type = "Tipp-Typ",
 		tip_weight = "Gewichtung",
 		tip_text = "Tipp-Text",
@@ -83,10 +191,10 @@ local browserLocaleStrings = {
 		update_base_tip = "Override speichern",
 		cancel_edit = "Bearbeiten abbrechen",
 		edit_loaded = "Persoenlicher Tipp in den Editor geladen.",
-		base_edit_loaded = "Basis-Tipp in den Override-Editor geladen.",
+		base_edit_loaded = "Basis-Tipp im Override-Modus geladen.",
 		updated_tip = "Persoenlicher Tipp aktualisiert.",
 		updated_base_tip = "Basis-Tipp-Override aktualisiert.",
-		personal_tips = "Nutzer-Tipps",
+		personal_tips = "Eigene Tipps",
 		base_tips = "Addon-Tipps",
 		no_base_tips = "Fuer diesen NPC wurden keine Addon-Tipps gefunden.",
 		reset = "Zuruecksetzen",
@@ -98,14 +206,68 @@ local browserLocaleStrings = {
 		delete = "Loeschen",
 		no_personal_tips = "Fuer diesen NPC gibt es noch keine persoenlichen Tipps.",
 		default_tip_text = "Hier persoenlichen NPC-Tipp eingeben...",
+		default_instance_tip_text = "Hier persoenlichen Dungeon-Tipp eingeben...",
 		saved_tip = "Persoenlicher NPC-Tipp gespeichert.",
-		missing_tip = "Bitte zuerst Typ waehlen und Text eingeben.",
+		missing_tip = "Bitte zuerst einen Tipp-Typ waehlen und Text eingeben.",
 		travel = "Anfahrt",
 		attunement = "Attunement",
-		extra_notes = "Zusatzinfos",
-		lore = "RP/Lore",
-		no_details = "Noch keine Zusatzinfos vorhanden.",
+		extra_notes = "Mehr Infos",
+		lore = "Lore / RP",
+		no_details = "Noch keine zusaetzlichen Dungeon-Infos vorhanden.",
 		info_page = "Info",
+		dungeon_info = "Dungeon-Infos",
+		npc_tips = "NPC-Tipps",
+		info_how_it_works = "So funktioniert's",
+		expansion = "Erweiterung",
+		dungeon_or_raid = "Dungeon / Raid",
+		npc = "NPC",
+		bosses = "Bosse",
+		npc_ids = "NPC-IDs",
+		npcs_a_i = "NPCs A-I",
+		npcs_j_r = "NPCs J-R",
+		npcs_s_z = "NPCs S-Z",
+		selected_with_type = "Ausgewaehlt: %s -> %s (%s) -> %s",
+		selected_npc_path = "Ausgewaehlt: %s -> %s -> %s",
+		selected_npc = "NPC: %s",
+		selected_instance = "Ausgewaehlt: %s -> %s",
+		config_tip_location = "Anzeigeort",
+		config_show_separate_frame = "Tipps in separatem Fenster anzeigen",
+		config_show_prefix = "Zeige",
+		config_show_separate_frame_tooltip = "Deaktivieren, damit Tipps direkt in Mob-Tooltips erscheinen",
+		config_show_frame = "Fenster zeigen",
+		config_hide_frame = "Fenster verbergen",
+		config_target_mouseover = "Target oder Mouseover",
+		config_show_target = "Anvisierten Mob anzeigen",
+		config_role_specific = "Rollenspezifische Tipps",
+		config_show_myroleonly = "Nur meine Rolle anzeigen",
+		config_show_tank = "Tank anzeigen",
+		config_show_healer = "Heiler anzeigen",
+		config_show_damage = "Schadensausteiler anzeigen",
+		config_class_specific = "Klassenspezifische Tipps",
+		config_show_myclassonly = "Nur meine Klasse anzeigen",
+		class_druid = "Druide",
+		class_hunter = "Jaeger",
+		class_mage = "Magier",
+		class_paladin = "Paladin",
+		class_priest = "Priester",
+		class_rogue = "Schurke",
+		class_shaman = "Schamane",
+		class_warrior = "Krieger",
+		class_warlock = "Hexenmeister",
+		config_language = "Sprache",
+		config_language_help = "Auto verwendet die Client-Sprache. Englisch ist der Fallback, wenn keine Uebersetzung vorhanden ist.",
+		config_content = "Inhalte",
+		config_show_in_dungeons = "Tipps in Dungeons anzeigen",
+		config_show_in_raid = "Tipps in Raids anzeigen",
+		config_show_npc_ids = "NPC-IDs anzeigen",
+		config_font_size = "Schriftgroesse",
+		config_general = "Wichtige allgemeine Hinweise anzeigen",
+		config_priority = "Prioritaetsziele anzeigen",
+		config_interrupts = "Wichtige Unterbrechungen anzeigen",
+		config_defensives = "Defensiv-Empfehlungen anzeigen",
+		config_fluff = "Fluff anzeigen",
+		config_advanced = "Fortgeschrittene Tipps fuer schwere Inhalte anzeigen",
+		config_personal = "Persoenliche Notizen anzeigen",
 	},
 }
 
@@ -131,6 +293,8 @@ local browserIconList = {
     TANK = "inv_shield_06",
     DAMAGE = "inv_sword_01",
 }
+
+local NPC_NONE = "__none__"
 
 local authorTipTypes = {
 	"Important",
@@ -332,33 +496,35 @@ local defaultConfig = {
     ["Personal"] = true,
     ["ShowFrame"] = "Show in separate frame",
     ["TargetTrigger"] = "Show targeted mob",
+    ["DungeonToggle"] = true,
     ["RaidToggle"] = true,
+    ["ShowNpcIDs"] = true,
     ["MythicPlusToggle"] = true,
     ["FrameWidth"] = 450,
     ["FrameHeight"] = 175,
-    ["FontSize"] = 12,
+    ["FontSize"] = 13,
     ["FrameOpacity"] = 0.55,
     ["LocaleChoice"] = "Auto",
     ["BrowserExpansionKey"] = "tbc",
     ["BrowserInstanceKey"] = "auchenai_crypts",
     ["BrowserNpcID"] = 18371,
     ["RoleFilters"] = {
-        MYROLEONLY = true,
-        TANK = false,
-        HEALER = false,
-        DAMAGE = false,
+        MYROLEONLY = false,
+        TANK = true,
+        HEALER = true,
+        DAMAGE = true,
     },
     ["ClassFilters"] = {
-        MYCLASSONLY = true,
-        DRUID = false,
-        HUNTER = false,
-        MAGE = false,
-        PALADIN = false,
-        PRIEST = false,
-        ROGUE = false,
-        SHAMAN = false,
-        WARRIOR = false,
-        WARLOCK = false,
+        MYCLASSONLY = false,
+        DRUID = true,
+        HUNTER = true,
+        MAGE = true,
+        PALADIN = true,
+        PRIEST = true,
+        ROGUE = true,
+        SHAMAN = true,
+        WARRIOR = true,
+        WARLOCK = true,
     },
 }
 
@@ -533,17 +699,6 @@ function addon:registerConfigPanel()
 	end
 end
 
-local function getBrowserLocaleString(key)
-	local locale = "enUS"
-	if TDTConfig and TDTConfig.LocaleChoice == "deDE" then
-		locale = "deDE"
-	elseif TDTConfig and TDTConfig.LocaleChoice == "Auto" and GetLocale and GetLocale() == "deDE" then
-		locale = "deDE"
-	end
-	local localeStrings = browserLocaleStrings[locale] or browserLocaleStrings.enUS
-	return localeStrings[key] or browserLocaleStrings.enUS[key] or key
-end
-
 TDTConfig = applyConfigDefaults(TDTConfig or QEConfig or {})
 if type(TDTConfig.FontSize) ~= "number" then
     TDTConfig.FontSize = tonumber(TDTConfig.FontSize) or defaultConfig.FontSize
@@ -597,6 +752,38 @@ local function getConfigLocale()
 
     return preferredLocale
 end
+
+local function getBrowserLocaleString(key)
+	local localeStrings = browserLocaleStrings[getConfigLocale()] or browserLocaleStrings.enUS
+	return localeStrings[key] or browserLocaleStrings.enUS[key] or key
+end
+
+local function getLocalizedClassName(classKey)
+    return getBrowserLocaleString("class_" .. string.lower(classKey or "")) or classKey
+end
+
+StaticPopupDialogs["TDT_CONFIRM_LOCALE_RELOAD"] = {
+	text = "Reload UI?",
+	button1 = "Reload",
+	button2 = "Cancel",
+	OnAccept = function(self)
+		if self and self.data then
+			TDTConfig.LocaleChoice = self.data
+		end
+		if ReloadUI then
+			ReloadUI()
+		end
+	end,
+	OnCancel = function(self)
+		if self and self.data2 and self.data2.dropdown then
+			self.data2.dropdown:SetCurrentValue(self.data2.previousValue)
+		end
+	end,
+	timeout = 0,
+	whileDead = 1,
+	hideOnEscape = 1,
+	preferredIndex = STATICPOPUP_NUMDIALOGS,
+}
 
 local function getOrderedKeys(entries)
     local keys = {}
@@ -656,6 +843,10 @@ local function getRawInstanceTips(instanceKey)
 end
 
 local function getInstanceDetails(instanceKey)
+    if addon.getMergedInstanceDetails then
+        return addon:getMergedInstanceDetails(instanceKey)
+    end
+
     local locale = getConfigLocale()
     local localizedMap = locale == "deDE" and instanceDetails_deDE or instanceDetails_enUS
 
@@ -787,6 +978,82 @@ local function mergedEntriesToDisplayTips(entries)
     return displayTips
 end
 
+local function buildDetailLines(details)
+    local lines = {}
+    if not details then
+        return lines
+    end
+
+    if details.travel and details.travel ~= "" then
+        lines[#lines + 1] = string.format("%s: %s", getBrowserLocaleString("travel"), details.travel)
+    end
+    if details.attunement and details.attunement ~= "" then
+        lines[#lines + 1] = string.format("%s: %s", getBrowserLocaleString("attunement"), details.attunement)
+    end
+    if details.notes and details.notes ~= "" then
+        lines[#lines + 1] = string.format("%s: %s", getBrowserLocaleString("extra_notes"), details.notes)
+    end
+    if details.lore and details.lore ~= "" then
+        lines[#lines + 1] = string.format("%s: %s", getBrowserLocaleString("lore"), details.lore)
+    end
+
+    return lines
+end
+
+local function sendBrowserLineToChat(message, channel)
+    if not message or message == "" or not SendChatMessage then
+        return
+    end
+
+    SendChatMessage(message, channel)
+end
+
+local function createBrowserShareRows(parent, count)
+    local rows = {}
+
+    for index = 1, count do
+        local row = CreateFrame("Frame", nil, parent)
+        row:SetSize(620, 34)
+
+        row.text = createString(row, "", "Fonts\\FRIZQT__.TTF", 11)
+        row.text:SetPoint("TOPLEFT", row, "TOPLEFT", 0, 0)
+        row.text:SetWidth(420)
+
+        local buttons = {
+            {"S", "SAY", 24},
+            {"P", "PARTY", 24},
+            {"G", "GUILD", 24},
+            {"RA", "RAID", 28},
+            {"RL", "RAID_WARNING", 28},
+        }
+
+        row.shareButtons = {}
+        local previousButton
+        for _, buttonInfo in ipairs(buttons) do
+            local label, channel, width = buttonInfo[1], buttonInfo[2], buttonInfo[3]
+            local button = CreateFrame("Button", nil, row, "UIPanelButtonTemplate")
+            button:SetSize(width, 20)
+            if previousButton then
+                button:SetPoint("RIGHT", previousButton, "LEFT", -4, 0)
+            else
+                button:SetPoint("TOPRIGHT", row, "TOPRIGHT", 0, 0)
+            end
+            button:SetText(label)
+            button:SetScript("OnClick", function(self)
+                sendBrowserLineToChat(self.message, self.channel)
+            end)
+            button.channel = channel
+            row.shareButtons[#row.shareButtons + 1] = button
+            previousButton = button
+        end
+
+        row:Hide()
+        rows[index] = row
+    end
+
+    return rows
+end
+
 local function getExpansionKeys()
     return getOrderedKeys(addon.contentCatalog or {})
 end
@@ -832,6 +1099,91 @@ local function getNpcIDs(expansionKey, instanceKey)
         return tonumber(left) < tonumber(right)
     end)
 
+    table.insert(npcIDs, 1, NPC_NONE)
+    return npcIDs
+end
+
+local function getNpcSortName(expansionKey, instanceKey, npcID)
+    if npcID == NPC_NONE then
+        return "---"
+    end
+
+    local instanceData = getInstanceData(expansionKey, instanceKey)
+    if instanceData and instanceData.npcNames and instanceData.npcNames[npcID] then
+        local localizedName = getLocalizedLabel(instanceData.npcNames[npcID], nil)
+        if localizedName and localizedName ~= "" then
+            return localizedName
+        end
+    end
+
+    local rawTips = getRawNpcTips(npcID)
+    local commentName = getNpcCommentName(rawTips)
+    if commentName and commentName ~= "" then
+        return commentName
+    end
+
+    return tostring(npcID)
+end
+
+local function getNpcAlphaBucket(expansionKey, instanceKey, npcID)
+    local sortName = getNpcSortName(expansionKey, instanceKey, npcID)
+    local first = sortName:match("^%s*([A-Za-z])")
+    if not first then
+        return "s_z"
+    end
+
+    local upper = string.upper(first)
+    if upper >= "A" and upper <= "I" then
+        return "a_i"
+    elseif upper >= "J" and upper <= "R" then
+        return "j_r"
+    end
+    return "s_z"
+end
+
+local function getNpcIDsForSelector(expansionKey, instanceKey, selector)
+    local allNpcIDs = getNpcIDs(expansionKey, instanceKey)
+    if selector == "bosses" then
+        local npcIDs = { NPC_NONE }
+        local groups = addon.npcGroups and addon.npcGroups[instanceKey]
+        for _, npcID in ipairs(allNpcIDs) do
+            if npcID ~= NPC_NONE and groups and groups[npcID] == "boss" then
+                npcIDs[#npcIDs + 1] = npcID
+            end
+        end
+        table.sort(npcIDs, function(left, right)
+            if left == NPC_NONE then
+                return true
+            end
+            if right == NPC_NONE then
+                return false
+            end
+            return getNpcSortName(expansionKey, instanceKey, left) < getNpcSortName(expansionKey, instanceKey, right)
+        end)
+        return npcIDs
+    end
+
+    if selector == "ids" then
+        return allNpcIDs
+    end
+
+    local npcIDs = { NPC_NONE }
+    for _, npcID in ipairs(allNpcIDs) do
+        if npcID ~= NPC_NONE and getNpcAlphaBucket(expansionKey, instanceKey, npcID) == selector then
+            npcIDs[#npcIDs + 1] = npcID
+        end
+    end
+
+    table.sort(npcIDs, function(left, right)
+        if left == NPC_NONE then
+            return true
+        end
+        if right == NPC_NONE then
+            return false
+        end
+        return getNpcSortName(expansionKey, instanceKey, left) < getNpcSortName(expansionKey, instanceKey, right)
+    end)
+
     return npcIDs
 end
 
@@ -839,7 +1191,15 @@ local function getNpcCommentName(rawTips)
     return nil
 end
 
+local function shouldShowNpcIDs()
+    return not TDTConfig or TDTConfig.ShowNpcIDs ~= false
+end
+
 local function getNpcBrowserLabel(expansionKey, instanceKey, npcID)
+    if npcID == NPC_NONE then
+        return "---"
+    end
+
     local instanceData = getInstanceData(expansionKey, instanceKey)
     local localizedName
 
@@ -848,12 +1208,18 @@ local function getNpcBrowserLabel(expansionKey, instanceKey, npcID)
     end
 
     if localizedName then
+        if not shouldShowNpcIDs() then
+            return localizedName
+        end
         return string.format("%s (%d)", localizedName, npcID)
     end
 
     local rawTips = getRawNpcTips(npcID)
     local commentName = getNpcCommentName(rawTips)
     if commentName then
+        if not shouldShowNpcIDs() then
+            return commentName
+        end
         return string.format("%s (%d)", commentName, npcID)
     end
 
@@ -861,6 +1227,9 @@ local function getNpcBrowserLabel(expansionKey, instanceKey, npcID)
 end
 
 local function getNpcDisplayName(expansionKey, instanceKey, npcID)
+    if npcID == NPC_NONE then
+        return nil
+    end
     local browserLabel = getNpcBrowserLabel(expansionKey, instanceKey, npcID)
     return browserLabel:gsub("%s*%(%d+%)$", "")
 end
@@ -966,7 +1335,7 @@ local function createContentBrowserMenu()
     addon.contentBrowserPanel.name = "Content Browser"
     addon.contentBrowserPanel.okay = function(self) return end
     addon.contentBrowserPanel.cancel = function(self) return end
-    local browserContent = setupScrollablePanel(addon.contentBrowserPanel, "TDTContentBrowser", 1400)
+    local browserContent = setupScrollablePanel(addon.contentBrowserPanel, "TDTContentBrowser", 1900)
 
     local headerFont = "Fonts\\MORPHEUS.ttf"
     local headerSize = 16
@@ -975,20 +1344,32 @@ local function createContentBrowserMenu()
     title:SetPoint("TOPLEFT", 10, -10)
     title:SetFont("Fonts\\MORPHEUS.ttf", 22, "OUTLINE")
     title:SetTextColor(0.9, 0.68, 0.22, 1)
-    title:SetText("Kiesel Dungeon Tool - Content Browser")
+    title:SetText(getBrowserLocaleString("content_browser_title"))
 
-    local subtitle = createString(browserContent, "Browse the hardcoded expansion, instance and NPC structure before we add editing.", "Fonts\\FRIZQT__.TTF", 11)
+    local subtitle = createString(browserContent, getBrowserLocaleString("content_browser_subtitle"), "Fonts\\FRIZQT__.TTF", 11)
     subtitle:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -8)
     subtitle:SetWidth(540)
 
-    local expansionFS = createString(browserContent, "Expansion", headerFont, headerSize)
+    local expansionFS = createString(browserContent, getBrowserLocaleString("expansion"), headerFont, headerSize)
     expansionFS:SetPoint("TOPLEFT", subtitle, "BOTTOMLEFT", 0, -20)
 
-    local instanceFS = createString(browserContent, "Dungeon / Raid", headerFont, headerSize)
+    local instanceFS = createString(browserContent, getBrowserLocaleString("dungeon_or_raid"), headerFont, headerSize)
     instanceFS:SetPoint("TOPLEFT", expansionButton or subtitle, "BOTTOMLEFT", 0, -24)
 
-    local npcFS = createString(browserContent, "NPC", headerFont, headerSize)
-    npcFS:SetPoint("TOPLEFT", instanceFS, "BOTTOMLEFT", 0, -26)
+    local bossesFS = createString(browserContent, getBrowserLocaleString("bosses"), headerFont, headerSize)
+    bossesFS:SetPoint("TOPLEFT", instanceFS, "BOTTOMLEFT", 0, -26)
+
+    local npcIdsFS = createString(browserContent, getBrowserLocaleString("npc_ids"), headerFont, headerSize)
+    npcIdsFS:SetPoint("TOPLEFT", bossesFS, "BOTTOMLEFT", 0, -26)
+
+    local npcAiFS = createString(browserContent, getBrowserLocaleString("npcs_a_i"), headerFont, headerSize)
+    npcAiFS:SetPoint("TOPLEFT", npcIdsFS, "BOTTOMLEFT", 0, -26)
+
+    local npcJrFS = createString(browserContent, getBrowserLocaleString("npcs_j_r"), headerFont, headerSize)
+    npcJrFS:SetPoint("TOPLEFT", npcAiFS, "BOTTOMLEFT", 0, -26)
+
+    local npcSzFS = createString(browserContent, getBrowserLocaleString("npcs_s_z"), headerFont, headerSize)
+    npcSzFS:SetPoint("TOPLEFT", npcJrFS, "BOTTOMLEFT", 0, -26)
 
     local browserState = {
         expansionKey = TDTConfig.BrowserExpansionKey,
@@ -998,12 +1379,74 @@ local function createContentBrowserMenu()
 
     local expansionButton
     local instanceDropdown
-    local npcDropdown
+    local bossDropdown
+    local bossDropdown
+    local npcIdsDropdown
+    local npcAiDropdown
+    local npcJrDropdown
+    local npcSzDropdown
     local selectionSummary
     local npcSelectionLabel
     local instancePreview
     local instanceDetailsPreview
     local npcPreview
+    local instancePreviewFS
+    local instanceDetailsFS
+    local npcPreviewFS
+    local instanceTipRows = createBrowserShareRows(browserContent, 20)
+    local instanceDetailRows = createBrowserShareRows(browserContent, 8)
+    local npcHeadingRow = createBrowserShareRows(browserContent, 1)[1]
+    local npcTipRows = createBrowserShareRows(browserContent, 24)
+
+    local function refreshBrowserTexts()
+        title:SetText(getBrowserLocaleString("content_browser_title"))
+        subtitle:SetText(getBrowserLocaleString("content_browser_subtitle"))
+        expansionFS:SetText(getBrowserLocaleString("expansion"))
+        instanceFS:SetText(getBrowserLocaleString("dungeon_or_raid"))
+        bossesFS:SetText(getBrowserLocaleString("bosses"))
+        npcIdsFS:SetText(getBrowserLocaleString("npc_ids"))
+        npcAiFS:SetText(getBrowserLocaleString("npcs_a_i"))
+        npcJrFS:SetText(getBrowserLocaleString("npcs_j_r"))
+        npcSzFS:SetText(getBrowserLocaleString("npcs_s_z"))
+        instancePreviewFS:SetText(getBrowserLocaleString("dungeon_info"))
+        instanceDetailsFS:SetText(getBrowserLocaleString("additional_details"))
+        npcPreviewFS:SetText(getBrowserLocaleString("npc_tips"))
+    end
+
+    local function setBrowserRows(rows, startAnchor, lines)
+        local lastAnchor = startAnchor
+
+        for _, row in ipairs(rows) do
+            row:Hide()
+        end
+
+        if not lines or #lines == 0 then
+            return startAnchor
+        end
+
+        for index, line in ipairs(lines) do
+            local row = rows[index]
+            if not row then
+                break
+            end
+
+            row:ClearAllPoints()
+            if index == 1 then
+                row:SetPoint("TOPLEFT", startAnchor, "BOTTOMLEFT", 0, -6)
+            else
+                row:SetPoint("TOPLEFT", rows[index - 1], "BOTTOMLEFT", 0, -6)
+            end
+
+            row.text:SetText(line.display)
+            for _, button in ipairs(row.shareButtons or {}) do
+                button.message = line.message
+            end
+            row:Show()
+            lastAnchor = row
+        end
+
+        return lastAnchor
+    end
     local function ensureBrowserSelection()
         local expansionKeys = getExpansionKeys()
         if #expansionKeys == 0 then
@@ -1045,7 +1488,7 @@ local function createContentBrowserMenu()
             end
         end
         if not hasNpc then
-            browserState.npcID = npcIDs[1]
+            browserState.npcID = NPC_NONE
         end
 
         TDTConfig.BrowserExpansionKey = browserState.expansionKey
@@ -1064,32 +1507,98 @@ local function createContentBrowserMenu()
         instanceDropdown:SetValues(instanceKeys)
         instanceDropdown:SetCurrentValue(browserState.instanceKey)
 
-        local npcIDs = getNpcIDs(browserState.expansionKey, browserState.instanceKey)
-        npcDropdown:SetValues(npcIDs)
-        npcDropdown:SetCurrentValue(browserState.npcID)
-
         local expansionData = getExpansionData(browserState.expansionKey)
         local instanceData = getInstanceData(browserState.expansionKey, browserState.instanceKey)
         local expansionLabel = getLocalizedLabel(expansionData and expansionData.name, browserState.expansionKey or "-")
         local instanceLabel = getLocalizedLabel(instanceData and instanceData.name, browserState.instanceKey or "-")
         local instanceType = instanceData and instanceData.type or "Unknown"
+        local selectedNpcID = browserState.npcID ~= NPC_NONE and browserState.npcID or nil
+        bossDropdown:SetValues(getNpcIDsForSelector(browserState.expansionKey, browserState.instanceKey, "bosses"))
+        npcIdsDropdown:SetValues(getNpcIDsForSelector(browserState.expansionKey, browserState.instanceKey, "ids"))
+        npcAiDropdown:SetValues(getNpcIDsForSelector(browserState.expansionKey, browserState.instanceKey, "a_i"))
+        npcJrDropdown:SetValues(getNpcIDsForSelector(browserState.expansionKey, browserState.instanceKey, "j_r"))
+        npcSzDropdown:SetValues(getNpcIDsForSelector(browserState.expansionKey, browserState.instanceKey, "s_z"))
+        if selectedNpcID and addon.npcGroups and addon.npcGroups[browserState.instanceKey] and addon.npcGroups[browserState.instanceKey][selectedNpcID] == "boss" then
+            bossDropdown:SetCurrentValue(selectedNpcID)
+        else
+            bossDropdown:SetCurrentValue(NPC_NONE)
+        end
+        npcIdsDropdown:SetCurrentValue(browserState.npcID)
+        if selectedNpcID then
+            local bucket = getNpcAlphaBucket(browserState.expansionKey, browserState.instanceKey, selectedNpcID)
+            npcAiDropdown:SetCurrentValue(bucket == "a_i" and selectedNpcID or NPC_NONE)
+            npcJrDropdown:SetCurrentValue(bucket == "j_r" and selectedNpcID or NPC_NONE)
+            npcSzDropdown:SetCurrentValue(bucket == "s_z" and selectedNpcID or NPC_NONE)
+        else
+            npcAiDropdown:SetCurrentValue(NPC_NONE)
+            npcJrDropdown:SetCurrentValue(NPC_NONE)
+            npcSzDropdown:SetCurrentValue(NPC_NONE)
+        end
+
         local npcLabel = browserState.npcID and getNpcBrowserLabel(browserState.expansionKey, browserState.instanceKey, browserState.npcID) or "-"
-        local npcDisplayName = browserState.npcID and getNpcDisplayName(browserState.expansionKey, browserState.instanceKey, browserState.npcID) or nil
+        local npcDisplayName = selectedNpcID and getNpcDisplayName(browserState.expansionKey, browserState.instanceKey, selectedNpcID) or nil
 
-        selectionSummary:SetText(string.format("Selected: %s -> %s (%s) -> %s", expansionLabel, instanceLabel, instanceType, npcLabel))
-        npcSelectionLabel:SetText(string.format("NPC: %s", npcLabel))
+        selectionSummary:SetText(string.format(getBrowserLocaleString("selected_with_type"), expansionLabel, instanceLabel, instanceType, npcLabel))
+        npcSelectionLabel:SetText(string.format(getBrowserLocaleString("selected_npc"), npcLabel))
         local mergedInstanceEntries = addon.getMergedInstanceTipEntries and addon:getMergedInstanceTipEntries(browserState.instanceKey) or normalizeRawTips(getRawInstanceTips(browserState.instanceKey))
-        local mergedNpcEntries = addon.getMergedNpcTipEntries and addon:getMergedNpcTipEntries(browserState.npcID) or normalizeRawTips(getRawNpcTips(browserState.npcID))
+        local mergedNpcEntries = selectedNpcID and (addon.getMergedNpcTipEntries and addon:getMergedNpcTipEntries(selectedNpcID) or normalizeRawTips(getRawNpcTips(selectedNpcID))) or nil
 
-        instancePreview:SetText(formatTipEntriesPreview(mergedInstanceEntries))
-        instanceDetailsPreview:SetText(formatInstanceDetails(getInstanceDetails(browserState.instanceKey)))
-        npcPreview:SetText(formatTipEntriesPreview(mergedNpcEntries))
+        instancePreview:SetText("")
+        instanceDetailsPreview:SetText("")
+        npcPreview:SetText("")
+
+        local instanceLines = {}
+        for _, tip in ipairs(mergedInstanceEntries or {}) do
+            instanceLines[#instanceLines + 1] = {
+                display = string.format("[%s] %s", tip.type or "?", tip.text or ""),
+                message = string.format("[%s] %s", tip.type or "?", tip.text or ""),
+            }
+        end
+
+        local detailLines = {}
+        for _, line in ipairs(buildDetailLines(getInstanceDetails(browserState.instanceKey))) do
+            detailLines[#detailLines + 1] = {
+                display = line,
+                message = line,
+            }
+        end
+
+        local npcLines = {}
+        for _, tip in ipairs(mergedNpcEntries or {}) do
+            npcLines[#npcLines + 1] = {
+                display = string.format("[%s] %s", tip.type or "?", tip.text or ""),
+                message = string.format("[%s] %s", tip.type or "?", tip.text or ""),
+            }
+        end
+
+        local lastInstanceAnchor = setBrowserRows(instanceTipRows, instancePreviewFS, instanceLines)
+        instanceDetailsFS:ClearAllPoints()
+        instanceDetailsFS:SetPoint("TOPLEFT", lastInstanceAnchor, "BOTTOMLEFT", 0, -18)
+
+        local lastDetailsAnchor = setBrowserRows(instanceDetailRows, instanceDetailsFS, detailLines)
+        npcPreviewFS:ClearAllPoints()
+        npcPreviewFS:SetPoint("TOPLEFT", lastDetailsAnchor, "BOTTOMLEFT", 0, -18)
+
+        npcHeadingRow:Hide()
+        for _, row in ipairs(npcTipRows) do
+            row:Hide()
+        end
+
+        if selectedNpcID and npcDisplayName then
+            npcHeadingRow:SetPoint("TOPLEFT", npcPreviewFS, "BOTTOMLEFT", 0, -6)
+            npcHeadingRow.text:SetText(string.format("--- %s ---", npcDisplayName))
+            for _, button in ipairs(npcHeadingRow.shareButtons or {}) do
+                button.message = string.format("--- %s ---", npcDisplayName)
+            end
+            npcHeadingRow:Show()
+            setBrowserRows(npcTipRows, npcHeadingRow, npcLines)
+        end
 
         if addon.showBrowserSelectionInFrame then
             addon:showBrowserSelectionInFrame(
                 instanceLabel,
                 npcDisplayName,
-                browserState.npcID,
+                selectedNpcID,
                 mergedEntriesToDisplayTips(mergedInstanceEntries),
                 mergedEntriesToDisplayTips(mergedNpcEntries)
             )
@@ -1126,41 +1635,89 @@ local function createContentBrowserMenu()
         return string.format("%s (%s)", getLocalizedLabel(instanceData.name, value), instanceData.type or "Unknown")
     end
 
-    npcFS:ClearAllPoints()
-    npcFS:SetPoint("TOPLEFT", instanceDropdown, "BOTTOMLEFT", 16, -18)
+    bossesFS:ClearAllPoints()
+    bossesFS:SetPoint("TOPLEFT", instanceDropdown, "BOTTOMLEFT", 16, -18)
 
-    npcDropdown = createValueDropdown(browserContent, "BrowserNpc", 240, function(value)
+    bossDropdown = createValueDropdown(browserContent, "BrowserNpcBosses", 240, function(value)
         browserState.npcID = value
         updateBrowserUI()
     end)
-    npcDropdown:SetPoint("TOPLEFT", npcFS, "BOTTOMLEFT", -16, -2)
-    npcDropdown.labelForValue = function(value)
+    bossDropdown:SetPoint("TOPLEFT", bossesFS, "BOTTOMLEFT", -16, -2)
+    bossDropdown.labelForValue = function(value)
+        return getNpcBrowserLabel(browserState.expansionKey, browserState.instanceKey, value)
+    end
+
+    npcIdsFS:ClearAllPoints()
+    npcIdsFS:SetPoint("TOPLEFT", bossDropdown, "BOTTOMLEFT", 16, -18)
+
+    npcIdsDropdown = createValueDropdown(browserContent, "BrowserNpcIds", 240, function(value)
+        browserState.npcID = value
+        updateBrowserUI()
+    end)
+    npcIdsDropdown:SetPoint("TOPLEFT", npcIdsFS, "BOTTOMLEFT", -16, -2)
+    npcIdsDropdown.labelForValue = function(value)
+        return getNpcBrowserLabel(browserState.expansionKey, browserState.instanceKey, value)
+    end
+
+    npcAiFS:ClearAllPoints()
+    npcAiFS:SetPoint("TOPLEFT", npcIdsDropdown, "BOTTOMLEFT", 16, -18)
+
+    npcAiDropdown = createValueDropdown(browserContent, "BrowserNpcAi", 240, function(value)
+        browserState.npcID = value
+        updateBrowserUI()
+    end)
+    npcAiDropdown:SetPoint("TOPLEFT", npcAiFS, "BOTTOMLEFT", -16, -2)
+    npcAiDropdown.labelForValue = function(value)
+        return getNpcBrowserLabel(browserState.expansionKey, browserState.instanceKey, value)
+    end
+
+    npcJrFS:ClearAllPoints()
+    npcJrFS:SetPoint("TOPLEFT", npcAiDropdown, "BOTTOMLEFT", 16, -18)
+
+    npcJrDropdown = createValueDropdown(browserContent, "BrowserNpcJr", 240, function(value)
+        browserState.npcID = value
+        updateBrowserUI()
+    end)
+    npcJrDropdown:SetPoint("TOPLEFT", npcJrFS, "BOTTOMLEFT", -16, -2)
+    npcJrDropdown.labelForValue = function(value)
+        return getNpcBrowserLabel(browserState.expansionKey, browserState.instanceKey, value)
+    end
+
+    npcSzFS:ClearAllPoints()
+    npcSzFS:SetPoint("TOPLEFT", npcJrDropdown, "BOTTOMLEFT", 16, -18)
+
+    npcSzDropdown = createValueDropdown(browserContent, "BrowserNpcSz", 240, function(value)
+        browserState.npcID = value
+        updateBrowserUI()
+    end)
+    npcSzDropdown:SetPoint("TOPLEFT", npcSzFS, "BOTTOMLEFT", -16, -2)
+    npcSzDropdown.labelForValue = function(value)
         return getNpcBrowserLabel(browserState.expansionKey, browserState.instanceKey, value)
     end
 
     selectionSummary = createString(browserContent, "", "Fonts\\FRIZQT__.TTF", 11)
-    selectionSummary:SetPoint("TOPLEFT", npcDropdown, "BOTTOMLEFT", 16, -18)
+    selectionSummary:SetPoint("TOPLEFT", npcSzDropdown, "BOTTOMLEFT", 16, -18)
     selectionSummary:SetWidth(620)
 
     npcSelectionLabel = createString(browserContent, "", "Fonts\\FRIZQT__.TTF", 11)
     npcSelectionLabel:SetPoint("TOPLEFT", selectionSummary, "BOTTOMLEFT", 0, -8)
     npcSelectionLabel:SetWidth(620)
 
-    local instancePreviewFS = createString(browserContent, "Instance Info Preview", headerFont, headerSize)
+    instancePreviewFS = createString(browserContent, getBrowserLocaleString("dungeon_info"), headerFont, headerSize)
     instancePreviewFS:SetPoint("TOPLEFT", npcSelectionLabel, "BOTTOMLEFT", 0, -18)
 
     instancePreview = createString(browserContent, "", "Fonts\\FRIZQT__.TTF", 11)
     instancePreview:SetPoint("TOPLEFT", instancePreviewFS, "BOTTOMLEFT", 0, -6)
     instancePreview:SetWidth(620)
 
-    local instanceDetailsFS = createString(browserContent, getBrowserLocaleString("additional_details"), headerFont, headerSize)
+    instanceDetailsFS = createString(browserContent, getBrowserLocaleString("additional_details"), headerFont, headerSize)
     instanceDetailsFS:SetPoint("TOPLEFT", instancePreview, "BOTTOMLEFT", 0, -18)
 
     instanceDetailsPreview = createString(browserContent, "", "Fonts\\FRIZQT__.TTF", 11)
     instanceDetailsPreview:SetPoint("TOPLEFT", instanceDetailsFS, "BOTTOMLEFT", 0, -6)
     instanceDetailsPreview:SetWidth(620)
 
-    local npcPreviewFS = createString(browserContent, "NPC Tips Preview", headerFont, headerSize)
+    npcPreviewFS = createString(browserContent, getBrowserLocaleString("npc_tips"), headerFont, headerSize)
     npcPreviewFS:SetPoint("TOPLEFT", instanceDetailsPreview, "BOTTOMLEFT", 0, -18)
 
     npcPreview = createString(browserContent, "", "Fonts\\FRIZQT__.TTF", 11)
@@ -1174,20 +1731,27 @@ local function createContentBrowserMenu()
             browserState.expansionKey = TDTConfig.BrowserExpansionKey
             browserState.instanceKey = TDTConfig.BrowserInstanceKey
             browserState.npcID = TDTConfig.BrowserNpcID
+            refreshBrowserTexts()
             updateBrowserUI()
             if self.refreshScroll then self:refreshScroll() end
         end
     end)
 
+    addon.contentBrowserPanel:HookScript("OnShow", function()
+        refreshBrowserTexts()
+        updateBrowserUI()
+    end)
+
+    refreshBrowserTexts()
     updateBrowserUI()
 end
 
 local function createEditorMenu()
     addon.editorPanel = CreateFrame("Frame", "TothysDungeonTipsEditor", UIParent)
-    addon.editorPanel.name = getBrowserLocaleString("editor_page")
+    addon.editorPanel.name = "Tip Editor"
     addon.editorPanel.okay = function(self) return end
     addon.editorPanel.cancel = function(self) return end
-    local editorContent = setupScrollablePanel(addon.editorPanel, "TDTEditor", 2100)
+    local editorContent = setupScrollablePanel(addon.editorPanel, "TDTEditor", 1650)
 
     local headerFont = "Fonts\\MORPHEUS.ttf"
     local headerSize = 16
@@ -1202,7 +1766,7 @@ local function createEditorMenu()
     subtitle:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -8)
     subtitle:SetWidth(620)
 
-    local expansionFS = createString(editorContent, "Expansion", headerFont, headerSize)
+    local expansionFS = createString(editorContent, getBrowserLocaleString("expansion"), headerFont, headerSize)
     expansionFS:SetPoint("TOPLEFT", subtitle, "BOTTOMLEFT", 0, -20)
 
     local editorState = {
@@ -1213,7 +1777,10 @@ local function createEditorMenu()
 
     local expansionButton
     local instanceDropdown
-    local npcDropdown
+    local npcIdsDropdown
+    local npcAiDropdown
+    local npcJrDropdown
+    local npcSzDropdown
     local selectionSummary
     local npcPreview
     local addTipTypeDropdown
@@ -1226,6 +1793,48 @@ local function createEditorMenu()
     local baseTipRows = {}
     local editingTipID = nil
     local editingBaseTipID = nil
+    local instanceFS
+    local bossesFS
+    local npcIdsFS
+    local npcAiFS
+    local npcJrFS
+    local npcSzFS
+    local npcPreviewFS
+    local addTipHeader
+    local addTipTypeLabel
+    local addTipWeightLabel
+    local addTipTextLabel
+    local saveTipButton
+    local cancelEditButton
+
+    local function refreshTipEditorTexts()
+        title:SetText(getBrowserLocaleString("editor_title"))
+        subtitle:SetText(getBrowserLocaleString("editor_subtitle"))
+        expansionFS:SetText(getBrowserLocaleString("expansion"))
+        instanceFS:SetText(getBrowserLocaleString("dungeon_or_raid"))
+        bossesFS:SetText(getBrowserLocaleString("bosses"))
+        npcIdsFS:SetText(getBrowserLocaleString("npc_ids"))
+        npcAiFS:SetText(getBrowserLocaleString("npcs_a_i"))
+        npcJrFS:SetText(getBrowserLocaleString("npcs_j_r"))
+        npcSzFS:SetText(getBrowserLocaleString("npcs_s_z"))
+        npcPreviewFS:SetText(getBrowserLocaleString("npc_tips"))
+        addTipHeader:SetText(getBrowserLocaleString("add_npc_tip"))
+        addTipTypeLabel:SetText(getBrowserLocaleString("tip_type"))
+        addTipWeightLabel:SetText(getBrowserLocaleString("tip_weight"))
+        addTipTextLabel:SetText(getBrowserLocaleString("tip_text"))
+        saveTipButton:SetText(editingBaseTipID and getBrowserLocaleString("update_base_tip") or editingTipID and getBrowserLocaleString("update_tip") or getBrowserLocaleString("save_tip"))
+        cancelEditButton:SetText(getBrowserLocaleString("cancel_edit"))
+        personalTipsHeader:SetText(getBrowserLocaleString("personal_tips"))
+        baseTipsHeader:SetText(getBrowserLocaleString("base_tips"))
+        for _, row in ipairs(personalTipRows) do
+            row.edit:SetText(getBrowserLocaleString("edit"))
+            row.delete:SetText(getBrowserLocaleString("delete"))
+        end
+        for _, row in ipairs(baseTipRows) do
+            row.reset:SetText(getBrowserLocaleString("reset"))
+            row.edit:SetText(getBrowserLocaleString("edit_base"))
+        end
+    end
 
     local function setTipTypeDropdownInteractive(enabled)
         local alpha = enabled and 1 or 0.5
@@ -1294,7 +1903,7 @@ local function createEditorMenu()
             end
         end
         if not hasNpc then
-            editorState.npcID = npcIDs[1]
+            editorState.npcID = NPC_NONE
         end
     end
 
@@ -1305,19 +1914,38 @@ local function createEditorMenu()
         expansionButton:SetCurrentValue(editorState.expansionKey)
         instanceDropdown:SetValues(getInstanceKeys(editorState.expansionKey))
         instanceDropdown:SetCurrentValue(editorState.instanceKey)
-        npcDropdown:SetValues(getNpcIDs(editorState.expansionKey, editorState.instanceKey))
-        npcDropdown:SetCurrentValue(editorState.npcID)
-
         local expansionData = getExpansionData(editorState.expansionKey)
         local instanceData = getInstanceData(editorState.expansionKey, editorState.instanceKey)
         local expansionLabel = getLocalizedLabel(expansionData and expansionData.name, editorState.expansionKey or "-")
         local instanceLabel = getLocalizedLabel(instanceData and instanceData.name, editorState.instanceKey or "-")
+        local selectedNpcID = editorState.npcID ~= NPC_NONE and editorState.npcID or nil
+        bossDropdown:SetValues(getNpcIDsForSelector(editorState.expansionKey, editorState.instanceKey, "bosses"))
+        npcIdsDropdown:SetValues(getNpcIDsForSelector(editorState.expansionKey, editorState.instanceKey, "ids"))
+        npcAiDropdown:SetValues(getNpcIDsForSelector(editorState.expansionKey, editorState.instanceKey, "a_i"))
+        npcJrDropdown:SetValues(getNpcIDsForSelector(editorState.expansionKey, editorState.instanceKey, "j_r"))
+        npcSzDropdown:SetValues(getNpcIDsForSelector(editorState.expansionKey, editorState.instanceKey, "s_z"))
+        if selectedNpcID and addon.npcGroups and addon.npcGroups[editorState.instanceKey] and addon.npcGroups[editorState.instanceKey][selectedNpcID] == "boss" then
+            bossDropdown:SetCurrentValue(selectedNpcID)
+        else
+            bossDropdown:SetCurrentValue(NPC_NONE)
+        end
+        npcIdsDropdown:SetCurrentValue(editorState.npcID)
+        if selectedNpcID then
+            local bucket = getNpcAlphaBucket(editorState.expansionKey, editorState.instanceKey, selectedNpcID)
+            npcAiDropdown:SetCurrentValue(bucket == "a_i" and selectedNpcID or NPC_NONE)
+            npcJrDropdown:SetCurrentValue(bucket == "j_r" and selectedNpcID or NPC_NONE)
+            npcSzDropdown:SetCurrentValue(bucket == "s_z" and selectedNpcID or NPC_NONE)
+        else
+            npcAiDropdown:SetCurrentValue(NPC_NONE)
+            npcJrDropdown:SetCurrentValue(NPC_NONE)
+            npcSzDropdown:SetCurrentValue(NPC_NONE)
+        end
         local npcLabel = editorState.npcID and getNpcBrowserLabel(editorState.expansionKey, editorState.instanceKey, editorState.npcID) or "-"
-        local mergedNpcEntries = addon.getMergedNpcTipEntries and addon:getMergedNpcTipEntries(editorState.npcID) or normalizeRawTips(getRawNpcTips(editorState.npcID))
-        local personalTips = addon.getNpcUserAdditions and addon:getNpcUserAdditions(editorState.npcID) or {}
-        local baseTips = addon.getNpcBaseTipsForEditor and addon:getNpcBaseTipsForEditor(editorState.npcID) or {}
+        local mergedNpcEntries = selectedNpcID and (addon.getMergedNpcTipEntries and addon:getMergedNpcTipEntries(selectedNpcID) or normalizeRawTips(getRawNpcTips(selectedNpcID))) or nil
+        local personalTips = selectedNpcID and (addon.getNpcUserAdditions and addon:getNpcUserAdditions(selectedNpcID) or {}) or {}
+        local baseTips = selectedNpcID and (addon.getNpcBaseTipsForEditor and addon:getNpcBaseTipsForEditor(selectedNpcID) or {}) or {}
 
-        selectionSummary:SetText(string.format("Selected: %s -> %s -> %s", expansionLabel, instanceLabel, npcLabel))
+        selectionSummary:SetText(string.format(getBrowserLocaleString("selected_npc_path"), expansionLabel, instanceLabel, npcLabel))
         npcPreview:SetText(formatTipEntriesPreview(mergedNpcEntries))
 
         for _, row in ipairs(personalTipRows) do
@@ -1426,7 +2054,7 @@ local function createEditorMenu()
         return getLocalizedLabel(expansionData and expansionData.name, value)
     end
 
-    local instanceFS = createString(editorContent, "Dungeon / Raid", headerFont, headerSize)
+    instanceFS = createString(editorContent, getBrowserLocaleString("dungeon_or_raid"), headerFont, headerSize)
     instanceFS:SetPoint("TOPLEFT", expansionButton, "BOTTOMLEFT", 0, -24)
 
     instanceDropdown = createValueDropdown(editorContent, "EditorInstance", 220, function(value)
@@ -1444,33 +2072,81 @@ local function createEditorMenu()
         return string.format("%s (%s)", getLocalizedLabel(instanceData.name, value), instanceData.type or "Unknown")
     end
 
-    local npcFS = createString(editorContent, "NPC", headerFont, headerSize)
-    npcFS:SetPoint("TOPLEFT", instanceDropdown, "BOTTOMLEFT", 16, -18)
+    bossesFS = createString(editorContent, getBrowserLocaleString("bosses"), headerFont, headerSize)
+    bossesFS:SetPoint("TOPLEFT", instanceDropdown, "BOTTOMLEFT", 16, -18)
 
-    npcDropdown = createValueDropdown(editorContent, "EditorNpc", 240, function(value)
+    bossDropdown = createValueDropdown(editorContent, "EditorNpcBosses", 240, function(value)
         editorState.npcID = value
         updateEditorUI()
     end)
-    npcDropdown:SetPoint("TOPLEFT", npcFS, "BOTTOMLEFT", -16, -2)
-    npcDropdown.labelForValue = function(value)
+    bossDropdown:SetPoint("TOPLEFT", bossesFS, "BOTTOMLEFT", -16, -2)
+    bossDropdown.labelForValue = function(value)
+        return getNpcBrowserLabel(editorState.expansionKey, editorState.instanceKey, value)
+    end
+
+    npcIdsFS = createString(editorContent, getBrowserLocaleString("npc_ids"), headerFont, headerSize)
+    npcIdsFS:SetPoint("TOPLEFT", bossDropdown, "BOTTOMLEFT", 16, -18)
+
+    npcIdsDropdown = createValueDropdown(editorContent, "EditorNpcIds", 240, function(value)
+        editorState.npcID = value
+        updateEditorUI()
+    end)
+    npcIdsDropdown:SetPoint("TOPLEFT", npcIdsFS, "BOTTOMLEFT", -16, -2)
+    npcIdsDropdown.labelForValue = function(value)
+        return getNpcBrowserLabel(editorState.expansionKey, editorState.instanceKey, value)
+    end
+
+    npcAiFS = createString(editorContent, getBrowserLocaleString("npcs_a_i"), headerFont, headerSize)
+    npcAiFS:SetPoint("TOPLEFT", npcIdsDropdown, "BOTTOMLEFT", 16, -18)
+
+    npcAiDropdown = createValueDropdown(editorContent, "EditorNpcAi", 240, function(value)
+        editorState.npcID = value
+        updateEditorUI()
+    end)
+    npcAiDropdown:SetPoint("TOPLEFT", npcAiFS, "BOTTOMLEFT", -16, -2)
+    npcAiDropdown.labelForValue = function(value)
+        return getNpcBrowserLabel(editorState.expansionKey, editorState.instanceKey, value)
+    end
+
+    npcJrFS = createString(editorContent, getBrowserLocaleString("npcs_j_r"), headerFont, headerSize)
+    npcJrFS:SetPoint("TOPLEFT", npcAiDropdown, "BOTTOMLEFT", 16, -18)
+
+    npcJrDropdown = createValueDropdown(editorContent, "EditorNpcJr", 240, function(value)
+        editorState.npcID = value
+        updateEditorUI()
+    end)
+    npcJrDropdown:SetPoint("TOPLEFT", npcJrFS, "BOTTOMLEFT", -16, -2)
+    npcJrDropdown.labelForValue = function(value)
+        return getNpcBrowserLabel(editorState.expansionKey, editorState.instanceKey, value)
+    end
+
+    npcSzFS = createString(editorContent, getBrowserLocaleString("npcs_s_z"), headerFont, headerSize)
+    npcSzFS:SetPoint("TOPLEFT", npcJrDropdown, "BOTTOMLEFT", 16, -18)
+
+    npcSzDropdown = createValueDropdown(editorContent, "EditorNpcSz", 240, function(value)
+        editorState.npcID = value
+        updateEditorUI()
+    end)
+    npcSzDropdown:SetPoint("TOPLEFT", npcSzFS, "BOTTOMLEFT", -16, -2)
+    npcSzDropdown.labelForValue = function(value)
         return getNpcBrowserLabel(editorState.expansionKey, editorState.instanceKey, value)
     end
 
     selectionSummary = createString(editorContent, "", "Fonts\\FRIZQT__.TTF", 11)
-    selectionSummary:SetPoint("TOPLEFT", npcDropdown, "BOTTOMLEFT", 16, -18)
+    selectionSummary:SetPoint("TOPLEFT", npcSzDropdown, "BOTTOMLEFT", 16, -18)
     selectionSummary:SetWidth(620)
 
-    local npcPreviewFS = createString(editorContent, "NPC Tips Preview", headerFont, headerSize)
+    npcPreviewFS = createString(editorContent, getBrowserLocaleString("npc_tips"), headerFont, headerSize)
     npcPreviewFS:SetPoint("TOPLEFT", selectionSummary, "BOTTOMLEFT", 0, -18)
 
     npcPreview = createString(editorContent, "", "Fonts\\FRIZQT__.TTF", 11)
     npcPreview:SetPoint("TOPLEFT", npcPreviewFS, "BOTTOMLEFT", 0, -6)
     npcPreview:SetWidth(620)
 
-    local addTipHeader = createString(editorContent, getBrowserLocaleString("add_npc_tip"), headerFont, headerSize)
+    addTipHeader = createString(editorContent, getBrowserLocaleString("add_npc_tip"), headerFont, headerSize)
     addTipHeader:SetPoint("TOPLEFT", npcPreview, "BOTTOMLEFT", 0, -22)
 
-    local addTipTypeLabel = createString(editorContent, getBrowserLocaleString("tip_type"), "Fonts\\FRIZQT__.TTF", 11)
+    addTipTypeLabel = createString(editorContent, getBrowserLocaleString("tip_type"), "Fonts\\FRIZQT__.TTF", 11)
     addTipTypeLabel:SetPoint("TOPLEFT", addTipHeader, "BOTTOMLEFT", 0, -8)
 
     addTipTypeDropdown = createValueDropdown(editorContent, "EditorAddTipType", 220, function(value) end)
@@ -1481,14 +2157,14 @@ local function createEditorMenu()
     end
     addTipTypeDropdown:SetCurrentValue("Personal")
 
-    local addTipWeightLabel = createString(editorContent, getBrowserLocaleString("tip_weight"), "Fonts\\FRIZQT__.TTF", 11)
+    addTipWeightLabel = createString(editorContent, getBrowserLocaleString("tip_weight"), "Fonts\\FRIZQT__.TTF", 11)
     addTipWeightLabel:SetPoint("TOPLEFT", addTipTypeDropdown, "TOPRIGHT", 40, 2)
 
     addTipWeightEdit = createSingleLineInput(editorContent, 70, 24)
     addTipWeightEdit:SetPoint("TOPLEFT", addTipWeightLabel, "BOTTOMLEFT", 0, -6)
-    addTipWeightEdit:SetText("15")
+    addTipWeightEdit:SetText("5")
 
-    local addTipTextLabel = createString(editorContent, getBrowserLocaleString("tip_text"), "Fonts\\FRIZQT__.TTF", 11)
+    addTipTextLabel = createString(editorContent, getBrowserLocaleString("tip_text"), "Fonts\\FRIZQT__.TTF", 11)
     addTipTextLabel:SetPoint("TOPLEFT", addTipTypeDropdown, "BOTTOMLEFT", 16, -18)
 
     local addTipTextContainer
@@ -1496,12 +2172,12 @@ local function createEditorMenu()
     addTipTextContainer:SetPoint("TOPLEFT", addTipTextLabel, "BOTTOMLEFT", 0, -8)
     addTipTextBox:SetText(getBrowserLocaleString("default_tip_text"))
 
-    local saveTipButton = CreateFrame("Button", "TDTEditorSaveNpcTip", editorContent, "UIPanelButtonTemplate")
+    saveTipButton = CreateFrame("Button", "TDTEditorSaveNpcTip", editorContent, "UIPanelButtonTemplate")
     saveTipButton:SetSize(140, 24)
     saveTipButton:SetPoint("TOPLEFT", addTipTextContainer, "BOTTOMLEFT", 0, -12)
     saveTipButton:SetText(getBrowserLocaleString("save_tip"))
 
-    local cancelEditButton = CreateFrame("Button", "TDTEditorCancelNpcTipEdit", editorContent, "UIPanelButtonTemplate")
+    cancelEditButton = CreateFrame("Button", "TDTEditorCancelNpcTipEdit", editorContent, "UIPanelButtonTemplate")
     cancelEditButton:SetSize(140, 24)
     cancelEditButton:SetPoint("LEFT", saveTipButton, "RIGHT", 12, 0)
     cancelEditButton:SetText(getBrowserLocaleString("cancel_edit"))
@@ -1539,7 +2215,7 @@ local function createEditorMenu()
                     editingTipID = addition.id
                     setTipTypeDropdownInteractive(true)
                     addTipTypeDropdown:SetCurrentValue(addition.type or "Personal")
-                    addTipWeightEdit:SetText(tostring(addition.weight or 15))
+                    addTipWeightEdit:SetText(tostring(addition.weight or 5))
                     addTipTextBox:SetText(addition.text or "")
                     saveTipButton:SetText(getBrowserLocaleString("update_tip"))
                     cancelEditButton:Show()
@@ -1574,7 +2250,7 @@ local function createEditorMenu()
                 if editingTipID == self.tipID then
                     editingTipID = nil
                     addTipTextBox:SetText("")
-                    addTipWeightEdit:SetText("15")
+                    addTipWeightEdit:SetText("5")
                     addTipTypeDropdown:SetCurrentValue("Personal")
                     saveTipButton:SetText(getBrowserLocaleString("save_tip"))
                     cancelEditButton:Hide()
@@ -1629,7 +2305,7 @@ local function createEditorMenu()
                 if editingBaseTipID == self.tipID then
                     editingBaseTipID = nil
                     addTipTextBox:SetText("")
-                    addTipWeightEdit:SetText("15")
+                    addTipWeightEdit:SetText("5")
                     addTipTypeDropdown:SetCurrentValue("Personal")
                     setTipTypeDropdownInteractive(true)
                     saveTipButton:SetText(getBrowserLocaleString("save_tip"))
@@ -1670,7 +2346,7 @@ local function createEditorMenu()
         editingTipID = nil
         editingBaseTipID = nil
         addTipTextBox:SetText("")
-        addTipWeightEdit:SetText("15")
+        addTipWeightEdit:SetText("5")
         addTipTypeDropdown:SetCurrentValue("Personal")
         setTipTypeDropdownInteractive(true)
         saveTipButton:SetText(getBrowserLocaleString("save_tip"))
@@ -1682,14 +2358,14 @@ local function createEditorMenu()
         local selectedType = addTipTypeDropdown.currentValue or "Personal"
         local tipText = addTipTextBox:GetText() or ""
         tipText = tipText:gsub("^%s+", ""):gsub("%s+$", "")
-        local weight = tonumber(addTipWeightEdit:GetText()) or 15
+        local weight = tonumber(addTipWeightEdit:GetText()) or 5
 
         if tipText == "" or tipText == getBrowserLocaleString("default_tip_text") then
             addTipStatus:SetText(getBrowserLocaleString("missing_tip"))
             return
         end
 
-        if editorState.npcID then
+        if editorState.npcID and editorState.npcID ~= NPC_NONE then
             if editingTipID and addon.updateNpcUserTip then
                 addon:updateNpcUserTip(editorState.npcID, editingTipID, selectedType, tipText, weight)
                 addTipStatus:SetText(getBrowserLocaleString("updated_tip"))
@@ -1704,7 +2380,7 @@ local function createEditorMenu()
             editingTipID = nil
             editingBaseTipID = nil
             addTipTextBox:SetText("")
-            addTipWeightEdit:SetText("15")
+            addTipWeightEdit:SetText("5")
             addTipTypeDropdown:SetCurrentValue("Personal")
             setTipTypeDropdownInteractive(true)
             saveTipButton:SetText(getBrowserLocaleString("save_tip"))
@@ -1723,20 +2399,27 @@ local function createEditorMenu()
             editorState.expansionKey = TDTConfig.BrowserExpansionKey
             editorState.instanceKey = TDTConfig.BrowserInstanceKey
             editorState.npcID = TDTConfig.BrowserNpcID
+            refreshTipEditorTexts()
             updateEditorUI()
             if self.refreshScroll then self:refreshScroll() end
         end
     end)
 
+    addon.editorPanel:HookScript("OnShow", function()
+        refreshTipEditorTexts()
+        updateEditorUI()
+    end)
+
+    refreshTipEditorTexts()
     updateEditorUI()
 end
 
 local function createDungeonEditorMenu()
     addon.dungeonEditorPanel = CreateFrame("Frame", "TothysDungeonTipsDungeonEditor", UIParent)
-    addon.dungeonEditorPanel.name = getBrowserLocaleString("dungeon_editor_page")
+    addon.dungeonEditorPanel.name = "Dungeon Editor"
     addon.dungeonEditorPanel.okay = function(self) return end
     addon.dungeonEditorPanel.cancel = function(self) return end
-    local editorContent = setupScrollablePanel(addon.dungeonEditorPanel, "TDTDungeonEditor", 1700)
+    local editorContent = setupScrollablePanel(addon.dungeonEditorPanel, "TDTDungeonEditor", 2200)
 
     local headerFont = "Fonts\\MORPHEUS.ttf"
     local headerSize = 16
@@ -1760,6 +2443,7 @@ local function createDungeonEditorMenu()
     local instanceDropdown
     local selectionSummary
     local instancePreview
+    local instanceDetailsPreview
     local addTipTypeDropdown
     local addTipWeightEdit
     local addTipTextBox
@@ -1767,6 +2451,121 @@ local function createDungeonEditorMenu()
     local personalTipsHeader
     local personalTipRows = {}
     local editingTipID = nil
+    local editingBaseTipID = nil
+    local baseTipsHeader
+    local baseTipRows = {}
+    local expansionFS
+    local instanceFS
+    local instancePreviewFS
+    local instanceDetailsFS
+    local addTipHeader
+    local addTipTypeLabel
+    local addTipWeightLabel
+    local addTipTextLabel
+    local saveTipButton
+    local cancelEditButton
+    local detailsEditorHeader
+    local detailsTravelLabel
+    local detailsAttunementLabel
+    local detailsNotesLabel
+    local detailsLoreLabel
+    local detailsTravelEdit
+    local detailsAttunementEdit
+    local detailsNotesEdit
+    local detailsLoreEdit
+    local detailsTravelOverrideButton
+    local detailsTravelResetButton
+    local detailsTravelOriginalText
+    local detailsAttunementOverrideButton
+    local detailsAttunementResetButton
+    local detailsAttunementOriginalText
+    local detailsNotesOverrideButton
+    local detailsNotesResetButton
+    local detailsNotesOriginalText
+    local detailsLoreOverrideButton
+    local detailsLoreResetButton
+    local detailsLoreOriginalText
+    local detailsStatus
+
+    local function refreshDungeonEditorTexts()
+        title:SetText(getBrowserLocaleString("dungeon_editor_title"))
+        subtitle:SetText(getBrowserLocaleString("dungeon_editor_subtitle"))
+        expansionFS:SetText(getBrowserLocaleString("expansion"))
+        instanceFS:SetText(getBrowserLocaleString("dungeon_or_raid"))
+        instancePreviewFS:SetText(getBrowserLocaleString("instance_tips_preview"))
+        instanceDetailsFS:SetText(getBrowserLocaleString("additional_details"))
+        addTipHeader:SetText(getBrowserLocaleString("add_instance_tip"))
+        addTipTypeLabel:SetText(getBrowserLocaleString("tip_type"))
+        addTipWeightLabel:SetText(getBrowserLocaleString("tip_weight"))
+        addTipTextLabel:SetText(getBrowserLocaleString("tip_text"))
+        saveTipButton:SetText(editingBaseTipID and getBrowserLocaleString("update_base_tip") or editingTipID and getBrowserLocaleString("update_tip") or getBrowserLocaleString("save_tip"))
+        cancelEditButton:SetText(getBrowserLocaleString("cancel_edit"))
+        personalTipsHeader:SetText(getBrowserLocaleString("user_instance_tips"))
+        baseTipsHeader:SetText(getBrowserLocaleString("addon_instance_tips"))
+        detailsEditorHeader:SetText(getBrowserLocaleString("edit_more_infos"))
+        detailsTravelLabel:SetText(getBrowserLocaleString("travel"))
+        detailsAttunementLabel:SetText(getBrowserLocaleString("attunement"))
+        detailsNotesLabel:SetText(getBrowserLocaleString("extra_notes"))
+        detailsLoreLabel:SetText(getBrowserLocaleString("lore"))
+        detailsTravelOverrideButton:SetText(getBrowserLocaleString("edit_base"))
+        detailsTravelResetButton:SetText(getBrowserLocaleString("reset"))
+        detailsAttunementOverrideButton:SetText(getBrowserLocaleString("edit_base"))
+        detailsAttunementResetButton:SetText(getBrowserLocaleString("reset"))
+        detailsNotesOverrideButton:SetText(getBrowserLocaleString("edit_base"))
+        detailsNotesResetButton:SetText(getBrowserLocaleString("reset"))
+        detailsLoreOverrideButton:SetText(getBrowserLocaleString("edit_base"))
+        detailsLoreResetButton:SetText(getBrowserLocaleString("reset"))
+        for _, row in ipairs(personalTipRows) do
+            row.edit:SetText(getBrowserLocaleString("edit"))
+            row.delete:SetText(getBrowserLocaleString("delete"))
+        end
+        for _, row in ipairs(baseTipRows) do
+            row.reset:SetText(getBrowserLocaleString("reset"))
+            row.edit:SetText(getBrowserLocaleString("edit_base"))
+        end
+    end
+
+    local function setTipTypeDropdownInteractive(enabled)
+        local alpha = enabled and 1 or 0.5
+        addTipTypeDropdown:SetAlpha(alpha)
+        local button = _G[addTipTypeDropdown:GetName() .. "Button"]
+        if button then
+            button:SetEnabled(enabled)
+            button:SetAlpha(alpha)
+        end
+    end
+
+    local function anchorBaseTipsHeader()
+        local anchor = addTipStatus
+        local offset = -22
+
+        for index = #personalTipRows, 1, -1 do
+            if personalTipRows[index]:IsShown() then
+                anchor = personalTipRows[index]
+                offset = -14
+                break
+            end
+        end
+
+        baseTipsHeader:ClearAllPoints()
+        baseTipsHeader:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, offset)
+    end
+
+    local function anchorDetailsEditorHeader()
+        local anchor = baseTipsHeader
+        local offset = -22
+
+        for index = #baseTipRows, 1, -1 do
+            if baseTipRows[index]:IsShown() then
+                anchor = baseTipRows[index]
+                offset = -14
+                break
+            end
+        end
+
+        detailsEditorHeader:ClearAllPoints()
+        detailsEditorHeader:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, offset)
+    end
 
     local function ensureEditorSelection()
         local expansionKeys = getExpansionKeys()
@@ -1814,11 +2613,18 @@ local function createDungeonEditorMenu()
         local instanceLabel = getLocalizedLabel(instanceData and instanceData.name, editorState.instanceKey or "-")
         local mergedInstanceEntries = addon.getMergedInstanceTipEntries and addon:getMergedInstanceTipEntries(editorState.instanceKey) or {}
         local userTips = addon.getInstanceUserAdditions and addon:getInstanceUserAdditions(editorState.instanceKey) or {}
+        local baseTips = addon.getInstanceBaseTipsForEditor and addon:getInstanceBaseTipsForEditor(editorState.instanceKey) or {}
+        local detailsData = addon.getInstanceDetailsForEditor and addon:getInstanceDetailsForEditor(editorState.instanceKey) or {}
+        local mergedDetails = addon.getMergedInstanceDetails and addon:getMergedInstanceDetails(editorState.instanceKey) or getInstanceDetails(editorState.instanceKey) or {}
 
-        selectionSummary:SetText(string.format("%s: %s -> %s", getBrowserLocaleString("instance_summary_prefix"), expansionLabel, instanceLabel))
+        selectionSummary:SetText(string.format(getBrowserLocaleString("selected_instance"), expansionLabel, instanceLabel))
         instancePreview:SetText(formatTipEntriesPreview(mergedInstanceEntries))
+        instanceDetailsPreview:SetText(formatInstanceDetails(getInstanceDetails(editorState.instanceKey)))
 
         for _, row in ipairs(personalTipRows) do
+            row:Hide()
+        end
+        for _, row in ipairs(baseTipRows) do
             row:Hide()
         end
 
@@ -1847,9 +2653,74 @@ local function createDungeonEditorMenu()
                 end
             end
         end
+
+        anchorBaseTipsHeader()
+
+        if #baseTips == 0 then
+            if baseTipRows[1] then
+                baseTipRows[1].text:SetText(getBrowserLocaleString("no_addon_instance_tips"))
+                baseTipRows[1].edit:Hide()
+                baseTipRows[1].toggle:Hide()
+                baseTipRows[1].reset:Hide()
+                baseTipRows[1]:Show()
+            end
+        else
+            for index, tip in ipairs(baseTips) do
+                local row = baseTipRows[index]
+                if row then
+                    local statusBits = {}
+                    if tip.hidden then
+                        statusBits[#statusBits + 1] = getBrowserLocaleString("hidden_tip")
+                    end
+                    if tip.overridden then
+                        statusBits[#statusBits + 1] = getBrowserLocaleString("overridden_tip")
+                    end
+                    if not tip.canModify then
+                        statusBits[#statusBits + 1] = getBrowserLocaleString("legacy_tip")
+                    end
+                    local statusLabel = #statusBits > 0 and (" (" .. table.concat(statusBits, ", ") .. ")") or ""
+                    if tip.overridden and tip.overrideText then
+                        local overrideWeight = tip.overrideWeight ~= nil and tip.overrideWeight or tip.weight or 0
+                        row.text:SetText(string.format("[%s] %s (%d)%s\nOverride: %s\nOriginal (%d): %s", tip.type or "?", tip.id or "-", overrideWeight, statusLabel, tip.overrideText or "", tip.weight or 0, tip.text or ""))
+                    else
+                        row.text:SetText(string.format("[%s] %s (%d)%s\n%s", tip.type or "?", tip.id or "-", tip.weight or 0, statusLabel, tip.text or ""))
+                    end
+                    row.edit.tipID = tip.id
+                    row.toggle.tipID = tip.id
+                    row.reset.tipID = tip.id
+                    if tip.canModify then
+                        row.edit:Show()
+                        row.toggle:SetText(tip.hidden and getBrowserLocaleString("unhide") or getBrowserLocaleString("hide"))
+                        row.toggle:Show()
+                        row.reset:Show()
+                    else
+                        row.edit:Hide()
+                        row.toggle:Hide()
+                        row.reset:Hide()
+                    end
+                    row:Show()
+                end
+            end
+        end
+
+        anchorDetailsEditorHeader()
+
+        detailsTravelLabel:SetText(getBrowserLocaleString("travel") .. ((detailsData.travel and detailsData.travel.overridden) and (" (" .. getBrowserLocaleString("overridden_tip") .. ")") or ""))
+        detailsAttunementLabel:SetText(getBrowserLocaleString("attunement") .. ((detailsData.attunement and detailsData.attunement.overridden) and (" (" .. getBrowserLocaleString("overridden_tip") .. ")") or ""))
+        detailsNotesLabel:SetText(getBrowserLocaleString("extra_notes") .. ((detailsData.notes and detailsData.notes.overridden) and (" (" .. getBrowserLocaleString("overridden_tip") .. ")") or ""))
+        detailsLoreLabel:SetText(getBrowserLocaleString("lore") .. ((detailsData.lore and detailsData.lore.overridden) and (" (" .. getBrowserLocaleString("overridden_tip") .. ")") or ""))
+
+        detailsTravelEdit:SetText((detailsData.travel and detailsData.travel.current) or mergedDetails.travel or "")
+        detailsAttunementEdit:SetText((detailsData.attunement and detailsData.attunement.current) or mergedDetails.attunement or "")
+        detailsNotesEdit:SetText((detailsData.notes and detailsData.notes.current) or mergedDetails.notes or "")
+        detailsLoreEdit:SetText((detailsData.lore and detailsData.lore.current) or mergedDetails.lore or "")
+        detailsTravelOriginalText:SetText(string.format("%s: %s", getBrowserLocaleString("original_text"), (detailsData.travel and detailsData.travel.base) or ""))
+        detailsAttunementOriginalText:SetText(string.format("%s: %s", getBrowserLocaleString("original_text"), (detailsData.attunement and detailsData.attunement.base) or ""))
+        detailsNotesOriginalText:SetText(string.format("%s: %s", getBrowserLocaleString("original_text"), (detailsData.notes and detailsData.notes.base) or ""))
+        detailsLoreOriginalText:SetText(string.format("%s: %s", getBrowserLocaleString("original_text"), (detailsData.lore and detailsData.lore.base) or ""))
     end
 
-    local expansionFS = createString(editorContent, "Expansion", headerFont, headerSize)
+    expansionFS = createString(editorContent, getBrowserLocaleString("expansion"), headerFont, headerSize)
     expansionFS:SetPoint("TOPLEFT", subtitle, "BOTTOMLEFT", 0, -20)
 
     expansionButton = createCycleButton(editorContent, "DungeonEditorExpansion", getExpansionKeys(), function(value)
@@ -1863,7 +2734,7 @@ local function createDungeonEditorMenu()
         return getLocalizedLabel(expansionData and expansionData.name, value)
     end
 
-    local instanceFS = createString(editorContent, "Dungeon / Raid", headerFont, headerSize)
+    instanceFS = createString(editorContent, getBrowserLocaleString("dungeon_or_raid"), headerFont, headerSize)
     instanceFS:SetPoint("TOPLEFT", expansionButton, "BOTTOMLEFT", 0, -24)
 
     instanceDropdown = createValueDropdown(editorContent, "DungeonEditorInstance", 220, function(value)
@@ -1884,17 +2755,24 @@ local function createDungeonEditorMenu()
     selectionSummary:SetPoint("TOPLEFT", instanceDropdown, "BOTTOMLEFT", 16, -18)
     selectionSummary:SetWidth(620)
 
-    local instancePreviewFS = createString(editorContent, getBrowserLocaleString("instance_tips_preview"), headerFont, headerSize)
+    instancePreviewFS = createString(editorContent, getBrowserLocaleString("instance_tips_preview"), headerFont, headerSize)
     instancePreviewFS:SetPoint("TOPLEFT", selectionSummary, "BOTTOMLEFT", 0, -18)
 
     instancePreview = createString(editorContent, "", "Fonts\\FRIZQT__.TTF", 11)
     instancePreview:SetPoint("TOPLEFT", instancePreviewFS, "BOTTOMLEFT", 0, -6)
     instancePreview:SetWidth(620)
 
-    local addTipHeader = createString(editorContent, getBrowserLocaleString("add_instance_tip"), headerFont, headerSize)
-    addTipHeader:SetPoint("TOPLEFT", instancePreview, "BOTTOMLEFT", 0, -22)
+    instanceDetailsFS = createString(editorContent, getBrowserLocaleString("additional_details"), headerFont, headerSize)
+    instanceDetailsFS:SetPoint("TOPLEFT", instancePreview, "BOTTOMLEFT", 0, -18)
 
-    local addTipTypeLabel = createString(editorContent, getBrowserLocaleString("tip_type"), "Fonts\\FRIZQT__.TTF", 11)
+    instanceDetailsPreview = createString(editorContent, "", "Fonts\\FRIZQT__.TTF", 11)
+    instanceDetailsPreview:SetPoint("TOPLEFT", instanceDetailsFS, "BOTTOMLEFT", 0, -6)
+    instanceDetailsPreview:SetWidth(620)
+
+    addTipHeader = createString(editorContent, getBrowserLocaleString("add_instance_tip"), headerFont, headerSize)
+    addTipHeader:SetPoint("TOPLEFT", instanceDetailsPreview, "BOTTOMLEFT", 0, -22)
+
+    addTipTypeLabel = createString(editorContent, getBrowserLocaleString("tip_type"), "Fonts\\FRIZQT__.TTF", 11)
     addTipTypeLabel:SetPoint("TOPLEFT", addTipHeader, "BOTTOMLEFT", 0, -8)
 
     addTipTypeDropdown = createValueDropdown(editorContent, "DungeonEditorAddTipType", 220, function(value) end)
@@ -1905,27 +2783,27 @@ local function createDungeonEditorMenu()
     end
     addTipTypeDropdown:SetCurrentValue("Personal")
 
-    local addTipWeightLabel = createString(editorContent, getBrowserLocaleString("tip_weight"), "Fonts\\FRIZQT__.TTF", 11)
+    addTipWeightLabel = createString(editorContent, getBrowserLocaleString("tip_weight"), "Fonts\\FRIZQT__.TTF", 11)
     addTipWeightLabel:SetPoint("TOPLEFT", addTipTypeDropdown, "TOPRIGHT", 40, 2)
 
     addTipWeightEdit = createSingleLineInput(editorContent, 70, 24)
     addTipWeightEdit:SetPoint("TOPLEFT", addTipWeightLabel, "BOTTOMLEFT", 0, -6)
-    addTipWeightEdit:SetText("15")
+    addTipWeightEdit:SetText("5")
 
-    local addTipTextLabel = createString(editorContent, getBrowserLocaleString("tip_text"), "Fonts\\FRIZQT__.TTF", 11)
+    addTipTextLabel = createString(editorContent, getBrowserLocaleString("tip_text"), "Fonts\\FRIZQT__.TTF", 11)
     addTipTextLabel:SetPoint("TOPLEFT", addTipTypeDropdown, "BOTTOMLEFT", 16, -18)
 
     local addTipTextContainer
     addTipTextContainer, addTipTextBox = createMultiLineInput(editorContent, 620, 96)
     addTipTextContainer:SetPoint("TOPLEFT", addTipTextLabel, "BOTTOMLEFT", 0, -8)
-    addTipTextBox:SetText(getBrowserLocaleString("default_tip_text"))
+    addTipTextBox:SetText(getBrowserLocaleString("default_instance_tip_text"))
 
-    local saveTipButton = CreateFrame("Button", "TDTDungeonEditorSaveTip", editorContent, "UIPanelButtonTemplate")
+    saveTipButton = CreateFrame("Button", "TDTDungeonEditorSaveTip", editorContent, "UIPanelButtonTemplate")
     saveTipButton:SetSize(140, 24)
     saveTipButton:SetPoint("TOPLEFT", addTipTextContainer, "BOTTOMLEFT", 0, -12)
     saveTipButton:SetText(getBrowserLocaleString("save_tip"))
 
-    local cancelEditButton = CreateFrame("Button", "TDTDungeonEditorCancelTipEdit", editorContent, "UIPanelButtonTemplate")
+    cancelEditButton = CreateFrame("Button", "TDTDungeonEditorCancelTipEdit", editorContent, "UIPanelButtonTemplate")
     cancelEditButton:SetSize(140, 24)
     cancelEditButton:SetPoint("LEFT", saveTipButton, "RIGHT", 12, 0)
     cancelEditButton:SetText(getBrowserLocaleString("cancel_edit"))
@@ -1959,9 +2837,11 @@ local function createDungeonEditorMenu()
             local additions = addon:getInstanceUserAdditions(editorState.instanceKey)
             for _, addition in ipairs(additions) do
                 if addition.id == self.tipID then
+                    editingBaseTipID = nil
                     editingTipID = addition.id
+                    setTipTypeDropdownInteractive(true)
                     addTipTypeDropdown:SetCurrentValue(addition.type or "Personal")
-                    addTipWeightEdit:SetText(tostring(addition.weight or 15))
+                    addTipWeightEdit:SetText(tostring(addition.weight or 5))
                     addTipTextBox:SetText(addition.text or "")
                     saveTipButton:SetText(getBrowserLocaleString("update_tip"))
                     cancelEditButton:Show()
@@ -1995,9 +2875,11 @@ local function createDungeonEditorMenu()
             if addon.deleteInstanceUserTip and editorState.instanceKey and self.tipID then
                 if editingTipID == self.tipID then
                     editingTipID = nil
+                    editingBaseTipID = nil
                     addTipTextBox:SetText("")
-                    addTipWeightEdit:SetText("15")
+                    addTipWeightEdit:SetText("5")
                     addTipTypeDropdown:SetCurrentValue("Personal")
+                    setTipTypeDropdownInteractive(true)
                     saveTipButton:SetText(getBrowserLocaleString("save_tip"))
                     cancelEditButton:Hide()
                 end
@@ -2010,11 +2892,158 @@ local function createDungeonEditorMenu()
         personalTipRows[index] = row
     end
 
+    baseTipsHeader = createString(editorContent, getBrowserLocaleString("addon_instance_tips"), headerFont, headerSize)
+    baseTipsHeader:SetPoint("TOPLEFT", addTipStatus, "BOTTOMLEFT", 0, -22)
+
+    for index = 1, 10 do
+        local row = CreateFrame("Frame", nil, editorContent)
+        row:SetSize(620, 78)
+        if index == 1 then
+            row:SetPoint("TOPLEFT", baseTipsHeader, "BOTTOMLEFT", 0, -8)
+        else
+            row:SetPoint("TOPLEFT", baseTipRows[index - 1], "BOTTOMLEFT", 0, -10)
+        end
+
+        row.text = createString(row, "", "Fonts\\FRIZQT__.TTF", 11)
+        row.text:SetPoint("TOPLEFT", row, "TOPLEFT", 0, 0)
+        row.text:SetWidth(430)
+
+        row.toggle = CreateFrame("Button", nil, row, "UIPanelButtonTemplate")
+        row.toggle:SetSize(80, 22)
+        row.toggle:SetPoint("TOPRIGHT", row, "TOPRIGHT", 0, 0)
+        row.toggle:SetScript("OnClick", function(self)
+            if addon.setInstanceBaseTipHidden and editorState.instanceKey and self.tipID then
+                local baseTips = addon:getInstanceBaseTipsForEditor(editorState.instanceKey)
+                for _, baseTip in ipairs(baseTips) do
+                    if baseTip.id == self.tipID then
+                        addon:setInstanceBaseTipHidden(editorState.instanceKey, self.tipID, not baseTip.hidden)
+                        updateDungeonEditorUI()
+                        break
+                    end
+                end
+            end
+        end)
+
+        row.reset = CreateFrame("Button", nil, row, "UIPanelButtonTemplate")
+        row.reset:SetSize(80, 22)
+        row.reset:SetPoint("TOPRIGHT", row.toggle, "BOTTOMRIGHT", 0, -6)
+        row.reset:SetText(getBrowserLocaleString("reset"))
+        row.reset:SetScript("OnClick", function(self)
+            if addon.resetInstanceBaseTip and editorState.instanceKey and self.tipID then
+                if editingBaseTipID == self.tipID then
+                    editingBaseTipID = nil
+                    addTipTextBox:SetText("")
+                    addTipWeightEdit:SetText("5")
+                    addTipTypeDropdown:SetCurrentValue("Personal")
+                    setTipTypeDropdownInteractive(true)
+                    saveTipButton:SetText(getBrowserLocaleString("save_tip"))
+                    cancelEditButton:Hide()
+                end
+                addon:resetInstanceBaseTip(editorState.instanceKey, self.tipID)
+                updateDungeonEditorUI()
+            end
+        end)
+
+        row.edit = CreateFrame("Button", nil, row, "UIPanelButtonTemplate")
+        row.edit:SetSize(80, 22)
+        row.edit:SetPoint("TOPRIGHT", row.reset, "BOTTOMRIGHT", 0, -6)
+        row.edit:SetText(getBrowserLocaleString("edit_base"))
+        row.edit:SetScript("OnClick", function(self)
+            local baseTips = addon:getInstanceBaseTipsForEditor(editorState.instanceKey)
+            for _, baseTip in ipairs(baseTips) do
+                if baseTip.id == self.tipID and baseTip.canModify then
+                    editingTipID = nil
+                    editingBaseTipID = baseTip.id
+                    addTipTypeDropdown:SetCurrentValue(baseTip.type or "Important")
+                    setTipTypeDropdownInteractive(false)
+                    addTipWeightEdit:SetText(tostring(baseTip.overrideWeight or baseTip.weight or 0))
+                    addTipTextBox:SetText(baseTip.overrideText or baseTip.text or "")
+                    saveTipButton:SetText(getBrowserLocaleString("update_base_tip"))
+                    cancelEditButton:Show()
+                    addTipStatus:SetText(getBrowserLocaleString("base_instance_edit_loaded"))
+                    break
+                end
+            end
+        end)
+
+        row:Hide()
+        baseTipRows[index] = row
+    end
+
+    detailsEditorHeader = createString(editorContent, getBrowserLocaleString("edit_more_infos"), headerFont, headerSize)
+    detailsEditorHeader:SetPoint("TOPLEFT", baseTipsHeader, "BOTTOMLEFT", 0, -22)
+
+    detailsTravelLabel = createString(editorContent, getBrowserLocaleString("travel"), "Fonts\\FRIZQT__.TTF", 11)
+    detailsTravelLabel:SetPoint("TOPLEFT", detailsEditorHeader, "BOTTOMLEFT", 0, -8)
+    local detailsTravelContainer
+    detailsTravelContainer, detailsTravelEdit = createMultiLineInput(editorContent, 620, 56)
+    detailsTravelContainer:SetPoint("TOPLEFT", detailsTravelLabel, "BOTTOMLEFT", 0, -8)
+    detailsTravelOverrideButton = CreateFrame("Button", nil, editorContent, "UIPanelButtonTemplate")
+    detailsTravelOverrideButton:SetSize(90, 22)
+    detailsTravelOverrideButton:SetPoint("TOPLEFT", detailsTravelContainer, "BOTTOMLEFT", 0, -8)
+    detailsTravelResetButton = CreateFrame("Button", nil, editorContent, "UIPanelButtonTemplate")
+    detailsTravelResetButton:SetSize(90, 22)
+    detailsTravelResetButton:SetPoint("LEFT", detailsTravelOverrideButton, "RIGHT", 8, 0)
+    detailsTravelOriginalText = createString(editorContent, "", "Fonts\\FRIZQT__.TTF", 11)
+    detailsTravelOriginalText:SetPoint("TOPLEFT", detailsTravelOverrideButton, "BOTTOMLEFT", 0, -8)
+    detailsTravelOriginalText:SetWidth(620)
+
+    detailsAttunementLabel = createString(editorContent, getBrowserLocaleString("attunement"), "Fonts\\FRIZQT__.TTF", 11)
+    detailsAttunementLabel:SetPoint("TOPLEFT", detailsTravelOriginalText, "BOTTOMLEFT", 0, -14)
+    local detailsAttunementContainer
+    detailsAttunementContainer, detailsAttunementEdit = createMultiLineInput(editorContent, 620, 56)
+    detailsAttunementContainer:SetPoint("TOPLEFT", detailsAttunementLabel, "BOTTOMLEFT", 0, -8)
+    detailsAttunementOverrideButton = CreateFrame("Button", nil, editorContent, "UIPanelButtonTemplate")
+    detailsAttunementOverrideButton:SetSize(90, 22)
+    detailsAttunementOverrideButton:SetPoint("TOPLEFT", detailsAttunementContainer, "BOTTOMLEFT", 0, -8)
+    detailsAttunementResetButton = CreateFrame("Button", nil, editorContent, "UIPanelButtonTemplate")
+    detailsAttunementResetButton:SetSize(90, 22)
+    detailsAttunementResetButton:SetPoint("LEFT", detailsAttunementOverrideButton, "RIGHT", 8, 0)
+    detailsAttunementOriginalText = createString(editorContent, "", "Fonts\\FRIZQT__.TTF", 11)
+    detailsAttunementOriginalText:SetPoint("TOPLEFT", detailsAttunementOverrideButton, "BOTTOMLEFT", 0, -8)
+    detailsAttunementOriginalText:SetWidth(620)
+
+    detailsNotesLabel = createString(editorContent, getBrowserLocaleString("extra_notes"), "Fonts\\FRIZQT__.TTF", 11)
+    detailsNotesLabel:SetPoint("TOPLEFT", detailsAttunementOriginalText, "BOTTOMLEFT", 0, -14)
+    local detailsNotesContainer
+    detailsNotesContainer, detailsNotesEdit = createMultiLineInput(editorContent, 620, 72)
+    detailsNotesContainer:SetPoint("TOPLEFT", detailsNotesLabel, "BOTTOMLEFT", 0, -8)
+    detailsNotesOverrideButton = CreateFrame("Button", nil, editorContent, "UIPanelButtonTemplate")
+    detailsNotesOverrideButton:SetSize(90, 22)
+    detailsNotesOverrideButton:SetPoint("TOPLEFT", detailsNotesContainer, "BOTTOMLEFT", 0, -8)
+    detailsNotesResetButton = CreateFrame("Button", nil, editorContent, "UIPanelButtonTemplate")
+    detailsNotesResetButton:SetSize(90, 22)
+    detailsNotesResetButton:SetPoint("LEFT", detailsNotesOverrideButton, "RIGHT", 8, 0)
+    detailsNotesOriginalText = createString(editorContent, "", "Fonts\\FRIZQT__.TTF", 11)
+    detailsNotesOriginalText:SetPoint("TOPLEFT", detailsNotesOverrideButton, "BOTTOMLEFT", 0, -8)
+    detailsNotesOriginalText:SetWidth(620)
+
+    detailsLoreLabel = createString(editorContent, getBrowserLocaleString("lore"), "Fonts\\FRIZQT__.TTF", 11)
+    detailsLoreLabel:SetPoint("TOPLEFT", detailsNotesOriginalText, "BOTTOMLEFT", 0, -14)
+    local detailsLoreContainer
+    detailsLoreContainer, detailsLoreEdit = createMultiLineInput(editorContent, 620, 72)
+    detailsLoreContainer:SetPoint("TOPLEFT", detailsLoreLabel, "BOTTOMLEFT", 0, -8)
+    detailsLoreOverrideButton = CreateFrame("Button", nil, editorContent, "UIPanelButtonTemplate")
+    detailsLoreOverrideButton:SetSize(90, 22)
+    detailsLoreOverrideButton:SetPoint("TOPLEFT", detailsLoreContainer, "BOTTOMLEFT", 0, -8)
+    detailsLoreResetButton = CreateFrame("Button", nil, editorContent, "UIPanelButtonTemplate")
+    detailsLoreResetButton:SetSize(90, 22)
+    detailsLoreResetButton:SetPoint("LEFT", detailsLoreOverrideButton, "RIGHT", 8, 0)
+    detailsLoreOriginalText = createString(editorContent, "", "Fonts\\FRIZQT__.TTF", 11)
+    detailsLoreOriginalText:SetPoint("TOPLEFT", detailsLoreOverrideButton, "BOTTOMLEFT", 0, -8)
+    detailsLoreOriginalText:SetWidth(620)
+
+    detailsStatus = createString(editorContent, "", "Fonts\\FRIZQT__.TTF", 11)
+    detailsStatus:SetPoint("TOPLEFT", detailsLoreOriginalText, "BOTTOMLEFT", 0, -12)
+    detailsStatus:SetWidth(620)
+
     cancelEditButton:SetScript("OnClick", function()
         editingTipID = nil
+        editingBaseTipID = nil
         addTipTextBox:SetText("")
-        addTipWeightEdit:SetText("15")
+        addTipWeightEdit:SetText("5")
         addTipTypeDropdown:SetCurrentValue("Personal")
+        setTipTypeDropdownInteractive(true)
         saveTipButton:SetText(getBrowserLocaleString("save_tip"))
         cancelEditButton:Hide()
         addTipStatus:SetText("")
@@ -2024,9 +3053,9 @@ local function createDungeonEditorMenu()
         local selectedType = addTipTypeDropdown.currentValue or "Personal"
         local tipText = addTipTextBox:GetText() or ""
         tipText = tipText:gsub("^%s+", ""):gsub("%s+$", "")
-        local weight = tonumber(addTipWeightEdit:GetText()) or 15
+        local weight = tonumber(addTipWeightEdit:GetText()) or 5
 
-        if tipText == "" or tipText == getBrowserLocaleString("default_tip_text") then
+        if tipText == "" or tipText == getBrowserLocaleString("default_instance_tip_text") then
             addTipStatus:SetText(getBrowserLocaleString("missing_tip"))
             return
         end
@@ -2035,15 +3064,20 @@ local function createDungeonEditorMenu()
             if editingTipID and addon.updateInstanceUserTip then
                 addon:updateInstanceUserTip(editorState.instanceKey, editingTipID, selectedType, tipText, weight)
                 addTipStatus:SetText(getBrowserLocaleString("updated_instance_tip"))
+            elseif editingBaseTipID and addon.updateInstanceBaseTipOverride then
+                addon:updateInstanceBaseTipOverride(editorState.instanceKey, editingBaseTipID, tipText, weight)
+                addTipStatus:SetText(getBrowserLocaleString("updated_base_instance_tip"))
             elseif addon.addInstanceUserTip then
                 addon:addInstanceUserTip(editorState.instanceKey, selectedType, tipText, weight)
                 addTipStatus:SetText(getBrowserLocaleString("saved_instance_tip"))
             end
 
             editingTipID = nil
+            editingBaseTipID = nil
             addTipTextBox:SetText("")
-            addTipWeightEdit:SetText("15")
+            addTipWeightEdit:SetText("5")
             addTipTypeDropdown:SetCurrentValue("Personal")
+            setTipTypeDropdownInteractive(true)
             saveTipButton:SetText(getBrowserLocaleString("save_tip"))
             cancelEditButton:Hide()
             updateDungeonEditorUI()
@@ -2053,72 +3087,150 @@ local function createDungeonEditorMenu()
         end
     end)
 
+    detailsTravelOverrideButton:SetScript("OnClick", function()
+        if editorState.instanceKey and addon.updateInstanceDetailsOverrides then
+            addon:updateInstanceDetailsOverrides(editorState.instanceKey, { travel = detailsTravelEdit:GetText() or "" })
+            detailsStatus:SetText(getBrowserLocaleString("more_infos_saved"))
+            updateDungeonEditorUI()
+        end
+    end)
+    detailsTravelResetButton:SetScript("OnClick", function()
+        if editorState.instanceKey and addon.resetInstanceDetailsOverrides then
+            addon:resetInstanceDetailsOverrides(editorState.instanceKey, "travel")
+            detailsStatus:SetText(getBrowserLocaleString("more_infos_reset"))
+            updateDungeonEditorUI()
+        end
+    end)
+    detailsAttunementOverrideButton:SetScript("OnClick", function()
+        if editorState.instanceKey and addon.updateInstanceDetailsOverrides then
+            addon:updateInstanceDetailsOverrides(editorState.instanceKey, { attunement = detailsAttunementEdit:GetText() or "" })
+            detailsStatus:SetText(getBrowserLocaleString("more_infos_saved"))
+            updateDungeonEditorUI()
+        end
+    end)
+    detailsAttunementResetButton:SetScript("OnClick", function()
+        if editorState.instanceKey and addon.resetInstanceDetailsOverrides then
+            addon:resetInstanceDetailsOverrides(editorState.instanceKey, "attunement")
+            detailsStatus:SetText(getBrowserLocaleString("more_infos_reset"))
+            updateDungeonEditorUI()
+        end
+    end)
+    detailsNotesOverrideButton:SetScript("OnClick", function()
+        if editorState.instanceKey and addon.updateInstanceDetailsOverrides then
+            addon:updateInstanceDetailsOverrides(editorState.instanceKey, { notes = detailsNotesEdit:GetText() or "" })
+            detailsStatus:SetText(getBrowserLocaleString("more_infos_saved"))
+            updateDungeonEditorUI()
+        end
+    end)
+    detailsNotesResetButton:SetScript("OnClick", function()
+        if editorState.instanceKey and addon.resetInstanceDetailsOverrides then
+            addon:resetInstanceDetailsOverrides(editorState.instanceKey, "notes")
+            detailsStatus:SetText(getBrowserLocaleString("more_infos_reset"))
+            updateDungeonEditorUI()
+        end
+    end)
+    detailsLoreOverrideButton:SetScript("OnClick", function()
+        if editorState.instanceKey and addon.updateInstanceDetailsOverrides then
+            addon:updateInstanceDetailsOverrides(editorState.instanceKey, { lore = detailsLoreEdit:GetText() or "" })
+            detailsStatus:SetText(getBrowserLocaleString("more_infos_saved"))
+            updateDungeonEditorUI()
+        end
+    end)
+    detailsLoreResetButton:SetScript("OnClick", function()
+        if editorState.instanceKey and addon.resetInstanceDetailsOverrides then
+            addon:resetInstanceDetailsOverrides(editorState.instanceKey, "lore")
+            detailsStatus:SetText(getBrowserLocaleString("more_infos_reset"))
+            updateDungeonEditorUI()
+        end
+    end)
+
     addon.dungeonEditorPanel:RegisterEvent("ADDON_LOADED")
     addon.dungeonEditorPanel:SetScript("OnEvent", function(self, event, arg1)
         if event == "ADDON_LOADED" and arg1 == "Tothys-Dungeon-Tips-TBC" then
             TDTConfig = applyConfigDefaults(TDTConfig)
             editorState.expansionKey = TDTConfig.BrowserExpansionKey
             editorState.instanceKey = TDTConfig.BrowserInstanceKey
+            refreshDungeonEditorTexts()
             updateDungeonEditorUI()
             if self.refreshScroll then self:refreshScroll() end
         end
     end)
 
+    addon.dungeonEditorPanel:HookScript("OnShow", function()
+        refreshDungeonEditorTexts()
+        updateDungeonEditorUI()
+    end)
+
+    refreshDungeonEditorTexts()
     updateDungeonEditorUI()
 end
 
 local function createInfoMenu()
     addon.infoPanel = CreateFrame("Frame", "TothysDungeonTipsInfo", UIParent)
-    addon.infoPanel.name = getBrowserLocaleString("info_page")
+    addon.infoPanel.name = "Info"
     addon.infoPanel.okay = function(self) return end
     addon.infoPanel.cancel = function(self) return end
-    local infoContent = setupScrollablePanel(addon.infoPanel, "TDTInfo", 900)
+    local infoContent = setupScrollablePanel(addon.infoPanel, "TDTInfo", 760)
 
     local title = infoContent:CreateFontString()
     title:SetPoint("TOPLEFT", 10, -10)
     title:SetFont("Fonts\\MORPHEUS.ttf", 22, "OUTLINE")
     title:SetTextColor(0.9, 0.68, 0.22, 1)
-    title:SetText("Kiesel Dungeon Tool - Info")
+    title:SetText(getBrowserLocaleString("info_title"))
 
-    local intro = createString(infoContent, "Kiesel Dungeon Tool is a successor to QE Dungeon Tips.", "Fonts\\FRIZQT__.TTF", 12)
+    local intro = createString(infoContent, getBrowserLocaleString("info_intro"), "Fonts\\FRIZQT__.TTF", 12)
     intro:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -10)
     intro:SetWidth(620)
 
-    local originHeader = createString(infoContent, "Background", "Fonts\\MORPHEUS.ttf", 16)
+    local originHeader = createString(infoContent, getBrowserLocaleString("info_background"), "Fonts\\MORPHEUS.ttf", 16)
     originHeader:SetPoint("TOPLEFT", intro, "BOTTOMLEFT", 0, -18)
 
-    local originText = createString(infoContent,
-        "QE Dungeon Tips did great groundwork and provided the base inspiration for this addon. The original project helped establish the structure and the idea of contextual dungeon and NPC guidance.\n\nThis addon exists because QE Dungeon Tips no longer worked reliably for TBC Anniversary, so we are rebuilding and extending the concept in a form that fits the current project goals.",
-        "Fonts\\FRIZQT__.TTF",
-        11)
+    local originText = createString(infoContent, getBrowserLocaleString("info_background_text"), "Fonts\\FRIZQT__.TTF", 11)
     originText:SetPoint("TOPLEFT", originHeader, "BOTTOMLEFT", 0, -8)
     originText:SetWidth(620)
 
-    local statusHeader = createString(infoContent, "Project Status", "Fonts\\MORPHEUS.ttf", 16)
+    local statusHeader = createString(infoContent, getBrowserLocaleString("info_status"), "Fonts\\MORPHEUS.ttf", 16)
     statusHeader:SetPoint("TOPLEFT", originText, "BOTTOMLEFT", 0, -18)
 
-    local statusText = createString(infoContent,
-        "Kiesel Dungeon Tool is still actively in development and is not complete yet.\n\nSome instances and NPCs are already structured in the new browser and data model, but the addon is still being expanded, cleaned up, and documented. Expect missing content, placeholder areas, and ongoing iteration while the new system is built out.",
-        "Fonts\\FRIZQT__.TTF",
-        11)
+    local statusText = createString(infoContent, getBrowserLocaleString("info_status_text"), "Fonts\\FRIZQT__.TTF", 11)
     statusText:SetPoint("TOPLEFT", statusHeader, "BOTTOMLEFT", 0, -8)
     statusText:SetWidth(620)
 
-    local roadmapHeader = createString(infoContent, "Current Focus", "Fonts\\MORPHEUS.ttf", 16)
+    local roadmapHeader = createString(infoContent, getBrowserLocaleString("info_focus"), "Fonts\\MORPHEUS.ttf", 16)
     roadmapHeader:SetPoint("TOPLEFT", statusText, "BOTTOMLEFT", 0, -18)
 
-    local roadmapText = createString(infoContent,
-        "Current work focuses on:\n- structured expansion, instance, and NPC browsing\n- tactical instance info and browser-only Zusatzinfos\n- locale-aware data handling\n- a future user override layer that stays update-safe",
-        "Fonts\\FRIZQT__.TTF",
-        11)
+    local roadmapText = createString(infoContent, getBrowserLocaleString("info_focus_text"), "Fonts\\FRIZQT__.TTF", 11)
     roadmapText:SetPoint("TOPLEFT", roadmapHeader, "BOTTOMLEFT", 0, -8)
     roadmapText:SetWidth(620)
 
+    local howHeader = createString(infoContent, getBrowserLocaleString("info_how_it_works"), "Fonts\\MORPHEUS.ttf", 16)
+    howHeader:SetPoint("TOPLEFT", roadmapText, "BOTTOMLEFT", 0, -18)
+
+    local howText = createString(infoContent, getBrowserLocaleString("info_how_it_works_text"), "Fonts\\FRIZQT__.TTF", 11)
+    howText:SetPoint("TOPLEFT", howHeader, "BOTTOMLEFT", 0, -8)
+    howText:SetWidth(620)
+
+    local function refreshInfoTexts()
+        title:SetText(getBrowserLocaleString("info_title"))
+        intro:SetText(getBrowserLocaleString("info_intro"))
+        originHeader:SetText(getBrowserLocaleString("info_background"))
+        originText:SetText(getBrowserLocaleString("info_background_text"))
+        statusHeader:SetText(getBrowserLocaleString("info_status"))
+        statusText:SetText(getBrowserLocaleString("info_status_text"))
+        roadmapHeader:SetText(getBrowserLocaleString("info_focus"))
+        roadmapText:SetText(getBrowserLocaleString("info_focus_text"))
+        howHeader:SetText(getBrowserLocaleString("info_how_it_works"))
+        howText:SetText(getBrowserLocaleString("info_how_it_works_text"))
+    end
+
     addon.infoPanel:SetScript("OnShow", function(self)
+        refreshInfoTexts()
         if self.refreshScroll then
             self:refreshScroll()
         end
     end)
+
+    refreshInfoTexts()
 end
 
 local function createConfigMenu()
@@ -2135,33 +3247,33 @@ local function createConfigMenu()
 	ddTitleString:SetPoint("TOPLEFT", 10, -10)
 	ddTitleString:SetFont("Fonts\\MORPHEUS.ttf", 22, "OUTLINE")
 	ddTitleString:SetTextColor(0.9, 0.68, 0.22, 1)
-	ddTitleString:SetText("Kiesel Dungeon Tool - Config")
+	ddTitleString:SetText(getBrowserLocaleString("config_title"))
 
 	
 	-----------------------
 	-- Set up Checkboxes --
 	-----------------------
-	local chkGeneral = createCheck("General", "Show Important General Information", configContent, function(self, value) end)
+	local chkGeneral = createCheck("General", getBrowserLocaleString("config_general"), configContent, function(self, value)
+		TDTConfig.Important = self:GetChecked()
+	end)
 	chkGeneral:SetPoint("TOPLEFT", ddTitleString, "BOTTOMLEFT", 0, -10)
-	chkGeneral:SetEnabled(false)
-	chkGeneral:SetChecked(true)
 	
-	local chkPriority = createCheck("PriorityTargets", "Show Priority Targets", configContent, function(self, value) TDTConfig.PriorityTargets = self:GetChecked() end)
+	local chkPriority = createCheck("PriorityTargets", getBrowserLocaleString("config_priority"), configContent, function(self, value) TDTConfig.PriorityTargets = self:GetChecked() end)
 	chkPriority:SetPoint("TOPLEFT", chkGeneral, "BOTTOMLEFT", 0, -8)
 	
-	local chkInterrupts = createCheck("Interrupts", "Show Priority Interrupts", configContent, function(self, value) TDTConfig.Interrupts = self:GetChecked() end)
+	local chkInterrupts = createCheck("Interrupts", getBrowserLocaleString("config_interrupts"), configContent, function(self, value) TDTConfig.Interrupts = self:GetChecked() end)
 	chkInterrupts:SetPoint("TOPLEFT", chkPriority, "BOTTOMLEFT", 0, -8)
 	
-	local chkDefensives = createCheck("Defensives", "Show Defensive Recommendations", configContent, function(self, value) TDTConfig.Defensives = self:GetChecked() end)
+	local chkDefensives = createCheck("Defensives", getBrowserLocaleString("config_defensives"), configContent, function(self, value) TDTConfig.Defensives = self:GetChecked() end)
 	chkDefensives:SetPoint("TOPLEFT", chkInterrupts, "BOTTOMLEFT", 0, -8)
 	
-	local chkFluff = createCheck("Fluff", "Show Fluff", configContent, function(self, value) TDTConfig.Fluff = self:GetChecked() end)
+	local chkFluff = createCheck("Fluff", getBrowserLocaleString("config_fluff"), configContent, function(self, value) TDTConfig.Fluff = self:GetChecked() end)
 	chkFluff:SetPoint("TOPLEFT", chkDefensives, "BOTTOMLEFT", 0, -8)
 	
-	local chkAdvanced = createCheck("Advanced", "Show advanced tips for high level keys", configContent, function(self, value) TDTConfig.Advanced = self:GetChecked() end)
+	local chkAdvanced = createCheck("Advanced", getBrowserLocaleString("config_advanced"), configContent, function(self, value) TDTConfig.Advanced = self:GetChecked() end)
 	chkAdvanced:SetPoint("TOPLEFT", chkFluff, "BOTTOMLEFT", 0, -8)
 
-	local chkPersonal = createCheck("Personal", "Show Personal Notes", configContent, function(self, value) TDTConfig.Personal = self:GetChecked() end)
+	local chkPersonal = createCheck("Personal", getBrowserLocaleString("config_personal"), configContent, function(self, value) TDTConfig.Personal = self:GetChecked() end)
 	chkPersonal:SetPoint("TOPLEFT", chkAdvanced, "BOTTOMLEFT", 0, -8)
 	
 	
@@ -2173,12 +3285,12 @@ local function createConfigMenu()
 	local headerSize = 16
 	
 	-- Tip Location Selector --
-	local locFS = createString(configContent, "Tip Location", headerFont, headerSize)
+	local locFS = createString(configContent, getBrowserLocaleString("config_tip_location"), headerFont, headerSize)
 	locFS:SetPoint("TOPLEFT", chkPersonal, "BOTTOMLEFT", 0, -30)
 	
 	--locDD = createDropdown(addon.configPanel, "TipLocation", "Show in separate frame", "Show in mob tooltips", "ShowFrame")
 	--locDD:SetPoint("TOPLEFT", locFS, "BOTTOMLEFT", 0, -8)
-	local locCB = createCheck("Location", "Show tips in separate frame", configContent, 
+	local locCB = createCheck("Location", getBrowserLocaleString("config_show_separate_frame"), configContent, 
 			function(self, value)
 				if self:GetChecked() then
 					TDTConfig.ShowFrame = "Show in separate frame"
@@ -2189,13 +3301,13 @@ local function createConfigMenu()
 				--addon:setMinimized(true) -- Ensures the tip frame is showing.
 				addon:setDropdownEnabled() -- This shows / hides a second dropdown based on the current selection.
 			end)
-	locCB.tooltip = "Uncheck to have tips appear in mob tooltips instead"
+	locCB.tooltip = getBrowserLocaleString("config_show_separate_frame_tooltip")
 	locCB:SetPoint("TOPLEFT", locFS, "BOTTOMLEFT", 0, -8)
 
 	local showFrameBtn = CreateFrame("Button", "TDTConfigShowFrameBtn", configContent, "UIPanelButtonTemplate")
 	showFrameBtn:SetSize(90, 22)
 	showFrameBtn:SetPoint("TOPLEFT", locCB, "BOTTOMLEFT", 0, -8)
-	showFrameBtn:SetText("Show Frame")
+	showFrameBtn:SetText(getBrowserLocaleString("config_show_frame"))
 	showFrameBtn:SetScript("OnClick", function()
 		if TDT_ParentFrame then
 			TDT_ParentFrame:Show()
@@ -2208,7 +3320,7 @@ local function createConfigMenu()
 	local hideFrameBtn = CreateFrame("Button", "TDTConfigHideFrameBtn", configContent, "UIPanelButtonTemplate")
 	hideFrameBtn:SetSize(90, 22)
 	hideFrameBtn:SetPoint("LEFT", showFrameBtn, "RIGHT", 8, 0)
-	hideFrameBtn:SetText("Hide Frame")
+	hideFrameBtn:SetText(getBrowserLocaleString("config_hide_frame"))
 	hideFrameBtn:SetScript("OnClick", function()
 		if TDT_ParentFrame then
 			TDT_ParentFrame:Hide()
@@ -2217,12 +3329,12 @@ local function createConfigMenu()
 	
 	
 	-- Target / Mouseover Selector --
-	addon.targetFS = createString(configContent, "Show Target or Mouseover", headerFont, headerSize)
+	addon.targetFS = createString(configContent, getBrowserLocaleString("config_target_mouseover"), headerFont, headerSize)
 	addon.targetFS:SetPoint("TOPLEFT", locFS, "TOPRIGHT", 70, 0)
 	
 	--targetDD = createDropdown(addon.configPanel, "TargetMouseover", "Show targeted mob", "Show mouseover", "TargetTrigger")
 	--targetDD:SetPoint("TOPLEFT", targetFS, "BOTTOMLEFT", 0, -8)
-	addon.chkTarget = createCheck("Target", "Show Targeted Mob", configContent, 
+	addon.chkTarget = createCheck("Target", getBrowserLocaleString("config_show_target"), configContent, 
 			function(self, value)
 				if self:GetChecked() then
 					TDTConfig.TargetTrigger = "Show targeted mob"
@@ -2234,53 +3346,53 @@ local function createConfigMenu()
 	
 	
 	-- Role Selector --
-	local roleFS = createString(configContent, "Role Specific Tips", headerFont, headerSize)
+	local roleFS = createString(configContent, getBrowserLocaleString("config_role_specific"), headerFont, headerSize)
 	roleFS:SetPoint("TOPLEFT", showFrameBtn, "BOTTOMLEFT", 0, -18)
 
-	local chkMyRoleOnly = createFilterCheck("MyRoleOnly", "Show MYROLEONLY", configContent,
+	local chkMyRoleOnly = createFilterCheck("MyRoleOnly", getBrowserLocaleString("config_show_myroleonly"), configContent,
 			function(self, value)
 				TDTConfig.RoleFilters.MYROLEONLY = self:GetChecked()
 			end)
 	chkMyRoleOnly:SetPoint("TOPLEFT", roleFS, "BOTTOMLEFT", 0, -8)
 
-	local chkTankRole = createFilterCheck("RoleTank", "Show TANK", configContent,
+	local chkTankRole = createFilterCheck("RoleTank", getBrowserLocaleString("config_show_tank"), configContent,
 			function(self, value)
 				TDTConfig.RoleFilters.TANK = self:GetChecked()
 			end)
 	chkTankRole:SetPoint("TOPLEFT", chkMyRoleOnly, "BOTTOMLEFT", 0, -6)
 
-	local chkHealerRole = createFilterCheck("RoleHealer", "Show HEALER", configContent,
+	local chkHealerRole = createFilterCheck("RoleHealer", getBrowserLocaleString("config_show_healer"), configContent,
 			function(self, value)
 				TDTConfig.RoleFilters.HEALER = self:GetChecked()
 			end)
 	chkHealerRole:SetPoint("TOPLEFT", chkTankRole, "BOTTOMLEFT", 0, -6)
 
-	local chkDamageRole = createFilterCheck("RoleDamage", "Show DAMAGE", configContent,
+	local chkDamageRole = createFilterCheck("RoleDamage", getBrowserLocaleString("config_show_damage"), configContent,
 			function(self, value)
 				TDTConfig.RoleFilters.DAMAGE = self:GetChecked()
 			end)
 	chkDamageRole:SetPoint("TOPLEFT", chkHealerRole, "BOTTOMLEFT", 0, -6)
 	
 	-- Class Selector --
-	local classFS = createString(configContent, "Class Specific Tips", headerFont, headerSize)
+	local classFS = createString(configContent, getBrowserLocaleString("config_class_specific"), headerFont, headerSize)
 	classFS:SetPoint("TOPLEFT", roleFS, "TOPRIGHT", 70, 0)
 
-	local chkMyClassOnly = createFilterCheck("MyClassOnly", "Show MYCLASSONLY", configContent,
+	local chkMyClassOnly = createFilterCheck("MyClassOnly", getBrowserLocaleString("config_show_myclassonly"), configContent,
 			function(self, value)
 				TDTConfig.ClassFilters.MYCLASSONLY = self:GetChecked()
 			end)
 	chkMyClassOnly:SetPoint("TOPLEFT", classFS, "BOTTOMLEFT", 0, -8)
 
 	local classCheckRows = {
-		{"ClassDruid", "Show DRUID", "DRUID"},
-		{"ClassHunter", "Show HUNTER", "HUNTER"},
-		{"ClassMage", "Show MAGE", "MAGE"},
-		{"ClassPaladin", "Show PALADIN", "PALADIN"},
-		{"ClassPriest", "Show PRIEST", "PRIEST"},
-		{"ClassRogue", "Show ROGUE", "ROGUE"},
-		{"ClassShaman", "Show SHAMAN", "SHAMAN"},
-		{"ClassWarrior", "Show WARRIOR", "WARRIOR"},
-		{"ClassWarlock", "Show WARLOCK", "WARLOCK"},
+		{"ClassDruid", string.format("%s DRUID", getBrowserLocaleString("config_show_prefix")), "DRUID"},
+		{"ClassHunter", string.format("%s HUNTER", getBrowserLocaleString("config_show_prefix")), "HUNTER"},
+		{"ClassMage", string.format("%s MAGE", getBrowserLocaleString("config_show_prefix")), "MAGE"},
+		{"ClassPaladin", string.format("%s PALADIN", getBrowserLocaleString("config_show_prefix")), "PALADIN"},
+		{"ClassPriest", string.format("%s PRIEST", getBrowserLocaleString("config_show_prefix")), "PRIEST"},
+		{"ClassRogue", string.format("%s ROGUE", getBrowserLocaleString("config_show_prefix")), "ROGUE"},
+		{"ClassShaman", string.format("%s SHAMAN", getBrowserLocaleString("config_show_prefix")), "SHAMAN"},
+		{"ClassWarrior", string.format("%s WARRIOR", getBrowserLocaleString("config_show_prefix")), "WARRIOR"},
+		{"ClassWarlock", string.format("%s WARLOCK", getBrowserLocaleString("config_show_prefix")), "WARLOCK"},
 	}
 
 	local classFilterChecks = {}
@@ -2297,28 +3409,55 @@ local function createConfigMenu()
 		classFilterChecks[classKey] = chk
 		previousClassCheck = chk
 	end
+
+	local function setCheckLabel(check, text)
+		local label = getglobal(check:GetName() .. "Text")
+		if label then
+			label:SetText(text)
+		end
+	end
 	
-	local localeFS = createString(configContent, "Language", headerFont, headerSize)
+	local localeFS = createString(configContent, getBrowserLocaleString("config_language"), headerFont, headerSize)
 	localeFS:SetPoint("TOPLEFT", chkDamageRole, "BOTTOMLEFT", 0, -24)
 
-	local localeHelp = createString(configContent, "Auto uses the client locale. English is the fallback if no translation exists.", "Fonts\\FRIZQT__.TTF", 11)
+	local localeHelp = createString(configContent, getBrowserLocaleString("config_language_help"), "Fonts\\FRIZQT__.TTF", 11)
 	localeHelp:SetPoint("TOPLEFT", localeFS, "BOTTOMLEFT", 0, -4)
 	localeHelp:SetWidth(250)
 
-	local localeButton = createCycleButton(configContent, "Locale", {"Auto", "enUS", "deDE"}, function(value)
-		TDTConfig.LocaleChoice = value
+	local localeButton
+	localeButton = createCycleButton(configContent, "Locale", {"Auto", "enUS", "deDE"}, function(value)
+		local previousValue = TDTConfig.LocaleChoice or "Auto"
+		if previousValue == value then
+			return
+		end
+
+		local dialogInfo = StaticPopupDialogs["TDT_CONFIRM_LOCALE_RELOAD"]
+		dialogInfo.text = getBrowserLocaleString("locale_reload_text")
+		dialogInfo.button1 = getBrowserLocaleString("locale_reload_accept")
+		dialogInfo.button2 = getBrowserLocaleString("locale_reload_cancel")
+
+		local dialog = StaticPopup_Show("TDT_CONFIRM_LOCALE_RELOAD", nil, nil, value)
+		if dialog then
+			dialog.data2 = {
+				previousValue = previousValue,
+				dropdown = localeButton,
+			}
+		else
+			localeButton:SetCurrentValue(previousValue)
+		end
 	end)
 	localeButton:SetPoint("TOPLEFT", localeHelp, "BOTTOMLEFT", 0, -8)
 
 	-- Activate in
 	-- Tip Location Selector --
-	local showinFS = createString(configContent, "Content", headerFont, headerSize)
+	local showinFS = createString(configContent, getBrowserLocaleString("config_content"), headerFont, headerSize)
 	showinFS:SetPoint("TOPLEFT", localeButton, "BOTTOMLEFT", 0, -24)
 	
-	local chkRegDungeons = createCheck("RegDungeons", "Show Tips in Dungeons", configContent, function(self, value) end)
+	local chkRegDungeons = createCheck("RegDungeons", getBrowserLocaleString("config_show_in_dungeons"), configContent, function(self, value)
+		TDTConfig.DungeonToggle = self:GetChecked()
+		addon:setEnabled()
+	end)
 	chkRegDungeons:SetPoint("TOPLEFT", showinFS, "BOTTOMLEFT", 0, -8)
-	chkRegDungeons:SetEnabled(false)
-	chkRegDungeons:SetChecked(true)
 	
 	--[[local chkMythicPlus = createCheck("MythicPlus", "Show Tips in Mythic+", addon.configPanel, function(self, value) 
 		TDTConfig.MythicPlusToggle = self:GetChecked()
@@ -2326,15 +3465,20 @@ local function createConfigMenu()
 		end)
 	chkMythicPlus:SetPoint("TOPLEFT", chkRegDungeons, "BOTTOMLEFT", 0, -8)]]--
 	
-	local chkRaid = createCheck("Raid", "Show Tips in Raid", configContent, function(self, value) 
+	local chkRaid = createCheck("Raid", getBrowserLocaleString("config_show_in_raid"), configContent, function(self, value) 
 		TDTConfig.RaidToggle = self:GetChecked()
 		addon:setEnabled()
 	end)
 	chkRaid:SetPoint("TOPLEFT", chkRegDungeons, "BOTTOMLEFT", 0, -8)
+
+	local chkShowNpcIDs = createCheck("ShowNpcIDs", getBrowserLocaleString("config_show_npc_ids"), configContent, function(self, value)
+		TDTConfig.ShowNpcIDs = self:GetChecked()
+	end)
+	chkShowNpcIDs:SetPoint("TOPLEFT", chkRaid, "BOTTOMLEFT", 0, -8)
 	
 
 	-- Other Stuff
-	local OtherFS = createString(configContent, "Font Size", headerFont, headerSize)
+	local OtherFS = createString(configContent, getBrowserLocaleString("config_font_size"), headerFont, headerSize)
 	OtherFS:SetPoint("TOPLEFT", previousClassCheck, "BOTTOMLEFT", 0, -24)
 	
 	--local deleteme = createString(addon.configPanel, "Delete me after", headerFont, headerSize)
@@ -2372,6 +3516,45 @@ local function createConfigMenu()
 		--print(TDTConfig.FontSize)
 		self.text:SetText(TDTConfig.FontSize)
 			end)
+
+	local function refreshConfigTexts()
+		ddTitleString:SetText(getBrowserLocaleString("config_title"))
+		setCheckLabel(chkGeneral, getBrowserLocaleString("config_general"))
+		setCheckLabel(chkPriority, getBrowserLocaleString("config_priority"))
+		setCheckLabel(chkInterrupts, getBrowserLocaleString("config_interrupts"))
+		setCheckLabel(chkDefensives, getBrowserLocaleString("config_defensives"))
+		setCheckLabel(chkFluff, getBrowserLocaleString("config_fluff"))
+		setCheckLabel(chkAdvanced, getBrowserLocaleString("config_advanced"))
+		setCheckLabel(chkPersonal, getBrowserLocaleString("config_personal"))
+		locFS:SetText(getBrowserLocaleString("config_tip_location"))
+		setCheckLabel(locCB, getBrowserLocaleString("config_show_separate_frame"))
+		locCB.tooltip = getBrowserLocaleString("config_show_separate_frame_tooltip")
+		showFrameBtn:SetText(getBrowserLocaleString("config_show_frame"))
+		hideFrameBtn:SetText(getBrowserLocaleString("config_hide_frame"))
+		addon.targetFS:SetText(getBrowserLocaleString("config_target_mouseover"))
+		setCheckLabel(addon.chkTarget, getBrowserLocaleString("config_show_target"))
+		roleFS:SetText(getBrowserLocaleString("config_role_specific"))
+		setCheckLabel(chkMyRoleOnly, getBrowserLocaleString("config_show_myroleonly"))
+		setCheckLabel(chkTankRole, getBrowserLocaleString("config_show_tank"))
+		setCheckLabel(chkHealerRole, getBrowserLocaleString("config_show_healer"))
+		setCheckLabel(chkDamageRole, getBrowserLocaleString("config_show_damage"))
+		classFS:SetText(getBrowserLocaleString("config_class_specific"))
+		setCheckLabel(chkMyClassOnly, getBrowserLocaleString("config_show_myclassonly"))
+		for _, classCheck in ipairs(classCheckRows) do
+			local classKey = classCheck[3]
+			local checkbox = classFilterChecks[classKey]
+			if checkbox then
+				setCheckLabel(checkbox, string.format("%s %s", getBrowserLocaleString("config_show_prefix"), getLocalizedClassName(classKey)))
+			end
+		end
+		localeFS:SetText(getBrowserLocaleString("config_language"))
+		localeHelp:SetText(getBrowserLocaleString("config_language_help"))
+		showinFS:SetText(getBrowserLocaleString("config_content"))
+		setCheckLabel(chkRegDungeons, getBrowserLocaleString("config_show_in_dungeons"))
+		setCheckLabel(chkRaid, getBrowserLocaleString("config_show_in_raid"))
+		setCheckLabel(chkShowNpcIDs, getBrowserLocaleString("config_show_npc_ids"))
+		OtherFS:SetText(getBrowserLocaleString("config_font_size"))
+	end
 	
 	--[[
 	
@@ -2405,6 +3588,7 @@ local function createConfigMenu()
             --print(TDTConfig.FontSize)
 			
 			-- Set default checkbox behaviour
+			chkGeneral:SetChecked(TDTConfig.Important)
 			chkPriority:SetChecked(TDTConfig.PriorityTargets)
 			chkInterrupts:SetChecked(TDTConfig.Interrupts)
 			chkDefensives:SetChecked(TDTConfig.Defensives)
@@ -2413,7 +3597,9 @@ local function createConfigMenu()
 			chkPersonal:SetChecked(TDTConfig.Personal)
 			--chkMythicPlus:SetChecked(TDTConfig.MythicPlusToggle)
 			
+			chkRegDungeons:SetChecked(TDTConfig.DungeonToggle)
 			chkRaid:SetChecked(TDTConfig.RaidToggle)
+			chkShowNpcIDs:SetChecked(TDTConfig.ShowNpcIDs)
 			
 			-- Set default Drop Down text
 			--UIDropDownMenu_SetText(locDD, TDTConfig.ShowFrame)
@@ -2436,15 +3622,24 @@ local function createConfigMenu()
 			updateTextSize()
 			fontEdit.text:SetText(TDTConfig.FontSize)
 			fontEdit:SetValue(TDTConfig.FontSize)
+			refreshConfigTexts()
 			
 			addon:setEnabled()
 			addon:setDropdownEnabled()
 			if addon.configPanel.refreshScroll then addon.configPanel:refreshScroll() end
 		end
 	end);
+
+	addon.configPanel:HookScript("OnShow", function()
+		refreshConfigTexts()
+		if localeButton and TDTConfig then
+			localeButton:SetCurrentValue(TDTConfig.LocaleChoice or "Auto")
+		end
+	end)
 	
 	-- Add panel to config options
 	addon:registerConfigPanel()
+	refreshConfigTexts()
 	
 	-- Proceed
 	createTDTFrame()
