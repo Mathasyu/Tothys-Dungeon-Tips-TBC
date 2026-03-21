@@ -958,17 +958,115 @@ addon.contentCatalog = addon.contentCatalog or {
 					enUS = "Black Temple",
 					deDE = "Black Temple",
 				},
+				npcNames = {
+					[22841] = { enUS = "Shade of Akama" },
+					[22844] = { enUS = "Ashtongue Battlelord" },
+					[22845] = { enUS = "Ashtongue Mystic" },
+					[22846] = { enUS = "Ashtongue Stormcaller" },
+					[22847] = { enUS = "Ashtongue Primalist" },
+					[22848] = { enUS = "Storm Fury" },
+					[22849] = { enUS = "Ashtongue Feral Spirit" },
+					[22853] = { enUS = "Illidari Defiler" },
+					[22855] = { enUS = "Illidari Nightlord" },
+					[22869] = { enUS = "Illidari Boneslicer" },
+					[22871] = { enUS = "Teron Gorefiend" },
+					[22873] = { enUS = "Coilskar General" },
+					[22874] = { enUS = "Coilskar Harpooner" },
+					[22875] = { enUS = "Coilskar Sea-Caller" },
+					[22876] = { enUS = "Coilskar Soothsayer" },
+					[22877] = { enUS = "Coilskar Wrangler" },
+					[22878] = { enUS = "Aqueous Lord" },
+					[22879] = { enUS = "Shadowmoon Reaver" },
+					[22880] = { enUS = "Shadowmoon Champion" },
+					[22881] = { enUS = "Aqueous Surger" },
+					[22882] = { enUS = "Shadowmoon Deathshaper" },
+					[22883] = { enUS = "Aqueous Spawn" },
+					[22884] = { enUS = "Leviathan" },
+					[22885] = { enUS = "Dragon Turtle" },
+					[22887] = { enUS = "High Warlord Naj'entus" },
+					[22898] = { enUS = "Supremus" },
+					[22917] = { enUS = "Illidan Stormrage" },
+					[22929] = { enUS = "Greater Shadowfiend" },
+					[22939] = { enUS = "Temple Concubine" },
+					[22945] = { enUS = "Shadowmoon Blood Mage" },
+					[22946] = { enUS = "Shadowmoon War Hound" },
+					[22947] = { enUS = "Mother Shahraz" },
+					[22948] = { enUS = "Gurtogg Bloodboil" },
+					[22949] = { enUS = "Gathios the Shatterer" },
+					[22950] = { enUS = "High Nethermancer Zerevor" },
+					[22951] = { enUS = "Lady Malande" },
+					[22952] = { enUS = "Veras Darkshadow" },
+					[22953] = { enUS = "Wrathbone Flayer" },
+					[22954] = { enUS = "Illidari Fearbringer" },
+					[22955] = { enUS = "Charming Courtesan" },
+					[22956] = { enUS = "Sister of Pain" },
+					[22957] = { enUS = "Priestess of Dementia" },
+					[22959] = { enUS = "Spellbound Attendant" },
+					[22960] = { enUS = "Dragonmaw Wyrmcaller" },
+					[22962] = { enUS = "Priestess of Delight" },
+					[22963] = { enUS = "Bonechewer Worker" },
+					[22964] = { enUS = "Sister of Pleasure" },
+					[22965] = { enUS = "Enslaved Servant" },
+					[22996] = { enUS = "Blade of Azzinoth" },
+					[22997] = { enUS = "Flame of Azzinoth" },
+					[23018] = { enUS = "Shadowmoon Houndmaster" },
+					[23028] = { enUS = "Bonechewer Taskmaster" },
+					[23030] = { enUS = "Dragonmaw Sky Stalker" },
+					[23047] = { enUS = "Shadowmoon Soldier" },
+					[23049] = { enUS = "Shadowmoon Weapon Master" },
+					[23083] = { enUS = "Shadowmoon Riding Hound" },
+					[23109] = { enUS = "Vengeful Spirit" },
+					[23111] = { enUS = "Shadowy Construct" },
+					[23147] = { enUS = "Shadowmoon Grunt" },
+					[23172] = { enUS = "Hand of Gorefiend" },
+					[23196] = { enUS = "Bonechewer Behemoth" },
+					[23215] = { enUS = "Ashtongue Sorcerer" },
+					[23216] = { enUS = "Ashtongue Defender" },
+					[23222] = { enUS = "Bonechewer Brawler" },
+					[23223] = { enUS = "Bonechewer Spectator" },
+					[23232] = { enUS = "Mutant War Hound" },
+					[23235] = { enUS = "Bonechewer Blade Fury" },
+					[23236] = { enUS = "Bonechewer Shield Disciple" },
+					[23237] = { enUS = "Bonechewer Blood Prophet" },
+					[23239] = { enUS = "Bonechewer Combatant" },
+					[23318] = { enUS = "Ashtongue Rogue" },
+					[23319] = { enUS = "Ashtongue Broken" },
+					[23330] = { enUS = "Dragonmaw Wind Reaver" },
+					[23337] = { enUS = "Illidari Centurion" },
+					[23339] = { enUS = "Illidari Heartseeker" },
+					[23371] = { enUS = "Shadowmoon Fallen" },
+					[23374] = { enUS = "Ashtongue Stalker" },
+					[23375] = { enUS = "Shadow Demon" },
+					[23389] = { enUS = "Fallen Ally" },
+					[23394] = { enUS = "Promenade Sentinel" },
+					[23397] = { enUS = "Illidari Blood Lord" },
+					[23398] = { enUS = "Angered Soul Fragment" },
+					[23399] = { enUS = "Suffering Soul Fragment" },
+					[23400] = { enUS = "Illidari Archon" },
+					[23401] = { enUS = "Hungering Soul Fragment" },
+					[23402] = { enUS = "Illidari Battle-mage" },
+					[23403] = { enUS = "Illidari Assassin" },
+					[23418] = { enUS = "Essence of Suffering" },
+					[23419] = { enUS = "Essence of Desire" },
+					[23420] = { enUS = "Essence of Anger" },
+					[23421] = { enUS = "Ashtongue Channeler" },
+					[23436] = { enUS = "Image of Dementia" },
+					[23469] = { enUS = "Enslaved Soul" },
+					[23498] = { enUS = "Parasitic Shadowfiend" },
+					[23523] = { enUS = "Ashtongue Elementalist" },
+					[23524] = { enUS = "Ashtongue Spiritbinder" },
+				},
 				npcIDs = {
 					22887, 22898, 22841, 22871, 22948, 23418, 23419, 23420, 22947, 22949,
 					22950, 22951, 22952, 22917, 22844, 22845, 22846, 22847, 22848, 22849,
 					22853, 22855, 22869, 22873, 22874, 22875, 22876, 22877, 22878, 22879,
-					22880, 22881, 22883, 22884, 22885, 22890, 22891, 22893, 22894, 22895,
-					22896, 22945, 22946, 22953, 22954, 22955, 22956, 22957, 22959, 22960,
-					22961, 22962, 22963, 22964, 22965, 22985, 22990, 22991, 22994, 23018,
-					23028, 23047, 23049, 23083, 23111, 23147, 23196, 23215, 23222, 23232,
-					23235, 23236, 23237, 23239, 23261, 23264, 23269, 23271, 23281, 23282,
-					23285, 23286, 23287, 23318, 23374, 23375, 23394, 23398, 23400, 23421,
-					23436, 23523, 23524, 23542, 23574, 23576,
+					22880, 22881, 22882, 22883, 22884, 22885, 22929, 22939, 22945, 22946,
+					22953, 22954, 22955, 22956, 22957, 22959, 22960, 22962, 22963, 22964,
+					22965, 22996, 22997, 23018, 23028, 23030, 23047, 23049, 23083, 23109,
+					23111, 23147, 23172, 23196, 23215, 23216, 23222, 23223, 23232, 23235,
+					23236, 23237, 23239, 23318, 23319, 23330, 23337, 23339, 23371, 23374,
+					23375, 23389, 23394, 23397, 23398, 23399, 23400, 23401, 23402, 23403,
+					23421, 23436, 23469, 23498, 23523, 23524,
 				},
 			},
 			sunwell_plateau = {
@@ -1920,104 +2018,104 @@ tipsMap_enUS = {
 	------- Raid: Black Temple -------------
 
 	---Bosses
-	[22887] = {{"Important", ""}}, -- High Warlord Naj'entus
-	[22898] = {{"Important", ""}}, -- Supremus
-	[22841] = {{"Important", ""}}, -- Shade of Akama
-	[22871] = {{"Important", ""}}, -- Teron Gorefiend
-	[22948] = {{"Important", ""}}, -- Gurtogg Bloodboil
-	[23418] = {{"Important", ""}}, -- Essence of Suffering
-	[23419] = {{"Important", ""}}, -- Essence of Desire
-	[23420] = {{"Important", ""}}, -- Essence of Anger
-	[22947] = {{"Important", ""}}, -- Mother Shahraz
-	[22949] = {{"Important", ""}}, -- Gathios the Shatterer
-	[22950] = {{"Important", ""}}, -- High Nethermancer Zerevor
-	[22951] = {{"Important", ""}}, -- Lady Malande
-	[22952] = {{"Important", ""}}, -- Veras Darkshadow
-	[22917] = {{"Important", ""}}, -- Illidan Stormrage <The Betrayer>
+	[22887] = {{"black_temple_22887_01", "Important", "", 10}}, -- High Warlord Naj'entus
+	[22898] = {{"black_temple_22898_01", "Important", "", 10}}, -- Supremus
+	[22841] = {{"black_temple_22841_01", "Important", "", 10}}, -- Shade of Akama
+	[22871] = {{"black_temple_22871_01", "Important", "", 10}}, -- Teron Gorefiend
+	[22948] = {{"black_temple_22948_01", "Important", "", 10}}, -- Gurtogg Bloodboil
+	[23418] = {{"black_temple_23418_01", "Important", "", 10}}, -- Essence of Suffering
+	[23419] = {{"black_temple_23419_01", "Important", "", 10}}, -- Essence of Desire
+	[23420] = {{"black_temple_23420_01", "Important", "", 10}}, -- Essence of Anger
+	[22947] = {{"black_temple_22947_01", "Important", "", 10}}, -- Mother Shahraz
+	[22949] = {{"black_temple_22949_01", "Important", "", 10}}, -- Gathios the Shatterer
+	[22950] = {{"black_temple_22950_01", "Important", "", 10}}, -- High Nethermancer Zerevor
+	[22951] = {{"black_temple_22951_01", "Important", "", 10}}, -- Lady Malande
+	[22952] = {{"black_temple_22952_01", "Important", "", 10}}, -- Veras Darkshadow
+	[22917] = {{"black_temple_22917_01", "Important", "", 10}}, -- Illidan Stormrage <The Betrayer>
 
 	---Trash Mobs
-	[22844] = {{"Important", ""}}, -- Ashtongue Battlelord
-	[22845] = {{"Important", ""}}, -- Ashtongue Mystic
-	[22846] = {{"Important", ""}}, -- Ashtongue Stormcaller
-	[22847] = {{"Important", ""}}, -- Ashtongue Primalist
-	[22848] = {{"Important", ""}}, -- Storm Fury
-	[22849] = {{"Important", ""}}, -- Ashtongue Feral Spirit
-	[22853] = {{"Important", ""}}, -- Illidari Defiler
-	[22855] = {{"Important", ""}}, -- Illidari Nightlord
-	[22869] = {{"Important", ""}}, -- Illidari Boneslicer
-	[22873] = {{"Important", ""}}, -- Coilskar General
-	[22874] = {{"Important", ""}}, -- Coilskar Harpooner
-	[22875] = {{"Important", ""}}, -- Coilskar Sea-Caller
-	[22876] = {{"Important", ""}}, -- Coilskar Soothsayer
-	[22877] = {{"Important", ""}}, -- Coilskar Wrangler
-	[22878] = {{"Important", ""}}, -- Aqueous Lord
-	[22879] = {{"Important", ""}}, -- Shadowmoon Reaver
-	[22880] = {{"Important", ""}}, -- Shadowmoon Champion
-	[22881] = {{"Important", ""}}, -- Aqueous Surger
-	[22882] = {{"Important", ""}}, -- Shadowmoon Deathshaper
-	[22883] = {{"Important", ""}}, -- Aqueous Spawn
-	[22884] = {{"Important", ""}}, -- Leviathan
-	[22885] = {{"Important", ""}}, -- Dragon Turtle <Coilskar Harpooner's Pet>
-	[22929] = {{"Important", ""}}, -- Greater Shadowfiend
-	[22939] = {{"Important", ""}}, -- Temple Concubine
-	[22945] = {{"Important", ""}}, -- Shadowmoon Blood Mage
-	[22946] = {{"Important", ""}}, -- Shadowmoon War Hound
-	[22953] = {{"Important", ""}}, -- Wrathbone Flayer
-	[22954] = {{"Important", ""}}, -- Illidari Fearbringer
-	[22955] = {{"Important", ""}}, -- Charming Courtesan
-	[22956] = {{"Important", ""}}, -- Sister of Pain
-	[22957] = {{"Important", ""}}, -- Priestess of Dementia
-	[22959] = {{"Important", ""}}, -- Spellbound Attendant
-	[22960] = {{"Important", ""}}, -- Dragonmaw Wyrmcaller
-	[22962] = {{"Important", ""}}, -- Priestess of Delight
-	[22963] = {{"Important", ""}}, -- Bonechewer Worker
-	[22964] = {{"Important", ""}}, -- Sister of Pleasure
-	[22965] = {{"Important", ""}}, -- Enslaved Servant
-	[22996] = {{"Important", ""}}, -- Blade of Azzinoth
-	[22997] = {{"Important", ""}}, -- Flame of Azzinoth
-	[23018] = {{"Important", ""}}, -- Shadowmoon Houndmaster
-	[23028] = {{"Important", ""}}, -- Bonechewer Taskmaster
-	[23030] = {{"Important", ""}}, -- Dragonmaw Sky Stalker
-	[23047] = {{"Important", ""}}, -- Shadowmoon Soldier
-	[23049] = {{"Important", ""}}, -- Shadowmoon Weapon Master
-	[23083] = {{"Important", ""}}, -- Shadowmoon Riding Hound
-	[23109] = {{"Important", ""}}, -- Vengeful Spirit
-	[23111] = {{"Important", ""}}, -- Shadowy Construct
-	[23147] = {{"Important", ""}}, -- Shadowmoon Grunt
-	[23172] = {{"Important", ""}}, -- Hand of Gorefiend
-	[23196] = {{"Important", ""}}, -- Bonechewer Behemoth
-	[23215] = {{"Important", ""}}, -- Ashtongue Sorcerer
-	[23216] = {{"Important", ""}}, -- Ashtongue Defender
-	[23222] = {{"Important", ""}}, -- Bonechewer Brawler
-	[23223] = {{"Important", ""}}, -- Bonechewer Spectator
-	[23232] = {{"Important", ""}}, -- Mutant War Hound
-	[23235] = {{"Important", ""}}, -- Bonechewer Blade Fury
-	[23236] = {{"Important", ""}}, -- Bonechewer Shield Disciple
-	[23237] = {{"Important", ""}}, -- Bonechewer Blood Prophet
-	[23239] = {{"Important", ""}}, -- Bonechewer Combatant
-	[23318] = {{"Important", ""}}, -- Ashtongue Rogue
-	[23319] = {{"Important", ""}}, -- Ashtongue Broken
-	[23330] = {{"Important", ""}}, -- Dragonmaw Wind Reaver
-	[23337] = {{"Important", ""}}, -- Illidari Centurion
-	[23339] = {{"Important", ""}}, -- Illidari Heartseeker
-	[23371] = {{"Important", ""}}, -- Shadowmoon Fallen
-	[23374] = {{"Important", ""}}, -- Ashtongue Stalker
-	[23375] = {{"Important", ""}}, -- Shadow Demon
-	[23389] = {{"Important", ""}}, -- Fallen Ally
-	[23394] = {{"Important", ""}}, -- Promenade Sentinel
-	[23397] = {{"Important", ""}}, -- Illidari Blood Lord
-	[23398] = {{"Important", ""}}, -- Angered Soul Fragment
-	[23399] = {{"Important", ""}}, -- Suffering Soul Fragment
-	[23400] = {{"Important", ""}}, -- Illidari Archon
-	[23401] = {{"Important", ""}}, -- Hungering Soul Fragment
-	[23402] = {{"Important", ""}}, -- Illidari Battle-mage
-	[23403] = {{"Important", ""}}, -- Illidari Assassin
-	[23421] = {{"Important", ""}}, -- Ashtongue Channeler
-	[23436] = {{"Important", ""}}, -- Image of Dementia
-	[23469] = {{"Important", ""}}, -- Enslaved Soul
-	[23498] = {{"Important", ""}}, -- Parasitic Shadowfiend
-	[23523] = {{"Important", ""}}, -- Ashtongue Elementalist
-	[23524] = {{"Important", ""}}, -- Ashtongue Spiritbinder
+	[22844] = {{"black_temple_22844_01", "Important", "", 10}}, -- Ashtongue Battlelord
+	[22845] = {{"black_temple_22845_01", "Important", "", 10}}, -- Ashtongue Mystic
+	[22846] = {{"black_temple_22846_01", "Important", "", 10}}, -- Ashtongue Stormcaller
+	[22847] = {{"black_temple_22847_01", "Important", "", 10}}, -- Ashtongue Primalist
+	[22848] = {{"black_temple_22848_01", "Important", "", 10}}, -- Storm Fury
+	[22849] = {{"black_temple_22849_01", "Important", "", 10}}, -- Ashtongue Feral Spirit
+	[22853] = {{"black_temple_22853_01", "Important", "", 10}}, -- Illidari Defiler
+	[22855] = {{"black_temple_22855_01", "Important", "", 10}}, -- Illidari Nightlord
+	[22869] = {{"black_temple_22869_01", "Important", "", 10}}, -- Illidari Boneslicer
+	[22873] = {{"black_temple_22873_01", "Important", "", 10}}, -- Coilskar General
+	[22874] = {{"black_temple_22874_01", "Important", "", 10}}, -- Coilskar Harpooner
+	[22875] = {{"black_temple_22875_01", "Important", "", 10}}, -- Coilskar Sea-Caller
+	[22876] = {{"black_temple_22876_01", "Important", "", 10}}, -- Coilskar Soothsayer
+	[22877] = {{"black_temple_22877_01", "Important", "", 10}}, -- Coilskar Wrangler
+	[22878] = {{"black_temple_22878_01", "Important", "", 10}}, -- Aqueous Lord
+	[22879] = {{"black_temple_22879_01", "Important", "", 10}}, -- Shadowmoon Reaver
+	[22880] = {{"black_temple_22880_01", "Important", "", 10}}, -- Shadowmoon Champion
+	[22881] = {{"black_temple_22881_01", "Important", "", 10}}, -- Aqueous Surger
+	[22882] = {{"black_temple_22882_01", "Important", "", 10}}, -- Shadowmoon Deathshaper
+	[22883] = {{"black_temple_22883_01", "Important", "", 10}}, -- Aqueous Spawn
+	[22884] = {{"black_temple_22884_01", "Important", "", 10}}, -- Leviathan
+	[22885] = {{"black_temple_22885_01", "Important", "", 10}}, -- Dragon Turtle <Coilskar Harpooner's Pet>
+	[22929] = {{"black_temple_22929_01", "Important", "", 10}}, -- Greater Shadowfiend
+	[22939] = {{"black_temple_22939_01", "Important", "", 10}}, -- Temple Concubine
+	[22945] = {{"black_temple_22945_01", "Important", "", 10}}, -- Shadowmoon Blood Mage
+	[22946] = {{"black_temple_22946_01", "Important", "", 10}}, -- Shadowmoon War Hound
+	[22953] = {{"black_temple_22953_01", "Important", "", 10}}, -- Wrathbone Flayer
+	[22954] = {{"black_temple_22954_01", "Important", "", 10}}, -- Illidari Fearbringer
+	[22955] = {{"black_temple_22955_01", "Important", "", 10}}, -- Charming Courtesan
+	[22956] = {{"black_temple_22956_01", "Important", "", 10}}, -- Sister of Pain
+	[22957] = {{"black_temple_22957_01", "Important", "", 10}}, -- Priestess of Dementia
+	[22959] = {{"black_temple_22959_01", "Important", "", 10}}, -- Spellbound Attendant
+	[22960] = {{"black_temple_22960_01", "Important", "", 10}}, -- Dragonmaw Wyrmcaller
+	[22962] = {{"black_temple_22962_01", "Important", "", 10}}, -- Priestess of Delight
+	[22963] = {{"black_temple_22963_01", "Important", "", 10}}, -- Bonechewer Worker
+	[22964] = {{"black_temple_22964_01", "Important", "", 10}}, -- Sister of Pleasure
+	[22965] = {{"black_temple_22965_01", "Important", "", 10}}, -- Enslaved Servant
+	[22996] = {{"black_temple_22996_01", "Important", "", 10}}, -- Blade of Azzinoth
+	[22997] = {{"black_temple_22997_01", "Important", "", 10}}, -- Flame of Azzinoth
+	[23018] = {{"black_temple_23018_01", "Important", "", 10}}, -- Shadowmoon Houndmaster
+	[23028] = {{"black_temple_23028_01", "Important", "", 10}}, -- Bonechewer Taskmaster
+	[23030] = {{"black_temple_23030_01", "Important", "", 10}}, -- Dragonmaw Sky Stalker
+	[23047] = {{"black_temple_23047_01", "Important", "", 10}}, -- Shadowmoon Soldier
+	[23049] = {{"black_temple_23049_01", "Important", "", 10}}, -- Shadowmoon Weapon Master
+	[23083] = {{"black_temple_23083_01", "Important", "", 10}}, -- Shadowmoon Riding Hound
+	[23109] = {{"black_temple_23109_01", "Important", "", 10}}, -- Vengeful Spirit
+	[23111] = {{"black_temple_23111_01", "Important", "", 10}}, -- Shadowy Construct
+	[23147] = {{"black_temple_23147_01", "Important", "", 10}}, -- Shadowmoon Grunt
+	[23172] = {{"black_temple_23172_01", "Important", "", 10}}, -- Hand of Gorefiend
+	[23196] = {{"black_temple_23196_01", "Important", "", 10}}, -- Bonechewer Behemoth
+	[23215] = {{"black_temple_23215_01", "Important", "", 10}}, -- Ashtongue Sorcerer
+	[23216] = {{"black_temple_23216_01", "Important", "", 10}}, -- Ashtongue Defender
+	[23222] = {{"black_temple_23222_01", "Important", "", 10}}, -- Bonechewer Brawler
+	[23223] = {{"black_temple_23223_01", "Important", "", 10}}, -- Bonechewer Spectator
+	[23232] = {{"black_temple_23232_01", "Important", "", 10}}, -- Mutant War Hound
+	[23235] = {{"black_temple_23235_01", "Important", "", 10}}, -- Bonechewer Blade Fury
+	[23236] = {{"black_temple_23236_01", "Important", "", 10}}, -- Bonechewer Shield Disciple
+	[23237] = {{"black_temple_23237_01", "Important", "", 10}}, -- Bonechewer Blood Prophet
+	[23239] = {{"black_temple_23239_01", "Important", "", 10}}, -- Bonechewer Combatant
+	[23318] = {{"black_temple_23318_01", "Important", "", 10}}, -- Ashtongue Rogue
+	[23319] = {{"black_temple_23319_01", "Important", "", 10}}, -- Ashtongue Broken
+	[23330] = {{"black_temple_23330_01", "Important", "", 10}}, -- Dragonmaw Wind Reaver
+	[23337] = {{"black_temple_23337_01", "Important", "", 10}}, -- Illidari Centurion
+	[23339] = {{"black_temple_23339_01", "Important", "", 10}}, -- Illidari Heartseeker
+	[23371] = {{"black_temple_23371_01", "Important", "", 10}}, -- Shadowmoon Fallen
+	[23374] = {{"black_temple_23374_01", "Important", "", 10}}, -- Ashtongue Stalker
+	[23375] = {{"black_temple_23375_01", "Important", "", 10}}, -- Shadow Demon
+	[23389] = {{"black_temple_23389_01", "Important", "", 10}}, -- Fallen Ally
+	[23394] = {{"black_temple_23394_01", "Important", "", 10}}, -- Promenade Sentinel
+	[23397] = {{"black_temple_23397_01", "Important", "", 10}}, -- Illidari Blood Lord
+	[23398] = {{"black_temple_23398_01", "Important", "", 10}}, -- Angered Soul Fragment
+	[23399] = {{"black_temple_23399_01", "Important", "", 10}}, -- Suffering Soul Fragment
+	[23400] = {{"black_temple_23400_01", "Important", "", 10}}, -- Illidari Archon
+	[23401] = {{"black_temple_23401_01", "Important", "", 10}}, -- Hungering Soul Fragment
+	[23402] = {{"black_temple_23402_01", "Important", "", 10}}, -- Illidari Battle-mage
+	[23403] = {{"black_temple_23403_01", "Important", "", 10}}, -- Illidari Assassin
+	[23421] = {{"black_temple_23421_01", "Important", "", 10}}, -- Ashtongue Channeler
+	[23436] = {{"black_temple_23436_01", "Important", "", 10}}, -- Image of Dementia
+	[23469] = {{"black_temple_23469_01", "Important", "", 10}}, -- Enslaved Soul
+	[23498] = {{"black_temple_23498_01", "Important", "", 10}}, -- Parasitic Shadowfiend
+	[23523] = {{"black_temple_23523_01", "Important", "", 10}}, -- Ashtongue Elementalist
+	[23524] = {{"black_temple_23524_01", "Important", "", 10}}, -- Ashtongue Spiritbinder
 
 
 	------- Raid: Sunwell Plateau ----------
