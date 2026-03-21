@@ -868,12 +868,55 @@ addon.contentCatalog = addon.contentCatalog or {
 					enUS = "Tempest Keep: The Eye",
 					deDE = "Tempest Keep: The Eye",
 				},
+				npcNames = {
+					[18805] = { enUS = "High Astromancer Solarian" },
+					[18806] = { enUS = "Solarium Priest" },
+					[18925] = { enUS = "Solarium Agent" },
+					[19514] = { enUS = "Al'ar" },
+					[19516] = { enUS = "Void Reaver" },
+					[19551] = { enUS = "Ember of Al'ar" },
+					[19622] = { enUS = "Kael'thas Sunstrider" },
+					[20031] = { enUS = "Bloodwarder Legionnaire" },
+					[20032] = { enUS = "Bloodwarder Vindicator" },
+					[20033] = { enUS = "Astromancer" },
+					[20034] = { enUS = "Star Scryer" },
+					[20035] = { enUS = "Bloodwarder Marshal" },
+					[20036] = { enUS = "Bloodwarder Squire" },
+					[20037] = { enUS = "Tempest Falconer" },
+					[20038] = { enUS = "Phoenix-Hawk Hatchling" },
+					[20039] = { enUS = "Phoenix-Hawk" },
+					[20040] = { enUS = "Crystalcore Devastator" },
+					[20041] = { enUS = "Crystalcore Sentinel" },
+					[20042] = { enUS = "Tempest-Smith" },
+					[20043] = { enUS = "Apprentice Star Scryer" },
+					[20044] = { enUS = "Novice Astromancer" },
+					[20045] = { enUS = "Nether Scryer" },
+					[20046] = { enUS = "Astromancer Lord" },
+					[20047] = { enUS = "Crimson Hand Battle Mage" },
+					[20048] = { enUS = "Crimson Hand Centurion" },
+					[20049] = { enUS = "Crimson Hand Blood Knight" },
+					[20050] = { enUS = "Crimson Hand Inquisitor" },
+					[20052] = { enUS = "Crystalcore Mechanic" },
+					[20060] = { enUS = "Lord Sanguinar" },
+					[20062] = { enUS = "Grand Astromancer Capernian" },
+					[20063] = { enUS = "Master Engineer Telonicus" },
+					[20064] = { enUS = "Thaladred the Darkener" },
+					[21268] = { enUS = "Netherstrand Longbow" },
+					[21269] = { enUS = "Devastation" },
+					[21270] = { enUS = "Cosmic Infuser" },
+					[21271] = { enUS = "Infinity Blades" },
+					[21272] = { enUS = "Warp Slicer" },
+					[21273] = { enUS = "Phaseshift Bulwark" },
+					[21274] = { enUS = "Staff of Disintegration" },
+					[21362] = { enUS = "Phoenix" },
+					[21364] = { enUS = "Phoenix Egg" },
+				},
 				npcIDs = {
 					19516, 19514, 18805, 19622, 20060, 20062, 20063, 20064, 21268, 21269,
-					21270, 21271, 21272, 21273, 21274, 21275, 21276, 21296, 21297, 21337,
-					21357, 21362, 21376, 21582, 21585, 21586, 21587, 21588, 21589, 21590,
-					21591, 21592, 21593, 21594, 21595, 21596, 21597, 21838, 21839, 21840,
-					21904, 22140,
+					21270, 21271, 21272, 21273, 21274, 18806, 18925, 19551, 20031, 20032,
+					20033, 20034, 20035, 20036, 20037, 20038, 20039, 20040, 20041, 20042,
+					20043, 20044, 20045, 20046, 20047, 20048, 20049, 20050, 20052, 21362,
+					21364,
 				},
 			},
 			hyjal_summit = {
@@ -1780,54 +1823,53 @@ tipsMap_enUS = {
 	------- Raid: Tempest Keep The Eye -----
 
 	---Bosses
-	[19516] = {{"Important", ""}}, -- Void Reaver
-	[19514] = {{"Important", ""}}, -- Al'ar <Phoenix God>
-	[18805] = {{"Important", ""}}, -- High Astromancer Solarian
-	[19622] = {{"Important", ""}}, -- Kael'thas Sunstrider <Lord of the Blood Elves>
+	[19516] = {{"the_eye_19516_01", "Important", "", 10}}, -- Void Reaver
+	[19514] = {{"the_eye_19514_01", "Important", "", 10}}, -- Al'ar <Phoenix God>
+	[18805] = {{"the_eye_18805_01", "Important", "", 10}}, -- High Astromancer Solarian
+	[19622] = {{"the_eye_19622_01", "Important", "", 10}}, -- Kael'thas Sunstrider <Lord of the Blood Elves>
 
 	---Advisors of Kael'thas Sunstrider
-	[20060] = {{"Important", ""}}, -- Lord Sanguinar <The Blood Hammer>
-	[20062] = {{"Important", ""}}, -- Grand Astromancer Capernian <Advisor to Kael'thas>
-	[20063] = {{"Important", ""}}, -- Master Engineer Telonicus <Advisor to Kael'thas>
-	[20064] = {{"Important", ""}}, -- Thaladred the Darkener <Advisor to Kael'thas>
+	[20060] = {{"the_eye_20060_01", "Important", "", 10}}, -- Lord Sanguinar <The Blood Hammer>
+	[20062] = {{"the_eye_20062_01", "Important", "", 10}}, -- Grand Astromancer Capernian <Advisor to Kael'thas>
+	[20063] = {{"the_eye_20063_01", "Important", "", 10}}, -- Master Engineer Telonicus <Advisor to Kael'thas>
+	[20064] = {{"the_eye_20064_01", "Important", "", 10}}, -- Thaladred the Darkener <Advisor to Kael'thas>
 
 	---Weapons of Kael'thas Sunstrider
-	[21268] = {{"Important", ""}}, -- Netherstrand Longbow
-	[21269] = {{"Important", ""}}, -- Devastation
-	[21270] = {{"Important", ""}}, -- Cosmic Infuser
-	[21271] = {{"Important", ""}}, -- Infinity Blades
-	[21272] = {{"Important", ""}}, -- Warp Slicer
-	[21273] = {{"Important", ""}}, -- Phaseshift Bulwark
-	[21274] = {{"Important", ""}}, -- Staff of Disintegration
+	[21268] = {{"the_eye_21268_01", "Important", "", 10}}, -- Netherstrand Longbow
+	[21269] = {{"the_eye_21269_01", "Important", "", 10}}, -- Devastation
+	[21270] = {{"the_eye_21270_01", "Important", "", 10}}, -- Cosmic Infuser
+	[21271] = {{"the_eye_21271_01", "Important", "", 10}}, -- Infinity Blades
+	[21272] = {{"the_eye_21272_01", "Important", "", 10}}, -- Warp Slicer
+	[21273] = {{"the_eye_21273_01", "Important", "", 10}}, -- Phaseshift Bulwark
+	[21274] = {{"the_eye_21274_01", "Important", "", 10}}, -- Staff of Disintegration
 
 	---Trash Mobs
-	[18806] = {{"Important", ""}}, -- Solarium Priest
-	[18925] = {{"Important", ""}}, -- Solarium Agent
-	[19551] = {{"Important", ""}}, -- Ember of Al'ar
-	[20031] = {{"Important", ""}}, -- Bloodwarder Legionnaire
-	[20032] = {{"Important", ""}}, -- Bloodwarder Vindicator
-	[20033] = {{"Important", ""}}, -- Astromancer
-	[20034] = {{"Important", ""}}, -- Star Scryer
-	[20035] = {{"Important", ""}}, -- Bloodwarder Marshal
-	[20036] = {{"Important", ""}}, -- Bloodwarder Squire
-	[20037] = {{"Important", ""}}, -- Tempest Falconer
-	[20038] = {{"Important", ""}}, -- Phoenix-Hawk Hatchling
-	[20039] = {{"Important", ""}}, -- Phoenix-Hawk
-	[20040] = {{"Important", ""}}, -- Crystalcore Devastator
-	[20041] = {{"Important", ""}}, -- Crystalcore Sentinel
-	[20042] = {{"Important", ""}}, -- Tempest-Smith
-	[20043] = {{"Important", ""}}, -- Apprentice Star Scryer
-	[20044] = {{"Important", ""}}, -- Novice Astromancer
-	[20045] = {{"Important", ""}}, -- Nether Scryer
-	[20045] = {{"Important", ""}}, -- Nether Scryer
-	[20046] = {{"Important", ""}}, -- Astromancer Lord
-	[20047] = {{"Important", ""}}, -- Crimson Hand Battle Mage
-	[20048] = {{"Important", ""}}, -- Crimson Hand Centurion
-	[20049] = {{"Important", ""}}, -- Crimson Hand Blood Knight
-	[20050] = {{"Important", ""}}, -- Crimson Hand Inquisitor
-	[20052] = {{"Important", ""}}, -- Crystalcore Mechanic
-	[21362] = {{"Important", ""}}, -- Phoenix
-	[21364] = {{"Important", ""}}, -- Phoenix Egg
+	[18806] = {{"the_eye_18806_01", "Important", "", 10}}, -- Solarium Priest
+	[18925] = {{"the_eye_18925_01", "Important", "", 10}}, -- Solarium Agent
+	[19551] = {{"the_eye_19551_01", "Important", "", 10}}, -- Ember of Al'ar
+	[20031] = {{"the_eye_20031_01", "Important", "", 10}}, -- Bloodwarder Legionnaire
+	[20032] = {{"the_eye_20032_01", "Important", "", 10}}, -- Bloodwarder Vindicator
+	[20033] = {{"the_eye_20033_01", "Important", "", 10}}, -- Astromancer
+	[20034] = {{"the_eye_20034_01", "Important", "", 10}}, -- Star Scryer
+	[20035] = {{"the_eye_20035_01", "Important", "", 10}}, -- Bloodwarder Marshal
+	[20036] = {{"the_eye_20036_01", "Important", "", 10}}, -- Bloodwarder Squire
+	[20037] = {{"the_eye_20037_01", "Important", "", 10}}, -- Tempest Falconer
+	[20038] = {{"the_eye_20038_01", "Important", "", 10}}, -- Phoenix-Hawk Hatchling
+	[20039] = {{"the_eye_20039_01", "Important", "", 10}}, -- Phoenix-Hawk
+	[20040] = {{"the_eye_20040_01", "Important", "", 10}}, -- Crystalcore Devastator
+	[20041] = {{"the_eye_20041_01", "Important", "", 10}}, -- Crystalcore Sentinel
+	[20042] = {{"the_eye_20042_01", "Important", "", 10}}, -- Tempest-Smith
+	[20043] = {{"the_eye_20043_01", "Important", "", 10}}, -- Apprentice Star Scryer
+	[20044] = {{"the_eye_20044_01", "Important", "", 10}}, -- Novice Astromancer
+	[20045] = {{"the_eye_20045_01", "Important", "", 10}}, -- Nether Scryer
+	[20046] = {{"the_eye_20046_01", "Important", "", 10}}, -- Astromancer Lord
+	[20047] = {{"the_eye_20047_01", "Important", "", 10}}, -- Crimson Hand Battle Mage
+	[20048] = {{"the_eye_20048_01", "Important", "", 10}}, -- Crimson Hand Centurion
+	[20049] = {{"the_eye_20049_01", "Important", "", 10}}, -- Crimson Hand Blood Knight
+	[20050] = {{"the_eye_20050_01", "Important", "", 10}}, -- Crimson Hand Inquisitor
+	[20052] = {{"the_eye_20052_01", "Important", "", 10}}, -- Crystalcore Mechanic
+	[21362] = {{"the_eye_21362_01", "Important", "", 10}}, -- Phoenix
+	[21364] = {{"the_eye_21364_01", "Important", "", 10}}, -- Phoenix Egg
 
 
 	------- Raid: Hyjal Summit -------------
