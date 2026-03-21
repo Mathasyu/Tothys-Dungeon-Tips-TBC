@@ -359,10 +359,35 @@ addon.contentCatalog = addon.contentCatalog or {
 					enUS = "The Slave Pens",
 					deDE = "The Slave Pens",
 				},
+				npcNames = {
+					[17816] = { enUS = "Bogstrok" },
+					[17817] = { enUS = "Greater Bogstrok" },
+					[17893] = { enUS = "Naturalist Bite" },
+					[17938] = { enUS = "Coilfang Observer" },
+					[17940] = { enUS = "Coilfang Technician" },
+					[17941] = { enUS = "Mennu the Betrayer" },
+					[17942] = { enUS = "Quagmirran" },
+					[17957] = { enUS = "Coilfang Champion" },
+					[17958] = { enUS = "Coilfang Defender" },
+					[17959] = { enUS = "Coilfang Slavehandler" },
+					[17960] = { enUS = "Coilfang Soothsayer" },
+					[17961] = { enUS = "Coilfang Enchantress" },
+					[17962] = { enUS = "Coilfang Collaborator" },
+					[17963] = { enUS = "Wastewalker Slave" },
+					[17964] = { enUS = "Wastewalker Worker" },
+					[17991] = { enUS = "Rokmar the Crackler" },
+					[18176] = { enUS = "Tainted Earthgrab Totem" },
+					[18177] = { enUS = "Tainted Stoneskin Totem" },
+					[18179] = { enUS = "Corrupted Nova Totem" },
+					[20208] = { enUS = "Mennu's Healing Ward" },
+					[21126] = { enUS = "Coilfang Scale-Healer" },
+					[21127] = { enUS = "Coilfang Tempest" },
+					[21128] = { enUS = "Coilfang Ray" },
+				},
 				npcIDs = {
 					17893, 17941, 17991, 17942, 18176, 18177, 18179, 20208, 17816, 17817,
-					17938, 17940, 17957, 17958, 17959, 17960, 17961, 17963, 17964, 17965,
-					17975, 17976, 21126,
+					17938, 17940, 17957, 17958, 17959, 17960, 17961, 17962, 17963, 17964,
+					21126, 21127, 21128,
 				},
 			},
 			underbog = {
@@ -373,10 +398,36 @@ addon.contentCatalog = addon.contentCatalog or {
 					enUS = "The Underbog",
 					deDE = "The Underbog",
 				},
+				npcNames = {
+					[17723] = { enUS = "Bog Giant" },
+					[17724] = { enUS = "Underbat" },
+					[17725] = { enUS = "Underbog Lurker" },
+					[17726] = { enUS = "Wrathfin Myrmidon" },
+					[17727] = { enUS = "Wrathfin Sentry" },
+					[17728] = { enUS = "Murkblood Tribesman" },
+					[17729] = { enUS = "Murkblood Spearman" },
+					[17730] = { enUS = "Murkblood Healer" },
+					[17731] = { enUS = "Fen Ray" },
+					[17732] = { enUS = "Lykul Wasp" },
+					[17734] = { enUS = "Underbog Lord" },
+					[17735] = { enUS = "Wrathfin Warrior" },
+					[17770] = { enUS = "Hungarfen" },
+					[17771] = { enUS = "Murkblood Oracle" },
+					[17826] = { enUS = "Swamplord Musel'ek" },
+					[17827] = { enUS = "Claw" },
+					[17871] = { enUS = "Underbog Shambler" },
+					[17882] = { enUS = "The Black Stalker" },
+					[17990] = { enUS = "Underbog Mushroom" },
+					[18105] = { enUS = "Ghaz'an" },
+					[18107] = { enUS = "Overseer Tidewrath" },
+					[19632] = { enUS = "Lykul Stinger" },
+					[20465] = { enUS = "Underbog Frenzy" },
+					[22299] = { enUS = "Spore Strider" },
+				},
 				npcIDs = {
 					17770, 18105, 17826, 17827, 17882, 18107, 22299, 17723, 17724, 17725,
-					17726, 17727, 17728, 17729, 17730, 17731, 17734, 17735, 17736, 17871,
-					17938, 17990, 20465, 20720,
+					17726, 17727, 17728, 17729, 17730, 17731, 17732, 17734, 17735, 17771,
+					17871, 17990, 19632, 20465,
 				},
 			},
 			steamvaults = {
@@ -387,9 +438,30 @@ addon.contentCatalog = addon.contentCatalog or {
 					enUS = "The Steamvault",
 					deDE = "The Steamvault",
 				},
+				npcNames = {
+					[17721] = { enUS = "Coilfang Engineer" },
+					[17722] = { enUS = "Coilfang Sorceress" },
+					[17796] = { enUS = "Mekgineer Steamrigger" },
+					[17797] = { enUS = "Hydromancer Thespia" },
+					[17798] = { enUS = "Warlord Kalithresh" },
+					[17799] = { enUS = "Warlord Kalithresh's Naga Distiller" },
+					[17800] = { enUS = "Coilfang Myrmidon" },
+					[17801] = { enUS = "Coilfang Siren" },
+					[17802] = { enUS = "Coilfang Warrior" },
+					[17803] = { enUS = "Coilfang Oracle" },
+					[17805] = { enUS = "Coilfang Slavemaster" },
+					[17917] = { enUS = "Coilfang Water Elemental" },
+					[17951] = { enUS = "Steamrigger Mechanic" },
+					[17954] = { enUS = "Warlord Kalithresh" },
+					[21338] = { enUS = "Coilfang Leper" },
+					[21694] = { enUS = "Bog Overlord" },
+					[21695] = { enUS = "Tidal Surger" },
+					[21696] = { enUS = "Steam Surger" },
+					[22891] = { enUS = "Second Fragment Guardian" },
+				},
 				npcIDs = {
 					17797, 17796, 17798, 17917, 17951, 17954, 17721, 17722, 17800, 17801,
-					17802, 17803, 17805, 17799, 21338, 21543, 21694, 21915, 21916,
+					17802, 17803, 17805, 17799, 21338, 21694, 21695, 21696, 22891,
 				},
 			},
 			mana_tombs = {
@@ -1883,227 +1955,227 @@ tipsMap_enUS = {
 	------- Dungeon: The Slave Pens -----------------
 
 	---Friendly NPCs
-	[17893] = {{"Legion", "Free him from cage and waves of mobs will appear. After their defeat, speak with him again to receive Nature Resist Buff +Stats"},
-				{"TANK", "Keep mobs off of Naturalist Bite NPC and you'll get a Nature Resist buff for final boss!"},
-				{"HEALER", "Keep Naturalist Bite NPC healed to ensure that you get the buff"}},
-				-- Naturalist Bite
+		[17893] = {{"slavepens_17893_01", "Legion", "Free him from cage and waves of mobs will appear. After their defeat, speak with him again to receive Nature Resist Buff +Stats", 30},
+					{"slavepens_17893_02", "TANK", "Keep mobs off of Naturalist Bite NPC and you'll get a Nature Resist buff for final boss!", 20},
+					{"slavepens_17893_03", "HEALER", "Keep Naturalist Bite NPC healed to ensure that you get the buff", 10}},
+					-- Naturalist Bite
 
 	---Bosses
-	[17941] = {{"Important", "Prior to pulling boss, make sure to deal with Adds that might pull if your boss fighting will get too close"},
-				{"PriorityTargets", "Make sure that as DPS you're swapping to his totems when he drops them"},
-				{"TANK", "While avoiding adds, backup to pull boss out of range of his totems"},
-				{"WARRIOR", "Use Spell Reflection to deal with boss' Lightning Bolts"},
-				{"SHAMAN", "Grounding Totem will absorb Lightning Bolts"}}, 
-				-- Mennu the Betrayer
-	[17991] = {{"Advanced", "POSITIONING: If tank and DPS place themselves between boss and healer, healer may be able to stay out of range of Water Spit"},
-				{"TANK", "Use/Time Defensives effectively as this boss hits hard"},
-				{"HEALER", "When player is afflicted by boss' GRIEVOUS WOUND, heal them to full to drop this debuff from player"},
-				{"DAMAGE", "Players can use bandages (when not being melee attacked by boss to help healer when they are struck by GRIEVOUS WOUND debuff."},
-				{"HEALER", "When not dealing with GRIEVOUS WOUND, healer should be prioritizing tank due to heavy hitting boss damage"},
-				{"Important", "WATER SPIT is an AoE Frost attack (use pots/resist to mitigate)"},
-				{"Important", "HEROIC MODE: Boss will ENRAGE at 20% health - save healing pots/healthstones for this phase"},
-				{"Legion", "Boss deals Frost damage thru WATER SPIT (40 yd range). Use Frost Resistance Aura/Buffs to mitigate this damage"}}, 
-				-- Rokmar the Crackler
-	[17942] = {{"Legion", "Deals Nature damage - all player should use proper Nature resist gear/pots for fight"},
-				{"Important", "Grab Naturalist Bite's Nature resist buff BEFORE engaging boss - adds will spawn when you free him from cage"},
-				{"Advanced", "POSITIONING: Tank should have boss turned away from group (preferably with back against wall) to avoid group tanking heavy cleave damage and knockback ability. Other players need to make sure that they are spread out and NOT standing near Naturalist Bite as ground Nature AoE will kill NPC"},
-				{"Important", "POISON BOLT VOLLEY: Wide radius ignoring LoS (Nature Damage +DoT)."},
-				{"Important", "If you can dispel POISON, you should be doing this!"}}, 
-				-- Quagmirran
+		[17941] = {{"slavepens_17941_01", "Important", "Prior to pulling boss, make sure to deal with Adds that might pull if your boss fighting will get too close", 50},
+					{"slavepens_17941_02", "PriorityTargets", "Make sure that as DPS you're swapping to his totems when he drops them", 40},
+					{"slavepens_17941_03", "TANK", "While avoiding adds, backup to pull boss out of range of his totems", 30},
+					{"slavepens_17941_04", "WARRIOR", "Use Spell Reflection to deal with boss' Lightning Bolts", 20},
+					{"slavepens_17941_05", "SHAMAN", "Grounding Totem will absorb Lightning Bolts", 10}}, 
+					-- Mennu the Betrayer
+		[17991] = {{"slavepens_17991_01", "Advanced", "POSITIONING: If tank and DPS place themselves between boss and healer, healer may be able to stay out of range of Water Spit", 80},
+					{"slavepens_17991_02", "TANK", "Use/Time Defensives effectively as this boss hits hard", 70},
+					{"slavepens_17991_03", "HEALER", "When player is afflicted by boss' GRIEVOUS WOUND, heal them to full to drop this debuff from player", 60},
+					{"slavepens_17991_04", "DAMAGE", "Players can use bandages (when not being melee attacked by boss to help healer when they are struck by GRIEVOUS WOUND debuff.", 50},
+					{"slavepens_17991_05", "HEALER", "When not dealing with GRIEVOUS WOUND, healer should be prioritizing tank due to heavy hitting boss damage", 40},
+					{"slavepens_17991_06", "Important", "WATER SPIT is an AoE Frost attack (use pots/resist to mitigate)", 30},
+					{"slavepens_17991_07", "Important", "HEROIC MODE: Boss will ENRAGE at 20% health - save healing pots/healthstones for this phase", 20},
+					{"slavepens_17991_08", "Legion", "Boss deals Frost damage thru WATER SPIT (40 yd range). Use Frost Resistance Aura/Buffs to mitigate this damage", 10}}, 
+					-- Rokmar the Crackler
+		[17942] = {{"slavepens_17942_01", "Legion", "Deals Nature damage - all player should use proper Nature resist gear/pots for fight", 50},
+					{"slavepens_17942_02", "Important", "Grab Naturalist Bite's Nature resist buff BEFORE engaging boss - adds will spawn when you free him from cage", 40},
+					{"slavepens_17942_03", "Advanced", "POSITIONING: Tank should have boss turned away from group (preferably with back against wall) to avoid group tanking heavy cleave damage and knockback ability. Other players need to make sure that they are spread out and NOT standing near Naturalist Bite as ground Nature AoE will kill NPC", 30},
+					{"slavepens_17942_04", "Important", "POISON BOLT VOLLEY: Wide radius ignoring LoS (Nature Damage +DoT).", 20},
+					{"slavepens_17942_05", "Important", "If you can dispel POISON, you should be doing this!", 10}}, 
+					-- Quagmirran
 
 	---Mennu's Totems
-	[18176] = {{"Important", "Lasts 30 sec; Immobalizes nearby players (may need ranged players to deal with totem."}}, -- Tainted Earthgrab Totem
-	[18177] = {{"PriorityTargets", "Lasts 60 sec; Reduces melee damage boss takes by 50%"}}, -- Tainted Stoneskin Totem
-	[18179] = {{"PriorityTargets", "Deals AoE Fire damage to players after 18 sec OR if it is attacked - if you can kill the boss w/in 18 sec window or pull boss out of range of Nova totem, you should leave this totem alone!"}}, -- Corrupted Nova Totem
-	[20208] = {{"PriorityTargets", "Lasts 30 sec; Periodically heals boss"}}, -- Mennu's Healing Ward
+		[18176] = {{"slavepens_18176_01", "Important", "Lasts 30 sec; Immobalizes nearby players (may need ranged players to deal with totem.", 10}}, -- Tainted Earthgrab Totem
+		[18177] = {{"slavepens_18177_01", "PriorityTargets", "Lasts 60 sec; Reduces melee damage boss takes by 50%", 10}}, -- Tainted Stoneskin Totem
+		[18179] = {{"slavepens_18179_01", "PriorityTargets", "Deals AoE Fire damage to players after 18 sec OR if it is attacked - if you can kill the boss w/in 18 sec window or pull boss out of range of Nova totem, you should leave this totem alone!", 10}}, -- Corrupted Nova Totem
+		[20208] = {{"slavepens_20208_01", "PriorityTargets", "Lasts 30 sec; Periodically heals boss", 10}}, -- Mennu's Healing Ward
 
 	---Trash Mobs
-	[17816] = {{"Defensives", "Tank may need pop defensive CD/receive extra heals when struck by Piercing Jab (reduces player's armor by 15% for 20 sec)"}}, 
-				-- Bogstrok
-	[17817] = {{"Important", "Dispel Decayed Strength (weak disease) from Strength using players (such as tank) as this reduces strength for 5 minutes"}}, 
-				-- Greater Bogstrok
-	[17938] = {{"Legion", "Mob deals primarily Fire damage in form of Heavy Dynamite AoE and Immolate"},
-				{"Important", "Immune to Mind Control & Warlock's Seduction in Heroic, but vulnerable to Fear & Freezing Trap (even in Heroic difficulty)"}}, 
-				-- Coilfang Observer
-	[17940] = {{"Dodge", "DODGE/RUN from Rain of Fire and Blizzard AoE effects"}}, -- Coilfang Technician
-	[17957] = {{"Important", "Tank should face these mobs away from group due to Cleave ability"},
-				{"Important", "Champion will cast Frightening Shout (AoE Fear; Instant cast)"},
-				{"Important", "Mob is immune to Mind Control in HEROIC difficulty"}}, -- Coilfang Champion
-	[17958] = {{"Important", "Mobs break CC on Normal difficulty & immune to ALL CC on Heroic-mode."},
-				{"Important", "When these mobs come in a pack, one can be slowed/kited by a ranged DPS while tank and rest of group deal with the other Defender"}}, 
-				-- Coilfang Defender
-	[17959] = {{"Defensives", "Tank may need to pop a defensive during Head Crack (15 sec reduced stamina debuff), or may need additional heals"},
-				{"Important", "This mob will stun a player (usually the tank) for 3 sec. If mob moves away from tank, they should slowed & kited while tank is stunned"}}, 
-				-- Coilfang Slavehandler
-	[17960] = {{"Legion", "Arcane Mage-Type Mob"},
-				{"Important", "Mob will sometimes cast Domination (10 sec mind-control) on a player. That player should be CC'd or stunned."}, 
-				{"Important", "Mob is vulnerable to all forms of CC in Normal/Heroic including Mind-Control"},
-				{"Legion", "Decayed Intellect can be removed from player (magic-effect lasts 20 sec reducing player intellect by 25%"}},
-				-- Coilfang Soothsayer
-	[17961] = {{"Legion", "Immune to Mind-Control on Heroic difficulty"},
-				{"PriorityTargets", "Enchantress will sometimes MC players. This player should be stunned/CC'd "},
-				{"Important", "Players should run out of Lightning Cloud"},
-				{"Important", "Dispel Entangling Roots (magic-effect) from players when mob casts Lightning Cloud"}}, 
-				-- Coilfang Enchantress
-	[17962] = {{"Legion", "Can be CC'd, but Immune to Mind-Control on Heroic"},
-				{"PriorityTargets", "Dispel Cripple from player (Magic effect; Reduces movement speed by 50%, strength reduced by 50% and time between attacks increased by 100%; lasts 15 sec)"}}, 
-				-- Coilfang Collaborator
-	[17963] = {{"Legion", "Ignore these mobs and instead focus on their naga masters"}}, -- Wastewalker Slave
-	[17964] = {{"Legion", "Ignore these mobs and instead focus on their naga masters"}}, -- Wastewalker Worker
-	[21126] = {{"PriorityTargets", "Interrupt: Heal"},
-				{"Important", "On Normal & Heroic Mode, mob is vulnerable to all forms of CC, including Mind-Control"}}, 
-				-- Coilfang Scale-Healer
-	[21127] = {{"Important", "Dispel Deadly Poison from player (Nature DoT lasting 15 sec)"}}, -- Coilfang Tempest
-	[21128] = {{"PriorityTargets", "Mob will cast Psychic Horror (AoE Fear). Make sure to DPS these pets down quickly"}}, 
-				-- Coilfang Ray <Observer's Pet>
+		[17816] = {{"slavepens_17816_01", "Defensives", "Tank may need pop defensive CD/receive extra heals when struck by Piercing Jab (reduces player's armor by 15% for 20 sec)", 10}}, 
+					-- Bogstrok
+		[17817] = {{"slavepens_17817_01", "Important", "Dispel Decayed Strength (weak disease) from Strength using players (such as tank) as this reduces strength for 5 minutes", 10}}, 
+					-- Greater Bogstrok
+		[17938] = {{"slavepens_17938_01", "Legion", "Mob deals primarily Fire damage in form of Heavy Dynamite AoE and Immolate", 20},
+					{"slavepens_17938_02", "Important", "Immune to Mind Control & Warlock's Seduction in Heroic, but vulnerable to Fear & Freezing Trap (even in Heroic difficulty)", 10}}, 
+					-- Coilfang Observer
+		[17940] = {{"slavepens_17940_01", "Dodge", "DODGE/RUN from Rain of Fire and Blizzard AoE effects", 10}}, -- Coilfang Technician
+		[17957] = {{"slavepens_17957_01", "Important", "Tank should face these mobs away from group due to Cleave ability", 30},
+					{"slavepens_17957_02", "Important", "Champion will cast Frightening Shout (AoE Fear; Instant cast)", 20},
+					{"slavepens_17957_03", "Important", "Mob is immune to Mind Control in HEROIC difficulty", 10}}, -- Coilfang Champion
+		[17958] = {{"slavepens_17958_01", "Important", "Mobs break CC on Normal difficulty & immune to ALL CC on Heroic-mode.", 20},
+					{"slavepens_17958_02", "Important", "When these mobs come in a pack, one can be slowed/kited by a ranged DPS while tank and rest of group deal with the other Defender", 10}}, 
+					-- Coilfang Defender
+		[17959] = {{"slavepens_17959_01", "Defensives", "Tank may need to pop a defensive during Head Crack (15 sec reduced stamina debuff), or may need additional heals", 20},
+					{"slavepens_17959_02", "Important", "This mob will stun a player (usually the tank) for 3 sec. If mob moves away from tank, they should slowed & kited while tank is stunned", 10}}, 
+					-- Coilfang Slavehandler
+		[17960] = {{"slavepens_17960_01", "Legion", "Arcane Mage-Type Mob", 40},
+					{"slavepens_17960_02", "Important", "Mob will sometimes cast Domination (10 sec mind-control) on a player. That player should be CC'd or stunned.", 30}, 
+					{"slavepens_17960_03", "Important", "Mob is vulnerable to all forms of CC in Normal/Heroic including Mind-Control", 20},
+					{"slavepens_17960_04", "Legion", "Decayed Intellect can be removed from player (magic-effect lasts 20 sec reducing player intellect by 25%)", 10}},
+					-- Coilfang Soothsayer
+		[17961] = {{"slavepens_17961_01", "Legion", "Immune to Mind-Control on Heroic difficulty", 40},
+					{"slavepens_17961_02", "PriorityTargets", "Enchantress will sometimes MC players. This player should be stunned/CC'd ", 30},
+					{"slavepens_17961_03", "Important", "Players should run out of Lightning Cloud", 20},
+					{"slavepens_17961_04", "Important", "Dispel Entangling Roots (magic-effect) from players when mob casts Lightning Cloud", 10}}, 
+					-- Coilfang Enchantress
+		[17962] = {{"slavepens_17962_01", "Legion", "Can be CC'd, but Immune to Mind-Control on Heroic", 20},
+					{"slavepens_17962_02", "PriorityTargets", "Dispel Cripple from player (Magic effect; Reduces movement speed by 50%, strength reduced by 50% and time between attacks increased by 100%; lasts 15 sec)", 10}}, 
+					-- Coilfang Collaborator
+		[17963] = {{"slavepens_17963_01", "Legion", "Ignore these mobs and instead focus on their naga masters", 10}}, -- Wastewalker Slave
+		[17964] = {{"slavepens_17964_01", "Legion", "Ignore these mobs and instead focus on their naga masters", 10}}, -- Wastewalker Worker
+		[21126] = {{"slavepens_21126_01", "PriorityTargets", "Interrupt: Heal", 20},
+					{"slavepens_21126_02", "Important", "On Normal & Heroic Mode, mob is vulnerable to all forms of CC, including Mind-Control", 10}}, 
+					-- Coilfang Scale-Healer
+		[21127] = {{"slavepens_21127_01", "Important", "Dispel Deadly Poison from player (Nature DoT lasting 15 sec)", 10}}, -- Coilfang Tempest
+		[21128] = {{"slavepens_21128_01", "PriorityTargets", "Mob will cast Psychic Horror (AoE Fear). Make sure to DPS these pets down quickly", 10}}, 
+					-- Coilfang Ray <Observer's Pet>
 
 
 	------- Dungeon: The Underbog -------------------
 
 	---Bosses
-	[17770] = {{"Important", "Immune to CC."},
-				{"Important", "Before fight begins, you will need to deal with 2 Bog Giants (both pull when one is pulled). One of them can be kited by a DPS who then jumps off ledge, allowing grp to fight one Bog Lord at a time"},
-				{"Legion", "If your group is too weak to deal with both Bog Giants at once, focus down one as that one will not respawn if you wipe to the second"},
-				{"Advanced", "POSITIONING: It is helpful for DPS and Healer to stand close together so that they move (around the boss) as a group to avoid mushrooms"},
-				{"PriorityTargets", "When boss summons an Underbog Mushroom, ALL players (tank included) need to run away from it as it causes MASSIVE AoE damage! (showing nameplates can be helpful to see these mushrooms spawn and adjust accordingly)"},
-				{"Dodge", "RUN AWAY: All players (tank included) needs to run away from boss at 20% as boss leeches health with AoE Foul Spores ability (Lasts 11 seconds)"}}, 
-				-- Hungarfen
-	[18105] = {{"Advanced", "POSITIONING: Tank should have boss turned away from group. DPS/Heals need to stand at sides to avoid frontal attack & tail sweep"}}, 
-				-- Ghaz'an
-	[17826] = {{"Important", "Prior to starting fight, defeat the nearby Underbog Lord so that this guy isn't pulled with boss"},
-				{"Advanced", "POSITIONING: Stand with backs against a wall to avoid knockback from Musel'ek, and all players should stack on boss to avoid majority of his ranged abilities (including Aimed Shot)."},
-				{"Important", "Due to heal interrupts, keeping HoTs up will be especially helpful to preserve group"},
-				{"TANK", "TANK should build threat on Claw first before switching back to Musel'ek."},
-				{"HEALER", "Priority heals to player (esp tank) if afflicted by ECHOING ROAR AoE debuff (reduces armor by 50-82% depending on difficulty; 10 yd range)"},
-				{"TANK", "After Freezing Trap Effect (5 sec trap to players within 50 yds), tank needs to get back in melee of boss ASAP"}}, 
-				-- Swamplord Musel'ek
-	[17827] = {{"Important", "Make sure TANK can build up sufficient threat on this guy before engaging boss and this add. Claw turns friendly when at 20%"},
-				{"Important", "ECHOING ROAR: AoE ability reducing players' within 10 yds armor by 50% on normal-mode (82% on heroic). If this is the tank, they will need to pop additional defensives and receive big heals for 20 sec debuff."},
-				{"Important", "Stack Claw on top of Musel'ek to negate Claw's FERAL CHARGE +knockback"}}, 
-				-- Claw <Swamplord Musel'ek's Pet>
-	[17882] = {{"Advanced", "POSITIONING: Players should spread as much as possible to mitigate number of players hit by boss' Chain Lightning. Spreading will also mitigate number of players struck with Static Charge (AoE Nature DoT)"},
-				{"Defensives", "As boss hits tank hard, defensives will need to be timed and healer should keep tank as close to max health as much and as often as possible!"},
-				{"Dodge", "DODGE: If struck by Static Charge (30 yd AoE Nature DoT), run away from nearby players. If tank is struck, other players will need to run from the tank"},
-				{"Important", "LEVITATE: Boss will levitate a player into the air"},
-				{"Legion", "LEVITATE: By standing near small mushrooms, players can mitigate this boss ability (some abilities can allow players to also break free"},
-				{"PRIEST", "Use DISPEL MAGIC to dispel boss' Levitate from yourself/other player and then cast your own Levitate ability to avoid fall damage"},
-				{"PRIEST", "When falling from Levitate, cast Levitate on yourself/other player to mitigate their fall damage"},
-				{"PALADIN", "Use CLEANSE to dispel Levitate from yourself or another player"},
-				{"WARLOCK", "Felhunter's can Dispel levitate"},
-				{"MAGE", "Use Blink to escape from Levitate and then Slow Fall"},
-				{"DRUID", "Feral Druid (Bear Form) can use Feral Charge to break free from Levitate and avoid fall damage"},
-				{"HEALER", "Players that are levitated will need be topped off to ensure they can survive fall damage. They will also need additional heals when they actually receive the fall damage (unless that damage can be slowed)"}}, 
-				-- The Black Stalker
+		[17770] = {{"underbog_17770_01", "Important", "Immune to CC.", 60},
+					{"underbog_17770_02", "Important", "Before fight begins, you will need to deal with 2 Bog Giants (both pull when one is pulled). One of them can be kited by a DPS who then jumps off ledge, allowing grp to fight one Bog Lord at a time", 50},
+					{"underbog_17770_03", "Legion", "If your group is too weak to deal with both Bog Giants at once, focus down one as that one will not respawn if you wipe to the second", 40},
+					{"underbog_17770_04", "Advanced", "POSITIONING: It is helpful for DPS and Healer to stand close together so that they move (around the boss) as a group to avoid mushrooms", 30},
+					{"underbog_17770_05", "PriorityTargets", "When boss summons an Underbog Mushroom, ALL players (tank included) need to run away from it as it causes MASSIVE AoE damage! (showing nameplates can be helpful to see these mushrooms spawn and adjust accordingly)", 20},
+					{"underbog_17770_06", "Dodge", "RUN AWAY: All players (tank included) needs to run away from boss at 20% as boss leeches health with AoE Foul Spores ability (Lasts 11 seconds)", 10}}, 
+					-- Hungarfen
+		[18105] = {{"underbog_18105_01", "Advanced", "POSITIONING: Tank should have boss turned away from group. DPS/Heals need to stand at sides to avoid frontal attack & tail sweep", 10}}, 
+					-- Ghaz'an
+		[17826] = {{"underbog_17826_01", "Important", "Prior to starting fight, defeat the nearby Underbog Lord so that this guy isn't pulled with boss", 60},
+					{"underbog_17826_02", "Advanced", "POSITIONING: Stand with backs against a wall to avoid knockback from Musel'ek, and all players should stack on boss to avoid majority of his ranged abilities (including Aimed Shot).", 50},
+					{"underbog_17826_03", "Important", "Due to heal interrupts, keeping HoTs up will be especially helpful to preserve group", 40},
+					{"underbog_17826_04", "TANK", "TANK should build threat on Claw first before switching back to Musel'ek.", 30},
+					{"underbog_17826_05", "HEALER", "Priority heals to player (esp tank) if afflicted by ECHOING ROAR AoE debuff (reduces armor by 50-82% depending on difficulty; 10 yd range)", 20},
+					{"underbog_17826_06", "TANK", "After Freezing Trap Effect (5 sec trap to players within 50 yds), tank needs to get back in melee of boss ASAP", 10}}, 
+					-- Swamplord Musel'ek
+		[17827] = {{"underbog_17827_01", "Important", "Make sure TANK can build up sufficient threat on this guy before engaging boss and this add. Claw turns friendly when at 20%", 30},
+					{"underbog_17827_02", "Important", "ECHOING ROAR: AoE ability reducing players' within 10 yds armor by 50% on normal-mode (82% on heroic). If this is the tank, they will need to pop additional defensives and receive big heals for 20 sec debuff.", 20},
+					{"underbog_17827_03", "Important", "Stack Claw on top of Musel'ek to negate Claw's FERAL CHARGE +knockback", 10}}, 
+					-- Claw <Swamplord Musel'ek's Pet>
+		[17882] = {{"underbog_17882_01", "Advanced", "POSITIONING: Players should spread as much as possible to mitigate number of players hit by boss' Chain Lightning. Spreading will also mitigate number of players struck with Static Charge (AoE Nature DoT)", 120},
+					{"underbog_17882_02", "Defensives", "As boss hits tank hard, defensives will need to be timed and healer should keep tank as close to max health as much and as often as possible!", 110},
+					{"underbog_17882_03", "Dodge", "DODGE: If struck by Static Charge (30 yd AoE Nature DoT), run away from nearby players. If tank is struck, other players will need to run from the tank", 100},
+					{"underbog_17882_04", "Important", "LEVITATE: Boss will levitate a player into the air", 90},
+					{"underbog_17882_05", "Legion", "LEVITATE: By standing near small mushrooms, players can mitigate this boss ability (some abilities can allow players to also break free", 80},
+					{"underbog_17882_06", "PRIEST", "Use DISPEL MAGIC to dispel boss' Levitate from yourself/other player and then cast your own Levitate ability to avoid fall damage", 70},
+					{"underbog_17882_07", "PRIEST", "When falling from Levitate, cast Levitate on yourself/other player to mitigate their fall damage", 60},
+					{"underbog_17882_08", "PALADIN", "Use CLEANSE to dispel Levitate from yourself or another player", 50},
+					{"underbog_17882_09", "WARLOCK", "Felhunter's can Dispel levitate", 40},
+					{"underbog_17882_10", "MAGE", "Use Blink to escape from Levitate and then Slow Fall", 30},
+					{"underbog_17882_11", "DRUID", "Feral Druid (Bear Form) can use Feral Charge to break free from Levitate and avoid fall damage", 20},
+					{"underbog_17882_12", "HEALER", "Players that are levitated will need be topped off to ensure they can survive fall damage. They will also need additional heals when they actually receive the fall damage (unless that damage can be slowed)", 10}}, 
+					-- The Black Stalker
 
 	---Ghaz'an's (possible) Buddy
-	[18107] = {{"Important", "Defeat Tidewrath before Ghaz'an reaches and eats him and \n you will be awarded bonus loot (even if you wipe on boss, but \n manage to take down Tidewrath)."}}, -- Overseer Tidewrath (Removed shortly after TBC retail release and may not be part of TBC Classic
+		[18107] = {{"underbog_18107_01", "Important", "Defeat Tidewrath before Ghaz'an reaches and eats him and \n you will be awarded bonus loot (even if you wipe on boss, but \n manage to take down Tidewrath).", 10}}, -- Overseer Tidewrath (Removed shortly after TBC retail release and may not be part of TBC Classic
 
 	---Black Stalker Summoned Adds
-	[22299] = {{"PriorityTargets", "DPS need to focus down adds before going back to boss; summoned ~every 10 sec."},
-				{"Interrupts", "Interrupt: Lightning Bolt (Deals Nature Damage)"}}, -- Spore Strider
+		[22299] = {{"underbog_22299_01", "PriorityTargets", "DPS need to focus down adds before going back to boss; summoned ~every 10 sec.", 20},
+					{"underbog_22299_02", "Interrupts", "Interrupt: Lightning Bolt (Deals Nature Damage)", 10}}, -- Spore Strider
 
 	---Trash Mobs
-	[17723] = {{"Important", "Immune to all forms of CC and Snares (Traps)! On HEROIC mode (esp when in pairs) can hit pretty hard. They move slowly and can be kited (helpful when in pairs)"}}, -- Bog Giant
-	[17724] = {{"TANK", "Do NOT turn your back to this mob when it is attacking as it deals increased damage from behind. If you need to pull this mob away from another pat: backup or strafe"}}, -- Underbat
-	[17725] = {{"Defensives", "Defensives may be needed for this mob as Wild Growth increases physical damage it deals by 50%"}}, 
-				-- Underbog Lurker
-	[17726] = {{"Legion", ""}}, -- Wrathfin Myrmidon
-	[17727] = {{"Important", "Enemy uses Shield Bash (Interrupting a player's cast)"}}, -- Wrathfin Sentry
-	[17728] = {{"Legion", ""}}, -- Murkblood Tribesman
-	[17729] = {{"Legion", "Ranged Hunter-Type Mob"},
-				{"Important", "CC this mob/dispel Viper Sting from players (Drains player mana over 8 sec). If no one in the group can CC this mob, it should be a priority target!"}},
-				-- Murkblood Spearman
-	[17730] = {{"Legion", "Healer-Type Mob"},
-				{"Interrupts", "INTERRUPT: Holy Light (Big heal to an ally; 2.5 sec cast; 40 yd range)"},
-				{"Interrupts", "INTERRUPT: Prayer of Healing (Moderate AoE heal to allies; 3 sec cast time)"}}, -- Murkblood Healer
-	[17731] = {{"Interrupts", "INTERRUPT: Psychic Horror (1.5 sec cast; 10 yd range; Causing player to be feared for 3 sec"},
-				{"TANK", "Due to Psychic Horror, make sure that you aren't too close to nearby groups when you pull this mob, otherwise a fear may cause you to pull mobs you weren't ready to engage"}}, 
-				-- Fen Ray
-	[17732] = {{"Important", "Dispel POISON SPIT (Nature DoT lasting 10 sec) disease from player"}}, -- Lykul Wasp
-	[17734] = {{"Important", "Deals a knockback ability to a player"},
-				{"Important", "Mob has an enrage where they grow larger over time and should be burned down quickly to mitigate strong attacks"}}, 
-				-- Underbog Lord
-	[17735] = {{"Legion", "This mob has an enrage effect and should be focused down to mitigate damage as a result of this ability"},
-				{"Important", "Enemy uses Shield Bash (Interrupting a player's cast)"}}, 
-				-- Wrathfin Warrior
-	[17771] = {{"Legion", "Mob uses a combination of Shadow, Frost, and Fire abilities"},
-				{"Important", "Dispel Magic AMPLIFY DAMAGE from player (increases physical & magical damage player takes by 30% for 6 sec)"}}, 
-				-- Murkblood Oracle
-	[17871] = {{"Interrupts", "INTERRUPT: Fungal Regrowth (40 yd range; 2 sec cast; Heals ally for initial amount also applying HoT to that ally"},
-				{"Interrupts", "INTERRUPT: Itchy Spores (15 yd range; Deals Nature DoT to player lasting 10 sec)"},
-				{"Important", "Dispel Disease: Itchy Spores from players if unable to interrupt this ability"}}, 
-				-- Underbog Shambler
-	[17990] = {{"Dodge", "RUN AWAY! Spore Cloud, from this object, deals AoE Nature Damage"}}, -- Underbog Mushroom
-	[19632] = {{"Defensives", "DEFENSIVE: May be needed for tank/targeted player to pop CDs during Stinger Rage"},
-				{"Important", "Vulnerable to CC even on Heroic-mode"}}, -- Lykul Stinger
-	[20465] = {{"Important", "Why are you swimming with the fishes?"}}, -- Underbog Frenzy
+		[17723] = {{"underbog_17723_01", "Important", "Immune to all forms of CC and Snares (Traps)! On HEROIC mode (esp when in pairs) can hit pretty hard. They move slowly and can be kited (helpful when in pairs)", 10}}, -- Bog Giant
+		[17724] = {{"underbog_17724_01", "TANK", "Do NOT turn your back to this mob when it is attacking as it deals increased damage from behind. If you need to pull this mob away from another pat: backup or strafe", 10}}, -- Underbat
+		[17725] = {{"underbog_17725_01", "Defensives", "Defensives may be needed for this mob as Wild Growth increases physical damage it deals by 50%", 10}}, 
+					-- Underbog Lurker
+		[17726] = {{"underbog_17726_01", "Legion", "", 10}}, -- Wrathfin Myrmidon
+		[17727] = {{"underbog_17727_01", "Important", "Enemy uses Shield Bash (Interrupting a player's cast)", 10}}, -- Wrathfin Sentry
+		[17728] = {{"underbog_17728_01", "Legion", "", 10}}, -- Murkblood Tribesman
+		[17729] = {{"underbog_17729_01", "Legion", "Ranged Hunter-Type Mob", 20},
+					{"underbog_17729_02", "Important", "CC this mob/dispel Viper Sting from players (Drains player mana over 8 sec). If no one in the group can CC this mob, it should be a priority target!", 10}},
+					-- Murkblood Spearman
+		[17730] = {{"underbog_17730_01", "Legion", "Healer-Type Mob", 30},
+					{"underbog_17730_02", "Interrupts", "INTERRUPT: Holy Light (Big heal to an ally; 2.5 sec cast; 40 yd range)", 20},
+					{"underbog_17730_03", "Interrupts", "INTERRUPT: Prayer of Healing (Moderate AoE heal to allies; 3 sec cast time)", 10}}, -- Murkblood Healer
+		[17731] = {{"underbog_17731_01", "Interrupts", "INTERRUPT: Psychic Horror (1.5 sec cast; 10 yd range; Causing player to be feared for 3 sec", 20},
+					{"underbog_17731_02", "TANK", "Due to Psychic Horror, make sure that you aren't too close to nearby groups when you pull this mob, otherwise a fear may cause you to pull mobs you weren't ready to engage", 10}}, 
+					-- Fen Ray
+		[17732] = {{"underbog_17732_01", "Important", "Dispel POISON SPIT (Nature DoT lasting 10 sec) disease from player", 10}}, -- Lykul Wasp
+		[17734] = {{"underbog_17734_01", "Important", "Deals a knockback ability to a player", 20},
+					{"underbog_17734_02", "Important", "Mob has an enrage where they grow larger over time and should be burned down quickly to mitigate strong attacks", 10}}, 
+					-- Underbog Lord
+		[17735] = {{"underbog_17735_01", "Legion", "This mob has an enrage effect and should be focused down to mitigate damage as a result of this ability", 20},
+					{"underbog_17735_02", "Important", "Enemy uses Shield Bash (Interrupting a player's cast)", 10}}, 
+					-- Wrathfin Warrior
+		[17771] = {{"underbog_17771_01", "Legion", "Mob uses a combination of Shadow, Frost, and Fire abilities", 20},
+					{"underbog_17771_02", "Important", "Dispel Magic AMPLIFY DAMAGE from player (increases physical & magical damage player takes by 30% for 6 sec)", 10}}, 
+					-- Murkblood Oracle
+		[17871] = {{"underbog_17871_01", "Interrupts", "INTERRUPT: Fungal Regrowth (40 yd range; 2 sec cast; Heals ally for initial amount also applying HoT to that ally", 30},
+					{"underbog_17871_02", "Interrupts", "INTERRUPT: Itchy Spores (15 yd range; Deals Nature DoT to player lasting 10 sec)", 20},
+					{"underbog_17871_03", "Important", "Dispel Disease: Itchy Spores from players if unable to interrupt this ability", 10}}, 
+					-- Underbog Shambler
+		[17990] = {{"underbog_17990_01", "Dodge", "RUN AWAY! Spore Cloud, from this object, deals AoE Nature Damage", 10}}, -- Underbog Mushroom
+		[19632] = {{"underbog_19632_01", "Defensives", "DEFENSIVE: May be needed for tank/targeted player to pop CDs during Stinger Rage", 20},
+					{"underbog_19632_02", "Important", "Vulnerable to CC even on Heroic-mode", 10}}, -- Lykul Stinger
+		[20465] = {{"underbog_20465_01", "Important", "Why are you swimming with the fishes?", 10}}, -- Underbog Frenzy
 
 
 	------- Dungeon: The Steam Vaults ---------------
 
 	---Bosses
-	[17797] = {{"Legion", "Boss deals Nature damage; Adds deal Frost damage (Nature resist should be prioritized if only have one option and have no Frost Aura for group from Paladin)"},
-				{"Important", "Tank should focus on boss and use AoE threat (such as Thunderclap) on adds. DPS need to focus down the adds (or banish one of them) before going after boss. Adds will despawn once boss dies."},
-				{"Important", "Dispel: Enveloping Wind esp if applied to tank/healer (magic effect applied to player stunning them for 6 sec)"},
-				{"Dodge", "DODGE/RUN: Watch for Lightning Cloud and run out of it (deals AoE Nature damage)"},
-				{"Important", "HEROIC-mode: Boss will cast two Lightning Clouds at a time"}}, 
-				-- Hydromancer Thespia
-	[17796] = {{"Advanced", "POSITIONING: Only the tank should be standing in front of boss due to Super Shrink Ray (frontal cone that reduces player damage dealt by 35% for 15 sec)"},
-				{"Important", "At 75%, 50% and 25%, boss announces 'Tune em' up boys' and 3 repair gnomes will spawn. These should be AoE'd down ASAP"},
-				{"Important", "Thunder Clap from Warriors or Consecration from Paladins are helpful during add phases"},
-				{"Important", "HEROIC-mode: Boss summons an additional gnome every 7 sec"},
-				{"Important", "HEROIC-mode: Boss has a 5 minute enrage timer and quickly one shots players!"}},
-				-- Mekgineer Steamrigger
-	[17798] = {{"TANK", "Tank the boss in the middle of the room"},
-				{"Important", "Spell-casting players need to stop DPS on boss during Spell Reflection (white bubble around boss that reflects damage back to player)."},
-				{"Important", "Players will be occasionally struck with Impale (Physical damage DoT)"},
-				{"HEALER", "Most of your heals will be on the tank, but watch for impales on other players and players that are still attacking boss during boss' Spell Reflection."},
-				{"PriorityTargets", "DPS down Naga Distiller w/in 12 sec of boss drawing power from it to prevent boss from gaining WARLORD'S RAGE (increased boss attack speed and damage done)"},
-				{"DAMAGE", "Save big damage CDs for Naga Distillers. While failing to destroy one distiller in the time alloted won't necessarily result in a wipe, failure to burn down multiple containers will."},
-				{"TANK", "When Naga Distiller activates, you should focus down the container with your DPS!"},
-				{"Legion", "Macro to help with containers would be: /targetexact Naga Distiller"},
-				{"Defensives", "Boss will crack a player on the head reducing their stamina for 15 sec."}}, 
-				-- Warlord Kalithresh
+		[17797] = {{"steamvaults_17797_01", "Legion", "Boss deals Nature damage; Adds deal Frost damage (Nature resist should be prioritized if only have one option and have no Frost Aura for group from Paladin)", 50},
+					{"steamvaults_17797_02", "Important", "Tank should focus on boss and use AoE threat (such as Thunderclap) on adds. DPS need to focus down the adds (or banish one of them) before going after boss. Adds will despawn once boss dies.", 40},
+					{"steamvaults_17797_03", "Important", "Dispel: Enveloping Wind esp if applied to tank/healer (magic effect applied to player stunning them for 6 sec)", 30},
+					{"steamvaults_17797_04", "Dodge", "DODGE/RUN: Watch for Lightning Cloud and run out of it (deals AoE Nature damage)", 20},
+					{"steamvaults_17797_05", "Important", "HEROIC-mode: Boss will cast two Lightning Clouds at a time", 10}}, 
+					-- Hydromancer Thespia
+		[17796] = {{"steamvaults_17796_01", "Advanced", "POSITIONING: Only the tank should be standing in front of boss due to Super Shrink Ray (frontal cone that reduces player damage dealt by 35% for 15 sec)", 50},
+					{"steamvaults_17796_02", "Important", "At 75%, 50% and 25%, boss announces 'Tune em' up boys' and 3 repair gnomes will spawn. These should be AoE'd down ASAP", 40},
+					{"steamvaults_17796_03", "Important", "Thunder Clap from Warriors or Consecration from Paladins are helpful during add phases", 30},
+					{"steamvaults_17796_04", "Important", "HEROIC-mode: Boss summons an additional gnome every 7 sec", 20},
+					{"steamvaults_17796_05", "Important", "HEROIC-mode: Boss has a 5 minute enrage timer and quickly one shots players!", 10}},
+					-- Mekgineer Steamrigger
+		[17798] = {{"steamvaults_17798_01", "TANK", "Tank the boss in the middle of the room", 90},
+					{"steamvaults_17798_02", "Important", "Spell-casting players need to stop DPS on boss during Spell Reflection (white bubble around boss that reflects damage back to player).", 80},
+					{"steamvaults_17798_03", "Important", "Players will be occasionally struck with Impale (Physical damage DoT)", 70},
+					{"steamvaults_17798_04", "HEALER", "Most of your heals will be on the tank, but watch for impales on other players and players that are still attacking boss during boss' Spell Reflection.", 60},
+					{"steamvaults_17798_05", "PriorityTargets", "DPS down Naga Distiller w/in 12 sec of boss drawing power from it to prevent boss from gaining WARLORD'S RAGE (increased boss attack speed and damage done)", 50},
+					{"steamvaults_17798_06", "DAMAGE", "Save big damage CDs for Naga Distillers. While failing to destroy one distiller in the time alloted won't necessarily result in a wipe, failure to burn down multiple containers will.", 40},
+					{"steamvaults_17798_07", "TANK", "When Naga Distiller activates, you should focus down the container with your DPS!", 30},
+					{"steamvaults_17798_08", "Legion", "Macro to help with containers would be: /targetexact Naga Distiller", 20},
+					{"steamvaults_17798_09", "Defensives", "Boss will crack a player on the head reducing their stamina for 15 sec.", 10}}, 
+					-- Warlord Kalithresh
 
 	---Thespia's Adds
-	[17917] = {{"PriorityTargets", "Burn these down before boss. Warlocks can BANISH one of them"}}, -- Coilfang Water Elemental
+		[17917] = {{"steamvaults_17917_01", "PriorityTargets", "Burn these down before boss. Warlocks can BANISH one of them", 10}}, -- Coilfang Water Elemental
 
 	---Mekgineer Steamrigger's Adds
-	[17951] = {{"PriorityTargets", "Focus down adds anytime they are up as they will heal/repair boss"},
-				{"WARRIOR", "When adds appear, a warrior casting Thunder Clap can delay repairs conducted by adds"},
-				{"PALADIN", "Pallys using Consecration can quickly burn Mechanics down"}}, -- Steamrigger Mechanic
+		[17951] = {{"steamvaults_17951_01", "PriorityTargets", "Focus down adds anytime they are up as they will heal/repair boss", 30},
+					{"steamvaults_17951_02", "WARRIOR", "When adds appear, a warrior casting Thunder Clap can delay repairs conducted by adds", 20},
+					{"steamvaults_17951_03", "PALADIN", "Pallys using Consecration can quickly burn Mechanics down", 10}}, -- Steamrigger Mechanic
 
 	---Warlord Kalithresh Adds
-	[17954] = {{"PriorityTargets", "When boss draws power from distiller, it must be destroyed w/in 12 sec to prevent a boss enrage!"}}, -- Naga Distiller
+		[17954] = {{"steamvaults_17954_01", "PriorityTargets", "When boss draws power from distiller, it must be destroyed w/in 12 sec to prevent a boss enrage!", 10}}, -- Naga Distiller
 
 	---Trash Mobs
-	[17721] = {{"Important", "Players should spread when fighting mob due to Net root casts & AoE Fire Bombs"}}, 
-				-- Coilfang Engineer
-	[17722] = {{"Important", "Interrupt/Run out of AoE from Blizzard (Channeled Frost AoE)"}}, -- Coilfang Sorceress
-	[17800] = {{"Important", "Mob should be tanked away from players due to Cleave. Melee players hit with Cleave will require increased healing"}}, 
-				-- Coilfang Myrmidon
-	[17801] = {{"Important", "Interrupt: Fear or CC mob"}}, -- Coilfang Siren
-	[17802] = {{"Defensives", "Applies Mortal Blow (reduced armor and attack speed for 12 sec) to Tank, during this time, tank may need to pop defensive CDs & receive extra heals"}}, 
-				-- Coilfang Warrior
-	[17803] = {{"PriorityTargets", "Interrupt: Heal or CC mob"},
-				{"Important", "Mob should be tanked away from casters as Sonic Burst will spelllock players w/in 10 yds for 3 sec"}}, 
-				-- Coilfang Oracle
-	[17805] = {{"Important", "Will use Disarm (likely on tank) causing issue with threat building/maintaining when this happens. This mob should be slowed if it begins to move toward DPS/Healer, while tank is Disarmed"}}, 
-				-- Coilfang Slavemaster
-	[17799] = {{"Important", "Tank can use AoE threat-building abilities such as Thunder Clap/Consecration, but DPS should ignore them"}}, 
-				-- Dreghood Slave
-	[21338] = {{"Important", "Non-elite mob that should be AoE'd down"}}, -- Coilfang Leper
-	[21694] = {{"Legion", "Deals Nature & Physical Damage; consider resistance armor/pots if undergeared"},
-				{"Important", "Mob should be tanked away from group due to Trample (mob deals Physical AoE). Melee players struck by this may need additional healing"},
-				{"Important", "Dispel Fungal Decay from player (Disease; Nature DoT w/momvement speed slow lasting 18 sec)"},
-				{"Important", "Dispel Poison Bolt from player (Poison; Nature DoT lasting 10 sec)"},
-				{"Dodge", "Run out of Disease Cloud (Nature DoT)"}}, -- Bog Overlord
-	[21695] = {{"Important", "These mobs should be tanked with your back against the wall due to Water Sprout knockback (40 yd range; Frost Damage)"},
-				{"Important", "Surger pops Frost Nova rooting nearby players for 8 sec"}}, -- Tidal Surger
-	[21696] = {{"Legion", "This mob deals Frost Damage; having proper aura/resistances can be helpful in mitigating some of mob's damage"},
-				{"Legion", "Mob has 45 yd range attack in form of Water Bolt (Instant Frost damaging ability)"}}, 
-				-- Steam Surger
-	[22891] = {{"Legion", ""}}, -- Second Fragment Guardian
+		[17721] = {{"steamvaults_17721_01", "Important", "Players should spread when fighting mob due to Net root casts & AoE Fire Bombs", 10}}, 
+					-- Coilfang Engineer
+		[17722] = {{"steamvaults_17722_01", "Important", "Interrupt/Run out of AoE from Blizzard (Channeled Frost AoE)", 10}}, -- Coilfang Sorceress
+		[17800] = {{"steamvaults_17800_01", "Important", "Mob should be tanked away from players due to Cleave. Melee players hit with Cleave will require increased healing", 10}}, 
+					-- Coilfang Myrmidon
+		[17801] = {{"steamvaults_17801_01", "Important", "Interrupt: Fear or CC mob", 10}}, -- Coilfang Siren
+		[17802] = {{"steamvaults_17802_01", "Defensives", "Applies Mortal Blow (reduced armor and attack speed for 12 sec) to Tank, during this time, tank may need to pop defensive CDs & receive extra heals", 10}}, 
+					-- Coilfang Warrior
+		[17803] = {{"steamvaults_17803_01", "PriorityTargets", "Interrupt: Heal or CC mob", 20},
+					{"steamvaults_17803_02", "Important", "Mob should be tanked away from casters as Sonic Burst will spelllock players w/in 10 yds for 3 sec", 10}}, 
+					-- Coilfang Oracle
+		[17805] = {{"steamvaults_17805_01", "Important", "Will use Disarm (likely on tank) causing issue with threat building/maintaining when this happens. This mob should be slowed if it begins to move toward DPS/Healer, while tank is Disarmed", 10}}, 
+					-- Coilfang Slavemaster
+		[17799] = {{"steamvaults_17799_01", "Important", "Tank can use AoE threat-building abilities such as Thunder Clap/Consecration, but DPS should ignore them", 10}}, 
+					-- Dreghood Slave
+		[21338] = {{"steamvaults_21338_01", "Important", "Non-elite mob that should be AoE'd down", 10}}, -- Coilfang Leper
+		[21694] = {{"steamvaults_21694_01", "Legion", "Deals Nature & Physical Damage; consider resistance armor/pots if undergeared", 50},
+					{"steamvaults_21694_02", "Important", "Mob should be tanked away from group due to Trample (mob deals Physical AoE). Melee players struck by this may need additional healing", 40},
+					{"steamvaults_21694_03", "Important", "Dispel Fungal Decay from player (Disease; Nature DoT w/momvement speed slow lasting 18 sec)", 30},
+					{"steamvaults_21694_04", "Important", "Dispel Poison Bolt from player (Poison; Nature DoT lasting 10 sec)", 20},
+					{"steamvaults_21694_05", "Dodge", "Run out of Disease Cloud (Nature DoT)", 10}}, -- Bog Overlord
+		[21695] = {{"steamvaults_21695_01", "Important", "These mobs should be tanked with your back against the wall due to Water Sprout knockback (40 yd range; Frost Damage)", 20},
+					{"steamvaults_21695_02", "Important", "Surger pops Frost Nova rooting nearby players for 8 sec", 10}}, -- Tidal Surger
+		[21696] = {{"steamvaults_21696_01", "Legion", "This mob deals Frost Damage; having proper aura/resistances can be helpful in mitigating some of mob's damage", 20},
+					{"steamvaults_21696_02", "Legion", "Mob has 45 yd range attack in form of Water Bolt (Instant Frost damaging ability)", 10}}, 
+					-- Steam Surger
+		[22891] = {{"steamvaults_22891_01", "Legion", "", 10}}, -- Second Fragment Guardian
 
 	------- Dungeon: Mana-Tombs ---------------------
 
