@@ -2,7 +2,7 @@
 Tothys Dungeon Tips TBC (former QE Dungeon Tips)
 Configuration Page
 
-Version: 0.9
+Version: 0.9.1
 Developed by: Voulk
 Forked by: Mathasyu 2026-03-09
 Contact: 

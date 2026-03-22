@@ -2,16 +2,25 @@
 Tothys Dungeon Tips TBC (former QE Dungeon Tips)
 Configuration Page
 
-Version: 0.9
+Version: 0.9.1
 Developed by: Voulk
 Forked by: Mathasyu 2026-03-09
 Contact:
 	Discord: Voulk#1858
 	Email: itsvoulk@gmail.com
 Changelog:
-    0.9 - 2026-03
+    0.9 - 2026-03-09
         - The Addon works now in the TBC Anniversary Client
         - New Slash Commands: /kdt config, /kdt show, /kdt hide, /kdt test
+    0.9.1 - 2026-03-22
+        - Added /kdt toggle
+        - Renamed to Kiesel Dungeon Tool
+        - Added Content Browser, Dungeon Editor, Tip Editor, and Info pages
+        - Added locale-aware UI text and language switching
+        - Added personal NPC and dungeon notes with safe user-data storage
+        - Added override, hide, and reset workflows for shipped tips
+        - Added scrollbars for the main tip window and config/editor pages
+        - Expanded TBC dungeon and raid catalog with editor-safe tip IDs and weights
 ]]--
 
 local localeDisplayNames = {
