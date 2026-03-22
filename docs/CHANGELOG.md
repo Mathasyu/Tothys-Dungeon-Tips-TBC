@@ -60,6 +60,8 @@ Guidelines:
   - dedicated `Bosses` dropdown
   - `NPC IDs` dropdown
   - three alphabetical NPC dropdowns (`A-I`, `J-R`, `S-Z`)
+- Added `/kdt toggle` as a slash command to show or hide the main frame
+- The `Info` page now includes a localized slash command section in English and German
 
 ### Notes
 

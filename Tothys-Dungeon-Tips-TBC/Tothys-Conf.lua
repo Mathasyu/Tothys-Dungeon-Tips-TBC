@@ -102,6 +102,8 @@ local browserLocaleStrings = {
 		dungeon_info = "Dungeon Info",
 		npc_tips = "NPC Tips",
 		info_how_it_works = "How It Works",
+		info_slash_commands = "Slash Commands",
+		info_slash_commands_text = "Use these commands in chat:\n- /kdt config opens the addon settings\n- /kdt show shows the main window\n- /kdt hide hides the main window\n- /kdt toggle toggles the main window\n- /kdt test shows a test preview",
 		expansion = "Expansion",
 		dungeon_or_raid = "Dungeon / Raid",
 		npc = "NPC",
@@ -234,6 +236,8 @@ local browserLocaleStrings = {
 		dungeon_info = "Dungeon-Infos",
 		npc_tips = "NPC-Tipps",
 		info_how_it_works = "So funktioniert's",
+		info_slash_commands = "Slashbefehle",
+		info_slash_commands_text = "Diese Befehle kannst du im Chat verwenden:\n- /kdt config oeffnet die Addon-Einstellungen\n- /kdt show zeigt das Hauptfenster\n- /kdt hide blendet das Hauptfenster aus\n- /kdt toggle schaltet das Hauptfenster um\n- /kdt test zeigt eine Testvorschau",
 		expansion = "Erweiterung",
 		dungeon_or_raid = "Dungeon / Raid",
 		npc = "NPC",
@@ -3171,7 +3175,7 @@ local function createInfoMenu()
     addon.infoPanel.name = "Info"
     addon.infoPanel.okay = function(self) return end
     addon.infoPanel.cancel = function(self) return end
-    local infoContent = setupScrollablePanel(addon.infoPanel, "TDTInfo", 760)
+    local infoContent = setupScrollablePanel(addon.infoPanel, "TDTInfo", 980)
 
     local title = infoContent:CreateFontString()
     title:SetPoint("TOPLEFT", 10, -10)
@@ -3211,6 +3215,13 @@ local function createInfoMenu()
     howText:SetPoint("TOPLEFT", howHeader, "BOTTOMLEFT", 0, -8)
     howText:SetWidth(620)
 
+    local slashHeader = createString(infoContent, getBrowserLocaleString("info_slash_commands"), "Fonts\\MORPHEUS.ttf", 16)
+    slashHeader:SetPoint("TOPLEFT", howText, "BOTTOMLEFT", 0, -18)
+
+    local slashText = createString(infoContent, getBrowserLocaleString("info_slash_commands_text"), "Fonts\\FRIZQT__.TTF", 11)
+    slashText:SetPoint("TOPLEFT", slashHeader, "BOTTOMLEFT", 0, -8)
+    slashText:SetWidth(620)
+
     local function refreshInfoTexts()
         title:SetText(getBrowserLocaleString("info_title"))
         intro:SetText(getBrowserLocaleString("info_intro"))
@@ -3222,6 +3233,8 @@ local function createInfoMenu()
         roadmapText:SetText(getBrowserLocaleString("info_focus_text"))
         howHeader:SetText(getBrowserLocaleString("info_how_it_works"))
         howText:SetText(getBrowserLocaleString("info_how_it_works_text"))
+        slashHeader:SetText(getBrowserLocaleString("info_slash_commands"))
+        slashText:SetText(getBrowserLocaleString("info_slash_commands_text"))
     end
 
     addon.infoPanel:SetScript("OnShow", function(self)
@@ -3651,8 +3664,6 @@ createDungeonEditorMenu()
 createEditorMenu()
 createInfoMenu()
 createConfigMenu()
-
-
 
 
 

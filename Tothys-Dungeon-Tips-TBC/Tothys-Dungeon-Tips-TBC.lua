@@ -1431,7 +1431,7 @@ function addon:showTestFrame()
 		TDT_MobName:SetText("TDT Test Target")
 	end
 	if TDT_TipText then
-		TDT_TipText:SetText(" |cff33ff99Kiesel Dungeon Tool loaded successfully.|r\n |cffffd166Use /kdt show, /kdt hide, or target a dungeon mob.|r")
+		TDT_TipText:SetText(" |cff33ff99Kiesel Dungeon Tool loaded successfully.|r\n |cffffd166Use /kdt show, /kdt hide, /kdt toggle, or target a dungeon mob.|r")
 		if addon.refreshTipScroll then addon:refreshTipScroll() end
 	end
 end
@@ -1452,10 +1452,20 @@ SlashCmdList["KDTCOMMAND"] = function(msg)
 			TDT_ParentFrame:Hide()
 			tdtPrint("Frame hidden.")
 		end
+	elseif msg == "toggle" then
+		if TDT_ParentFrame then
+			if TDT_ParentFrame:IsShown() then
+				TDT_ParentFrame:Hide()
+				tdtPrint("Frame hidden.")
+			else
+				TDT_ParentFrame:Show()
+				tdtPrint("Frame shown.")
+			end
+		end
 	elseif msg == "test" then
 		addon:showTestFrame()
 	else
-        tdtPrint("Commands: /kdt config, /kdt show, /kdt hide, /kdt test")
+        tdtPrint("Commands: /kdt config, /kdt show, /kdt hide, /kdt toggle, /kdt test")
 	end
 end
 
