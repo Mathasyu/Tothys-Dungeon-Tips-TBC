@@ -79,6 +79,19 @@ Guidelines:
 - The repeated five-dropdown NPC selector UI for `Content Browser` and `Tip Editor` was consolidated behind shared helper functions to reduce duplicated view/controller code
 - Expansion/instance selection retention and dropdown syncing were consolidated behind shared helpers so Browser, Tip Editor, and Dungeon Editor now follow the same selection rules
 - The `Dungeon Editor` update flow was split into smaller render helpers for preview data, user tips, addon tips, and detail fields without changing user-facing behavior
+- Catalog `npcNames` now carry both `enUS` and `deDE` keys throughout the TBC data set; missing German names currently fall back to identical English placeholder text until translated properly
+- `tipsMap_deDE` now starts as a deep copy of `tipsMap_enUS`, giving the addon a full German working copy of shipped NPC tips before the texts are translated properly
+- The first German dungeon-NPC name pass now covers major TBC dungeon bosses and encounter NPCs in the catalog so Browser and Editor labels read more naturally in German
+- Added `docs/EXTERNAL_SOURCES.md` to track external data sources such as `wago.tools` / `wow.tools` / `wow.tools.local` and to record later license or usage findings before release
+- Added a first real `tipsMap_deDE` dungeon-tip pass for major bosses and encounters from early TBC dungeons, using German override entries on top of the German working copy
+- Added `docs/NPC_NAME_TRANSLATIONS.lua` as a non-runtime workspace for NPC-name translation, grouped by instance and carrying `status` plus `checked` workflow fields
+- Added `scripts/npc_name_review.py` to export unresolved NPC-name rows to `docs/NPC_NAME_TRANSLATIONS_REVIEW.csv` and to import reviewed German names back into `docs/NPC_NAME_TRANSLATIONS.lua`
+- The review import keeps `checked` untouched on purpose; it only updates `deDE` and `status`
+- `scripts/npc_name_review.py` can now import TBC NPC German names directly from QuestieDB's `Database/l10n/Tbc/l10nNpcData.lua-table`
+- Added `docs/QUESTIEDB_TBC_NPC_DE.csv` as a local extraction artifact for QuestieDB-based TBC NPC-name imports
+- `docs/NPC_NAME_TRANSLATIONS.lua` was filled from QuestieDB for TBC NPC German names without touching `checked`
+- `scripts/npc_name_review.py` can now also apply workspace NPC German names directly into `Tothys-Database.lua`
+- `Tothys-Database.lua` `npcNames.deDE` entries were updated from the QuestieDB-based workspace import
 
 ### Notes
 

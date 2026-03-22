@@ -24,6 +24,7 @@
 Current status:
 
 - `tipsMap_enUS` is now fully migrated to the new shipped format
+- `tipsMap_deDE` now starts as a deep copy of `tipsMap_enUS`, so German shipped tips can be translated entry by entry without sharing table references
 - runtime legacy support remains in place for compatibility and safety
 - the term `base tip` should now be preferred over `legacy tip` when talking about shipped content
 
@@ -88,8 +89,16 @@ Catalog rules:
 
 - `npcIDs` are navigation data for `Content Browser`, `Tip Editor`, and `Dungeon Editor`
 - `npcNames` are optional localized labels used by the browser and editors
+- `npcNames.deDE` may temporarily mirror `enUS` until a true German translation is added
 - `npcIDs` must be derived from the corresponding instance section in the shipped DB
 - a catalog NPC may exist without a tip entry yet; this is valid navigation data, but should be easy to audit
+
+Translation workspace:
+
+- `docs/NPC_NAME_TRANSLATIONS.lua` is a non-runtime helper file for NPC-name translation work
+- it may duplicate catalog data on purpose so translations can be reviewed and applied back in batches
+- workflow-only fields such as `status` and `checked` are allowed there
+- `checked` means the current EN/DE mapping was verified against an external source, not just translated locally
 
 ## Tip categories
 

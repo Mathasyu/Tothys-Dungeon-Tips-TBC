@@ -1,105 +1,69 @@
 # External Sources
 
-This file tracks all external sources referenced during development, research, data verification, and content preparation.
+This file tracks external sources that may be used during development.
 
-Important:
-- These sources are listed for review before release.
-- Licensing, terms of use, attribution requirements, and redistribution rights must be checked manually before shipping any content derived from them.
-- If a source is only used for verification and no text/data is copied, that should still be noted.
+Before release, please verify:
 
-## Status Labels
+- whether usage is allowed
+- which license or terms apply
+- whether attribution is required
+- whether automated extraction or redistribution is allowed
 
-- `used`
-  Source was referenced during development or research.
-- `planned`
-  Source is considered useful and may be used later.
-- `license check pending`
-  Terms/licensing still need manual review.
-- `verification only`
-  Intended only for fact checking, not for copying text directly.
+## Candidate sources
 
-## Source Registry
+### Wago Tools
 
-### Wowhead
-
-- URL: [https://www.wowhead.com](https://www.wowhead.com)
-- Status: `used`, `license check pending`, `verification only`
+- URL: [wago.tools](https://wago.tools/)
 - Purpose:
-  - Verify individual NPC IDs and names
-  - Verify boss/event NPC identity
-  - Cross-check encounter context
+  - likely useful as a technical reference for WoW DB2/DBC-based data
+  - promising source for validating NPC IDs and localized NPC names
 - Notes:
-  - Used during Arcatraz cleanup, e.g. `20904` / `20905`
-  - Also considered relevant for future NPC name verification in English and German
-- Licensing / Usage Notes:
-  - Not yet reviewed
-
-### Warcraft Wiki
-
-- URL: [https://warcraft.wiki.gg](https://warcraft.wiki.gg)
-- Status: `used`, `license check pending`, `verification only`
-- Purpose:
-  - Verify raid/dungeon encounter structure
-  - Verify NPC identity and encounter roles
-  - Verify map / instance context
-- Notes:
-  - Used to confirm Karazhan encounter NPCs such as Hyakiss, Shadikith, Rokad, and The Crone
-  - Also used as a supporting source for Blizzard-related data context
-- Licensing / Usage Notes:
-  - Not yet reviewed
+  - current site is heavily JavaScript-driven
+  - direct lightweight lookup was not yet confirmed in this project session
+  - treat as a candidate source for later tooling or verification
 
 ### wow.tools
 
-- URL: [https://wow.tools](https://wow.tools)
-- Status: `used`, `planned`, `license check pending`, `verification only`
+- URL: [wow.tools](https://wow.tools/)
 - Purpose:
-  - Candidate primary technical source for `NPC ID -> localized name`
-  - Candidate source for client/datamining-backed ID validation
+  - historical reference for WoW database browsing
 - Notes:
-  - Identified as a strong technical source for future EN/DE NPC name verification
-  - Recommended as a more reliable ID-centric source than ad-hoc browser lookups
-- Licensing / Usage Notes:
-  - Not yet reviewed
+  - the main site indicates that it was retired in May 2025
+  - it references `wow.tools.local` for local offline use
+  - online DB functionality appears to have moved in practice toward `wago.tools`
+  - treat this as a historical pointer rather than the main active source
 
-### Blizzard / WoW Client Runtime Data
+### wow.tools.local
 
-- URL: not a web source; runtime data from the game client / addon API
-- Status: `used`, `license check pending`
+- URL reference:
+  - mentioned by [wow.tools](https://wow.tools/)
 - Purpose:
-  - In-game verification of currently visible NPC names
-  - Live behavior testing
+  - local/offline browsing of WoW DB2-style data
+  - potentially useful for localized NPC-name verification, including `deDE`
 - Notes:
-  - Not a complete source for arbitrary `npcID -> name` lookups
-  - Useful as contextual confirmation, not as the only browser/editor data source
-- Licensing / Usage Notes:
-  - Usage constraints still need to be clarified where relevant
+  - not yet integrated into this project workflow
+  - may be useful later for controlled data validation
 
-### QE Dungeon Tips (original addon inspiration)
+### QuestieDB
 
-- URL: source/origin to be documented more precisely if reused directly
-- Status: `used`, `planned`, `license check pending`
+- URL: [QuestieDB](https://github.com/Questie/QuestieDB)
+- Relevant files:
+  - `Database/l10n/Tbc/l10nNpcData.lua-table`
+  - `Database/l10n/l10n.lua`
+  - `Meta/L10nMeta.lua`
 - Purpose:
-  - Historical reference
-  - Original inspiration / predecessor project
-  - Legacy data comparison
+  - direct `npcID -> deDE` source for TBC NPC names
+  - local extraction source for `docs/NPC_NAME_TRANSLATIONS.lua`
 - Notes:
-  - Kiesel Dungeon Tool is described as a successor to QE Dungeon Tips
-  - Any direct reuse or adaptation should be reviewed carefully before release
-- Licensing / Usage Notes:
-  - Not yet reviewed
+  - locally cloned and used for TBC NPC German-name import
+  - localization strings are packed with `‡` delimiters and locale order from `Meta/L10nMeta.lua`
+  - English NPC names still come from our own shipped data; German NPC names can be filled from QuestieDB
+- License note:
+  - repository currently shows `GPL-3.0`
+  - verify before release whether attribution, reuse, or redistribution rules affect this project
 
-## Review Checklist Before Release
+## Project rule
 
-- Confirm whether each source allows:
-  - factual verification only
-  - internal development use
-  - derived data usage
-  - redistribution inside an addon
-  - attribution requirements
-- If any text was adapted from an external guide, note:
-  - exact source
-  - whether wording was copied, summarized, or independently rewritten
-- If any structured data was imported from an external source, note:
-  - fields used
-  - transformation performed
-  - whether redistribution is allowed
+- Add new external sources here when they are used or considered seriously.
+- If a source reveals license or usage information during research, record it here.
+- Do not assume a source is safe to reuse commercially or redistribute from until checked.
