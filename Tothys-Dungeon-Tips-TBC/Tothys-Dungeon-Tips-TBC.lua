@@ -228,6 +228,78 @@ local function getLocalizedInstanceDetailsFromContent(instanceKey)
 	return details
 end
 
+function addon:getInstanceCatalogEntry(instanceKey)
+	if not instanceKey then
+		return nil
+	end
+
+	for _, expansion in pairs(addon.contentCatalog or {}) do
+		if expansion.instances and expansion.instances[instanceKey] then
+			return expansion.instances[instanceKey]
+		end
+	end
+
+	return nil
+end
+
+function addon:getLocalizedInstanceName(instanceKey)
+	local instanceData = addon:getInstanceCatalogEntry(instanceKey)
+	if not instanceData or not instanceData.name then
+		return instanceKey
+	end
+
+	local selectedLocale = getSelectedLocale()
+	return instanceData.name[selectedLocale] or instanceData.name.enUS or instanceKey
+end
+
+function addon:getShippedInstanceTipEntries(instanceKey)
+	local rawTips = getLocalizedInstanceInfoFromContent(instanceKey)
+	if rawTips then
+		return rawTips
+	end
+
+	local localeMaps = {
+		enUS = instanceInfo_enUS,
+		deDE = instanceInfo_deDE,
+	}
+	local selectedLocale = getSelectedLocale()
+	local localizedMap = localeMaps[selectedLocale] or instanceInfo_enUS
+
+	if localizedMap and localizedMap[instanceKey] then
+		return localizedMap[instanceKey]
+	end
+
+	if instanceInfo_enUS then
+		return instanceInfo_enUS[instanceKey]
+	end
+
+	return nil
+end
+
+function addon:getShippedInstanceDetails(instanceKey)
+	local rawDetails = getLocalizedInstanceDetailsFromContent(instanceKey)
+	if rawDetails then
+		return rawDetails
+	end
+
+	local localeMaps = {
+		enUS = instanceDetails_enUS,
+		deDE = instanceDetails_deDE,
+	}
+	local selectedLocale = getSelectedLocale()
+	local localizedMap = localeMaps[selectedLocale] or instanceDetails_enUS
+
+	if localizedMap and localizedMap[instanceKey] then
+		return localizedMap[instanceKey]
+	end
+
+	if instanceDetails_enUS then
+		return instanceDetails_enUS[instanceKey]
+	end
+
+	return nil
+end
+
 local function shouldShowNpcIDs()
     return not TDTConfig or TDTConfig.ShowNpcIDs ~= false
 end
@@ -434,6 +506,25 @@ local function getLocalizedRawNpcTips(id)
 	end
 end
 
+-- Keep shipped NPC lookup centralized so UI code does not need to rebuild locale fallback rules.
+function addon:getShippedNpcTipEntries(npcID)
+	return getLocalizedRawNpcTips(npcID)
+end
+
+function addon:getCatalogNpcName(expansionKey, instanceKey, npcID)
+	local expansionData = addon.contentCatalog and addon.contentCatalog[expansionKey]
+	local instanceData = expansionData and expansionData.instances and expansionData.instances[instanceKey]
+	local npcNames = instanceData and instanceData.npcNames
+	local localizedName = npcNames and npcNames[npcID]
+
+	if type(localizedName) == "table" then
+		local selectedLocale = getSelectedLocale()
+		return localizedName[selectedLocale] or localizedName.enUS
+	end
+
+	return localizedName
+end
+
 local function ensureUserContainer(scope, key)
 	local localeBucket = getCurrentUserLocaleBucket(true)
 	localeBucket[scope] = localeBucket[scope] or {}
@@ -536,7 +627,7 @@ local function entriesToDisplayTips(entries)
 end
 
 function addon:getMergedNpcTipEntries(id)
-	local rawTips = getLocalizedRawNpcTips(id)
+	local rawTips = addon:getShippedNpcTipEntries(id)
 
 	if not rawTips and not getUserContainer("npcs", id) then
 		return nil
@@ -546,21 +637,7 @@ function addon:getMergedNpcTipEntries(id)
 end
 
 function addon:getMergedInstanceTipEntries(instanceKey)
-	local rawTips = getLocalizedInstanceInfoFromContent(instanceKey)
-	if not rawTips then
-		local localeMaps = {
-			enUS = instanceInfo_enUS,
-			deDE = instanceInfo_deDE,
-		}
-		local selectedLocale = getSelectedLocale()
-		local localizedMap = localeMaps[selectedLocale] or instanceInfo_enUS
-
-		if localizedMap and localizedMap[instanceKey] then
-			rawTips = localizedMap[instanceKey]
-		elseif instanceInfo_enUS then
-			rawTips = instanceInfo_enUS[instanceKey]
-		end
-	end
+	local rawTips = addon:getShippedInstanceTipEntries(instanceKey)
 
 	if not rawTips and not getUserContainer("instances", instanceKey) then
 		return nil
@@ -570,21 +647,7 @@ function addon:getMergedInstanceTipEntries(instanceKey)
 end
 
 function addon:getMergedInstanceDetails(instanceKey)
-	local rawDetails = getLocalizedInstanceDetailsFromContent(instanceKey)
-	if not rawDetails then
-		local localeMaps = {
-			enUS = instanceDetails_enUS,
-			deDE = instanceDetails_deDE,
-		}
-		local selectedLocale = getSelectedLocale()
-		local localizedMap = localeMaps[selectedLocale] or instanceDetails_enUS
-
-		if localizedMap and localizedMap[instanceKey] then
-			rawDetails = localizedMap[instanceKey]
-		elseif instanceDetails_enUS then
-			rawDetails = instanceDetails_enUS[instanceKey]
-		end
-	end
+	local rawDetails = addon:getShippedInstanceDetails(instanceKey)
 
 	local container = getUserContainer("instances", instanceKey)
 	if not rawDetails and not container then
@@ -662,21 +725,7 @@ function addon:getInstanceUserAdditions(instanceKey)
 end
 
 function addon:getInstanceBaseTipsForEditor(instanceKey)
-	local rawTips = getLocalizedInstanceInfoFromContent(instanceKey)
-	if not rawTips then
-		local localeMaps = {
-			enUS = instanceInfo_enUS,
-			deDE = instanceInfo_deDE,
-		}
-		local selectedLocale = getSelectedLocale()
-		local localizedMap = localeMaps[selectedLocale] or instanceInfo_enUS
-
-		if localizedMap and localizedMap[instanceKey] then
-			rawTips = localizedMap[instanceKey]
-		elseif instanceInfo_enUS then
-			rawTips = instanceInfo_enUS[instanceKey]
-		end
-	end
+	local rawTips = addon:getShippedInstanceTipEntries(instanceKey)
 
 	local entries = normalizeTipsToEntries(rawTips)
 	local container = getUserContainer("instances", instanceKey)
@@ -698,21 +747,7 @@ function addon:getInstanceBaseTipsForEditor(instanceKey)
 end
 
 function addon:getInstanceDetailsForEditor(instanceKey)
-	local rawDetails = getLocalizedInstanceDetailsFromContent(instanceKey)
-	if not rawDetails then
-		local localeMaps = {
-			enUS = instanceDetails_enUS,
-			deDE = instanceDetails_deDE,
-		}
-		local selectedLocale = getSelectedLocale()
-		local localizedMap = localeMaps[selectedLocale] or instanceDetails_enUS
-
-		if localizedMap and localizedMap[instanceKey] then
-			rawDetails = localizedMap[instanceKey]
-		elseif instanceDetails_enUS then
-			rawDetails = instanceDetails_enUS[instanceKey]
-		end
-	end
+	local rawDetails = addon:getShippedInstanceDetails(instanceKey)
 
 	local container = getUserContainer("instances", instanceKey)
 	local overrides = container and container.detailsOverrides or {}
@@ -788,7 +823,7 @@ function addon:getNpcUserAdditions(npcID)
 end
 
 function addon:getNpcBaseTipsForEditor(npcID)
-	local rawTips = getLocalizedRawNpcTips(npcID)
+	local rawTips = addon:getShippedNpcTipEntries(npcID)
 	local entries = normalizeTipsToEntries(rawTips)
 	local container = getUserContainer("npcs", npcID)
 	local disabled = container and container.disabled or {}
@@ -858,7 +893,7 @@ function addon:updateNpcBaseTipOverride(npcID, tipID, text, weight)
 		return false
 	end
 
-	local rawTips = getLocalizedRawNpcTips(npcID)
+	local rawTips = addon:getShippedNpcTipEntries(npcID)
 	local entries = normalizeTipsToEntries(rawTips)
 	local baseEntry
 	for _, entry in ipairs(entries) do
@@ -998,21 +1033,7 @@ function addon:updateInstanceBaseTipOverride(instanceKey, tipID, text, weight)
 		return false
 	end
 
-	local rawTips = getLocalizedInstanceInfoFromContent(instanceKey)
-	if not rawTips then
-		local localeMaps = {
-			enUS = instanceInfo_enUS,
-			deDE = instanceInfo_deDE,
-		}
-		local selectedLocale = getSelectedLocale()
-		local localizedMap = localeMaps[selectedLocale] or instanceInfo_enUS
-
-		if localizedMap and localizedMap[instanceKey] then
-			rawTips = localizedMap[instanceKey]
-		elseif instanceInfo_enUS then
-			rawTips = instanceInfo_enUS[instanceKey]
-		end
-	end
+	local rawTips = addon:getShippedInstanceTipEntries(instanceKey)
 
 	local entries = normalizeTipsToEntries(rawTips)
 	local baseEntry
@@ -1112,20 +1133,7 @@ function addon:showCurrentInstanceInfo()
 	end
 
 	local _, class = UnitClass("player")
-	local instanceData
-
-	for _, expansion in pairs(addon.contentCatalog or {}) do
-		if expansion.instances and expansion.instances[instanceKey] then
-			instanceData = expansion.instances[instanceKey]
-			break
-		end
-	end
-
-	local selectedLocale = getSelectedLocale()
-	local instanceName = instanceKey
-	if instanceData and instanceData.name then
-		instanceName = instanceData.name[selectedLocale] or instanceData.name.enUS or instanceName
-	end
+	local instanceName = addon:getLocalizedInstanceName(instanceKey)
 
 	TDT_TipText:SetText("")
 	if addon.refreshTipScroll then addon:refreshTipScroll() end

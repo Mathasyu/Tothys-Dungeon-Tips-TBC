@@ -207,6 +207,8 @@ Compatibility note:
 - old `instanceInfo_enUS/deDE` and `instanceDetails_enUS/deDE` tables may still exist during migration
 - runtime lookup already prefers `addon.instanceContent` and falls back only when needed
 - migrated TBC raid overviews and the first TBC dungeon overview blocks have already had their duplicate legacy English instance tables removed
+- shipped instance lookup is now meant to happen through central addon getters rather than duplicated per-UI fallback code
+- shipped NPC tip lookup and catalog NPC name lookup should follow the same rule: keep locale fallback in addon-level model helpers, not in UI code
 
 Intended use:
 
@@ -350,6 +352,7 @@ Current runtime behavior:
 
 - NPC tip lookup goes through a merged path
 - instance-wide lookup goes through a merged path and now prefers `addon.instanceContent`
+- config and frame paths should use the central instance getters instead of their own fallback logic
 - Content Browser previews now use the merged path as well
 - `disabled`, `overrides`, and `additions` are respected when present
 - legacy shipped tips without stable `tip_id` values can still be displayed, but are not yet ideal override targets

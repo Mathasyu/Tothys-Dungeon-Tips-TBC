@@ -74,6 +74,8 @@ Guidelines:
 - `PLAN.md`, `DATA_MODEL.md`, and the agent instructions were updated to reflect `instanceContent` as the preferred instance-wide content model and to require keeping these docs in sync with accepted changes
 - The old duplicate English dungeon overview blocks for `Hellfire Ramparts`, `Blood Furnace`, `Auchenai Crypts`, `Sethekk Halls`, and `Shadow Labyrinth` were removed so these instance overviews now come from `instanceContent`
 - The remaining duplicate legacy English instance overview blocks are now cleaned up, leaving `instanceContent` as the primary source for migrated dungeon and raid overviews
+- Instance-wide shipped lookup was refactored behind central addon getters so Config and Frame code no longer rebuild the same fallback logic in multiple places
+- NPC shipped tip lookup and catalog NPC name lookup were refactored behind central addon getters so Browser and Tip Editor no longer duplicate locale fallback rules
 
 ### Notes
 

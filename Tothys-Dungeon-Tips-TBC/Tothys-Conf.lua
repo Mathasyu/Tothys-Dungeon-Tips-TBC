@@ -929,46 +929,9 @@ local function getLocalizedLabel(labelData, fallback)
     return labelData or fallback
 end
 
-local function getRawNpcTips(npcID)
-    local locale = getConfigLocale()
-    local localizedMap = locale == "deDE" and tipsMap_deDE or tipsMap_enUS
-
-    if localizedMap and localizedMap[npcID] then
-        return localizedMap[npcID]
-    end
-
-    if tipsMap_enUS then
-        return tipsMap_enUS[npcID]
-    end
-end
-
-local function getRawInstanceTips(instanceKey)
-    local locale = getConfigLocale()
-    local localizedMap = locale == "deDE" and instanceInfo_deDE or instanceInfo_enUS
-
-    if localizedMap and localizedMap[instanceKey] then
-        return localizedMap[instanceKey]
-    end
-
-    if instanceInfo_enUS then
-        return instanceInfo_enUS[instanceKey]
-    end
-end
-
 local function getInstanceDetails(instanceKey)
     if addon.getMergedInstanceDetails then
         return addon:getMergedInstanceDetails(instanceKey)
-    end
-
-    local locale = getConfigLocale()
-    local localizedMap = locale == "deDE" and instanceDetails_deDE or instanceDetails_enUS
-
-    if localizedMap and localizedMap[instanceKey] then
-        return localizedMap[instanceKey]
-    end
-
-    if instanceDetails_enUS then
-        return instanceDetails_enUS[instanceKey]
     end
 end
 
@@ -1255,15 +1218,12 @@ local function getNpcSortName(expansionKey, instanceKey, npcID)
         return "---"
     end
 
-    local instanceData = getInstanceData(expansionKey, instanceKey)
-    if instanceData and instanceData.npcNames and instanceData.npcNames[npcID] then
-        local localizedName = getLocalizedLabel(instanceData.npcNames[npcID], nil)
-        if localizedName and localizedName ~= "" then
-            return localizedName
-        end
+    local localizedName = addon.getCatalogNpcName and addon:getCatalogNpcName(expansionKey, instanceKey, npcID)
+    if localizedName and localizedName ~= "" then
+        return localizedName
     end
 
-    local rawTips = getRawNpcTips(npcID)
+    local rawTips = addon.getShippedNpcTipEntries and addon:getShippedNpcTipEntries(npcID)
     local commentName = getNpcCommentName(rawTips)
     if commentName and commentName ~= "" then
         return commentName
@@ -1347,12 +1307,7 @@ local function getNpcBrowserLabel(expansionKey, instanceKey, npcID)
         return "---"
     end
 
-    local instanceData = getInstanceData(expansionKey, instanceKey)
-    local localizedName
-
-    if instanceData and instanceData.npcNames and instanceData.npcNames[npcID] then
-        localizedName = getLocalizedLabel(instanceData.npcNames[npcID], nil)
-    end
+    local localizedName = addon.getCatalogNpcName and addon:getCatalogNpcName(expansionKey, instanceKey, npcID)
 
     if localizedName then
         if not shouldShowNpcIDs() then
@@ -1361,7 +1316,7 @@ local function getNpcBrowserLabel(expansionKey, instanceKey, npcID)
         return string.format("%s (%d)", localizedName, npcID)
     end
 
-    local rawTips = getRawNpcTips(npcID)
+    local rawTips = addon.getShippedNpcTipEntries and addon:getShippedNpcTipEntries(npcID)
     local commentName = getNpcCommentName(rawTips)
     if commentName then
         if not shouldShowNpcIDs() then
@@ -1687,8 +1642,8 @@ local function createContentBrowserMenu()
 
         selectionSummary:SetText(string.format(getBrowserLocaleString("selected_with_type"), expansionLabel, instanceLabel, instanceType, npcLabel))
         npcSelectionLabel:SetText(string.format(getBrowserLocaleString("selected_npc"), npcLabel))
-        local mergedInstanceEntries = addon.getMergedInstanceTipEntries and addon:getMergedInstanceTipEntries(browserState.instanceKey) or normalizeRawTips(getRawInstanceTips(browserState.instanceKey))
-        local mergedNpcEntries = selectedNpcID and (addon.getMergedNpcTipEntries and addon:getMergedNpcTipEntries(selectedNpcID) or normalizeRawTips(getRawNpcTips(selectedNpcID))) or nil
+        local mergedInstanceEntries = addon.getMergedInstanceTipEntries and addon:getMergedInstanceTipEntries(browserState.instanceKey) or {}
+        local mergedNpcEntries = selectedNpcID and (addon.getMergedNpcTipEntries and addon:getMergedNpcTipEntries(selectedNpcID) or {}) or nil
 
         instancePreview:SetText("")
         instanceDetailsPreview:SetText("")
@@ -2091,7 +2046,7 @@ local function createEditorMenu()
             npcSzDropdown:SetCurrentValue(NPC_NONE)
         end
         local npcLabel = editorState.npcID and getNpcBrowserLabel(editorState.expansionKey, editorState.instanceKey, editorState.npcID) or "-"
-        local mergedNpcEntries = selectedNpcID and (addon.getMergedNpcTipEntries and addon:getMergedNpcTipEntries(selectedNpcID) or normalizeRawTips(getRawNpcTips(selectedNpcID))) or nil
+        local mergedNpcEntries = selectedNpcID and (addon.getMergedNpcTipEntries and addon:getMergedNpcTipEntries(selectedNpcID) or {}) or nil
         local personalTips = selectedNpcID and (addon.getNpcUserAdditions and addon:getNpcUserAdditions(selectedNpcID) or {}) or {}
         local baseTips = selectedNpcID and (addon.getNpcBaseTipsForEditor and addon:getNpcBaseTipsForEditor(selectedNpcID) or {}) or {}
 
@@ -2768,11 +2723,11 @@ local function createDungeonEditorMenu()
         local userTips = addon.getInstanceUserAdditions and addon:getInstanceUserAdditions(editorState.instanceKey) or {}
         local baseTips = addon.getInstanceBaseTipsForEditor and addon:getInstanceBaseTipsForEditor(editorState.instanceKey) or {}
         local detailsData = addon.getInstanceDetailsForEditor and addon:getInstanceDetailsForEditor(editorState.instanceKey) or {}
-        local mergedDetails = addon.getMergedInstanceDetails and addon:getMergedInstanceDetails(editorState.instanceKey) or getInstanceDetails(editorState.instanceKey) or {}
+        local mergedDetails = getInstanceDetails(editorState.instanceKey) or {}
 
         selectionSummary:SetText(string.format(getBrowserLocaleString("selected_instance"), expansionLabel, instanceLabel))
         instancePreview:SetText(formatTipEntriesPreview(mergedInstanceEntries))
-        instanceDetailsPreview:SetText(formatInstanceDetails(getInstanceDetails(editorState.instanceKey)))
+        instanceDetailsPreview:SetText(formatInstanceDetails(mergedDetails))
 
         for _, row in ipairs(personalTipRows) do
             row:Hide()

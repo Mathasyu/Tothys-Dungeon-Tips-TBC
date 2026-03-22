@@ -49,6 +49,8 @@ An instance may still contain multiple `mapIDs`.
 - TBC dungeon and raid overview content migrated into `instanceContent`
 - raid overviews now read from `instanceContent` without duplicate legacy English raid blocks
 - early dungeon overviews now also read from `instanceContent` without duplicate legacy English dungeon blocks
+- instance-wide shipped lookup is now centralized through addon-level getters instead of being rebuilt in multiple UI paths
+- NPC browser/editor lookup now follows the same pattern for shipped NPC tips and catalog NPC names
 - instance info display in the main frame
 - browser preview for instance info and NPC tips
 - browser-only instance detail section for travel, attunement, extra notes, and lore
