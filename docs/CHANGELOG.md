@@ -92,6 +92,8 @@ Guidelines:
 - `docs/NPC_NAME_TRANSLATIONS.lua` was filled from QuestieDB for TBC NPC German names without touching `checked`
 - `scripts/npc_name_review.py` can now also apply workspace NPC German names directly into `Tothys-Database.lua`
 - `Tothys-Database.lua` `npcNames.deDE` entries were updated from the QuestieDB-based workspace import
+- Added `docs/TRANSLATION_GLOSSARY.md` to define preferred German WoW wording for future tip translations
+- Completed a fuller German `tipsMap_deDE` pass for `Hellfire Ramparts`, including remaining trash, caster, watcher, hound, and sentry tips in the new glossary style
 
 ### Notes
 

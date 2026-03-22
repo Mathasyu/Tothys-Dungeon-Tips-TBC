@@ -4987,20 +4987,28 @@ end
 
 -- First German dungeon tip pass for major TBC dungeon bosses and encounters.
 tipsMap_deDE[17306] = {
-	{"ramparts_17306_01", "Important", "Konzentriert euch ZUERST auf die Adds, da sie den Boss heilen!", 20},
-	{"ramparts_17306_02", "Important", "Verteilt euch, um den Rueckstoss von Ansturm besser abzufangen.", 10},
+	{"ramparts_17306_01", "Important", "Killt ZUERST die Adds, da sie den Boss heilen.", 20},
+	{"ramparts_17306_02", "Important", "Spreadet etwas, um den Rueckstoss von Ansturm besser abzufangen.", 10},
+}
+tipsMap_deDE[17309] = {
+	{"ramparts_17309_01", "PriorityTargets", "Kick: Heilung. Der Zauber heilt den Boss, und der Mob nutzt zusaetzlich Erneuerung.", 10},
 }
 tipsMap_deDE[17308] = {
-	{"ramparts_17308_01", "Dodge", "Wenn du von Fluch der Hinterlist betroffen bist, lauf von der Gruppe weg. Bekommen Heiler oder Tank den Fluch, muessen sich die DDs von ihnen entfernen. Dauer: 15 Sek.", 30},
-	{"ramparts_17308_02", "Important", "Bei etwa 40% Leben wirkt der Boss einen Daemonenschild auf sich selbst und erleidet 10 Sek. lang 75% weniger physischen und magischen Schaden.", 20},
+	{"ramparts_17308_01", "Dodge", "Wenn du von Fluch der Hinterlist betroffen bist, lauf von der Gruppe weg. Bekommt Heiler oder Tank den Fluch, muessen die DDs Abstand zu ihnen halten. Dauer: 15 Sek.", 30},
+	{"ramparts_17308_02", "Important", "Bei etwa 40% Leben wirkt der Boss Daemonenschild auf sich und erleidet 10 Sek. lang 75% weniger physischen und magischen Schaden.", 20},
 	{"ramparts_17308_03", "Important", "Kontrolliert die Hunde oder lasst den Tank sie spotten.", 10},
+}
+tipsMap_deDE[17540] = {
+	{"ramparts_17540_01", "TANK", "Spotte die Begleiter direkt, damit sie keine anderen Spieler anspringen.", 30},
+	{"ramparts_17540_02", "Important", "Kontrolliert die Adds oder burnt sie schnell runter.", 20},
+	{"ramparts_17540_03", "Interrupts", "Kick: Lebensentzug.", 10},
 }
 tipsMap_deDE[17537] = {
 	{"ramparts_17537_01", "Important", "Die Gruppe sollte sich verteilen, damit nicht mehrere Spieler gleichzeitig von Nazans Feuerball-AoE getroffen werden.", 110},
 	{"ramparts_17537_02", "Dodge", "AUSWEICHEN: Wenn du von Nazans Feuerball getroffen wirst, lauf aus dem Effekt heraus, damit du keine weiteren Ticks abbekommst.", 100},
-	{"ramparts_17537_03", "TANK", "Sei schnell beim Aufnehmen des Bosses, denn nach der Landung laeuft er sofort auf das hoechste Bedrohungsziel zu.", 90},
+	{"ramparts_17537_03", "TANK", "Nimm den Boss nach der Landung sofort auf, da er direkt auf das Ziel mit der hoechsten Bedrohung geht.", 90},
 	{"ramparts_17537_04", "Advanced", "VAZRUDEN-Strategie (Phase 1)", 80},
-	{"ramparts_17537_05", "Important", "Der Spieler mit Vazrudens Mal wird 6 Sek. lang sein Ziel. Defensiv-Cooldowns zünden.", 70},
+	{"ramparts_17537_05", "Important", "Der Spieler mit Vazrudens Mal wird 6 Sek. lang sein Ziel. Def-CDs ziehen.", 70},
 	{"ramparts_17537_06", "HEALER", "Gib dem Spieler mit Vazrudens Mal zusaetzliche Heilung.", 60},
 	{"ramparts_17537_07", "Advanced", "NAZAN-Strategie (Phase 2)", 50},
 	{"ramparts_17537_08", "Important", "Nazan landet, wenn er selbst 20% Leben hat oder wenn Vazruden etwa 40-50% erreicht.", 40},
@@ -5012,6 +5020,42 @@ tipsMap_deDE[17536] = cloneTableDeep(tipsMap_deDE[17537])
 for index, tip in ipairs(tipsMap_deDE[17536]) do
 	tip[1] = string.format("ramparts_17536_%02d", index)
 end
+tipsMap_deDE[17259] = {
+	{"ramparts_17259_01", "Important", "Hat Entwaffnen und einen Angriffskraft-Debuff. Fuer Meelees unangenehm, aber nicht kritisch.", 10},
+}
+tipsMap_deDE[17264] = {
+	{"ramparts_17264_01", "Important", "Achtung: Hat einen gefaehrlichen Single-Target-Stun mit Nierenschlag.", 10},
+}
+tipsMap_deDE[17269] = {
+	{"ramparts_17269_01", "Legion", "Der Mob nutzt Feuer-Schaden-Faehigkeiten.", 20},
+	{"ramparts_17269_02", "Dodge", "Raus aus Regen des Feuers.", 10},
+}
+tipsMap_deDE[17270] = {
+	{"ramparts_17270_01", "Important", "Tank sollte diese Mobs von der Gruppe wegdrehen, damit niemand von Gezielter Schuss oder Mehrfachschuss getroffen wird.", 10},
+}
+tipsMap_deDE[17271] = {
+	{"ramparts_17271_01", "Important", "Tank sollte auf seine Rueckenposition achten. Der Mob nutzt Knockback, und ihr wollt keine zusaetzlichen Gruppen pullen.", 20},
+	{"ramparts_17271_02", "Defensives", "Todesstoss reduziert die erhaltene Heilung auf dem Ziel.", 10},
+}
+tipsMap_deDE[17280] = {
+	{"ramparts_17280_01", "Legion", "Nicht-elite. Macht hohen Schaden an Stofftraegern.", 20},
+	{"ramparts_17280_02", "Important", "Anfaellig fuer CC wie Schaf, Falle oder Winterschlaf.", 10},
+}
+tipsMap_deDE[17281] = {
+	{"ramparts_17281_01", "Defensives", "Wird im Enrage groesser und deutlich gefaehrlicher. Tank sollte notfalls Def-CDs ziehen, Heiler vorbereitet sein.", 10},
+}
+tipsMap_deDE[17455] = {
+	{"ramparts_17455_01", "Important", "Beschwoert Kriegshunde und nutzt Aufwaertsiebender Hieb mit Knockback auf einen Spieler.", 10},
+}
+tipsMap_deDE[17478] = {
+	{"ramparts_17478_01", "Important", "Wahrsager buffen Knochenmalmerreißer. Killt die Wahrsager nach dem LoS-Pull schnell.", 40},
+	{"ramparts_17478_02", "Interrupts", "Kick: Furcht (1 Sek. Cast, 20 Meter Reichweite).", 30},
+	{"ramparts_17478_03", "SHAMAN", "Nutze Tremor Totem, um Gruppenmitglieder aus Furcht zu holen, besonders Tank und Heiler.", 20},
+	{"ramparts_17478_04", "WARLOCK", "Fluch der Sprachen kann weitere Kicks auf Furcht ermoeglichen, vor allem wenn kein Schamane mit Tremor Totem dabei ist.", 10},
+}
+tipsMap_deDE[17517] = {
+	{"ramparts_17517_01", "Legion", "Wenn der letzte Spaeher stirbt, startet der Bosskampf.", 10},
+}
 
 tipsMap_deDE[17381] = {
 	{"bloodfurnace_17381_01", "Legion", "Verteilt euch mindestens 8 Meter, damit nicht mehrere Spieler gleichzeitig von Explodierender Kolbenfiole getroffen werden (Naturschaden + AoE-Rueckstoss).", 30},

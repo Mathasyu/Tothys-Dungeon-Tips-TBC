@@ -167,3 +167,10 @@ Akzeptierte Aenderungen nicht undokumentiert im Changelog lassen.
 - Commits klein und aussagekraeftig halten.
 - Commit-Messages sollen klar machen, was geaendert wurde und warum.
 - Wenn passend, auf den fachlichen Kontext oder das betroffene Thema Bezug nehmen.
+
+## 9. Uebersetzungsstil
+
+- Fuer deutsche Tipptexte gilt `docs/TRANSLATION_GLOSSARY.md` als bevorzugte Stil- und Begriffsreferenz.
+- UI-Texte sollen klar und allgemein lesbar bleiben.
+- Tipptexte duerfen bewusst WoW-uebliches Denglish verwenden, wenn es fuer Spieler natuerlicher ist.
+- `checked` darf nicht stillschweigend auf `true` gesetzt werden.
