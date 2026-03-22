@@ -14,6 +14,7 @@ Changelog:
         - New Slash Commands: /kdt config, /kdt show, /kdt hide, /kdt test
     0.9.1 - 2026-03-22
         - Added /kdt toggle
+        - Added /kdt lang <auto|en|de>
         - Renamed to Kiesel Dungeon Tool
         - Added Content Browser, Dungeon Editor, Tip Editor, and Info pages
         - Added locale-aware UI text and language switching
@@ -44,6 +45,8 @@ local browserLocaleStrings = {
 		info_status_text = "Kiesel Dungeon Tool is still actively in development and is not complete yet.\n\nSome instances and NPCs are already structured in the new browser and data model, but the addon is still being expanded, cleaned up, and documented. Expect missing content, placeholder areas, and ongoing iteration while the new system is built out.",
 		info_focus = "Current Focus",
 		info_focus_text = "Current work focuses on:\n- structured expansion, instance, and NPC browsing\n- tactical dungeon info and browser-only extra details\n- locale-aware data handling\n- update-safe personal editing and overrides",
+		info_feedback = "Feedback",
+		info_feedback_text = "Some of the newer raid overview texts were AI-generated as a first draft and still need review. If you spot mistakes or unclear wording, please report them through the project's GitHub issue tracker.\n\nThe preferred workflow is to improve the text inside the addon first and then export the corrected strings later, once export support is available.",
 		locale_reload_text = "Changing the language will reload the UI. Continue?",
 		locale_reload_accept = "Reload UI",
 		locale_reload_cancel = "Cancel",
@@ -112,7 +115,7 @@ local browserLocaleStrings = {
 		npc_tips = "NPC Tips",
 		info_how_it_works = "How It Works",
 		info_slash_commands = "Slash Commands",
-		info_slash_commands_text = "Use these commands in chat:\n- /kdt config opens the addon settings\n- /kdt show shows the main window\n- /kdt hide hides the main window\n- /kdt toggle toggles the main window\n- /kdt test shows a test preview",
+		info_slash_commands_text = "Use these commands in chat:\n- /kdt config opens the addon settings\n- /kdt show shows the main window\n- /kdt hide hides the main window\n- /kdt toggle toggles the main window\n- /kdt test shows a test preview\n- /kdt lang auto switches to Auto\n- /kdt lang en switches to English\n- /kdt lang de switches to German",
 		expansion = "Expansion",
 		dungeon_or_raid = "Dungeon / Raid",
 		npc = "NPC",
@@ -121,6 +124,13 @@ local browserLocaleStrings = {
 		npcs_a_i = "NPCs A-I",
 		npcs_j_r = "NPCs J-R",
 		npcs_s_z = "NPCs S-Z",
+		instance_group_hellfire_peninsula = "--- Hellfire Peninsula ---",
+		instance_group_terokkar_forest = "--- Terokkar Forest ---",
+		instance_group_zangarmarsh = "--- Zangarmarsh ---",
+		instance_group_caverns_of_time = "--- Caverns of Time ---",
+		instance_group_netherstorm = "--- Netherstorm ---",
+		instance_group_isle_of_queldanas = "--- Isle of Quel'Danas ---",
+		instance_group_raids = "--- Raids ---",
 		selected_with_type = "Selected: %s -> %s (%s) -> %s",
 		selected_npc_path = "Selected: %s -> %s -> %s",
 		selected_npc = "NPC: %s",
@@ -178,6 +188,8 @@ local browserLocaleStrings = {
 		info_status_text = "Kiesel Dungeon Tool ist weiterhin aktiv in Entwicklung und noch nicht vollstaendig.\n\nEinige Instanzen und NPCs sind bereits in der neuen Browser- und Datenstruktur vorhanden, aber das Addon wird noch weiter ausgebaut, bereinigt und dokumentiert. Es ist also normal, wenn Inhalte fehlen oder sich noch veraendern.",
 		info_focus = "Aktueller Fokus",
 		info_focus_text = "Der aktuelle Fokus liegt auf:\n- strukturierter Navigation fuer Erweiterungen, Instanzen und NPCs\n- taktischen Dungeon-Infos und zusaetzlichen Browser-Infos\n- lokalisierungsfaehigen Daten\n- updatesicheren persoenlichen Bearbeitungen und Overrides",
+		info_feedback = "Feedback",
+		info_feedback_text = "Ein Teil der neueren Raid-Uebersichtstexte wurde zunaechst mit AI erstellt und muss noch geprueft werden. Wenn dir Fehler oder unklare Formulierungen auffallen, melde sie bitte ueber den GitHub-Issue-Tracker des Projekts.\n\nDer bevorzugte Ablauf ist, Texte zuerst direkt im Addon zu verbessern und die korrigierten Strings spaeter zu exportieren, sobald die Exportfunktion vorhanden ist.",
 		locale_reload_text = "Das Aendern der Sprache laedt das Interface neu. Fortfahren?",
 		locale_reload_accept = "Interface neu laden",
 		locale_reload_cancel = "Abbrechen",
@@ -246,7 +258,7 @@ local browserLocaleStrings = {
 		npc_tips = "NPC-Tipps",
 		info_how_it_works = "So funktioniert's",
 		info_slash_commands = "Slashbefehle",
-		info_slash_commands_text = "Diese Befehle kannst du im Chat verwenden:\n- /kdt config oeffnet die Addon-Einstellungen\n- /kdt show zeigt das Hauptfenster\n- /kdt hide blendet das Hauptfenster aus\n- /kdt toggle schaltet das Hauptfenster um\n- /kdt test zeigt eine Testvorschau",
+		info_slash_commands_text = "Diese Befehle kannst du im Chat verwenden:\n- /kdt config oeffnet die Addon-Einstellungen\n- /kdt show zeigt das Hauptfenster\n- /kdt hide blendet das Hauptfenster aus\n- /kdt toggle schaltet das Hauptfenster um\n- /kdt test zeigt eine Testvorschau\n- /kdt lang auto schaltet auf Auto\n- /kdt lang en schaltet auf Englisch\n- /kdt lang de schaltet auf Deutsch",
 		expansion = "Erweiterung",
 		dungeon_or_raid = "Dungeon / Raid",
 		npc = "NPC",
@@ -255,6 +267,13 @@ local browserLocaleStrings = {
 		npcs_a_i = "NPCs A-I",
 		npcs_j_r = "NPCs J-R",
 		npcs_s_z = "NPCs S-Z",
+		instance_group_hellfire_peninsula = "--- Höllenfeuerhalbinsel ---",
+		instance_group_terokkar_forest = "--- Wälder von Terokkar ---",
+		instance_group_zangarmarsh = "--- Zangarmarschen ---",
+		instance_group_caverns_of_time = "--- Höhlen der Zeit ---",
+		instance_group_netherstorm = "--- Nethersturm ---",
+		instance_group_isle_of_queldanas = "--- Insel von Quel'Danas ---",
+		instance_group_raids = "--- Raids ---",
 		selected_with_type = "Ausgewaehlt: %s -> %s (%s) -> %s",
 		selected_npc_path = "Ausgewaehlt: %s -> %s -> %s",
 		selected_npc = "NPC: %s",
@@ -324,6 +343,52 @@ local browserIconList = {
 }
 
 local NPC_NONE = "__none__"
+local INSTANCE_GROUP_PREFIX = "__group__:"
+local isInstanceGroupEntry
+local makeInstanceGroupEntry
+local getInstanceGroupLabel
+local getFirstSelectableValue
+
+local groupedTbcInstanceKeys = {
+	{
+		label = "instance_group_hellfire_peninsula",
+		instances = { "hellfire_ramparts", "blood_furnace", "shattered_halls" },
+	},
+	{
+		label = "instance_group_terokkar_forest",
+		instances = { "mana_tombs", "auchenai_crypts", "sethekk_halls", "shadow_labyrinth" },
+	},
+	{
+		label = "instance_group_zangarmarsh",
+		instances = { "slave_pens", "underbog", "steamvaults" },
+	},
+	{
+		label = "instance_group_caverns_of_time",
+		instances = { "old_hillsbrad", "black_morass" },
+	},
+	{
+		label = "instance_group_netherstorm",
+		instances = { "mechanar", "botanica", "arcatraz" },
+	},
+	{
+		label = "instance_group_isle_of_queldanas",
+		instances = { "magisters_terrace" },
+	},
+	{
+		label = "instance_group_raids",
+		instances = {
+			"karazhan",
+			"gruuls_lair",
+			"magtheridons_lair",
+			"zulaman",
+			"serpentshrine_cavern",
+			"tempest_keep_the_eye",
+			"hyjal_summit",
+			"black_temple",
+			"sunwell_plateau",
+		},
+	},
+}
 
 local authorTipTypes = {
 	"Important",
@@ -436,10 +501,18 @@ local function createValueDropdown(frame, name, width, onChange)
             info = UIDropDownMenu_CreateInfo()
             info.text = dropdown.labelForValue and dropdown.labelForValue(value) or tostring(value)
             info.value = value
-            info.checked = value == dropdown.currentValue
-            info.func = function()
-                dropdown:SetCurrentValue(value)
-                onChange(value)
+            if isInstanceGroupEntry(value) then
+                info.isTitle = true
+                info.notCheckable = true
+                info.disabled = true
+                info.checked = false
+                info.func = nil
+            else
+                info.checked = value == dropdown.currentValue
+                info.func = function()
+                    dropdown:SetCurrentValue(value)
+                    onChange(value)
+                end
             end
             UIDropDownMenu_AddButton(info, level)
         end
@@ -772,6 +845,32 @@ local function getBrowserLocaleString(key)
 	return localeStrings[key] or browserLocaleStrings.enUS[key] or key
 end
 
+isInstanceGroupEntry = function(value)
+	return type(value) == "string" and string.sub(value, 1, string.len(INSTANCE_GROUP_PREFIX)) == INSTANCE_GROUP_PREFIX
+end
+
+makeInstanceGroupEntry = function(labelKey)
+	return INSTANCE_GROUP_PREFIX .. labelKey
+end
+
+getInstanceGroupLabel = function(value)
+	if not isInstanceGroupEntry(value) then
+		return value
+	end
+
+	return getBrowserLocaleString(string.sub(value, string.len(INSTANCE_GROUP_PREFIX) + 1)) or value
+end
+
+getFirstSelectableValue = function(values)
+	for _, value in ipairs(values or {}) do
+		if not isInstanceGroupEntry(value) then
+			return value
+		end
+	end
+
+	return nil
+end
+
 local function getLocalizedClassName(classKey)
     return getBrowserLocaleString("class_" .. string.lower(classKey or "")) or classKey
 end
@@ -1086,10 +1185,44 @@ local function getInstanceKeys(expansionKey)
         return {}
     end
 
+    if expansionKey == "tbc" then
+        local instances = expansionData.instances or {}
+        local keys = {}
+        local added = {}
+
+        for _, group in ipairs(groupedTbcInstanceKeys) do
+            local found = {}
+            for _, instanceKey in ipairs(group.instances) do
+                if instances[instanceKey] then
+                    found[#found + 1] = instanceKey
+                    added[instanceKey] = true
+                end
+            end
+            if #found > 0 then
+                keys[#keys + 1] = makeInstanceGroupEntry(group.label)
+                for _, instanceKey in ipairs(found) do
+                    keys[#keys + 1] = instanceKey
+                end
+            end
+        end
+
+        for _, instanceKey in ipairs(getOrderedKeys(instances)) do
+            if not added[instanceKey] then
+                keys[#keys + 1] = instanceKey
+            end
+        end
+
+        return keys
+    end
+
     return getOrderedKeys(expansionData.instances or {})
 end
 
 local function getInstanceData(expansionKey, instanceKey)
+    if isInstanceGroupEntry(instanceKey) then
+        return nil
+    end
+
     local expansionData = getExpansionData(expansionKey)
     if not expansionData or not expansionData.instances then
         return nil
@@ -1490,7 +1623,7 @@ local function createContentBrowserMenu()
             end
         end
         if not hasInstance then
-            browserState.instanceKey = instanceKeys[1]
+            browserState.instanceKey = getFirstSelectableValue(instanceKeys)
         end
 
         local npcIDs = getNpcIDs(browserState.expansionKey, browserState.instanceKey)
@@ -1641,6 +1774,9 @@ local function createContentBrowserMenu()
     end)
     instanceDropdown:SetPoint("TOPLEFT", instanceFS, "BOTTOMLEFT", -16, -2)
     instanceDropdown.labelForValue = function(value)
+        if isInstanceGroupEntry(value) then
+            return getInstanceGroupLabel(value)
+        end
         local instanceData = getInstanceData(browserState.expansionKey, value)
         if not instanceData then
             return value or "-"
@@ -1905,7 +2041,7 @@ local function createEditorMenu()
             end
         end
         if not hasInstance then
-            editorState.instanceKey = instanceKeys[1]
+            editorState.instanceKey = getFirstSelectableValue(instanceKeys)
         end
 
         local npcIDs = getNpcIDs(editorState.expansionKey, editorState.instanceKey)
@@ -2078,6 +2214,9 @@ local function createEditorMenu()
     end)
     instanceDropdown:SetPoint("TOPLEFT", instanceFS, "BOTTOMLEFT", -16, -2)
     instanceDropdown.labelForValue = function(value)
+        if isInstanceGroupEntry(value) then
+            return getInstanceGroupLabel(value)
+        end
         local instanceData = getInstanceData(editorState.expansionKey, value)
         if not instanceData then
             return value or "-"
@@ -2609,7 +2748,7 @@ local function createDungeonEditorMenu()
             end
         end
         if not hasInstance then
-            editorState.instanceKey = instanceKeys[1]
+            editorState.instanceKey = getFirstSelectableValue(instanceKeys)
         end
     end
 
@@ -2757,6 +2896,9 @@ local function createDungeonEditorMenu()
     end)
     instanceDropdown:SetPoint("TOPLEFT", instanceFS, "BOTTOMLEFT", -16, -2)
     instanceDropdown.labelForValue = function(value)
+        if isInstanceGroupEntry(value) then
+            return getInstanceGroupLabel(value)
+        end
         local instanceData = getInstanceData(editorState.expansionKey, value)
         if not instanceData then
             return value or "-"
@@ -3224,8 +3366,15 @@ local function createInfoMenu()
     howText:SetPoint("TOPLEFT", howHeader, "BOTTOMLEFT", 0, -8)
     howText:SetWidth(620)
 
+    local feedbackHeader = createString(infoContent, getBrowserLocaleString("info_feedback"), "Fonts\\MORPHEUS.ttf", 16)
+    feedbackHeader:SetPoint("TOPLEFT", howText, "BOTTOMLEFT", 0, -18)
+
+    local feedbackText = createString(infoContent, getBrowserLocaleString("info_feedback_text"), "Fonts\\FRIZQT__.TTF", 11)
+    feedbackText:SetPoint("TOPLEFT", feedbackHeader, "BOTTOMLEFT", 0, -8)
+    feedbackText:SetWidth(620)
+
     local slashHeader = createString(infoContent, getBrowserLocaleString("info_slash_commands"), "Fonts\\MORPHEUS.ttf", 16)
-    slashHeader:SetPoint("TOPLEFT", howText, "BOTTOMLEFT", 0, -18)
+    slashHeader:SetPoint("TOPLEFT", feedbackText, "BOTTOMLEFT", 0, -18)
 
     local slashText = createString(infoContent, getBrowserLocaleString("info_slash_commands_text"), "Fonts\\FRIZQT__.TTF", 11)
     slashText:SetPoint("TOPLEFT", slashHeader, "BOTTOMLEFT", 0, -8)
@@ -3242,6 +3391,8 @@ local function createInfoMenu()
         roadmapText:SetText(getBrowserLocaleString("info_focus_text"))
         howHeader:SetText(getBrowserLocaleString("info_how_it_works"))
         howText:SetText(getBrowserLocaleString("info_how_it_works_text"))
+        feedbackHeader:SetText(getBrowserLocaleString("info_feedback"))
+        feedbackText:SetText(getBrowserLocaleString("info_feedback_text"))
         slashHeader:SetText(getBrowserLocaleString("info_slash_commands"))
         slashText:SetText(getBrowserLocaleString("info_slash_commands_text"))
     end

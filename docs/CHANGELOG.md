@@ -61,7 +61,19 @@ Guidelines:
   - `NPC IDs` dropdown
   - three alphabetical NPC dropdowns (`A-I`, `J-R`, `S-Z`)
 - Added `/kdt toggle` as a slash command to show or hide the main frame
+- Added `/kdt lang <auto|en|de>` to switch the addon language directly and reload immediately
 - The `Info` page now includes a localized slash command section in English and German
+- Dungeon/Raid selection in `Content Browser`, `Tip Editor`, and `Dungeon Editor` is now grouped for TBC:
+  - localized zone headers such as `--- Zangarmarschen ---`
+  - a dedicated `--- Raids ---` section at the end
+  - non-selectable group headers inside the dropdowns
+- The `Info` page now explains that some newer raid overview texts are AI-assisted drafts, asks for issue reports via GitHub, and documents the preferred fix-then-export workflow
+- Raid-level instance overview texts are now available in the new `instanceContent` structure for all current TBC raids
+- Raid names, overview texts, and browser/editor-facing raid details were translated for German support
+- The old duplicate English raid instance overview blocks for `Karazhan`, `Gruul`, `Magtheridon`, and `Zul'Aman` were removed so raid overviews now come from `instanceContent`
+- `PLAN.md`, `DATA_MODEL.md`, and the agent instructions were updated to reflect `instanceContent` as the preferred instance-wide content model and to require keeping these docs in sync with accepted changes
+- The old duplicate English dungeon overview blocks for `Hellfire Ramparts`, `Blood Furnace`, `Auchenai Crypts`, `Sethekk Halls`, and `Shadow Labyrinth` were removed so these instance overviews now come from `instanceContent`
+- The remaining duplicate legacy English instance overview blocks are now cleaned up, leaving `instanceContent` as the primary source for migrated dungeon and raid overviews
 
 ### Notes
 

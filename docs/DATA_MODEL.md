@@ -152,35 +152,61 @@ Meaning:
 - `Text`: localized text
 - `weight`: numeric sort order
 
-## Instance info
+## Instance-wide content
 
-Instance notes use the same structure as NPC tips and are stored by `instanceKey`.
+Instance-wide shipped content is now moving into a unified structure keyed by `instanceKey`.
 
-Example:
+Current preferred shape:
 
 ```lua
-instanceInfo_enUS["auchenai_crypts"] = {
-  {"auchenai_instance_001", "Important", "General dungeon note.", 30},
-  {"auchenai_instance_002", "HEALER", "Healer-specific dungeon note.", 20},
+addon.instanceContent["auchenai_crypts"] = {
+  mapIDs = { 256, 257 },
+  info = {
+    {
+      id = "auchenai_instance_001",
+      type = "Important",
+      weight = 30,
+      text = {
+        enUS = "General dungeon note.",
+        deDE = "Allgemeiner Dungeon-Hinweis.",
+      },
+    },
+  },
+  details = {
+    travel = {
+      enUS = "Auchindoun in Terokkar Forest.",
+      deDE = "Auchindoun im Wald von Terokkar.",
+    },
+    attunement = {
+      enUS = "No attunement required.",
+      deDE = "Keine Zugangsvoraussetzung erforderlich.",
+    },
+    notes = {
+      enUS = "Short but awkward instance with fears, bridges, and knockbacks.",
+      deDE = "Kurze, aber unangenehme Instanz mit Furcht, Bruecken und Rueckstoessen.",
+    },
+    lore = {
+      enUS = "A sacred draenei burial complex later corrupted by dark rituals and restless dead.",
+      deDE = "Eine heilige draenei'sche Grabanlage, spaeter verdorben durch dunkle Rituale und ruhelose Tote.",
+    },
+  },
 }
 ```
 
-`Instance Info` is the short tactical layer intended for the main addon frame when entering an instance or browsing tactical notes.
+Meaning:
 
-## Browser-only instance details
+- `info`
+  - short tactical layer intended for the main addon frame and tactical browser/editor use
+- `details`
+  - browser/editor-facing contextual layer for `travel`, `attunement`, `notes`, and `lore`
+- `text.enUS` / `text.deDE`
+  - inline localization for shipped instance content
 
-The `Content Browser` can also show a separate browser-only detail block with contextual information that should not clutter the live tip window.
+Compatibility note:
 
-Example:
-
-```lua
-instanceDetails_enUS["auchenai_crypts"] = {
-  travel = "Auchindoun in Terokkar Forest.",
-  attunement = "No attunement required.",
-  notes = "Short but awkward instance with fears, bridges, and knockbacks.",
-  lore = "A sacred draenei burial complex later corrupted by dark rituals and restless dead.",
-}
-```
+- old `instanceInfo_enUS/deDE` and `instanceDetails_enUS/deDE` tables may still exist during migration
+- runtime lookup already prefers `addon.instanceContent` and falls back only when needed
+- migrated TBC raid overviews and the first TBC dungeon overview blocks have already had their duplicate legacy English instance tables removed
 
 Intended use:
 
@@ -194,6 +220,7 @@ Rules:
 - this block is for the `Content Browser`, not the main live tip frame
 - it complements `Instance Info`, it does not replace it
 - it can be longer and more descriptive than tactical tip text
+- some newer raid-level overview texts may begin as AI-assisted drafts and should be treated as review-needed content until checked by maintainers
 
 ## Weight rules
 
@@ -212,11 +239,27 @@ Current structure:
 tipsMap_enUS = { ... }
 tipsMap_deDE = { ... }
 
-instanceInfo_enUS = { ... }
-instanceInfo_deDE = { ... }
-
-instanceDetails_enUS = { ... }
-instanceDetails_deDE = { ... }
+addon.instanceContent = {
+  some_instance = {
+    info = {
+      {
+        id = "...",
+        type = "Important",
+        weight = 30,
+        text = {
+          enUS = "...",
+          deDE = "...",
+        },
+      },
+    },
+    details = {
+      travel = { enUS = "...", deDE = "..." },
+      attunement = { enUS = "...", deDE = "..." },
+      notes = { enUS = "...", deDE = "..." },
+      lore = { enUS = "...", deDE = "..." },
+    },
+  },
+}
 ```
 
 UI text localization is currently handled through a shared locale table in the config code.
@@ -232,6 +275,7 @@ Rules:
 - selected locale is controlled by config
 - `Auto` uses the client locale
 - if localized content is missing, fall back to `enUS`
+- corrected or newly translated strings should later be exportable per locale so reviewed community fixes can be shared
 
 ## User data layer
 
@@ -305,7 +349,7 @@ Locale rules:
 Current runtime behavior:
 
 - NPC tip lookup goes through a merged path
-- instance info lookup goes through a merged path
+- instance-wide lookup goes through a merged path and now prefers `addon.instanceContent`
 - Content Browser previews now use the merged path as well
 - `disabled`, `overrides`, and `additions` are respected when present
 - legacy shipped tips without stable `tip_id` values can still be displayed, but are not yet ideal override targets
@@ -314,7 +358,7 @@ Current UI/editor state:
 
 - `Content Browser` is read-only and uses merged data
 - `Tip Editor` works on NPC-based content
-- `Dungeon Editor` works on instance-based personal notes
+- `Dungeon Editor` works on instance-based personal notes and shipped instance content
 - browser selection can mirror into the live frame for preview purposes
 
 ## Editing rules
@@ -357,7 +401,8 @@ Important editor rule:
 Current implementation status:
 
 - shipped NPC tips already support override, hide / unhide, and reset in `Tip Editor`
-- shipped instance info does not yet have the same editor path
+- shipped instance info already supports override, hide / unhide, and reset in `Dungeon Editor`
+- shipped browser-only instance details already support per-field override and reset in `Dungeon Editor`
 
 ### Personal tips
 

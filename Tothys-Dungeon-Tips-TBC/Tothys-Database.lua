@@ -25,7 +25,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				mapIDs = {347},
 				name = {
 					enUS = "Hellfire Ramparts",
-					deDE = "Hellfire Ramparts",
+					deDE = "Hoellenfeuerbollwerk",
 				},
 				npcNames = {
 					[17259] = { enUS = "Bonechewer Hungerer" },
@@ -56,7 +56,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				mapIDs = {261},
 				name = {
 					enUS = "The Blood Furnace",
-					deDE = "The Blood Furnace",
+					deDE = "Der Blutkessel",
 				},
 				npcNames = {
 					[17370] = { enUS = "Laughing Skull Enforcer" },
@@ -146,7 +146,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				mapIDs = {258, 259},
 				name = {
 					enUS = "Sethekk Halls",
-					deDE = "Sethekk Halls",
+					deDE = "Sethekkhallen",
 				},
 				npcNames = {
 					[18318] = { enUS = "Sethekk Initiate" },
@@ -186,7 +186,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				mapIDs = {260},
 				name = {
 					enUS = "Shadow Labyrinth",
-					deDE = "Shadow Labyrinth",
+					deDE = "Schattenlabyrinth",
 				},
 				npcNames = {
 					[18631] = { enUS = "Cabal Cultist" },
@@ -350,7 +350,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				type = "Raid",
 				name = {
 					enUS = "Gruul's Lair",
-					deDE = "Gruul's Lair",
+					deDE = "Gruuls Unterschlupf",
 				},
 				npcNames = {
 					[18831] = { enUS = "High King Maulgar" },
@@ -372,7 +372,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				type = "Raid",
 				name = {
 					enUS = "Magtheridon's Lair",
-					deDE = "Magtheridon's Lair",
+					deDE = "Magtheridons Kammer",
 				},
 				npcNames = {
 					[17256] = { enUS = "Hellfire Channeler" },
@@ -435,7 +435,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				mapIDs = {246},
 				name = {
 					enUS = "The Shattered Halls",
-					deDE = "The Shattered Halls",
+					deDE = "Die Zerschmetterten Hallen",
 				},
 				npcNames = {
 					[16507] = { enUS = "Shattered Hand Sentry" },
@@ -483,7 +483,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				mapIDs = {265},
 				name = {
 					enUS = "The Slave Pens",
-					deDE = "The Slave Pens",
+					deDE = "Die Sklavenunterkuenfte",
 				},
 				npcNames = {
 					[17816] = { enUS = "Bogstrok" },
@@ -522,7 +522,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				mapIDs = {262},
 				name = {
 					enUS = "The Underbog",
-					deDE = "The Underbog",
+					deDE = "Der Tiefensumpf",
 				},
 				npcNames = {
 					[17723] = { enUS = "Bog Giant" },
@@ -562,7 +562,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				mapIDs = {263, 264},
 				name = {
 					enUS = "The Steamvault",
-					deDE = "The Steamvault",
+					deDE = "Die Dampfkammer",
 				},
 				npcNames = {
 					[17721] = { enUS = "Coilfang Engineer" },
@@ -596,7 +596,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				mapIDs = {272},
 				name = {
 					enUS = "Mana-Tombs",
-					deDE = "Mana-Tombs",
+					deDE = "Managruft",
 				},
 				npcNames = {
 					[18309] = { enUS = "Ethereal Scavenger" },
@@ -629,7 +629,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				mapIDs = {274},
 				name = {
 					enUS = "Old Hillsbrad Foothills",
-					deDE = "Old Hillsbrad Foothills",
+					deDE = "Vorgebirge des Alten Huegellands",
 				},
 				npcNames = {
 					[17814] = { enUS = "Lordaeron Watchman" },
@@ -671,7 +671,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				mapIDs = {173, 733},
 				name = {
 					enUS = "The Black Morass",
-					deDE = "The Black Morass",
+					deDE = "Der schwarze Morast",
 				},
 				npcNames = {
 					[15608] = { enUS = "Medivh" },
@@ -705,7 +705,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				mapIDs = {267, 268},
 				name = {
 					enUS = "The Mechanar",
-					deDE = "The Mechanar",
+					deDE = "Die Mechanar",
 				},
 				npcNames = {
 					[19166] = { enUS = "Tempest-Forge Patroller" },
@@ -740,7 +740,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				mapIDs = {266},
 				name = {
 					enUS = "The Botanica",
-					deDE = "The Botanica",
+					deDE = "Die Botanika",
 				},
 				npcNames = {
 					[17975] = { enUS = "High Botanist Freywinn" },
@@ -797,7 +797,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				mapIDs = {269, 270, 271},
 				name = {
 					enUS = "The Arcatraz",
-					deDE = "The Arcatraz",
+					deDE = "Die Arkatraz",
 				},
 				npcNames = {
 					[20857] = { enUS = "Arcatraz Defender" },
@@ -851,7 +851,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				type = "Dungeon",
 				name = {
 					enUS = "Magisters' Terrace",
-					deDE = "Magisters' Terrace",
+					deDE = "Terrasse der Magister",
 				},
 				npcNames = {
 					[24552] = { enUS = "Sliver" },
@@ -901,7 +901,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				type = "Raid",
 				name = {
 					enUS = "Serpentshrine Cavern",
-					deDE = "Serpentshrine Cavern",
+					deDE = "Hoehle des Schlangenschreins",
 				},
 				npcNames = {
 					[21212] = { enUS = "Lady Vashj" },
@@ -968,7 +968,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				type = "Raid",
 				name = {
 					enUS = "Tempest Keep: The Eye",
-					deDE = "Tempest Keep: The Eye",
+					deDE = "Festung der Stuerme: Das Auge",
 				},
 				npcNames = {
 					[18805] = { enUS = "High Astromancer Solarian" },
@@ -1026,7 +1026,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				type = "Raid",
 				name = {
 					enUS = "Hyjal Summit",
-					deDE = "Hyjal Summit",
+					deDE = "Hyjalgipfel",
 				},
 				npcNames = {
 					[17767] = { enUS = "Rage Winterchill" },
@@ -1058,7 +1058,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				type = "Raid",
 				name = {
 					enUS = "Black Temple",
-					deDE = "Black Temple",
+					deDE = "Schwarzer Tempel",
 				},
 				npcNames = {
 					[22841] = { enUS = "Shade of Akama" },
@@ -1176,7 +1176,7 @@ addon.contentCatalog = addon.contentCatalog or {
 				type = "Raid",
 				name = {
 					enUS = "Sunwell Plateau",
-					deDE = "Sunwell Plateau",
+					deDE = "Sonnenbrunnenplateau",
 				},
 				npcNames = {
 					[24850] = { enUS = "Kalecgos" },
@@ -1452,124 +1452,1273 @@ instanceInfo_enUS = instanceInfo_enUS or {}
 instanceInfo_deDE = instanceInfo_deDE or {}
 instanceDetails_enUS = instanceDetails_enUS or {}
 instanceDetails_deDE = instanceDetails_deDE or {}
+addon.instanceContent = addon.instanceContent or {}
 
-instanceDetails_enUS.hellfire_ramparts = instanceDetails_enUS.hellfire_ramparts or {
-	travel = "Hellfire Citadel in Hellfire Peninsula.",
-	attunement = "No attunement required.",
-	notes = "Compact first TBC dungeon with straightforward pacing and some dangerous ranged trash.",
-	lore = "The Alliance and Horde push into Hellfire Citadel by breaching its outer defenses.",
+addon.instanceContent.auchenai_crypts = addon.instanceContent.auchenai_crypts or {
+	mapIDs = {256, 257},
+	info = {
+		{
+			id = "auchenai_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "TEST: Auchenai Crypts instance notes are now loaded through the new instanceContent structure.",
+				deDE = "TEST: Die Instanzhinweise der Auchenaikrypta werden jetzt ueber die neue instanceContent-Struktur geladen.",
+			},
+		},
+		{
+			id = "auchenai_instance_002",
+			type = "Important",
+			weight = 20,
+			text = {
+				enUS = "Use this area later for personal dungeon notes and shared baseline instance reminders.",
+				deDE = "Dieser Bereich ist spaeter fuer persoenliche Dungeon-Notizen und gemeinsame Basis-Hinweise gedacht.",
+			},
+		},
+		{
+			id = "auchenai_instance_003",
+			type = "HEALER",
+			weight = 10,
+			text = {
+				enUS = "HEALER TEST: Watch for fear, burst damage, and awkward bridge knockbacks in this dungeon.",
+				deDE = "HEILER-TEST: Achte in diesem Dungeon auf Furcht, Burst-Schaden und unangenehme Knockbacks auf Bruecken.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Auchindoun in Terokkar Forest.",
+			deDE = "Auchindoun im Wald von Terokkar.",
+		},
+		attunement = {
+			enUS = "No attunement required.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich.",
+		},
+		notes = {
+			enUS = "Short but awkward instance with fears, bridges, knockbacks, and punishing caster trash.",
+			deDE = "Kurze, aber unangenehme Instanz mit Furchteffekten, Bruecken, Knockbacks und hartem Zauberwirker-Trash.",
+		},
+		lore = {
+			enUS = "A sacred draenei burial complex later corrupted by dark rituals and restless dead.",
+			deDE = "Ein heiliger draenei'scher Grabkomplex, der spaeter durch dunkle Rituale und ruhelose Tote verdorben wurde.",
+		},
+	},
 }
 
-instanceDetails_enUS.blood_furnace = instanceDetails_enUS.blood_furnace or {
-	travel = "Hellfire Citadel in Hellfire Peninsula.",
-	attunement = "No attunement required.",
-	notes = "More chaotic than Ramparts, with heavier caster pressure and volatile pulls.",
-	lore = "Magtheridon's fel orcs are forged here in the industrial heart of the citadel.",
+addon.instanceContent.hellfire_ramparts = addon.instanceContent.hellfire_ramparts or {
+	mapIDs = {347},
+	info = {
+		{
+			id = "ramparts_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Expect frequent pulls with ranged pressure, knockbacks, and patrol risks in narrow spaces.",
+				deDE = "Rechne mit haeufigen Pulls mit Fernkampfdruck, Knockbacks und Patrouillenrisiken in engen Bereichen.",
+			},
+		},
+		{
+			id = "ramparts_instance_002",
+			type = "TANK",
+			weight = 20,
+			text = {
+				enUS = "Try to keep dangerous trash faced away from the party and be careful near edges and corners.",
+				deDE = "Versuche, gefaehrlichen Trash von der Gruppe wegzudrehen, und sei an Kanten und Ecken vorsichtig.",
+			},
+		},
+		{
+			id = "ramparts_instance_003",
+			type = "Interrupts",
+			weight = 10,
+			text = {
+				enUS = "Clean interrupts and controlled pulls are often more valuable here than raw damage.",
+				deDE = "Saubere Unterbrechungen und kontrollierte Pulls sind hier oft wertvoller als roher Schaden.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Hellfire Citadel in Hellfire Peninsula.",
+			deDE = "Hoellenfeuerzitadelle auf der Hoellenfeuerhalbinsel.",
+		},
+		attunement = {
+			enUS = "No attunement required.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich.",
+		},
+		notes = {
+			enUS = "Compact first TBC dungeon with straightforward pacing and some dangerous ranged trash.",
+			deDE = "Kompakter erster TBC-Dungeon mit direktem Tempo und einigen gefaehrlichen Fernkampfgegnern.",
+		},
+		lore = {
+			enUS = "The Alliance and Horde push into Hellfire Citadel by breaching its outer defenses.",
+			deDE = "Allianz und Horde dringen in die Hoellenfeuerzitadelle vor, nachdem sie ihre aeusseren Verteidigungen durchbrochen haben.",
+		},
+	},
 }
 
-instanceInfo_enUS.hellfire_ramparts = instanceInfo_enUS.hellfire_ramparts or {
-	{"ramparts_instance_001", "Important", "Expect frequent pulls with ranged pressure, knockbacks, and patrol risks in narrow spaces.", 30},
-	{"ramparts_instance_002", "TANK", "Try to keep dangerous trash faced away from the party and be careful near edges and corners.", 20},
-	{"ramparts_instance_003", "Interrupts", "Clean interrupts and controlled pulls are often more valuable here than raw damage.", 10},
+addon.instanceContent.blood_furnace = addon.instanceContent.blood_furnace or {
+	mapIDs = {261},
+	info = {
+		{
+			id = "bloodfurnace_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Blood Furnace has several pulls where positioning and crowd control smooth out incoming damage a lot.",
+				deDE = "Der Blutkessel hat mehrere Pulls, in denen Positionierung und Massenkontrolle den eingehenden Schaden stark abfedern.",
+			},
+		},
+		{
+			id = "bloodfurnace_instance_002",
+			type = "HEALER",
+			weight = 20,
+			text = {
+				enUS = "Be ready for sudden spikes from explosives, poison, and chaotic multi-target pulls.",
+				deDE = "Sei bereit fuer ploetzliche Schadensspitzen durch Explosionen, Gift und chaotische Multi-Target-Pulls.",
+			},
+		},
+		{
+			id = "bloodfurnace_instance_003",
+			type = "PriorityTargets",
+			weight = 10,
+			text = {
+				enUS = "Watch for casters and support mobs that can destabilize the pull if left alone too long.",
+				deDE = "Achte auf Zauberwirker und Support-Mobs, die den Pull destabilisieren koennen, wenn man sie zu lange gewaehrt laesst.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Hellfire Citadel in Hellfire Peninsula.",
+			deDE = "Hoellenfeuerzitadelle auf der Hoellenfeuerhalbinsel.",
+		},
+		attunement = {
+			enUS = "No attunement required.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich.",
+		},
+		notes = {
+			enUS = "More chaotic than Ramparts, with heavier caster pressure and volatile pulls.",
+			deDE = "Chaotischer als das Bollwerk, mit staerkerem Zauberwirkerdruck und explosiven Pulls.",
+		},
+		lore = {
+			enUS = "Magtheridon's fel orcs are forged here in the industrial heart of the citadel.",
+			deDE = "Hier werden Magtheridons Teufelsorks im industriellen Herzen der Zitadelle erschaffen.",
+		},
+	},
 }
 
-instanceInfo_enUS.blood_furnace = instanceInfo_enUS.blood_furnace or {
-	{"bloodfurnace_instance_001", "Important", "Blood Furnace has several pulls where positioning and crowd control smooth out incoming damage a lot.", 30},
-	{"bloodfurnace_instance_002", "HEALER", "Be ready for sudden spikes from explosives, poison, and chaotic multi-target pulls.", 20},
-	{"bloodfurnace_instance_003", "PriorityTargets", "Watch for casters and support mobs that can destabilize the pull if left alone too long.", 10},
+addon.instanceContent.sethekk_halls = addon.instanceContent.sethekk_halls or {
+	mapIDs = {258, 259},
+	info = {
+		{
+			id = "sethekk_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Sethekk Halls mixes caster pressure, crowd control, and dangerous add phases across multiple pulls.",
+				deDE = "Sethekkhallen verbinden Zauberwirkerdruck, Massenkontrolle und gefaehrliche Add-Phasen ueber mehrere Pulls hinweg.",
+			},
+		},
+		{
+			id = "sethekk_instance_002",
+			type = "PriorityTargets",
+			weight = 20,
+			text = {
+				enUS = "Respect healer and controller mobs so the run does not get derailed by avoidable casts or mind control.",
+				deDE = "Nimm Heiler- und Kontrollmobs ernst, damit der Run nicht durch vermeidbare Zauber oder Gedankenkontrolle entgleist.",
+			},
+		},
+		{
+			id = "sethekk_instance_003",
+			type = "Dodge",
+			weight = 10,
+			text = {
+				enUS = "Line-of-sight and movement matter a lot in boss mechanics and caster-heavy trash packs here.",
+				deDE = "Sichtlinien und Bewegung sind hier bei Bossmechaniken und zauberwirkerlastigen Trashgruppen besonders wichtig.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Auchindoun in Terokkar Forest.",
+			deDE = "Auchindoun im Wald von Terokkar.",
+		},
+		attunement = {
+			enUS = "No attunement required. Heroic access still follows the usual key rules.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich. Heroisch folgt den ueblichen Schluesselregeln.",
+		},
+		notes = {
+			enUS = "Known for dangerous caster trash, mind control, and boss mechanics that punish slow reactions.",
+			deDE = "Bekannt fuer gefaehrlichen Zauberwirker-Trash, Gedankenkontrolle und Bossmechaniken, die langsame Reaktionen bestrafen.",
+		},
+		lore = {
+			enUS = "The arakkoa turned these halls into a haunt of dark magic, summoning and scheming in the shadows.",
+			deDE = "Die Arakkoa machten aus diesen Hallen einen Ort dunkler Magie, an dem sie in den Schatten beschwoeren und planen.",
+		},
+	},
 }
 
-instanceInfo_enUS.auchenai_crypts = instanceInfo_enUS.auchenai_crypts or {
-	{"auchenai_instance_001", "Important", "TEST: Auchenai Crypts instance notes are now loaded through instanceKey and mapID lookup.", 30},
-	{"auchenai_instance_002", "Important", "Use this area later for personal dungeon notes and shared baseline instance reminders.", 20},
-	{"auchenai_instance_003", "HEALER", "HEALER TEST: Watch for fear, burst damage, and awkward bridge knockbacks in this dungeon.", 10},
+addon.instanceContent.shadow_labyrinth = addon.instanceContent.shadow_labyrinth or {
+	mapIDs = {260},
+	info = {
+		{
+			id = "slabs_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Shadow Labyrinth rewards controlled positioning and awareness more than rushing pulls.",
+				deDE = "Das Schattenlabyrinth belohnt kontrollierte Positionierung und Aufmerksamkeit mehr als ueberhastete Pulls.",
+			},
+		},
+		{
+			id = "slabs_instance_002",
+			type = "HEALER",
+			weight = 20,
+			text = {
+				enUS = "Expect fear effects, burst windows, and moments where line of sight can make healing awkward.",
+				deDE = "Rechne mit Furchteffekten, Burst-Phasen und Momenten, in denen Sichtlinien das Heilen unangenehm machen.",
+			},
+		},
+		{
+			id = "slabs_instance_003",
+			type = "TANK",
+			weight = 10,
+			text = {
+				enUS = "Use corners and tunnel space to keep dangerous mobs stable and facing away from the group.",
+				deDE = "Nutze Ecken und Tunnel, um gefaehrliche Mobs stabil zu halten und von der Gruppe wegzudrehen.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Auchindoun in Terokkar Forest.",
+			deDE = "Auchindoun im Wald von Terokkar.",
+		},
+		attunement = {
+			enUS = "No attunement required. Heroic access still follows the usual key rules.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich. Heroisch folgt den ueblichen Schluesselregeln.",
+		},
+		notes = {
+			enUS = "A slower, more punishing dungeon where positioning, line of sight, and fear management matter a lot.",
+			deDE = "Ein langsamerer, haerterer Dungeon, in dem Positionierung, Sichtlinien und Furcht-Management viel ausmachen.",
+		},
+		lore = {
+			enUS = "These depths hide cabals, demons, and the terrible resonance of Murmur itself.",
+			deDE = "Diese Tiefen verbergen Kulte, Daemonen und die schreckliche Resonanz von Murmur selbst.",
+		},
+	},
 }
 
-instanceDetails_enUS.auchenai_crypts = instanceDetails_enUS.auchenai_crypts or {
-	travel = "Auchindoun in Terokkar Forest.",
-	attunement = "No attunement required.",
-	notes = "Short but awkward instance with fears, bridges, knockbacks, and punishing caster trash.",
-	lore = "A sacred draenei burial complex later corrupted by dark rituals and restless dead.",
+addon.instanceContent.shattered_halls = addon.instanceContent.shattered_halls or {
+	mapIDs = {246},
+	info = {
+		{
+			id = "shattered_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Shattered Halls is one of the most punishing TBC dungeons if pulls get out of control. Respect patrols, stuns, and heavy melee pressure.",
+				deDE = "Die Zerschmetterten Hallen sind einer der haertesten TBC-Dungeons, wenn Pulls ausser Kontrolle geraten. Respektiere Patrouillen, Stuns und hohen Nahkampfdruck.",
+			},
+		},
+		{
+			id = "shattered_instance_002",
+			type = "PriorityTargets",
+			weight = 20,
+			text = {
+				enUS = "Control dangerous support mobs quickly. A clean target order is often more important than rushing damage.",
+				deDE = "Gefaehrliche Support-Mobs sollten schnell kontrolliert werden. Eine saubere Zielreihenfolge ist oft wichtiger als hektischer Schaden.",
+			},
+		},
+		{
+			id = "shattered_instance_003",
+			type = "HEALER",
+			weight = 10,
+			text = {
+				enUS = "Expect repeated damage spikes on the tank and moments where the whole group suddenly needs attention.",
+				deDE = "Rechne mit wiederholten Schadensspitzen auf dem Tank und Momenten, in denen ploetzlich die ganze Gruppe Aufmerksamkeit braucht.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Hellfire Citadel in Hellfire Peninsula.",
+			deDE = "Höllenfeuerzitadelle auf der Höllenfeuerhalbinsel.",
+		},
+		attunement = {
+			enUS = "No attunement required. Heroic access still follows the usual key rules.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich. Heroisch folgt den ueblichen Schluesselregeln.",
+		},
+		notes = {
+			enUS = "Long trash-heavy dungeon with very punishing melee packs and little room for sloppy execution.",
+			deDE = "Langer, trashlastiger Dungeon mit sehr harten Nahkampfgruppen und wenig Raum fuer unsaubere Ausfuehrung.",
+		},
+		lore = {
+			enUS = "The shattered corridors of Hellfire are packed with brutal fel orc forces and broken war machinery.",
+			deDE = "Die zerbrochenen Hallen der Höllenfeuerzitadelle sind voller brutaler Teufelsorks und zerstoerter Kriegsmaschinen.",
+		},
+	},
 }
 
-instanceInfo_enUS.sethekk_halls = instanceInfo_enUS.sethekk_halls or {
-	{"sethekk_instance_001", "Important", "Sethekk Halls mixes caster pressure, crowd control, and dangerous add phases across multiple pulls.", 30},
-	{"sethekk_instance_002", "PriorityTargets", "Respect healer and controller mobs so the run does not get derailed by avoidable casts or mind control.", 20},
-	{"sethekk_instance_003", "Dodge", "Line-of-sight and movement matter a lot in boss mechanics and caster-heavy trash packs here.", 10},
+addon.instanceContent.slave_pens = addon.instanceContent.slave_pens or {
+	mapIDs = {265},
+	info = {
+		{
+			id = "slavepens_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Slave Pens is more forgiving than some other Coilfang dungeons, but sloppy positioning and ignored support mobs can still punish the group.",
+				deDE = "Die Sklavenunterkuenfte sind nachsichtiger als andere Echsenkessel-Dungeons, aber schlampige Positionierung und ignorierte Support-Mobs bestrafen die Gruppe trotzdem.",
+			},
+		},
+		{
+			id = "slavepens_instance_002",
+			type = "PriorityTargets",
+			weight = 20,
+			text = {
+				enUS = "Watch for healers, totems, and adds that extend pulls longer than they should.",
+				deDE = "Achte auf Heiler, Totems und Adds, die Pulls unnoetig in die Laenge ziehen.",
+			},
+		},
+		{
+			id = "slavepens_instance_003",
+			type = "Dodge",
+			weight = 10,
+			text = {
+				enUS = "Movement still matters here. Knockbacks, pools, and bad stacking can create unnecessary pressure.",
+				deDE = "Bewegung bleibt auch hier wichtig. Knockbacks, Flaechen und schlechtes Stacken erzeugen schnell unnoetigen Druck.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Coilfang Reservoir in Zangarmarsh.",
+			deDE = "Echsenkessel in den Zangarmarschen.",
+		},
+		attunement = {
+			enUS = "No attunement required. Heroic access still follows the usual key rules.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich. Heroisch folgt den ueblichen Schluesselregeln.",
+		},
+		notes = {
+			enUS = "Compact naga dungeon with manageable pacing, but still enough control mechanics to punish inattentive groups.",
+			deDE = "Kompakter Naga-Dungeon mit gutem Tempo, aber dennoch genug Kontrollmechaniken, um unaufmerksame Gruppen zu bestrafen.",
+		},
+		lore = {
+			enUS = "Lady Vashj's forces hold prisoners and creatures in the flooded depths of Coilfang Reservoir.",
+			deDE = "Die Truppen von Lady Vashj halten Gefangene und Kreaturen in den ueberfluteten Tiefen des Echsenkessels fest.",
+		},
+	},
 }
 
-instanceDetails_enUS.sethekk_halls = instanceDetails_enUS.sethekk_halls or {
-	travel = "Auchindoun in Terokkar Forest.",
-	attunement = "No attunement required. Heroic access still follows the usual key rules.",
-	notes = "Known for dangerous caster trash, mind control, and boss mechanics that punish slow reactions.",
-	lore = "The arakkoa turned these halls into a haunt of dark magic, summoning and scheming in the shadows.",
+addon.instanceContent.underbog = addon.instanceContent.underbog or {
+	mapIDs = {262},
+	info = {
+		{
+			id = "underbog_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Underbog mixes awkward pulls, large creatures, and mechanics that punish poor movement or spread.",
+				deDE = "Der Tiefensumpf verbindet unangenehme Pulls, grosse Kreaturen und Mechaniken, die schlechte Bewegung oder Verteilung bestrafen.",
+			},
+		},
+		{
+			id = "underbog_instance_002",
+			type = "Dodge",
+			weight = 20,
+			text = {
+				enUS = "Be ready to move around mushrooms, knockbacks, and zone control effects instead of standing still too long.",
+				deDE = "Sei bereit, um Pilze, Knockbacks und Flaechenkontrolle herumzuspielen, statt zu lange stehenzubleiben.",
+			},
+		},
+		{
+			id = "underbog_instance_003",
+			type = "HEALER",
+			weight = 10,
+			text = {
+				enUS = "Several fights create burst windows or awkward healing angles. Keep people topped when mechanics are about to overlap.",
+				deDE = "Mehrere Kaempfe erzeugen Burst-Phasen oder unangenehme Heilwinkel. Halte die Gruppe hoch, wenn Mechaniken gleich ueberlappen.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Coilfang Reservoir in Zangarmarsh.",
+			deDE = "Echsenkessel in den Zangarmarschen.",
+		},
+		attunement = {
+			enUS = "No attunement required. Heroic access still follows the usual key rules.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich. Heroisch folgt den ueblichen Schluesselregeln.",
+		},
+		notes = {
+			enUS = "Creature-heavy dungeon with odd terrain, dangerous mushrooms, and bosses that reward movement discipline.",
+			deDE = "Kreaturenlastiger Dungeon mit seltsamem Gelaende, gefaehrlichen Pilzen und Bossen, die saubere Bewegung belohnen.",
+		},
+		lore = {
+			enUS = "This wild lower chamber of Coilfang is filled with bog creatures, spores, and the reservoir's strangest life.",
+			deDE = "Dieser wilde untere Bereich des Echsenkessels ist voller Sumpfkreaturen, Sporen und dem seltsamsten Leben des Reservoirs.",
+		},
+	},
 }
 
-instanceInfo_enUS.shadow_labyrinth = instanceInfo_enUS.shadow_labyrinth or {
-	{"slabs_instance_001", "Important", "Shadow Labyrinth rewards controlled positioning and awareness more than rushing pulls.", 30},
-	{"slabs_instance_002", "HEALER", "Expect fear effects, burst windows, and moments where line of sight can make healing awkward.", 20},
-	{"slabs_instance_003", "TANK", "Use corners and tunnel space to keep dangerous mobs stable and facing away from the group.", 10},
+addon.instanceContent.steamvaults = addon.instanceContent.steamvaults or {
+	mapIDs = {263, 264},
+	info = {
+		{
+			id = "steamvaults_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Steamvault asks for clean interrupts, stable tank positioning, and fast reactions to dangerous caster trash.",
+				deDE = "Die Dampfkammer verlangt saubere Unterbrechungen, stabile Tank-Positionierung und schnelle Reaktionen auf gefaehrlichen Zauberwirker-Trash.",
+			},
+		},
+		{
+			id = "steamvaults_instance_002",
+			type = "PriorityTargets",
+			weight = 20,
+			text = {
+				enUS = "Do not let dangerous support mobs free-cast for too long. Target priority matters throughout the dungeon.",
+				deDE = "Gefaehrliche Support-Mobs duerfen nicht zu lange frei zaubern. Zielprioritaet ist im ganzen Dungeon wichtig.",
+			},
+		},
+		{
+			id = "steamvaults_instance_003",
+			type = "TANK",
+			weight = 10,
+			text = {
+				enUS = "Use corners and controlled pulls to keep ranged enemies from creating chaos in open rooms.",
+				deDE = "Nutze Ecken und kontrollierte Pulls, damit Fernkampfgegner in offenen Raeumen kein Chaos verursachen.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Coilfang Reservoir in Zangarmarsh.",
+			deDE = "Echsenkessel in den Zangarmarschen.",
+		},
+		attunement = {
+			enUS = "No attunement required. Heroic access still follows the usual key rules.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich. Heroisch folgt den ueblichen Schluesselregeln.",
+		},
+		notes = {
+			enUS = "Harder Coilfang dungeon with strong caster pressure, positioning checks, and several memorable boss mechanics.",
+			deDE = "Schwererer Echsenkessel-Dungeon mit starkem Zauberwirkerdruck, Positionschecks und mehreren markanten Bossmechaniken.",
+		},
+		lore = {
+			enUS = "The steam-filled inner vaults of Coilfang hide machinery, naga command, and unstable water power.",
+			deDE = "Die dampfgefuellten inneren Gewoelbe des Echsenkessels verbergen Maschinen, Naga-Befehl und instabile Wassermacht.",
+		},
+	},
 }
 
-instanceDetails_enUS.shadow_labyrinth = instanceDetails_enUS.shadow_labyrinth or {
-	travel = "Auchindoun in Terokkar Forest.",
-	attunement = "No attunement required. Heroic access still follows the usual key rules.",
-	notes = "A slower, more punishing dungeon where positioning, line of sight, and fear management matter a lot.",
-	lore = "These depths hide cabals, demons, and the terrible resonance of Murmur itself.",
+addon.instanceContent.mana_tombs = addon.instanceContent.mana_tombs or {
+	mapIDs = {272},
+	info = {
+		{
+			id = "manatombs_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Mana-Tombs has many pulls where casters, interrupts, and threat mistakes decide whether the fight stays clean.",
+				deDE = "Mana-Gruft hat viele Pulls, in denen Zauberwirker, Unterbrechungen und Bedrohungsfehler darueber entscheiden, ob der Kampf sauber bleibt.",
+			},
+		},
+		{
+			id = "manatombs_instance_002",
+			type = "PriorityTargets",
+			weight = 20,
+			text = {
+				enUS = "Respect support mobs, summons, and ranged pressure. Ignoring them often snowballs quickly.",
+				deDE = "Nimm Support-Mobs, Beschwoerungen und Fernkampfdruck ernst. Sie zu ignorieren snowballt schnell.",
+			},
+		},
+		{
+			id = "manatombs_instance_003",
+			type = "Interrupts",
+			weight = 10,
+			text = {
+				enUS = "Good interrupts and line-of-sight pulls make many packs much easier than trying to brute-force them.",
+				deDE = "Gute Unterbrechungen und Sichtlinien-Pulls machen viele Gruppen deutlich einfacher, als sie mit roher Gewalt zu spielen.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Auchindoun in Terokkar Forest.",
+			deDE = "Auchindoun im Wald von Terokkar.",
+		},
+		attunement = {
+			enUS = "No attunement required. Heroic access still follows the usual key rules.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich. Heroisch folgt den ueblichen Schluesselregeln.",
+		},
+		notes = {
+			enUS = "Arcane- and caster-heavy dungeon with several mechanics that reward patience, interrupts, and controlled positioning.",
+			deDE = "Arkane- und zauberwirkerlastiger Dungeon mit mehreren Mechaniken, die Geduld, Unterbrechungen und kontrollierte Positionierung belohnen.",
+		},
+		lore = {
+			enUS = "These tombs of Auchindoun were plundered by ethereals seeking relics, power, and arcane secrets.",
+			deDE = "Diese Gruften von Auchindoun wurden von Astralen gepluendert, die nach Relikten, Macht und arkanen Geheimnissen suchten.",
+		},
+	},
 }
 
-instanceInfo_enUS.karazhan = instanceInfo_enUS.karazhan or {
-	{"kara_instance_001", "Important", "Karazhan is a long raid where preparation, assignments, and clean transitions matter as much as raw throughput.", 30},
-	{"kara_instance_002", "Advanced", "Many encounters reward clear phase calls and disciplined threat management during transitions.", 20},
-	{"kara_instance_003", "HEALER", "Plan healer assignments early, especially on fights with split damage patterns or sudden raid-wide pressure.", 10},
+addon.instanceContent.old_hillsbrad = addon.instanceContent.old_hillsbrad or {
+	mapIDs = {274},
+	info = {
+		{
+			id = "ohf_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Old Hillsbrad mixes escort pacing, event pressure, and pulls where awareness matters more than speed.",
+				deDE = "Vorgebirge des Alten Hügellands verbindet Escort-Tempo, Eventdruck und Pulls, in denen Aufmerksamkeit wichtiger ist als Geschwindigkeit.",
+			},
+		},
+		{
+			id = "ohf_instance_002",
+			type = "PriorityTargets",
+			weight = 20,
+			text = {
+				enUS = "Take dangerous ranged enemies seriously and avoid letting the event pace force rushed decisions.",
+				deDE = "Nimm gefaehrliche Fernkampfgegner ernst und lass dich nicht vom Eventtempo zu ueberhasteten Entscheidungen zwingen.",
+			},
+		},
+		{
+			id = "ohf_instance_003",
+			type = "Advanced",
+			weight = 10,
+			text = {
+				enUS = "This dungeon feels smoother when the group stays organized around the event flow instead of treating it like a normal corridor run.",
+				deDE = "Dieser Dungeon fuehlt sich deutlich besser an, wenn die Gruppe sich am Eventfluss orientiert statt ihn wie einen normalen Flurdungeon zu spielen.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Caverns of Time in Tanaris.",
+			deDE = "Die Hoehlen der Zeit in Tanaris.",
+		},
+		attunement = {
+			enUS = "No attunement required. Heroic access still follows the usual key rules.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich. Heroisch folgt den ueblichen Schluesselregeln.",
+		},
+		notes = {
+			enUS = "Story-driven escort dungeon where event structure and target control matter as much as raw execution.",
+			deDE = "Storygetriebener Escort-Dungeon, in dem Eventstruktur und Zielkontrolle genauso wichtig sind wie die rohe Ausfuehrung.",
+		},
+		lore = {
+			enUS = "The Bronze Dragonflight sends players back in time to protect Thrall's escape from Durnholde.",
+			deDE = "Der bronzene Drachenschwarm schickt Spieler in die Vergangenheit, um Thralls Flucht aus Durnholde zu schuetzen.",
+		},
+	},
 }
 
-instanceDetails_enUS.karazhan = instanceDetails_enUS.karazhan or {
-	travel = "Deadwind Pass.",
-	attunement = "Requires the Karazhan key chain in the original TBC progression model.",
-	notes = "Long introductory raid with strong atmosphere, varied encounters, and many iconic progression lessons.",
-	lore = "Medivh's haunted tower is a nexus of arcane secrets, ghosts, opera, and old disasters waiting upstairs.",
+addon.instanceContent.black_morass = addon.instanceContent.black_morass or {
+	mapIDs = {173, 733},
+	info = {
+		{
+			id = "bm_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Black Morass is an event dungeon where assignments, portal control, and pacing matter more than wandering damage.",
+				deDE = "Der schwarze Morast ist ein Event-Dungeon, in dem Zuweisungen, Portal-Kontrolle und Tempo wichtiger sind als ungeordneter Schaden.",
+			},
+		},
+		{
+			id = "bm_instance_002",
+			type = "PriorityTargets",
+			weight = 20,
+			text = {
+				enUS = "React quickly to incoming portal enemies and do not let the event overwhelm the healer with avoidable chaos.",
+				deDE = "Reagiere schnell auf neue Portalgegner und lass das Event den Heiler nicht mit vermeidbarem Chaos ueberrollen.",
+			},
+		},
+		{
+			id = "bm_instance_003",
+			type = "Advanced",
+			weight = 10,
+			text = {
+				enUS = "Smooth runs come from clean role execution and movement between portals, not from overcommitting to one wave.",
+				deDE = "Saubere Runs entstehen durch klare Rollen und Bewegung zwischen Portalen, nicht dadurch, dass man sich in eine Welle verrennt.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Caverns of Time in Tanaris.",
+			deDE = "Die Hoehlen der Zeit in Tanaris.",
+		},
+		attunement = {
+			enUS = "No attunement required. Heroic access still follows the usual key rules.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich. Heroisch folgt den ueblichen Schluesselregeln.",
+		},
+		notes = {
+			enUS = "Portal-based event dungeon where time pressure and movement between spawns define the run.",
+			deDE = "Portalbasierter Event-Dungeon, in dem Zeitdruck und Bewegung zwischen den Spawnpunkten den Run bestimmen.",
+		},
+		lore = {
+			enUS = "Players defend Medivh's opening of the Dark Portal against the Infinite Dragonflight.",
+			deDE = "Spieler verteidigen Medivhs Oeffnung des Dunklen Portals gegen den unendlichen Drachenschwarm.",
+		},
+	},
 }
 
-instanceInfo_enUS.gruuls_lair = instanceInfo_enUS.gruuls_lair or {
-	{"gruul_instance_001", "Important", "Gruul's Lair is compact but punishes sloppy positioning and threat mistakes quickly.", 30},
-	{"gruul_instance_002", "TANK", "Threat order and boss facing are central to keeping both encounters under control.", 20},
-	{"gruul_instance_003", "HEALER", "Be ready for heavy tank focus healing and punishing damage spikes during progression pulls.", 10},
+addon.instanceContent.mechanar = addon.instanceContent.mechanar or {
+	mapIDs = {267, 268},
+	info = {
+		{
+			id = "mechanar_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Mechanar rewards clean pulls, interrupt discipline, and respect for dangerous support mobs.",
+				deDE = "Die Mechanar belohnt saubere Pulls, Unterbrechungsdisziplin und Respekt vor gefaehrlichen Support-Mobs.",
+			},
+		},
+		{
+			id = "mechanar_instance_002",
+			type = "PriorityTargets",
+			weight = 20,
+			text = {
+				enUS = "Good focus target calls make this dungeon far smoother than trying to tunnel through mixed packs.",
+				deDE = "Gute Fokusansagen machen diesen Dungeon deutlich angenehmer, als gemischte Gruppen einfach zu tunneln.",
+			},
+		},
+		{
+			id = "mechanar_instance_003",
+			type = "TANK",
+			weight = 10,
+			text = {
+				enUS = "Use line-of-sight and controlled engagement space to stop open-room pulls from getting messy.",
+				deDE = "Nutze Sichtlinien und kontrollierte Pullraeume, damit offene Zimmer nicht chaotisch werden.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Tempest Keep in Netherstorm.",
+			deDE = "Festung der Stuerme im Nethersturm.",
+		},
+		attunement = {
+			enUS = "No attunement required. Heroic access still follows the usual key rules.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich. Heroisch folgt den ueblichen Schluesselregeln.",
+		},
+		notes = {
+			enUS = "Compact Tempest Keep dungeon with a strong focus on pull control, support mobs, and clean execution.",
+			deDE = "Kompakter Festung-der-Stuerme-Dungeon mit starkem Fokus auf Pullkontrolle, Support-Mobs und saubere Ausfuehrung.",
+		},
+		lore = {
+			enUS = "The Mechanar contains the workshops, patrols, and engineered defenses of Tempest Keep.",
+			deDE = "Die Mechanar beherbergt Werkstaetten, Patrouillen und konstruierte Verteidigungen der Festung der Stuerme.",
+		},
+	},
 }
 
-instanceDetails_enUS.gruuls_lair = instanceDetails_enUS.gruuls_lair or {
-	travel = "Blade's Edge Mountains.",
-	attunement = "No attunement required.",
-	notes = "Short raid with very direct mechanics where positioning and execution get tested immediately.",
-	lore = "Gruul rules a brutal ogre stronghold carved into the blades of the mountains.",
+addon.instanceContent.botanica = addon.instanceContent.botanica or {
+	mapIDs = {266},
+	info = {
+		{
+			id = "botanica_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Botanica combines healer pressure, add control, and several pulls where support mobs can overwhelm slow groups.",
+				deDE = "Die Botanika verbindet Heilerdruck, Add-Kontrolle und mehrere Pulls, in denen Support-Mobs langsame Gruppen ueberrollen koennen.",
+			},
+		},
+		{
+			id = "botanica_instance_002",
+			type = "PriorityTargets",
+			weight = 20,
+			text = {
+				enUS = "Respect healers, summoners, and dangerous ranged enemies. This dungeon gets easier when priority damage is clear.",
+				deDE = "Nimm Heiler, Beschwoerer und gefaehrliche Fernkampfgegner ernst. Dieser Dungeon wird leichter, wenn die Prioritaet klar ist.",
+			},
+		},
+		{
+			id = "botanica_instance_003",
+			type = "Dodge",
+			weight = 10,
+			text = {
+				enUS = "Several encounters become much cleaner when the group keeps moving out of zones and reacts quickly to spawns.",
+				deDE = "Mehrere Begegnungen werden deutlich sauberer, wenn sich die Gruppe aus Zonen bewegt und schnell auf Spawns reagiert.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Tempest Keep in Netherstorm.",
+			deDE = "Festung der Stuerme im Nethersturm.",
+		},
+		attunement = {
+			enUS = "No attunement required. Heroic access still follows the usual key rules.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich. Heroisch folgt den ueblichen Schluesselregeln.",
+		},
+		notes = {
+			enUS = "Longer Tempest Keep dungeon with many support mobs, plant-themed chaos, and several add-heavy moments.",
+			deDE = "Laengerer Festung-der-Stuerme-Dungeon mit vielen Support-Mobs, Pflanzenchaos und mehreren addlastigen Momenten.",
+		},
+		lore = {
+			enUS = "The Botanica was built to preserve and manipulate life, now twisted by blood elves and unstable growth.",
+			deDE = "Die Botanika wurde gebaut, um Leben zu bewahren und zu formen, nun verdorben durch Blutelfen und instabiles Wachstum.",
+		},
+	},
 }
 
-instanceInfo_enUS.magtheridons_lair = instanceInfo_enUS.magtheridons_lair or {
-	{"mag_instance_001", "Important", "Magtheridon's Lair depends heavily on assignments, coordination, and players knowing their exact jobs.", 30},
-	{"mag_instance_002", "Advanced", "Rotation planning and execution matter as much as damage output on this encounter.", 20},
-	{"mag_instance_003", "HEALER", "Be prepared to support assigned groups and react quickly during high-pressure transition moments.", 10},
+addon.instanceContent.arcatraz = addon.instanceContent.arcatraz or {
+	mapIDs = {269, 270, 271},
+	info = {
+		{
+			id = "arcatraz_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Arcatraz is one of the roughest Tempest Keep dungeons. Expect dangerous casters, event pressure, and multiple pulls that punish slow reactions.",
+				deDE = "Die Arkatraz ist einer der haertesten Festung-der-Stuerme-Dungeons. Rechne mit gefaehrlichen Zauberwirkern, Eventdruck und mehreren Pulls, die langsame Reaktionen bestrafen.",
+			},
+		},
+		{
+			id = "arcatraz_instance_002",
+			type = "PriorityTargets",
+			weight = 20,
+			text = {
+				enUS = "Target priority and control matter heavily here. A few wrong enemies free-casting can end the pull fast.",
+				deDE = "Zielprioritaet und Kontrolle sind hier extrem wichtig. Wenn ein paar falsche Gegner frei zaubern, kippt der Pull schnell.",
+			},
+		},
+		{
+			id = "arcatraz_instance_003",
+			type = "HEALER",
+			weight = 10,
+			text = {
+				enUS = "Be ready for awkward damage patterns, sudden control loss, and moments where dispels or quick recovery decide the fight.",
+				deDE = "Sei bereit fuer unangenehme Schadensmuster, ploetzlichen Kontrollverlust und Momente, in denen Dispels oder schnelle Erholung den Kampf entscheiden.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Tempest Keep in Netherstorm.",
+			deDE = "Festung der Stuerme im Nethersturm.",
+		},
+		attunement = {
+			enUS = "No attunement required. Heroic access still follows the usual key rules.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich. Heroisch folgt den ueblichen Schluesselregeln.",
+		},
+		notes = {
+			enUS = "Notorious Tempest Keep dungeon with high danger, awkward control, and multiple memorable prison-event pulls.",
+			deDE = "Beruechtigter Festung-der-Stuerme-Dungeon mit hoher Gefahr, unangenehmer Kontrolle und mehreren markanten Gefaengnis-Event-Pulls.",
+		},
+		lore = {
+			enUS = "The Arcatraz is Tempest Keep's prison, holding dangerous beings, failed experiments, and escalating chaos.",
+			deDE = "Die Arkatraz ist das Gefaengnis der Festung der Stuerme und haelt gefaehrliche Wesen, fehlgeschlagene Experimente und eskalierendes Chaos fest.",
+		},
+	},
 }
 
-instanceDetails_enUS.magtheridons_lair = instanceDetails_enUS.magtheridons_lair or {
-	travel = "Hellfire Citadel in Hellfire Peninsula.",
-	attunement = "No attunement required.",
-	notes = "Assignment-heavy one-boss raid where discipline matters more than improvisation.",
-	lore = "Deep under the citadel, Magtheridon is chained and bled by Illidan's fel industry.",
+addon.instanceContent.magisters_terrace = addon.instanceContent.magisters_terrace or {
+	info = {
+		{
+			id = "mgt_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Magisters' Terrace has several short but dangerous pulls where control, focus targets, and clean reactions matter a lot.",
+				deDE = "Terrasse der Magister hat mehrere kurze, aber gefaehrliche Pulls, in denen Kontrolle, Fokusziele und saubere Reaktionen wichtig sind.",
+			},
+		},
+		{
+			id = "mgt_instance_002",
+			type = "PriorityTargets",
+			weight = 20,
+			text = {
+				enUS = "Support mobs and event enemies can snowball quickly if they are not handled in the right order.",
+				deDE = "Support-Mobs und Eventgegner koennen schnell snowballen, wenn sie nicht in der richtigen Reihenfolge behandelt werden.",
+			},
+		},
+		{
+			id = "mgt_instance_003",
+			type = "HEALER",
+			weight = 10,
+			text = {
+				enUS = "Expect fast incoming damage on some pulls and be ready for sudden pressure during Delrissa and Kael'thas.",
+				deDE = "Rechne auf manchen Pulls mit schnellem eingehendem Schaden und sei auf ploetzlichen Druck bei Delrissa und Kael'thas vorbereitet.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Isle of Quel'Danas.",
+			deDE = "Insel von Quel'Danas.",
+		},
+		attunement = {
+			enUS = "No attunement required. Heroic access still follows the usual key rules.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich. Heroisch folgt den ueblichen Schluesselregeln.",
+		},
+		notes = {
+			enUS = "Late TBC dungeon with compact pacing, dangerous support enemies, and strong pressure in several key fights.",
+			deDE = "Spaeter TBC-Dungeon mit kompaktem Tempo, gefaehrlichen Support-Gegnern und starkem Druck in mehreren Schluesselkaempfen.",
+		},
+		lore = {
+			enUS = "The Magisters' Terrace is a shattered blood elf stronghold tied to Kael'thas and the final struggles around Quel'Danas.",
+			deDE = "Die Terrasse der Magister ist eine zerbrochene Blutelfenfestung, verbunden mit Kael'thas und den letzten Kaempfen um Quel'Danas.",
+		},
+	},
 }
 
-instanceInfo_enUS.zulaman = instanceInfo_enUS.zulaman or {
-	{"za_instance_001", "Important", "Zul'Aman combines fast trash pacing with boss fights that punish poor awareness and slow reactions.", 30},
-	{"za_instance_002", "PriorityTargets", "Pay close attention to dangerous support and trash mobs so the run stays controlled between bosses.", 20},
-	{"za_instance_003", "DAMAGE", "Good target swaps and mechanics discipline usually save more time than greedy damage tunneling.", 10},
+addon.instanceContent.karazhan = addon.instanceContent.karazhan or {
+	mapIDs = {350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366},
+	info = {
+		{
+			id = "kara_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Karazhan is a long raid where preparation, assignments, and clean transitions matter as much as raw throughput.",
+				deDE = "Karazhan ist ein langer Raid, in dem Vorbereitung, Einteilungen und saubere Uebergaenge genauso wichtig sind wie reiner Durchsatz.",
+			},
+		},
+		{
+			id = "kara_instance_002",
+			type = "Advanced",
+			weight = 20,
+			text = {
+				enUS = "Many encounters reward clear phase calls and disciplined threat management during transitions.",
+				deDE = "Viele Begegnungen belohnen klare Phasenansagen und diszipliniertes Bedrohungsmanagement waehrend Uebergaengen.",
+			},
+		},
+		{
+			id = "kara_instance_003",
+			type = "HEALER",
+			weight = 10,
+			text = {
+				enUS = "Plan healer assignments early, especially on fights with split damage patterns or sudden raid-wide pressure.",
+				deDE = "Plane Heilereinteilungen frueh, besonders bei Kaempfen mit geteilten Schadensmustern oder ploetzlichem raidweitem Druck.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Deadwind Pass.",
+			deDE = "Gebirgspass der Totenwinde.",
+		},
+		attunement = {
+			enUS = "Requires the Karazhan key chain in the original TBC progression model.",
+			deDE = "Im urspruenglichen TBC-Fortschrittsmodell wird die Karazhan-Schluesselquestreihe benoetigt.",
+		},
+		notes = {
+			enUS = "Long introductory raid with strong atmosphere, varied encounters, and many iconic progression lessons.",
+			deDE = "Langer Einstiegsraid mit starker Atmosphaere, abwechslungsreichen Begegnungen und vielen praegenden Fortschrittslektionen.",
+		},
+		lore = {
+			enUS = "Medivh's haunted tower is a nexus of arcane secrets, ghosts, opera, and old disasters waiting upstairs.",
+			deDE = "Medivhs verfluchter Turm ist ein Knotenpunkt arkaner Geheimnisse, Geister, Oper und alter Katastrophen, die weiter oben warten.",
+		},
+	},
 }
 
-instanceDetails_enUS.zulaman = instanceDetails_enUS.zulaman or {
-	travel = "Ghostlands, eastern Zul'Aman entrance.",
-	attunement = "No attunement required.",
-	notes = "A timed raid with fast movement, compact boss progression, and a strong reward for clean execution.",
-	lore = "The Amani return in force under Zul'jin, turning the old troll city into a brutal warfront.",
+addon.instanceContent.gruuls_lair = addon.instanceContent.gruuls_lair or {
+	info = {
+		{
+			id = "gruul_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Gruul's Lair is compact but punishes sloppy positioning and threat mistakes quickly.",
+				deDE = "Gruuls Unterschlupf ist kompakt, bestraft aber schlampige Positionierung und Bedrohungsfehler sehr schnell.",
+			},
+		},
+		{
+			id = "gruul_instance_002",
+			type = "TANK",
+			weight = 20,
+			text = {
+				enUS = "Threat order and boss facing are central to keeping both encounters under control.",
+				deDE = "Bedrohungsreihenfolge und Bossausrichtung sind entscheidend, um beide Begegnungen unter Kontrolle zu halten.",
+			},
+		},
+		{
+			id = "gruul_instance_003",
+			type = "HEALER",
+			weight = 10,
+			text = {
+				enUS = "Be ready for heavy tank focus healing and punishing damage spikes during progression pulls.",
+				deDE = "Sei auf starke Tankheilung und harte Schadensspitzen waehrend Fortschrittspulls vorbereitet.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Blade's Edge Mountains.",
+			deDE = "Schergrat.",
+		},
+		attunement = {
+			enUS = "No attunement required.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich.",
+		},
+		notes = {
+			enUS = "Short raid with very direct mechanics where positioning and execution get tested immediately.",
+			deDE = "Kurzer Raid mit sehr direkten Mechaniken, in dem Positionierung und Ausfuehrung sofort getestet werden.",
+		},
+		lore = {
+			enUS = "Gruul rules a brutal ogre stronghold carved into the blades of the mountains.",
+			deDE = "Gruul herrscht ueber eine brutale Ogerfestung, die in die Klingen der Berge geschlagen wurde.",
+		},
+	},
 }
 
+addon.instanceContent.magtheridons_lair = addon.instanceContent.magtheridons_lair or {
+	info = {
+		{
+			id = "mag_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Magtheridon's Lair depends heavily on assignments, coordination, and players knowing their exact jobs.",
+				deDE = "Magtheridons Kammer haengt stark von Einteilungen, Koordination und Spielern ab, die ihre genaue Aufgabe kennen.",
+			},
+		},
+		{
+			id = "mag_instance_002",
+			type = "Advanced",
+			weight = 20,
+			text = {
+				enUS = "Rotation planning and execution matter as much as damage output on this encounter.",
+				deDE = "Rotationsplanung und Ausfuehrung sind in dieser Begegnung genauso wichtig wie Schadensausstoss.",
+			},
+		},
+		{
+			id = "mag_instance_003",
+			type = "HEALER",
+			weight = 10,
+			text = {
+				enUS = "Be prepared to support assigned groups and react quickly during high-pressure transition moments.",
+				deDE = "Sei bereit, eingeteilte Gruppen zu unterstuetzen und in druckvollen Uebergangsmomenten schnell zu reagieren.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Hellfire Citadel in Hellfire Peninsula.",
+			deDE = "Hoellenfeuerzitadelle auf der Hoellenfeuerhalbinsel.",
+		},
+		attunement = {
+			enUS = "No attunement required.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich.",
+		},
+		notes = {
+			enUS = "Assignment-heavy one-boss raid where discipline matters more than improvisation.",
+			deDE = "Ein-Boss-Raid mit starken Einteilungen, in dem Disziplin wichtiger ist als Improvisation.",
+		},
+		lore = {
+			enUS = "Deep under the citadel, Magtheridon is chained and bled by Illidan's fel industry.",
+			deDE = "Tief unter der Zitadelle wird Magtheridon von Illidans Teufelsindustrie angekettet und ausgeblutet.",
+		},
+	},
+}
+
+addon.instanceContent.zulaman = addon.instanceContent.zulaman or {
+	info = {
+		{
+			id = "za_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Zul'Aman combines fast trash pacing with boss fights that punish poor awareness and slow reactions.",
+				deDE = "Zul'Aman verbindet schnelles Trash-Tempo mit Bosskaempfen, die schlechte Aufmerksamkeit und langsame Reaktionen bestrafen.",
+			},
+		},
+		{
+			id = "za_instance_002",
+			type = "PriorityTargets",
+			weight = 20,
+			text = {
+				enUS = "Pay close attention to dangerous support and trash mobs so the run stays controlled between bosses.",
+				deDE = "Achte genau auf gefaehrliche Support- und Trashmobs, damit der Run zwischen den Bossen kontrolliert bleibt.",
+			},
+		},
+		{
+			id = "za_instance_003",
+			type = "DAMAGE",
+			weight = 10,
+			text = {
+				enUS = "Good target swaps and mechanics discipline usually save more time than greedy damage tunneling.",
+				deDE = "Gute Zielwechsel und disziplinierter Umgang mit Mechaniken sparen meist mehr Zeit als gieriges Schadens-Tunneln.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Ghostlands, eastern Zul'Aman entrance.",
+			deDE = "Geisterlande, oestlicher Eingang nach Zul'Aman.",
+		},
+		attunement = {
+			enUS = "No attunement required.",
+			deDE = "Keine Zugangsvoraussetzung erforderlich.",
+		},
+		notes = {
+			enUS = "A timed raid with fast movement, compact boss progression, and a strong reward for clean execution.",
+			deDE = "Ein zeitbasierter Raid mit viel Bewegung, kompakter Bossabfolge und grosser Belohnung fuer saubere Ausfuehrung.",
+		},
+		lore = {
+			enUS = "The Amani return in force under Zul'jin, turning the old troll city into a brutal warfront.",
+			deDE = "Die Amani kehren unter Zul'jin mit voller Wucht zurueck und verwandeln die alte Trollstadt in eine brutale Kriegsfront.",
+		},
+	},
+}
+
+addon.instanceContent.serpentshrine_cavern = addon.instanceContent.serpentshrine_cavern or {
+	info = {
+		{
+			id = "ssc_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Serpentshrine Cavern is a longer raid where assignments, movement, and handling adds cleanly matter as much as damage output.",
+				deDE = "Die Hoehle des Schlangenschreins ist ein laengerer Raid, in dem Einteilungen, Bewegung und sauberes Add-Handling genauso wichtig sind wie Schaden.",
+			},
+		},
+		{
+			id = "ssc_instance_002",
+			type = "PriorityTargets",
+			weight = 20,
+			text = {
+				enUS = "Many pulls and bosses become far safer when dangerous support enemies and key targets are controlled quickly.",
+				deDE = "Viele Pulls und Bosse werden deutlich sicherer, wenn gefaehrliche Support-Gegner und Schluesselziele schnell kontrolliert werden.",
+			},
+		},
+		{
+			id = "ssc_instance_003",
+			type = "HEALER",
+			weight = 10,
+			text = {
+				enUS = "Plan healing assignments carefully. Several encounters can pressure multiple groups or punish slow recovery.",
+				deDE = "Plane Heilereinteilungen sorgfaeltig. Mehrere Begegnungen setzen mehrere Gruppen gleichzeitig unter Druck oder bestrafen langsame Erholung.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Coilfang Reservoir in Zangarmarsh.",
+			deDE = "Echsenkessel in den Zangarmarschen.",
+		},
+		attunement = {
+			enUS = "Original TBC progression tied this raid to attunement chains and raid progression planning.",
+			deDE = "Im urspruenglichen TBC-Fortschritt war dieser Raid an Zugangsquestreihen und Raidplanung gekoppelt.",
+		},
+		notes = {
+			enUS = "Large raid with varied encounters, several add-heavy phases, and a strong need for assignment discipline.",
+			deDE = "Grosser Raid mit abwechslungsreichen Begegnungen, mehreren addlastigen Phasen und hohem Bedarf an disziplinierten Einteilungen.",
+		},
+		lore = {
+			enUS = "Lady Vashj rules Serpentshrine Cavern from deep within Coilfang Reservoir, guarding her forces and allies.",
+			deDE = "Lady Vashj herrscht tief im Echsenkessel ueber die Hoehle des Schlangenschreins und bewacht dort ihre Truppen und Verbuendeten.",
+		},
+	},
+}
+
+addon.instanceContent.tempest_keep_the_eye = addon.instanceContent.tempest_keep_the_eye or {
+	info = {
+		{
+			id = "eye_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "The Eye rewards controlled positioning, clean phase handling, and strong awareness during high-pressure transitions.",
+				deDE = "Das Auge belohnt kontrollierte Positionierung, saubere Phasenabwicklung und starke Aufmerksamkeit in druckvollen Uebergaengen.",
+			},
+		},
+		{
+			id = "eye_instance_002",
+			type = "Advanced",
+			weight = 20,
+			text = {
+				enUS = "Several encounters ask for disciplined assignments and clear calls rather than brute-forcing mechanics.",
+				deDE = "Mehrere Begegnungen verlangen disziplinierte Einteilungen und klare Ansagen statt Mechaniken einfach zu ueberdruecken.",
+			},
+		},
+		{
+			id = "eye_instance_003",
+			type = "HEALER",
+			weight = 10,
+			text = {
+				enUS = "Expect sharp bursts, split-group damage, and transition moments where healer coordination matters a lot.",
+				deDE = "Rechne mit harten Schadensspitzen, geteiltem Gruppenschaden und Uebergangsphasen, in denen Heilerkoordination sehr wichtig ist.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Tempest Keep in Netherstorm.",
+			deDE = "Festung der Stuerme im Nethersturm.",
+		},
+		attunement = {
+			enUS = "Original TBC progression tied access closely to raid attunements and earlier boss kills.",
+			deDE = "Im urspruenglichen TBC-Fortschritt war der Zugang eng an Raid-Zugaenge und fruehere Bosskills gebunden.",
+		},
+		notes = {
+			enUS = "Compact raid wing with iconic boss mechanics, heavy transition play, and strong demands on raid control.",
+			deDE = "Kompakter Raidfluegel mit ikonischen Bossmechaniken, vielen Uebergaengen und hohen Anforderungen an Raidkontrolle.",
+		},
+		lore = {
+			enUS = "The Eye is Kael'thas Sunstrider's stronghold high within Tempest Keep and a major turning point in TBC raiding.",
+			deDE = "Das Auge ist Kael'thas Sonnenwanderers Festung hoch in der Festung der Stuerme und ein zentraler Wendepunkt des TBC-Raidings.",
+		},
+	},
+}
+
+addon.instanceContent.hyjal_summit = addon.instanceContent.hyjal_summit or {
+	info = {
+		{
+			id = "hyjal_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Hyjal Summit depends on wave control, clear assignments, and keeping momentum between trash and bosses.",
+				deDE = "Der Hyjalgipfel haengt von Wellenkontrolle, klaren Einteilungen und gutem Tempo zwischen Trash und Bossen ab.",
+			},
+		},
+		{
+			id = "hyjal_instance_002",
+			type = "PriorityTargets",
+			weight = 20,
+			text = {
+				enUS = "Wave management is the core of this raid. Dangerous enemies need to be identified and handled quickly.",
+				deDE = "Wellenmanagement ist der Kern dieses Raids. Gefaehrliche Gegner muessen schnell erkannt und behandelt werden.",
+			},
+		},
+		{
+			id = "hyjal_instance_003",
+			type = "TANK",
+			weight = 10,
+			text = {
+				enUS = "Tank coordination matters throughout the raid because wave pickups and boss transitions often decide the pace.",
+				deDE = "Tankkoordination ist im ganzen Raid wichtig, weil Wellenaufnahmen und Bossuebergaenge oft das Tempo bestimmen.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Caverns of Time in Tanaris.",
+			deDE = "Hoehlen der Zeit in Tanaris.",
+		},
+		attunement = {
+			enUS = "Original TBC progression required prior raid progress to unlock Hyjal Summit.",
+			deDE = "Im urspruenglichen TBC-Fortschritt war vorheriger Raidfortschritt noetig, um den Hyjalgipfel freizuschalten.",
+		},
+		notes = {
+			enUS = "Wave-based raid where endurance, planning, and trash execution define much of the run.",
+			deDE = "Wellenbasierter Raid, in dem Ausdauer, Planung und saubere Trash-Ausfuehrung einen grossen Teil des Runs bestimmen.",
+		},
+		lore = {
+			enUS = "Raiders join the Battle of Mount Hyjal, defending the World Tree against the Burning Legion.",
+			deDE = "Raidgruppen nehmen an der Schlacht um den Hyjal teil und verteidigen den Weltenbaum gegen die Brennende Legion.",
+		},
+	},
+}
+
+addon.instanceContent.black_temple = addon.instanceContent.black_temple or {
+	info = {
+		{
+			id = "bt_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Black Temple is a long progression raid where assignments, positioning, and consistency matter across many very different fights.",
+				deDE = "Der Schwarze Tempel ist ein langer Fortschrittsraid, in dem Einteilungen, Positionierung und Konstanz ueber viele sehr unterschiedliche Kaempfe hinweg zaehlen.",
+			},
+		},
+		{
+			id = "bt_instance_002",
+			type = "Advanced",
+			weight = 20,
+			text = {
+				enUS = "Expect encounters that reward preparation, clean transitions, and raid discipline more than reactive improvisation.",
+				deDE = "Erwarte Begegnungen, die Vorbereitung, saubere Uebergaenge und Raiddisziplin staerker belohnen als reaktive Improvisation.",
+			},
+		},
+		{
+			id = "bt_instance_003",
+			type = "HEALER",
+			weight = 10,
+			text = {
+				enUS = "Healing plans should be set early because the raid mixes sustained pressure, burst damage, and several assignment-heavy fights.",
+				deDE = "Heilplaene sollten frueh stehen, weil der Raid anhaltenden Druck, Schadensspitzen und mehrere einteilungsintensive Kaempfe verbindet.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Shadowmoon Valley.",
+			deDE = "Schattenmondtal.",
+		},
+		attunement = {
+			enUS = "Original TBC progression tied Black Temple to late attunement and raid progression requirements.",
+			deDE = "Im urspruenglichen TBC-Fortschritt war der Schwarze Tempel an spaete Zugangs- und Raidfortschrittsanforderungen gebunden.",
+		},
+		notes = {
+			enUS = "Large late-tier raid with diverse encounters, heavy coordination demands, and a strong emphasis on consistent execution.",
+			deDE = "Grosser Spaetstufen-Raid mit vielseitigen Begegnungen, hohem Koordinationsbedarf und starkem Fokus auf konstante Ausfuehrung.",
+		},
+		lore = {
+			enUS = "The Black Temple is Illidan Stormrage's seat of power and one of the central settings of TBC endgame.",
+			deDE = "Der Schwarze Tempel ist Illidan Sturmgrimms Machtsitz und einer der zentralen Schauplaetze des TBC-Endgames.",
+		},
+	},
+}
+
+addon.instanceContent.sunwell_plateau = addon.instanceContent.sunwell_plateau or {
+	info = {
+		{
+			id = "sunwell_instance_001",
+			type = "Important",
+			weight = 30,
+			text = {
+				enUS = "Sunwell Plateau is a demanding late-tier raid where execution, assignments, and recovery from mistakes are all tested hard.",
+				deDE = "Das Sonnenbrunnenplateau ist ein anspruchsvoller Spaetstufen-Raid, in dem Ausfuehrung, Einteilungen und Erholung nach Fehlern hart geprueft werden.",
+			},
+		},
+		{
+			id = "sunwell_instance_002",
+			type = "Advanced",
+			weight = 20,
+			text = {
+				enUS = "Several encounters reward disciplined positioning and exact handling of high-pressure mechanics.",
+				deDE = "Mehrere Begegnungen belohnen disziplinierte Positionierung und exakten Umgang mit druckvollen Mechaniken.",
+			},
+		},
+		{
+			id = "sunwell_instance_003",
+			type = "HEALER",
+			weight = 10,
+			text = {
+				enUS = "Healing coverage and cooldown planning matter greatly because many fights combine burst damage with punishing attrition.",
+				deDE = "Heilabdeckung und Cooldown-Planung sind sehr wichtig, weil viele Kaempfe Schadensspitzen mit zermuerbendem Druck verbinden.",
+			},
+		},
+	},
+	details = {
+		travel = {
+			enUS = "Isle of Quel'Danas.",
+			deDE = "Insel von Quel'Danas.",
+		},
+		attunement = {
+			enUS = "No classic raid attunement chain is required, but the raid belongs to the final tier of TBC progression.",
+			deDE = "Keine klassische Raid-Zugangsquestreihe ist noetig, aber der Raid gehoert zur letzten TBC-Fortschrittsstufe.",
+		},
+		notes = {
+			enUS = "Late TBC raid with highly demanding encounters and a strong focus on clean execution from pull to kill.",
+			deDE = "Spaeter TBC-Raid mit sehr anspruchsvollen Begegnungen und starkem Fokus auf saubere Ausfuehrung vom Pull bis zum Kill.",
+		},
+		lore = {
+			enUS = "Sunwell Plateau is the final assault on the corrupted Sunwell and the culmination of Kael'thas and Kil'jaeden's plans.",
+			deDE = "Das Sonnenbrunnenplateau ist der letzte Angriff auf den verdorbenen Sonnenbrunnen und der Hoehepunkt von Kael'thas' und Kil'jaedens Plaenen.",
+		},
+	},
+}
 
 -- The Tips maps holds tooltip information and mob ID's for all 13 legion dungeons, 10 BFA dungeons and the 8 Shadowlands dungeons. This is basically the database.
 -- Each array uses the format: {{"Type", "Tip1"}, {"Type", "Tip2"}}

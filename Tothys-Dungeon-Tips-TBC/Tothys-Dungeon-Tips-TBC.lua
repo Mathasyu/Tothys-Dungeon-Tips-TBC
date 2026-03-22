@@ -186,6 +186,48 @@ local function getSelectedLocale()
 	return preferredLocale
 end
 
+local function getLocalizedTextValue(value)
+	if type(value) ~= "table" then
+		return value
+	end
+
+	local selectedLocale = getSelectedLocale()
+	return value[selectedLocale] or value.enUS or value.deDE or ""
+end
+
+local function getLocalizedInstanceInfoFromContent(instanceKey)
+	local instanceData = addon.instanceContent and addon.instanceContent[instanceKey]
+	if not instanceData or type(instanceData.info) ~= "table" then
+		return nil
+	end
+
+	local entries = {}
+	for _, entry in ipairs(instanceData.info) do
+		entries[#entries + 1] = {
+			entry.id,
+			entry.type,
+			getLocalizedTextValue(entry.text),
+			tonumber(entry.weight) or 0,
+		}
+	end
+
+	return entries
+end
+
+local function getLocalizedInstanceDetailsFromContent(instanceKey)
+	local instanceData = addon.instanceContent and addon.instanceContent[instanceKey]
+	if not instanceData or type(instanceData.details) ~= "table" then
+		return nil
+	end
+
+	local details = {}
+	for _, key in ipairs({"travel", "attunement", "notes", "lore"}) do
+		details[key] = getLocalizedTextValue(instanceData.details[key]) or ""
+	end
+
+	return details
+end
+
 local function shouldShowNpcIDs()
     return not TDTConfig or TDTConfig.ShowNpcIDs ~= false
 end
@@ -504,18 +546,20 @@ function addon:getMergedNpcTipEntries(id)
 end
 
 function addon:getMergedInstanceTipEntries(instanceKey)
-	local localeMaps = {
-		enUS = instanceInfo_enUS,
-		deDE = instanceInfo_deDE,
-	}
-	local selectedLocale = getSelectedLocale()
-	local localizedMap = localeMaps[selectedLocale] or instanceInfo_enUS
-	local rawTips
+	local rawTips = getLocalizedInstanceInfoFromContent(instanceKey)
+	if not rawTips then
+		local localeMaps = {
+			enUS = instanceInfo_enUS,
+			deDE = instanceInfo_deDE,
+		}
+		local selectedLocale = getSelectedLocale()
+		local localizedMap = localeMaps[selectedLocale] or instanceInfo_enUS
 
-	if localizedMap and localizedMap[instanceKey] then
-		rawTips = localizedMap[instanceKey]
-	elseif instanceInfo_enUS then
-		rawTips = instanceInfo_enUS[instanceKey]
+		if localizedMap and localizedMap[instanceKey] then
+			rawTips = localizedMap[instanceKey]
+		elseif instanceInfo_enUS then
+			rawTips = instanceInfo_enUS[instanceKey]
+		end
 	end
 
 	if not rawTips and not getUserContainer("instances", instanceKey) then
@@ -526,18 +570,20 @@ function addon:getMergedInstanceTipEntries(instanceKey)
 end
 
 function addon:getMergedInstanceDetails(instanceKey)
-	local localeMaps = {
-		enUS = instanceDetails_enUS,
-		deDE = instanceDetails_deDE,
-	}
-	local selectedLocale = getSelectedLocale()
-	local localizedMap = localeMaps[selectedLocale] or instanceDetails_enUS
-	local rawDetails
+	local rawDetails = getLocalizedInstanceDetailsFromContent(instanceKey)
+	if not rawDetails then
+		local localeMaps = {
+			enUS = instanceDetails_enUS,
+			deDE = instanceDetails_deDE,
+		}
+		local selectedLocale = getSelectedLocale()
+		local localizedMap = localeMaps[selectedLocale] or instanceDetails_enUS
 
-	if localizedMap and localizedMap[instanceKey] then
-		rawDetails = localizedMap[instanceKey]
-	elseif instanceDetails_enUS then
-		rawDetails = instanceDetails_enUS[instanceKey]
+		if localizedMap and localizedMap[instanceKey] then
+			rawDetails = localizedMap[instanceKey]
+		elseif instanceDetails_enUS then
+			rawDetails = instanceDetails_enUS[instanceKey]
+		end
 	end
 
 	local container = getUserContainer("instances", instanceKey)
@@ -616,18 +662,20 @@ function addon:getInstanceUserAdditions(instanceKey)
 end
 
 function addon:getInstanceBaseTipsForEditor(instanceKey)
-	local localeMaps = {
-		enUS = instanceInfo_enUS,
-		deDE = instanceInfo_deDE,
-	}
-	local selectedLocale = getSelectedLocale()
-	local localizedMap = localeMaps[selectedLocale] or instanceInfo_enUS
-	local rawTips
+	local rawTips = getLocalizedInstanceInfoFromContent(instanceKey)
+	if not rawTips then
+		local localeMaps = {
+			enUS = instanceInfo_enUS,
+			deDE = instanceInfo_deDE,
+		}
+		local selectedLocale = getSelectedLocale()
+		local localizedMap = localeMaps[selectedLocale] or instanceInfo_enUS
 
-	if localizedMap and localizedMap[instanceKey] then
-		rawTips = localizedMap[instanceKey]
-	elseif instanceInfo_enUS then
-		rawTips = instanceInfo_enUS[instanceKey]
+		if localizedMap and localizedMap[instanceKey] then
+			rawTips = localizedMap[instanceKey]
+		elseif instanceInfo_enUS then
+			rawTips = instanceInfo_enUS[instanceKey]
+		end
 	end
 
 	local entries = normalizeTipsToEntries(rawTips)
@@ -650,18 +698,20 @@ function addon:getInstanceBaseTipsForEditor(instanceKey)
 end
 
 function addon:getInstanceDetailsForEditor(instanceKey)
-	local localeMaps = {
-		enUS = instanceDetails_enUS,
-		deDE = instanceDetails_deDE,
-	}
-	local selectedLocale = getSelectedLocale()
-	local localizedMap = localeMaps[selectedLocale] or instanceDetails_enUS
-	local rawDetails
+	local rawDetails = getLocalizedInstanceDetailsFromContent(instanceKey)
+	if not rawDetails then
+		local localeMaps = {
+			enUS = instanceDetails_enUS,
+			deDE = instanceDetails_deDE,
+		}
+		local selectedLocale = getSelectedLocale()
+		local localizedMap = localeMaps[selectedLocale] or instanceDetails_enUS
 
-	if localizedMap and localizedMap[instanceKey] then
-		rawDetails = localizedMap[instanceKey]
-	elseif instanceDetails_enUS then
-		rawDetails = instanceDetails_enUS[instanceKey]
+		if localizedMap and localizedMap[instanceKey] then
+			rawDetails = localizedMap[instanceKey]
+		elseif instanceDetails_enUS then
+			rawDetails = instanceDetails_enUS[instanceKey]
+		end
 	end
 
 	local container = getUserContainer("instances", instanceKey)
@@ -948,18 +998,20 @@ function addon:updateInstanceBaseTipOverride(instanceKey, tipID, text, weight)
 		return false
 	end
 
-	local localeMaps = {
-		enUS = instanceInfo_enUS,
-		deDE = instanceInfo_deDE,
-	}
-	local selectedLocale = getSelectedLocale()
-	local localizedMap = localeMaps[selectedLocale] or instanceInfo_enUS
-	local rawTips
+	local rawTips = getLocalizedInstanceInfoFromContent(instanceKey)
+	if not rawTips then
+		local localeMaps = {
+			enUS = instanceInfo_enUS,
+			deDE = instanceInfo_deDE,
+		}
+		local selectedLocale = getSelectedLocale()
+		local localizedMap = localeMaps[selectedLocale] or instanceInfo_enUS
 
-	if localizedMap and localizedMap[instanceKey] then
-		rawTips = localizedMap[instanceKey]
-	elseif instanceInfo_enUS then
-		rawTips = instanceInfo_enUS[instanceKey]
+		if localizedMap and localizedMap[instanceKey] then
+			rawTips = localizedMap[instanceKey]
+		elseif instanceInfo_enUS then
+			rawTips = instanceInfo_enUS[instanceKey]
+		end
 	end
 
 	local entries = normalizeTipsToEntries(rawTips)
@@ -1395,6 +1447,27 @@ local function tdtPrint(message)
 	end
 end
 
+local function setAddonLocaleFromSlash(arg)
+	local value = string.lower((arg or ""):match("^%s*(.-)%s*$") or "")
+	local localeChoice
+
+	if value == "auto" then
+		localeChoice = "Auto"
+	elseif value == "en" or value == "enus" or value == "english" then
+		localeChoice = "enUS"
+	elseif value == "de" or value == "dede" or value == "deutsch" or value == "german" then
+		localeChoice = "deDE"
+	else
+		tdtPrint("Use /kdt lang auto, /kdt lang en, or /kdt lang de")
+		return
+	end
+
+	TDTConfig = TDTConfig or {}
+	TDTConfig.LocaleChoice = localeChoice
+	tdtPrint("Language updated. Reloading UI...")
+	ReloadUI()
+end
+
 function addon:openConfig()
     if addon.registerConfigPanel then
         addon:registerConfigPanel()
@@ -1439,6 +1512,8 @@ end
 SLASH_KDTCOMMAND1 = "/kdt"
 SlashCmdList["KDTCOMMAND"] = function(msg)
 	msg = string.lower(msg or "")
+	local command, rest = msg:match("^(%S+)%s*(.-)$")
+	command = command or ""
 
 	if msg == "config" then
 		addon:openConfig()
@@ -1464,8 +1539,10 @@ SlashCmdList["KDTCOMMAND"] = function(msg)
 		end
 	elseif msg == "test" then
 		addon:showTestFrame()
+	elseif command == "lang" or command == "language" or command == "locale" then
+		setAddonLocaleFromSlash(rest)
 	else
-        tdtPrint("Commands: /kdt config, /kdt show, /kdt hide, /kdt toggle, /kdt test")
+        tdtPrint("Commands: /kdt config, /kdt show, /kdt hide, /kdt toggle, /kdt test, /kdt lang <auto|en|de>")
 	end
 end
 
