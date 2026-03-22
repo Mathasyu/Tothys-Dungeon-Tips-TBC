@@ -94,6 +94,15 @@ Guidelines:
 - `Tothys-Database.lua` `npcNames.deDE` entries were updated from the QuestieDB-based workspace import
 - Added `docs/TRANSLATION_GLOSSARY.md` to define preferred German WoW wording for future tip translations
 - Completed a fuller German `tipsMap_deDE` pass for `Hellfire Ramparts`, including remaining trash, caster, watcher, hound, and sentry tips in the new glossary style
+- Continued the top-down German `tipsMap_deDE` pass with the full `The Blood Furnace` boss/trash block and the next `The Shattered Halls` boss block in the same glossary style
+- Extended the same top-down `tipsMap_deDE` pass through the next `The Shattered Halls` add and trash block, keeping the German glossary style consistent
+- Added a focused German `Gruul's Lair` pass for the currently populated Gruul and trash entries so the raid block is usable immediately before further top-down translation continues
+- Added the populated `Magtheridon's Lair` German pass so both early TBC raid blocks are available in German for upcoming raid use
+- Filled the previously empty `Gruul's Lair` council encounter entries in both `tipsMap_enUS` and `tipsMap_deDE` so Maulgar and his advisors now have usable shipped tips
+- Cross-checked the new `Gruul's Lair` council tips against TBC guide references and tightened a couple of entries to stay conservative on shipped encounter advice
+- Continued the German `tipsMap_deDE` pass through the next `Black Morass` and early `Mechanar` blocks while keeping IDs, types, and weights unchanged
+- Continued the same `tipsMap_deDE` pass through the next `Arcatraz` block and mirrored the currently empty `Magisters' Terrace` shipped placeholders into the German map
+- Continued the German `tipsMap_deDE` pass through more `Old Hillsbrad` and the opening `Black Morass` boss/friendly block, still only changing text content
 
 ### Notes
 
