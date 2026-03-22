@@ -51,6 +51,8 @@ An instance may still contain multiple `mapIDs`.
 - early dungeon overviews now also read from `instanceContent` without duplicate legacy English dungeon blocks
 - instance-wide shipped lookup is now centralized through addon-level getters instead of being rebuilt in multiple UI paths
 - NPC browser/editor lookup now follows the same pattern for shipped NPC tips and catalog NPC names
+- The shared NPC selector block in `Content Browser` and `Tip Editor` is now built and synchronized through common UI helpers instead of two separate implementations
+- Expansion/instance selection retention and dropdown syncing are now shared across Browser, Tip Editor, and Dungeon Editor instead of being reimplemented per panel
 - instance info display in the main frame
 - browser preview for instance info and NPC tips
 - browser-only instance detail section for travel, attunement, extra notes, and lore

@@ -1432,6 +1432,148 @@ end
 ]]--
 
 -- Create Panels
+local npcSelectorDefinitions = {
+    { key = "bosses", localeKey = "bosses", selector = "bosses", suffix = "Bosses" },
+    { key = "ids", localeKey = "npc_ids", selector = "ids", suffix = "Ids" },
+    { key = "a_i", localeKey = "npcs_a_i", selector = "a_i", suffix = "Ai" },
+    { key = "j_r", localeKey = "npcs_j_r", selector = "j_r", suffix = "Jr" },
+    { key = "s_z", localeKey = "npcs_s_z", selector = "s_z", suffix = "Sz" },
+}
+
+-- The browser and tip editor share the same five NPC selectors, so keep their layout and syncing in one place.
+local function createNpcSelectorControls(parent, prefix, state, topAnchor, headerFont, headerSize, onSelectionChanged)
+    local controls = {
+        headers = {},
+        dropdowns = {},
+    }
+
+    local previousAnchor = topAnchor
+
+    for _, definition in ipairs(npcSelectorDefinitions) do
+        local header = createString(parent, getBrowserLocaleString(definition.localeKey), headerFont, headerSize)
+        header:SetPoint("TOPLEFT", previousAnchor, "BOTTOMLEFT", 16, -18)
+
+        local dropdown = createValueDropdown(parent, prefix .. definition.suffix, 240, function(value)
+            state.npcID = value
+            onSelectionChanged()
+        end)
+        dropdown:SetPoint("TOPLEFT", header, "BOTTOMLEFT", -16, -2)
+        dropdown.labelForValue = function(value)
+            return getNpcBrowserLabel(state.expansionKey, state.instanceKey, value)
+        end
+
+        controls.headers[definition.key] = header
+        controls.dropdowns[definition.key] = dropdown
+        previousAnchor = dropdown
+    end
+
+    controls.lastDropdown = previousAnchor
+    return controls
+end
+
+local function refreshNpcSelectorTexts(controls)
+    if not controls then
+        return
+    end
+
+    for _, definition in ipairs(npcSelectorDefinitions) do
+        controls.headers[definition.key]:SetText(getBrowserLocaleString(definition.localeKey))
+    end
+end
+
+local function syncNpcSelectorControls(controls, state)
+    if not controls then
+        return
+    end
+
+    local selectedNpcID = state.npcID ~= NPC_NONE and state.npcID or nil
+
+    for _, definition in ipairs(npcSelectorDefinitions) do
+        controls.dropdowns[definition.key]:SetValues(getNpcIDsForSelector(state.expansionKey, state.instanceKey, definition.selector))
+    end
+
+    if selectedNpcID and addon.npcGroups and addon.npcGroups[state.instanceKey] and addon.npcGroups[state.instanceKey][selectedNpcID] == "boss" then
+        controls.dropdowns.bosses:SetCurrentValue(selectedNpcID)
+    else
+        controls.dropdowns.bosses:SetCurrentValue(NPC_NONE)
+    end
+
+    controls.dropdowns.ids:SetCurrentValue(state.npcID)
+
+    if selectedNpcID then
+        local bucket = getNpcAlphaBucket(state.expansionKey, state.instanceKey, selectedNpcID)
+        controls.dropdowns.a_i:SetCurrentValue(bucket == "a_i" and selectedNpcID or NPC_NONE)
+        controls.dropdowns.j_r:SetCurrentValue(bucket == "j_r" and selectedNpcID or NPC_NONE)
+        controls.dropdowns.s_z:SetCurrentValue(bucket == "s_z" and selectedNpcID or NPC_NONE)
+    else
+        controls.dropdowns.a_i:SetCurrentValue(NPC_NONE)
+        controls.dropdowns.j_r:SetCurrentValue(NPC_NONE)
+        controls.dropdowns.s_z:SetCurrentValue(NPC_NONE)
+    end
+end
+
+local function ensureExpansionInstanceSelection(state, options)
+    options = options or {}
+
+    local expansionKeys = getExpansionKeys()
+    if #expansionKeys == 0 then
+        state.expansionKey = nil
+        state.instanceKey = nil
+        if options.includeNpc then
+            state.npcID = nil
+        end
+        return
+    end
+
+    local hasExpansion = false
+    for _, key in ipairs(expansionKeys) do
+        if key == state.expansionKey then
+            hasExpansion = true
+            break
+        end
+    end
+    if not hasExpansion then
+        state.expansionKey = expansionKeys[1]
+    end
+
+    local instanceKeys = getInstanceKeys(state.expansionKey)
+    local hasInstance = false
+    for _, key in ipairs(instanceKeys) do
+        if key == state.instanceKey then
+            hasInstance = true
+            break
+        end
+    end
+    if not hasInstance then
+        state.instanceKey = getFirstSelectableValue(instanceKeys)
+    end
+
+    if options.includeNpc then
+        local npcIDs = getNpcIDs(state.expansionKey, state.instanceKey)
+        local hasNpc = false
+        for _, npcID in ipairs(npcIDs) do
+            if npcID == state.npcID then
+                hasNpc = true
+                break
+            end
+        end
+        if not hasNpc then
+            state.npcID = NPC_NONE
+        end
+    end
+
+    if options.onPersist then
+        options.onPersist(state)
+    end
+end
+
+local function syncExpansionInstanceControls(state, expansionButton, instanceDropdown)
+    expansionButton:SetValues(getExpansionKeys())
+    expansionButton:SetCurrentValue(state.expansionKey)
+    instanceDropdown:SetValues(getInstanceKeys(state.expansionKey))
+    instanceDropdown:SetCurrentValue(state.instanceKey)
+end
+
 local function createContentBrowserMenu()
     addon.contentBrowserPanel = CreateFrame("Frame", "TothysDungeonTipsContentBrowser", UIParent)
     addon.contentBrowserPanel.name = "Content Browser"
@@ -1458,21 +1600,6 @@ local function createContentBrowserMenu()
     local instanceFS = createString(browserContent, getBrowserLocaleString("dungeon_or_raid"), headerFont, headerSize)
     instanceFS:SetPoint("TOPLEFT", expansionButton or subtitle, "BOTTOMLEFT", 0, -24)
 
-    local bossesFS = createString(browserContent, getBrowserLocaleString("bosses"), headerFont, headerSize)
-    bossesFS:SetPoint("TOPLEFT", instanceFS, "BOTTOMLEFT", 0, -26)
-
-    local npcIdsFS = createString(browserContent, getBrowserLocaleString("npc_ids"), headerFont, headerSize)
-    npcIdsFS:SetPoint("TOPLEFT", bossesFS, "BOTTOMLEFT", 0, -26)
-
-    local npcAiFS = createString(browserContent, getBrowserLocaleString("npcs_a_i"), headerFont, headerSize)
-    npcAiFS:SetPoint("TOPLEFT", npcIdsFS, "BOTTOMLEFT", 0, -26)
-
-    local npcJrFS = createString(browserContent, getBrowserLocaleString("npcs_j_r"), headerFont, headerSize)
-    npcJrFS:SetPoint("TOPLEFT", npcAiFS, "BOTTOMLEFT", 0, -26)
-
-    local npcSzFS = createString(browserContent, getBrowserLocaleString("npcs_s_z"), headerFont, headerSize)
-    npcSzFS:SetPoint("TOPLEFT", npcJrFS, "BOTTOMLEFT", 0, -26)
-
     local browserState = {
         expansionKey = TDTConfig.BrowserExpansionKey,
         instanceKey = TDTConfig.BrowserInstanceKey,
@@ -1481,12 +1608,7 @@ local function createContentBrowserMenu()
 
     local expansionButton
     local instanceDropdown
-    local bossDropdown
-    local bossDropdown
-    local npcIdsDropdown
-    local npcAiDropdown
-    local npcJrDropdown
-    local npcSzDropdown
+    local browserNpcSelectors
     local selectionSummary
     local npcSelectionLabel
     local instancePreview
@@ -1505,11 +1627,7 @@ local function createContentBrowserMenu()
         subtitle:SetText(getBrowserLocaleString("content_browser_subtitle"))
         expansionFS:SetText(getBrowserLocaleString("expansion"))
         instanceFS:SetText(getBrowserLocaleString("dungeon_or_raid"))
-        bossesFS:SetText(getBrowserLocaleString("bosses"))
-        npcIdsFS:SetText(getBrowserLocaleString("npc_ids"))
-        npcAiFS:SetText(getBrowserLocaleString("npcs_a_i"))
-        npcJrFS:SetText(getBrowserLocaleString("npcs_j_r"))
-        npcSzFS:SetText(getBrowserLocaleString("npcs_s_z"))
+        refreshNpcSelectorTexts(browserNpcSelectors)
         instancePreviewFS:SetText(getBrowserLocaleString("dungeon_info"))
         instanceDetailsFS:SetText(getBrowserLocaleString("additional_details"))
         npcPreviewFS:SetText(getBrowserLocaleString("npc_tips"))
@@ -1550,64 +1668,19 @@ local function createContentBrowserMenu()
         return lastAnchor
     end
     local function ensureBrowserSelection()
-        local expansionKeys = getExpansionKeys()
-        if #expansionKeys == 0 then
-            browserState.expansionKey = nil
-            browserState.instanceKey = nil
-            browserState.npcID = nil
-            return
-        end
-
-        local hasExpansion = false
-        for _, key in ipairs(expansionKeys) do
-            if key == browserState.expansionKey then
-                hasExpansion = true
-                break
-            end
-        end
-        if not hasExpansion then
-            browserState.expansionKey = expansionKeys[1]
-        end
-
-        local instanceKeys = getInstanceKeys(browserState.expansionKey)
-        local hasInstance = false
-        for _, key in ipairs(instanceKeys) do
-            if key == browserState.instanceKey then
-                hasInstance = true
-                break
-            end
-        end
-        if not hasInstance then
-            browserState.instanceKey = getFirstSelectableValue(instanceKeys)
-        end
-
-        local npcIDs = getNpcIDs(browserState.expansionKey, browserState.instanceKey)
-        local hasNpc = false
-        for _, npcID in ipairs(npcIDs) do
-            if npcID == browserState.npcID then
-                hasNpc = true
-                break
-            end
-        end
-        if not hasNpc then
-            browserState.npcID = NPC_NONE
-        end
-
-        TDTConfig.BrowserExpansionKey = browserState.expansionKey
-        TDTConfig.BrowserInstanceKey = browserState.instanceKey
-        TDTConfig.BrowserNpcID = browserState.npcID
+        ensureExpansionInstanceSelection(browserState, {
+            includeNpc = true,
+            onPersist = function(state)
+                TDTConfig.BrowserExpansionKey = state.expansionKey
+                TDTConfig.BrowserInstanceKey = state.instanceKey
+                TDTConfig.BrowserNpcID = state.npcID
+            end,
+        })
     end
 
     local function updateBrowserUI()
         ensureBrowserSelection()
-
-        local expansionKeys = getExpansionKeys()
-        expansionButton:SetValues(expansionKeys)
-        expansionButton:SetCurrentValue(browserState.expansionKey)
-
-        local instanceKeys = getInstanceKeys(browserState.expansionKey)
-        instanceDropdown:SetValues(instanceKeys)
-        instanceDropdown:SetCurrentValue(browserState.instanceKey)
+        syncExpansionInstanceControls(browserState, expansionButton, instanceDropdown)
 
         local expansionData = getExpansionData(browserState.expansionKey)
         local instanceData = getInstanceData(browserState.expansionKey, browserState.instanceKey)
@@ -1615,27 +1688,7 @@ local function createContentBrowserMenu()
         local instanceLabel = getLocalizedLabel(instanceData and instanceData.name, browserState.instanceKey or "-")
         local instanceType = instanceData and instanceData.type or "Unknown"
         local selectedNpcID = browserState.npcID ~= NPC_NONE and browserState.npcID or nil
-        bossDropdown:SetValues(getNpcIDsForSelector(browserState.expansionKey, browserState.instanceKey, "bosses"))
-        npcIdsDropdown:SetValues(getNpcIDsForSelector(browserState.expansionKey, browserState.instanceKey, "ids"))
-        npcAiDropdown:SetValues(getNpcIDsForSelector(browserState.expansionKey, browserState.instanceKey, "a_i"))
-        npcJrDropdown:SetValues(getNpcIDsForSelector(browserState.expansionKey, browserState.instanceKey, "j_r"))
-        npcSzDropdown:SetValues(getNpcIDsForSelector(browserState.expansionKey, browserState.instanceKey, "s_z"))
-        if selectedNpcID and addon.npcGroups and addon.npcGroups[browserState.instanceKey] and addon.npcGroups[browserState.instanceKey][selectedNpcID] == "boss" then
-            bossDropdown:SetCurrentValue(selectedNpcID)
-        else
-            bossDropdown:SetCurrentValue(NPC_NONE)
-        end
-        npcIdsDropdown:SetCurrentValue(browserState.npcID)
-        if selectedNpcID then
-            local bucket = getNpcAlphaBucket(browserState.expansionKey, browserState.instanceKey, selectedNpcID)
-            npcAiDropdown:SetCurrentValue(bucket == "a_i" and selectedNpcID or NPC_NONE)
-            npcJrDropdown:SetCurrentValue(bucket == "j_r" and selectedNpcID or NPC_NONE)
-            npcSzDropdown:SetCurrentValue(bucket == "s_z" and selectedNpcID or NPC_NONE)
-        else
-            npcAiDropdown:SetCurrentValue(NPC_NONE)
-            npcJrDropdown:SetCurrentValue(NPC_NONE)
-            npcSzDropdown:SetCurrentValue(NPC_NONE)
-        end
+        syncNpcSelectorControls(browserNpcSelectors, browserState)
 
         local npcLabel = browserState.npcID and getNpcBrowserLabel(browserState.expansionKey, browserState.instanceKey, browserState.npcID) or "-"
         local npcDisplayName = selectedNpcID and getNpcDisplayName(browserState.expansionKey, browserState.instanceKey, selectedNpcID) or nil
@@ -1739,69 +1792,18 @@ local function createContentBrowserMenu()
 
         return string.format("%s (%s)", getLocalizedLabel(instanceData.name, value), instanceData.type or "Unknown")
     end
-
-    bossesFS:ClearAllPoints()
-    bossesFS:SetPoint("TOPLEFT", instanceDropdown, "BOTTOMLEFT", 16, -18)
-
-    bossDropdown = createValueDropdown(browserContent, "BrowserNpcBosses", 240, function(value)
-        browserState.npcID = value
-        updateBrowserUI()
-    end)
-    bossDropdown:SetPoint("TOPLEFT", bossesFS, "BOTTOMLEFT", -16, -2)
-    bossDropdown.labelForValue = function(value)
-        return getNpcBrowserLabel(browserState.expansionKey, browserState.instanceKey, value)
-    end
-
-    npcIdsFS:ClearAllPoints()
-    npcIdsFS:SetPoint("TOPLEFT", bossDropdown, "BOTTOMLEFT", 16, -18)
-
-    npcIdsDropdown = createValueDropdown(browserContent, "BrowserNpcIds", 240, function(value)
-        browserState.npcID = value
-        updateBrowserUI()
-    end)
-    npcIdsDropdown:SetPoint("TOPLEFT", npcIdsFS, "BOTTOMLEFT", -16, -2)
-    npcIdsDropdown.labelForValue = function(value)
-        return getNpcBrowserLabel(browserState.expansionKey, browserState.instanceKey, value)
-    end
-
-    npcAiFS:ClearAllPoints()
-    npcAiFS:SetPoint("TOPLEFT", npcIdsDropdown, "BOTTOMLEFT", 16, -18)
-
-    npcAiDropdown = createValueDropdown(browserContent, "BrowserNpcAi", 240, function(value)
-        browserState.npcID = value
-        updateBrowserUI()
-    end)
-    npcAiDropdown:SetPoint("TOPLEFT", npcAiFS, "BOTTOMLEFT", -16, -2)
-    npcAiDropdown.labelForValue = function(value)
-        return getNpcBrowserLabel(browserState.expansionKey, browserState.instanceKey, value)
-    end
-
-    npcJrFS:ClearAllPoints()
-    npcJrFS:SetPoint("TOPLEFT", npcAiDropdown, "BOTTOMLEFT", 16, -18)
-
-    npcJrDropdown = createValueDropdown(browserContent, "BrowserNpcJr", 240, function(value)
-        browserState.npcID = value
-        updateBrowserUI()
-    end)
-    npcJrDropdown:SetPoint("TOPLEFT", npcJrFS, "BOTTOMLEFT", -16, -2)
-    npcJrDropdown.labelForValue = function(value)
-        return getNpcBrowserLabel(browserState.expansionKey, browserState.instanceKey, value)
-    end
-
-    npcSzFS:ClearAllPoints()
-    npcSzFS:SetPoint("TOPLEFT", npcJrDropdown, "BOTTOMLEFT", 16, -18)
-
-    npcSzDropdown = createValueDropdown(browserContent, "BrowserNpcSz", 240, function(value)
-        browserState.npcID = value
-        updateBrowserUI()
-    end)
-    npcSzDropdown:SetPoint("TOPLEFT", npcSzFS, "BOTTOMLEFT", -16, -2)
-    npcSzDropdown.labelForValue = function(value)
-        return getNpcBrowserLabel(browserState.expansionKey, browserState.instanceKey, value)
-    end
+    browserNpcSelectors = createNpcSelectorControls(
+        browserContent,
+        "BrowserNpc",
+        browserState,
+        instanceDropdown,
+        headerFont,
+        headerSize,
+        updateBrowserUI
+    )
 
     selectionSummary = createString(browserContent, "", "Fonts\\FRIZQT__.TTF", 11)
-    selectionSummary:SetPoint("TOPLEFT", npcSzDropdown, "BOTTOMLEFT", 16, -18)
+    selectionSummary:SetPoint("TOPLEFT", browserNpcSelectors.lastDropdown, "BOTTOMLEFT", 16, -18)
     selectionSummary:SetWidth(620)
 
     npcSelectionLabel = createString(browserContent, "", "Fonts\\FRIZQT__.TTF", 11)
@@ -1882,10 +1884,6 @@ local function createEditorMenu()
 
     local expansionButton
     local instanceDropdown
-    local npcIdsDropdown
-    local npcAiDropdown
-    local npcJrDropdown
-    local npcSzDropdown
     local selectionSummary
     local npcPreview
     local addTipTypeDropdown
@@ -1899,11 +1897,7 @@ local function createEditorMenu()
     local editingTipID = nil
     local editingBaseTipID = nil
     local instanceFS
-    local bossesFS
-    local npcIdsFS
-    local npcAiFS
-    local npcJrFS
-    local npcSzFS
+    local editorNpcSelectors
     local npcPreviewFS
     local addTipHeader
     local addTipTypeLabel
@@ -1917,11 +1911,7 @@ local function createEditorMenu()
         subtitle:SetText(getBrowserLocaleString("editor_subtitle"))
         expansionFS:SetText(getBrowserLocaleString("expansion"))
         instanceFS:SetText(getBrowserLocaleString("dungeon_or_raid"))
-        bossesFS:SetText(getBrowserLocaleString("bosses"))
-        npcIdsFS:SetText(getBrowserLocaleString("npc_ids"))
-        npcAiFS:SetText(getBrowserLocaleString("npcs_a_i"))
-        npcJrFS:SetText(getBrowserLocaleString("npcs_j_r"))
-        npcSzFS:SetText(getBrowserLocaleString("npcs_s_z"))
+        refreshNpcSelectorTexts(editorNpcSelectors)
         npcPreviewFS:SetText(getBrowserLocaleString("npc_tips"))
         addTipHeader:SetText(getBrowserLocaleString("add_npc_tip"))
         addTipTypeLabel:SetText(getBrowserLocaleString("tip_type"))
@@ -1968,83 +1958,20 @@ local function createEditorMenu()
     end
 
     local function ensureEditorSelection()
-        local expansionKeys = getExpansionKeys()
-        if #expansionKeys == 0 then
-            editorState.expansionKey = nil
-            editorState.instanceKey = nil
-            editorState.npcID = nil
-            return
-        end
-
-        local hasExpansion = false
-        for _, key in ipairs(expansionKeys) do
-            if key == editorState.expansionKey then
-                hasExpansion = true
-                break
-            end
-        end
-        if not hasExpansion then
-            editorState.expansionKey = expansionKeys[1]
-        end
-
-        local instanceKeys = getInstanceKeys(editorState.expansionKey)
-        local hasInstance = false
-        for _, key in ipairs(instanceKeys) do
-            if key == editorState.instanceKey then
-                hasInstance = true
-                break
-            end
-        end
-        if not hasInstance then
-            editorState.instanceKey = getFirstSelectableValue(instanceKeys)
-        end
-
-        local npcIDs = getNpcIDs(editorState.expansionKey, editorState.instanceKey)
-        local hasNpc = false
-        for _, npcID in ipairs(npcIDs) do
-            if npcID == editorState.npcID then
-                hasNpc = true
-                break
-            end
-        end
-        if not hasNpc then
-            editorState.npcID = NPC_NONE
-        end
+        ensureExpansionInstanceSelection(editorState, {
+            includeNpc = true,
+        })
     end
 
     local function updateEditorUI()
         ensureEditorSelection()
-
-        expansionButton:SetValues(getExpansionKeys())
-        expansionButton:SetCurrentValue(editorState.expansionKey)
-        instanceDropdown:SetValues(getInstanceKeys(editorState.expansionKey))
-        instanceDropdown:SetCurrentValue(editorState.instanceKey)
+        syncExpansionInstanceControls(editorState, expansionButton, instanceDropdown)
         local expansionData = getExpansionData(editorState.expansionKey)
         local instanceData = getInstanceData(editorState.expansionKey, editorState.instanceKey)
         local expansionLabel = getLocalizedLabel(expansionData and expansionData.name, editorState.expansionKey or "-")
         local instanceLabel = getLocalizedLabel(instanceData and instanceData.name, editorState.instanceKey or "-")
         local selectedNpcID = editorState.npcID ~= NPC_NONE and editorState.npcID or nil
-        bossDropdown:SetValues(getNpcIDsForSelector(editorState.expansionKey, editorState.instanceKey, "bosses"))
-        npcIdsDropdown:SetValues(getNpcIDsForSelector(editorState.expansionKey, editorState.instanceKey, "ids"))
-        npcAiDropdown:SetValues(getNpcIDsForSelector(editorState.expansionKey, editorState.instanceKey, "a_i"))
-        npcJrDropdown:SetValues(getNpcIDsForSelector(editorState.expansionKey, editorState.instanceKey, "j_r"))
-        npcSzDropdown:SetValues(getNpcIDsForSelector(editorState.expansionKey, editorState.instanceKey, "s_z"))
-        if selectedNpcID and addon.npcGroups and addon.npcGroups[editorState.instanceKey] and addon.npcGroups[editorState.instanceKey][selectedNpcID] == "boss" then
-            bossDropdown:SetCurrentValue(selectedNpcID)
-        else
-            bossDropdown:SetCurrentValue(NPC_NONE)
-        end
-        npcIdsDropdown:SetCurrentValue(editorState.npcID)
-        if selectedNpcID then
-            local bucket = getNpcAlphaBucket(editorState.expansionKey, editorState.instanceKey, selectedNpcID)
-            npcAiDropdown:SetCurrentValue(bucket == "a_i" and selectedNpcID or NPC_NONE)
-            npcJrDropdown:SetCurrentValue(bucket == "j_r" and selectedNpcID or NPC_NONE)
-            npcSzDropdown:SetCurrentValue(bucket == "s_z" and selectedNpcID or NPC_NONE)
-        else
-            npcAiDropdown:SetCurrentValue(NPC_NONE)
-            npcJrDropdown:SetCurrentValue(NPC_NONE)
-            npcSzDropdown:SetCurrentValue(NPC_NONE)
-        end
+        syncNpcSelectorControls(editorNpcSelectors, editorState)
         local npcLabel = editorState.npcID and getNpcBrowserLabel(editorState.expansionKey, editorState.instanceKey, editorState.npcID) or "-"
         local mergedNpcEntries = selectedNpcID and (addon.getMergedNpcTipEntries and addon:getMergedNpcTipEntries(selectedNpcID) or {}) or nil
         local personalTips = selectedNpcID and (addon.getNpcUserAdditions and addon:getNpcUserAdditions(selectedNpcID) or {}) or {}
@@ -2180,68 +2107,18 @@ local function createEditorMenu()
         return string.format("%s (%s)", getLocalizedLabel(instanceData.name, value), instanceData.type or "Unknown")
     end
 
-    bossesFS = createString(editorContent, getBrowserLocaleString("bosses"), headerFont, headerSize)
-    bossesFS:SetPoint("TOPLEFT", instanceDropdown, "BOTTOMLEFT", 16, -18)
-
-    bossDropdown = createValueDropdown(editorContent, "EditorNpcBosses", 240, function(value)
-        editorState.npcID = value
-        updateEditorUI()
-    end)
-    bossDropdown:SetPoint("TOPLEFT", bossesFS, "BOTTOMLEFT", -16, -2)
-    bossDropdown.labelForValue = function(value)
-        return getNpcBrowserLabel(editorState.expansionKey, editorState.instanceKey, value)
-    end
-
-    npcIdsFS = createString(editorContent, getBrowserLocaleString("npc_ids"), headerFont, headerSize)
-    npcIdsFS:SetPoint("TOPLEFT", bossDropdown, "BOTTOMLEFT", 16, -18)
-
-    npcIdsDropdown = createValueDropdown(editorContent, "EditorNpcIds", 240, function(value)
-        editorState.npcID = value
-        updateEditorUI()
-    end)
-    npcIdsDropdown:SetPoint("TOPLEFT", npcIdsFS, "BOTTOMLEFT", -16, -2)
-    npcIdsDropdown.labelForValue = function(value)
-        return getNpcBrowserLabel(editorState.expansionKey, editorState.instanceKey, value)
-    end
-
-    npcAiFS = createString(editorContent, getBrowserLocaleString("npcs_a_i"), headerFont, headerSize)
-    npcAiFS:SetPoint("TOPLEFT", npcIdsDropdown, "BOTTOMLEFT", 16, -18)
-
-    npcAiDropdown = createValueDropdown(editorContent, "EditorNpcAi", 240, function(value)
-        editorState.npcID = value
-        updateEditorUI()
-    end)
-    npcAiDropdown:SetPoint("TOPLEFT", npcAiFS, "BOTTOMLEFT", -16, -2)
-    npcAiDropdown.labelForValue = function(value)
-        return getNpcBrowserLabel(editorState.expansionKey, editorState.instanceKey, value)
-    end
-
-    npcJrFS = createString(editorContent, getBrowserLocaleString("npcs_j_r"), headerFont, headerSize)
-    npcJrFS:SetPoint("TOPLEFT", npcAiDropdown, "BOTTOMLEFT", 16, -18)
-
-    npcJrDropdown = createValueDropdown(editorContent, "EditorNpcJr", 240, function(value)
-        editorState.npcID = value
-        updateEditorUI()
-    end)
-    npcJrDropdown:SetPoint("TOPLEFT", npcJrFS, "BOTTOMLEFT", -16, -2)
-    npcJrDropdown.labelForValue = function(value)
-        return getNpcBrowserLabel(editorState.expansionKey, editorState.instanceKey, value)
-    end
-
-    npcSzFS = createString(editorContent, getBrowserLocaleString("npcs_s_z"), headerFont, headerSize)
-    npcSzFS:SetPoint("TOPLEFT", npcJrDropdown, "BOTTOMLEFT", 16, -18)
-
-    npcSzDropdown = createValueDropdown(editorContent, "EditorNpcSz", 240, function(value)
-        editorState.npcID = value
-        updateEditorUI()
-    end)
-    npcSzDropdown:SetPoint("TOPLEFT", npcSzFS, "BOTTOMLEFT", -16, -2)
-    npcSzDropdown.labelForValue = function(value)
-        return getNpcBrowserLabel(editorState.expansionKey, editorState.instanceKey, value)
-    end
+    editorNpcSelectors = createNpcSelectorControls(
+        editorContent,
+        "EditorNpc",
+        editorState,
+        instanceDropdown,
+        headerFont,
+        headerSize,
+        updateEditorUI
+    )
 
     selectionSummary = createString(editorContent, "", "Fonts\\FRIZQT__.TTF", 11)
-    selectionSummary:SetPoint("TOPLEFT", npcSzDropdown, "BOTTOMLEFT", 16, -18)
+    selectionSummary:SetPoint("TOPLEFT", editorNpcSelectors.lastDropdown, "BOTTOMLEFT", 16, -18)
     selectionSummary:SetWidth(620)
 
     npcPreviewFS = createString(editorContent, getBrowserLocaleString("npc_tips"), headerFont, headerSize)
@@ -2676,44 +2553,12 @@ local function createDungeonEditorMenu()
     end
 
     local function ensureEditorSelection()
-        local expansionKeys = getExpansionKeys()
-        if #expansionKeys == 0 then
-            editorState.expansionKey = nil
-            editorState.instanceKey = nil
-            return
-        end
-
-        local hasExpansion = false
-        for _, key in ipairs(expansionKeys) do
-            if key == editorState.expansionKey then
-                hasExpansion = true
-                break
-            end
-        end
-        if not hasExpansion then
-            editorState.expansionKey = expansionKeys[1]
-        end
-
-        local instanceKeys = getInstanceKeys(editorState.expansionKey)
-        local hasInstance = false
-        for _, key in ipairs(instanceKeys) do
-            if key == editorState.instanceKey then
-                hasInstance = true
-                break
-            end
-        end
-        if not hasInstance then
-            editorState.instanceKey = getFirstSelectableValue(instanceKeys)
-        end
+        ensureExpansionInstanceSelection(editorState)
     end
 
     local function updateDungeonEditorUI()
         ensureEditorSelection()
-
-        expansionButton:SetValues(getExpansionKeys())
-        expansionButton:SetCurrentValue(editorState.expansionKey)
-        instanceDropdown:SetValues(getInstanceKeys(editorState.expansionKey))
-        instanceDropdown:SetCurrentValue(editorState.instanceKey)
+        syncExpansionInstanceControls(editorState, expansionButton, instanceDropdown)
 
         local expansionData = getExpansionData(editorState.expansionKey)
         local instanceData = getInstanceData(editorState.expansionKey, editorState.instanceKey)

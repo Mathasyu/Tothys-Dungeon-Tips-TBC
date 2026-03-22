@@ -209,6 +209,8 @@ Compatibility note:
 - migrated TBC raid overviews and the first TBC dungeon overview blocks have already had their duplicate legacy English instance tables removed
 - shipped instance lookup is now meant to happen through central addon getters rather than duplicated per-UI fallback code
 - shipped NPC tip lookup and catalog NPC name lookup should follow the same rule: keep locale fallback in addon-level model helpers, not in UI code
+- repeated UI state for the five NPC selector dropdowns should be handled through shared helper functions so Browser and Tip Editor stay behaviorally aligned
+- repeated expansion/instance selection logic should also stay centralized in shared UI helpers so all panels keep the same selection rules
 
 Intended use:
 
