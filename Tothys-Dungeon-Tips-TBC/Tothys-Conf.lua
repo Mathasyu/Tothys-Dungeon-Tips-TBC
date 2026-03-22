@@ -1,3 +1,19 @@
+--[[
+Tothys Dungeon Tips TBC (former QE Dungeon Tips)
+Configuration Page
+
+Version: 0.9
+Developed by: Voulk
+Forked by: Mathasyu 2026-03-09
+Contact:
+	Discord: Voulk#1858
+	Email: itsvoulk@gmail.com
+Changelog:
+    0.9 - 2026-03
+        - The Addon works now in the TBC Anniversary Client
+        - New Slash Commands: /kdt config, /kdt show, /kdt hide, /kdt test
+]]--
+
 local localeDisplayNames = {
     Auto = "Auto",
     enUS = "English",
@@ -133,7 +149,7 @@ local browserLocaleStrings = {
 		config_priority = "Show Priority Targets",
 		config_interrupts = "Show Priority Interrupts",
 		config_defensives = "Show Defensive Recommendations",
-		config_fluff = "Show Fluff",
+		config_fluff = "Show Fluff/RP",
 		config_advanced = "Show advanced tips for high level keys",
 		config_personal = "Show Personal Notes",
 	},
@@ -173,8 +189,8 @@ local browserLocaleStrings = {
 		saved_instance_tip = "Persoenlicher Dungeon-Tipp gespeichert.",
 		updated_instance_tip = "Persoenlicher Dungeon-Tipp aktualisiert.",
 		instance_edit_loaded = "Persoenlicher Dungeon-Tipp in den Editor geladen.",
-		base_instance_edit_loaded = "Addon-Dungeon-Tipp im Override-Modus geladen.",
-		updated_base_instance_tip = "Addon-Dungeon-Tipp-Override aktualisiert.",
+		base_instance_edit_loaded = "Addon-Dungeon-Tipp im Ueberschreibungsmodus geladen.",
+		updated_base_instance_tip = "Addon-Dungeon-Tipp-Ueberschreibung aktualisiert.",
 		edit_more_infos = "Mehr Infos bearbeiten",
 		save_more_infos = "Mehr Infos speichern",
 		reset_more_infos = "Mehr Infos zuruecksetzen",
@@ -186,20 +202,20 @@ local browserLocaleStrings = {
 		tip_text = "Tipp-Text",
 		save_tip = "Tipp speichern",
 		edit = "Bearbeiten",
-		edit_base = "Override",
+		edit_base = "Ueberschreiben",
 		update_tip = "Tipp aktualisieren",
-		update_base_tip = "Override speichern",
+		update_base_tip = "Ueberschreibung speichern",
 		cancel_edit = "Bearbeiten abbrechen",
 		edit_loaded = "Persoenlicher Tipp in den Editor geladen.",
-		base_edit_loaded = "Basis-Tipp im Override-Modus geladen.",
+		base_edit_loaded = "Basis-Tipp im Ueberschreibungsmodus geladen.",
 		updated_tip = "Persoenlicher Tipp aktualisiert.",
-		updated_base_tip = "Basis-Tipp-Override aktualisiert.",
+		updated_base_tip = "Basis-Tipp-Ueberschreibung aktualisiert.",
 		personal_tips = "Eigene Tipps",
 		base_tips = "Addon-Tipps",
 		no_base_tips = "Fuer diesen NPC wurden keine Addon-Tipps gefunden.",
 		reset = "Zuruecksetzen",
 		overridden_tip = "ueberschrieben",
-		legacy_tip = "legacy schreibgeschuetzt",
+		legacy_tip = "Altes Format, schreibgeschuetzt",
 		hidden_tip = "ausgeblendet",
 		hide = "Ausblenden",
 		unhide = "Einblenden",
@@ -210,7 +226,7 @@ local browserLocaleStrings = {
 		saved_tip = "Persoenlicher NPC-Tipp gespeichert.",
 		missing_tip = "Bitte zuerst einen Tipp-Typ waehlen und Text eingeben.",
 		travel = "Anfahrt",
-		attunement = "Attunement",
+		attunement = "Zugang",
 		extra_notes = "Mehr Infos",
 		lore = "Lore / RP",
 		no_details = "Noch keine zusaetzlichen Dungeon-Infos vorhanden.",
@@ -255,7 +271,7 @@ local browserLocaleStrings = {
 		class_warrior = "Krieger",
 		class_warlock = "Hexenmeister",
 		config_language = "Sprache",
-		config_language_help = "Auto verwendet die Client-Sprache. Englisch ist der Fallback, wenn keine Uebersetzung vorhanden ist.",
+		config_language_help = "Auto verwendet die Sprache des Spiels. Englisch wird verwendet, wenn keine Uebersetzung vorhanden ist.",
 		config_content = "Inhalte",
 		config_show_in_dungeons = "Tipps in Dungeons anzeigen",
 		config_show_in_raid = "Tipps in Raids anzeigen",
@@ -265,7 +281,7 @@ local browserLocaleStrings = {
 		config_priority = "Prioritaetsziele anzeigen",
 		config_interrupts = "Wichtige Unterbrechungen anzeigen",
 		config_defensives = "Defensiv-Empfehlungen anzeigen",
-		config_fluff = "Fluff anzeigen",
+		config_fluff = "Fluff / RP anzeigen",
 		config_advanced = "Fortgeschrittene Tipps fuer schwere Inhalte anzeigen",
 		config_personal = "Persoenliche Notizen anzeigen",
 	},
@@ -461,21 +477,6 @@ local function createMultiLineInput(frame, width, height)
 	return container, editBox
 end
 
---[[
-Tothys Dungeon Tips TBC (former QE Dungeon Tips)
-Configuration Page
-
-Version: 0.9
-Developed by: Voulk
-Forked by: Mathasyu 2026-03-09
-Contact: 
-	Discord: Voulk#1858
-	Email: itsvoulk@gmail.com
-Changelog:
-    0.9 - 2026-03
-        - The Addon works now in the TBC Anniversary Client
-        - New Slash Commands: /tdt config, /tdt show, /tdt hide, /tdt test
-]]--
 
 local _, addon = ...;
 

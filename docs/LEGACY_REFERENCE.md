@@ -9,7 +9,7 @@ The full historical source of truth remains:
 
 - the git history
 - existing commits
-- the untouched legacy entries still present in `Tothys-Database.lua`
+- the untouched legacy entries still present in `Tothys-Dungeon-Tips-TBC/Tothys-Database.lua`
 
 ## Legacy tip format
 

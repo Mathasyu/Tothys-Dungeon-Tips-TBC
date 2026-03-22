@@ -25,7 +25,7 @@ Guidelines:
 - Personal NPC tip workflows: add, edit, hide/unhide, delete
 - Personal instance note workflows: add, edit, hide/unhide, delete
 - Shipped NPC tip workflows: override text/weight, hide/unhide, reset
-- Validation script: [scripts/verify_db_ids.py](/mnt/p/Projekte/WoW/QE%20Dungeon%20Tips/Codebase/scripts/verify_db_ids.py)
+- Validation script: `scripts/verify_db_ids.py`
 
 ### Changed
 
@@ -56,6 +56,10 @@ Guidelines:
 - Added a real `Show NPC IDs` config toggle for browser/editor labels and the live frame
 - `Show Important General Information` is now a real configurable toggle instead of a locked placeholder
 - NPC dropdowns in `Content Browser` and `Tip Editor` now start with `---` so selecting a dungeon does not auto-pick the first NPC
+- NPC selection in `Content Browser` and `Tip Editor` was expanded:
+  - dedicated `Bosses` dropdown
+  - `NPC IDs` dropdown
+  - three alphabetical NPC dropdowns (`A-I`, `J-R`, `S-Z`)
 
 ### Notes
 
