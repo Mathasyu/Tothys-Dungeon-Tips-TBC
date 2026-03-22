@@ -78,6 +78,7 @@ Guidelines:
 - NPC shipped tip lookup and catalog NPC name lookup were refactored behind central addon getters so Browser and Tip Editor no longer duplicate locale fallback rules
 - The repeated five-dropdown NPC selector UI for `Content Browser` and `Tip Editor` was consolidated behind shared helper functions to reduce duplicated view/controller code
 - Expansion/instance selection retention and dropdown syncing were consolidated behind shared helpers so Browser, Tip Editor, and Dungeon Editor now follow the same selection rules
+- The `Dungeon Editor` update flow was split into smaller render helpers for preview data, user tips, addon tips, and detail fields without changing user-facing behavior
 
 ### Notes
 

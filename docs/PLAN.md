@@ -53,6 +53,7 @@ An instance may still contain multiple `mapIDs`.
 - NPC browser/editor lookup now follows the same pattern for shipped NPC tips and catalog NPC names
 - The shared NPC selector block in `Content Browser` and `Tip Editor` is now built and synchronized through common UI helpers instead of two separate implementations
 - Expansion/instance selection retention and dropdown syncing are now shared across Browser, Tip Editor, and Dungeon Editor instead of being reimplemented per panel
+- The large `Dungeon Editor` update path is now being split into smaller render helpers so the controller flow stays readable and easier to test while the UI remains unchanged
 - instance info display in the main frame
 - browser preview for instance info and NPC tips
 - browser-only instance detail section for travel, attunement, extra notes, and lore

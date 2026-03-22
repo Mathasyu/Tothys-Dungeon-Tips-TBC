@@ -211,6 +211,7 @@ Compatibility note:
 - shipped NPC tip lookup and catalog NPC name lookup should follow the same rule: keep locale fallback in addon-level model helpers, not in UI code
 - repeated UI state for the five NPC selector dropdowns should be handled through shared helper functions so Browser and Tip Editor stay behaviorally aligned
 - repeated expansion/instance selection logic should also stay centralized in shared UI helpers so all panels keep the same selection rules
+- large panel update functions should prefer a small controller plus focused render helpers for preview data, user-tip lists, base-tip lists, and detail editors
 
 Intended use:
 

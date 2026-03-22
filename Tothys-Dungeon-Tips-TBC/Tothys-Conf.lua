@@ -2552,6 +2552,116 @@ local function createDungeonEditorMenu()
         detailsEditorHeader:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, offset)
     end
 
+    local function renderDungeonEditorPreview(expansionLabel, instanceLabel, mergedInstanceEntries, mergedDetails)
+        selectionSummary:SetText(string.format(getBrowserLocaleString("selected_instance"), expansionLabel, instanceLabel))
+        instancePreview:SetText(formatTipEntriesPreview(mergedInstanceEntries))
+        instanceDetailsPreview:SetText(formatInstanceDetails(mergedDetails))
+    end
+
+    local function renderDungeonEditorUserTips(userTips)
+        for _, row in ipairs(personalTipRows) do
+            row:Hide()
+        end
+
+        if #userTips == 0 then
+            if personalTipRows[1] then
+                personalTipRows[1].text:SetText(getBrowserLocaleString("no_user_instance_tips"))
+                personalTipRows[1].toggle:Hide()
+                personalTipRows[1].edit:Hide()
+                personalTipRows[1].delete:Hide()
+                personalTipRows[1]:Show()
+            end
+            return
+        end
+
+        for index, tip in ipairs(userTips) do
+            local row = personalTipRows[index]
+            if row then
+                local hiddenLabel = tip.hidden and (" (" .. getBrowserLocaleString("hidden_tip") .. ")") or ""
+                row.text:SetText(string.format("[%s] %s (%d)%s\n%s", tip.type or "?", tip.id or "?", tip.weight or 0, hiddenLabel, tip.text or ""))
+                row.edit.tipID = tip.id
+                row.toggle:SetText(tip.hidden and getBrowserLocaleString("unhide") or getBrowserLocaleString("hide"))
+                row.toggle.tipID = tip.id
+                row.delete.tipID = tip.id
+                row.edit:Show()
+                row.toggle:Show()
+                row.delete:Show()
+                row:Show()
+            end
+        end
+    end
+
+    local function renderDungeonEditorBaseTips(baseTips)
+        for _, row in ipairs(baseTipRows) do
+            row:Hide()
+        end
+
+        if #baseTips == 0 then
+            if baseTipRows[1] then
+                baseTipRows[1].text:SetText(getBrowserLocaleString("no_addon_instance_tips"))
+                baseTipRows[1].edit:Hide()
+                baseTipRows[1].toggle:Hide()
+                baseTipRows[1].reset:Hide()
+                baseTipRows[1]:Show()
+            end
+            return
+        end
+
+        for index, tip in ipairs(baseTips) do
+            local row = baseTipRows[index]
+            if row then
+                local statusBits = {}
+                if tip.hidden then
+                    statusBits[#statusBits + 1] = getBrowserLocaleString("hidden_tip")
+                end
+                if tip.overridden then
+                    statusBits[#statusBits + 1] = getBrowserLocaleString("overridden_tip")
+                end
+                if not tip.canModify then
+                    statusBits[#statusBits + 1] = getBrowserLocaleString("legacy_tip")
+                end
+                local statusLabel = #statusBits > 0 and (" (" .. table.concat(statusBits, ", ") .. ")") or ""
+                if tip.overridden and tip.overrideText then
+                    local overrideWeight = tip.overrideWeight ~= nil and tip.overrideWeight or tip.weight or 0
+                    row.text:SetText(string.format("[%s] %s (%d)%s\nOverride: %s\nOriginal (%d): %s", tip.type or "?", tip.id or "-", overrideWeight, statusLabel, tip.overrideText or "", tip.weight or 0, tip.text or ""))
+                else
+                    row.text:SetText(string.format("[%s] %s (%d)%s\n%s", tip.type or "?", tip.id or "-", tip.weight or 0, statusLabel, tip.text or ""))
+                end
+                row.edit.tipID = tip.id
+                row.toggle.tipID = tip.id
+                row.reset.tipID = tip.id
+                if tip.canModify then
+                    row.edit:Show()
+                    row.toggle:SetText(tip.hidden and getBrowserLocaleString("unhide") or getBrowserLocaleString("hide"))
+                    row.toggle:Show()
+                    row.reset:Show()
+                else
+                    row.edit:Hide()
+                    row.toggle:Hide()
+                    row.reset:Hide()
+                end
+                row:Show()
+            end
+        end
+    end
+
+    -- Keep field-specific detail rendering together so the main update path stays controller-like.
+    local function renderDungeonEditorDetails(detailsData, mergedDetails)
+        detailsTravelLabel:SetText(getBrowserLocaleString("travel") .. ((detailsData.travel and detailsData.travel.overridden) and (" (" .. getBrowserLocaleString("overridden_tip") .. ")") or ""))
+        detailsAttunementLabel:SetText(getBrowserLocaleString("attunement") .. ((detailsData.attunement and detailsData.attunement.overridden) and (" (" .. getBrowserLocaleString("overridden_tip") .. ")") or ""))
+        detailsNotesLabel:SetText(getBrowserLocaleString("extra_notes") .. ((detailsData.notes and detailsData.notes.overridden) and (" (" .. getBrowserLocaleString("overridden_tip") .. ")") or ""))
+        detailsLoreLabel:SetText(getBrowserLocaleString("lore") .. ((detailsData.lore and detailsData.lore.overridden) and (" (" .. getBrowserLocaleString("overridden_tip") .. ")") or ""))
+
+        detailsTravelEdit:SetText((detailsData.travel and detailsData.travel.current) or mergedDetails.travel or "")
+        detailsAttunementEdit:SetText((detailsData.attunement and detailsData.attunement.current) or mergedDetails.attunement or "")
+        detailsNotesEdit:SetText((detailsData.notes and detailsData.notes.current) or mergedDetails.notes or "")
+        detailsLoreEdit:SetText((detailsData.lore and detailsData.lore.current) or mergedDetails.lore or "")
+        detailsTravelOriginalText:SetText(string.format("%s: %s", getBrowserLocaleString("original_text"), (detailsData.travel and detailsData.travel.base) or ""))
+        detailsAttunementOriginalText:SetText(string.format("%s: %s", getBrowserLocaleString("original_text"), (detailsData.attunement and detailsData.attunement.base) or ""))
+        detailsNotesOriginalText:SetText(string.format("%s: %s", getBrowserLocaleString("original_text"), (detailsData.notes and detailsData.notes.base) or ""))
+        detailsLoreOriginalText:SetText(string.format("%s: %s", getBrowserLocaleString("original_text"), (detailsData.lore and detailsData.lore.base) or ""))
+    end
+
     local function ensureEditorSelection()
         ensureExpansionInstanceSelection(editorState)
     end
@@ -2570,107 +2680,12 @@ local function createDungeonEditorMenu()
         local detailsData = addon.getInstanceDetailsForEditor and addon:getInstanceDetailsForEditor(editorState.instanceKey) or {}
         local mergedDetails = getInstanceDetails(editorState.instanceKey) or {}
 
-        selectionSummary:SetText(string.format(getBrowserLocaleString("selected_instance"), expansionLabel, instanceLabel))
-        instancePreview:SetText(formatTipEntriesPreview(mergedInstanceEntries))
-        instanceDetailsPreview:SetText(formatInstanceDetails(mergedDetails))
-
-        for _, row in ipairs(personalTipRows) do
-            row:Hide()
-        end
-        for _, row in ipairs(baseTipRows) do
-            row:Hide()
-        end
-
-        if #userTips == 0 then
-            if personalTipRows[1] then
-                personalTipRows[1].text:SetText(getBrowserLocaleString("no_user_instance_tips"))
-                personalTipRows[1].toggle:Hide()
-                personalTipRows[1].edit:Hide()
-                personalTipRows[1].delete:Hide()
-                personalTipRows[1]:Show()
-            end
-        else
-            for index, tip in ipairs(userTips) do
-                local row = personalTipRows[index]
-                if row then
-                    local hiddenLabel = tip.hidden and (" (" .. getBrowserLocaleString("hidden_tip") .. ")") or ""
-                    row.text:SetText(string.format("[%s] %s (%d)%s\n%s", tip.type or "?", tip.id or "?", tip.weight or 0, hiddenLabel, tip.text or ""))
-                    row.edit.tipID = tip.id
-                    row.toggle:SetText(tip.hidden and getBrowserLocaleString("unhide") or getBrowserLocaleString("hide"))
-                    row.toggle.tipID = tip.id
-                    row.delete.tipID = tip.id
-                    row.edit:Show()
-                    row.toggle:Show()
-                    row.delete:Show()
-                    row:Show()
-                end
-            end
-        end
-
+        renderDungeonEditorPreview(expansionLabel, instanceLabel, mergedInstanceEntries, mergedDetails)
+        renderDungeonEditorUserTips(userTips)
         anchorBaseTipsHeader()
-
-        if #baseTips == 0 then
-            if baseTipRows[1] then
-                baseTipRows[1].text:SetText(getBrowserLocaleString("no_addon_instance_tips"))
-                baseTipRows[1].edit:Hide()
-                baseTipRows[1].toggle:Hide()
-                baseTipRows[1].reset:Hide()
-                baseTipRows[1]:Show()
-            end
-        else
-            for index, tip in ipairs(baseTips) do
-                local row = baseTipRows[index]
-                if row then
-                    local statusBits = {}
-                    if tip.hidden then
-                        statusBits[#statusBits + 1] = getBrowserLocaleString("hidden_tip")
-                    end
-                    if tip.overridden then
-                        statusBits[#statusBits + 1] = getBrowserLocaleString("overridden_tip")
-                    end
-                    if not tip.canModify then
-                        statusBits[#statusBits + 1] = getBrowserLocaleString("legacy_tip")
-                    end
-                    local statusLabel = #statusBits > 0 and (" (" .. table.concat(statusBits, ", ") .. ")") or ""
-                    if tip.overridden and tip.overrideText then
-                        local overrideWeight = tip.overrideWeight ~= nil and tip.overrideWeight or tip.weight or 0
-                        row.text:SetText(string.format("[%s] %s (%d)%s\nOverride: %s\nOriginal (%d): %s", tip.type or "?", tip.id or "-", overrideWeight, statusLabel, tip.overrideText or "", tip.weight or 0, tip.text or ""))
-                    else
-                        row.text:SetText(string.format("[%s] %s (%d)%s\n%s", tip.type or "?", tip.id or "-", tip.weight or 0, statusLabel, tip.text or ""))
-                    end
-                    row.edit.tipID = tip.id
-                    row.toggle.tipID = tip.id
-                    row.reset.tipID = tip.id
-                    if tip.canModify then
-                        row.edit:Show()
-                        row.toggle:SetText(tip.hidden and getBrowserLocaleString("unhide") or getBrowserLocaleString("hide"))
-                        row.toggle:Show()
-                        row.reset:Show()
-                    else
-                        row.edit:Hide()
-                        row.toggle:Hide()
-                        row.reset:Hide()
-                    end
-                    row:Show()
-                end
-            end
-        end
-
+        renderDungeonEditorBaseTips(baseTips)
         anchorDetailsEditorHeader()
-
-        detailsTravelLabel:SetText(getBrowserLocaleString("travel") .. ((detailsData.travel and detailsData.travel.overridden) and (" (" .. getBrowserLocaleString("overridden_tip") .. ")") or ""))
-        detailsAttunementLabel:SetText(getBrowserLocaleString("attunement") .. ((detailsData.attunement and detailsData.attunement.overridden) and (" (" .. getBrowserLocaleString("overridden_tip") .. ")") or ""))
-        detailsNotesLabel:SetText(getBrowserLocaleString("extra_notes") .. ((detailsData.notes and detailsData.notes.overridden) and (" (" .. getBrowserLocaleString("overridden_tip") .. ")") or ""))
-        detailsLoreLabel:SetText(getBrowserLocaleString("lore") .. ((detailsData.lore and detailsData.lore.overridden) and (" (" .. getBrowserLocaleString("overridden_tip") .. ")") or ""))
-
-        detailsTravelEdit:SetText((detailsData.travel and detailsData.travel.current) or mergedDetails.travel or "")
-        detailsAttunementEdit:SetText((detailsData.attunement and detailsData.attunement.current) or mergedDetails.attunement or "")
-        detailsNotesEdit:SetText((detailsData.notes and detailsData.notes.current) or mergedDetails.notes or "")
-        detailsLoreEdit:SetText((detailsData.lore and detailsData.lore.current) or mergedDetails.lore or "")
-        detailsTravelOriginalText:SetText(string.format("%s: %s", getBrowserLocaleString("original_text"), (detailsData.travel and detailsData.travel.base) or ""))
-        detailsAttunementOriginalText:SetText(string.format("%s: %s", getBrowserLocaleString("original_text"), (detailsData.attunement and detailsData.attunement.base) or ""))
-        detailsNotesOriginalText:SetText(string.format("%s: %s", getBrowserLocaleString("original_text"), (detailsData.notes and detailsData.notes.base) or ""))
-        detailsLoreOriginalText:SetText(string.format("%s: %s", getBrowserLocaleString("original_text"), (detailsData.lore and detailsData.lore.base) or ""))
+        renderDungeonEditorDetails(detailsData, mergedDetails)
     end
 
     expansionFS = createString(editorContent, getBrowserLocaleString("expansion"), headerFont, headerSize)
