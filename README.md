@@ -68,9 +68,7 @@ Use these commands in chat:
 
 Latest release ZIP:
 
-- `LINK_TO_LATEST_RELEASE_ZIP`
-
-Replace this placeholder with the final release link before publishing.
+- [Tothys-Dungeon-Tips-TBC.zip](https://github.com/Mathasyu/Tothys-Dungeon-Tips-TBC/blob/release/2026-Q1-02-02_0.9.2/Tothys-Dungeon-Tips-TBC.zip)
 
 ## Status
 
