@@ -118,9 +118,19 @@ Guidelines:
 - Anchored the minimap button directly to the minimap and made its creation and saved-angle positioning more robust
 - Refined the minimap button visuals to sit more cleanly on the minimap ring and moved its default position further outward
 - Switched the minimap button to the standard round tracking-button layout with proper ring offsets and a masked icon area
+- Split the former `Content Browser` into a `Dungeon-Browser` and a dedicated `NPC-Browser`
+- Renamed editor pages to `NPC-Editor` and `Dungeon-Editor`
+- The new `Dungeon-Browser` now focuses on dungeon and raid overview data without mixing in NPC tip output
+- The new `NPC-Browser` now handles NPC selection separately and includes `Selection` plus placeholder `Abilities` tabs for later boss-ability content
+- Added separate saved selection state for `Dungeon-Browser` and `NPC-Browser` so the split pages no longer reuse one shared browser selection
+- Restored the browser-to-main-frame preview bridge so selecting a dungeon or NPC in the new browser pages updates the main frame again
+- Browser and editor tip previews now render tip-type icon plus label markup instead of plain bracket text only
+- Added a `>>>` button to the main frame header that opens `NPC-Browser` with the currently shown NPC preselected
+- Updated the minimap tooltip so right click points to `Dungeon-Browser`
 
 ### Notes
 
 - Shipped tips are treated as read-only base data at runtime
 - Personal changes live in `TDTUserData`
 - Legacy runtime support remains in code for compatibility, but `tipsMap_enUS` itself is now migrated
+- Browser share buttons now use `RW` instead of `RL` for raid warning output.

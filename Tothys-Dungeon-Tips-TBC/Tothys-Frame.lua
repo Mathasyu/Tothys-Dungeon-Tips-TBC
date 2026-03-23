@@ -47,7 +47,7 @@ local function getMinimapTooltipLines()
 		return {
 			title = "Kiesel Dungeon Tool",
 			left = "Linksklick: Fenster ein/aus",
-			right = "Rechtsklick: Content Browser",
+			right = "Rechtsklick: Dungeon-Browser",
 			ctrl = "Strg + Klick: Konfiguration",
 			shift = "Shift + Klick + Ziehen: Button verschieben",
 		}
@@ -56,7 +56,7 @@ local function getMinimapTooltipLines()
 	return {
 		title = "Kiesel Dungeon Tool",
 		left = "Left Click: Toggle main window",
-		right = "Right Click: Content Browser",
+		right = "Right Click: Dungeon-Browser",
 		ctrl = "Ctrl + Click: Config",
 		shift = "Shift + Click + Drag: Move button",
 	}
@@ -338,6 +338,36 @@ function createTDTFrame()
 		addon:setMinimized()
 	end)
 
+	TDT_NpcBrowserBtn = CreateFrame("Button", "TDT_NpcBrowserBtn", TDT_HeaderPanel, "UIPanelButtonTemplate")
+	TDT_NpcBrowserBtn:SetSize(30, 18)
+	TDT_NpcBrowserBtn:SetPoint("TOPRIGHT", TDT_HeaderPanel, "TOPRIGHT", -48, -2)
+	TDT_NpcBrowserBtn:SetFrameStrata("DIALOG")
+	TDT_NpcBrowserBtn:SetFrameLevel(TDT_HeaderPanel:GetFrameLevel() + 10)
+	TDT_NpcBrowserBtn:SetText(">>>")
+	TDT_NpcBrowserBtn:RegisterForClicks("LeftButtonUp")
+	TDT_NpcBrowserBtn:SetScript("OnClick", function()
+		addon:openCurrentNpcInBrowser()
+	end)
+	TDT_NpcBrowserBtn:SetScript("OnEnter", function(self)
+		GameTooltip:SetOwner(self, "ANCHOR_TOP")
+		GameTooltip:SetText("Open NPC-Browser", 1, 0.82, 0)
+		GameTooltip:AddLine("Jump to the NPC currently shown in this window.", 1, 1, 1, true)
+		GameTooltip:Show()
+	end)
+	TDT_NpcBrowserBtn:SetScript("OnLeave", function()
+		GameTooltip:Hide()
+	end)
+
+	function addon:updateFrameNpcBrowserButton()
+		if not TDT_NpcBrowserBtn then
+			return
+		end
+
+		local hasNpcSelection = addon.currentFrameSelection and addon.currentFrameSelection.npcID
+		TDT_NpcBrowserBtn:SetEnabled(hasNpcSelection and true or false)
+		TDT_NpcBrowserBtn:SetAlpha(hasNpcSelection and 1 or 0.45)
+	end
+
 	TDT_CloseBtn = CreateFrame("Button", "TDT_CloseBtn", TDT_HeaderPanel, "UIPanelButtonTemplate")
 	TDT_CloseBtn:SetSize(20, 18)
 	TDT_CloseBtn:SetPoint("TOPRIGHT", TDT_HeaderPanel, "TOPRIGHT", -4, -2)
@@ -439,6 +469,7 @@ function createTDTFrame()
 	TDT_ParentFrame:SetPoint("CENTER", UIParent)
 	TDT_ParentFrame:Show()
 	addon:updateFrameButtons()
+	addon:updateFrameNpcBrowserButton()
 	createMinimapButton()
 	
 	

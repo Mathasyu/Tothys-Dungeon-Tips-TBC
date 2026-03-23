@@ -252,6 +252,20 @@ function addon:getLocalizedInstanceName(instanceKey)
 	return instanceData.name[selectedLocale] or instanceData.name.enUS or instanceKey
 end
 
+function addon:getExpansionKeyForInstance(instanceKey)
+	if not addon.contentCatalog or not instanceKey then
+		return nil
+	end
+
+	for expansionKey, expansionData in pairs(addon.contentCatalog) do
+		if expansionData.instances and expansionData.instances[instanceKey] then
+			return expansionKey
+		end
+	end
+
+	return nil
+end
+
 function addon:getShippedInstanceTipEntries(instanceKey)
 	local rawTips = getLocalizedInstanceInfoFromContent(instanceKey)
 	if rawTips then
@@ -1138,10 +1152,18 @@ function addon:showCurrentInstanceInfo()
 	TDT_TipText:SetText("")
 	if addon.refreshTipScroll then addon:refreshTipScroll() end
 	TDT_MobName:SetText(string.format("%s (Instance)", instanceName))
+	addon.currentFrameSelection = {
+		expansionKey = addon:getExpansionKeyForInstance(instanceKey),
+		instanceKey = instanceKey,
+		npcID = nil,
+		npcName = nil,
+		instanceName = instanceName,
+	}
+	if addon.updateFrameNpcBrowserButton then addon:updateFrameNpcBrowserButton() end
 	addFrameLine(TDT_TipPanel, instanceTips, "INSTANCE INFO:", class)
 end
 
-function addon:showBrowserSelectionInFrame(instanceName, npcName, npcID, instanceTips, npcTips)
+function addon:showBrowserSelectionInFrame(instanceName, npcName, npcID, instanceTips, npcTips, instanceKey, expansionKey)
 	if not TDT_MobName or not TDT_TipText or not TDT_TipPanel then
 		return
 	end
@@ -1166,6 +1188,14 @@ function addon:showBrowserSelectionInFrame(instanceName, npcName, npcID, instanc
 	TDT_TipText:SetText("")
 	if addon.refreshTipScroll then addon:refreshTipScroll() end
 	TDT_MobName:SetText(displayTitle)
+	addon.currentFrameSelection = {
+		expansionKey = expansionKey or addon:getExpansionKeyForInstance(instanceKey),
+		instanceKey = instanceKey,
+		npcID = npcID,
+		npcName = npcName,
+		instanceName = instanceName,
+	}
+	if addon.updateFrameNpcBrowserButton then addon:updateFrameNpcBrowserButton() end
 
 	local combinedSections = {}
 	if instanceTips and #instanceTips > 0 then
@@ -1388,6 +1418,14 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 			else
 				TDT_MobName:SetText(name)
 			end
+			addon.currentFrameSelection = {
+				expansionKey = addon:getExpansionKeyForInstance(addon:getCurrentInstanceKey()),
+				instanceKey = addon:getCurrentInstanceKey(),
+				npcID = id,
+				npcName = name,
+				instanceName = addon:getLocalizedInstanceName(addon:getCurrentInstanceKey()),
+			}
+			if addon.updateFrameNpcBrowserButton then addon:updateFrameNpcBrowserButton() end
 		
 			if TDTConfig.ShowFrame == "Show in separate frame" then addFrameLine(TDT_TipPanel, npcTips, shouldShowNpcIDs() and "NPC ID:" or "NPC:", class)
 			else addLine(GameTooltip, npcTips, shouldShowNpcIDs() and "NPC ID:" or "NPC:", class)
@@ -1397,6 +1435,8 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 			TDT_TipText:SetText("")
 			if addon.refreshTipScroll then addon:refreshTipScroll() end
 			TDT_MobName:SetText(name)
+			addon.currentFrameSelection = nil
+			if addon.updateFrameNpcBrowserButton then addon:updateFrameNpcBrowserButton() end
 		elseif TDTConfig.ShowFrame == "Show in separate frame" then
 			addon:showCurrentInstanceInfo()
 		end
@@ -1431,6 +1471,14 @@ function addon:getTarget(mobType)
 		else
 			TDT_MobName:SetText(name)
 		end
+		addon.currentFrameSelection = {
+			expansionKey = addon:getExpansionKeyForInstance(addon:getCurrentInstanceKey()),
+			instanceKey = addon:getCurrentInstanceKey(),
+			npcID = id,
+			npcName = name,
+			instanceName = addon:getLocalizedInstanceName(addon:getCurrentInstanceKey()),
+		}
+		if addon.updateFrameNpcBrowserButton then addon:updateFrameNpcBrowserButton() end
 		addFrameLine(TDT_TipPanel, npcTips, shouldShowNpcIDs() and "NPC ID:" or "NPC:", class)
 		--addLine(GameTooltip, tipsMap[id], "NPC ID:", role, class)		
 
@@ -1438,6 +1486,8 @@ function addon:getTarget(mobType)
 		TDT_TipText:SetText("")
 		if addon.refreshTipScroll then addon:refreshTipScroll() end
 		TDT_MobName:SetText(name)
+		addon.currentFrameSelection = nil
+		if addon.updateFrameNpcBrowserButton then addon:updateFrameNpcBrowserButton() end
 	else
 		addon:showCurrentInstanceInfo()
 	end
@@ -1505,6 +1555,26 @@ function addon:openContentBrowser()
 		addon:registerConfigPanel()
 	end
 	addon:openSettingsPanel(addon.contentBrowserCategory, addon.contentBrowserPanel)
+end
+
+function addon:openNpcBrowser()
+	if addon.registerConfigPanel then
+		addon:registerConfigPanel()
+	end
+	addon:openSettingsPanel(addon.npcBrowserCategory, addon.npcBrowserPanel)
+end
+
+function addon:openCurrentNpcInBrowser()
+	local selection = addon.currentFrameSelection
+	if not selection or not selection.npcID or not selection.instanceKey then
+		return
+	end
+
+	TDTConfig = TDTConfig or {}
+	TDTConfig.NpcBrowserExpansionKey = selection.expansionKey or addon:getExpansionKeyForInstance(selection.instanceKey) or TDTConfig.NpcBrowserExpansionKey or TDTConfig.BrowserExpansionKey or "tbc"
+	TDTConfig.NpcBrowserInstanceKey = selection.instanceKey
+	TDTConfig.NpcBrowserNpcID = selection.npcID
+	addon:openNpcBrowser()
 end
 
 function addon:toggleMainFrame()
