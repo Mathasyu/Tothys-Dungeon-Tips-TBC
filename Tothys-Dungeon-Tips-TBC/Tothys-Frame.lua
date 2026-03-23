@@ -255,6 +255,9 @@ function createTDTFrame()
 		if TDT_TipText then
 			TDT_TipText:SetWidth(math.max(self:GetWidth() - 45, 215))
 		end
+		if addon.refreshFrameTipLineLayout then
+			addon:refreshFrameTipLineLayout()
+		end
 		if addon.refreshTipScroll then addon:refreshTipScroll() end
 	end)
 	
@@ -429,6 +432,12 @@ function createTDTFrame()
 	TDT_TipScrollChild:SetHeight(1)
 	TDT_TipScrollFrame:SetScrollChild(TDT_TipScrollChild)
 
+	TDT_TipLineContainer = CreateFrame("Frame", "TDT_TipLineContainer", TDT_TipScrollChild)
+	TDT_TipLineContainer:SetPoint("TOPLEFT", TDT_TipScrollChild, "TOPLEFT", 0, 0)
+	TDT_TipLineContainer:SetPoint("TOPRIGHT", TDT_TipScrollChild, "TOPRIGHT", -3, 0)
+	TDT_TipLineContainer:SetHeight(1)
+	TDT_TipLineContainer:Show()
+
 	-- Frame Tip Text
 	TDT_TipText = TDT_TipScrollChild:CreateFontString("TDT_TipText", nil, nil)
 	TDT_TipText:SetPoint("TOPLEFT", TDT_TipScrollChild, "TOPLEFT", 0, 0)
@@ -442,6 +451,7 @@ function createTDTFrame()
 	TDT_TipText:SetJustifyH("LEFT")
 	TDT_TipText:SetJustifyV("TOP")
 	TDT_TipText:SetText(" ")
+	TDT_TipText:Hide()
 	if addon.refreshTipScroll then addon:refreshTipScroll() end
 
 	TDT_TipScrollBar = CreateFrame("Slider", "TDT_TipScrollBar", TDT_TipPanel, "UIPanelScrollBarTemplate")
@@ -734,11 +744,16 @@ function addon:refreshTipScroll()
 		return
 	end
 
-	local contentHeight = math.max(TDT_TipText:GetStringHeight() + 8, 1)
+	local textHeight = TDT_TipText:IsShown() and TDT_TipText:GetStringHeight() or 0
+	local lineHeight = (addon.frameTipContentHeight or 0)
+	local contentHeight = math.max(textHeight + 8, lineHeight + 8, 1)
 	local viewHeight = TDT_TipScrollFrame:GetHeight()
 	local maxScroll = math.max(contentHeight - viewHeight, 0)
 
 	TDT_TipScrollChild:SetHeight(contentHeight)
+	if TDT_TipLineContainer then
+		TDT_TipLineContainer:SetHeight(math.max(lineHeight, 1))
+	end
 	TDT_TipScrollBar:SetMinMaxValues(0, maxScroll)
 	if maxScroll == 0 then
 		TDT_TipScrollBar:SetValue(0)

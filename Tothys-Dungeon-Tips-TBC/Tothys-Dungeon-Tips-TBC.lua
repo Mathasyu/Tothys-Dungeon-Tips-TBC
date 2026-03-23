@@ -1149,8 +1149,7 @@ function addon:showCurrentInstanceInfo()
 	local _, class = UnitClass("player")
 	local instanceName = addon:getLocalizedInstanceName(instanceKey)
 
-	TDT_TipText:SetText("")
-	if addon.refreshTipScroll then addon:refreshTipScroll() end
+	addon:clearFrameTipLines()
 	TDT_MobName:SetText(string.format("%s (Instance)", instanceName))
 	addon.currentFrameSelection = {
 		expansionKey = addon:getExpansionKeyForInstance(instanceKey),
@@ -1185,8 +1184,7 @@ function addon:showBrowserSelectionInFrame(instanceName, npcName, npcID, instanc
 		displayTitle = string.format("%s (Instance)", instanceName)
 	end
 
-	TDT_TipText:SetText("")
-	if addon.refreshTipScroll then addon:refreshTipScroll() end
+	addon:clearFrameTipLines()
 	TDT_MobName:SetText(displayTitle)
 	addon.currentFrameSelection = {
 		expansionKey = expansionKey or addon:getExpansionKeyForInstance(instanceKey),
@@ -1197,23 +1195,13 @@ function addon:showBrowserSelectionInFrame(instanceName, npcName, npcID, instanc
 	}
 	if addon.updateFrameNpcBrowserButton then addon:updateFrameNpcBrowserButton() end
 
-	local combinedSections = {}
 	if instanceTips and #instanceTips > 0 then
-		local instanceText = buildFrameTextFromTips(instanceTips, class, false)
-		if instanceText ~= "" then
-			combinedSections[#combinedSections + 1] = instanceText
-		end
+		addFrameLine(TDT_TipPanel, instanceTips, "INSTANCE INFO:", class, false)
 	end
 
 	if npcTips and #npcTips > 0 then
-		local npcText = buildFrameTextFromTips(npcTips, class, false)
-		if npcText ~= "" then
-			combinedSections[#combinedSections + 1] = npcText
-		end
+		addFrameLine(TDT_TipPanel, npcTips, shouldShowNpcIDs() and "NPC ID:" or "NPC:", class, false)
 	end
-
-	TDT_TipText:SetText(table.concat(combinedSections, "\n"))
-	if addon.refreshTipScroll then addon:refreshTipScroll() end
 end
 
 function addon:getTipsForNpc(id)
@@ -1224,6 +1212,164 @@ local function RGBToHex(r, g, b)
 	g = g <= 1 and g >= 0 and g or 0
 	b = b <= 1 and b >= 0 and b or 0
 	return string.format("%02x%02x%02x", r*255, g*255, b*255)
+end
+
+local function insertTipIntoActiveChat(text)
+	if not text or text == "" then
+		return false
+	end
+
+	local editBox = ChatEdit_GetActiveWindow and ChatEdit_GetActiveWindow() or nil
+	if not editBox and ChatEdit_GetLastActiveWindow then
+		editBox = ChatEdit_GetLastActiveWindow()
+	end
+	if not editBox and LAST_ACTIVE_CHAT_EDIT_BOX then
+		editBox = LAST_ACTIVE_CHAT_EDIT_BOX
+	end
+	if not editBox then
+		return false
+	end
+
+	if editBox.Show then
+		editBox:Show()
+	end
+	if editBox.SetFocus then
+		editBox:SetFocus()
+	end
+
+	if editBox.Insert then
+		editBox:Insert(text)
+		return true
+	end
+
+	if editBox.GetText and editBox.SetText then
+		local currentText = editBox:GetText() or ""
+		if currentText ~= "" and not currentText:match("%s$") then
+			currentText = currentText .. " "
+		end
+		editBox:SetText(currentText .. text)
+		if editBox.HighlightText then
+			editBox:HighlightText(0, 0)
+		end
+		if editBox.SetCursorPosition then
+			editBox:SetCursorPosition(string.len(editBox:GetText() or ""))
+		end
+		return true
+	end
+
+	if ChatFrame_OpenChat then
+		ChatFrame_OpenChat(text)
+		return true
+	end
+
+	return false
+end
+
+function addon:clearFrameTipLines()
+	addon.frameTipLineButtons = addon.frameTipLineButtons or {}
+	for _, row in ipairs(addon.frameTipLineButtons) do
+		row:Hide()
+	end
+	addon.frameTipLineCount = 0
+	addon.frameTipContentHeight = 0
+	if TDT_TipText then
+		TDT_TipText:SetText("")
+		TDT_TipText:Hide()
+	end
+	if addon.refreshTipScroll then addon:refreshTipScroll() end
+end
+
+function addon:appendFrameTipLine(tipType, text)
+	if not TDT_TipLineContainer or not text or text == "" then
+		return
+	end
+
+	addon.frameTipLineButtons = addon.frameTipLineButtons or {}
+	addon.frameTipLineCount = (addon.frameTipLineCount or 0) + 1
+	local index = addon.frameTipLineCount
+	local row = addon.frameTipLineButtons[index]
+
+	if not row then
+		row = CreateFrame("Frame", nil, TDT_TipLineContainer)
+		row:SetFrameStrata("DIALOG")
+		row:SetFrameLevel(TDT_TipLineContainer:GetFrameLevel() + 5)
+		row.iconButton = CreateFrame("Button", nil, row)
+		row.iconButton:SetSize(16, 16)
+		row.iconButton:SetPoint("TOPLEFT", row, "TOPLEFT", 0, 1)
+		row.iconButton:EnableMouse(true)
+		row.iconButton:RegisterForClicks("LeftButtonUp")
+		row.iconButton:SetFrameStrata("DIALOG")
+		row.iconButton:SetFrameLevel(row:GetFrameLevel() + 10)
+		row.iconButton:SetHitRectInsets(0, 0, 0, 0)
+		row.iconButton:SetHighlightTexture("Interface\\Buttons\\ButtonHilight-Square", "ADD")
+		row.iconButton.icon = row.iconButton:CreateTexture(nil, "ARTWORK")
+		row.iconButton.icon:SetAllPoints()
+		row.text = row:CreateFontString(nil, "OVERLAY")
+		row.text:SetFontObject(GameFontWhite)
+		row.text:SetPoint("TOPLEFT", row.iconButton, "TOPRIGHT", 6, 0)
+		row.text:SetPoint("TOPRIGHT", row, "TOPRIGHT", -2, 0)
+		row.text:SetJustifyH("LEFT")
+		row.text:SetJustifyV("TOP")
+		row.text:SetWordWrap(true)
+		row.iconButton:SetScript("OnClick", function(self)
+			insertTipIntoActiveChat(self:GetParent().rawText)
+		end)
+		addon.frameTipLineButtons[index] = row
+	end
+
+	row:ClearAllPoints()
+	if index == 1 then
+		row:SetPoint("TOPLEFT", TDT_TipLineContainer, "TOPLEFT", 0, 0)
+		row:SetPoint("TOPRIGHT", TDT_TipLineContainer, "TOPRIGHT", -2, 0)
+	else
+		row:SetPoint("TOPLEFT", addon.frameTipLineButtons[index - 1], "BOTTOMLEFT", 0, -4)
+		row:SetPoint("TOPRIGHT", addon.frameTipLineButtons[index - 1], "BOTTOMRIGHT", 0, -4)
+	end
+	local color = tipsColors[tipType]
+	local lineHex = color and RGBToHex(color[1], color[2], color[3]) or nil
+	local iconTexture = iconList[tipType] and ("Interface\\Icons\\" .. iconList[tipType]) or "Interface\\Buttons\\UI-GuildButton-PublicNote-Up"
+	row.iconButton.icon:SetTexture(iconTexture)
+	if lineHex then
+		row.text:SetText(string.format("|cff%s%s|r", lineHex, text))
+	else
+		row.text:SetText(text)
+	end
+	row.rawText = text
+	row:Show()
+
+	local rowHeight = math.max(row.text:GetStringHeight(), 16)
+	row:SetHeight(rowHeight)
+	addon.frameTipContentHeight = (addon.frameTipContentHeight or 0) + rowHeight + (index > 1 and 4 or 0)
+	if addon.refreshTipScroll then addon:refreshTipScroll() end
+end
+
+function addon:refreshFrameTipLineLayout()
+	if not addon.frameTipLineButtons then
+		return
+	end
+
+	local previousRow
+	addon.frameTipContentHeight = 0
+
+	for _, row in ipairs(addon.frameTipLineButtons) do
+		if row:IsShown() then
+			row:ClearAllPoints()
+			if not previousRow then
+				row:SetPoint("TOPLEFT", TDT_TipLineContainer, "TOPLEFT", 0, 0)
+				row:SetPoint("TOPRIGHT", TDT_TipLineContainer, "TOPRIGHT", -2, 0)
+			else
+				row:SetPoint("TOPLEFT", previousRow, "BOTTOMLEFT", 0, -4)
+				row:SetPoint("TOPRIGHT", previousRow, "BOTTOMRIGHT", 0, -4)
+			end
+
+			local rowHeight = math.max(row.text:GetStringHeight(), 16)
+			row:SetHeight(rowHeight)
+			addon.frameTipContentHeight = addon.frameTipContentHeight + rowHeight + (previousRow and 4 or 0)
+			previousRow = row
+		end
+	end
+
+	if addon.refreshTipScroll then addon:refreshTipScroll() end
 end
 
 local function getPlayerRoleTipKey()
@@ -1361,6 +1507,9 @@ addFrameLine = function(tooltip, tips, type, class, forceAll)
 			-- tip[1] is the category indicator and we'll use that to decide whether we should show this tooltip or not.
 
 			if shouldShowTipForDisplay(tip[1], class, forceAll) then
+				if tooltip == TDT_TipPanel and addon.appendFrameTipLine then
+					addon:appendFrameTipLine(tip[1], tip[2] or "")
+				else
 				
 					local r,g,b = tipsColors[tip[1]][1], tipsColors[tip[1]][2], tipsColors[tip[1]][3]
 					local lineHex = RGBToHex(r, g, b)
@@ -1381,6 +1530,7 @@ addFrameLine = function(tooltip, tips, type, class, forceAll)
 						if addon.refreshTipScroll then addon:refreshTipScroll() end
 						--tooltip:AddLine(tip[2])
 					end
+				end
 			end
 		end
 		
@@ -1411,8 +1561,7 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 		local npcTips = addon:getTipsForNpc(id)
 		if npcTips then
 			-- Don't remove active tip if you accidentally mouse over ally.
-			TDT_TipText:SetText("")
-			if addon.refreshTipScroll then addon:refreshTipScroll() end
+			addon:clearFrameTipLines()
 			if shouldShowNpcIDs() then
 				TDT_MobName:SetText(string.format("%s (NPC ID: %d)", name, id))
 			else
@@ -1432,8 +1581,7 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 			end
 		
 		elseif UnitIsEnemy(unit, "player") then
-			TDT_TipText:SetText("")
-			if addon.refreshTipScroll then addon:refreshTipScroll() end
+			addon:clearFrameTipLines()
 			TDT_MobName:SetText(name)
 			addon.currentFrameSelection = nil
 			if addon.updateFrameNpcBrowserButton then addon:updateFrameNpcBrowserButton() end
@@ -1464,8 +1612,7 @@ function addon:getTarget(mobType)
 		if npcTips then
 		-- Don't remove active tip if you accidentally mouse over ally.
 		
-		TDT_TipText:SetText("")
-		if addon.refreshTipScroll then addon:refreshTipScroll() end
+		addon:clearFrameTipLines()
 		if shouldShowNpcIDs() then
 			TDT_MobName:SetText(string.format("%s (NPC ID: %d)", name, id))
 		else
@@ -1483,8 +1630,7 @@ function addon:getTarget(mobType)
 		--addLine(GameTooltip, tipsMap[id], "NPC ID:", role, class)		
 
 	elseif 	UnitIsEnemy(mobType, "player") then
-		TDT_TipText:SetText("")
-		if addon.refreshTipScroll then addon:refreshTipScroll() end
+		addon:clearFrameTipLines()
 		TDT_MobName:SetText(name)
 		addon.currentFrameSelection = nil
 		if addon.updateFrameNpcBrowserButton then addon:updateFrameNpcBrowserButton() end

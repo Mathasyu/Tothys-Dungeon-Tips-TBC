@@ -124,6 +124,8 @@ local browserLocaleStrings = {
 		info_how_it_works = "How It Works",
 		info_slash_commands = "Slash Commands",
 		info_slash_commands_text = "Use these commands in chat:\n- /kdt config opens the addon settings\n- /kdt show shows the main window\n- /kdt hide hides the main window\n- /kdt toggle toggles the main window\n- /kdt test shows a test preview\n- /kdt lang auto switches to Auto\n- /kdt lang en switches to English\n- /kdt lang de switches to German",
+		info_frame_clicks = "Quick NPC Jump",
+		info_frame_clicks_text = "The `>>>` button in the main window jumps straight to `NPC-Browser` and preselects the NPC currently shown there when available.",
 		expansion = "Expansion",
 		dungeon_or_raid = "Dungeon / Raid",
 		npc = "NPC",
@@ -278,6 +280,8 @@ local browserLocaleStrings = {
 		info_how_it_works = "So funktioniert's",
 		info_slash_commands = "Slashbefehle",
 		info_slash_commands_text = "Diese Befehle kannst du im Chat verwenden:\n- /kdt config oeffnet die Addon-Einstellungen\n- /kdt show zeigt das Hauptfenster\n- /kdt hide blendet das Hauptfenster aus\n- /kdt toggle schaltet das Hauptfenster um\n- /kdt test zeigt eine Testvorschau\n- /kdt lang auto schaltet auf Auto\n- /kdt lang en schaltet auf Englisch\n- /kdt lang de schaltet auf Deutsch",
+		info_frame_clicks = "Schnellsprung zum NPC",
+		info_frame_clicks_text = "Der `>>>`-Button im Hauptfenster springt direkt in den `NPC-Browser` und waehlt dort, wenn moeglich, genau den NPC aus, der gerade im Fenster angezeigt wird.",
 		expansion = "Erweiterung",
 		dungeon_or_raid = "Dungeon / Raid",
 		npc = "NPC",
@@ -3428,6 +3432,13 @@ local function createInfoMenu()
     slashText:SetPoint("TOPLEFT", slashHeader, "BOTTOMLEFT", 0, -8)
     slashText:SetWidth(620)
 
+    local frameClicksHeader = createString(infoContent, getBrowserLocaleString("info_frame_clicks"), "Fonts\\MORPHEUS.ttf", 16)
+    frameClicksHeader:SetPoint("TOPLEFT", slashText, "BOTTOMLEFT", 0, -18)
+
+    local frameClicksText = createString(infoContent, getBrowserLocaleString("info_frame_clicks_text"), "Fonts\\FRIZQT__.TTF", 11)
+    frameClicksText:SetPoint("TOPLEFT", frameClicksHeader, "BOTTOMLEFT", 0, -8)
+    frameClicksText:SetWidth(620)
+
     local function refreshInfoTexts()
         title:SetText(getBrowserLocaleString("info_title"))
         intro:SetText(getBrowserLocaleString("info_intro"))
@@ -3443,6 +3454,8 @@ local function createInfoMenu()
         feedbackText:SetText(getBrowserLocaleString("info_feedback_text"))
         slashHeader:SetText(getBrowserLocaleString("info_slash_commands"))
         slashText:SetText(getBrowserLocaleString("info_slash_commands_text"))
+        frameClicksHeader:SetText(getBrowserLocaleString("info_frame_clicks"))
+        frameClicksText:SetText(getBrowserLocaleString("info_frame_clicks_text"))
     end
 
     addon.infoPanel:SetScript("OnShow", function(self)

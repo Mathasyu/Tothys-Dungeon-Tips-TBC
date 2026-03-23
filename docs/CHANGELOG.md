@@ -127,6 +127,7 @@ Guidelines:
 - Browser and editor tip previews now render tip-type icon plus label markup instead of plain bracket text only
 - Added a `>>>` button to the main frame header that opens `NPC-Browser` with the currently shown NPC preselected
 - Updated the minimap tooltip so right click points to `Dungeon-Browser`
+- The `Info` page now explains the `>>>` quick jump from the main frame into `NPC-Browser`
 
 ### Notes
 
