@@ -107,6 +107,7 @@ An instance may still contain multiple `mapIDs`.
 11. Keep config toggles truly editable when exposed in the UI.
     `Show Tips in Dungeons` is now meant to be a real user setting, not a locked placeholder.
 12. Add a minimap icon with a user-facing toggle so the addon can be opened quickly without slash commands.
+13. Create a custom `Kiesel Dungeon Tool` logo and dedicated minimap button artwork to replace the current placeholder icon.
 
 ## UI decisions
 

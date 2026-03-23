@@ -6076,6 +6076,151 @@ tipsMap_deDE[20912] = {
 	{"arcatraz_20912_09", "TANK", "Sorge dafuer, dass Boss und Klone auf dir bleiben, damit der Heiler nicht mehrere Gedankenschinden gleichzeitig abbekommt.", 20},
 	{"arcatraz_20912_10", "Important", "Der Boss feared auch zufaellige Spieler. Furchtzauberschutz oder Tremor Totem helfen besonders, wenn Tank oder Heiler betroffen sind.", 10},
 }
+tipsMap_deDE[20904] = {
+	{"arcatraz_20904_01", "Important", "Sobald ihr euch dem Waerter naehrt, kommt die Gruppe in den Kampf und der Encounter beginnt kurz darauf. Stellt sicher, dass jeder die Boss-Strategie kennt, bevor ihr in Kampfreichweite geht.", 10},
+}
+tipsMap_deDE[20905] = {
+	{"arcatraz_20905_01", "Legion", "Verursacht Feuerschaden.", 20},
+	{"arcatraz_20905_02", "Important", "Gegen diesen Mob besser keine Feuerzauber nutzen, da er erhoehten Feuerwiderstand hat.", 10},
+}
+tipsMap_deDE[20906] = {
+	{"arcatraz_20906_01", "Important", "Der Mob nutzt Warp und erscheint ploetzlich hinter einem Spieler.", 20},
+	{"arcatraz_20906_02", "Important", "Von hinten macht der Mob deutlich mehr Schaden.", 10},
+}
+tipsMap_deDE[20977] = {
+	{"arcatraz_20977_01", "Legion", "Freundlich; hilft der Gruppe.", 10},
+}
+tipsMap_deDE[20908] = {
+	{"arcatraz_20908_01", "Legion", "Verursacht hauptsaechlich Naturschaden.", 40},
+	{"arcatraz_20908_02", "Important", "Magieerdung dispellen. Der Buff sorgt 30 Sek. lang dafuer, dass der Mob 50% weniger Magieschaden nimmt.", 30},
+	{"arcatraz_20908_03", "HEALER", "Betroffene Spieler von Blitzsprung extra im Auge behalten. Der Debuff erhoeht 60 Sek. lang den erlittenen Schaden aus allen Magieschulen.", 20},
+	{"arcatraz_20908_04", "Important", "Blitzentladung ist ein Kettenblitz, der Naturschaden an alle Spieler in 50 Metern macht.", 10},
+}
+tipsMap_deDE[20909] = {
+	{"arcatraz_20909_01", "Important", "Verursacht vor allem Feuer- (AoE) und Schatten- (Single-Target) Schaden.", 50},
+	{"arcatraz_20909_02", "Important", "Den Fluch des Magmawerfers vom Spieler decursen. Der Fluch reduziert die Wirksamkeit eingehender Heilung.", 40},
+	{"arcatraz_20909_03", "Important", "Wirkt Regen des Feuers auf 10 Meter Flaeche und macht 8 Sek. lang alle 2 Sek. Schaden.", 30},
+	{"arcatraz_20909_04", "Dodge", "Sofort aus Regen des Feuers rauslaufen.", 20},
+	{"arcatraz_20909_05", "Important", "Wirkt Schattenblitz auf einen Spieler.", 10},
+}
+tipsMap_deDE[20910] = {
+	{"arcatraz_20910_01", "Legion", "Nur der Tank sollte vor dem Mob stehen, damit der Rest den Frontalschaden vermeidet.", 70},
+	{"arcatraz_20910_02", "Important", "Der Mob macht je nach aktivem Farb-Buff unterschiedlichen Schaden:", 60},
+	{"arcatraz_20910_03", "Important", "BRUTMACHT: Gruen (stunnt Spieler vor dem Mob fuer 1 Sek.).", 50},
+	{"arcatraz_20910_04", "Important", "BRUTMACHT: Schwarz (macht Feuerschaden an Spielern vor ihm).", 40},
+	{"arcatraz_20910_05", "Important", "BRUTMACHT: Blau (macht Frostschaden an Spielern vor ihm, zerstoert Mana und erhoeht die Zeit zwischen Angriffen).", 30},
+	{"arcatraz_20910_06", "Important", "BRUTMACHT: Bronze (macht Arkanschaden und reduziert Zauber- sowie Angriffstempo bei Spielern vor ihm).", 20},
+	{"arcatraz_20910_07", "Important", "BRUTMACHT: Rot (legt einen Feuer-DoT auf Spieler vor ihm).", 10},
+}
+tipsMap_deDE[20911] = {
+	{"arcatraz_20911_01", "Legion", "Der Mob macht hauptsaechlich Feuerschaden.", 40},
+	{"arcatraz_20911_02", "Important", "Verursacht Feuerschaden in einem Frontalkegel. Nur der Tank sollte vor dem Mob stehen.", 30},
+	{"arcatraz_20911_03", "Important", "Legt Tödliche Wunden auf das Ziel, wodurch eingehende Heilung reduziert wird.", 20},
+	{"arcatraz_20911_04", "Important", "Macht AoE-Feuerschaden ueber Druckwelle.", 10},
+}
+
+tipsMap_deDE[20857] = {
+	{"arcatraz_20857_01", "Legion", "Verursacht eine Mischung aus Feuer- und Naturschaden ueber DoTs.", 30},
+	{"arcatraz_20857_02", "Important", "Immolation vom Tank dispellen. Das ist ein Feuer-DoT und ein Magie-Effekt.", 20},
+	{"arcatraz_20857_03", "Important", "Infiziertes Blut vom Tank dispellen. Das ist ein Natur-DoT und ein Krankheits-Effekt.", 10},
+}
+tipsMap_deDE[20859] = {
+	{"arcatraz_20859_01", "Legion", "Fernkampf-Hunter-artige Mobs.", 20},
+	{"arcatraz_20859_02", "Important", "Diese Mobs muessen downgehen. Laesst man sie stehen, spawnen weiter Adds, was nach einem Wipe beim Zuruecklaufen schnell problematisch wird.", 10},
+}
+tipsMap_deDE[20864] = {
+	{"arcatraz_20864_01", "Legion", "Macht Naturschaden und etwas physischen Schaden.", 20},
+	{"arcatraz_20864_02", "Important", "Moeglichst auf Range spielen und nur den Tank im Meelee lassen, weil Inkubation eine AoE-Explosion ist.", 10},
+}
+tipsMap_deDE[20865] = {
+	{"arcatraz_20865_01", "Legion", "Diese Mobs werden aktiv, wenn die Gruppe zu nah kommt. Tank nimmt sie auf und die Gruppe fokussiert sie schnell runter.", 10},
+}
+tipsMap_deDE[20866] = {
+	{"arcatraz_20866_01", "Legion", "Verursacht eine Mischung aus Feuer- und Schattenschaden.", 30},
+	{"arcatraz_20866_02", "Important", "Nur der Tank sollte vor diesem Mob stehen, wegen des frontalen Teufelsatems.", 20},
+	{"arcatraz_20866_03", "Important", "Der Mob beschwoert Augen ohne Sicht, die DDs schnell downen sollten. Sie verlangsamen Bewegung sowie Zauber- und Angriffstempo der Spieler.", 10},
+}
+tipsMap_deDE[20867] = {
+	{"arcatraz_20867_01", "PriorityTargets", "Sobald der Mob 50% erreicht, hat die Gruppe 15 Sek. Zeit ihn zu finishen, sonst verursacht der Debuff massiven Schaden.", 40},
+	{"arcatraz_20867_02", "Important", "Fehlt eurer Gruppe der Schaden fuer 50 auf 0 in 15 Sek., koennen DDs und Heiler vor 50% kurz die Sichtlinie droppen, damit der Debuff nicht auf ihnen landet.", 30},
+	{"arcatraz_20867_03", "ROGUE", "Mantel der Schatten kann Mal des Todes entfernen.", 20},
+	{"arcatraz_20867_04", "Important", "Lebensentzug als Magie-Effekt vom Tank dispellen.", 10},
+}
+tipsMap_deDE[20868] = {
+	{"arcatraz_20868_01", "Important", "Der Mob macht hohen Frontalschaden. Nur der Tank sollte vor ihm stehen.", 30},
+	{"arcatraz_20868_02", "Important", "Nach Chaosatem Fluch, Gift und Magie sofort vom Tank entfernen.", 20},
+	{"arcatraz_20868_03", "Important", "Wenn Heiler oder Tank verhext werden, muessen Off-Tank oder Off-Heal kurz uebernehmen.", 10},
+}
+tipsMap_deDE[20869] = {
+	{"arcatraz_20869_01", "Important", "Der Mob verursacht AoE-Arkanschaden.", 50},
+	{"arcatraz_20869_02", "TANK", "Falls der Mob wiederbelebt wird, muss der Tank schnell wieder Aggro uebernehmen. Diese Mobs resetten ihre Aggro regelmaessig.", 40},
+	{"arcatraz_20869_03", "ROGUE", "Sentinels sind anfaellig fuer Billiger Schuss und Nierenhieb, um den Tank etwas zu entlasten.", 30},
+	{"arcatraz_20869_04", "Important", "Range-DDs und Heiler sollten 40 Meter Abstand halten, um Energiefreisetzung zu vermeiden, solange der Mob lebt.", 20},
+	{"arcatraz_20869_05", "Dodge", "WEGRENNEN: Bei wenig Leben versucht der Mob zu explodieren und macht AoE-Schaden.", 10},
+}
+tipsMap_deDE[20873] = {
+	{"arcatraz_20873_01", "Important", "Wenn der Mob eine leuchtend violette AoE-Zone unter sich setzt, muss der Tank ihn wegkiten. Die Zone heilt den Mob stark und erhoeht seinen Schaden.", 10},
+}
+tipsMap_deDE[20875] = {
+	{"arcatraz_20875_01", "Important", "Beachtet den Buff Elementare Antwort, den der Mob auf sich selbst legt. Er reduziert bestimmte Magieschulen oder physische Faehigkeiten um 75%. Wenn moeglich, Schadensschulen koordinieren und wechseln.", 40},
+	{"arcatraz_20875_02", "Important", "Vor dem Pull sollte zuerst eine Faehigkeit auf den Boss gehen, die der Tank nicht hauptsaechlich nutzt, damit der Tank danach leichter Aggro aufbauen kann.", 30},
+	{"arcatraz_20875_03", "TANK", "Aggroaufbau kann schwierig werden, wenn der Mob gerade gegen deine Schadensart resistent ist. Dann kurz warten, bis er auf eine andere Resistenz wechselt.", 20},
+	{"arcatraz_20875_04", "Important", "Tremor Totem oder Furchtzauberschutz auf dem Tank helfen gegen Psychischer Schrei.", 10},
+}
+tipsMap_deDE[20879] = {
+	{"arcatraz_20879_01", "Important", "Seelenraub als Magie-Buff vom Tank dispellen. Der Effekt reduziert Werte und verursachten Schaden 20 Sek. lang um 45%.", 30},
+	{"arcatraz_20879_02", "MAGE", "Seelenraub auch vom gegnerischen Mob spellstealen oder dispellen. Dort erhoeht der Buff Werte und Schaden 20 Sek. lang um 45%.", 20},
+	{"arcatraz_20879_03", "Defensives", "Ohne Mage zum Entfernen von Seelenraub braucht der Tank zusaetzliche Def-CDs und der Heiler mehr Fokus.", 10},
+}
+tipsMap_deDE[20880] = {
+	{"arcatraz_20880_01", "PriorityTargets", "Der Mob legt Geschwaechte Seele auf Spieler. Der Debuff stackt bis 10 und haelt 12 Sek. Werden die Stacks auf dem Tank zu hoch, kann der Fight kippen.", 30},
+	{"arcatraz_20880_02", "Legion", "Der Mob macht AoE-Schattenschaden in etwa 40 Metern. Schattenwiderstands-Auren oder Buffs koennen helfen.", 20},
+	{"arcatraz_20880_03", "Important", "Kraftvoller Spalten ist ein AoE-Knockback. Spieler, besonders der Tank, sollten mit dem Ruecken zur Wand stehen.", 10},
+}
+tipsMap_deDE[20881] = {
+	{"arcatraz_20881_01", "Legion", "Der Mob macht physischen und Schattenschaden.", 40},
+	{"arcatraz_20881_02", "WARLOCK", "Der Teufelsgardist ist immun gegen Versklaven und Verbannen.", 30},
+	{"arcatraz_20881_03", "Important", "Den Mob mit dem Ruecken des Tanks zur Wand tanken, wegen Verwuesten.", 20},
+	{"arcatraz_20881_04", "Important", "Der Mob nutzt Betaeubendes Brüllen als AoE-Interrupt. Heiler und DDs koennen kurz die Sichtlinie brechen, nachdem der Tank den ersten abbekommen hat.", 10},
+}
+tipsMap_deDE[20882] = {
+	{"arcatraz_20882_01", "Important", "Der Mob startet im Stealth und gouged den Tank regelmaessig. Danach greift er den Spieler mit dem zweithoechsten Threat an.", 10},
+}
+tipsMap_deDE[20883] = {
+	{"arcatraz_20883_01", "Important", "Der Mob wirkt Beherrschung auf einen Spieler und uebernimmt ihn 6 Sek. lang. Den MCten Spieler sofort stunnen oder per CC sichern.", 10},
+}
+tipsMap_deDE[20896] = {
+	{"arcatraz_20896_01", "Legion", "Schurkenartiger Mob mit Ausweichen.", 40},
+	{"arcatraz_20896_02", "Important", "Wenn Ausweichen aktiv ist, dodged der Mob deutlich mehr. Groeßere Angriffe besser fuer die Luecke dazwischen aufheben.", 30},
+	{"arcatraz_20896_03", "Important", "Beeintraechtigendes Gift von Spielern dispellen.", 20},
+	{"arcatraz_20896_04", "Important", "Auf Heroisch immun gegen Gedankenkontrolle.", 10},
+}
+tipsMap_deDE[20897] = {
+	{"arcatraz_20897_01", "Legion", "Arkanmagier-artiger Mob.", 50},
+	{"arcatraz_20897_02", "Important", "Polymorph sofort von Tank oder Heiler dispellen.", 40},
+	{"arcatraz_20897_03", "Important", "Schallknall ist eine AoE-Arkanexplosion mit 45 Metern Reichweite. Sie unterbricht Zauber und sperrt die gerade genutzte Magieschule 4 Sek. lang.", 30},
+	{"arcatraz_20897_04", "HEALER", "Wenn moeglich, Instant-Heals, Totems oder sehr kurze Casts nutzen, um das Risiko eines Silence zu senken.", 20},
+	{"arcatraz_20897_05", "Important", "Wenn der Heiler von Schallknall gesilenced wird, kann ein Off-Heal helfen; der Tank sollte dann Def-CDs nutzen.", 10},
+}
+tipsMap_deDE[20898] = {
+	{"arcatraz_20898_01", "Important", "Spieler muessen stacken, um den Schaden von Meteor zu teilen.", 40},
+	{"arcatraz_20898_02", "Important", "Solange kein Meteor kommt, sollten Range-DDs und Heiler mindestens 20 Meter weg stehen, um den AoE von Feuerschild in Meelee-Reichweite zu vermeiden.", 30},
+	{"arcatraz_20898_03", "WARLOCK", "Der Abyssal ist immun gegen Verbannen und Versklaven.", 20},
+	{"arcatraz_20898_04", "Legion", "Der Mob verursacht hauptsaechlich Feuerschaden. Feuerwiderstands-Aura ist eine Option.", 10},
+}
+tipsMap_deDE[20900] = {
+	{"arcatraz_20900_01", "Important", "Spieler muessen auf ihren Threat achten. Zieht ein Nicht-Tank kurz vor Kriegsdonner Aggro, kann das schnell zum Wipe fuehren.", 20},
+	{"arcatraz_20900_02", "WARLOCK", "Der Verdammniswächter ist immun gegen Teufelsversklavung.", 10},
+}
+tipsMap_deDE[20901] = {
+	{"arcatraz_20901_01", "Important", "Fernkampf-Mobs, die den Tank mit Hakennetz festsetzen und Spieler mit Streuschuss desorientieren.", 20},
+	{"arcatraz_20901_02", "Important", "Immun gegen Eiskältefalle, Verbannen, Fear, Teufelsversklavung und die meisten Stuns.", 10},
+}
+tipsMap_deDE[20902] = {
+	{"arcatraz_20902_01", "Legion", "Der Mob macht hauptsaechlich Feuerschaden.", 30},
+	{"arcatraz_20902_02", "Important", "Immun gegen Eiskältefalle, Verbannen, Fear, Teufelsversklavung und die meisten Stuns.", 20},
+	{"arcatraz_20902_03", "Dodge", "Wenn der Mob Höllenfeuer auf eine Position oder einen Spieler wirkt, sofort rauslaufen.", 10},
+}
 tipsMap_deDE[21303] = {
 	{"arcatraz_21303_01", "Legion", "", 10},
 }
@@ -6100,6 +6245,666 @@ tipsMap_deDE[24744] = {
 }
 tipsMap_deDE[24560] = {
 	{"magisters_terrace_24560_01", "Important", "", 10},
+}
+tipsMap_deDE[16151] = {
+	{"kara_16151_01", "Important", "Stellt sicher, dass der Trash bis Attumen komplett gecleart ist. Solange Midnight lebt, hat der Trash einen Respawn-Timer von 25 Minuten.", 200},
+	{"kara_16151_02", "Important", "Midnight und Attumen sind immun gegen Taunt. Alle Raider muessen ihren Threat sauber kontrollieren, besonders waehrend der Phasenwechsel.", 190},
+	{"kara_16151_03", "Advanced", "PHASE 1", 180},
+	{"kara_16151_04", "Important", "Zu Kampfbeginn sollte ein Offtank Midnight nehmen. Der Krieger-Main-Tank sollte fuer Attumen bereitgehalten werden.", 170},
+	{"kara_16151_05", "HEALER", "Jeder Tank sollte zum Pull einen festen Heiler haben, plus einen weiteren Heiler fuer den Raidschaden.", 160},
+	{"kara_16151_06", "Advanced", "PHASE 2 (startet, wenn Midnight bei 95% ist und Attumen erscheint)", 150},
+	{"kara_16151_07", "TANK", "Der Main-Tank sollte Attumen aufnehmen, ihn leicht von Midnight wegziehen und von der Gruppe wegdrehen, um Cleaves zu vermeiden.", 140},
+	{"kara_16151_08", "HEALER", "Heals stoppen, sobald Attumen erscheint, damit der Main-Tank sauber Aggro aufbauen kann.", 130},
+	{"kara_16151_09", "DAMAGE", "Zum Start von Phase 2 DPS stoppen, weil Attumen beim Uebergang den Threat resettet.", 120},
+	{"kara_16151_10", "DAMAGE", "DDs sollten hinter Attumen stacken, um seinen Cleave zu vermeiden.", 110},
+	{"kara_16151_11", "Important", "Fluch Entkoerperliche Gegenwart dispellen oder reflektieren. Der Fluch reduziert die Trefferchance des Spielers um 50%.", 100},
+	{"kara_16151_12", "DRUID", "Entkoerperliche Gegenwart mit Fluch aufheben vom betroffenen Spieler entfernen.", 90},
+	{"kara_16151_13", "MAGE", "Entkoerperliche Gegenwart mit Fluch aufheben vom betroffenen Spieler entfernen.", 80},
+	{"kara_16151_14", "WARRIOR", "Als Tank Zauberreflexion nutzen, wenn der Boss kurz davor ist, den Fluch zu setzen.", 70},
+	{"kara_16151_15", "DAMAGE", "Wenn Attumen erscheint, also bei 95% von Midnight, sofort auf Attumen wechseln.", 60},
+	{"kara_16151_16", "Advanced", "PHASE 3 (startet bei 25%, wenn Attumen Midnight besteigt)", 50},
+	{"kara_16151_17", "TANK", "Attumen resettet den Threat zum Phasenwechsel. Schnell wieder aufnehmen.", 40},
+	{"kara_16151_18", "HEALER", "Zum Start von Phase 3 Heals kurz stoppen, weil Attumen dabei den Threat resettet.", 30},
+	{"kara_16151_19", "DAMAGE", "Zum Start von Phase 3 DPS kurz stoppen, weil Attumen dabei den Threat resettet.", 20},
+	{"kara_16151_20", "TANK", "Der Offtank, der Midnight hatte, kann danach auf Attumen mit Schaden machen.", 10},
+}
+tipsMap_deDE[16152] = {
+	{"kara_16152_01", "Important", "Stellt sicher, dass der Trash bis Attumen komplett gecleart ist. Solange Midnight lebt, hat der Trash einen Respawn-Timer von 25 Minuten.", 200},
+	{"kara_16152_02", "Important", "Midnight und Attumen sind immun gegen Taunt. Alle Raider muessen ihren Threat sauber kontrollieren, besonders waehrend der Phasenwechsel.", 190},
+	{"kara_16152_03", "Advanced", "PHASE 1", 180},
+	{"kara_16152_04", "Important", "Zu Kampfbeginn sollte ein Offtank Midnight nehmen. Der Krieger-Main-Tank sollte fuer Attumen bereitgehalten werden.", 170},
+	{"kara_16152_05", "HEALER", "Jeder Tank sollte zum Pull einen festen Heiler haben, plus einen weiteren Heiler fuer den Raidschaden.", 160},
+	{"kara_16152_06", "Advanced", "PHASE 2 (startet, wenn Midnight bei 95% ist und Attumen erscheint)", 150},
+	{"kara_16152_07", "TANK", "Der Main-Tank sollte Attumen aufnehmen, ihn leicht von Midnight wegziehen und von der Gruppe wegdrehen, um Cleaves zu vermeiden.", 140},
+	{"kara_16152_08", "HEALER", "Heals stoppen, sobald Attumen erscheint, damit der Main-Tank sauber Aggro aufbauen kann.", 130},
+	{"kara_16152_09", "DAMAGE", "Zum Start von Phase 2 DPS stoppen, weil Attumen beim Uebergang den Threat resettet.", 120},
+	{"kara_16152_10", "DAMAGE", "DDs sollten hinter Attumen stacken, um seinen Cleave zu vermeiden.", 110},
+	{"kara_16152_11", "Important", "Fluch Entkoerperliche Gegenwart dispellen oder reflektieren. Der Fluch reduziert die Trefferchance des Spielers um 50%.", 100},
+	{"kara_16152_12", "DRUID", "Entkoerperliche Gegenwart mit Fluch aufheben vom betroffenen Spieler entfernen.", 90},
+	{"kara_16152_13", "MAGE", "Entkoerperliche Gegenwart mit Fluch aufheben vom betroffenen Spieler entfernen.", 80},
+	{"kara_16152_14", "WARRIOR", "Als Tank Zauberreflexion nutzen, wenn der Boss kurz davor ist, den Fluch zu setzen.", 70},
+	{"kara_16152_15", "DAMAGE", "Wenn Attumen erscheint, also bei 95% von Midnight, sofort auf Attumen wechseln.", 60},
+	{"kara_16152_16", "Advanced", "PHASE 3 (startet bei 25%, wenn Attumen Midnight besteigt)", 50},
+	{"kara_16152_17", "TANK", "Attumen resettet den Threat zum Phasenwechsel. Schnell wieder aufnehmen.", 40},
+	{"kara_16152_18", "HEALER", "Zum Start von Phase 3 Heals kurz stoppen, weil Attumen dabei den Threat resettet.", 30},
+	{"kara_16152_19", "DAMAGE", "Zum Start von Phase 3 DPS kurz stoppen, weil Attumen dabei den Threat resettet.", 20},
+	{"kara_16152_20", "TANK", "Der Offtank, der Midnight hatte, kann danach auf Attumen mit Schaden machen.", 10},
+}
+tipsMap_deDE[15687] = {
+	{"kara_15687_01", "Important", "Den Raum vor dem Pull von Moroes komplett saeubern, damit genug Platz fuer den Encounter bleibt.", 210},
+	{"kara_15687_02", "Important", "Boss und seine vier Dinner-Gaeste markieren und Main-Tank, Off-Tank sowie CC fuer die Ziele vorher fest zuteilen.", 200},
+	{"kara_15687_03", "Important", "Zum Pull geht der Main-Tank auf Moroes. CC sollte direkt auf den Startplattformen oder an einer Raumseite gesetzt werden. Der Off-Tank nimmt das hoechste Kill-Target und bleibt gleichzeitig Nummer 2 auf Moroes-Threat.", 190},
+	{"kara_15687_04", "PriorityTargets", "CC- und Kill-Prioritaet fuer Moroes' Dinner-Gaeste:", 180},
+	{"kara_15687_05", "Important", "1) Baroness Dorothea Muehlstein, weil sie Mana verbrennt.", 170},
+	{"kara_15687_06", "Important", "2) Lady Catriona von'Indi und Lady Keira Beereneimer, weil sie andere Dinner-Gaeste heilen und buffen.", 160},
+	{"kara_15687_07", "Important", "3) Baron Rafe Dreuger, weil sein Stun zu Aggroverlust fuehren kann.", 150},
+	{"kara_15687_08", "Important", "4) Lord Robin Daris. Diesen Krieger-Typen von der Gruppe weg kaempfen, wegen Wirbelwind.", 140},
+	{"kara_15687_09", "Important", "5) Moroes selbst.", 130},
+	{"kara_15687_10", "Important", "6) Lord Crispin Ference. Er ist zaeh und wird erst nach Moroes erledigt.", 120},
+	{"kara_15687_11", "Advanced", "GARROTTE", 110},
+	{"kara_15687_12", "Important", "Alle 30 Sek. verschwindet Moroes und setzt Garrotte als starken Blutungs-Debuff auf einen zufaelligen Raider. Dieses Ziel ansagen, damit es Heal-Prioritaet bekommt.", 100},
+	{"kara_15687_13", "Important", "Zwerge koennen die Blutung mit Steingestalt selbst entfernen.", 90},
+	{"kara_15687_14", "PALADIN", "Garrotte mit Gottesschild von dir selbst oder Segen des Schutzes von einem anderen Spieler entfernen.", 80},
+	{"kara_15687_15", "MAGE", "Garrotte mit Eisblock entfernen.", 70},
+	{"kara_15687_16", "Advanced", "GOUGE", 60},
+	{"kara_15687_17", "Important", "Main-Tank und Off-Tank sollten dauerhaft Nummer 1 und 2 auf dem Threatmeter bleiben.", 50},
+	{"kara_15687_18", "Important", "Moroes gouged bzw. stunnt den Main-Tank und wechselt waehrenddessen auf Platz 2 der Bedrohung.", 40},
+	{"kara_15687_19", "Advanced", "BLIND", 30},
+	{"kara_15687_20", "Important", "Einen Nicht-Tank-Spieler fest einteilen, der dauerhaft direkt auf Moroes steht und Blind abfaengt.", 20},
+	{"kara_15687_21", "Important", "Paladine, Druiden und Schamanen koennen Blind als Krankheit entfernen.", 10},
+}
+tipsMap_deDE[16812] = {
+	{"kara_16812_01", "Legion", "Mit Barnes sprechen, wenn ihr bereit seid, das Opern-Event zu starten.", 10},
+}
+tipsMap_deDE[16457] = {
+	{"kara_16457_01", "Important", "Maiden ist immun gegen Taunt. Gebt dem Tank Zeit, sicher Aggro aufzubauen, bevor der Raid voll reingeht. Ihre Faehigkeiten kommen zufaellig und nicht streng nach Timer, aber die ungefaehren Abklingzeiten helfen bei der Vorbereitung auf Reue.", 220},
+	{"kara_16457_02", "Advanced", "POSITIONIERUNG", 210},
+	{"kara_16457_03", "Important", "Tank und Meelee-DDs kaempfen in der Mitte des Raums. Je weniger Meelees, desto einfacher wird der Fight.", 200},
+	{"kara_16457_04", "Important", "Meelee-DDs sollten in Dreiecksform um Maiden stehen, damit Heiliges Zorn nicht mehrere Ziele trifft.", 190},
+	{"kara_16457_05", "Important", "Range-DDs und Heiler bekommen jeweils eine eigene Luecke zwischen den Saeulen. Zu Kampfbeginn einen kleinen Schritt nach vorne machen, damit ihr sicher in Sichtlinie der Heiler seid.", 180},
+	{"kara_16457_06", "Important", "Heiler sollten einander gegenueber stehen, damit jeder seine zugeteilten Spieler in Reichweite hat.", 170},
+	{"kara_16457_07", "Advanced", "REUE", 160},
+	{"kara_16457_08", "Important", "Maiden wirkt Reue und stunnt den Raid 12 Sek. Der Effekt endet durch Schaden oder bestimmte Faehigkeiten.", 150},
+	{"kara_16457_09", "HEALER", "Wenn der Timer fuer Reue fast abgelaufen ist, sollten Heiler in die Mitte laufen und kurz Heiligboden-Schaden nehmen, damit die kommende Reue sofort gebrochen wird. Danach wieder runter von der Mitte. Wenn der Heiler Reue anderweitig selbst brechen kann, ist das nicht noetig.", 140},
+	{"kara_16457_10", "TANK", "DEF-CDs waehrend Reue nutzen, bis die Heiler wieder frei sind. Wenn ein Heiler Reue nicht selbst brechen kann, Maiden ueber den Heiler ziehen, damit Heiligboden den Stun entfernt.", 130},
+	{"kara_16457_11", "HUNTER", "Zorn des Wildtiers kurz vor Reue kann den Effekt negieren.", 120},
+	{"kara_16457_12", "PRIEST", "Schattenwort: Schmerz waehrend des kurzen Reue-Casts kann den Priester direkt wieder befreien.", 110},
+	{"kara_16457_13", "WARRIOR", "Berserkerwut kann Reue verhindern oder brechen.", 100},
+	{"kara_16457_14", "Advanced", "HOLY FIRE", 90},
+	{"kara_16457_15", "Important", "Ein Großer Feuerschutztrank kann den Holy-Fire-DoT deutlich abfedern.", 80},
+	{"kara_16457_16", "Important", "Ein Wiederherstellungstrank kann Holy Fire entfernen.", 70},
+	{"kara_16457_17", "MAGE", "HOLY FIRE mit Eisblock entfernen.", 60},
+	{"kara_16457_18", "PALADIN", "HOLY FIRE mit Reinigen oder Gottesschild entfernen.", 50},
+	{"kara_16457_19", "PRIEST", "HOLY FIRE mit Magiebannung entfernen.", 40},
+	{"kara_16457_20", "ROGUE", "HOLY FIRE mit Mantel der Schatten entfernen.", 30},
+	{"kara_16457_21", "SHAMAN", "Gut gesetztes Erdungstotem kann Holy Fire von einem nahen Spieler abfangen.", 20},
+	{"kara_16457_22", "WARRIOR", "HOLY FIRE mit Zauberreflexion spiegeln.", 10},
+	{"kara_16457_23", "WARLOCK", "HOLY FIRE mit Magie verschlingen vom Teufelsjaeger entfernen.", 5},
+}
+tipsMap_deDE[15691] = {
+	{"kara_15691_01", "Advanced", "FLARE-PHASE", 70},
+	{"kara_15691_02", "PriorityTargets", "Der Kurator beschwoert alle 10 Sek. eine Astrale Fackel und verbraucht dabei 10% seines Manas. Die Fackeln muessen immer vor der naechsten downgehen.", 60},
+	{"kara_15691_03", "Important", "In dieser Phase sollte der Kurator nur dann Schaden bekommen, wenn gerade keine Fackeln aktiv sind.", 50},
+	{"kara_15691_04", "Advanced", "EVOKATIONS-PHASE (beginnt bei 0% Mana)", 40},
+	{"kara_15691_05", "Important", "Waehend dieser Phase erleidet der Kurator erhoehten Schaden. Erst alle Fackeln toeten, dann auf den Boss wechseln.", 30},
+	{"kara_15691_06", "Advanced", "ENRAGE-PHASE (beginnt bei 15% Leben)", 20},
+	{"kara_15691_07", "Important", "Der Kurator beschwoert keine Fackeln mehr und macht mehr Schaden. Ab hier ist es Tank-and-Spank.", 10},
+}
+tipsMap_deDE[15688] = {
+	{"kara_15688_01", "Important", "Kill-Prioritaet: DEMONENKETTEN > KIL'REK > ILLHOOF", 140},
+	{"kara_15688_02", "Important", "Aufstellung: Ideal ist ein Paladin-Heiler mit Konzentrationsaura fuer den Hexer und ein Destro-Hexer mit Nether Protection und Intensity. Der Paladin heilt den Hexer, der Hexer nutzt Höllenfeuer fuer die Portal-Teufelchen. Gebet des Schattenschutzes hilft gegen Opferung.", 130},
+	{"kara_15688_03", "WARLOCK", "Zerstoerungs-Hexer mit Nether Protection sind gegen die meisten Feuerblitze immun und oft auch gegen Opferung, solange Nether Protection aktiv ist. Saat der Verderbnis auf Illhoof hilft auch gegen die kleinen Imps.", 120},
+	{"kara_15688_04", "TANK", "Der Main-Tank nimmt Illhoof und Kil'rek. Illhoof sollte nahe dem gruenen Kreis am Boden getankt werden.", 110},
+	{"kara_15688_05", "Advanced", "OPFERUNG", 100},
+	{"kara_15688_06", "Important", "Gelegentlich opfert der Boss einen Spieler, legt Dämonenketten um ihn und zieht ihm in der Raummitte Leben ab. Die Dämonenketten muessen sofort down.", 90},
+	{"kara_15688_07", "Important", "Ein Spieler sollte Illhoofs Castbar und Ziel im Blick behalten und ansagen, wer geopfert wird.", 80},
+	{"kara_15688_08", "TANK", "Wenn der Main-Tank geopfert wird, muss der Off-Tank Illhoof sofort uebernehmen.", 70},
+	{"kara_15688_09", "Important", "Solange keine Dämonenketten aktiv sind, Fokus auf Kil'rek. Der Raidlead sollte zwischendurch AoE fuer die kleinen Imps ansagen.", 60},
+	{"kara_15688_10", "MAGE", "Eisblock entfernt Dämonenketten vom Mage.", 50},
+	{"kara_15688_11", "PALADIN", "Bubble entfernt Dämonenketten vom Paladin.", 40},
+	{"kara_15688_12", "Advanced", "KIL'REK", 30},
+	{"kara_15688_13", "WARLOCK", "Fluch der Sprachen auf Kil'rek senkt den eingehenden Schaden.", 20},
+	{"kara_15688_14", "Important", "Wenn Kil'rek stirbt, bekommt Illhoof 25 Sek. lang einen Debuff und erleidet mehr Schaden. Kil'rek respawnt nach etwa 45 Sek.", 10},
+}
+tipsMap_deDE[16524] = {
+	{"kara_16524_01", "Important", "Fuer diesen Kampf werden keine Tanks gebraucht. Threat-senkende Buffs koennen durch DPS-Buffs ersetzt werden. Heiler, die waehrend der Bewegung heilen koennen, sind hier besonders stark.", 160},
+	{"kara_16524_02", "Advanced", "POSITIONIERUNG", 150},
+	{"kara_16524_03", "Important", "Tanks und Meelees stehen in der Mitte bei Aran. Caster und Heiler bleiben mindestens 10 Meter weg, um Arans AoE-Gegenzauber zu vermeiden. Instant-Heals werden dadurch nicht unterbrochen.", 140},
+	{"kara_16524_04", "Advanced", "SPEZIALFAEHIGKEITEN", 130},
+	{"kara_16524_05", "Important", "Ringförmiger Blizzard: Fernkaempfer bewegen sich im Uhrzeigersinn am Rand entlang. Wer verlangsamt wird, geht in die Mitte.", 120},
+	{"kara_16524_06", "Important", "Flammenkranz: Der komplette Raid muss sofort stehen bleiben, sobald klar ist, wo die Ringe erscheinen. Wer hinein- oder herauslaeuft oder sich auf bestimmte Arten bewegt, loest eine riesige Explosion aus. Der Ring verschwindet nach 20 Sek.", 110},
+	{"kara_16524_07", "Important", "Das Drehen des Charakters innerhalb oder ausserhalb des Flammenkranzes loest die Explosion nicht aus.", 100},
+	{"kara_16524_08", "DRUID", "Nicht im Flammenkranz shapeshiften, sonst loest ihr die Explosion aus.", 90},
+	{"kara_16524_09", "MAGE", "Nicht mit Blinzeln in einen Ring hinein oder heraus, sonst loest ihr die Explosion aus.", 80},
+	{"kara_16524_10", "SHAMAN", "Schamanen-Elementare, die einen Ring kreuzen, loesen ebenfalls die Explosion aus.", 70},
+	{"kara_16524_11", "Important", "Arkane Explosion: Sofort an den Rand des Raums laufen.", 60},
+	{"kara_16524_12", "Advanced", "POLYMORPH-PHASE (bei 20% Mana)", 50},
+	{"kara_16524_13", "Important", "Aran polymorpht den Raid. Wenn ihr nicht bereits durch Wasserelementare oder Lebensbaum aus dem Sheep geholt wurdet, sollte Arans Trinken nicht unterbrochen werden.", 40},
+	{"kara_16524_14", "Important", "Da Polymorph Leben und Mana sehr schnell regeneriert, sollte diese Phase nicht gleichzeitig mit der Wasserelementar-Phase laufen.", 30},
+	{"kara_16524_15", "Advanced", "WASSERELEMENTAR-PHASE (bei 40% Leben)", 20},
+	{"kara_16524_16", "Important", "Wasserelementare bleiben 90 Sek. und sollten schnell down oder per Fear/Banish kontrolliert werden. Sie sind immun gegen Frost.", 10},
+}
+tipsMap_deDE[15689] = {
+	{"kara_15689_01", "Advanced", "PORTAL-PHASE (60 Sek.)", 190},
+	{"kara_15689_02", "Important", "Spieler fuer die einzelnen Portale fest einteilen und abwechseln. Wer 8 bis 20 Sek. aus dem Strahl raus ist, bekommt einen Debuff und kann 90 Sek. lang nicht mehr mit dieser Farbe interagieren.", 180},
+	{"kara_15689_03", "TANK", "Der Tank im roten Strahl kann 3 bis 5 Meter seitlich raustreten, um den Debuff etwas zu verlangsamen, der pro Tick 1000 maximales Leben reduziert.", 170},
+	{"kara_15689_04", "Important", "TANK: Roter Strahl. Netherspite fixiert diesen Spieler. Tanks sollten nur zwischen den Portal-Phasen wechseln. Im Notfall kann ein robuster DD den roten Strahl kurz uebernehmen.", 160},
+	{"kara_15689_05", "HEALER", "Den Spieler im roten Strahl muss man wegen der starken Selbstheilung nicht permanent gegenheilen.", 150},
+	{"kara_15689_06", "Important", "HEALER: Gruener Strahl. Heiler sind hier ideal, weil Mana schnell regeneriert wird und die Heilung steigt. Klassen mit Mana-Problemen koennen kurz rein, aber der Strahl muss immer geblockt sein, sonst heilt Netherspite zu schnell hoch.", 140},
+	{"kara_15689_07", "Important", "DPS: Blauer Strahl. Ideal ist ein DD mit Schattenwiderstand oder ein Hexer/Schattenpriester, der den Selbstschaden besser ausgleichen kann.", 130},
+	{"kara_15689_08", "HEALER", "Der Spieler im blauen Strahl braucht starke Heilung.", 120},
+	{"kara_15689_09", "Important", "Vorschlag fuer gerade Portalphasen:", 110},
+	{"kara_15689_10", "Legion", "ROT: Main-Tank, BLAU: DD A dann DD B, GRUEN: Off-Tank und/oder Heiler.", 100},
+	{"kara_15689_11", "Important", "Vorschlag fuer ungerade Portalphasen:", 90},
+	{"kara_15689_12", "Legion", "ROT: Off-Tank, BLAU: DD C dann DD D, GRUEN: Main-Tank und/oder Heiler.", 80},
+	{"kara_15689_13", "Advanced", "BANISH-PHASE (30 Sek.)", 70},
+	{"kara_15689_14", "Important", "Nach kurzer Inaktivitaet wirkt der Boss Netheratem als frontalen Kegel mit Arkanschaden und Knockback.", 60},
+	{"kara_15689_15", "DAMAGE", "DDs sollten beim Teleskop stehen, um Mana zu regenerieren und sich zu verbinden, wenn noetig.", 50},
+	{"kara_15689_16", "SHAMAN", "Ein Sengendes Totem ueberlebt Netheratem und kann nach der Phase kurz den Boss binden, bis der Tank den roten Strahl wieder uebernimmt.", 40},
+	{"kara_15689_17", "TANK", "Der Tank fuer den naechsten roten Strahl sollte mit dem Ruecken zur Tuer stehen, um den Knockback zu kontrollieren und Netheratem vom Raid fernzuhalten.", 30},
+	{"kara_15689_18", "HEALER", "Heiler stehen seitlich an Netherspite, um den Tank waehrend dieser Phase stabil zu halten.", 20},
+	{"kara_15689_19", "Important", "Nach der Banish-Phase kehrt der Boss wieder in die Portal-Phase zurueck, bis er tot ist.", 10},
+}
+tipsMap_deDE[15690] = {
+	{"kara_15690_01", "Important", "Positionierung: Tank und Meelees stehen mit dem Ruecken zur Wand, um den Knockback von Schattennova zu vermeiden. Range und Heiler bleiben etwa 30 Meter weg, um nicht getroffen zu werden. Alle, besonders Meelees, muessen auf fallende Infernals und Entkraeften achten.", 250},
+	{"kara_15690_02", "Advanced", "PHASE 1", 240},
+	{"kara_15690_03", "Important", "Der Prinz setzt in Phase 1 und 3 Schattenwort: Schmerz auf den Main-Tank und ein weiteres Ziel. Besonders auf dem Tank sollte es schnell dispellt werden.", 230},
+	{"kara_15690_04", "Important", "Der Prinz beschwoert Netherspite-Infernals. In Phase 1 und 2 landen sie etwa alle 45 Sek., zünden kurz danach Höllenfeuer und despawnen nach rund 180 Sek. Sie stehen fest und muessen vom Raid gemieden werden.", 220},
+	{"kara_15690_05", "Important", "Einen Range-Spieler markieren, der die fallenden Infernals beobachtet und sichere Positionen ansagt. Dieser Spotter muss sich selbst sicher bewegen koennen und in Heiler-Reichweite bleiben.", 210},
+	{"kara_15690_06", "TANK", "Hör auf den Infernal-Spotter, damit du und deine Meelees nicht im Höllenfeuer stehen.", 200},
+	{"kara_15690_07", "Important", "Ein Elixier der Dämonenentdeckung hilft, besonders fuer den Tank, die Infernal-Positionen auf der Minimap zu sehen.", 190},
+	{"kara_15690_08", "HUNTER", "Dämonen aufspüren zeigt dir die Infernal-Positionen auch ohne Elixier.", 180},
+	{"kara_15690_09", "WARLOCK", "Dämonen aufspüren zeigt dir die Infernal-Positionen auch ohne Elixier.", 170},
+	{"kara_15690_10", "HEALER", "Die Heiler sollten sich absprechen, damit der Tank auch waehrend Movement wegen Höllenfeuer weiter stabil geheilt wird.", 160},
+	{"kara_15690_11", "Advanced", "ENTKRAEFTEN", 150},
+	{"kara_15690_12", "Important", "Entkraeften trifft fuenf zufaellige Spieler außer dem aktuellen Tank. Der Debuff setzt das Leben fuer 7 Sek. auf 1 und kann nicht entfernt werden.", 140},
+	{"kara_15690_13", "HEALER", "Spieler mit Entkraeften koennen nicht ueber 1 HP geheilt werden. Mana nicht verschwenden; die Lebenspunkte kommen nach Ablauf des Effekts zurueck.", 130},
+	{"kara_15690_14", "Important", "Schattennova mit etwa 24 Metern Reichweite und 3 Sek. Cast kommt in Phase 1 und 2 meist rund 4 Sek. nach Entkraeften.", 120},
+	{"kara_15690_15", "PALADIN", "In Phase 1 und 2 darf ein Paladin Siegel des Blutes nicht nutzen, weil Entkraeften dadurch sofort toedlich werden kann.", 110},
+	{"kara_15690_16", "Important", "Meelee-DDs sollten immer einen Fluchtweg planen, falls gleichzeitig Infernal-Höllenfeuer und Entkraeften zusammenkommen.", 100},
+	{"kara_15690_17", "Advanced", "PHASE 2 (ab 60% Leben)", 90},
+	{"kara_15690_18", "TANK", "In dieser Phase braucht der Tank besonders Def-CDs, denn hier ist der Schaden durch den Boss am gefaehrlichsten, vor allem mit Ruestung zerreissen.", 80},
+	{"kara_15690_19", "HEALER", "Wegen Thrash und Ruestung zerreissen sollte der Tank so oft wie moeglich nahe an vollem Leben gehalten werden.", 70},
+	{"kara_15690_20", "TANK", "Paladin-Tanks koennen in Phase 2 verstaerkt mit Magieschaden arbeiten statt mit reinen Nahkampftreffern, um die Pariermechanik des Bosses besser zu umspielen.", 60},
+	{"kara_15690_21", "WARLOCK", "Donnerknall, Demoruf oder Fluch der Schwäche sollten den Prinzen dauerhaft auf weniger Angriffskraft und Tempo halten, besonders ab Phase 2.", 50},
+	{"kara_15690_22", "WARRIOR", "Donnerknall, Demoruf oder Fluch der Schwäche sollten den Prinzen dauerhaft auf weniger Angriffskraft und Tempo halten, besonders ab Phase 2.", 40},
+	{"kara_15690_23", "Advanced", "PHASE 3 (ab 30% Leben) - HERO/LUST", 30},
+	{"kara_15690_24", "Important", "Es kommen weiterhin mehr Entkraeften, aber Infernals landen jetzt alle 15 Sek. statt alle 45 Sek.", 20},
+	{"kara_15690_25", "TANK", "Der Nahkampfschaden auf den Tank sinkt in dieser Phase wieder auf das Niveau von Phase 1.", 10},
+}
+tipsMap_deDE[17225] = {
+	{"kara_17225_01", "Important", "Beim Wechsel von Luft zu Boden dem Nightbane-Tank genug Zeit geben, um sauber Aggro aufzubauen, bevor der Rest wieder voll einsteigt.", 250},
+	{"kara_17225_02", "HUNTER", "Ablenkender Schuss auf den Nightbane-Tank hilft enorm beim fruehen Aggroaufbau.", 240},
+	{"kara_17225_03", "Advanced", "POSITIONIERUNG", 230},
+	{"kara_17225_04", "Important", "Der Nightbane-Tank steht mit dem Ruecken zur Außenwand, damit Cleave und Atem vom Raid weggehen.", 220},
+	{"kara_17225_05", "Important", "Range teilt sich in zwei Gruppen: Gruppe A an die Innenwand, Gruppe B an die Außenwand. Heiler stehen bei Gruppe B, damit sie in Reichweite des Tanks bleiben. Beide Gruppen sollten Max-Range halten, um Brüllendes Gebrüll zu vermeiden.", 210},
+	{"kara_17225_06", "Important", "Meelee-DDs stehen seitlich am hinteren Bein auf der Seite der Range-Gruppen, damit sie in Heilerreichweite bleiben.", 200},
+	{"kara_17225_07", "Important", "Frontalkegel und Schwanzfeger sind der Grund, warum nur der Tank vor Nightbane stehen darf und niemand hinter ihm.", 190},
+	{"kara_17225_08", "Advanced", "BODENPHASE", 180},
+	{"kara_17225_09", "Important", "Nightbane setzt Ablenkende Asche, die die Trefferchance 40 Sek. lang um 30% senkt. Das sollte dispellt werden, besonders auf dem Tank.", 170},
+	{"kara_17225_10", "Important", "Schwelende Asche ist ein Frontalangriff fuer 5 bis 6k Schaden plus ein 15-Sek.-DoT mit weiteren 1.6 bis 1.9k alle 3 Sek.", 160},
+	{"kara_17225_11", "Important", "Cleave trifft Platte fuer etwa 6k und Stoff fuer etwa 11k.", 150},
+	{"kara_17225_12", "TANK", "Def-CDs gezielt einsetzen, wenn Cleave und Schwelende Asche gleichzeitig auf dir liegen.", 140},
+	{"kara_17225_13", "HEALER", "Auf Extra-Heals fuer den Tank vorbereitet sein, wenn Cleave und Schwelende Asche zusammenkommen.", 130},
+	{"kara_17225_14", "Dodge", "AUSWEICHEN: Nightbane verbrennt den Boden unter einem zufaelligen Spieler auf etwa 5 Metern. Das macht pro Sekunde rund 3k Feuerschaden.", 120},
+	{"kara_17225_15", "Important", "FEAR", 110},
+	{"kara_17225_16", "Important", "PvP-Trinkets oder die Untoten-Racial koennen einige der Fears entfernen.", 100},
+	{"kara_17225_17", "PRIEST", "Furchtzauberschutz auf einem Nicht-Krieger-Tank oder einem wichtigen Meelee kann helfen, den Schaden waehrend des Fears zu senken.", 90},
+	{"kara_17225_18", "SHAMAN", "Tremor Totem kann einen Teil der Fears durch Brüllendes Gebrüll fuer die Meelees abfangen.", 80},
+	{"kara_17225_19", "WARRIOR", "Berserkerwut nutzen, notfalls vorher in Berserkerhaltung wechseln, um Fear zu brechen.", 70},
+	{"kara_17225_20", "Important", "Wenn der Fear vorbei ist, die urspruengliche Positionierung schnell wieder herstellen.", 60},
+	{"kara_17225_21", "Advanced", "FLUGPHASE bei 75%, 50% und 25%", 50},
+	{"kara_17225_22", "TANK", "Tanks und DDs wechseln in dieser Phase auf die beschworenen Skelette.", 40},
+	{"kara_17225_23", "DAMAGE", "Tanks und DDs wechseln in dieser Phase auf die beschworenen Skelette.", 30},
+	{"kara_17225_24", "Important", "Falls die Skelette zu lange leben, kann Stratholme-Weihwasser helfen, sie schneller zu burnen.", 20},
+	{"kara_17225_25", "HEALER", "Oft wird ein Heiler von Rauchender Explosion anvisiert und braucht dann deutlich mehr Heilung.", 15},
+	{"kara_17225_26", "Important", "Nach der Flugphase landet Nightbane wieder und der Kampf geht normal weiter, bis er faellt.", 10},
+}
+tipsMap_deDE[16179] = {
+	{"kara_16179_01", "Important", "Beide Tanks sollten Platz 1 und 2 im Threat halten.", 30},
+	{"kara_16179_02", "Important", "Der Boss legt ein Netz als Magie-Debuff auf den Main-Tank und wechselt dann auf den Off-Tank.", 20},
+	{"kara_16179_03", "Important", "Saeurewunde reduziert die Ruestung und legt zusaetzlich einen Natur-DoT auf.", 10},
+}
+tipsMap_deDE[16180] = {
+	{"kara_16180_01", "Important", "Ein klassischer Tank-and-Spank-Kampf.", 10},
+}
+tipsMap_deDE[16181] = {
+	{"kara_16181_01", "Important", "Den Boss in den Vorraum vor seinem eigentlichen Zimmer ziehen.", 50},
+	{"kara_16181_02", "Important", "Wegen des AoE-Knockbacks sollte der Main-Tank mit dem Ruecken zur Wand stehen. Range-DDs und Heiler stellen sich mit dem Ruecken an die benachbarte Wand.", 40},
+	{"kara_16181_03", "Important", "Der Boss charged das entfernteste Raidmitglied. Das sollte der Off-Tank sein, weil der Charge sehr hart trifft.", 30},
+	{"kara_16181_04", "Important", "Der Main-Tank steht mit dem Ruecken zur Wand gegen Knockback. Der Off-Tank nimmt die gegenueberliegende Wand und bleibt dabei der entfernteste Spieler fuer den Charge.", 20},
+	{"kara_16181_05", "Important", "Der Boss wirkt Schallbersten, ein 5-Sek.-AoE-Silence auf 20 Meter.", 10},
+}
+tipsMap_deDE[17007] = {
+	{"kara_17007_01", "Legion", "Heilig-Paladin-artiger Mob.", 40},
+	{"kara_17007_02", "PriorityTargets", "Kill-/CC-Prioritaet: 2.", 30},
+	{"kara_17007_03", "Important", "Das Ziel per CC sichern, solange eure Gruppe nicht gerade aktiv auf diesen Mob geht.", 20},
+	{"kara_17007_04", "Important", "Der Mob heilt und bufft andere Dinner-Gaeste mit Heiliges Licht und Segen der Macht.", 10},
+}
+tipsMap_deDE[19872] = {
+	{"kara_19872_01", "Legion", "Heilig-Priester-artiger Mob.", 40},
+	{"kara_19872_02", "PriorityTargets", "Kill-/CC-Prioritaet: 2.", 30},
+	{"kara_19872_03", "Important", "Das Ziel per CC sichern, solange eure Gruppe nicht gerade aktiv auf diesen Mob geht.", 20},
+	{"kara_19872_04", "Important", "Der Mob heilt und bufft andere Dinner-Gaeste mit Große Heilung und Machtwort: Schild.", 10},
+}
+tipsMap_deDE[19873] = {
+	{"kara_19873_01", "Legion", "Protection-Warrior-artiger Mob.", 30},
+	{"kara_19873_02", "PriorityTargets", "Kill-/CC-Prioritaet: 6. Das niedrigste Prioritaetsziel im Moroes-Fight.", 20},
+	{"kara_19873_03", "Important", "Wirkt gelegentlich Entwaffnen auf einen Spieler.", 10},
+}
+tipsMap_deDE[19874] = {
+	{"kara_19874_01", "Legion", "Prot-/Ret-Paladin-artiger Mob.", 30},
+	{"kara_19874_02", "PriorityTargets", "Kill-/CC-Prioritaet: 3.", 20},
+	{"kara_19874_03", "Important", "Sollte vom Off-Tank uebernommen oder per CC kontrolliert werden, weil der Mob Spieler mit Hammer der Gerechtigkeit stunnt.", 10},
+}
+tipsMap_deDE[19875] = {
+	{"kara_19875_01", "Legion", "Schatten-Priester-artiger Mob.", 30},
+	{"kara_19875_02", "PriorityTargets", "Kill-/CC-Prioritaet: 1.", 20},
+	{"kara_19875_03", "Important", "Wegen Mana Burn sollte dieses Ziel moeglichst dauerhaft per CC gesichert bleiben.", 10},
+}
+tipsMap_deDE[19876] = {
+	{"kara_19876_01", "Legion", "Mortal-Strike-Warrior-artiger Mob.", 40},
+	{"kara_19876_02", "PriorityTargets", "Kill-/CC-Prioritaet: 4.", 30},
+	{"kara_19876_03", "Important", "Wegen Wirbelwind sollte niemand zu nah an diesem Mob stehen.", 20},
+	{"kara_19876_04", "TANK", "Wenn Robin vom Off-Tank gespielt wird, dieses Ziel weg von Main-Tank, Moroes und den anderen Spielern halten.", 10},
+}
+tipsMap_deDE[17603] = {
+	{"kara_17603_01", "Important", "Es wird nur ein Tank benoetigt. Am besten ein Krieger-Tank wegen Berserkerwut gegen den Fear des Bosses.", 100},
+	{"kara_17603_02", "TANK", "Den Wolf entlang einer Wand mit etwas Abstand zum Rest des Raids tanken.", 90},
+	{"kara_17603_03", "Important", "Range-DDs und Heiler sollten an der benachbarten Wand in etwa einem Drittel bis halber Bühnenlänge Abstand stehen, damit genug Reaktionszeit fuer Rotkäppchen bleibt.", 80},
+	{"kara_17603_04", "Important", "Kurz bevor der Wolf Rotkäppchen auf einen Spieler setzt, targetet er dieses Ziel kurz an und wechselt dann zurueck auf den Tank. Das gibt vor allem Meelees etwas Vorwarnung.", 70},
+	{"kara_17603_05", "Important", "ROTKAEPPCHEN: Der betroffene Spieler wird 20 Sek. lang zu Rotkäppchen, hat 0 Ruestung und 0 Widerstaende und muss am Rand des Raums vor dem Wolf weglaufen.", 60},
+	{"kara_17603_06", "HEALER", "Achtet waehrend Rotkäppchen auf euren Threat. Wenn der Effekt endet, geht der Wolf auf das hoechste Ziel auf der Bedrohungsliste.", 50},
+	{"kara_17603_07", "TANK", "Auch der Tank muss waehrend Rotkäppchen seinen Threat oben halten, damit der Wolf danach nicht auf einen anderen Spieler geht.", 40},
+	{"kara_17603_08", "DAMAGE", "Auch DDs muessen waehrend Rotkäppchen auf ihren Threat achten, damit der Wolf nach dem Ende nicht weglaeuft.", 30},
+	{"kara_17603_09", "Important", "Wirkt Furchterregendes Heulen als 3-Sek.-AoE-Fear auf 10 Meter.", 20},
+	{"kara_17603_10", "WARRIOR", "Wenn gefear­t, kann Berserkerwut den Effekt brechen. Dafuer notfalls vorher in Berserkerhaltung wechseln.", 10},
+}
+tipsMap_deDE[17521] = {
+	{"kara_17521_01", "Important", "Es wird nur ein Tank benoetigt. Am besten ein Krieger-Tank wegen Berserkerwut gegen den Fear des Bosses.", 100},
+	{"kara_17521_02", "TANK", "Den Wolf entlang einer Wand mit etwas Abstand zum Rest des Raids tanken.", 90},
+	{"kara_17521_03", "Important", "Range-DDs und Heiler sollten an der benachbarten Wand in etwa einem Drittel bis halber Bühnenlänge Abstand stehen, damit genug Reaktionszeit fuer Rotkäppchen bleibt.", 80},
+	{"kara_17521_04", "Important", "Kurz bevor der Wolf Rotkäppchen auf einen Spieler setzt, targetet er dieses Ziel kurz an und wechselt dann zurueck auf den Tank. Das gibt vor allem Meelees etwas Vorwarnung.", 70},
+	{"kara_17521_05", "Important", "ROTKAEPPCHEN: Der betroffene Spieler wird 20 Sek. lang zu Rotkäppchen, hat 0 Ruestung und 0 Widerstaende und muss am Rand des Raums vor dem Wolf weglaufen.", 60},
+	{"kara_17521_06", "HEALER", "Achtet waehrend Rotkäppchen auf euren Threat. Wenn der Effekt endet, geht der Wolf auf das hoechste Ziel auf der Bedrohungsliste.", 50},
+	{"kara_17521_07", "TANK", "Auch der Tank muss waehrend Rotkäppchen seinen Threat oben halten, damit der Wolf danach nicht auf einen anderen Spieler geht.", 40},
+	{"kara_17521_08", "DAMAGE", "Auch DDs muessen waehrend Rotkäppchen auf ihren Threat achten, damit der Wolf nach dem Ende nicht weglaeuft.", 30},
+	{"kara_17521_09", "Important", "Wirkt Furchterregendes Heulen als 3-Sek.-AoE-Fear auf 10 Meter.", 20},
+	{"kara_17521_10", "WARRIOR", "Wenn gefear­t, kann Berserkerwut den Effekt brechen. Dafuer notfalls vorher in Berserkerhaltung wechseln.", 10},
+}
+tipsMap_deDE[17533] = {
+	{"kara_17533_01", "PriorityTargets", "In Phase 3 muessen Romulo und Julianne innerhalb von 10 Sek. sterben, sonst beleben sie sich gegenseitig voll wieder. DDs muessen das sauber timen.", 140},
+	{"kara_17533_02", "Advanced", "PHASE 1 - Julianne", 130},
+	{"kara_17533_03", "Important", "Fuer Romulo ist ein Krieger-Tank wegen Entwaffnen die beste Wahl.", 120},
+	{"kara_17533_04", "Important", "MAGIE-BUFF vom Mob entfernen: Devotion erhoeht physischen Schaden und Angriffstempo des Casters um 50%.", 110},
+	{"kara_17533_05", "MAGE", "Devotion mit Zauberraub vom Mob entfernen.", 100},
+	{"kara_17533_06", "PRIEST", "Devotion mit Magiebannung vom Mob entfernen.", 90},
+	{"kara_17533_07", "SHAMAN", "Devotion mit Läutern vom Mob entfernen.", 80},
+	{"kara_17533_08", "WARLOCK", "Devotion mit Magie verschlingen des Teufelsjaegers entfernen.", 70},
+	{"kara_17533_09", "WARRIOR", "Devotion mit Schildschlag vom Mob entfernen.", 60},
+	{"kara_17533_10", "TANK", "Julianne sollte in einer Ecke sterben, moeglichst weit weg von Romulo, damit der Tank sie in Phase 3 leichter aufnehmen kann.", 50},
+	{"kara_17533_11", "Advanced", "PHASE 2 - Romulo", 40},
+	{"kara_17533_12", "Important", "Romulo mit dem Ruecken zur Wand tanken, weg von der Stelle, an der Julianne gestorben ist. Niemand sollte hinter Romulo stehen.", 30},
+	{"kara_17533_13", "Important", "Absprache treffen, wer Romulo waehrend Daring entwaffnet.", 20},
+	{"kara_17533_14", "Advanced", "PHASE 3 - Romulo und Julianne", 15},
+	{"kara_17533_15", "Important", "Die Romulo-Gruppe ist meist Range/Caster-lastig, die Julianne-Gruppe eher Meelees, Unterbrecher und Dispeller.", 10},
+}
+tipsMap_deDE[17534] = {
+	{"kara_17534_01", "PriorityTargets", "In Phase 3 muessen Romulo und Julianne innerhalb von 10 Sek. sterben, sonst beleben sie sich gegenseitig voll wieder. DDs muessen das sauber timen.", 140},
+	{"kara_17534_02", "Advanced", "PHASE 1 - Julianne", 130},
+	{"kara_17534_03", "Important", "Fuer Romulo ist ein Krieger-Tank wegen Entwaffnen die beste Wahl.", 120},
+	{"kara_17534_04", "Important", "MAGIE-BUFF vom Mob entfernen: Devotion erhoeht physischen Schaden und Angriffstempo des Casters um 50%.", 110},
+	{"kara_17534_05", "MAGE", "Devotion mit Zauberraub vom Mob entfernen.", 100},
+	{"kara_17534_06", "PRIEST", "Devotion mit Magiebannung vom Mob entfernen.", 90},
+	{"kara_17534_07", "SHAMAN", "Devotion mit Läutern vom Mob entfernen.", 80},
+	{"kara_17534_08", "WARLOCK", "Devotion mit Magie verschlingen des Teufelsjaegers entfernen.", 70},
+	{"kara_17534_09", "WARRIOR", "Devotion mit Schildschlag vom Mob entfernen.", 60},
+	{"kara_17534_10", "TANK", "Julianne sollte in einer Ecke sterben, moeglichst weit weg von Romulo, damit der Tank sie in Phase 3 leichter aufnehmen kann.", 50},
+	{"kara_17534_11", "Advanced", "PHASE 2 - Romulo", 40},
+	{"kara_17534_12", "Important", "Romulo mit dem Ruecken zur Wand tanken, weg von der Stelle, an der Julianne gestorben ist. Niemand sollte hinter Romulo stehen.", 30},
+	{"kara_17534_13", "Important", "Absprache treffen, wer Romulo waehrend Daring entwaffnet.", 20},
+	{"kara_17534_14", "Advanced", "PHASE 3 - Romulo und Julianne", 15},
+	{"kara_17534_15", "Important", "Die Romulo-Gruppe ist meist Range/Caster-lastig, die Julianne-Gruppe eher Meelees, Unterbrecher und Dispeller.", 10},
+}
+tipsMap_deDE[17535] = {
+	{"kara_17535_01", "PriorityTargets", "Dorothee kann weder getankt noch unterbrochen werden und sollte als Erstes sterben.", 30},
+	{"kara_17535_02", "Important", "Der Encounter startet, sobald Dorothee angegriffen wird.", 20},
+	{"kara_17535_03", "Important", "Wirkt Furchtsamer Schrei und feared 3 zufaellige Spieler fuer 2 Sek.", 10},
+}
+tipsMap_deDE[17543] = {
+	{"kara_17543_01", "Important", "Den Strohmann mit hochrangigen, nicht-AoE und nicht-DoT Feuerzaubern oder Feuerstab treffen, um Brennendes Stroh auszulösen. Das desorientiert den Boss 6 Sek.", 40},
+	{"kara_17543_02", "TANK", "Der Tank von Roar sollte den Strohmann spotten oder aufnehmen.", 30},
+	{"kara_17543_03", "MAGE", "Glühende Rüstung löst Brennendes Stroh nicht aus.", 20},
+	{"kara_17543_04", "WARLOCK", "Feuerbrand gilt als DoT und löst Brennendes Stroh nicht aus.", 10},
+}
+tipsMap_deDE[17546] = {
+	{"kara_17546_01", "Important", "Anfaellig fuer Fear, Todesmantel und Wildtier ängstigen, aber nicht fuer Winterschlaf. Ein Hexer und der Tank koennen ihn meist gut kontrollieren.", 20},
+	{"kara_17546_02", "Important", "Wirkt einen AoE-Fear.", 10},
+}
+tipsMap_deDE[17547] = {
+	{"kara_17547_01", "Important", "Wegen des hohen Schadens sollte der Main-Tank auf diesem Ziel sein.", 20},
+	{"kara_17547_02", "Important", "Im Verlauf des Encounters rostet der Mob, wird langsamer und kann dann besser gekitet werden.", 10},
+}
+tipsMap_deDE[17548] = {
+	{"kara_17548_01", "PriorityTargets", "Erst NACH Dorothee toeten. Stirbt Tito zuerst, geht Dorothee in Enrage.", 30},
+	{"kara_17548_02", "Important", "Ein Tank sollte fuer Tito eingeteilt sein.", 20},
+	{"kara_17548_03", "Important", "Unterbricht und silenced Caster.", 10},
+}
+tipsMap_deDE[18168] = {
+	{"kara_18168_01", "Legion", "Erscheint, wenn Dorothee, Roar, Strohmann und Tinhead tot sind.", 50},
+	{"kara_18168_02", "Important", "Der Main-Tank muss den Boss sofort aufnehmen.", 40},
+	{"kara_18168_03", "Important", "Einen Raider einteilen, der die Zyklone ansagt.", 30},
+	{"kara_18168_04", "Important", "Beschwoert Zyklone, die ueber die Buehne wandern und Spieler hochwerfen. Langsamer Fall kann hier helfen.", 20},
+	{"kara_18168_05", "HEALER", "Spieler, die von einem Zyklon erwischt wurden, brauchen wegen des Fallschadens Prioritaetsheilung.", 10},
+}
+tipsMap_deDE[16816] = {
+	{"kara_16816_01", "Legion", "Healing-Cheat heilt Medivhs Koenig und eventuell weitere Figuren voll.", 60},
+	{"kara_16816_02", "Legion", "Damage-Cheat legt ein Feuer-AoE auf eine zufaellig von Spielern kontrollierte Figur.", 50},
+	{"kara_16816_03", "Legion", "Berserking-Cheat verstaerkt eine von Medivhs Figuren mit mehr Groesse, Tempo und Schaden.", 40},
+	{"kara_16816_04", "Important", "Spieler sollten zuerst den Bauern kontrollieren, der die gewuenschte Figur blockiert, und danach auf ihre eigentliche Figur wechseln.", 30},
+	{"kara_16816_05", "Advanced", "Strategie: Der Koenig sollte Hero/Bloodlust aktiv halten, wenn verbuendete Figuren in einem der acht angrenzenden Felder stehen. Bauern nur nutzen, um bessere Figuren freizuraeumen. Bischöfe sind die einzigen Heiler.", 20},
+	{"kara_16816_06", "PriorityTargets", "Kill-Prioritaet: 1) Koenig, 2) Bischof, 3) Dame, 4) Turm, 5) Springer, 6) Bauer.", 10},
+}
+tipsMap_deDE[17211] = {
+	{"kara_17211_01", "Legion", "Bauern-Typ; bewegt sich 1 Feld in jede Richtung.", 60},
+	{"kara_17211_02", "PriorityTargets", "Niedrigste Prioritaet.", 50},
+	{"kara_17211_03", "Legion", "Wenig Leben und wenig Schaden.", 40},
+	{"kara_17211_04", "Advanced", "Strategie: Diese schwache Einheit sollte nur genutzt werden, um andere Figuren freizuraeumen. Ohne Spielersteuerung autoaggt sie Gegner in Reichweite.", 30},
+	{"kara_17211_05", "Important", "Heroischer Schlag verursacht 1k Schaden an einer Figur 1 Feld direkt vor ihm.", 20},
+	{"kara_17211_06", "Important", "Schildblock absorbiert 500 Schaden fuer 5 Sek. Sollte eher nicht genutzt werden.", 10},
+}
+tipsMap_deDE[17469] = {
+	{"kara_17469_01", "Legion", "Bauern-Typ; bewegt sich 1 Feld in jede Richtung.", 60},
+	{"kara_17469_02", "PriorityTargets", "Niedrigste Prioritaet.", 50},
+	{"kara_17469_03", "Legion", "Wenig Leben und wenig Schaden.", 40},
+	{"kara_17469_04", "Advanced", "Strategie: Diese schwache Einheit sollte nur genutzt werden, um andere Figuren freizuraeumen. Ohne Spielersteuerung autoaggt sie Gegner in Reichweite.", 30},
+	{"kara_17469_05", "Important", "Heimtueckischer Schlag verursacht 1k Schaden an einer Figur 1 Feld direkt vor ihm.", 20},
+	{"kara_17469_06", "Important", "Waffenablenkung absorbiert 500 Schaden fuer 5 Sek. Sollte eher nicht genutzt werden.", 10},
+}
+tipsMap_deDE[21160] = {
+	{"kara_21160_01", "Legion", "Turm-Typ; bewegt sich 1 Feld in jede Richtung.", 50},
+	{"kara_21160_02", "PriorityTargets", "4. Prioritaet wegen mittlerem Fernkampfschaden.", 40},
+	{"kara_21160_03", "Legion", "Wenig Leben und mittlerer Schaden.", 30},
+	{"kara_21160_04", "Important", "Geysir verursacht 3k Schaden an allen feindlichen Figuren auf angrenzenden Feldern.", 20},
+	{"kara_21160_05", "Important", "Wasserschild reduziert 5 Sek. lang den erlittenen Schaden um 50%.", 10},
+}
+tipsMap_deDE[21664] = {
+	{"kara_21664_01", "Legion", "Springer-Typ; bewegt sich in L-Form.", 50},
+	{"kara_21664_02", "PriorityTargets", "5. Prioritaet wegen geringem Nah- und Fernkampfschaden.", 40},
+	{"kara_21664_03", "Legion", "Mittleres Leben und wenig Schaden.", 30},
+	{"kara_21664_04", "Important", "Zerschmettern verursacht 3k Schaden an einer Figur 1 Feld direkt vor ihm.", 20},
+	{"kara_21664_05", "Important", "Stampfen verursacht 2k Schaden an feindlichen Figuren in einer geraden Reihe von 3 Feldern vor ihm.", 10},
+}
+tipsMap_deDE[21682] = {
+	{"kara_21682_01", "Legion", "Bischof-Typ und die einzige Heilfigur.", 40},
+	{"kara_21682_02", "PriorityTargets", "2. Prioritaet, weil nur diese Figur Koenig und andere Figuren heilen kann.", 30},
+	{"kara_21682_03", "Legion", "Wenig Leben und wenig Schaden.", 20},
+	{"kara_21682_04", "Important", "Diese Figur sollte sich nur wenig bewegen, aus Feuer bleiben und vor allem Koenig und Dame am Leben halten.", 10},
+}
+tipsMap_deDE[21683] = {
+	{"kara_21683_01", "Legion", "Damen-Typ; bewegt sich 3 Felder gerade oder 2 diagonal.", 60},
+	{"kara_21683_02", "PriorityTargets", "3. Prioritaet, da sie hohen Single-Target- und AoE-Schaden macht.", 50},
+	{"kara_21683_03", "Legion", "Mittleres Leben und hoher Schaden.", 40},
+	{"kara_21683_04", "Advanced", "Strategie: Regen des Feuers auf Cooldown in die Mitte von Gegnergruppen legen. Elementarschlag als Filler auf das Hauptziel nutzen.", 30},
+	{"kara_21683_05", "Important", "Elementarschlag verursacht 4k Schaden an einer einzelnen Schachfigur in Reichweite.", 20},
+	{"kara_21683_06", "Important", "Regen des Feuers verursacht 6k Schaden an einer feindlichen Figur und allen angrenzenden feindlichen Figuren. 15 Sek. Cooldown.", 10},
+}
+tipsMap_deDE[21684] = {
+	{"kara_21684_01", "Legion", "Startet den Kampf, wenn ihr mit dem Koenig sprecht. Dadurch werden die Figuren dieser Seite fuer euer Team freigeschaltet.", 60},
+	{"kara_21684_02", "PriorityTargets", "1. Prioritaet, denn wer den gegnerischen Koenig zuerst toetet, gewinnt.", 50},
+	{"kara_21684_03", "Legion", "Viel Leben und hoher Schaden.", 40},
+	{"kara_21684_04", "Advanced", "Strategie: Sweep nutzen, wenn 1 bis 3 Einheiten vor dem Koenig stehen. Heroism aktiv halten, wenn verbuendete Figuren in einem der acht angrenzenden Felder stehen.", 30},
+	{"kara_21684_05", "Important", "Sweep verursacht 4k Schaden an 3 frontal angrenzenden Einheiten.", 20},
+	{"kara_21684_06", "Important", "Heroism erhoeht den Schaden verbuendeter Figuren auf allen 8 angrenzenden Feldern um 50%.", 10},
+}
+tipsMap_deDE[21726] = {
+	{"kara_21726_01", "Legion", "Turm-Typ; bewegt sich 1 Feld in jede Richtung.", 50},
+	{"kara_21726_02", "PriorityTargets", "4. Prioritaet wegen mittlerem Fernkampfschaden.", 40},
+	{"kara_21726_03", "Legion", "Wenig Leben und mittlerer Schaden.", 30},
+	{"kara_21726_04", "Important", "Höllenfeuer verursacht 3k Schaden an allen feindlichen Figuren auf angrenzenden Feldern.", 20},
+	{"kara_21726_05", "Important", "Feuerschild reduziert 5 Sek. lang den erlittenen Schaden um 50%.", 10},
+}
+tipsMap_deDE[21747] = {
+	{"kara_21747_01", "Legion", "Bischof-Typ und die einzige Heilfigur.", 40},
+	{"kara_21747_02", "PriorityTargets", "2. Prioritaet, weil nur diese Figur Koenig und andere Figuren heilen kann.", 30},
+	{"kara_21747_03", "Legion", "Wenig Leben und wenig Schaden.", 20},
+	{"kara_21747_04", "Important", "Diese Figur sollte sich nur wenig bewegen, aus Feuer bleiben und vor allem Koenig und Dame am Leben halten.", 10},
+}
+tipsMap_deDE[21748] = {
+	{"kara_21748_01", "Legion", "Springer-Typ; bewegt sich in L-Form.", 50},
+	{"kara_21748_02", "PriorityTargets", "5. Prioritaet wegen geringem Nah- und Fernkampfschaden.", 40},
+	{"kara_21748_03", "Legion", "Mittleres Leben und wenig Schaden.", 30},
+	{"kara_21748_04", "Important", "Biss verursacht 3k Schaden an einer Figur 1 Feld direkt vor ihm.", 20},
+	{"kara_21748_05", "Important", "Heulen verursacht 2k Schaden an feindlichen Figuren in einer geraden Reihe von 3 Feldern vor ihm.", 10},
+}
+tipsMap_deDE[21750] = {
+	{"kara_21750_01", "Legion", "Damen-Typ; bewegt sich 3 Felder gerade oder 2 diagonal.", 50},
+	{"kara_21750_02", "PriorityTargets", "3. Prioritaet, da sie hohen Single-Target- und AoE-Schaden macht.", 40},
+	{"kara_21750_03", "Advanced", "Strategie: Giftwolke auf Cooldown in die Mitte von Gegnergruppen legen. Feuerball als Filler auf das Hauptziel nutzen.", 30},
+	{"kara_21750_04", "Important", "Feuerball verursacht 4k Schaden an einer einzelnen Schachfigur in Reichweite.", 20},
+	{"kara_21750_05", "Important", "Giftwolke verursacht 6k Schaden an einer feindlichen Figur und allen angrenzenden feindlichen Figuren. 15 Sek. Cooldown.", 10},
+}
+tipsMap_deDE[21752] = {
+	{"kara_21752_01", "Legion", "Startet den Kampf, wenn ihr mit dem Koenig sprecht. Dadurch werden die Figuren dieser Seite fuer euer Team freigeschaltet.", 60},
+	{"kara_21752_02", "PriorityTargets", "1. Prioritaet, denn wer den gegnerischen Koenig zuerst toetet, gewinnt.", 50},
+	{"kara_21752_03", "Legion", "Viel Leben und hoher Schaden.", 40},
+	{"kara_21752_04", "Advanced", "Strategie: Cleave nutzen, wenn 1 bis 3 Einheiten vor dem Koenig stehen. Bloodlust aktiv halten, wenn verbuendete Figuren in einem der acht angrenzenden Felder stehen.", 30},
+	{"kara_21752_05", "Important", "Cleave verursacht 4k Schaden an 3 frontal angrenzenden Einheiten.", 20},
+	{"kara_21752_06", "Important", "Bloodlust erhoeht den Schaden verbuendeter Figuren auf allen 8 angrenzenden Feldern um 50%.", 10},
+}
+tipsMap_deDE[15547] = {
+	{"kara_15547_01", "Important", "Charged den entferntesten Spieler und wirkt einen 4-Sek.-AoE-Fear. Diese Mobs von noch unberuehrten Gruppen wegziehen.", 10},
+}
+tipsMap_deDE[15548] = {
+	{"kara_15548_01", "Legion", "", 10},
+}
+tipsMap_deDE[15551] = {
+	{"kara_15551_01", "PriorityTargets", "", 20},
+	{"kara_15551_02", "Interrupts", "Kick: Tier heilen. Heilt Spektrale Streitrosse und Hengste.", 10},
+}
+tipsMap_deDE[16170] = {
+	{"kara_16170_01", "Legion", "Getarnter Mob.", 10},
+}
+tipsMap_deDE[16171] = {
+	{"kara_16171_01", "Legion", "Abseits von Patrouillen wird dieser Mob meist von 2 getarnten Kaltnebelpirschern begleitet.", 10},
+}
+tipsMap_deDE[16173] = {
+	{"kara_16173_01", "Important", "Wirkt einen AoE-Interrupt mit Spelllock.", 20},
+	{"kara_16173_02", "TANK", "Wegen des AoE-Interrupts den Mob von Castern weg halten.", 10},
+}
+tipsMap_deDE[16174] = {
+	{"kara_16174_01", "Legion", "", 10},
+}
+tipsMap_deDE[16175] = {
+	{"kara_16175_01", "Legion", "", 10},
+}
+tipsMap_deDE[16176] = {
+	{"kara_16176_01", "Important", "Wirkt Heulen der zerbrochenen Hügel, ein Fluch mit 10 Metern Reichweite, der Mana, Energie und Wut entzieht.", 10},
+}
+tipsMap_deDE[16177] = {
+	{"kara_16177_01", "Important", "Der Mob cleaved. Nur der Tank sollte vor ihm stehen.", 10},
+}
+tipsMap_deDE[16178] = {
+	{"kara_16178_01", "Important", "Phasing aehnlich wie ein Warp Pirscher. Jaegermal kann helfen, den Mob sichtbar zu halten.", 10},
+}
+tipsMap_deDE[16389] = {
+	{"kara_16389_01", "Legion", "Schwacher Nahkampf-Mob.", 10},
+}
+tipsMap_deDE[16406] = {
+	{"kara_16406_01", "Important", "Wegen ihrer Heilungen und weil sie mit Spektralen Bewahrern in Packs kommen, ist CC gegen diese Mobs Pflicht.", 10},
+}
+tipsMap_deDE[16407] = {
+	{"kara_16407_01", "Legion", "Schwacher Nahkampfangriff.", 20},
+	{"kara_16407_02", "Important", "Wirkt Fluch der vergangenen Lasten und reduziert Bewegungstempo und Staerke um 70%.", 10},
+}
+tipsMap_deDE[16408] = {
+	{"kara_16408_01", "Legion", "Immun gegen Taunt und machen hohen Nahkampfschaden.", 20},
+	{"kara_16408_02", "Important", "Wirkt Demoralisierender Ruf und senkt die Angriffskraft naher Spieler.", 10},
+}
+tipsMap_deDE[16409] = {
+	{"kara_16409_01", "TANK", "Diesen Mob zusammen mit der nahe stehenden Gruppe pullen und mit AoE-Tools wie Weihe oder Donnerknall aufnehmen.", 20},
+	{"kara_16409_02", "Important", "Den Mob und seine Gruppe erst dann per AoE runterbrennen, wenn der Tank sicher Aggro auf allen Engaged-Zielen hat.", 10},
+}
+tipsMap_deDE[16410] = {
+	{"kara_16410_01", "Important", "Wirkt eine nicht dispellbare Gedankenkontrolle. Kontrollierte Spieler sollten gesheeped oder anderweitig per CC gesichert werden.", 20},
+	{"kara_16410_02", "Important", "Immun gegen Untote fesseln.", 10},
+}
+tipsMap_deDE[16411] = {
+	{"kara_16411_01", "Legion", "", 10},
+}
+tipsMap_deDE[16412] = {
+	{"kara_16412_01", "Important", "Verursacht Feuerschaden und wirft das Ziel fuer 2 Sek. zu Boden.", 10},
+}
+tipsMap_deDE[16414] = {
+	{"kara_16414_01", "Important", "Setzt Betrunkener Schaedelbruch mit 40 Metern Reichweite und 4 Sek. Stun.", 30},
+	{"kara_16414_02", "Important", "Kommt oft in Zweierpacks und sollte vom Main-Tank und Off-Tank getrennt von anderen Mobs gepullt werden.", 20},
+	{"kara_16414_03", "HEALER", "Das Ziel mit Betrunkenem Schaedelbruch bekommt waehrend des Debuffs viel Schaden und braucht Fokusheilung.", 10},
+}
+tipsMap_deDE[16415] = {
+	{"kara_16415_01", "Legion", "Diese Ziele markieren und moeglichst einzeln pullen.", 20},
+	{"kara_16415_02", "Important", "Setzt Spröde Knochen, einen 2-Min.-Debuff, der periodisch alle Ruestung entfernt. Entfernbar nur durch Gottesschild oder absorbierbar ueber Erdungstotem.", 10},
+}
+tipsMap_deDE[16424] = {
+	{"kara_16424_01", "Legion", "Fernkampf-Mob, anfaellig fuer Untote fesseln.", 10},
+}
+tipsMap_deDE[16425] = {
+	{"kara_16425_01", "Legion", "Kann gefesselt oder gestunnt werden.", 20},
+	{"kara_16425_02", "Important", "Schildschlag stunnt einen Spieler fuer 3 Sek.", 10},
+}
+tipsMap_deDE[16459] = {
+	{"kara_16459_01", "Important", "Verlockende Aura vor der Verwandlung reduziert den erlittenen physischen Schaden um 50%.", 40},
+	{"kara_16459_02", "Important", "Loescht alle Debuffs bei 50%, wenn der Mob seine wahre Gestalt annimmt.", 30},
+	{"kara_16459_03", "Important", "Bezaubernde Aura nach der Verwandlung reduziert den erlittenen Magieschaden um 50%.", 20},
+	{"kara_16459_04", "Important", "Banshee-Klage ist ein kurzer AoE-Silence nach der Verwandlung.", 10},
+}
+tipsMap_deDE[16460] = {
+	{"kara_16460_01", "PriorityTargets", "", 40},
+	{"kara_16460_02", "WARLOCK", "Immun gegen Fluch der Sprachen.", 30},
+	{"kara_16460_03", "Important", "Wirkt Drohender Verrat und verursacht nach 10 Sek. rund 3k Schaden.", 20},
+	{"kara_16460_04", "Important", "Loescht alle Debuffs bei 50%, wenn der Mob seine wahre Gestalt annimmt.", 10},
+}
+tipsMap_deDE[16461] = {
+	{"kara_16461_01", "Important", "AoE-Verfuehren fuer 6 Sek. Der Off-Tank sollte etwas Abstand halten und uebernehmen, wenn der Main-Tank verfuehrt wird.", 20},
+	{"kara_16461_02", "Important", "Loescht alle Debuffs bei 50%, wenn der Mob seine wahre Gestalt annimmt.", 10},
+}
+tipsMap_deDE[16468] = {
+	{"kara_16468_01", "Legion", "", 10},
+}
+tipsMap_deDE[16470] = {
+	{"kara_16470_01", "Important", "Immun gegen Taunt und CC. Vorsicht mit AoE, sonst pullt ihr schnell weitere Gruppen.", 10},
+}
+tipsMap_deDE[16471] = {
+	{"kara_16471_01", "Legion", "Immun gegen Taunt, Untote vertreiben, Eiskältefalle, Stuns und Wirbelsturm. Anfaellig fuer Untote fesseln.", 30},
+	{"kara_16471_02", "Important", "Wenn diese Mobs paarweise kommen, sollte einer gefesselt werden.", 20},
+	{"kara_16471_03", "TANK", "Ein Krieger sollte Main-Tank sein und nach Frostschock Zauberreflexion nutzen, um den Stunteil zurueckzuwerfen.", 10},
+}
+tipsMap_deDE[16472] = {
+	{"kara_16472_01", "Important", "Immun gegen Verlangsamungen, Untote fesseln und Stuns.", 20},
+	{"kara_16472_02", "Important", "Sollte von Krieger oder Schurke entwaffnet werden.", 10},
+}
+tipsMap_deDE[16473] = {
+	{"kara_16473_01", "TANK", "Den Mob aus dem Rampenlicht ziehen, da der Spieler im Spotlight mehr Schaden verursacht.", 30},
+	{"kara_16473_02", "Important", "Immun gegen Eiskältefalle und Untote fesseln.", 20},
+	{"kara_16473_03", "DAMAGE", "Im Spotlight stehen bringt euch einen Schadensbuff.", 10},
+}
+tipsMap_deDE[16481] = {
+	{"kara_16481_01", "Legion", "", 10},
+}
+tipsMap_deDE[16482] = {
+	{"kara_16482_01", "Legion", "Immun gegen Untote fesseln und Stun.", 10},
+}
+tipsMap_deDE[16485] = {
+	{"kara_16485_01", "Important", "Wenn diese Mobs im Pack kommen, nicht den Schaden splitten. Immer einzeln fokussieren.", 20},
+	{"kara_16485_02", "Important", "Spieler mit Überladen als Arkandebuff muessen von anderen weglaufen, weil der AoE-Schaden pro Tick ansteigt.", 10},
+}
+tipsMap_deDE[16488] = {
+	{"kara_16488_01", "PriorityTargets", "Beim Tod stellt Lose Mana Spielern Mana wieder her.", 20},
+	{"kara_16488_02", "Important", "Durch das Manaschild durchschaden. Der Mob stirbt, wenn sein Mana leer ist.", 10},
+}
+tipsMap_deDE[16489] = {
+	{"kara_16489_01", "Advanced", "Strategie: Nahe Manafresser auf Range anziehen und Chaotische Empfindung vom Raid wegziehen lassen.", 30},
+	{"kara_16489_02", "Important", "Setzt Instabile Magie auf Spieler. Der Debuff erhoeht verursachten Zauberschaden um 300, aber eingehenden Zauberschaden um 600 fuer 2 Min.", 20},
+	{"kara_16489_03", "Important", "Immun gegen Verbannen und Stuns.", 10},
+}
+tipsMap_deDE[16491] = {
+	{"kara_16491_01", "Important", "Immun gegen die meisten Magieeffekte inklusive Zauberstaebe. Selbst Caster sollten hier physischen Schaden nutzen.", 10},
+}
+tipsMap_deDE[16492] = {
+	{"kara_16492_01", "Important", "Wirkt Mana entziehen als Kanal. Nahe Arkane Anomalien am besten zuerst toeten, damit Lose Mana beim Tod hilft.", 10},
+}
+tipsMap_deDE[16504] = {
+	{"kara_16504_01", "TANK", "Den Mob waehrend Faust aus Stein kiten. Die Faehigkeit macht haerter und langsamer: +35% Nahkampfschaden, -75% Bewegungstempo, -35% Angriffstempo.", 50},
+	{"kara_16504_02", "Important", "Waehend Gegenfeuer wirkt der Mob je nach Ansage unterschiedliche arkane Retaliations:", 40},
+	{"kara_16504_03", "Legion", "EL-2S reflektiert gegen Zauber.", 30},
+	{"kara_16504_04", "Legion", "EL-5R reflektiert gegen Fernkampfgeschosse.", 20},
+	{"kara_16504_05", "Legion", "EL-7M reflektiert gegen Meelee.", 10},
+}
+tipsMap_deDE[16525] = {
+	{"kara_16525_01", "Legion", "Der Mob phaset ein und aus. Entdecken von Unsichtbarkeit oder Elixier der geringeren Unsichtbarkeit helfen, ihn sichtbar zu halten.", 20},
+	{"kara_16525_02", "Important", "Anfaellig fuer Fluch der Sprachen, Untote fesseln und Untote vertreiben.", 10},
+}
+tipsMap_deDE[16526] = {
+	{"kara_16526_01", "Important", "Diese Mobs zuerst burnen. Die Volleys haben 20 Meter Reichweite.", 20},
+	{"kara_16526_02", "Important", "Immun gegen Untote fesseln und Fluch der Sprachen.", 10},
+}
+tipsMap_deDE[16529] = {
+	{"kara_16529_01", "PriorityTargets", "Diesen Mob vor Mana Warps fokussieren, wegen seiner arkanen Volley-AoE.", 20},
+	{"kara_16529_02", "Important", "Immun gegen Verbannen.", 10},
+}
+tipsMap_deDE[16530] = {
+	{"kara_16530_01", "Important", "Diese Mobs wirken Warpbruch, wachsen an und machen bei niedrigem Leben arkane AoE-Explosionen. Bei etwa 8 bis 15% fearen oder stunnen.", 10},
+}
+tipsMap_deDE[16539] = {
+	{"kara_16539_01", "Legion", "Anfaellig fuer Dämonen versklaven und Verbannen.", 10},
+}
+tipsMap_deDE[16540] = {
+	{"kara_16540_01", "Legion", "Immun gegen jede Form von Crowd Control.", 10},
+}
+tipsMap_deDE[16544] = {
+	{"kara_16544_01", "Important", "Main-Tank und Off-Tank muessen Platz 1 und 2 auf dem Threat halten, da diese Mobs immun gegen Taunt sind und Nicht-Tanks hart treffen.", 20},
+	{"kara_16544_02", "Important", "Der Mob entwaffnet das Ziel mit der hoechsten Aggro und senkt dabei dessen Bedrohung auf diesem Mob.", 10},
+}
+tipsMap_deDE[16545] = {
+	{"kara_16545_01", "PriorityTargets", "Stackender Raid-Debuff mit 3% weniger Intelligenz und Willenskraft pro Stack, bis zu 15 Mal.", 30},
+	{"kara_16545_02", "Important", "Wirkt Transference. Dieser Magie-Debuff uebertraegt eingehende Heilung von einem Spieler auf den Mob.", 20},
+	{"kara_16545_03", "Important", "Arkane Salve trifft mehrere Ziele mit etwa 2k Arkanschaden pro Treffer.", 10},
+}
+tipsMap_deDE[16595] = {
+	{"kara_16595_01", "Important", "Immun gegen jede Form von CC.", 20},
+	{"kara_16595_02", "Important", "Frontal-Cleave. Nur der Tank sollte vor dem Mob stehen. Bei mehreren Mobs braucht jeder sein eigenes Ziel, leicht voneinander getrennt.", 10},
+}
+tipsMap_deDE[16596] = {
+	{"kara_16596_01", "Important", "Klaffender Schlund legt einen AoE-Bleed auf Spieler in Meelee-Reichweite.", 20},
+	{"kara_16596_02", "Important", "Infektiöses Gift ist ein Natur-DoT im 10-Meter-AoE.", 10},
+}
+tipsMap_deDE[17067] = {
+	{"kara_17067_01", "Legion", "Wird vom Phantomwächter beschworen.", 20},
+	{"kara_17067_02", "Important", "Setzt Zerfleischen. Diese Mobs koennen vom Off-Tank gehalten oder mit DoTs/Burst schnell beseitigt werden.", 10},
+}
+tipsMap_deDE[17096] = {
+	{"kara_17096_01", "PriorityTargets", "Spawnt alle 10 Sekunden.", 10},
+}
+tipsMap_deDE[17167] = {
+	{"kara_17167_01", "PriorityTargets", "Bleiben 90 Sek. aktiv und despawnen dann. Frostwiderstand kann helfen.", 30},
+	{"kara_17167_02", "Important", "Immun gegen Frostschaden.", 20},
+	{"kara_17167_03", "WARLOCK", "Anfaellig fuer Fear und Verbannen.", 10},
+}
+tipsMap_deDE[17229] = {
+	{"kara_17229_01", "PriorityTargets", "Respawnt etwa alle 45 Sekunden.", 30},
+	{"kara_17229_02", "Important", "Wenn der Mob stirbt, bekommt Terestian Illhoof einen Debuff und nimmt mehr Schaden von Spielern.", 20},
+	{"kara_17229_03", "PALADIN", "Immun gegen Boeses vertreiben.", 10},
+}
+tipsMap_deDE[17248] = {
+	{"kara_17248_01", "PriorityTargets", "Erscheinen waehrend des Terestian-Illhoof-Kampfes auf einem Raider. Diese Ketten muessen sofort zerstört werden.", 10},
+}
+tipsMap_deDE[17261] = {
+	{"kara_17261_01", "Legion", "", 10},
+}
+tipsMap_deDE[17267] = {
+	{"kara_17267_01", "Legion", "", 10},
+}
+tipsMap_deDE[17283] = {
+	{"kara_17283_01", "Legion", "", 10},
 }
 tipsMap_deDE[24664] = {
 	{"magisters_terrace_24664_01", "Important", "", 10},

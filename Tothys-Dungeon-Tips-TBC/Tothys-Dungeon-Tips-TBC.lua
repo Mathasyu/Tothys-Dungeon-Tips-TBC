@@ -1480,20 +1480,43 @@ function addon:openConfig()
     if addon.registerConfigPanel then
         addon:registerConfigPanel()
     end
-    if Settings and Settings.OpenToCategory and addon.configCategory then
-        if addon.configCategory.GetID then
-            Settings.OpenToCategory(addon.configCategory:GetID())
-        elseif addon.configCategory.ID then
-            Settings.OpenToCategory(addon.configCategory.ID)
-        else
-            Settings.OpenToCategory(addon.configPanel.name)
+    addon:openSettingsPanel(addon.configCategory, addon.configPanel)
+end
+
+function addon:openSettingsPanel(category, panel)
+    if Settings and Settings.OpenToCategory and category then
+        if category.GetID then
+            Settings.OpenToCategory(category:GetID())
+        elseif category.ID then
+            Settings.OpenToCategory(category.ID)
+        elseif panel and panel.name then
+            Settings.OpenToCategory(panel.name)
         end
-    elseif addon.configPanel and InterfaceOptionsFrame_OpenToCategory then
-        InterfaceOptionsFrame_OpenToCategory(addon.configPanel)
-        InterfaceOptionsFrame_OpenToCategory(addon.configPanel)
+    elseif panel and InterfaceOptionsFrame_OpenToCategory then
+        InterfaceOptionsFrame_OpenToCategory(panel)
+        InterfaceOptionsFrame_OpenToCategory(panel)
     else
         tdtPrint("Config panel is not available in this client.")
     end
+end
+
+function addon:openContentBrowser()
+	if addon.registerConfigPanel then
+		addon:registerConfigPanel()
+	end
+	addon:openSettingsPanel(addon.contentBrowserCategory, addon.contentBrowserPanel)
+end
+
+function addon:toggleMainFrame()
+	if not TDT_ParentFrame then
+		return
+	end
+
+	if TDT_ParentFrame:IsShown() then
+		TDT_ParentFrame:Hide()
+	else
+		TDT_ParentFrame:Show()
+	end
 end
 
 function addon:showTestFrame()
@@ -1537,13 +1560,9 @@ SlashCmdList["KDTCOMMAND"] = function(msg)
 		end
 	elseif msg == "toggle" then
 		if TDT_ParentFrame then
-			if TDT_ParentFrame:IsShown() then
-				TDT_ParentFrame:Hide()
-				tdtPrint("Frame hidden.")
-			else
-				TDT_ParentFrame:Show()
-				tdtPrint("Frame shown.")
-			end
+			local wasShown = TDT_ParentFrame:IsShown()
+			addon:toggleMainFrame()
+			tdtPrint(wasShown and "Frame hidden." or "Frame shown.")
 		end
 	elseif msg == "test" then
 		addon:showTestFrame()

@@ -103,6 +103,21 @@ Guidelines:
 - Continued the German `tipsMap_deDE` pass through the next `Black Morass` and early `Mechanar` blocks while keeping IDs, types, and weights unchanged
 - Continued the same `tipsMap_deDE` pass through the next `Arcatraz` block and mirrored the currently empty `Magisters' Terrace` shipped placeholders into the German map
 - Continued the German `tipsMap_deDE` pass through more `Old Hillsbrad` and the opening `Black Morass` boss/friendly block, still only changing text content
+- Completed the remaining populated `Arcatraz` German tip block so the prison-event mobs and the missing trash/boss entries now match the shipped English coverage
+- Continued the German tip translation with the opening `Karazhan` boss block so `Midnight` and `Attumen` now have full localized shipped tips
+- Added the next large `Karazhan` German tip pass for `Moroes`, `Barnes`, `Maiden`, `Curator`, `Illhoof`, `Shade of Aran`, and `Netherspite`
+- Continued the large `Karazhan` German pass with full shipped tips for `Prince Malchezaar` and `Nightbane`
+- Continued the `Karazhan` German pass with the `Servant Quarters` bosses and the populated `Moroes' Dinner Guests` entries
+- Continued the `Karazhan` German pass with the full populated `Opera Event` block
+- Continued the `Karazhan` German pass with the complete `Chess Event` block and the next visible Karazhan trash segment
+- Continued the `Karazhan` German pass through the remaining visible populated trash segment before the Zul'Aman section
+- Added a first built-in minimap button: left click toggles the main frame, right click opens the `Content Browser`, `Ctrl + Click` opens config, and `Shift + Drag` moves the button around the minimap
+- Added a localized config option for showing or hiding the minimap button, with the button enabled by default
+- Improved the minimap button setup by giving it a clearer default position and attaching it to the minimap cluster for more reliable visibility
+- Replaced the minimap-button config checkbox with a single localized toggle button that switches between show and hide states
+- Anchored the minimap button directly to the minimap and made its creation and saved-angle positioning more robust
+- Refined the minimap button visuals to sit more cleanly on the minimap ring and moved its default position further outward
+- Switched the minimap button to the standard round tracking-button layout with proper ring offsets and a masked icon area
 
 ### Notes
 

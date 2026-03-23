@@ -25,6 +25,196 @@ Future Versions - Content
 
 local _, addon = ...;
 
+local function getMinimapLocale()
+	if not TDTConfig then
+		return "enUS"
+	end
+
+	local preferredLocale = TDTConfig.LocaleChoice or "Auto"
+	if preferredLocale == "Auto" then
+		preferredLocale = GetLocale() or "enUS"
+	end
+
+	if preferredLocale ~= "deDE" then
+		preferredLocale = "enUS"
+	end
+
+	return preferredLocale
+end
+
+local function getMinimapTooltipLines()
+	if getMinimapLocale() == "deDE" then
+		return {
+			title = "Kiesel Dungeon Tool",
+			left = "Linksklick: Fenster ein/aus",
+			right = "Rechtsklick: Content Browser",
+			ctrl = "Strg + Klick: Konfiguration",
+			shift = "Shift + Klick + Ziehen: Button verschieben",
+		}
+	end
+
+	return {
+		title = "Kiesel Dungeon Tool",
+		left = "Left Click: Toggle main window",
+		right = "Right Click: Content Browser",
+		ctrl = "Ctrl + Click: Config",
+		shift = "Shift + Click + Drag: Move button",
+	}
+end
+
+local createMinimapButton
+
+local function updateMinimapButtonPosition(button)
+	if not button or not Minimap then
+		return
+	end
+
+	local angle = (TDTConfig and TDTConfig.MinimapButtonAngle) or 0
+	if type(angle) ~= "number" or angle ~= angle then
+		angle = 0
+	end
+	angle = angle % 360
+	local radians = math.rad(angle)
+	local radius = 78
+	button:ClearAllPoints()
+	button:SetPoint("CENTER", Minimap, "CENTER", math.cos(radians) * radius, math.sin(radians) * radius)
+end
+
+function addon:updateMinimapButtonVisibility()
+	local shouldShow = not TDTConfig or TDTConfig.ShowMinimapButton ~= false
+	if shouldShow and not addon.minimapButton and createMinimapButton then
+		createMinimapButton()
+	end
+
+	if not addon.minimapButton then
+		return
+	end
+
+	if shouldShow then
+		addon.minimapButton:Show()
+	else
+		addon.minimapButton:Hide()
+	end
+end
+
+createMinimapButton = function()
+	if addon.minimapButton or not Minimap then
+		return
+	end
+
+	local button = CreateFrame("Button", "TDT_MinimapButton", Minimap)
+	button:SetSize(31, 31)
+	button:SetFrameStrata("DIALOG")
+	button:SetFrameLevel(Minimap:GetFrameLevel() + 20)
+	button:SetMovable(true)
+	button:EnableMouse(true)
+	button:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+	button:RegisterForDrag("LeftButton")
+	button:SetClampedToScreen(true)
+
+	local background = button:CreateTexture(nil, "BACKGROUND")
+	background:SetTexture("Interface\\Minimap\\UI-Minimap-Background")
+	background:SetSize(20, 20)
+	background:SetPoint("TOPLEFT", 7, -5)
+	background:SetVertexColor(0, 0, 0, 0.85)
+	button.background = background
+
+	local border = button:CreateTexture(nil, "BORDER")
+	border:SetTexture("Interface\\Minimap\\MiniMap-TrackingBorder")
+	border:SetSize(53, 53)
+	border:SetPoint("TOPLEFT")
+	button.border = border
+
+	local icon = button:CreateTexture(nil, "ARTWORK")
+	icon:SetSize(17, 17)
+	icon:SetPoint("TOPLEFT", 7, -6)
+	icon:SetTexture("Interface\\Icons\\INV_Misc_Note_01")
+	icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
+	button.icon = icon
+
+	if icon.AddMaskTexture and button.CreateMaskTexture then
+		local mask = button:CreateMaskTexture()
+		mask:SetTexture("Interface\\CharacterFrame\\TempPortraitAlphaMask", "CLAMPTOBLACKADDITIVE", "CLAMPTOBLACKADDITIVE")
+		mask:SetAllPoints(icon)
+		icon:AddMaskTexture(mask)
+		button.iconMask = mask
+	end
+
+	local overlay = button:CreateTexture(nil, "OVERLAY")
+	overlay:SetTexture("Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight")
+	overlay:SetBlendMode("ADD")
+	overlay:SetAllPoints()
+	overlay:SetAlpha(0.6)
+	button.overlay = overlay
+
+	local label = button:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+	label:SetPoint("CENTER", icon, "CENTER", 2, -2)
+	label:SetText("K")
+	label:SetTextColor(1, 0.82, 0)
+	label:SetJustifyH("CENTER")
+	label:SetJustifyV("MIDDLE")
+	label:SetDrawLayer("OVERLAY", 7)
+	button.label = label
+
+	button:SetScript("OnEnter", function(self)
+		local lines = getMinimapTooltipLines()
+		GameTooltip:SetOwner(self, "ANCHOR_LEFT")
+		GameTooltip:SetText(lines.title, 1, 0.82, 0)
+		GameTooltip:AddLine(lines.left, 1, 1, 1)
+		GameTooltip:AddLine(lines.right, 1, 1, 1)
+		GameTooltip:AddLine(lines.ctrl, 1, 1, 1)
+		GameTooltip:AddLine(lines.shift, 0.8, 0.8, 0.8)
+		GameTooltip:Show()
+	end)
+	button:SetScript("OnLeave", function()
+		GameTooltip:Hide()
+	end)
+
+	button:SetScript("OnDragStart", function(self)
+		if IsShiftKeyDown() then
+			self:SetScript("OnUpdate", function(frame)
+				local mx, my = Minimap:GetCenter()
+				local px, py = GetCursorPosition()
+				local scale = UIParent:GetEffectiveScale()
+				px, py = px / scale, py / scale
+				TDTConfig = TDTConfig or {}
+				TDTConfig.MinimapButtonAngle = math.deg(math.atan2(py - my, px - mx))
+				updateMinimapButtonPosition(frame)
+			end)
+		end
+	end)
+
+	button:SetScript("OnDragStop", function(self)
+		self:SetScript("OnUpdate", nil)
+	end)
+
+	button:SetScript("OnClick", function(_, mouseButton)
+		if IsShiftKeyDown() then
+			return
+		end
+
+		if IsControlKeyDown() then
+			addon:openConfig()
+			return
+		end
+
+		if mouseButton == "RightButton" then
+			addon:openContentBrowser()
+			return
+		end
+
+		addon:toggleMainFrame()
+	end)
+
+	addon.minimapButton = button
+	if not TDTConfig or type(TDTConfig.MinimapButtonAngle) ~= "number" then
+		TDTConfig = TDTConfig or {}
+		TDTConfig.MinimapButtonAngle = 0
+	end
+	updateMinimapButtonPosition(button)
+	addon:updateMinimapButtonVisibility()
+end
+
 function addon:updateFrameButtons()
 	if TDT_MinimizeBtn and TDT_TipPanel then
 		if addon.frameCollapsed then
@@ -249,6 +439,7 @@ function createTDTFrame()
 	TDT_ParentFrame:SetPoint("CENTER", UIParent)
 	TDT_ParentFrame:Show()
 	addon:updateFrameButtons()
+	createMinimapButton()
 	
 	
 	TDT_ParentFrame:RegisterEvent("PLAYER_ENTERING_WORLD")

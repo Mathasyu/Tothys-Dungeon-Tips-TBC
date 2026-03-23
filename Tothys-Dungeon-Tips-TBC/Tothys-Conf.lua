@@ -164,6 +164,9 @@ local browserLocaleStrings = {
 		config_content = "Content",
 		config_show_in_dungeons = "Show Tips in Dungeons",
 		config_show_in_raid = "Show Tips in Raid",
+		config_minimap_button = "Minimap Button",
+		config_show_minimap_button = "Show Minimap Button",
+		config_hide_minimap_button = "Hide Minimap Button",
 		config_show_npc_ids = "Show NPC IDs",
 		config_font_size = "Font Size",
 		config_general = "Show Important General Information",
@@ -307,6 +310,9 @@ local browserLocaleStrings = {
 		config_content = "Inhalte",
 		config_show_in_dungeons = "Tipps in Dungeons anzeigen",
 		config_show_in_raid = "Tipps in Raids anzeigen",
+		config_minimap_button = "Minimap-Button",
+		config_show_minimap_button = "Minimap-Button anzeigen",
+		config_hide_minimap_button = "Minimap-Button ausblenden",
 		config_show_npc_ids = "NPC-IDs anzeigen",
 		config_font_size = "Schriftgroesse",
 		config_general = "Wichtige allgemeine Hinweise anzeigen",
@@ -585,6 +591,7 @@ local defaultConfig = {
     ["TargetTrigger"] = "Show targeted mob",
     ["DungeonToggle"] = true,
     ["RaidToggle"] = true,
+    ["ShowMinimapButton"] = true,
     ["ShowNpcIDs"] = true,
     ["MythicPlusToggle"] = true,
     ["FrameWidth"] = 450,
@@ -592,6 +599,7 @@ local defaultConfig = {
     ["FontSize"] = 13,
     ["FrameOpacity"] = 0.55,
     ["LocaleChoice"] = "Auto",
+    ["MinimapButtonAngle"] = 45,
     ["BrowserExpansionKey"] = "tbc",
     ["BrowserInstanceKey"] = "auchenai_crypts",
     ["BrowserNpcID"] = 18371,
@@ -3460,10 +3468,25 @@ local function createConfigMenu()
 	end)
 	chkRaid:SetPoint("TOPLEFT", chkRegDungeons, "BOTTOMLEFT", 0, -8)
 
+	local minimapButtonFS = createString(configContent, getBrowserLocaleString("config_minimap_button"), headerFont, headerSize)
+	minimapButtonFS:SetPoint("TOPLEFT", chkRaid, "BOTTOMLEFT", 0, -18)
+
+	local minimapToggleBtn = CreateFrame("Button", "TDTConfigMinimapToggleBtn", configContent, "UIPanelButtonTemplate")
+	minimapToggleBtn:SetSize(180, 22)
+	minimapToggleBtn:SetPoint("TOPLEFT", minimapButtonFS, "BOTTOMLEFT", 0, -8)
+	minimapToggleBtn:SetScript("OnClick", function()
+		TDTConfig.ShowMinimapButton = not (TDTConfig.ShowMinimapButton ~= false)
+		if addon.updateMinimapButtonVisibility then
+			addon:updateMinimapButtonVisibility()
+		end
+		local label = TDTConfig.ShowMinimapButton ~= false and getBrowserLocaleString("config_hide_minimap_button") or getBrowserLocaleString("config_show_minimap_button")
+		minimapToggleBtn:SetText(label)
+	end)
+
 	local chkShowNpcIDs = createCheck("ShowNpcIDs", getBrowserLocaleString("config_show_npc_ids"), configContent, function(self, value)
 		TDTConfig.ShowNpcIDs = self:GetChecked()
 	end)
-	chkShowNpcIDs:SetPoint("TOPLEFT", chkRaid, "BOTTOMLEFT", 0, -8)
+	chkShowNpcIDs:SetPoint("TOPLEFT", minimapToggleBtn, "BOTTOMLEFT", 0, -12)
 	
 
 	-- Other Stuff
@@ -3541,6 +3564,8 @@ local function createConfigMenu()
 		showinFS:SetText(getBrowserLocaleString("config_content"))
 		setCheckLabel(chkRegDungeons, getBrowserLocaleString("config_show_in_dungeons"))
 		setCheckLabel(chkRaid, getBrowserLocaleString("config_show_in_raid"))
+		minimapButtonFS:SetText(getBrowserLocaleString("config_minimap_button"))
+		minimapToggleBtn:SetText((TDTConfig and TDTConfig.ShowMinimapButton ~= false) and getBrowserLocaleString("config_hide_minimap_button") or getBrowserLocaleString("config_show_minimap_button"))
 		setCheckLabel(chkShowNpcIDs, getBrowserLocaleString("config_show_npc_ids"))
 		OtherFS:SetText(getBrowserLocaleString("config_font_size"))
 	end
