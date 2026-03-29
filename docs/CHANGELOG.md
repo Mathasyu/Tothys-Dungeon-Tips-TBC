@@ -128,6 +128,17 @@ Guidelines:
 - Added a `>>>` button to the main frame header that opens `NPC-Browser` with the currently shown NPC preselected
 - Updated the minimap tooltip so right click points to `Dungeon-Browser`
 - The `Info` page now explains the `>>>` quick jump from the main frame into `NPC-Browser`
+- Added `scripts/audit_multilanguage.py` and `docs/TRANSLATION_AUDIT.md` to track multilingual completion, duplicate German overrides, structural parity, and remaining untranslated explicit `deDE` tip blocks
+- Materialized `tipsMap_deDE` as explicit static data for every `tipsMap_enUS` NPC entry so the German map no longer depends on runtime cloning or fallback generation
+- Cleaned up the broken Old Hillsbrad German drift block by resetting it to explicit English placeholder counterparts and then re-translating it in controlled batches
+- Fixed the `17536` German tip block by removing the old runtime tip-id rewrite hack and restoring static `17536` tip IDs directly in the data file
+- Standardized `18371` and `18373` tip IDs to the current naming scheme and aligned their German metadata with the English structure
+- Fixed the remaining structural mismatch chain in `tipsMap_deDE`, including the broken `17491` English source block, so the audit now reports zero structural mismatches and zero duplicate German overrides
+- Documented in `DATA_MODEL.md` that `tipsMap_deDE` must structurally mirror `tipsMap_enUS`; only the localized text may differ
+- Improved the translation audit with a progress summary that separates completed cleanup work from still-open translation tasks
+- Cleared the `partially translated overrides` audit bucket by translating the remaining non-empty English carry-over lines in the affected German blocks
+- Continued the German `tipsMap_deDE` translation in controlled batches for `Old Hillsbrad`, `Shadow Labyrinth`, `Mechanar`, `Botanica`, and `Mana-Tombs`
+- Continued the controlled German `tipsMap_deDE` translation with a larger `Underbog` batch and reduced fully identical explicit `deDE` overrides to `393`
 
 ### Notes
 

@@ -5319,33 +5319,33 @@ tipsMap_deDE[17882] = {{"underbog_17882_01", "Advanced", "POSITIONING: Players s
 tipsMap_deDE[18107] = {{"underbog_18107_01", "Important", "Defeat Tidewrath before Ghaz'an reaches and eats him and \n you will be awarded bonus loot (even if you wipe on boss, but \n manage to take down Tidewrath).", 10}}
 tipsMap_deDE[22299] = {{"underbog_22299_01", "PriorityTargets", "DPS need to focus down adds before going back to boss; summoned ~every 10 sec.", 20},
 					{"underbog_22299_02", "Interrupts", "Interrupt: Lightning Bolt (Deals Nature Damage)", 10}}
-tipsMap_deDE[17723] = {{"underbog_17723_01", "Important", "Immune to all forms of CC and Snares (Traps)! On HEROIC mode (esp when in pairs) can hit pretty hard. They move slowly and can be kited (helpful when in pairs)", 10}}
-tipsMap_deDE[17724] = {{"underbog_17724_01", "TANK", "Do NOT turn your back to this mob when it is attacking as it deals increased damage from behind. If you need to pull this mob away from another pat: backup or strafe", 10}}
-tipsMap_deDE[17725] = {{"underbog_17725_01", "Defensives", "Defensives may be needed for this mob as Wild Growth increases physical damage it deals by 50%", 10}}
+tipsMap_deDE[17723] = {{"underbog_17723_01", "Important", "Immun gegen jede Form von CC und Verlangsamungen (Fallen). Auf HEROISCH, besonders paarweise, kann der Mob hart hitten. Er bewegt sich langsam und kann gut gekitet werden.", 10}}
+tipsMap_deDE[17724] = {{"underbog_17724_01", "TANK", "Dreh diesem Mob im Kampf NICHT den Ruecken zu, da er von hinten mehr Schaden macht. Wenn du ihn von einer Pat wegziehen musst: rueckwaerts laufen oder strafen.", 10}}
+tipsMap_deDE[17725] = {{"underbog_17725_01", "Defensives", "Def-CDs koennen noetig sein, da Wild Growth den physischen Schaden des Mobs um 50% erhoeht.", 10}}
 tipsMap_deDE[17726] = {{"underbog_17726_01", "Legion", "", 10}}
-tipsMap_deDE[17727] = {{"underbog_17727_01", "Important", "Enemy uses Shield Bash (Interrupting a player's cast)", 10}}
+tipsMap_deDE[17727] = {{"underbog_17727_01", "Important", "Der Gegner nutzt Schildhieb und kann damit Zauber unterbrechen.", 10}}
 tipsMap_deDE[17728] = {{"underbog_17728_01", "Legion", "", 10}}
-tipsMap_deDE[17729] = {{"underbog_17729_01", "Legion", "Ranged Hunter-Type Mob", 20},
-					{"underbog_17729_02", "Important", "CC this mob/dispel Viper Sting from players (Drains player mana over 8 sec). If no one in the group can CC this mob, it should be a priority target!", 10}}
-tipsMap_deDE[17730] = {{"underbog_17730_01", "Legion", "Healer-Type Mob", 30},
-					{"underbog_17730_02", "Interrupts", "INTERRUPT: Holy Light (Big heal to an ally; 2.5 sec cast; 40 yd range)", 20},
-					{"underbog_17730_03", "Interrupts", "INTERRUPT: Prayer of Healing (Moderate AoE heal to allies; 3 sec cast time)", 10}}
-tipsMap_deDE[17731] = {{"underbog_17731_01", "Interrupts", "INTERRUPT: Psychic Horror (1.5 sec cast; 10 yd range; Causing player to be feared for 3 sec", 20},
-					{"underbog_17731_02", "TANK", "Due to Psychic Horror, make sure that you aren't too close to nearby groups when you pull this mob, otherwise a fear may cause you to pull mobs you weren't ready to engage", 10}}
-tipsMap_deDE[17732] = {{"underbog_17732_01", "Important", "Dispel POISON SPIT (Nature DoT lasting 10 sec) disease from player", 10}}
-tipsMap_deDE[17734] = {{"underbog_17734_01", "Important", "Deals a knockback ability to a player", 20},
-					{"underbog_17734_02", "Important", "Mob has an enrage where they grow larger over time and should be burned down quickly to mitigate strong attacks", 10}}
-tipsMap_deDE[17735] = {{"underbog_17735_01", "Legion", "This mob has an enrage effect and should be focused down to mitigate damage as a result of this ability", 20},
-					{"underbog_17735_02", "Important", "Enemy uses Shield Bash (Interrupting a player's cast)", 10}}
-tipsMap_deDE[17771] = {{"underbog_17771_01", "Legion", "Mob uses a combination of Shadow, Frost, and Fire abilities", 20},
-					{"underbog_17771_02", "Important", "Dispel Magic AMPLIFY DAMAGE from player (increases physical & magical damage player takes by 30% for 6 sec)", 10}}
-tipsMap_deDE[17871] = {{"underbog_17871_01", "Interrupts", "INTERRUPT: Fungal Regrowth (40 yd range; 2 sec cast; Heals ally for initial amount also applying HoT to that ally", 30},
-					{"underbog_17871_02", "Interrupts", "INTERRUPT: Itchy Spores (15 yd range; Deals Nature DoT to player lasting 10 sec)", 20},
-					{"underbog_17871_03", "Important", "Dispel Disease: Itchy Spores from players if unable to interrupt this ability", 10}}
-tipsMap_deDE[17990] = {{"underbog_17990_01", "Dodge", "RUN AWAY! Spore Cloud, from this object, deals AoE Nature Damage", 10}}
-tipsMap_deDE[19632] = {{"underbog_19632_01", "Defensives", "DEFENSIVE: May be needed for tank/targeted player to pop CDs during Stinger Rage", 20},
-					{"underbog_19632_02", "Important", "Vulnerable to CC even on Heroic-mode", 10}}
-tipsMap_deDE[20465] = {{"underbog_20465_01", "Important", "Why are you swimming with the fishes?", 10}}
+tipsMap_deDE[17729] = {{"underbog_17729_01", "Legion", "Fernkampf-Jaeger-Mob", 20},
+					{"underbog_17729_02", "Important", "Diesen Mob mit CC sichern oder Vipernbiss von Spielern dispellen. Wenn niemand in der Gruppe ihn kontrollieren kann, sollte er ein Prio-Target sein.", 10}}
+tipsMap_deDE[17730] = {{"underbog_17730_01", "Legion", "Heiler-Mob", 30},
+					{"underbog_17730_02", "Interrupts", "KICK: Heiliges Licht (grosser Heal auf einen Verbuendeten; 2,5 Sek. Cast; 40 Meter Reichweite)", 20},
+					{"underbog_17730_03", "Interrupts", "KICK: Gebet der Heilung (mittlerer AoE-Heal auf Verbuendete; 3 Sek. Castzeit)", 10}}
+tipsMap_deDE[17731] = {{"underbog_17731_01", "Interrupts", "KICK: Psychic Horror (1,5 Sek. Cast; 10 Meter Reichweite; feart den Spieler 3 Sek.)", 20},
+					{"underbog_17731_02", "TANK", "Zieh diesen Mob wegen Psychic Horror nicht zu nah an andere Gruppen. Ein Fear kann sonst leicht einen ungeplanten Pull ausloesen.", 10}}
+tipsMap_deDE[17732] = {{"underbog_17732_01", "Important", "Poison Spit von Spielern dispellen. Der Nature-DoT laeuft 10 Sek.", 10}}
+tipsMap_deDE[17734] = {{"underbog_17734_01", "Important", "Hat einen Knockback auf Spieler.", 20},
+					{"underbog_17734_02", "Important", "Der Mob enraget und wird mit der Zeit groesser. Schnell burnen, um harte Hits zu vermeiden.", 10}}
+tipsMap_deDE[17735] = {{"underbog_17735_01", "Legion", "Dieser Mob enraget und sollte fokussiert werden, um den dadurch steigenden Schaden zu begrenzen.", 20},
+					{"underbog_17735_02", "Important", "Der Gegner nutzt Schildhieb und kann damit Zauber unterbrechen.", 10}}
+tipsMap_deDE[17771] = {{"underbog_17771_01", "Legion", "Der Mob nutzt eine Mischung aus Schatten-, Frost- und Feuerfaehigkeiten.", 20},
+					{"underbog_17771_02", "Important", "Amplify Damage von Spielern dispellen. Erhoeht erlittenen physischen und magischen Schaden 6 Sek. lang um 30%.", 10}}
+tipsMap_deDE[17871] = {{"underbog_17871_01", "Interrupts", "KICK: Fungal Regrowth (40 Meter Reichweite; 2 Sek. Cast; heilt einen Verbuendeten und legt zusaetzlich einen HoT auf ihn)", 30},
+					{"underbog_17871_02", "Interrupts", "KICK: Itchy Spores (15 Meter Reichweite; Nature-DoT auf einen Spieler fuer 10 Sek.)", 20},
+					{"underbog_17871_03", "Important", "Itchy Spores als Krankheit dispellen, wenn ihr den Cast nicht kicken koennt.", 10}}
+tipsMap_deDE[17990] = {{"underbog_17990_01", "Dodge", "RAUS DA! Die Sporenwolke dieses Objekts verursacht AoE-Naturschaden.", 10}}
+tipsMap_deDE[19632] = {{"underbog_19632_01", "Defensives", "Def-CDs koennen fuer Tank oder anvisierten Spieler waehrend Stinger Rage noetig sein.", 20},
+					{"underbog_19632_02", "Important", "Anfaellig fuer CC, selbst auf Heroisch.", 10}}
+tipsMap_deDE[20465] = {{"underbog_20465_01", "Important", "Warum schwimmst du mit den Fischen?", 10}}
 tipsMap_deDE[17797] = {{"steamvaults_17797_01", "Legion", "Boss deals Nature damage; Adds deal Frost damage (Nature resist should be prioritized if only have one option and have no Frost Aura for group from Paladin)", 50},
 					{"steamvaults_17797_02", "Important", "Tank should focus on boss and use AoE threat (such as Thunderclap) on adds. DPS need to focus down the adds (or banish one of them) before going after boss. Adds will despawn once boss dies.", 40},
 					{"steamvaults_17797_03", "Important", "Dispel: Enveloping Wind esp if applied to tank/healer (magic effect applied to player stunning them for 6 sec)", 30},
