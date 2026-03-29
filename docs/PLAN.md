@@ -132,6 +132,13 @@ An instance may still contain multiple `mapIDs`.
 
 - verification script for legacy DB vs current DB vs catalog IDs
 - NPC-name review/import tooling exists
+- tip-translation review export tooling exists:
+  - `scripts/export_tip_review.py`
+  - `docs/TIP_TRANSLATION_REVIEW.json`
+  - paired `enUS` / `deDE` tip lines
+  - grouped by instance
+  - bosses first, then other NPCs
+  - per-tip `checked` flag preserved across regenerations
 - external source tracking exists in `docs/EXTERNAL_SOURCES.md`
 - translation glossary exists in `docs/TRANSLATION_GLOSSARY.md`
 - `Info` page documents slash commands, feedback expectations, and clickable frame-tip behavior
@@ -163,18 +170,21 @@ An instance may still contain multiple `mapIDs`.
    - export user-authored tips
    - export corrected or translated strings
    - keep exports locale-aware where appropriate
+9. Add an import path for reviewed tip translations:
+   - read back checked or corrected `deDE` tip lines from the review workflow
+   - apply them into `Tothys-Database.lua` without changing `tip_id`, `type`, or `weight`
 
 ### UI and UX improvements
 
-9. Keep the config layout stable and scrollable as more controls are added.
-10. Add broader reset actions in the UI:
+10. Keep the config layout stable and scrollable as more controls are added.
+11. Add broader reset actions in the UI:
    - whole NPC
    - whole instance
    - all user data
-11. Fill the `NPC-Browser -> Abilities` tab with real boss-ability data later.
-12. Create a custom `Kiesel Dungeon Tool` logo and dedicated minimap button artwork to replace the current placeholder icon.
-13. Add profile functionality for display settings only, not for user-authored tips.
-14. Revisit and refine the scope of profiles once export/import is in place.
+12. Fill the `NPC-Browser -> Abilities` tab with real boss-ability data later.
+13. Create a custom `Kiesel Dungeon Tool` logo and dedicated minimap button artwork to replace the current placeholder icon.
+14. Add profile functionality for display settings only, not for user-authored tips.
+15. Revisit and refine the scope of profiles once export/import is in place.
 
 ## UI decisions
 

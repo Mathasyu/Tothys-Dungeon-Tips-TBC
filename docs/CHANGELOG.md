@@ -142,6 +142,8 @@ Guidelines:
 - Finished the remaining non-empty English `tipsMap_deDE` carry-over batch for `Blood Furnace`, `Underbog`, `Steamvaults`, `Mana-Tombs`, and example entries so the audit now reports `0` non-empty untranslated explicit German overrides
 - Reviewed the remaining identical `npcNames` entries against local QuestieDB TBC localization and confirmed they are legitimate unchanged names rather than unresolved German placeholders
 - Removed the visible `TEST:` marker from `instanceContent.auchenai_crypts` and fixed the audit's `instanceContent` block parsing so shipped instance-content test markers are counted correctly
+- Added `scripts/export_tip_review.py` plus generated `docs/TIP_TRANSLATION_REVIEW.json` to export paired `enUS`/`deDE` tip review data grouped by instance, sorted with bosses first and preserving a per-tip `checked` flag across regenerations
+- Updated `PLAN.md` and `TRANSLATION_AUDIT.md` to document the new paired tip-review workflow and its generated export file explicitly
 
 ### Notes
 

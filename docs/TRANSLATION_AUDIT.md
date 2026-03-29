@@ -7,6 +7,10 @@ This report records the current multilingual status before any translation fixes
 - Branch checked: `feature/multilanguage`
 - Database file: `Tothys-Dungeon-Tips-TBC/Tothys-Database.lua`
 - Config file: `Tothys-Dungeon-Tips-TBC/Tothys-Conf.lua`
+- Review tooling:
+  - `scripts/export_tip_review.py`
+  - `docs/TIP_TRANSLATION_REVIEW.json`
+  - exported paired `enUS` / `deDE` tip lines with a per-tip `checked` flag
 
 ## Summary
 
@@ -83,3 +87,4 @@ This report records the current multilingual status before any translation fixes
 ## Important note
 
 - This report does **not** change any translations. It only documents the current state so the next fixes can be reviewed first.
+- Tip-by-tip language review is now intended to happen against `docs/TIP_TRANSLATION_REVIEW.json`, not by manually hunting through `Tothys-Database.lua`.
