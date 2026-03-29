@@ -3778,7 +3778,7 @@ tipsMap_enUS = {
 		        -- Hellfire Imp
 		[17491] = {{"bloodfurnace_17491_01", "Legion", "~6-7 mobs of this type will be found in this instance", 40},
 					{"bloodfurnace_17491_02", "Important", "These are stealthed mobs that can be exposed by a Hunter's Flare. DPS should avoid running ahead of tank", 30},
-					{"bloodfurnace_17491_03", "Important", "Dispel Poison from player (Nature DoT over 15 sec}", 20}, 
+					{"bloodfurnace_17491_03", "Important", "Dispel Poison from player (Nature DoT over 15 sec)", 20},
 					{"bloodfurnace_17491_04", "Important", "If tank gets hit by Kidney Shot (stun), DPS should slow/kite mob until tank can get back the aggro", 10}},
 					-- Laughing Skull Rogue
 		[17624] = {{"bloodfurnace_17624_01", "Legion", "Buffs allies w/its Battle Shout", 10}}, -- Laughing Skull Warden
@@ -4192,16 +4192,16 @@ tipsMap_enUS = {
 	------- Dungeon: Auchenai Crypts ----------------
 
 	---Bosses
-	[18371] = {{"shirrak_001", "TANK", "Tank the boss away from ranged DPS/Healers", 50},
-				{"shirrak_002", "Important", "Casters should stand at max range due to Inhibit Magic (passive aura that slows casting speed the closer you get to boss", 40},
-				{"shirrak_003", "Dodge", "Watch for emote of 'Shirrak the Dead Watchers focuses on...' Players (including the player name the boss emotes) need to run away as boss will begin to shoot fire damage at the flare location", 30},
-				{"shirrak_004", "Important", "Group should burn boss down quickly before Carnivorous Bite bleed stacks get too high on tank", 20},
-				{"shirrak_005", "Important", "Run away from boss during Attract Magic (Boss will pull party members to it)", 10}}, 
+	[18371] = {{"auchenai_18371_01", "TANK", "Tank the boss away from ranged DPS/Healers", 50},
+				{"auchenai_18371_02", "Important", "Casters should stand at max range due to Inhibit Magic (passive aura that slows casting speed the closer you get to boss", 40},
+				{"auchenai_18371_03", "Dodge", "Watch for emote of 'Shirrak the Dead Watchers focuses on...' Players (including the player name the boss emotes) need to run away as boss will begin to shoot fire damage at the flare location", 30},
+				{"auchenai_18371_04", "Important", "Group should burn boss down quickly before Carnivorous Bite bleed stacks get too high on tank", 20},
+				{"auchenai_18371_05", "Important", "Run away from boss during Attract Magic (Boss will pull party members to it)", 10}}, 
 				-- Shirrak the Dead Watcher
-	[18373] = {{"maladaar_001", "Important", "Save CDs for when boss is at 25% health due to increased damage dealt", 40},
-				{"maladaar_002", "Important", "Boss deals an AoE Fear called Soul Scream", 30},
-				{"maladaar_003", "SHAMAN", "Drop Tremor Totem to negate boss' AoE fear", 20},
-				{"maladaar_004", "Important", "Focus down any shadow images that appear and tank should pickup Avatar of the Martyred when he spawns", 10}}, 
+	[18373] = {{"auchenai_18373_01", "Important", "Save CDs for when boss is at 25% health due to increased damage dealt", 40},
+				{"auchenai_18373_02", "Important", "Boss deals an AoE Fear called Soul Scream", 30},
+				{"auchenai_18373_03", "SHAMAN", "Drop Tremor Totem to negate boss' AoE fear", 20},
+				{"auchenai_18373_04", "Important", "Focus down any shadow images that appear and tank should pickup Avatar of the Martyred when he spawns", 10}}, 
 				-- Exarch Maladaar
 
 	---Trash Mobs
@@ -5563,24 +5563,18 @@ tipsMap_deDE[17537] = {
 	{"ramparts_17537_11", "DAMAGE", "Steht nicht vor Nazan!", 10},
 }
 tipsMap_deDE[17536] = {
-	{"ramparts_17537_01", "Important", "Die Gruppe sollte sich verteilen, damit nicht mehrere Spieler gleichzeitig von Nazans Feuerball-AoE getroffen werden.", 110},
-	{"ramparts_17537_02", "Dodge", "AUSWEICHEN: Wenn du von Nazans Feuerball getroffen wirst, lauf aus dem Effekt heraus, damit du keine weiteren Ticks abbekommst.", 100},
-	{"ramparts_17537_03", "TANK", "Nimm den Boss nach der Landung sofort auf, da er direkt auf das Ziel mit der hoechsten Bedrohung geht.", 90},
-	{"ramparts_17537_04", "Advanced", "VAZRUDEN-Strategie (Phase 1)", 80},
-	{"ramparts_17537_05", "Important", "Der Spieler mit Vazrudens Mal wird 6 Sek. lang sein Ziel. Def-CDs ziehen.", 70},
-	{"ramparts_17537_06", "HEALER", "Gib dem Spieler mit Vazrudens Mal zusaetzliche Heilung.", 60},
-	{"ramparts_17537_07", "Advanced", "NAZAN-Strategie (Phase 2)", 50},
-	{"ramparts_17537_08", "Important", "Nazan landet, wenn er selbst 20% Leben hat oder wenn Vazruden etwa 40-50% erreicht.", 40},
-	{"ramparts_17537_09", "TANK", "Wenn Nazan landet, drehe ihn von der Gruppe weg, damit seine Feuer-Angriffe die Gruppe nicht treffen.", 30},
-	{"ramparts_17537_10", "Important", "Nazan wirkt Betaeubendes Gebrüll (AoE-Furcht).", 20},
-	{"ramparts_17537_11", "DAMAGE", "Steht nicht vor Nazan!", 10},
+	{"ramparts_17536_01", "Important", "Die Gruppe sollte sich verteilen, damit nicht mehrere Spieler gleichzeitig von Nazans Feuerball-AoE getroffen werden.", 110},
+	{"ramparts_17536_02", "Dodge", "AUSWEICHEN: Wenn du von Nazans Feuerball getroffen wirst, lauf aus dem Effekt heraus, damit du keine weiteren Ticks abbekommst.", 100},
+	{"ramparts_17536_03", "TANK", "Nimm den Boss nach der Landung sofort auf, da er direkt auf das Ziel mit der hoechsten Bedrohung geht.", 90},
+	{"ramparts_17536_04", "Advanced", "VAZRUDEN-Strategie (Phase 1)", 80},
+	{"ramparts_17536_05", "Important", "Der Spieler mit Vazrudens Mal wird 6 Sek. lang sein Ziel. Def-CDs ziehen.", 70},
+	{"ramparts_17536_06", "HEALER", "Gib dem Spieler mit Vazrudens Mal zusaetzliche Heilung.", 60},
+	{"ramparts_17536_07", "Advanced", "NAZAN-Strategie (Phase 2)", 50},
+	{"ramparts_17536_08", "Important", "Nazan landet, wenn er selbst 20% Leben hat oder wenn Vazruden etwa 40-50% erreicht.", 40},
+	{"ramparts_17536_09", "TANK", "Wenn Nazan landet, drehe ihn von der Gruppe weg, damit seine Feuer-Angriffe die Gruppe nicht treffen.", 30},
+	{"ramparts_17536_10", "Important", "Nazan wirkt Betaeubendes Gebrüll (AoE-Furcht).", 20},
+	{"ramparts_17536_11", "DAMAGE", "Steht nicht vor Nazan!", 10},
 }
-for index, tip in ipairs(tipsMap_deDE[17536]) do
-	tip[1] = string.format("ramparts_17536_%02d", index)
-end
-for index, tip in ipairs(tipsMap_deDE[17536]) do
-	tip[1] = string.format("ramparts_17536_%02d", index)
-end
 tipsMap_deDE[17259] = {
 	{"ramparts_17259_01", "Important", "Hat Entwaffnen und einen Angriffskraft-Debuff. Fuer Meelees unangenehm, aber nicht kritisch.", 10},
 }
@@ -5706,33 +5700,33 @@ tipsMap_deDE[18702] = {
 }
 
 tipsMap_deDE[18371] = {
-	{"shirrak_001", "TANK", "Tanke den Boss weg von Fernkaempfern und Heilern.", 50},
-	{"shirrak_002", "Dodge", "Weiche den Bodenexplosionen aus und bleib in Bewegung, wenn du Ziel der Leerenzonen wirst.", 40},
-	{"shirrak_003", "Important", "Steht nicht zu weit auseinander, da die Aura des Bosses Zauber fuer entfernte Spieler deutlich verlangsamt.", 30},
-	{"shirrak_004", "HEALER", "Rechne mit ploetzlichen Schadensspitzen, wenn Spieler gleichzeitig Explosionen und Bossfaehigkeiten kassieren.", 20},
-	{"shirrak_005", "DAMAGE", "Halte konstant Druck aufrecht, aber priorisiere Bewegung vor Schaden, wenn Bodenmechaniken auftauchen.", 10},
+	{"auchenai_18371_01", "TANK", "Tanke den Boss weg von Fernkaempfern und Heilern.", 50},
+	{"auchenai_18371_02", "Important", "Steht nicht zu weit auseinander, da die Aura des Bosses Zauber fuer entfernte Spieler deutlich verlangsamt.", 40},
+	{"auchenai_18371_03", "Dodge", "Weiche den Bodenexplosionen aus und bleib in Bewegung, wenn du Ziel der Leerenzonen wirst.", 30},
+	{"auchenai_18371_04", "Important", "Halte den Bossdruck hoch, bevor zu viele Blutungseffekte auf dem Tank stapeln.", 20},
+	{"auchenai_18371_05", "Important", "Lauf vom Boss weg, wenn Anziehung der Magie beginnt und er die Gruppe an sich zieht.", 10},
 }
 tipsMap_deDE[18373] = {
-	{"maladaar_001", "Important", "Hebt Cooldowns fuer 25% Bossleben auf, weil der Schaden dann deutlich anzieht.", 40},
-	{"maladaar_002", "PriorityTargets", "Das Avatar-Add muss schnell aufgenommen und kontrolliert werden, sobald es erscheint.", 30},
-	{"maladaar_003", "HEALER", "Achte besonders auf Spieler mit Seelenentzug- oder Schatteneffekten.", 20},
-	{"maladaar_004", "DAMAGE", "Spare Burst-Schaden fuer die Schlussphase oder fuer gefaehrliche Adds.", 10},
+	{"auchenai_18373_01", "Important", "Hebt Cooldowns fuer 25% Bossleben auf, weil der Schaden dann deutlich anzieht.", 40},
+	{"auchenai_18373_02", "Important", "Der Boss nutzt einen AoE-Fear namens Seelenschrei.", 30},
+	{"auchenai_18373_03", "SHAMAN", "Stelle Tremor Totem, um den AoE-Fear des Bosses abzufangen.", 20},
+	{"auchenai_18373_04", "Important", "Fokussiert erscheinende Schattenbilder schnell und der Tank sollte den Avatar des Gemarterten sofort aufnehmen.", 10},
 }
 
 tipsMap_deDE[18472] = {
 	{"sethekk_18472_01", "Legion", "Der Boss hat zwei Abschnitte: reine Bossphase und Addphase. Je nach Gruppe sollte vorher eine Killreihenfolge fuer die Elementare festgelegt werden.", 70},
-	{"sethekk_18472_02", "PriorityTargets", "Die beschworenen Elementare sind die gefaehrlichsten Ziele waehrend der Addphase.", 60},
-	{"sethekk_18472_03", "Important", "Die Gruppe sollte vorbereitet sein, schnell zwischen Boss und Elementaren zu wechseln.", 50},
-	{"sethekk_18472_04", "HEALER", "In den Addphasen steigt der Gruppenschaden oft ploetzlich an. Halte schnelle Heilung bereit.", 40},
-	{"sethekk_18472_05", "DAMAGE", "Heb AoE oder schnellen Burst fuer die Elementare auf, damit die Addphase kurz bleibt.", 30},
-	{"sethekk_18472_06", "Important", "Wenn einzelne Elementare zu lange leben, wird der Kampf schnell unruhig und gefaehrlich.", 20},
-	{"sethekk_18472_07", "Advanced", "Ein sauberer Wechsel zwischen Bossdruck und Addkontrolle macht diesen Kampf deutlich leichter.", 10},
+	{"sethekk_18472_02", "Advanced", "PHASE 1", 60},
+	{"sethekk_18472_03", "Important", "Die Gruppe sollte sich moeglichst verteilen, um den Gruppenschaden durch Kettenblitz besser abzufangen.", 50},
+	{"sethekk_18472_04", "Advanced", "PHASE 2 - Addphase (bei 90%, 55% und 10% Bossleben)", 40},
+	{"sethekk_18472_05", "Important", "Jedes Elementar ist gegen den eigenen Schadentyp immun. Feuer-Mages sollten kein Feuer-Elementar angreifen und Hexer sollten keine Schattenzauber auf Schatten-Elementare casten. Das Schatten-Elementar ist ausserdem immun gegen Furcht und Verbannen. Am besten die Adds nacheinander zusammen mit dem Tank fokussieren statt sie per Cleave oder AoE runterzuspielen.", 30},
+	{"sethekk_18472_06", "TANK", "Wenn die Addphase beginnt, sofort mit AoE-Tools wie Weihe oder Donnerknall die Elementare einsammeln.", 20},
+	{"sethekk_18472_07", "DAMAGE", "Beschworene Elementare zuerst fokussieren und erst danach wieder auf den Boss wechseln. Alternativ koennen Priester oder Hexer Feuer-, Frost- und Arkanelementare beim Spawn per AoE-Fear kontrollieren.", 10},
 }
 tipsMap_deDE[18473] = {
 	{"sethekk_18473_01", "PriorityTargets", "Bei 80%, 50% und 25% blinkt der Boss zu einem zufaelligen Spieler und wirkt Arkane Explosion. Die Sichtlinie MUSS hinter einem Pfeiler gebrochen werden, sonst ist der Treffer toedlich.", 40},
-	{"sethekk_18473_02", "Important", "Positioniert euch so, dass jeder schnell einen Pfeiler fuer Line of Sight erreichen kann.", 30},
-	{"sethekk_18473_03", "DAMAGE", "Nach jeder Blink-Explosion schnell wieder auf den Boss wechseln und nicht in offener Sichtlinie stehen bleiben.", 20},
-	{"sethekk_18473_04", "HEALER", "Erwarte ploetzlichen Gruppenschaden, wenn Spieler zu spaet aus der Sichtlinie gehen.", 10},
+	{"sethekk_18473_02", "Important", "Der Boss belegt einen zufaelligen Spieler fuer 5 Sek. mit Polymorph. Das kann auch Tank oder Heiler treffen. Die Gruppe sollte keine Arkane-Explosions-Phase ausloesen, waehrend jemand geschafed ist, sonst ist dieser Spieler sehr leicht ein One-Shot-Ziel.", 30},
+	{"sethekk_18473_03", "SHAMAN", "Ein Schamane kann auf Heroisch mit Erdungstotem verhindern, dass Tank oder andere Spieler von Polymorph getroffen werden.", 20},
+	{"sethekk_18473_04", "Important", "Heiler und Tank koennen notfalls ein PvP-Trinket nutzen, um Polymorph zu brechen, falls kein Schamane mit Erdungstotem dabei ist. Wenn der Heiler nicht aus dem Schaf geholt werden kann, sollte die Gruppe einen Plan fuer Off-Heals haben.", 10},
 }
 tipsMap_deDE[23035] = {
 	{"sethekk_23035_01", "Legion", "Der Boss verursacht eine Mischung aus physischem Schaden und Schattenschaden. Widerstandsaura oder Tränke koennen helfen.", 70},
@@ -5832,28 +5826,34 @@ tipsMap_deDE[23132] = {
 
 tipsMap_deDE[18731] = {
 	{"shadow_lab_18731_01", "Advanced", "POSITIONIERUNG: Tanke den Boss im Tunnel vor seinem Raum, damit der Heiler keine Sichtlinienprobleme bekommt. Der Tank sollte den Boss von der Gruppe wegdrehen, damit nur er von Aetzender Saeure getroffen wird.", 40},
-	{"shadow_lab_18731_02", "HEALER", "Bleib so stehen, dass du den Tank auch waehrend Furchteffekten oder Bewegungen sicher in Sicht hast.", 30},
-	{"shadow_lab_18731_03", "DAMAGE", "Steht hinter dem Boss und bleibt aufmerksam, falls der Tank weggedreht oder gefuerchtet wird.", 20},
-	{"shadow_lab_18731_04", "Important", "Wenn der Tank gefuerchtet wird, kann Aetzende Saeure mehrere Spieler treffen.", 10},
+	{"shadow_lab_18731_02", "Important", "Der Boss nutzt einen AoE-Fear mit 1,5 Sek. Castzeit, 45 Metern Reichweite und 6 Sek. Dauer.", 30},
+	{"shadow_lab_18731_03", "SHAMAN", "Stell Tremor Totem, sobald du den Fear-Cast siehst, damit die Gruppe schnell wieder frei ist.", 20},
+	{"shadow_lab_18731_04", "WARRIOR", "Nutze Zauberreflexion, um nicht gefearnt zu werden und dem Boss beim Nachlaufen keine Aetzende Saeure in die Gruppe zu ziehen.", 10},
 }
 tipsMap_deDE[18667] = {
 	{"shadow_lab_18667_01", "Important", "Der Raum muss KOMPLETT leer sein, bevor ihr den Boss pullt!", 70},
-	{"shadow_lab_18667_02", "Important", "Achte auf Gedankenkontrolle/Furcht-Effekte und darauf, dass die Gruppe bei Chaos nicht auseinanderfaellt.", 60},
-	{"shadow_lab_18667_03", "HEALER", "Bereite dich auf ploetzlichen Gruppenschaden vor, wenn Spieler sich gegenseitig treffen oder unkontrolliert herumrennen.", 50},
-	{"shadow_lab_18667_04", "DAMAGE", "Burst und saubere Kontrolle sind wichtiger als blindes Durchziehen des Schadens.", 40},
+	{"shadow_lab_18667_02", "Advanced", "POSITIONIERUNG: Zieh den Boss mit dem Ruecken zur Wand in eine Ecke, damit der AoE-Knockback kontrollierbar bleibt.", 60},
+	{"shadow_lab_18667_03", "Important", "DDs sollten ihre grossen Schadens-CDs direkt zu Kampfbeginn nutzen, weil Incite Chaos diese spaeter waehrend der Gedankenkontrolle ungewollt ausloesen kann.", 50},
+	{"shadow_lab_18667_04", "Important", "Incite Chaos ist eine 15-Sek.-Gedankenkontrolle auf allen Spielern. Wenn der Boss 'Time for fun' sagt, kommt die Gedankenkontrolle gleich.", 40},
+	{"shadow_lab_18667_05", "Important", "Um Incite Chaos abzufangen, koennen Spieler Waffen ausziehen, Pets auf passiv setzen, Hunter eine Eiskältefalle unter den Heiler legen oder einen Großen Trank des traumlosen Schlafs nutzen, um einen Teil der Phase zu neutralisieren.", 30},
+	{"shadow_lab_18667_06", "Important", "Kriegstampfen: Der Boss wirft Spieler in 20 Metern um sich weg.", 20},
+	{"shadow_lab_18667_07", "Important", "Ansturm: Der Boss stuermt auf einen zufaelligen Spieler zu und betaeubt ihn 2 Sek.", 10},
 }
 tipsMap_deDE[18732] = {
 	{"shadow_lab_18732_01", "Legion", "Der Boss verursacht eine Kombination aus Feuer- und Schattenschaden. Entsprechende Buffs oder Auren helfen beim Abfedern des Schadens.", 50},
-	{"shadow_lab_18732_02", "Important", "Achte auf Add- und Portalmechaniken und lasse die Gruppe nicht aus der Kontrolle geraten.", 40},
-	{"shadow_lab_18732_03", "PriorityTargets", "Gefaehrliche Adds oder Voids in der Bossphase muessen schnell priorisiert werden.", 30},
-	{"shadow_lab_18732_04", "HEALER", "Plane Heil-Cooldowns fuer Phasen mit hohem Gruppenschaden oder chaotischen Add-Spawns ein.", 20},
-	{"shadow_lab_18732_05", "DAMAGE", "Schnelle Zielwechsel halten den Kampf deutlich stabiler als reines Tunneln auf den Boss.", 10},
+	{"shadow_lab_18732_02", "TANK", "Wenn sich ein Leerwandler dem Boss naehrt, kite den Boss weg, damit die DDs das Add downen koennen. Beruehrt das Add den Boss, macht es Schaden, Knockback und heilt ihn.", 40},
+	{"shadow_lab_18732_03", "DAMAGE", "Wenn Leerwandler aus den Leerenrissen spawnen, muessen sie schnell getoetet werden, bevor sie den Boss erreichen.", 30},
+	{"shadow_lab_18732_04", "Important", "Wenn der Boss Schatten herbeiziehen wirkt, werden alle Spieler auf seine Plattform teleportiert und er legt dort einen harten Regen-des-Feuers-AoE.", 20},
+	{"shadow_lab_18732_05", "Important", "Nur Heroisch: Der Boss banisht einen zufaelligen Spieler fuer 6 Sek. Dieser Spieler ist unverwundbar, kann aber in der Zeit nichts tun.", 10},
 }
 tipsMap_deDE[18708] = {
 	{"shadow_lab_18708_01", "Important", "Naturschutztränke koennen helfen, einen Teil des Schadens im Kampf abzufangen.", 70},
-	{"shadow_lab_18708_02", "Important", "Die Gruppe sollte verteilt und kontrolliert stehen, damit Resonanz- und Schallmechaniken nicht mehrere Spieler gleichzeitig bestrafen.", 60},
-	{"shadow_lab_18708_03", "HEALER", "Halte Heilung fuer ploetzliche Schallspitzen bereit, besonders wenn Spieler zu spaet reagieren.", 50},
-	{"shadow_lab_18708_04", "DAMAGE", "Bewegung und Ueberleben gehen vor reinem Schaden, sobald gefaehrliche Schallmechaniken starten.", 40},
+	{"shadow_lab_18708_02", "Advanced", "POSITIONIERUNG: Außer waehrend Sonic Boom sollten alle Spieler weniger als 25 Meter vom Boss entfernt stehen, damit niemand Donnernder Sturm abbekommt. Dieser Naturschaden trifft Ziele in 25 Metern oder mehr Entfernung.", 60},
+	{"shadow_lab_18708_03", "Important", "Nach Kampfbeginn auf das Emote 'Murmur draws energy from the air...' achten. Das ist das Signal fuer alle Spieler, inklusive Tank, mindestens 34 Meter wegzulaufen, um Sonic Boom zu ueberleben.", 50},
+	{"shadow_lab_18708_04", "ROGUE", "Schurken koennen mit Mantel der Schatten einem Sonic Boom entgehen, wenn das Timing stimmt.", 40},
+	{"shadow_lab_18708_05", "Important", "Wegen Resonanz, die Naturschaden an allen Spielern verursacht, wenn kein Meelee in Reichweite steht, muss der Tank nach Sonic Boom SOFORT wieder an den Boss ran.", 30},
+	{"shadow_lab_18708_06", "Dodge", "Achte auf Berührung von Murmur und lauf vom betroffenen Spieler weg. Beim Auslaufen werden der Spieler und alle Verbündeten in 20 Metern 6 Sek. lang gesilenced.", 20},
+	{"shadow_lab_18708_07", "HEALER", "Wenn der Heiler von Berührung von Murmur betroffen ist, die Gruppe, vor allem den Tank, vorher hochheilen, weil der Silence danach 6 Sek. lang jede Heilung verhindert.", 10},
 }
 tipsMap_deDE[19226] = {
 	{"shadow_lab_19226_01", "PriorityTargets", "Wenn der Leerwandler den Boss erreicht, explodiert er, verursacht Schattenschaden, Knockback und heilt den Boss.", 20},
@@ -5987,7 +5987,13 @@ tipsMap_deDE[17400] = {
 	{"bloodfurnace_17400_01", "Important", "Stealth-Mob. Nicht vor den Tank laufen.", 10},
 }
 tipsMap_deDE[17414] = {
-	{"bloodfurnace_17414_01", "Important", "Der Mob verursacht hohen Feuer-AoE in Nahkampfreichweite.", 10},
+	{"bloodfurnace_17414_01", "Important", "Spieler sollten sich bei diesem Mob verteilen, um AoE-Feuerschaden durch Dynamitwurf zu vermeiden.", 70},
+	{"bloodfurnace_17414_02", "Important", "Diese Mobs legen außerdem Annäherungsminen auf den Boden. Diese Minen vermeiden. Schurken, Hunter und Hexer können sie beseitigen.", 60},
+	{"bloodfurnace_17414_03", "ROGUE", "Mit Entschärfen Annäherungsminen deaktivieren.", 50},
+	{"bloodfurnace_17414_04", "HUNTER", "Auge des Wildtiers kann es dem Pet erlauben, Minen auszulösen, besonders mit einem Pet mit hoher Ausdauer.", 40},
+	{"bloodfurnace_17414_05", "WARLOCK", "Auge von Kilrogg nutzen, um nach einem Pull Minen vor der Gruppe zu räumen. Kann Mobs anziehen, also vorsichtig sein.", 30},
+	{"bloodfurnace_17414_06", "MAGE", "Feuerzauberschutz kann genutzt werden, um Annäherungsminen auszulösen.", 20},
+	{"bloodfurnace_17414_07", "Defensives", "Die Mobs casten ein Schweigen auf einen Spieler. Trifft das 5-Sek.-Schweigen den Heiler, braucht der Tank eventuell zusätzliche Def-CDs.", 10},
 }
 tipsMap_deDE[17477] = {
 	{"bloodfurnace_17477_01", "Important", "Wichtel, der Feuerschaden verursacht.", 10},
@@ -5995,7 +6001,7 @@ tipsMap_deDE[17477] = {
 tipsMap_deDE[17491] = {
 	{"bloodfurnace_17491_01", "Legion", "Etwa 6 bis 7 Mobs dieses Typs gibt es in dieser Instanz.", 40},
 	{"bloodfurnace_17491_02", "Important", "Diese Mobs sind getarnt und koennen mit Leuchtfeuer des Hunters aufgedeckt werden. DDs sollten nicht vor den Tank laufen.", 30},
-	{"bloodfurnace_17491_03", "Important", "Gift vom Spieler dispellen. Es ist ein Natur-DoT ueber 15 Sek.", 20},
+	{"bloodfurnace_17491_03", "Important", "Gift vom Spieler dispellen. Es ist ein Natur-DoT über 15 Sek.", 20},
 	{"bloodfurnace_17491_04", "Important", "Wenn der Tank von Nierenhieb getroffen wird, sollten DDs den Mob verlangsamen oder kiten, bis der Tank wieder Aggro hat.", 10},
 }
 tipsMap_deDE[17624] = {
@@ -6186,34 +6192,46 @@ tipsMap_deDE[20208] = {
 	{"slavepens_20208_01", "PriorityTargets", "Spieler muessen das Totem sofort focussen, weil es Verbündete in der Nähe heilt.", 10},
 }
 tipsMap_deDE[17816] = {
-	{"slavepens_17816_01", "Important", "Verschwinde bei seinem Tauchangriff aus der Einschlagzone.", 10},
+	{"slavepens_17816_01", "Defensives", "Der Tank braucht eventuell einen Def-CD oder Extra-Heilung, wenn ihn Durchbohrender Stoß trifft. Das reduziert 20 Sek. lang die Rüstung des Spielers um 15%.", 10},
 }
 tipsMap_deDE[17817] = {
 	{"slavepens_17817_01", "Important", "Der Tank sollte zurueckgehen, damit der Boss nicht direkt aus dem Wasser auf dem Heiler oder den DDs landet.", 10},
 }
 tipsMap_deDE[17938] = {
-	{"slavepens_17938_01", "Important", "Hat eine kurze Betaeubung. DDs sollten den Mob nach Moeglichkeit schnell wegbrennen.", 10},
+	{"slavepens_17938_01", "Legion", "Der Mob verursacht vor allem Feuerschaden durch Schweres Dynamit als AoE und durch Versengen.", 20},
+	{"slavepens_17938_02", "Important", "Auf Heroisch immun gegen Gedankenkontrolle und Verführung des Hexers, aber selbst dort anfällig für Fear und Eiskältefalle.", 10},
 }
 tipsMap_deDE[17940] = {
-	{"slavepens_17940_01", "Important", "Schamane-artiger Mob. Erde schocken oder andere Casts nach Moeglichkeit kicken.", 10},
+	{"slavepens_17940_01", "Dodge", "AUSWEICHEN / RAUSLAUFEN aus Regen des Feuers und Blizzard-AoE-Effekten.", 10},
 }
 tipsMap_deDE[17957] = {
-	{"slavepens_17957_01", "PriorityTargets", "Kann Gedankenkontrolle nutzen und sollte schnell getoetet oder per CC gesichert werden.", 10},
+	{"slavepens_17957_01", "Important", "Der Tank sollte diese Mobs von der Gruppe wegdrehen, da sie Spalten nutzen.", 30},
+	{"slavepens_17957_02", "Important", "Der Champion castet Furchterregender Schrei, einen sofortigen AoE-Fear.", 20},
+	{"slavepens_17957_03", "Important", "Auf Heroisch ist der Mob immun gegen Gedankenkontrolle.", 10},
 }
 tipsMap_deDE[17958] = {
-	{"slavepens_17958_01", "Important", "Mob mit hohem Meeleeschaden. Tank braucht hier stabile Heilung.", 10},
+	{"slavepens_17958_01", "Important", "Diese Mobs brechen CC auf Normal und sind auf Heroisch gegen jede Form von CC immun.", 20},
+	{"slavepens_17958_02", "Important", "Kommt dieses Pack doppelt, kann ein Verteidiger von einem Ranged-DD verlangsamt oder gekitet werden, während Tank und Gruppe den anderen töten.", 10},
 }
 tipsMap_deDE[17959] = {
-	{"slavepens_17959_01", "Important", "Verursacht Knockback. Tank sollte mit dem Ruecken zur Wand stehen, wenn moeglich.", 10},
+	{"slavepens_17959_01", "Defensives", "Der Tank braucht eventuell einen Def-CD bei Schädelknacker. Dieser Debuff reduziert 15 Sek. lang die Ausdauer und kann Extra-Heilung erfordern.", 20},
+	{"slavepens_17959_02", "Important", "Der Mob betäubt einen Spieler, meist den Tank, 3 Sek. lang. Läuft er dann weg, sollte er verlangsamt und gekitet werden, bis der Tank wieder handeln kann.", 10},
 }
 tipsMap_deDE[17960] = {
-	{"slavepens_17960_01", "Interrupts", "Kick: Heilung.", 10},
+	{"slavepens_17960_01", "Legion", "Arkaner Magier-artiger Mob.", 40},
+	{"slavepens_17960_02", "Important", "Der Mob castet gelegentlich Beherrschung, eine 10-Sek.-Gedankenkontrolle auf einen Spieler. Dieser Spieler sollte gestunnt oder per CC gesichert werden.", 30},
+	{"slavepens_17960_03", "Important", "Der Mob ist auf Normal und Heroisch für alle Formen von CC anfällig, auch für Gedankenkontrolle.", 20},
+	{"slavepens_17960_04", "Legion", "Verfallene Intelligenz kann vom Spieler entfernt werden. Dieser Magieeffekt hält 20 Sek. und reduziert die Intelligenz um 25%.", 10},
 }
 tipsMap_deDE[17961] = {
-	{"slavepens_17961_01", "Important", "Range-Caster-Mob. Wenn moeglich LoS-Pull spielen.", 10},
+	{"slavepens_17961_01", "Legion", "Auf Heroisch immun gegen Gedankenkontrolle.", 40},
+	{"slavepens_17961_02", "PriorityTargets", "Die Verzauberin übernimmt gelegentlich Spieler. Dieser Spieler sollte gestunnt oder per CC gesichert werden.", 30},
+	{"slavepens_17961_03", "Important", "Spieler sollten aus Gewitterwolke herauslaufen.", 20},
+	{"slavepens_17961_04", "Important", "Verschlingende Wurzeln als Magieeffekt von Spielern dispellen, wenn der Mob Gewitterwolke castet.", 10},
 }
 tipsMap_deDE[17962] = {
-	{"slavepens_17962_01", "PriorityTargets", "Die Zusammenarbeit mit ihren Naga-Mastern macht diese Mobs gefaehrlich. Fokus je nach Pull sauber setzen.", 10},
+	{"slavepens_17962_01", "Legion", "Kann per CC gesichert werden, ist aber auf Heroisch gegen Gedankenkontrolle immun.", 20},
+	{"slavepens_17962_02", "PriorityTargets", "Verkrüppeln vom Spieler dispellen. Dieser Magieeffekt reduziert Bewegungstempo und Stärke um 50% und erhöht die Zeit zwischen Angriffen 15 Sek. lang um 100%.", 10},
 }
 tipsMap_deDE[17963] = {
 	{"slavepens_17963_01", "Legion", "Diese Mobs ignorieren und stattdessen ihre Naga-Herren focussen.", 10},

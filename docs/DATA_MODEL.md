@@ -25,6 +25,14 @@ Current status:
 
 - `tipsMap_enUS` is now fully migrated to the new shipped format
 - `tipsMap_deDE` now starts as a deep copy of `tipsMap_enUS`, so German shipped tips can be translated entry by entry without sharing table references
+- `tipsMap_deDE` must mirror `tipsMap_enUS` structurally
+  - same NPC keys
+  - same number of tip rows
+  - same row order
+  - same `tip_id`
+  - same `type`
+  - same `weight`
+  - only the localized tip text may differ
 - runtime legacy support remains in place for compatibility and safety
 - the term `base tip` should now be preferred over `legacy tip` when talking about shipped content
 
