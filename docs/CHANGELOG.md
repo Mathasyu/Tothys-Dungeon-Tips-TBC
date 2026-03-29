@@ -140,6 +140,8 @@ Guidelines:
 - Continued the German `tipsMap_deDE` translation in controlled batches for `Old Hillsbrad`, `Shadow Labyrinth`, `Mechanar`, `Botanica`, and `Mana-Tombs`
 - Continued the controlled German `tipsMap_deDE` translation with a larger `Underbog` batch and reduced fully identical explicit `deDE` overrides to `393`
 - Finished the remaining non-empty English `tipsMap_deDE` carry-over batch for `Blood Furnace`, `Underbog`, `Steamvaults`, `Mana-Tombs`, and example entries so the audit now reports `0` non-empty untranslated explicit German overrides
+- Reviewed the remaining identical `npcNames` entries against local QuestieDB TBC localization and confirmed they are legitimate unchanged names rather than unresolved German placeholders
+- Removed the visible `TEST:` marker from `instanceContent.auchenai_crypts` and fixed the audit's `instanceContent` block parsing so shipped instance-content test markers are counted correctly
 
 ### Notes
 

@@ -1475,8 +1475,8 @@ addon.instanceContent.auchenai_crypts = addon.instanceContent.auchenai_crypts or
 			type = "Important",
 			weight = 30,
 			text = {
-				enUS = "TEST: Auchenai Crypts instance notes are now loaded through the new instanceContent structure.",
-				deDE = "TEST: Die Instanzhinweise der Auchenaikrypta werden jetzt ueber die neue instanceContent-Struktur geladen.",
+				enUS = "Auchenai Crypts instance notes are now loaded through the new instanceContent structure.",
+				deDE = "Die Instanzhinweise der Auchenaikrypta werden jetzt ueber die neue instanceContent-Struktur geladen.",
 			},
 		},
 		{
@@ -1493,8 +1493,8 @@ addon.instanceContent.auchenai_crypts = addon.instanceContent.auchenai_crypts or
 			type = "HEALER",
 			weight = 10,
 			text = {
-				enUS = "HEALER TEST: Watch for fear, burst damage, and awkward bridge knockbacks in this dungeon.",
-				deDE = "HEILER-TEST: Achte in diesem Dungeon auf Furcht, Burst-Schaden und unangenehme Knockbacks auf Bruecken.",
+				enUS = "HEALER: Watch for fear, burst damage, and awkward bridge knockbacks in this dungeon.",
+				deDE = "HEILER: Achte in diesem Dungeon auf Furcht, Burst-Schaden und unangenehme Knockbacks auf Bruecken.",
 			},
 		},
 	},

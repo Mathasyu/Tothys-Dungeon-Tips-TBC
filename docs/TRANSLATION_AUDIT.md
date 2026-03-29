@@ -60,26 +60,25 @@ This report records the current multilingual status before any translation fixes
 
 - `instanceContent` appears localized structurally, with `75` localized info entries and `100` localized detail fields found.
 
-Additional notes:
-- `auchenai_crypts` contains a visible `TEST:` marker in localized instance content.
-
 ## Progress summary
 
 - Done: explicit `deDE` counterparts for all `tipsMap_enUS` entries: **yes**
 - Done: structural parity between `tipsMap_enUS` and `tipsMap_deDE`: **yes**
 - Done: duplicate explicit `tipsMap_deDE` assignments removed: **yes**
+- Done: non-empty explicit `deDE` carry-over text translated: **yes**
 - Open: fully identical explicit `deDE` overrides with non-empty English text still left to translate: **0**
-- Open: fully identical explicit `deDE` overrides with empty English text: **360**
 - Open: partially translated overrides still left to finish: **0**
+- Open: fully identical explicit `deDE` overrides with empty English text: **360**
 - Open: browser locale key drift: **0**
-- Open: visible `TEST:` markers in shipped instance content: **1**
+- Open: visible `TEST:` markers in shipped instance content: **0**
 
 ## Recommended next steps
 
 1. Done: Fix the structural mismatches before translating further.
-2. Open: Work through untranslated `tipsMap_deDE` entries in controlled batches.
-3. Open: Review identical `npcNames` values and confirm which ones are real proper names versus placeholders.
-4. Open: Remove the visible `TEST:` marker from `instanceContent.auchenai_crypts` once the migration is considered stable.
+2. Done: Work through untranslated `tipsMap_deDE` entries in controlled batches.
+3. Done: Review identical `npcNames` values and confirm which ones are real proper names versus placeholders.
+4. Open: Review shipped entries where `enUS` and `deDE` are both still empty placeholders if real content is added later.
+5. Done: Remove the visible `TEST:` marker from `instanceContent.auchenai_crypts` once the migration is considered stable.
 
 ## Important note
 
