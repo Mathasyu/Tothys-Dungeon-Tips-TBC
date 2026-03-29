@@ -4993,10 +4993,544 @@ tipsMap_enUS = {
 	
 }
 
-if type(tipsMap_deDE) ~= "table" or next(tipsMap_deDE) == nil then
-	tipsMap_deDE = cloneTableDeep(tipsMap_enUS)
-end
+tipsMap_deDE = tipsMap_deDE or {}
 
+-- Explicit German placeholder copies for untranslated shipped entries.
+tipsMap_deDE[126389] = {{"example_126389_01", "Blank", "A+ Tip right here. \n It's a shame it's so damn long eh? It just goes on and on and on and ooon", 20},
+				{"example_126389_02", "Interrupts", "INTERRUPT: Stone Bolt", 10}}
+tipsMap_deDE[99999] = {{"example_99999_01", "Important", "PlaceholderImportant", 30}, {"example_99999_02", "Important", "PlaceholderImportant", 20},
+				{"example_99999_03", "Advanced", "PlaceholderAdvanced", 10}}
+tipsMap_deDE[17711] = {{"worldboss_17711_01", "Legion", "", 10}}
+tipsMap_deDE[18728] = {{"worldboss_18728_01", "Legion", "", 10}}
+tipsMap_deDE[23863] = {{"zulaman_23863_01", "Important", "", 10}}
+tipsMap_deDE[24239] = {{"zulaman_24239_01", "Important", "", 10}}
+tipsMap_deDE[23574] = {{"zulaman_23574_01", "Important", "", 10}}
+tipsMap_deDE[23576] = {{"zulaman_23576_01", "Important", "", 10}}
+tipsMap_deDE[23577] = {{"zulaman_23577_01", "Important", "", 10}}
+tipsMap_deDE[23578] = {{"zulaman_23578_01", "Important", "", 10}}
+tipsMap_deDE[23542] = {{"zulaman_23542_01", "Important", "", 10}}
+tipsMap_deDE[23580] = {{"zulaman_23580_01", "Important", "", 10}}
+tipsMap_deDE[23581] = {{"zulaman_23581_01", "Important", "", 10}}
+tipsMap_deDE[23582] = {{"zulaman_23582_01", "Important", "", 10}}
+tipsMap_deDE[23584] = {{"zulaman_23584_01", "Important", "", 10}}
+tipsMap_deDE[23586] = {{"zulaman_23586_01", "Important", "", 10}}
+tipsMap_deDE[23596] = {{"zulaman_23596_01", "Important", "", 10}}
+tipsMap_deDE[23597] = {{"zulaman_23597_01", "Important", "", 10}}
+tipsMap_deDE[23774] = {{"zulaman_23774_01", "Important", "", 10}}
+tipsMap_deDE[23834] = {{"zulaman_23834_01", "Important", "", 10}}
+tipsMap_deDE[23889] = {{"zulaman_23889_01", "Important", "", 10}}
+tipsMap_deDE[24043] = {{"zulaman_24043_01", "Important", "", 10}}
+tipsMap_deDE[24047] = {{"zulaman_24047_01", "Important", "", 10}}
+tipsMap_deDE[24059] = {{"zulaman_24059_01", "Important", "", 10}}
+tipsMap_deDE[24064] = {{"zulaman_24064_01", "Important", "", 10}}
+tipsMap_deDE[24065] = {{"zulaman_24065_01", "Important", "", 10}}
+tipsMap_deDE[24138] = {{"zulaman_24138_01", "Important", "", 10}}
+tipsMap_deDE[24175] = {{"zulaman_24175_01", "Legion", "", 10}}
+tipsMap_deDE[24179] = {{"zulaman_24179_01", "Important", "", 10}}
+tipsMap_deDE[24180] = {{"zulaman_24180_01", "Important", "", 10}}
+tipsMap_deDE[24217] = {{"zulaman_24217_01", "Important", "", 10}}
+tipsMap_deDE[24374] = {{"zulaman_24374_01", "Important", "", 10}}
+tipsMap_deDE[24530] = {{"zulaman_24530_01", "Important", "", 10}}
+tipsMap_deDE[24549] = {{"zulaman_24549_01", "Important", "", 10}}
+tipsMap_deDE[21216] = {{"ssc_21216_01", "Important", "", 10}}
+tipsMap_deDE[21217] = {{"ssc_21217_01", "Important", "", 10}}
+tipsMap_deDE[21215] = {{"ssc_21215_01", "Important", "", 10}}
+tipsMap_deDE[21214] = {{"ssc_21214_01", "Important", "", 10}}
+tipsMap_deDE[21213] = {{"ssc_21213_01", "Important", "", 10}}
+tipsMap_deDE[21212] = {{"ssc_21212_01", "Important", "", 10}}
+tipsMap_deDE[21964] = {{"ssc_21964_01", "Important", "", 10}}
+tipsMap_deDE[21965] = {{"ssc_21965_01", "Important", "", 10}}
+tipsMap_deDE[21966] = {{"ssc_21966_01", "Important", "", 10}}
+tipsMap_deDE[21218] = {{"ssc_21218_01", "Important", "", 10}}
+tipsMap_deDE[21220] = {{"ssc_21220_01", "Important", "", 10}}
+tipsMap_deDE[21221] = {{"ssc_21221_01", "Important", "", 10}}
+tipsMap_deDE[21224] = {{"ssc_21224_01", "Important", "", 10}}
+tipsMap_deDE[21225] = {{"ssc_21225_01", "Important", "", 10}}
+tipsMap_deDE[21226] = {{"ssc_21226_01", "Important", "", 10}}
+tipsMap_deDE[21227] = {{"ssc_21227_01", "Important", "", 10}}
+tipsMap_deDE[21228] = {{"ssc_21228_01", "Important", "", 10}}
+tipsMap_deDE[21229] = {{"ssc_21229_01", "Important", "", 10}}
+tipsMap_deDE[21230] = {{"ssc_21230_01", "Important", "", 10}}
+tipsMap_deDE[21231] = {{"ssc_21231_01", "Important", "", 10}}
+tipsMap_deDE[21232] = {{"ssc_21232_01", "Important", "", 10}}
+tipsMap_deDE[21246] = {{"ssc_21246_01", "Important", "", 10}}
+tipsMap_deDE[21251] = {{"ssc_21251_01", "Important", "", 10}}
+tipsMap_deDE[21253] = {{"ssc_21253_01", "Important", "", 10}}
+tipsMap_deDE[21263] = {{"ssc_21263_01", "Important", "", 10}}
+tipsMap_deDE[21298] = {{"ssc_21298_01", "Important", "", 10}}
+tipsMap_deDE[21299] = {{"ssc_21299_01", "Important", "", 10}}
+tipsMap_deDE[21301] = {{"ssc_21301_01", "Important", "", 10}}
+tipsMap_deDE[21339] = {{"ssc_21339_01", "Important", "", 10}}
+tipsMap_deDE[21508] = {{"ssc_21508_01", "Important", "", 10}}
+tipsMap_deDE[21806] = {{"ssc_21806_01", "Important", "", 10}}
+tipsMap_deDE[21857] = {{"ssc_21857_01", "Legion", "", 10}}
+tipsMap_deDE[21863] = {{"ssc_21863_01", "Important", "", 10}}
+tipsMap_deDE[21865] = {{"ssc_21865_01", "Important", "", 10}}
+tipsMap_deDE[21873] = {{"ssc_21873_01", "Important", "", 10}}
+tipsMap_deDE[21875] = {{"ssc_21875_01", "Important", "", 10}}
+tipsMap_deDE[21920] = {{"ssc_21920_01", "Important", "", 10}}
+tipsMap_deDE[21958] = {{"ssc_21958_01", "Important", "", 10}}
+tipsMap_deDE[22009] = {{"ssc_22009_01", "Important", "", 10}}
+tipsMap_deDE[22035] = {{"ssc_22035_01", "Important", "", 10}}
+tipsMap_deDE[22036] = {{"ssc_22036_01", "Important", "", 10}}
+tipsMap_deDE[22055] = {{"ssc_22055_01", "Important", "", 10}}
+tipsMap_deDE[22056] = {{"ssc_22056_01", "Important", "", 10}}
+tipsMap_deDE[22119] = {{"ssc_22119_01", "Important", "", 10}}
+tipsMap_deDE[22120] = {{"ssc_22120_01", "Important", "", 10}}
+tipsMap_deDE[22238] = {{"ssc_22238_01", "Important", "", 10}}
+tipsMap_deDE[22250] = {{"ssc_22250_01", "Important", "", 10}}
+tipsMap_deDE[22347] = {{"ssc_22347_01", "Important", "", 10}}
+tipsMap_deDE[22352] = {{"ssc_22352_01", "Important", "", 10}}
+tipsMap_deDE[22820] = {{"ssc_22820_01", "Legion", "", 10}}
+tipsMap_deDE[19516] = {{"the_eye_19516_01", "Important", "", 10}}
+tipsMap_deDE[19514] = {{"the_eye_19514_01", "Important", "", 10}}
+tipsMap_deDE[18805] = {{"the_eye_18805_01", "Important", "", 10}}
+tipsMap_deDE[19622] = {{"the_eye_19622_01", "Important", "", 10}}
+tipsMap_deDE[20060] = {{"the_eye_20060_01", "Important", "", 10}}
+tipsMap_deDE[20062] = {{"the_eye_20062_01", "Important", "", 10}}
+tipsMap_deDE[20063] = {{"the_eye_20063_01", "Important", "", 10}}
+tipsMap_deDE[20064] = {{"the_eye_20064_01", "Important", "", 10}}
+tipsMap_deDE[21268] = {{"the_eye_21268_01", "Important", "", 10}}
+tipsMap_deDE[21269] = {{"the_eye_21269_01", "Important", "", 10}}
+tipsMap_deDE[21270] = {{"the_eye_21270_01", "Important", "", 10}}
+tipsMap_deDE[21271] = {{"the_eye_21271_01", "Important", "", 10}}
+tipsMap_deDE[21272] = {{"the_eye_21272_01", "Important", "", 10}}
+tipsMap_deDE[21273] = {{"the_eye_21273_01", "Important", "", 10}}
+tipsMap_deDE[21274] = {{"the_eye_21274_01", "Important", "", 10}}
+tipsMap_deDE[18806] = {{"the_eye_18806_01", "Important", "", 10}}
+tipsMap_deDE[18925] = {{"the_eye_18925_01", "Important", "", 10}}
+tipsMap_deDE[19551] = {{"the_eye_19551_01", "Important", "", 10}}
+tipsMap_deDE[20031] = {{"the_eye_20031_01", "Important", "", 10}}
+tipsMap_deDE[20032] = {{"the_eye_20032_01", "Important", "", 10}}
+tipsMap_deDE[20033] = {{"the_eye_20033_01", "Important", "", 10}}
+tipsMap_deDE[20034] = {{"the_eye_20034_01", "Important", "", 10}}
+tipsMap_deDE[20035] = {{"the_eye_20035_01", "Important", "", 10}}
+tipsMap_deDE[20036] = {{"the_eye_20036_01", "Important", "", 10}}
+tipsMap_deDE[20037] = {{"the_eye_20037_01", "Important", "", 10}}
+tipsMap_deDE[20038] = {{"the_eye_20038_01", "Important", "", 10}}
+tipsMap_deDE[20039] = {{"the_eye_20039_01", "Important", "", 10}}
+tipsMap_deDE[20040] = {{"the_eye_20040_01", "Important", "", 10}}
+tipsMap_deDE[20041] = {{"the_eye_20041_01", "Important", "", 10}}
+tipsMap_deDE[20042] = {{"the_eye_20042_01", "Important", "", 10}}
+tipsMap_deDE[20043] = {{"the_eye_20043_01", "Important", "", 10}}
+tipsMap_deDE[20044] = {{"the_eye_20044_01", "Important", "", 10}}
+tipsMap_deDE[20045] = {{"the_eye_20045_01", "Important", "", 10}}
+tipsMap_deDE[20046] = {{"the_eye_20046_01", "Important", "", 10}}
+tipsMap_deDE[20047] = {{"the_eye_20047_01", "Important", "", 10}}
+tipsMap_deDE[20048] = {{"the_eye_20048_01", "Important", "", 10}}
+tipsMap_deDE[20049] = {{"the_eye_20049_01", "Important", "", 10}}
+tipsMap_deDE[20050] = {{"the_eye_20050_01", "Important", "", 10}}
+tipsMap_deDE[20052] = {{"the_eye_20052_01", "Important", "", 10}}
+tipsMap_deDE[21362] = {{"the_eye_21362_01", "Important", "", 10}}
+tipsMap_deDE[21364] = {{"the_eye_21364_01", "Important", "", 10}}
+tipsMap_deDE[17767] = {{"hyjal_17767_01", "Important", "", 10}}
+tipsMap_deDE[17808] = {{"hyjal_17808_01", "Important", "", 10}}
+tipsMap_deDE[17888] = {{"hyjal_17888_01", "Important", "", 10}}
+tipsMap_deDE[17842] = {{"hyjal_17842_01", "Important", "", 10}}
+tipsMap_deDE[17968] = {{"hyjal_17968_01", "Important", "", 10}}
+tipsMap_deDE[17818] = {{"hyjal_17818_01", "Important", "", 10}}
+tipsMap_deDE[17864] = {{"hyjal_17864_01", "Important", "", 10}}
+tipsMap_deDE[17895] = {{"hyjal_17895_01", "Important", "", 10}}
+tipsMap_deDE[17897] = {{"hyjal_17897_01", "Important", "", 10}}
+tipsMap_deDE[17898] = {{"hyjal_17898_01", "Important", "", 10}}
+tipsMap_deDE[17899] = {{"hyjal_17899_01", "Important", "", 10}}
+tipsMap_deDE[17902] = {{"hyjal_17902_01", "Important", "", 10}}
+tipsMap_deDE[17903] = {{"hyjal_17903_01", "Important", "", 10}}
+tipsMap_deDE[17905] = {{"hyjal_17905_01", "Important", "", 10}}
+tipsMap_deDE[17906] = {{"hyjal_17906_01", "Important", "", 10}}
+tipsMap_deDE[17907] = {{"hyjal_17907_01", "Important", "", 10}}
+tipsMap_deDE[17908] = {{"hyjal_17908_01", "Important", "", 10}}
+tipsMap_deDE[17916] = {{"hyjal_17916_01", "Important", "", 10}}
+tipsMap_deDE[22887] = {{"black_temple_22887_01", "Important", "", 10}}
+tipsMap_deDE[22898] = {{"black_temple_22898_01", "Important", "", 10}}
+tipsMap_deDE[22841] = {{"black_temple_22841_01", "Important", "", 10}}
+tipsMap_deDE[22871] = {{"black_temple_22871_01", "Important", "", 10}}
+tipsMap_deDE[22948] = {{"black_temple_22948_01", "Important", "", 10}}
+tipsMap_deDE[23418] = {{"black_temple_23418_01", "Important", "", 10}}
+tipsMap_deDE[23419] = {{"black_temple_23419_01", "Important", "", 10}}
+tipsMap_deDE[23420] = {{"black_temple_23420_01", "Important", "", 10}}
+tipsMap_deDE[22947] = {{"black_temple_22947_01", "Important", "", 10}}
+tipsMap_deDE[22949] = {{"black_temple_22949_01", "Important", "", 10}}
+tipsMap_deDE[22950] = {{"black_temple_22950_01", "Important", "", 10}}
+tipsMap_deDE[22951] = {{"black_temple_22951_01", "Important", "", 10}}
+tipsMap_deDE[22952] = {{"black_temple_22952_01", "Important", "", 10}}
+tipsMap_deDE[22917] = {{"black_temple_22917_01", "Important", "", 10}}
+tipsMap_deDE[22844] = {{"black_temple_22844_01", "Important", "", 10}}
+tipsMap_deDE[22845] = {{"black_temple_22845_01", "Important", "", 10}}
+tipsMap_deDE[22846] = {{"black_temple_22846_01", "Important", "", 10}}
+tipsMap_deDE[22847] = {{"black_temple_22847_01", "Important", "", 10}}
+tipsMap_deDE[22848] = {{"black_temple_22848_01", "Important", "", 10}}
+tipsMap_deDE[22849] = {{"black_temple_22849_01", "Important", "", 10}}
+tipsMap_deDE[22853] = {{"black_temple_22853_01", "Important", "", 10}}
+tipsMap_deDE[22855] = {{"black_temple_22855_01", "Important", "", 10}}
+tipsMap_deDE[22869] = {{"black_temple_22869_01", "Important", "", 10}}
+tipsMap_deDE[22873] = {{"black_temple_22873_01", "Important", "", 10}}
+tipsMap_deDE[22874] = {{"black_temple_22874_01", "Important", "", 10}}
+tipsMap_deDE[22875] = {{"black_temple_22875_01", "Important", "", 10}}
+tipsMap_deDE[22876] = {{"black_temple_22876_01", "Important", "", 10}}
+tipsMap_deDE[22877] = {{"black_temple_22877_01", "Important", "", 10}}
+tipsMap_deDE[22878] = {{"black_temple_22878_01", "Important", "", 10}}
+tipsMap_deDE[22879] = {{"black_temple_22879_01", "Important", "", 10}}
+tipsMap_deDE[22880] = {{"black_temple_22880_01", "Important", "", 10}}
+tipsMap_deDE[22881] = {{"black_temple_22881_01", "Important", "", 10}}
+tipsMap_deDE[22882] = {{"black_temple_22882_01", "Important", "", 10}}
+tipsMap_deDE[22883] = {{"black_temple_22883_01", "Important", "", 10}}
+tipsMap_deDE[22884] = {{"black_temple_22884_01", "Important", "", 10}}
+tipsMap_deDE[22885] = {{"black_temple_22885_01", "Important", "", 10}}
+tipsMap_deDE[22929] = {{"black_temple_22929_01", "Important", "", 10}}
+tipsMap_deDE[22939] = {{"black_temple_22939_01", "Important", "", 10}}
+tipsMap_deDE[22945] = {{"black_temple_22945_01", "Important", "", 10}}
+tipsMap_deDE[22946] = {{"black_temple_22946_01", "Important", "", 10}}
+tipsMap_deDE[22953] = {{"black_temple_22953_01", "Important", "", 10}}
+tipsMap_deDE[22954] = {{"black_temple_22954_01", "Important", "", 10}}
+tipsMap_deDE[22955] = {{"black_temple_22955_01", "Important", "", 10}}
+tipsMap_deDE[22956] = {{"black_temple_22956_01", "Important", "", 10}}
+tipsMap_deDE[22957] = {{"black_temple_22957_01", "Important", "", 10}}
+tipsMap_deDE[22959] = {{"black_temple_22959_01", "Important", "", 10}}
+tipsMap_deDE[22960] = {{"black_temple_22960_01", "Important", "", 10}}
+tipsMap_deDE[22962] = {{"black_temple_22962_01", "Important", "", 10}}
+tipsMap_deDE[22963] = {{"black_temple_22963_01", "Important", "", 10}}
+tipsMap_deDE[22964] = {{"black_temple_22964_01", "Important", "", 10}}
+tipsMap_deDE[22965] = {{"black_temple_22965_01", "Important", "", 10}}
+tipsMap_deDE[22996] = {{"black_temple_22996_01", "Important", "", 10}}
+tipsMap_deDE[22997] = {{"black_temple_22997_01", "Important", "", 10}}
+tipsMap_deDE[23018] = {{"black_temple_23018_01", "Important", "", 10}}
+tipsMap_deDE[23028] = {{"black_temple_23028_01", "Important", "", 10}}
+tipsMap_deDE[23030] = {{"black_temple_23030_01", "Important", "", 10}}
+tipsMap_deDE[23047] = {{"black_temple_23047_01", "Important", "", 10}}
+tipsMap_deDE[23049] = {{"black_temple_23049_01", "Important", "", 10}}
+tipsMap_deDE[23083] = {{"black_temple_23083_01", "Important", "", 10}}
+tipsMap_deDE[23109] = {{"black_temple_23109_01", "Important", "", 10}}
+tipsMap_deDE[23111] = {{"black_temple_23111_01", "Important", "", 10}}
+tipsMap_deDE[23147] = {{"black_temple_23147_01", "Important", "", 10}}
+tipsMap_deDE[23172] = {{"black_temple_23172_01", "Important", "", 10}}
+tipsMap_deDE[23196] = {{"black_temple_23196_01", "Important", "", 10}}
+tipsMap_deDE[23215] = {{"black_temple_23215_01", "Important", "", 10}}
+tipsMap_deDE[23216] = {{"black_temple_23216_01", "Important", "", 10}}
+tipsMap_deDE[23222] = {{"black_temple_23222_01", "Important", "", 10}}
+tipsMap_deDE[23223] = {{"black_temple_23223_01", "Important", "", 10}}
+tipsMap_deDE[23232] = {{"black_temple_23232_01", "Important", "", 10}}
+tipsMap_deDE[23235] = {{"black_temple_23235_01", "Important", "", 10}}
+tipsMap_deDE[23236] = {{"black_temple_23236_01", "Important", "", 10}}
+tipsMap_deDE[23237] = {{"black_temple_23237_01", "Important", "", 10}}
+tipsMap_deDE[23239] = {{"black_temple_23239_01", "Important", "", 10}}
+tipsMap_deDE[23318] = {{"black_temple_23318_01", "Important", "", 10}}
+tipsMap_deDE[23319] = {{"black_temple_23319_01", "Important", "", 10}}
+tipsMap_deDE[23330] = {{"black_temple_23330_01", "Important", "", 10}}
+tipsMap_deDE[23337] = {{"black_temple_23337_01", "Important", "", 10}}
+tipsMap_deDE[23339] = {{"black_temple_23339_01", "Important", "", 10}}
+tipsMap_deDE[23371] = {{"black_temple_23371_01", "Important", "", 10}}
+tipsMap_deDE[23374] = {{"black_temple_23374_01", "Important", "", 10}}
+tipsMap_deDE[23375] = {{"black_temple_23375_01", "Important", "", 10}}
+tipsMap_deDE[23389] = {{"black_temple_23389_01", "Important", "", 10}}
+tipsMap_deDE[23394] = {{"black_temple_23394_01", "Important", "", 10}}
+tipsMap_deDE[23397] = {{"black_temple_23397_01", "Important", "", 10}}
+tipsMap_deDE[23398] = {{"black_temple_23398_01", "Important", "", 10}}
+tipsMap_deDE[23399] = {{"black_temple_23399_01", "Important", "", 10}}
+tipsMap_deDE[23400] = {{"black_temple_23400_01", "Important", "", 10}}
+tipsMap_deDE[23401] = {{"black_temple_23401_01", "Important", "", 10}}
+tipsMap_deDE[23402] = {{"black_temple_23402_01", "Important", "", 10}}
+tipsMap_deDE[23403] = {{"black_temple_23403_01", "Important", "", 10}}
+tipsMap_deDE[23421] = {{"black_temple_23421_01", "Important", "", 10}}
+tipsMap_deDE[23436] = {{"black_temple_23436_01", "Important", "", 10}}
+tipsMap_deDE[23469] = {{"black_temple_23469_01", "Important", "", 10}}
+tipsMap_deDE[23498] = {{"black_temple_23498_01", "Important", "", 10}}
+tipsMap_deDE[23523] = {{"black_temple_23523_01", "Important", "", 10}}
+tipsMap_deDE[23524] = {{"black_temple_23524_01", "Important", "", 10}}
+tipsMap_deDE[24850] = {{"sunwell_24850_01", "Important", "", 10}}
+tipsMap_deDE[24892] = {{"sunwell_24892_01", "Important", "", 10}}
+tipsMap_deDE[24882] = {{"sunwell_24882_01", "Important", "", 10}}
+tipsMap_deDE[25038] = {{"sunwell_25038_01", "Important", "", 10}}
+tipsMap_deDE[25166] = {{"sunwell_25166_01", "Important", "", 10}}
+tipsMap_deDE[25165] = {{"sunwell_25165_01", "Important", "", 10}}
+tipsMap_deDE[25741] = {{"sunwell_25741_01", "Important", "", 10}}
+tipsMap_deDE[25840] = {{"sunwell_25840_01", "Important", "", 10}}
+tipsMap_deDE[25315] = {{"sunwell_25315_01", "Important", "", 10}}
+tipsMap_deDE[25268] = {{"sunwell_25268_01", "Legion", "", 10}}
+tipsMap_deDE[25363] = {{"sunwell_25363_01", "Important", "", 10}}
+tipsMap_deDE[25367] = {{"sunwell_25367_01", "Important", "", 10}}
+tipsMap_deDE[25368] = {{"sunwell_25368_01", "Important", "", 10}}
+tipsMap_deDE[25369] = {{"sunwell_25369_01", "Important", "", 10}}
+tipsMap_deDE[25370] = {{"sunwell_25370_01", "Important", "", 10}}
+tipsMap_deDE[25371] = {{"sunwell_25371_01", "Important", "", 10}}
+tipsMap_deDE[25372] = {{"sunwell_25372_01", "Important", "", 10}}
+tipsMap_deDE[25373] = {{"sunwell_25373_01", "Important", "", 10}}
+tipsMap_deDE[25483] = {{"sunwell_25483_01", "Important", "", 10}}
+tipsMap_deDE[25484] = {{"sunwell_25484_01", "Important", "", 10}}
+tipsMap_deDE[25485] = {{"sunwell_25485_01", "Important", "", 10}}
+tipsMap_deDE[25486] = {{"sunwell_25486_01", "Important", "", 10}}
+tipsMap_deDE[25502] = {{"sunwell_25502_01", "Important", "", 10}}
+tipsMap_deDE[25506] = {{"sunwell_25506_01", "Important", "", 10}}
+tipsMap_deDE[25507] = {{"sunwell_25507_01", "Important", "", 10}}
+tipsMap_deDE[25508] = {{"sunwell_25508_01", "Important", "", 10}}
+tipsMap_deDE[25509] = {{"sunwell_25509_01", "Important", "", 10}}
+tipsMap_deDE[25588] = {{"sunwell_25588_01", "Important", "", 10}}
+tipsMap_deDE[25591] = {{"sunwell_25591_01", "Important", "", 10}}
+tipsMap_deDE[25592] = {{"sunwell_25592_01", "Important", "", 10}}
+tipsMap_deDE[25593] = {{"sunwell_25593_01", "Important", "", 10}}
+tipsMap_deDE[25595] = {{"sunwell_25595_01", "Important", "", 10}}
+tipsMap_deDE[25597] = {{"sunwell_25597_01", "Important", "", 10}}
+tipsMap_deDE[25598] = {{"sunwell_25598_01", "Important", "", 10}}
+tipsMap_deDE[25599] = {{"sunwell_25599_01", "Important", "", 10}}
+tipsMap_deDE[25708] = {{"sunwell_25708_01", "Important", "", 10}}
+tipsMap_deDE[25744] = {{"sunwell_25744_01", "Important", "", 10}}
+tipsMap_deDE[25772] = {{"sunwell_25772_01", "Important", "", 10}}
+tipsMap_deDE[25798] = {{"sunwell_25798_01", "Important", "", 10}}
+tipsMap_deDE[25799] = {{"sunwell_25799_01", "Important", "", 10}}
+tipsMap_deDE[25824] = {{"sunwell_25824_01", "Important", "", 10}}
+tipsMap_deDE[25837] = {{"sunwell_25837_01", "Important", "", 10}}
+tipsMap_deDE[25851] = {{"sunwell_25851_01", "Important", "", 10}}
+tipsMap_deDE[25867] = {{"sunwell_25867_01", "Important", "", 10}}
+tipsMap_deDE[25948] = {{"sunwell_25948_01", "Important", "", 10}}
+tipsMap_deDE[26101] = {{"sunwell_26101_01", "Important", "", 10}}
+tipsMap_deDE[17398] = {{"bloodfurnace_17398_01", "Important", "Deals AoE Damage to melee in form of Stomp and also uses Concussion Blow (5 sec stun)", 10}}
+tipsMap_deDE[17399] = {{"bloodfurnace_17399_01", "Important", "Charms players for 6 sec (magic can be dispelled)", 20},
+				{"bloodfurnace_17399_02", "Important", "If no one can dispel charm, the charmed player should be CC'd or stunned", 10}}
+tipsMap_deDE[17401] = {{"bloodfurnace_17401_01", "Important", "Will Spell Lock casters & burn mana users", 20},
+				{"bloodfurnace_17401_02", "PALADIN", "If tanking, can use Seal of Wisdom after sufficient threat has been built up", 10}}
+tipsMap_deDE[17770] = {{"underbog_17770_01", "Important", "Immune to CC.", 60},
+					{"underbog_17770_02", "Important", "Before fight begins, you will need to deal with 2 Bog Giants (both pull when one is pulled). One of them can be kited by a DPS who then jumps off ledge, allowing grp to fight one Bog Lord at a time", 50},
+					{"underbog_17770_03", "Legion", "If your group is too weak to deal with both Bog Giants at once, focus down one as that one will not respawn if you wipe to the second", 40},
+					{"underbog_17770_04", "Advanced", "POSITIONING: It is helpful for DPS and Healer to stand close together so that they move (around the boss) as a group to avoid mushrooms", 30},
+					{"underbog_17770_05", "PriorityTargets", "When boss summons an Underbog Mushroom, ALL players (tank included) need to run away from it as it causes MASSIVE AoE damage! (showing nameplates can be helpful to see these mushrooms spawn and adjust accordingly)", 20},
+					{"underbog_17770_06", "Dodge", "RUN AWAY: All players (tank included) needs to run away from boss at 20% as boss leeches health with AoE Foul Spores ability (Lasts 11 seconds)", 10}}
+tipsMap_deDE[18105] = {{"underbog_18105_01", "Advanced", "POSITIONING: Tank should have boss turned away from group. DPS/Heals need to stand at sides to avoid frontal attack & tail sweep", 10}}
+tipsMap_deDE[17826] = {{"underbog_17826_01", "Important", "Prior to starting fight, defeat the nearby Underbog Lord so that this guy isn't pulled with boss", 60},
+					{"underbog_17826_02", "Advanced", "POSITIONING: Stand with backs against a wall to avoid knockback from Musel'ek, and all players should stack on boss to avoid majority of his ranged abilities (including Aimed Shot).", 50},
+					{"underbog_17826_03", "Important", "Due to heal interrupts, keeping HoTs up will be especially helpful to preserve group", 40},
+					{"underbog_17826_04", "TANK", "TANK should build threat on Claw first before switching back to Musel'ek.", 30},
+					{"underbog_17826_05", "HEALER", "Priority heals to player (esp tank) if afflicted by ECHOING ROAR AoE debuff (reduces armor by 50-82% depending on difficulty; 10 yd range)", 20},
+					{"underbog_17826_06", "TANK", "After Freezing Trap Effect (5 sec trap to players within 50 yds), tank needs to get back in melee of boss ASAP", 10}}
+tipsMap_deDE[17827] = {{"underbog_17827_01", "Important", "Make sure TANK can build up sufficient threat on this guy before engaging boss and this add. Claw turns friendly when at 20%", 30},
+					{"underbog_17827_02", "Important", "ECHOING ROAR: AoE ability reducing players' within 10 yds armor by 50% on normal-mode (82% on heroic). If this is the tank, they will need to pop additional defensives and receive big heals for 20 sec debuff.", 20},
+					{"underbog_17827_03", "Important", "Stack Claw on top of Musel'ek to negate Claw's FERAL CHARGE +knockback", 10}}
+tipsMap_deDE[17882] = {{"underbog_17882_01", "Advanced", "POSITIONING: Players should spread as much as possible to mitigate number of players hit by boss' Chain Lightning. Spreading will also mitigate number of players struck with Static Charge (AoE Nature DoT)", 120},
+					{"underbog_17882_02", "Defensives", "As boss hits tank hard, defensives will need to be timed and healer should keep tank as close to max health as much and as often as possible!", 110},
+					{"underbog_17882_03", "Dodge", "DODGE: If struck by Static Charge (30 yd AoE Nature DoT), run away from nearby players. If tank is struck, other players will need to run from the tank", 100},
+					{"underbog_17882_04", "Important", "LEVITATE: Boss will levitate a player into the air", 90},
+					{"underbog_17882_05", "Legion", "LEVITATE: By standing near small mushrooms, players can mitigate this boss ability (some abilities can allow players to also break free", 80},
+					{"underbog_17882_06", "PRIEST", "Use DISPEL MAGIC to dispel boss' Levitate from yourself/other player and then cast your own Levitate ability to avoid fall damage", 70},
+					{"underbog_17882_07", "PRIEST", "When falling from Levitate, cast Levitate on yourself/other player to mitigate their fall damage", 60},
+					{"underbog_17882_08", "PALADIN", "Use CLEANSE to dispel Levitate from yourself or another player", 50},
+					{"underbog_17882_09", "WARLOCK", "Felhunter's can Dispel levitate", 40},
+					{"underbog_17882_10", "MAGE", "Use Blink to escape from Levitate and then Slow Fall", 30},
+					{"underbog_17882_11", "DRUID", "Feral Druid (Bear Form) can use Feral Charge to break free from Levitate and avoid fall damage", 20},
+					{"underbog_17882_12", "HEALER", "Players that are levitated will need be topped off to ensure they can survive fall damage. They will also need additional heals when they actually receive the fall damage (unless that damage can be slowed)", 10}}
+tipsMap_deDE[18107] = {{"underbog_18107_01", "Important", "Defeat Tidewrath before Ghaz'an reaches and eats him and \n you will be awarded bonus loot (even if you wipe on boss, but \n manage to take down Tidewrath).", 10}}
+tipsMap_deDE[22299] = {{"underbog_22299_01", "PriorityTargets", "DPS need to focus down adds before going back to boss; summoned ~every 10 sec.", 20},
+					{"underbog_22299_02", "Interrupts", "Interrupt: Lightning Bolt (Deals Nature Damage)", 10}}
+tipsMap_deDE[17723] = {{"underbog_17723_01", "Important", "Immune to all forms of CC and Snares (Traps)! On HEROIC mode (esp when in pairs) can hit pretty hard. They move slowly and can be kited (helpful when in pairs)", 10}}
+tipsMap_deDE[17724] = {{"underbog_17724_01", "TANK", "Do NOT turn your back to this mob when it is attacking as it deals increased damage from behind. If you need to pull this mob away from another pat: backup or strafe", 10}}
+tipsMap_deDE[17725] = {{"underbog_17725_01", "Defensives", "Defensives may be needed for this mob as Wild Growth increases physical damage it deals by 50%", 10}}
+tipsMap_deDE[17726] = {{"underbog_17726_01", "Legion", "", 10}}
+tipsMap_deDE[17727] = {{"underbog_17727_01", "Important", "Enemy uses Shield Bash (Interrupting a player's cast)", 10}}
+tipsMap_deDE[17728] = {{"underbog_17728_01", "Legion", "", 10}}
+tipsMap_deDE[17729] = {{"underbog_17729_01", "Legion", "Ranged Hunter-Type Mob", 20},
+					{"underbog_17729_02", "Important", "CC this mob/dispel Viper Sting from players (Drains player mana over 8 sec). If no one in the group can CC this mob, it should be a priority target!", 10}}
+tipsMap_deDE[17730] = {{"underbog_17730_01", "Legion", "Healer-Type Mob", 30},
+					{"underbog_17730_02", "Interrupts", "INTERRUPT: Holy Light (Big heal to an ally; 2.5 sec cast; 40 yd range)", 20},
+					{"underbog_17730_03", "Interrupts", "INTERRUPT: Prayer of Healing (Moderate AoE heal to allies; 3 sec cast time)", 10}}
+tipsMap_deDE[17731] = {{"underbog_17731_01", "Interrupts", "INTERRUPT: Psychic Horror (1.5 sec cast; 10 yd range; Causing player to be feared for 3 sec", 20},
+					{"underbog_17731_02", "TANK", "Due to Psychic Horror, make sure that you aren't too close to nearby groups when you pull this mob, otherwise a fear may cause you to pull mobs you weren't ready to engage", 10}}
+tipsMap_deDE[17732] = {{"underbog_17732_01", "Important", "Dispel POISON SPIT (Nature DoT lasting 10 sec) disease from player", 10}}
+tipsMap_deDE[17734] = {{"underbog_17734_01", "Important", "Deals a knockback ability to a player", 20},
+					{"underbog_17734_02", "Important", "Mob has an enrage where they grow larger over time and should be burned down quickly to mitigate strong attacks", 10}}
+tipsMap_deDE[17735] = {{"underbog_17735_01", "Legion", "This mob has an enrage effect and should be focused down to mitigate damage as a result of this ability", 20},
+					{"underbog_17735_02", "Important", "Enemy uses Shield Bash (Interrupting a player's cast)", 10}}
+tipsMap_deDE[17771] = {{"underbog_17771_01", "Legion", "Mob uses a combination of Shadow, Frost, and Fire abilities", 20},
+					{"underbog_17771_02", "Important", "Dispel Magic AMPLIFY DAMAGE from player (increases physical & magical damage player takes by 30% for 6 sec)", 10}}
+tipsMap_deDE[17871] = {{"underbog_17871_01", "Interrupts", "INTERRUPT: Fungal Regrowth (40 yd range; 2 sec cast; Heals ally for initial amount also applying HoT to that ally", 30},
+					{"underbog_17871_02", "Interrupts", "INTERRUPT: Itchy Spores (15 yd range; Deals Nature DoT to player lasting 10 sec)", 20},
+					{"underbog_17871_03", "Important", "Dispel Disease: Itchy Spores from players if unable to interrupt this ability", 10}}
+tipsMap_deDE[17990] = {{"underbog_17990_01", "Dodge", "RUN AWAY! Spore Cloud, from this object, deals AoE Nature Damage", 10}}
+tipsMap_deDE[19632] = {{"underbog_19632_01", "Defensives", "DEFENSIVE: May be needed for tank/targeted player to pop CDs during Stinger Rage", 20},
+					{"underbog_19632_02", "Important", "Vulnerable to CC even on Heroic-mode", 10}}
+tipsMap_deDE[20465] = {{"underbog_20465_01", "Important", "Why are you swimming with the fishes?", 10}}
+tipsMap_deDE[17797] = {{"steamvaults_17797_01", "Legion", "Boss deals Nature damage; Adds deal Frost damage (Nature resist should be prioritized if only have one option and have no Frost Aura for group from Paladin)", 50},
+					{"steamvaults_17797_02", "Important", "Tank should focus on boss and use AoE threat (such as Thunderclap) on adds. DPS need to focus down the adds (or banish one of them) before going after boss. Adds will despawn once boss dies.", 40},
+					{"steamvaults_17797_03", "Important", "Dispel: Enveloping Wind esp if applied to tank/healer (magic effect applied to player stunning them for 6 sec)", 30},
+					{"steamvaults_17797_04", "Dodge", "DODGE/RUN: Watch for Lightning Cloud and run out of it (deals AoE Nature damage)", 20},
+					{"steamvaults_17797_05", "Important", "HEROIC-mode: Boss will cast two Lightning Clouds at a time", 10}}
+tipsMap_deDE[17796] = {{"steamvaults_17796_01", "Advanced", "POSITIONING: Only the tank should be standing in front of boss due to Super Shrink Ray (frontal cone that reduces player damage dealt by 35% for 15 sec)", 50},
+					{"steamvaults_17796_02", "Important", "At 75%, 50% and 25%, boss announces 'Tune em' up boys' and 3 repair gnomes will spawn. These should be AoE'd down ASAP", 40},
+					{"steamvaults_17796_03", "Important", "Thunder Clap from Warriors or Consecration from Paladins are helpful during add phases", 30},
+					{"steamvaults_17796_04", "Important", "HEROIC-mode: Boss summons an additional gnome every 7 sec", 20},
+					{"steamvaults_17796_05", "Important", "HEROIC-mode: Boss has a 5 minute enrage timer and quickly one shots players!", 10}}
+tipsMap_deDE[17798] = {{"steamvaults_17798_01", "TANK", "Tank the boss in the middle of the room", 90},
+					{"steamvaults_17798_02", "Important", "Spell-casting players need to stop DPS on boss during Spell Reflection (white bubble around boss that reflects damage back to player).", 80},
+					{"steamvaults_17798_03", "Important", "Players will be occasionally struck with Impale (Physical damage DoT)", 70},
+					{"steamvaults_17798_04", "HEALER", "Most of your heals will be on the tank, but watch for impales on other players and players that are still attacking boss during boss' Spell Reflection.", 60},
+					{"steamvaults_17798_05", "PriorityTargets", "DPS down Naga Distiller w/in 12 sec of boss drawing power from it to prevent boss from gaining WARLORD'S RAGE (increased boss attack speed and damage done)", 50},
+					{"steamvaults_17798_06", "DAMAGE", "Save big damage CDs for Naga Distillers. While failing to destroy one distiller in the time alloted won't necessarily result in a wipe, failure to burn down multiple containers will.", 40},
+					{"steamvaults_17798_07", "TANK", "When Naga Distiller activates, you should focus down the container with your DPS!", 30},
+					{"steamvaults_17798_08", "Legion", "Macro to help with containers would be: /targetexact Naga Distiller", 20},
+					{"steamvaults_17798_09", "Defensives", "Boss will crack a player on the head reducing their stamina for 15 sec.", 10}}
+tipsMap_deDE[17917] = {{"steamvaults_17917_01", "PriorityTargets", "Burn these down before boss. Warlocks can BANISH one of them", 10}}
+tipsMap_deDE[17951] = {{"steamvaults_17951_01", "PriorityTargets", "Focus down adds anytime they are up as they will heal/repair boss", 30},
+					{"steamvaults_17951_02", "WARRIOR", "When adds appear, a warrior casting Thunder Clap can delay repairs conducted by adds", 20},
+					{"steamvaults_17951_03", "PALADIN", "Pallys using Consecration can quickly burn Mechanics down", 10}}
+tipsMap_deDE[17954] = {{"steamvaults_17954_01", "PriorityTargets", "When boss draws power from distiller, it must be destroyed w/in 12 sec to prevent a boss enrage!", 10}}
+tipsMap_deDE[17721] = {{"steamvaults_17721_01", "Important", "Players should spread when fighting mob due to Net root casts & AoE Fire Bombs", 10}}
+tipsMap_deDE[17722] = {{"steamvaults_17722_01", "Important", "Interrupt/Run out of AoE from Blizzard (Channeled Frost AoE)", 10}}
+tipsMap_deDE[17800] = {{"steamvaults_17800_01", "Important", "Mob should be tanked away from players due to Cleave. Melee players hit with Cleave will require increased healing", 10}}
+tipsMap_deDE[17801] = {{"steamvaults_17801_01", "Important", "Interrupt: Fear or CC mob", 10}}
+tipsMap_deDE[17802] = {{"steamvaults_17802_01", "Defensives", "Applies Mortal Blow (reduced armor and attack speed for 12 sec) to Tank, during this time, tank may need to pop defensive CDs & receive extra heals", 10}}
+tipsMap_deDE[17803] = {{"steamvaults_17803_01", "PriorityTargets", "Interrupt: Heal or CC mob", 20},
+					{"steamvaults_17803_02", "Important", "Mob should be tanked away from casters as Sonic Burst will spelllock players w/in 10 yds for 3 sec", 10}}
+tipsMap_deDE[17805] = {{"steamvaults_17805_01", "Important", "Will use Disarm (likely on tank) causing issue with threat building/maintaining when this happens. This mob should be slowed if it begins to move toward DPS/Healer, while tank is Disarmed", 10}}
+tipsMap_deDE[17799] = {{"steamvaults_17799_01", "Important", "Tank can use AoE threat-building abilities such as Thunder Clap/Consecration, but DPS should ignore them", 10}}
+tipsMap_deDE[21338] = {{"steamvaults_21338_01", "Important", "Non-elite mob that should be AoE'd down", 10}}
+tipsMap_deDE[21694] = {{"steamvaults_21694_01", "Legion", "Deals Nature & Physical Damage; consider resistance armor/pots if undergeared", 50},
+					{"steamvaults_21694_02", "Important", "Mob should be tanked away from group due to Trample (mob deals Physical AoE). Melee players struck by this may need additional healing", 40},
+					{"steamvaults_21694_03", "Important", "Dispel Fungal Decay from player (Disease; Nature DoT w/momvement speed slow lasting 18 sec)", 30},
+					{"steamvaults_21694_04", "Important", "Dispel Poison Bolt from player (Poison; Nature DoT lasting 10 sec)", 20},
+					{"steamvaults_21694_05", "Dodge", "Run out of Disease Cloud (Nature DoT)", 10}}
+tipsMap_deDE[21695] = {{"steamvaults_21695_01", "Important", "These mobs should be tanked with your back against the wall due to Water Sprout knockback (40 yd range; Frost Damage)", 20},
+					{"steamvaults_21695_02", "Important", "Surger pops Frost Nova rooting nearby players for 8 sec", 10}}
+tipsMap_deDE[21696] = {{"steamvaults_21696_01", "Legion", "This mob deals Frost Damage; having proper aura/resistances can be helpful in mitigating some of mob's damage", 20},
+					{"steamvaults_21696_02", "Legion", "Mob has 45 yd range attack in form of Water Bolt (Instant Frost damaging ability)", 10}}
+tipsMap_deDE[22891] = {{"steamvaults_22891_01", "Legion", "", 10}}
+tipsMap_deDE[18341] = {{"mana_tombs_18341_01", "Important", "Pulling this boss will also pull the trash in the room!", 90},
+				{"mana_tombs_18341_02", "Important", "VOID BLAST (Volley of Void Bolts dealing Shadow damage +Knock back to players) - Fight mob with back against wall.", 80},
+				{"mana_tombs_18341_03", "SHAMAN", "Keep Grounding Totem active as it will absorb Shadow Bolts", 70},
+				{"mana_tombs_18341_04", "WARRIOR", "If you don't have a Shaman that can apply Grounding Totem, use SPELL REFLECTION to reflect the Void Blast back to boss", 60},
+				{"mana_tombs_18341_05", "Important", "DARK SHELL - ALL STOP ATTACKING! (Reflects melee and spell attacks back to player, but not Hunter's ranged abilities)", 50},
+				{"mana_tombs_18341_06", "Legion", "Watch for emote: 'Pandemonius shifts into the void...' to know when you should stop DPS due to Dark Shell", 40},
+				{"mana_tombs_18341_07", "DRUID", "Thorns should NOT be applied to the tank due to Dark Shell", 30},
+				{"mana_tombs_18341_08", "PALADIN", "Retribution Aura should NOT be used due to Dark Shell", 20},
+				{"mana_tombs_18341_09", "Legion", "Shadow Resistance Buffs/Aura will be helpful with this boss", 10}}
+tipsMap_deDE[18343] = {{"mana_tombs_18343_01", "Advanced", "POSITIONING: Melee should be behind boss, with ranged standing at max range. Tank boss away from party members to avoid Arcing Smash frontal attack", 50},
+				{"mana_tombs_18343_02", "Important", "Earthquake (Deals AoE Nature damage +3 sec stun)", 40},
+				{"mana_tombs_18343_03", "HEALER", "Make sure party members are topped off when Earthquake is being cast", 30},
+				{"mana_tombs_18343_04", "Important", "Crystal Prison (Stuns random player in crystal; Dealing 50% of your health in damage over 5 sec as nature damage)", 20},
+				{"mana_tombs_18343_05", "HEALER", "Heal up the player that is in the Crystal Prison!", 10}}
+tipsMap_deDE[18344] = {{"mana_tombs_18344_01", "Legion", "Boss & Apprentice adds deal combo of Fire & Frost damage; Beacons deal Arcane Damage.", 80},
+				{"mana_tombs_18344_02", "PALADIN", "Use Fire Resistance Aura (second pally can use Frost Resist Aura)", 70},
+				{"mana_tombs_18344_03", "PRIEST", "Use Shadow Protection on party members", 60},
+				{"mana_tombs_18344_04", "PriorityTargets", "Make sure that the Ethereal Beacons are being focused down anytime they're active!", 50},
+				{"mana_tombs_18344_05", "Legion", "Watch for when boss says: 'I have such fascinating things to show you.' This is the group's warning to switch to the Beacons about to spawn", 40},
+				{"mana_tombs_18344_06", "Important", "Boss often casts Frost Nova and Blinks out of melee range - bringing a group with strong ranged attacks is helpful.", 30},
+				{"mana_tombs_18344_07", "Important", "Dispel Frost Nova (magic-effect) from group, or at least the tank", 20},
+				{"mana_tombs_18344_08", "TANK", "When Frost Nova wears off move quickly to boss to get aggro back!", 10}}
+tipsMap_deDE[22930] = {{"mana_tombs_22930_01", "Legion", "Summonable only on HEROIC mode by a party member that has Shaffar's Stasis Chamber Key or The Eye of Haramad (the eye is not consumed on use)", 50},
+				{"mana_tombs_22930_02", "Legion", "TANK: Fire Resistance gear/pots will be helpful to mitigate some boss damage during frontal-cone DOUBLE BREATH", 40},
+				{"mana_tombs_22930_03", "TANK", "Tank should turn boss away from group as Yor's DOUBLE BREATH deals frontal cone of Fire Damage", 30},
+				{"mana_tombs_22930_04", "Important", "Yor will use Stomp (Knockback w/10 yd range)", 20},
+				{"mana_tombs_22930_05", "Important", "DPS and Healer should stand as far from boss as possible on his backside to avoid frontal fire damage +knockback", 10}}
+tipsMap_deDE[18431] = {{"mana_tombs_18431_01", "PriorityTargets", "DPS should burn down these mobs down ASAP (Spawns every ~10 sec)", 10}}
+tipsMap_deDE[18430] = {{"mana_tombs_18430_01", "PriorityTargets", "If Ethereal Beacons are not destroyed quickly enough, these mobs will take their place", 30},
+				{"mana_tombs_18430_02", "Important", "Deal HEAVY Fire & Frost damage", 20},
+				{"mana_tombs_18430_03", "Legion", "Vulnerable to CC such as Polymorph", 10}}
+tipsMap_deDE[18309] = {{"mana_tombs_18309_01", "Important", "Mobs will use Shield Bash (spell locks player from casting that magic school for 8 sec), mob will sometimes leave tank to interrupt your ability", 20},
+				{"mana_tombs_18309_02", "HEALER", "Healer should stand some distance when dealing with these mobs to allow for advance notice of this mob approaching you", 10}}
+tipsMap_deDE[18311] = {{"mana_tombs_18311_01", "Important", "Tank should LoS pull mob to walk into melee range, otherwise it could charge and stun a player for 2 sec.", 20},
+				{"mana_tombs_18311_02", "Defensives", "Mob will apply Soul Strike (likely to tank; lasting 5 sec) which cuts the effectivess of heals received by 50%. Tanks may need to pop additional CDs and will require extra heals to stay alive", 10}}
+tipsMap_deDE[18312] = {{"mana_tombs_18312_01", "PriorityTargets", "Main threat from this mob actually comes from the Ethereal Wraith that they summon. Burn adds and this mob down quickly!", 20},
+				{"mana_tombs_18312_02", "Important", "Casters should stand at max range to avoid Counterspell (3 sec spell locking)", 10}}
+tipsMap_deDE[18313] = {{"mana_tombs_18313_01", "PriorityTargets", "Tank should LoS pull these ranged mobs. Group should DPS mob down quickly due to heavy damage from Arcane Missiles. Sorcerer summons an Arcane Fiend.", 10}}
+tipsMap_deDE[18314] = {{"mana_tombs_18314_01", "Important", "Mob will apply Gouge (likely on tank; lasting 4 sec). Mobs will then go after #2 on the threat meter. Use of slows/kiting will be helpful until tank can pick up aggro again", 10}}
+tipsMap_deDE[18315] = {{"mana_tombs_18315_01", "Legion", "Deals mostly Fire & Physical damage", 30},
+				{"mana_tombs_18315_02", "Interrupts", "INTERRUPT: Polymorph (sheeps random player)", 20},
+				{"mana_tombs_18315_03", "Important", "Slow/Kite mob if it successfully Polymorphs tank", 10}}
+tipsMap_deDE[18317] = {{"mana_tombs_18317_01", "PriorityTargets", "Due to Holy Nova doing good sized heal to allies and damage to players, it is best to focus these adds down or DPS them quickly.", 20},
+				{"mana_tombs_18317_02", "Interrupts", "INTERRUPT: Heal", 10}}
+tipsMap_deDE[18331] = {{"mana_tombs_18331_01", "Important", "LoS pull these ranged mobs", 20},
+				{"mana_tombs_18331_02", "Interrupts", "INTERRUPT: Mana Burn", 10}}
+tipsMap_deDE[18394] = {{"mana_tombs_18394_01", "PriorityTargets", "Summoned from Ethereal Spellbinders; DPS should focus this mob down quickly as high damage Shadow Bolt Volley hits nearby players", 10}}
+tipsMap_deDE[18429] = {{"mana_tombs_18429_01", "PriorityTargets", "Deals Arcane Explosion & Counterspell on casters", 10}}
+tipsMap_deDE[19306] = {{"mana_tombs_19306_01", "Important", "LoS pull this mob; Ranged DPS/Healer should stand at least 10 yds away to avoid Arcane Explosion AoE", 40},
+				{"mana_tombs_19306_02", "PriorityTargets", "INTERRUPT: Mana Burn", 30},
+				{"mana_tombs_19306_03", "Important", "Dispel Faerie Fire from especially from melee player (magic effect; reduces armor for 20 sec)", 20},
+				{"mana_tombs_19306_04", "Important", "When mob dies, it will deal an Arcane Explosion AoE", 10}}
+tipsMap_deDE[19307] = {{"mana_tombs_19307_01", "PriorityTargets", "Deals Shadow Damage - Having Shadow resistance buffs/auras can help mitigate some of the damage this mob deals to group", 50},
+				{"mana_tombs_19307_02", "Important", "Dispel Curse of Impotence (magical damage dealt reduced for 60 sec) from mana-using player", 40},
+				{"mana_tombs_19307_03", "Defensives", "Defensive/Extra Heals when mob applies Shadows Embrace to player (40 yd range; Shadow DoT over 6 sec; Physical damage dealt decreased by 50%).", 30},
+				{"mana_tombs_19307_04", "Important", "LoS pull these mobs to safe area as this mob will cast Psychic Scream (AoE Fear) as well as Death Coil fear", 20},
+				{"mana_tombs_19307_05", "SHAMAN", "Use Tremor Totem to negate Psychic Scream & Death Coil fears", 10}}
+tipsMap_deDE[18636] = {{"shadow_lab_18636_01", "Important", "Will quickly down non-tanks, which is why tank should take point.", 20},
+					{"shadow_lab_18636_02", "WARLOCK", "After defeating first boss, warlocks should use their Succubus pet to CC assassin if they become stunned by these stealthed mobs", 10}}
+tipsMap_deDE[18637] = {{"shadow_lab_18637_01", "Important", "Dispel Shadow Word: Pain (magic effect; Shadow DoT)", 20},
+					{"shadow_lab_18637_02", "Interrupts", "Interrupt: Mind Flay", 10}}
+tipsMap_deDE[18638] = {{"shadow_lab_18638_01", "Important", "Dispel Shape of the Beast from mob (Magic effect that reduces time between attacks, increased attack power, but can't cast spells). Because this buff prevents spell casting, a Warlock Felhunter's ability Devour Magic should be used. If no one can effectively remove the beneficial magic from enemy, tank may need additional heals/pop defensive CDs", 10}}
+tipsMap_deDE[18639] = {{"shadow_lab_18639_01", "Important", "CC player who is mind-controlled from Brain Wash", 20},
+					{"shadow_lab_18639_02", "Defensives", "Defensives may be needed if either the tank or healer gets MC'd", 10}}
+tipsMap_deDE[18640] = {{"shadow_lab_18640_01", "Important", "Dispel Seed of Corruption from players (magic effect dealing AoE shadow damage)", 20},
+					{"shadow_lab_18640_02", "Important", "If no dispeller, the player struck by Seed of Corruption should run out of group. If tank is the one hit by it, players need to run 10 yds from tank to avoid AoE", 10}}
+tipsMap_deDE[19166] = {{"mechanar_19166_01", "Legion", "Mob deals mostly Arcane Damage", 30},
+				{"mechanar_19166_02", "TANK", "Pull this mob away from other mobs to prevent other trash from also being pulled", 20},
+				{"mechanar_19166_03", "Important", "Ranged DPS and Healer should stand at least 5 yds from Patroller as it has a 2 sec AoE Stun", 10}}
+tipsMap_deDE[19167] = {{"mechanar_19167_01", "Defensives", "When fighting these mobs, healers will need to pay extra attention to tank's health as mob's Solar Strike reduces healing effectiveness, as well as Melt Armor (reducing nearby player's armor). Tank may also need to pop a defensive CD", 10}}
+tipsMap_deDE[19168] = {{"mechanar_19168_01", "Legion", "Fire Mage-Type Mob", 20},
+				{"mechanar_19168_02", "Important", "It is best to use ranged DPS to burn these mobs down as Fire Shield deals AoE Fire Damage to nearby players", 10}}
+tipsMap_deDE[19231] = {{"mechanar_19231_01", "Legion", "Mob will disarm their target with the Claw ability", 20},
+				{"mechanar_19231_02", "Important", "Dispel Poison (Glob of Machine Fluid) from players (Nature DoT over 10 sec; +Reduced movement speed)", 10}}
+tipsMap_deDE[19510] = {{"mechanar_19510_01", "Important", "Warrior-Type Mobs that decrease nearby players' armor and increase attack and movement speed.", 20},
+				{"mechanar_19510_02", "Defensives", "When Centurion's are up and in the group that is being fought, tank may need to pop extra defensive CDs due to Melt Armor ability, and may also need additonal heals", 10}}
+tipsMap_deDE[19712] = {{"mechanar_19712_01", "Important", "DPS and Healer needs to watch their threat as Driller applies stacking debuff that reduces movement speed and armor of their target!", 30},
+				{"mechanar_19712_02", "WARLOCK", "This mob is vulnerable to Banish and Fear", 20},
+				{"mechanar_19712_03", "Important", "Driller applies debuff that will reduce armor by 20% per stack, stacking up to 5 times. This mob should be killed quickly as it can overwhelm tank & healer at higher stacks", 10}}
+tipsMap_deDE[19713] = {{"mechanar_19713_01", "Legion", "Mob will disorient their target for 5 sec with the Pound ability", 20},
+				{"mechanar_19713_02", "Important", "Dispel Poison (Glob of Machine Fluid) from players (Nature DoT over 10 sec; +Reduced movement speed)", 10}}
+tipsMap_deDE[19716] = {{"mechanar_19716_01", "Important", "Players should spread out when this mob is in a pull as Netherbomb deals Arcane AoE to selected area", 20},
+				{"mechanar_19716_02", "Important", "Ranged DPS are preferred for this mob as Nether Explosion deals heavy AoE in their melee range", 10}}
+tipsMap_deDE[19735] = {{"mechanar_19735_01", "Legion", "Mob deals mostly Arcane Damage", 30},
+				{"mechanar_19735_02", "TANK", "Pull this mob away from other mobs to prevent other trash from also being pulled", 20},
+				{"mechanar_19735_03", "Important", "Ranged DPS and Healer should stand at least 5 yds from Destroy as it has a 2 sec AoE Stun, and Destroyer has melee range AoE", 10}}
+tipsMap_deDE[20059] = {{"mechanar_20059_01", "PriorityTargets", "Mob should be CC'd or killed quickly due to Arcane Nova (AoE Arcane Damage that also heals its allies).", 20},
+				{"mechanar_20059_02", "Important", "When Netherbinder summons their Arcane Servant, this should be DPS'd down quickly due to its low health and AoE damage", 10}}
+tipsMap_deDE[20478] = {{"mechanar_20478_01", "PriorityTargets", "Summoned by Sunseeker Netherbinder; Deals AoE damage.", 10}}
+tipsMap_deDE[20988] = {{"mechanar_20988_01", "PriorityTargets", "These mobs can be dangerous as they buff their allies. Use CC abilities or focus them down quickly", 10}}
+tipsMap_deDE[20990] = {{"mechanar_20990_01", "PriorityTargets", "Mob should be crowd-controlled or killed first", 40},
+				{"mechanar_20990_02", "Interrupts", "INTERRUPT: Bandage (8 sec Channeled; Healing an ally)", 30},
+				{"mechanar_20990_03", "Important", "Dispel player that is put to sleep by mob (esp if it's the healer) - this lasts 6 sec. If no dispel available, an off-healer may need to step up to fill healer's role during that time", 20},
+				{"mechanar_20990_04", "SHAMAN", "Use your Tremor Totem to remove sleep", 10}}
+tipsMap_deDE[17976] = {{"botanica_17976_01", "Important", "Make sure to pull adds before engaging the boss (boss will pat back and forth over a bridge", 50},
+				{"botanica_17976_02", "Legion", "Arcane resistance pots and gear could be helpful for this fight, but debuffs still need to be watched/dispelled.", 40},
+				{"botanica_17976_03", "Important", "Dispel Arcane Resonance (increases target's Arcane damage taken) as often as possible.", 30},
+				{"botanica_17976_04", "TANK", "Maintain strong defensives, esp if you don't have a group that can dispel Arcane Resonance as Arcane Devastation hit hard!", 20},
+				{"botanica_17976_05", "PriorityTargets", "When adds appear, focus them down first. The Mender (healer) is elite and can be CC'd or Feared. When not feared, her heals must be interrupted", 10}}
+tipsMap_deDE[17975] = {{"botanica_17975_01", "PriorityTargets", "Focus DPS on adds when they spawn before shifting back to boss", 40},
+				{"botanica_17975_02", "Important", "When boss shapeshifts into Tree Form, boss becomes immune (this happens with greater frequency as fight goes on). At this point, 3 Frayer Protectors are summoned and begin channeling Tranquility (heal) to boss. When tank pulls them away from boss, DPS should focus down these adds", 30},
+				{"botanica_17975_03", "TANK", "When boss changes into Tree Form, drag the Frayer Protectors away from boss", 20},
+				{"botanica_17975_04", "Important", "During add phases (esp), DPS should focus on the tank's target (boss/adds) to burn mobs down quickly else the fight will be very long and healer will run out of mana", 10}}
+tipsMap_deDE[17978] = {{"botanica_17978_01", "Legion", "Optional Boss", 90},
+				{"botanica_17978_02", "Legion", "Boss deals a combination of Fire AoE Damage and Shadow damage DoT during Sacrifice phase. Use of auras/buffs/pots can help mitigate this damage (use fire if you have only one choice).", 80},
+				{"botanica_17978_03", "Important", "Boss casts Hellfire which deals AoE fire damage. Healers should take note of this as melee will take increased damage", 70},
+				{"botanica_17978_04", "Important", "Clear room by killing the adds near boss and two stealthed mobs in the direction of Laj's chambers", 60},
+				{"botanica_17978_05", "Advanced", "POSITIONING: Tank should fight boss in the middle of the room (to avoid LoS issues with healer). It's reccomended to assign an off-healer in case healer is being sacrificed", 50},
+				{"botanica_17978_06", "Important", "If healer is being Sacrificed (8 sec stun +Shadow DoT +boss leeches sacrificed player's health), use your 'off-healer' to assist with heals, and melee DPS should run out of range of boss' Hellfire AoE to mitigate group damage (if off-healer isn't well geared or off-healer not present)", 40},
+				{"botanica_17978_07", "TANK", "DEFENSIVES: If healer is being Sacrificed be prepared to pop defensives to assist off-healer, or esp if an off-healer isn't available", 30},
+				{"botanica_17978_08", "Defensives", "DEFENSIVES: Use defensive CD if boss is enraging against you (likely tank).", 20},
+				{"botanica_17978_09", "HEALER", "Healer will need to keep 'enraged' player at max health (or as close to as possible).", 10}}
+tipsMap_deDE[17980] = {{"botanica_17980_01", "Important", "Watch for and dispel Allergic Reaction (Disease) from tank.", 40},
+				{"botanica_17980_02", "Important", "Watch for the color that Laj turns to see which school of magic it becomes immune to & don't cast from that school.", 30},
+				{"botanica_17980_03", "Legion", "[BLUE] Frost; [RED] Fire; [GREEN] Nature; [BLACK] Shadow; [WHITE] Arcane", 20},
+				{"botanica_17980_04", "PriorityTargets", "When boss teleports to original platform, adds will appear that must be focused down", 10}}
+tipsMap_deDE[17977] = {{"botanica_17977_01", "Important", "DPS and Healer should be at maximum range (if possible) when dealing with boss to avoid Stomp (25 yd range; Deals AoE Physical damage +5 sec stun)", 40},
+				{"botanica_17977_02", "WARRIOR", "Use Berserker Rage to grant brief immunity to Stomp's stun effect", 30},
+				{"botanica_17977_03", "PriorityTargets", "Focus down Sapling adds when summoned as they will heal boss. Some abilities from hunter (Aimed Shot), warrior (Mortal Strike) and rogue (Wound Poison) can reduce healing effects.", 20},
+				{"botanica_17977_04", "Important", "Sapling adds can also be CC'd using a mage's Frost Nova or a priest's Psychic Scream.", 10}}
+tipsMap_deDE[20078] = {{"botanica_20078_01", "Legion", "Deals Arcane melee damage", 10}}
+tipsMap_deDE[20083] = {{"botanica_20083_01", "PriorityTargets", "Fear/Burn Down mob asap as it will heal allies (including boss)", 10}}
+tipsMap_deDE[19953] = {{"botanica_19953_01", "PriorityTargets", "", 10}}
+tipsMap_deDE[19958] = {{"botanica_19958_01", "Important", "Dispel magic-effect from player that is encased in block of ice (Freezing Touch)", 10}}
+tipsMap_deDE[19962] = {{"botanica_19962_01", "Important", "AoE ability that reduces movement speed of players for 4 sec", 10}}
+tipsMap_deDE[19964] = {{"botanica_19964_01", "Important", "Deals Fire damage to random player", 10}}
+tipsMap_deDE[19969] = {{"botanica_19969_01", "Important", "Deals AoE Nature damage", 10}}
+tipsMap_deDE[19919] = {{"botanica_19919_01", "PriorityTargets", "Shots Thorn Missiles at player applying a Physical damage bleed", 10}}
+tipsMap_deDE[19920] = {{"botanica_19920_01", "PriorityTargets", "Casts Mind Flay at player applying Shadow damage +movement speed reduction to that player", 10}}
+tipsMap_deDE[19949] = {{"botanica_19949_01", "PriorityTargets", "Burn these adds down to prevent boss from being healed", 10}}
+tipsMap_deDE[17993] = {{"botanica_17993_01", "PriorityTargets", "CC/DPS these mobs down quickly before they can put up Spell Reflection", 20},
+				{"botanica_17993_02", "Important", "Immune to Mind Control", 10}}
+tipsMap_deDE[17994] = {{"botanica_17994_01", "Defensives", "Player with Call of the Falcon mark will take extra damage from Bloodfalcons", 10}}
+tipsMap_deDE[18155] = {{"botanica_18155_01", "Legion", "", 10}}
+tipsMap_deDE[18404] = {{"botanica_18404_01", "Dodge", "DODGE: Arcane Flurry (AoE/WW Ability) when mob begins channeling, or stun this mob", 10}}
+tipsMap_deDE[18405] = {{"botanica_18405_01", "Legion", "Deal AoE damage and drain player mana from nearby players", 10}}
+tipsMap_deDE[18419] = {{"botanica_18419_01", "Legion", "Mobs deal primarily Nature Damage", 30},
+				{"botanica_18419_02", "Important", "Dispel Impending Coma (Poison) from tank (increases time between attacks +reduces movement speed +puts target to sleep)", 20},
+				{"botanica_18419_03", "Interrupts", "Interrupt: Greenkeeper's Fury (Lightning Bolt dealing Nature damage)", 10}}
+tipsMap_deDE[18420] = {{"botanica_18420_01", "Important", "Casts Arcane Explosion AoE (melee players may need extra heals)", 20},
+				{"botanica_18420_02", "Important", "Immune to Crowd Control", 10}}
 -- First German dungeon tip pass for major TBC dungeon bosses and encounters.
 tipsMap_deDE[17306] = {
 	{"ramparts_17306_01", "Important", "Killt ZUERST die Adds, da sie den Boss heilen.", 20},
@@ -5028,7 +5562,22 @@ tipsMap_deDE[17537] = {
 	{"ramparts_17537_10", "Important", "Nazan wirkt Betaeubendes Gebrüll (AoE-Furcht).", 20},
 	{"ramparts_17537_11", "DAMAGE", "Steht nicht vor Nazan!", 10},
 }
-tipsMap_deDE[17536] = cloneTableDeep(tipsMap_deDE[17537])
+tipsMap_deDE[17536] = {
+	{"ramparts_17537_01", "Important", "Die Gruppe sollte sich verteilen, damit nicht mehrere Spieler gleichzeitig von Nazans Feuerball-AoE getroffen werden.", 110},
+	{"ramparts_17537_02", "Dodge", "AUSWEICHEN: Wenn du von Nazans Feuerball getroffen wirst, lauf aus dem Effekt heraus, damit du keine weiteren Ticks abbekommst.", 100},
+	{"ramparts_17537_03", "TANK", "Nimm den Boss nach der Landung sofort auf, da er direkt auf das Ziel mit der hoechsten Bedrohung geht.", 90},
+	{"ramparts_17537_04", "Advanced", "VAZRUDEN-Strategie (Phase 1)", 80},
+	{"ramparts_17537_05", "Important", "Der Spieler mit Vazrudens Mal wird 6 Sek. lang sein Ziel. Def-CDs ziehen.", 70},
+	{"ramparts_17537_06", "HEALER", "Gib dem Spieler mit Vazrudens Mal zusaetzliche Heilung.", 60},
+	{"ramparts_17537_07", "Advanced", "NAZAN-Strategie (Phase 2)", 50},
+	{"ramparts_17537_08", "Important", "Nazan landet, wenn er selbst 20% Leben hat oder wenn Vazruden etwa 40-50% erreicht.", 40},
+	{"ramparts_17537_09", "TANK", "Wenn Nazan landet, drehe ihn von der Gruppe weg, damit seine Feuer-Angriffe die Gruppe nicht treffen.", 30},
+	{"ramparts_17537_10", "Important", "Nazan wirkt Betaeubendes Gebrüll (AoE-Furcht).", 20},
+	{"ramparts_17537_11", "DAMAGE", "Steht nicht vor Nazan!", 10},
+}
+for index, tip in ipairs(tipsMap_deDE[17536]) do
+	tip[1] = string.format("ramparts_17536_%02d", index)
+end
 for index, tip in ipairs(tipsMap_deDE[17536]) do
 	tip[1] = string.format("ramparts_17536_%02d", index)
 end

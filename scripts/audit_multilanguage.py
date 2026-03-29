@@ -115,7 +115,7 @@ def extract_de_assignments(full_text: str) -> tuple[dict[int, list[str]], dict[i
 
     clone_map: dict[int, int] = {}
     for match in re.finditer(
-        r"(?m)^tipsMap_deDE\[(\d+)\]\s*=\s*cloneTableDeep\(tipsMap_deDE\[(\d+)\]\)",
+        r"(?m)^tipsMap_deDE\[(\d+)\]\s*=\s*cloneTableDeep\(tipsMap_(?:deDE|enUS)\[(\d+)\]\)",
         full_text,
     ):
         clone_map[int(match.group(1))] = int(match.group(2))
@@ -174,8 +174,8 @@ def build_report() -> str:
     db_text = DB_PATH.read_text(encoding="utf-8")
     conf_text = CONF_PATH.read_text(encoding="utf-8")
 
-    en_section = extract_section(db_text, "tipsMap_enUS = {", "if type(tipsMap_deDE)")
-    de_section = db_text[db_text.find("if type(tipsMap_deDE)") :]
+    en_section = extract_section(db_text, "tipsMap_enUS = {", "tipsMap_deDE = tipsMap_deDE or {}")
+    de_section = db_text[db_text.find("tipsMap_deDE = tipsMap_deDE or {}") :]
 
     en_assignments = extract_top_level_assignments(en_section)
     de_direct_assignments, de_clone_assignments = extract_de_assignments(de_section)
@@ -287,8 +287,8 @@ def build_report() -> str:
         "## Summary",
         "",
         f"- `tipsMap_enUS` top-level NPC entries: **{total_en_count}**",
-        f"- Explicit `tipsMap_deDE` translated/overridden NPC entries: **{translated_override_count}** ({translated_percent:.1f}%)",
-        f"- `tipsMap_deDE` entries still falling back to English because no explicit German override exists: **{len(untranslated_ids)}**",
+        f"- `tipsMap_deDE` entries with an explicit German-side counterpart: **{translated_override_count}** ({translated_percent:.1f}%)",
+        f"- `tipsMap_enUS` entries still missing any explicit `deDE` counterpart: **{len(untranslated_ids)}**",
         f"- Duplicate explicit `tipsMap_deDE` assignments: **{len(duplicate_override_ids)}**",
         f"- Structural `enUS`/`deDE` tip mismatches: **{len(structural_mismatches)}**",
         f"- Browser locale key gaps (`browserLocaleStrings`): **{len(browser_missing_in_de)}** missing in `deDE`, **{len(browser_extra_in_de)}** extra in `deDE`",
@@ -301,8 +301,8 @@ def build_report() -> str:
         "",
         "### 1. German tip coverage",
         "",
-        f"- The German tip map does **not** appear fully translated yet. `{len(untranslated_ids)}` NPC entries still rely on the deep-copy fallback from `tipsMap_enUS`.",
-        f"- Example untranslated NPC IDs from the top of the table: `{', '.join(str(value) for value in untranslated_ids[:20])}`",
+        f"- `{len(untranslated_ids)}` NPC entries are still missing an explicit `deDE` counterpart in the file.",
+        f"- Example missing counterpart IDs from the top of the table: `{', '.join(str(value) for value in untranslated_ids[:20]) if untranslated_ids else 'none'}`",
         "",
         "### 2. Structural safety of existing German tip overrides",
         "",
