@@ -222,9 +222,9 @@ def build_report() -> str:
                 all_same = False
                 break
 
-            if en_tip.text == de_tip.text:
+            if en_tip.text == de_tip.text and en_tip.text.strip():
                 same_texts += 1
-            else:
+            elif en_tip.text != de_tip.text:
                 all_same = False
 
         if all_same:

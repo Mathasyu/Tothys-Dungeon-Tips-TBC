@@ -5484,53 +5484,53 @@ tipsMap_deDE[20990] = {{"mechanar_20990_01", "PriorityTargets", "Diesen Mob per 
 				{"mechanar_20990_02", "Interrupts", "KICK: Verband, ein 8-Sek.-Channel, der einen Verbündeten heilt.", 30},
 				{"mechanar_20990_03", "Important", "Spieler dispellen, die von diesem Mob schlafen gelegt werden, besonders den Heiler. Der Schlaf hält 6 Sek. Gibt es keinen Dispel, muss eventuell ein Off-Heiler übernehmen.", 20},
 				{"mechanar_20990_04", "SHAMAN", "Tremor Totem nutzen, um Schlaf zu entfernen.", 10}}
-tipsMap_deDE[17976] = {{"botanica_17976_01", "Important", "Make sure to pull adds before engaging the boss (boss will pat back and forth over a bridge", 50},
-				{"botanica_17976_02", "Legion", "Arcane resistance pots and gear could be helpful for this fight, but debuffs still need to be watched/dispelled.", 40},
-				{"botanica_17976_03", "Important", "Dispel Arcane Resonance (increases target's Arcane damage taken) as often as possible.", 30},
-				{"botanica_17976_04", "TANK", "Maintain strong defensives, esp if you don't have a group that can dispel Arcane Resonance as Arcane Devastation hit hard!", 20},
-				{"botanica_17976_05", "PriorityTargets", "When adds appear, focus them down first. The Mender (healer) is elite and can be CC'd or Feared. When not feared, her heals must be interrupted", 10}}
-tipsMap_deDE[17975] = {{"botanica_17975_01", "PriorityTargets", "Focus DPS on adds when they spawn before shifting back to boss", 40},
-				{"botanica_17975_02", "Important", "When boss shapeshifts into Tree Form, boss becomes immune (this happens with greater frequency as fight goes on). At this point, 3 Frayer Protectors are summoned and begin channeling Tranquility (heal) to boss. When tank pulls them away from boss, DPS should focus down these adds", 30},
-				{"botanica_17975_03", "TANK", "When boss changes into Tree Form, drag the Frayer Protectors away from boss", 20},
-				{"botanica_17975_04", "Important", "During add phases (esp), DPS should focus on the tank's target (boss/adds) to burn mobs down quickly else the fight will be very long and healer will run out of mana", 10}}
-tipsMap_deDE[17978] = {{"botanica_17978_01", "Legion", "Optional Boss", 90},
-				{"botanica_17978_02", "Legion", "Boss deals a combination of Fire AoE Damage and Shadow damage DoT during Sacrifice phase. Use of auras/buffs/pots can help mitigate this damage (use fire if you have only one choice).", 80},
-				{"botanica_17978_03", "Important", "Boss casts Hellfire which deals AoE fire damage. Healers should take note of this as melee will take increased damage", 70},
-				{"botanica_17978_04", "Important", "Clear room by killing the adds near boss and two stealthed mobs in the direction of Laj's chambers", 60},
-				{"botanica_17978_05", "Advanced", "POSITIONING: Tank should fight boss in the middle of the room (to avoid LoS issues with healer). It's reccomended to assign an off-healer in case healer is being sacrificed", 50},
-				{"botanica_17978_06", "Important", "If healer is being Sacrificed (8 sec stun +Shadow DoT +boss leeches sacrificed player's health), use your 'off-healer' to assist with heals, and melee DPS should run out of range of boss' Hellfire AoE to mitigate group damage (if off-healer isn't well geared or off-healer not present)", 40},
-				{"botanica_17978_07", "TANK", "DEFENSIVES: If healer is being Sacrificed be prepared to pop defensives to assist off-healer, or esp if an off-healer isn't available", 30},
-				{"botanica_17978_08", "Defensives", "DEFENSIVES: Use defensive CD if boss is enraging against you (likely tank).", 20},
-				{"botanica_17978_09", "HEALER", "Healer will need to keep 'enraged' player at max health (or as close to as possible).", 10}}
-tipsMap_deDE[17980] = {{"botanica_17980_01", "Important", "Watch for and dispel Allergic Reaction (Disease) from tank.", 40},
-				{"botanica_17980_02", "Important", "Watch for the color that Laj turns to see which school of magic it becomes immune to & don't cast from that school.", 30},
-				{"botanica_17980_03", "Legion", "[BLUE] Frost; [RED] Fire; [GREEN] Nature; [BLACK] Shadow; [WHITE] Arcane", 20},
-				{"botanica_17980_04", "PriorityTargets", "When boss teleports to original platform, adds will appear that must be focused down", 10}}
-tipsMap_deDE[17977] = {{"botanica_17977_01", "Important", "DPS and Healer should be at maximum range (if possible) when dealing with boss to avoid Stomp (25 yd range; Deals AoE Physical damage +5 sec stun)", 40},
-				{"botanica_17977_02", "WARRIOR", "Use Berserker Rage to grant brief immunity to Stomp's stun effect", 30},
-				{"botanica_17977_03", "PriorityTargets", "Focus down Sapling adds when summoned as they will heal boss. Some abilities from hunter (Aimed Shot), warrior (Mortal Strike) and rogue (Wound Poison) can reduce healing effects.", 20},
-				{"botanica_17977_04", "Important", "Sapling adds can also be CC'd using a mage's Frost Nova or a priest's Psychic Scream.", 10}}
-tipsMap_deDE[20078] = {{"botanica_20078_01", "Legion", "Deals Arcane melee damage", 10}}
-tipsMap_deDE[20083] = {{"botanica_20083_01", "PriorityTargets", "Fear/Burn Down mob asap as it will heal allies (including boss)", 10}}
+tipsMap_deDE[17976] = {{"botanica_17976_01", "Important", "Vor dem Bosskampf unbedingt die Adds pullen, da der Boss über die Brücke patrouilliert.", 50},
+				{"botanica_17976_02", "Legion", "Arkane Widerstandspots und passendes Gear können hier helfen, aber die Debuffs müssen trotzdem beachtet und dispellt werden.", 40},
+				{"botanica_17976_03", "Important", "Arkane Resonanz so oft wie möglich dispellen. Dieser Debuff erhöht den erlittenen Arkanschaden des Ziels.", 30},
+				{"botanica_17976_04", "TANK", "Starke Def-CDs bereithalten, vor allem wenn die Gruppe Arkane Resonanz nicht zuverlässig dispellen kann, denn Arkane Verwüstung haut hart rein.", 20},
+				{"botanica_17976_05", "PriorityTargets", "Wenn Adds erscheinen, zuerst diese fokussen. Der Mender ist ein Elite-Heiler und kann per CC oder Fear gesichert werden. Ist er nicht im Fear, müssen seine Heals gekickt werden.", 10}}
+tipsMap_deDE[17975] = {{"botanica_17975_01", "PriorityTargets", "Wenn Adds spawnen, sollten die DDs zuerst auf sie gehen und erst danach wieder auf den Boss wechseln.", 40},
+				{"botanica_17975_02", "Important", "Wechselt der Boss in Baumgestalt, wird er immun. Das passiert im Kampf immer häufiger. Dabei erscheinen 3 Frayer Protectors, die Gelassenheit auf den Boss channeln. Sobald der Tank sie vom Boss weggezogen hat, müssen die DDs diese Adds fokussieren.", 30},
+				{"botanica_17975_03", "TANK", "Wechselt der Boss in Baumgestalt, die Frayer Protectors vom Boss wegziehen.", 20},
+				{"botanica_17975_04", "Important", "Gerade in den Addphasen sollten die DDs immer das Ziel des Tanks fokussieren, damit Boss und Adds schnell sterben. Sonst dauert der Kampf zu lange und der Heiler geht oom.", 10}}
+tipsMap_deDE[17978] = {{"botanica_17978_01", "Legion", "Optionaler Boss.", 90},
+				{"botanica_17978_02", "Legion", "Der Boss verursacht in der Opferphase eine Mischung aus Feuer-AoE und Schatten-DoT. Auren, Buffs oder Pots helfen beim Mitigieren. Wenn ihr nur eine Wahl habt, nehmt Feuer.", 80},
+				{"botanica_17978_03", "Important", "Der Boss castet Höllenfeuer und verursacht damit AoE-Feuerschaden. Heiler sollten das im Blick haben, weil Meelees hier deutlich mehr Schaden nehmen.", 70},
+				{"botanica_17978_04", "Important", "Vor dem Pull den Raum clearen, also die Adds am Boss und die zwei getarnten Mobs in Richtung Lajs Kammern töten.", 60},
+				{"botanica_17978_05", "Advanced", "POSITIONIERUNG: Der Tank sollte den Boss in der Mitte des Raums spielen, damit es keine LoS-Probleme für den Heiler gibt. Ein Off-Heiler ist sinnvoll, falls der Heiler geopfert wird.", 50},
+				{"botanica_17978_06", "Important", "Wird der Heiler geopfert, also 8-Sek.-Stun plus Schatten-DoT, während der Boss Leben absaugt, muss der Off-Heiler übernehmen. Meelee-DDs sollten aus der Reichweite von Höllenfeuer raus, um den Gruppenschaden zu senken.", 40},
+				{"botanica_17978_07", "TANK", "DEF-CDS: Wird der Heiler geopfert, solltest du Def-CDs ziehen, um den Off-Heiler zu entlasten, besonders wenn gar kein Off-Heiler da ist.", 30},
+				{"botanica_17978_08", "Defensives", "DEF-CDS: Def-CD ziehen, wenn der Boss gegen dich in Raserei geht. Das ist meistens der Tank.", 20},
+				{"botanica_17978_09", "HEALER", "Der Heiler muss den Spieler, auf dem Raserei liegt, möglichst auf vollem Leben halten.", 10}}
+tipsMap_deDE[17980] = {{"botanica_17980_01", "Important", "Allergische Reaktion als Krankheit vom Tank dispellen.", 40},
+				{"botanica_17980_02", "Important", "Auf die Farbe achten, in die sich Laj verwandelt. Gegen diese Schadensschule wird er immun, also dort nichts mehr casten.", 30},
+				{"botanica_17980_03", "Legion", "[BLAU] Frost; [ROT] Feuer; [GRÜN] Natur; [SCHWARZ] Schatten; [WEISS] Arkan", 20},
+				{"botanica_17980_04", "PriorityTargets", "Teleportiert sich der Boss zurück auf seine Plattform, erscheinen Adds, die sofort fokussiert werden müssen.", 10}}
+tipsMap_deDE[17977] = {{"botanica_17977_01", "Important", "DDs und Heiler sollten möglichst auf Maxrange stehen, um Stampfen zu vermeiden. Das hat 25 Meter Reichweite, macht physischen AoE-Schaden und stunnt 5 Sek.", 40},
+				{"botanica_17977_02", "WARRIOR", "Berserkerwut nutzen, um kurzzeitig immun gegen den Stun von Stampfen zu werden.", 30},
+				{"botanica_17977_03", "PriorityTargets", "Wenn Setzlinge beschworen werden, diese zuerst töten, da sie den Boss heilen. Gezielter Schuss, Tödlicher Stoß und Wundgift können die Heilung reduzieren.", 20},
+				{"botanica_17977_04", "Important", "Die Setzlinge lassen sich auch per Frostnova oder Psychischer Schrei kontrollieren.", 10}}
+tipsMap_deDE[20078] = {{"botanica_20078_01", "Legion", "Verursacht arkane Nahkampfschäden.", 10}}
+tipsMap_deDE[20083] = {{"botanica_20083_01", "PriorityTargets", "Fear auf den Mob oder ihn sofort downen, weil er Verbündete heilt, auch den Boss.", 10}}
 tipsMap_deDE[19953] = {{"botanica_19953_01", "PriorityTargets", "", 10}}
-tipsMap_deDE[19958] = {{"botanica_19958_01", "Important", "Dispel magic-effect from player that is encased in block of ice (Freezing Touch)", 10}}
-tipsMap_deDE[19962] = {{"botanica_19962_01", "Important", "AoE ability that reduces movement speed of players for 4 sec", 10}}
-tipsMap_deDE[19964] = {{"botanica_19964_01", "Important", "Deals Fire damage to random player", 10}}
-tipsMap_deDE[19969] = {{"botanica_19969_01", "Important", "Deals AoE Nature damage", 10}}
-tipsMap_deDE[19919] = {{"botanica_19919_01", "PriorityTargets", "Shots Thorn Missiles at player applying a Physical damage bleed", 10}}
-tipsMap_deDE[19920] = {{"botanica_19920_01", "PriorityTargets", "Casts Mind Flay at player applying Shadow damage +movement speed reduction to that player", 10}}
-tipsMap_deDE[19949] = {{"botanica_19949_01", "PriorityTargets", "Burn these adds down to prevent boss from being healed", 10}}
-tipsMap_deDE[17993] = {{"botanica_17993_01", "PriorityTargets", "CC/DPS these mobs down quickly before they can put up Spell Reflection", 20},
-				{"botanica_17993_02", "Important", "Immune to Mind Control", 10}}
-tipsMap_deDE[17994] = {{"botanica_17994_01", "Defensives", "Player with Call of the Falcon mark will take extra damage from Bloodfalcons", 10}}
+tipsMap_deDE[19958] = {{"botanica_19958_01", "Important", "Den Magie-Effekt von Spielern dispellen, die in einem Eisblock eingeschlossen sind. Das ist Freezing Touch.", 10}}
+tipsMap_deDE[19962] = {{"botanica_19962_01", "Important", "AoE-Fähigkeit, die das Bewegungstempo von Spielern 4 Sek. lang reduziert.", 10}}
+tipsMap_deDE[19964] = {{"botanica_19964_01", "Important", "Verursacht Feuerschaden an einem zufälligen Spieler.", 10}}
+tipsMap_deDE[19969] = {{"botanica_19969_01", "Important", "Verursacht Natur-AoE-Schaden.", 10}}
+tipsMap_deDE[19919] = {{"botanica_19919_01", "PriorityTargets", "Schießt Dornenraketen auf Spieler und hinterlässt einen physischen Blutungseffekt.", 10}}
+tipsMap_deDE[19920] = {{"botanica_19920_01", "PriorityTargets", "Castet Gedankenschinden auf einen Spieler und verursacht Schattenschaden plus Bewegungsverlangsamung.", 10}}
+tipsMap_deDE[19949] = {{"botanica_19949_01", "PriorityTargets", "Diese Adds schnell downen, damit der Boss nicht geheilt wird.", 10}}
+tipsMap_deDE[17993] = {{"botanica_17993_01", "PriorityTargets", "Diese Mobs per CC sichern oder schnell downen, bevor sie Zauberreflexion aktivieren.", 20},
+				{"botanica_17993_02", "Important", "Immun gegen Gedankenkontrolle.", 10}}
+tipsMap_deDE[17994] = {{"botanica_17994_01", "Defensives", "Spieler mit Ruf des Falken erleiden zusätzlichen Schaden durch Blutfalken.", 10}}
 tipsMap_deDE[18155] = {{"botanica_18155_01", "Legion", "", 10}}
-tipsMap_deDE[18404] = {{"botanica_18404_01", "Dodge", "DODGE: Arcane Flurry (AoE/WW Ability) when mob begins channeling, or stun this mob", 10}}
-tipsMap_deDE[18405] = {{"botanica_18405_01", "Legion", "Deal AoE damage and drain player mana from nearby players", 10}}
-tipsMap_deDE[18419] = {{"botanica_18419_01", "Legion", "Mobs deal primarily Nature Damage", 30},
-				{"botanica_18419_02", "Important", "Dispel Impending Coma (Poison) from tank (increases time between attacks +reduces movement speed +puts target to sleep)", 20},
-				{"botanica_18419_03", "Interrupts", "Interrupt: Greenkeeper's Fury (Lightning Bolt dealing Nature damage)", 10}}
-tipsMap_deDE[18420] = {{"botanica_18420_01", "Important", "Casts Arcane Explosion AoE (melee players may need extra heals)", 20},
-				{"botanica_18420_02", "Important", "Immune to Crowd Control", 10}}
+tipsMap_deDE[18404] = {{"botanica_18404_01", "Dodge", "AUSWEICHEN: Arkane Salve, die AoE-/Wirbelwind-Fähigkeit, sobald der Mob sie channeln beginnt, oder den Mob stunnen.", 10}}
+tipsMap_deDE[18405] = {{"botanica_18405_01", "Legion", "Verursacht AoE-Schaden und saugt nahen Spielern Mana ab.", 10}}
+tipsMap_deDE[18419] = {{"botanica_18419_01", "Legion", "Diese Mobs verursachen hauptsächlich Naturschaden.", 30},
+				{"botanica_18419_02", "Important", "Bevorstehendes Koma als Gift vom Tank dispellen. Es erhöht die Zeit zwischen Angriffen, verlangsamt und versetzt das Ziel in Schlaf.", 20},
+				{"botanica_18419_03", "Interrupts", "KICK: Fury des Grünhüters, ein Blitzschlag mit Naturschaden.", 10}}
+tipsMap_deDE[18420] = {{"botanica_18420_01", "Important", "Castet Arkane Explosion als AoE. Meelees brauchen hier eventuell Extra-Heilung.", 20},
+				{"botanica_18420_02", "Important", "Immun gegen Crowd Control.", 10}}
 -- First German dungeon tip pass for major TBC dungeon bosses and encounters.
 tipsMap_deDE[17306] = {
 	{"ramparts_17306_01", "Important", "Killt ZUERST die Adds, da sie den Boss heilen.", 20},
@@ -5715,7 +5715,7 @@ tipsMap_deDE[18373] = {
 
 tipsMap_deDE[18472] = {
 	{"sethekk_18472_01", "Legion", "Der Boss hat zwei Abschnitte: reine Bossphase und Addphase. Je nach Gruppe sollte vorher eine Killreihenfolge fuer die Elementare festgelegt werden.", 70},
-	{"sethekk_18472_02", "Advanced", "PHASE 1", 60},
+	{"sethekk_18472_02", "Advanced", "Phase 1", 60},
 	{"sethekk_18472_03", "Important", "Die Gruppe sollte sich moeglichst verteilen, um den Gruppenschaden durch Kettenblitz besser abzufangen.", 50},
 	{"sethekk_18472_04", "Advanced", "PHASE 2 - Addphase (bei 90%, 55% und 10% Bossleben)", 40},
 	{"sethekk_18472_05", "Important", "Jedes Elementar ist gegen den eigenen Schadentyp immun. Feuer-Mages sollten kein Feuer-Elementar angreifen und Hexer sollten keine Schattenzauber auf Schatten-Elementare casten. Das Schatten-Elementar ist ausserdem immun gegen Furcht und Verbannen. Am besten die Adds nacheinander zusammen mit dem Tank fokussieren statt sie per Cleave oder AoE runterzuspielen.", 30},
@@ -6019,7 +6019,7 @@ tipsMap_deDE[19016] = {
 tipsMap_deDE[16807] = {
 	{"shattered_halls_16807_01", "Important", "Der Kampf beginnt, wenn der letzte bzw. vierte Teufelsorc-Konvertit stirbt. Er kann von Spielern oder notfalls vom Boss selbst getoetet werden, wenn die Gruppe zu lange braucht.", 90},
 	{"shattered_halls_16807_02", "Legion", "Schattenwiderstands-Buffs oder -Auren helfen hier, wenn ihr Probleme habt.", 80},
-	{"shattered_halls_16807_03", "Advanced", "PHASE 1:", 70},
+	{"shattered_halls_16807_03", "Advanced", "Phase 1:", 70},
 	{"shattered_halls_16807_04", "Dodge", "AUSWEICHEN: Spieler in den Leerzonen muessen sofort rauslaufen.", 60},
 	{"shattered_halls_16807_05", "Important", "Der Boss castet Todesmantel auf zufaellige Spieler und verursacht Schattenschaden plus 4 Sek. Fear.", 50},
 	{"shattered_halls_16807_06", "SHAMAN", "Tremor Totem kann helfen, den Heiler vor dem 4-Sek.-Fear durch Todesmantel zu schuetzen.", 40},
@@ -7217,7 +7217,7 @@ tipsMap_deDE[15548] = {
 }
 tipsMap_deDE[15551] = {
 	{"kara_15551_01", "PriorityTargets", "", 20},
-	{"kara_15551_02", "Interrupts", "Kick: Tier heilen. Heilt Spektrale Streitrosse und Hengste.", 10},
+	{"kara_15551_02", "Interrupts", "KICK: Tier heilen. Heilt Spektrale Streitrosse und Hengste.", 10},
 }
 tipsMap_deDE[16170] = {
 	{"kara_16170_01", "Legion", "Getarnter Mob.", 10},
@@ -7298,7 +7298,7 @@ tipsMap_deDE[16460] = {
 	{"kara_16460_01", "PriorityTargets", "", 40},
 	{"kara_16460_02", "WARLOCK", "Immun gegen Fluch der Sprachen.", 30},
 	{"kara_16460_03", "Important", "Wirkt Drohender Verrat und verursacht nach 10 Sek. rund 3k Schaden.", 20},
-	{"kara_16460_04", "Important", "Loescht alle Debuffs bei 50%, wenn der Mob seine wahre Gestalt annimmt.", 10},
+	{"kara_16460_04", "Important", "Löscht bei 50% alle Debuffs, wenn der Mob seine wahre Gestalt annimmt.", 10},
 }
 tipsMap_deDE[16461] = {
 	{"kara_16461_01", "Important", "AoE-Verfuehren fuer 6 Sek. Der Off-Tank sollte etwas Abstand halten und uebernehmen, wenn der Main-Tank verfuehrt wird.", 20},
