@@ -255,6 +255,20 @@ def build_report() -> str:
 
     localized_detail_fields, localized_info_entries, instance_content_findings = collect_instance_content_stats(db_text)
 
+    old_hillsbrad_shift_signals: list[str] = []
+    for npc_id in [17833, 17839, 17860, 18092, 18093, 18094]:
+        de_tips = latest_de_entries.get(npc_id)
+        en_tips = en_entries.get(npc_id)
+        if not de_tips or not en_tips:
+            continue
+
+        de_prefix = de_tips[0].tip_id.split("_", 1)[0] if de_tips[0].tip_id else ""
+        en_prefix = en_tips[0].tip_id.split("_", 1)[0] if en_tips[0].tip_id else ""
+        if de_prefix != en_prefix:
+            old_hillsbrad_shift_signals.append(
+                f"`{npc_id}` uses German tip prefix `{de_prefix}` but English prefix `{en_prefix}`."
+            )
+
     translated_override_count = len(de_override_ids)
     total_en_count = len(en_entries)
     translated_percent = (translated_override_count / total_en_count * 100) if total_en_count else 0.0
@@ -331,6 +345,19 @@ def build_report() -> str:
         ]
     )
 
+    if old_hillsbrad_shift_signals:
+        report_lines.extend(
+            [
+                "",
+                "### 3a. Old Hillsbrad / Black Morass drift suspicion",
+                "",
+                "- The German block around the Old Hillsbrad trash IDs still looks suspicious and should be reviewed as one grouped section.",
+                "",
+                "Signals seen in the current file:",
+            ]
+        )
+        report_lines.extend([f"- {entry}" for entry in old_hillsbrad_shift_signals])
+
     if instance_content_findings:
         report_lines.extend(["", "Additional notes:"])
         report_lines.extend([f"- {entry}" for entry in instance_content_findings])
@@ -340,11 +367,10 @@ def build_report() -> str:
             "",
             "## Recommended next steps",
             "",
-            "1. Review and clean the duplicate `tipsMap_deDE` assignments first.",
-            "2. Fix the structural mismatches before translating further.",
-            "3. Work through untranslated `tipsMap_deDE` entries in controlled batches.",
-            "4. Review identical `npcNames` values and confirm which ones are real proper names versus placeholders.",
-            "5. Remove the visible `TEST:` marker from `instanceContent.auchenai_crypts` once the migration is considered stable.",
+            "1. Fix the structural mismatches before translating further.",
+            "2. Work through untranslated `tipsMap_deDE` entries in controlled batches.",
+            "3. Review identical `npcNames` values and confirm which ones are real proper names versus placeholders.",
+            "4. Remove the visible `TEST:` marker from `instanceContent.auchenai_crypts` once the migration is considered stable.",
             "",
             "## Important note",
             "",
