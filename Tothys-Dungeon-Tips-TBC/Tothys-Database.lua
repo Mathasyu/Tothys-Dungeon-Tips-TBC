@@ -5447,43 +5447,43 @@ tipsMap_deDE[19307] = {{"mana_tombs_19307_01", "PriorityTargets", "Deals Shadow 
 				{"mana_tombs_19307_03", "Defensives", "Defensive/Extra Heals when mob applies Shadows Embrace to player (40 yd range; Shadow DoT over 6 sec; Physical damage dealt decreased by 50%).", 30},
 				{"mana_tombs_19307_04", "Important", "LoS pull these mobs to safe area as this mob will cast Psychic Scream (AoE Fear) as well as Death Coil fear", 20},
 				{"mana_tombs_19307_05", "SHAMAN", "Use Tremor Totem to negate Psychic Scream & Death Coil fears", 10}}
-tipsMap_deDE[18636] = {{"shadow_lab_18636_01", "Important", "Will quickly down non-tanks, which is why tank should take point.", 20},
-					{"shadow_lab_18636_02", "WARLOCK", "After defeating first boss, warlocks should use their Succubus pet to CC assassin if they become stunned by these stealthed mobs", 10}}
-tipsMap_deDE[18637] = {{"shadow_lab_18637_01", "Important", "Dispel Shadow Word: Pain (magic effect; Shadow DoT)", 20},
-					{"shadow_lab_18637_02", "Interrupts", "Interrupt: Mind Flay", 10}}
-tipsMap_deDE[18638] = {{"shadow_lab_18638_01", "Important", "Dispel Shape of the Beast from mob (Magic effect that reduces time between attacks, increased attack power, but can't cast spells). Because this buff prevents spell casting, a Warlock Felhunter's ability Devour Magic should be used. If no one can effectively remove the beneficial magic from enemy, tank may need additional heals/pop defensive CDs", 10}}
-tipsMap_deDE[18639] = {{"shadow_lab_18639_01", "Important", "CC player who is mind-controlled from Brain Wash", 20},
-					{"shadow_lab_18639_02", "Defensives", "Defensives may be needed if either the tank or healer gets MC'd", 10}}
-tipsMap_deDE[18640] = {{"shadow_lab_18640_01", "Important", "Dispel Seed of Corruption from players (magic effect dealing AoE shadow damage)", 20},
-					{"shadow_lab_18640_02", "Important", "If no dispeller, the player struck by Seed of Corruption should run out of group. If tank is the one hit by it, players need to run 10 yds from tank to avoid AoE", 10}}
-tipsMap_deDE[19166] = {{"mechanar_19166_01", "Legion", "Mob deals mostly Arcane Damage", 30},
-				{"mechanar_19166_02", "TANK", "Pull this mob away from other mobs to prevent other trash from also being pulled", 20},
-				{"mechanar_19166_03", "Important", "Ranged DPS and Healer should stand at least 5 yds from Patroller as it has a 2 sec AoE Stun", 10}}
-tipsMap_deDE[19167] = {{"mechanar_19167_01", "Defensives", "When fighting these mobs, healers will need to pay extra attention to tank's health as mob's Solar Strike reduces healing effectiveness, as well as Melt Armor (reducing nearby player's armor). Tank may also need to pop a defensive CD", 10}}
-tipsMap_deDE[19168] = {{"mechanar_19168_01", "Legion", "Fire Mage-Type Mob", 20},
-				{"mechanar_19168_02", "Important", "It is best to use ranged DPS to burn these mobs down as Fire Shield deals AoE Fire Damage to nearby players", 10}}
-tipsMap_deDE[19231] = {{"mechanar_19231_01", "Legion", "Mob will disarm their target with the Claw ability", 20},
-				{"mechanar_19231_02", "Important", "Dispel Poison (Glob of Machine Fluid) from players (Nature DoT over 10 sec; +Reduced movement speed)", 10}}
-tipsMap_deDE[19510] = {{"mechanar_19510_01", "Important", "Warrior-Type Mobs that decrease nearby players' armor and increase attack and movement speed.", 20},
-				{"mechanar_19510_02", "Defensives", "When Centurion's are up and in the group that is being fought, tank may need to pop extra defensive CDs due to Melt Armor ability, and may also need additonal heals", 10}}
-tipsMap_deDE[19712] = {{"mechanar_19712_01", "Important", "DPS and Healer needs to watch their threat as Driller applies stacking debuff that reduces movement speed and armor of their target!", 30},
-				{"mechanar_19712_02", "WARLOCK", "This mob is vulnerable to Banish and Fear", 20},
-				{"mechanar_19712_03", "Important", "Driller applies debuff that will reduce armor by 20% per stack, stacking up to 5 times. This mob should be killed quickly as it can overwhelm tank & healer at higher stacks", 10}}
-tipsMap_deDE[19713] = {{"mechanar_19713_01", "Legion", "Mob will disorient their target for 5 sec with the Pound ability", 20},
-				{"mechanar_19713_02", "Important", "Dispel Poison (Glob of Machine Fluid) from players (Nature DoT over 10 sec; +Reduced movement speed)", 10}}
-tipsMap_deDE[19716] = {{"mechanar_19716_01", "Important", "Players should spread out when this mob is in a pull as Netherbomb deals Arcane AoE to selected area", 20},
-				{"mechanar_19716_02", "Important", "Ranged DPS are preferred for this mob as Nether Explosion deals heavy AoE in their melee range", 10}}
-tipsMap_deDE[19735] = {{"mechanar_19735_01", "Legion", "Mob deals mostly Arcane Damage", 30},
-				{"mechanar_19735_02", "TANK", "Pull this mob away from other mobs to prevent other trash from also being pulled", 20},
-				{"mechanar_19735_03", "Important", "Ranged DPS and Healer should stand at least 5 yds from Destroy as it has a 2 sec AoE Stun, and Destroyer has melee range AoE", 10}}
-tipsMap_deDE[20059] = {{"mechanar_20059_01", "PriorityTargets", "Mob should be CC'd or killed quickly due to Arcane Nova (AoE Arcane Damage that also heals its allies).", 20},
-				{"mechanar_20059_02", "Important", "When Netherbinder summons their Arcane Servant, this should be DPS'd down quickly due to its low health and AoE damage", 10}}
-tipsMap_deDE[20478] = {{"mechanar_20478_01", "PriorityTargets", "Summoned by Sunseeker Netherbinder; Deals AoE damage.", 10}}
-tipsMap_deDE[20988] = {{"mechanar_20988_01", "PriorityTargets", "These mobs can be dangerous as they buff their allies. Use CC abilities or focus them down quickly", 10}}
-tipsMap_deDE[20990] = {{"mechanar_20990_01", "PriorityTargets", "Mob should be crowd-controlled or killed first", 40},
-				{"mechanar_20990_02", "Interrupts", "INTERRUPT: Bandage (8 sec Channeled; Healing an ally)", 30},
-				{"mechanar_20990_03", "Important", "Dispel player that is put to sleep by mob (esp if it's the healer) - this lasts 6 sec. If no dispel available, an off-healer may need to step up to fill healer's role during that time", 20},
-				{"mechanar_20990_04", "SHAMAN", "Use your Tremor Totem to remove sleep", 10}}
+tipsMap_deDE[18636] = {{"shadow_lab_18636_01", "Important", "Nicht-Tanks gehen gegen diesen Mob sehr schnell um. Darum sollte immer der Tank vorne stehen.", 20},
+					{"shadow_lab_18636_02", "WARLOCK", "Nach dem ersten Boss sollten Hexer ihre Sukkubus nutzen, um den Assassinen per CC zu sichern, wenn sie von diesen getarnten Mobs gestunnt werden.", 10}}
+tipsMap_deDE[18637] = {{"shadow_lab_18637_01", "Important", "Schattenwort: Schmerz vom Spieler dispellen. Das ist ein Magie-Effekt mit Schatten-DoT.", 20},
+					{"shadow_lab_18637_02", "Interrupts", "KICK: Gedankenschinden.", 10}}
+tipsMap_deDE[18638] = {{"shadow_lab_18638_01", "Important", "Gestalt des Tieres vom Mob dispellen. Dieser Magie-Buff verkürzt die Zeit zwischen Angriffen, erhöht die Angriffskraft und verhindert Zaubern. Weil der Buff selbst das Zaubern unterbindet, eignet sich Magie verschlingen vom Hexer-Felhunter besonders gut. Kann niemand den Buff zuverlässig entfernen, braucht der Tank eventuell Extra-Heilung oder Def-CDs.", 10}}
+tipsMap_deDE[18639] = {{"shadow_lab_18639_01", "Important", "Spieler, die durch Gehirnwäsche übernommen werden, sofort per CC sichern.", 20},
+					{"shadow_lab_18639_02", "Defensives", "Def-CDs können nötig sein, wenn Tank oder Heiler übernommen werden.", 10}}
+tipsMap_deDE[18640] = {{"shadow_lab_18640_01", "Important", "Saat der Verderbnis von Spielern dispellen. Das ist ein Magie-Effekt, der AoE-Schattenschaden verursacht.", 20},
+					{"shadow_lab_18640_02", "Important", "Gibt es keinen Dispel, muss der betroffene Spieler aus der Gruppe laufen. Trifft es den Tank, müssen alle anderen 10 Meter Abstand vom Tank halten, um den AoE zu vermeiden.", 10}}
+tipsMap_deDE[19166] = {{"mechanar_19166_01", "Legion", "Der Mob verursacht hauptsächlich Arkanschaden.", 30},
+				{"mechanar_19166_02", "TANK", "Diesen Mob von anderen Gruppen wegpullen, damit kein weiterer Trash mitkommt.", 20},
+				{"mechanar_19166_03", "Important", "Range-DDs und Heiler sollten mindestens 5 Meter Abstand halten, weil der Patrouillierer einen 2-Sek.-AoE-Stun hat.", 10}}
+tipsMap_deDE[19167] = {{"mechanar_19167_01", "Defensives", "Bei diesen Mobs muss der Heiler besonders auf den Tank achten. Solar Strike reduziert die Heilwirkung und Rüstung schmelzen senkt die Rüstung naher Spieler. Der Tank braucht eventuell auch Def-CDs.", 10}}
+tipsMap_deDE[19168] = {{"mechanar_19168_01", "Legion", "Feuermagier-artiger Mob.", 20},
+				{"mechanar_19168_02", "Important", "Am besten per Range-DDs downen, weil Feuerschild AoE-Feuerschaden an nahen Spielern macht.", 10}}
+tipsMap_deDE[19231] = {{"mechanar_19231_01", "Legion", "Der Mob entwaffnet sein Ziel mit Klaue.", 20},
+				{"mechanar_19231_02", "Important", "Maschinenflüssigkeit als Gift von Spielern dispellen. Das ist ein 10-Sek.-Natur-DoT mit zusätzlichem Slow.", 10}}
+tipsMap_deDE[19510] = {{"mechanar_19510_01", "Important", "Warrior-artige Mobs, die die Rüstung naher Spieler senken und ihr Angriffs- und Bewegungstempo erhöhen.", 20},
+				{"mechanar_19510_02", "Defensives", "Sind Zenturios in der aktiven Gruppe, braucht der Tank wegen Rüstung schmelzen eventuell Extra-Def-CDs und zusätzliche Heilung.", 10}}
+tipsMap_deDE[19712] = {{"mechanar_19712_01", "Important", "DDs und Heiler müssen auf ihre Aggro achten, denn der Driller legt einen stapelbaren Debuff auf sein Ziel, der Bewegungstempo und Rüstung senkt.", 30},
+				{"mechanar_19712_02", "WARLOCK", "Dieser Mob ist anfällig für Verbannen und Fear.", 20},
+				{"mechanar_19712_03", "Important", "Der Debuff reduziert pro Stapel die Rüstung um 20%, bis zu 5 Stapel. Dieser Mob sollte schnell sterben, bevor er Tank und Heiler überrollt.", 10}}
+tipsMap_deDE[19713] = {{"mechanar_19713_01", "Legion", "Der Mob desorientiert sein Ziel mit Stampfen 5 Sek. lang.", 20},
+				{"mechanar_19713_02", "Important", "Maschinenflüssigkeit als Gift von Spielern dispellen. Das ist ein 10-Sek.-Natur-DoT mit zusätzlichem Slow.", 10}}
+tipsMap_deDE[19716] = {{"mechanar_19716_01", "Important", "Spieler sollten sich verteilen, wenn dieser Mob im Pull ist, denn Netherbombe macht Arkan-AoE auf eine gewählte Fläche.", 20},
+				{"mechanar_19716_02", "Important", "Range-DDs sind hier besser, weil Netherexplosion starken AoE in seinem Nahkampfbereich verursacht.", 10}}
+tipsMap_deDE[19735] = {{"mechanar_19735_01", "Legion", "Der Mob verursacht hauptsächlich Arkanschaden.", 30},
+				{"mechanar_19735_02", "TANK", "Diesen Mob von anderen Gruppen wegpullen, damit kein weiterer Trash mitkommt.", 20},
+				{"mechanar_19735_03", "Important", "Range-DDs und Heiler sollten mindestens 5 Meter Abstand zum Zerstörer halten, weil er einen 2-Sek.-AoE-Stun und zusätzlich Nahkampf-AoE hat.", 10}}
+tipsMap_deDE[20059] = {{"mechanar_20059_01", "PriorityTargets", "Diesen Mob per CC sichern oder schnell töten, wegen Arkannova. Die macht Arkan-AoE und heilt zusätzlich seine Verbündeten.", 20},
+				{"mechanar_20059_02", "Important", "Beschwört der Netherbinder seinen Arkanen Diener, sollte der wegen seines niedrigen Lebens und AoE-Schadens sofort downgehen.", 10}}
+tipsMap_deDE[20478] = {{"mechanar_20478_01", "PriorityTargets", "Wird vom Sonnensucher-Netherbinder beschworen und verursacht AoE-Schaden.", 10}}
+tipsMap_deDE[20988] = {{"mechanar_20988_01", "PriorityTargets", "Diese Mobs werden gefährlich, weil sie ihre Verbündeten buffen. Per CC sichern oder schnell fokussen.", 10}}
+tipsMap_deDE[20990] = {{"mechanar_20990_01", "PriorityTargets", "Diesen Mob per CC sichern oder zuerst töten.", 40},
+				{"mechanar_20990_02", "Interrupts", "KICK: Verband, ein 8-Sek.-Channel, der einen Verbündeten heilt.", 30},
+				{"mechanar_20990_03", "Important", "Spieler dispellen, die von diesem Mob schlafen gelegt werden, besonders den Heiler. Der Schlaf hält 6 Sek. Gibt es keinen Dispel, muss eventuell ein Off-Heiler übernehmen.", 20},
+				{"mechanar_20990_04", "SHAMAN", "Tremor Totem nutzen, um Schlaf zu entfernen.", 10}}
 tipsMap_deDE[17976] = {{"botanica_17976_01", "Important", "Make sure to pull adds before engaging the boss (boss will pat back and forth over a bridge", 50},
 				{"botanica_17976_02", "Legion", "Arcane resistance pots and gear could be helpful for this fight, but debuffs still need to be watched/dispelled.", 40},
 				{"botanica_17976_03", "Important", "Dispel Arcane Resonance (increases target's Arcane damage taken) as often as possible.", 30},
