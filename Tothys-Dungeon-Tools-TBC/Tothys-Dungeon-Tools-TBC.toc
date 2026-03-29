@@ -1,0 +1,10 @@
+## Interface: 20501
+## Title: Kiesel Dungeon Tool
+## Author: Mathasyu, based on work by Voulk
+## Notes: Clean TBC-only rewrite of Kiesel Dungeon Tool with a normalized content model.
+## Version: 0.1.0
+## SavedVariables: TDT2Config, TDT2UserData
+
+Tothys-Core.lua
+Tothys-Data.lua
+Tothys-UI.lua
