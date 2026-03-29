@@ -5390,28 +5390,28 @@ tipsMap_deDE[21695] = {{"steamvaults_21695_01", "Important", "These mobs should 
 tipsMap_deDE[21696] = {{"steamvaults_21696_01", "Legion", "This mob deals Frost Damage; having proper aura/resistances can be helpful in mitigating some of mob's damage", 20},
 					{"steamvaults_21696_02", "Legion", "Mob has 45 yd range attack in form of Water Bolt (Instant Frost damaging ability)", 10}}
 tipsMap_deDE[22891] = {{"steamvaults_22891_01", "Legion", "", 10}}
-tipsMap_deDE[18341] = {{"mana_tombs_18341_01", "Important", "Pulling this boss will also pull the trash in the room!", 90},
-				{"mana_tombs_18341_02", "Important", "VOID BLAST (Volley of Void Bolts dealing Shadow damage +Knock back to players) - Fight mob with back against wall.", 80},
-				{"mana_tombs_18341_03", "SHAMAN", "Keep Grounding Totem active as it will absorb Shadow Bolts", 70},
-				{"mana_tombs_18341_04", "WARRIOR", "If you don't have a Shaman that can apply Grounding Totem, use SPELL REFLECTION to reflect the Void Blast back to boss", 60},
-				{"mana_tombs_18341_05", "Important", "DARK SHELL - ALL STOP ATTACKING! (Reflects melee and spell attacks back to player, but not Hunter's ranged abilities)", 50},
-				{"mana_tombs_18341_06", "Legion", "Watch for emote: 'Pandemonius shifts into the void...' to know when you should stop DPS due to Dark Shell", 40},
-				{"mana_tombs_18341_07", "DRUID", "Thorns should NOT be applied to the tank due to Dark Shell", 30},
-				{"mana_tombs_18341_08", "PALADIN", "Retribution Aura should NOT be used due to Dark Shell", 20},
-				{"mana_tombs_18341_09", "Legion", "Shadow Resistance Buffs/Aura will be helpful with this boss", 10}}
-tipsMap_deDE[18343] = {{"mana_tombs_18343_01", "Advanced", "POSITIONING: Melee should be behind boss, with ranged standing at max range. Tank boss away from party members to avoid Arcing Smash frontal attack", 50},
-				{"mana_tombs_18343_02", "Important", "Earthquake (Deals AoE Nature damage +3 sec stun)", 40},
-				{"mana_tombs_18343_03", "HEALER", "Make sure party members are topped off when Earthquake is being cast", 30},
-				{"mana_tombs_18343_04", "Important", "Crystal Prison (Stuns random player in crystal; Dealing 50% of your health in damage over 5 sec as nature damage)", 20},
-				{"mana_tombs_18343_05", "HEALER", "Heal up the player that is in the Crystal Prison!", 10}}
-tipsMap_deDE[18344] = {{"mana_tombs_18344_01", "Legion", "Boss & Apprentice adds deal combo of Fire & Frost damage; Beacons deal Arcane Damage.", 80},
-				{"mana_tombs_18344_02", "PALADIN", "Use Fire Resistance Aura (second pally can use Frost Resist Aura)", 70},
-				{"mana_tombs_18344_03", "PRIEST", "Use Shadow Protection on party members", 60},
-				{"mana_tombs_18344_04", "PriorityTargets", "Make sure that the Ethereal Beacons are being focused down anytime they're active!", 50},
-				{"mana_tombs_18344_05", "Legion", "Watch for when boss says: 'I have such fascinating things to show you.' This is the group's warning to switch to the Beacons about to spawn", 40},
-				{"mana_tombs_18344_06", "Important", "Boss often casts Frost Nova and Blinks out of melee range - bringing a group with strong ranged attacks is helpful.", 30},
-				{"mana_tombs_18344_07", "Important", "Dispel Frost Nova (magic-effect) from group, or at least the tank", 20},
-				{"mana_tombs_18344_08", "TANK", "When Frost Nova wears off move quickly to boss to get aggro back!", 10}}
+tipsMap_deDE[18341] = {{"mana_tombs_18341_01", "Important", "Beim Pull dieses Bosses wird auch der Trash im Raum mitgepullt.", 90},
+				{"mana_tombs_18341_02", "Important", "LEERENSALVE, also eine Salve aus Leerenblitzen mit Schattenschaden und Knockback, macht den Kampf mit dem Rücken zur Wand deutlich sicherer.", 80},
+				{"mana_tombs_18341_03", "SHAMAN", "Erdungs-Totem aktiv halten, damit es Schattenblitze absorbiert.", 70},
+				{"mana_tombs_18341_04", "WARRIOR", "Gibt es keinen Shaman mit Erdungs-Totem, kann Zauberreflexion Leerenblitz zum Boss zurückwerfen.", 60},
+				{"mana_tombs_18341_05", "Important", "DUNKLE HÜLLE: ALLE sofort aufhören anzugreifen. Sie reflektiert Meelee- und Zauberangriffe, aber keine Distanzangriffe des Hunters.", 50},
+				{"mana_tombs_18341_06", "Legion", "Auf das Emote achten: 'Pandemonius shifts into the void...' Dann sofort den DPS wegen Dunkler Hülle stoppen.", 40},
+				{"mana_tombs_18341_07", "DRUID", "Dornen wegen Dunkler Hülle NICHT auf den Tank legen.", 30},
+				{"mana_tombs_18341_08", "PALADIN", "Vergeltungsaura wegen Dunkler Hülle NICHT nutzen.", 20},
+				{"mana_tombs_18341_09", "Legion", "Schattenwiderstands-Buffs oder -Aura helfen bei diesem Boss.", 10}}
+tipsMap_deDE[18343] = {{"mana_tombs_18343_01", "Advanced", "POSITIONIERUNG: Meelees hinter dem Boss, Ranges auf Maxrange. Den Boss von der Gruppe wegdrehen, damit Arcing Smash als Frontalangriff niemanden mittrifft.", 50},
+				{"mana_tombs_18343_02", "Important", "Erdbeben verursacht Natur-AoE und einen 3-Sek.-Stun.", 40},
+				{"mana_tombs_18343_03", "HEALER", "Gruppenmitglieder möglichst voll halten, wenn Erdbeben gecastet wird.", 30},
+				{"mana_tombs_18343_04", "Important", "Kristallgefängnis betäubt einen zufälligen Spieler im Kristall und verursacht über 5 Sek. Naturschaden in Höhe von 50% seines Lebens.", 20},
+				{"mana_tombs_18343_05", "HEALER", "Den Spieler im Kristallgefängnis sofort hochheilen.", 10}}
+tipsMap_deDE[18344] = {{"mana_tombs_18344_01", "Legion", "Boss und Lehrlings-Adds verursachen eine Mischung aus Feuer- und Frostschaden. Die Leuchtfeuer machen Arkanschaden.", 80},
+				{"mana_tombs_18344_02", "PALADIN", "Feuerwiderstands-Aura nutzen, ein zweiter Paladin kann Frostwiderstands-Aura stellen.", 70},
+				{"mana_tombs_18344_03", "PRIEST", "Schattenzauberschutz auf die Gruppe legen.", 60},
+				{"mana_tombs_18344_04", "PriorityTargets", "Sobald Astrale Leuchtfeuer aktiv sind, müssen sie sofort fokussiert werden.", 50},
+				{"mana_tombs_18344_05", "Legion", "Achtet auf das Boss-Emote: 'I have such fascinating things to show you.' Das ist das Signal für die gleich spawnenden Leuchtfeuer.", 40},
+				{"mana_tombs_18344_06", "Important", "Der Boss castet oft Frostnova und blinkt aus der Meelee-Reichweite. Eine Gruppe mit starkem Range-Schaden hilft hier sehr.", 30},
+				{"mana_tombs_18344_07", "Important", "Frostnova als Magie-Effekt von der Gruppe oder mindestens vom Tank dispellen.", 20},
+				{"mana_tombs_18344_08", "TANK", "Sobald Frostnova runter ist, sofort wieder an den Boss ran und Aggro aufnehmen.", 10}}
 tipsMap_deDE[22930] = {{"mana_tombs_22930_01", "Legion", "Summonable only on HEROIC mode by a party member that has Shaffar's Stasis Chamber Key or The Eye of Haramad (the eye is not consumed on use)", 50},
 				{"mana_tombs_22930_02", "Legion", "TANK: Fire Resistance gear/pots will be helpful to mitigate some boss damage during frontal-cone DOUBLE BREATH", 40},
 				{"mana_tombs_22930_03", "TANK", "Tank should turn boss away from group as Yor's DOUBLE BREATH deals frontal cone of Fire Damage", 30},
@@ -5421,32 +5421,32 @@ tipsMap_deDE[18431] = {{"mana_tombs_18431_01", "PriorityTargets", "DPS should bu
 tipsMap_deDE[18430] = {{"mana_tombs_18430_01", "PriorityTargets", "If Ethereal Beacons are not destroyed quickly enough, these mobs will take their place", 30},
 				{"mana_tombs_18430_02", "Important", "Deal HEAVY Fire & Frost damage", 20},
 				{"mana_tombs_18430_03", "Legion", "Vulnerable to CC such as Polymorph", 10}}
-tipsMap_deDE[18309] = {{"mana_tombs_18309_01", "Important", "Mobs will use Shield Bash (spell locks player from casting that magic school for 8 sec), mob will sometimes leave tank to interrupt your ability", 20},
-				{"mana_tombs_18309_02", "HEALER", "Healer should stand some distance when dealing with these mobs to allow for advance notice of this mob approaching you", 10}}
-tipsMap_deDE[18311] = {{"mana_tombs_18311_01", "Important", "Tank should LoS pull mob to walk into melee range, otherwise it could charge and stun a player for 2 sec.", 20},
-				{"mana_tombs_18311_02", "Defensives", "Mob will apply Soul Strike (likely to tank; lasting 5 sec) which cuts the effectivess of heals received by 50%. Tanks may need to pop additional CDs and will require extra heals to stay alive", 10}}
-tipsMap_deDE[18312] = {{"mana_tombs_18312_01", "PriorityTargets", "Main threat from this mob actually comes from the Ethereal Wraith that they summon. Burn adds and this mob down quickly!", 20},
-				{"mana_tombs_18312_02", "Important", "Casters should stand at max range to avoid Counterspell (3 sec spell locking)", 10}}
-tipsMap_deDE[18313] = {{"mana_tombs_18313_01", "PriorityTargets", "Tank should LoS pull these ranged mobs. Group should DPS mob down quickly due to heavy damage from Arcane Missiles. Sorcerer summons an Arcane Fiend.", 10}}
-tipsMap_deDE[18314] = {{"mana_tombs_18314_01", "Important", "Mob will apply Gouge (likely on tank; lasting 4 sec). Mobs will then go after #2 on the threat meter. Use of slows/kiting will be helpful until tank can pick up aggro again", 10}}
-tipsMap_deDE[18315] = {{"mana_tombs_18315_01", "Legion", "Deals mostly Fire & Physical damage", 30},
-				{"mana_tombs_18315_02", "Interrupts", "INTERRUPT: Polymorph (sheeps random player)", 20},
-				{"mana_tombs_18315_03", "Important", "Slow/Kite mob if it successfully Polymorphs tank", 10}}
-tipsMap_deDE[18317] = {{"mana_tombs_18317_01", "PriorityTargets", "Due to Holy Nova doing good sized heal to allies and damage to players, it is best to focus these adds down or DPS them quickly.", 20},
-				{"mana_tombs_18317_02", "Interrupts", "INTERRUPT: Heal", 10}}
-tipsMap_deDE[18331] = {{"mana_tombs_18331_01", "Important", "LoS pull these ranged mobs", 20},
-				{"mana_tombs_18331_02", "Interrupts", "INTERRUPT: Mana Burn", 10}}
-tipsMap_deDE[18394] = {{"mana_tombs_18394_01", "PriorityTargets", "Summoned from Ethereal Spellbinders; DPS should focus this mob down quickly as high damage Shadow Bolt Volley hits nearby players", 10}}
-tipsMap_deDE[18429] = {{"mana_tombs_18429_01", "PriorityTargets", "Deals Arcane Explosion & Counterspell on casters", 10}}
-tipsMap_deDE[19306] = {{"mana_tombs_19306_01", "Important", "LoS pull this mob; Ranged DPS/Healer should stand at least 10 yds away to avoid Arcane Explosion AoE", 40},
-				{"mana_tombs_19306_02", "PriorityTargets", "INTERRUPT: Mana Burn", 30},
-				{"mana_tombs_19306_03", "Important", "Dispel Faerie Fire from especially from melee player (magic effect; reduces armor for 20 sec)", 20},
-				{"mana_tombs_19306_04", "Important", "When mob dies, it will deal an Arcane Explosion AoE", 10}}
-tipsMap_deDE[19307] = {{"mana_tombs_19307_01", "PriorityTargets", "Deals Shadow Damage - Having Shadow resistance buffs/auras can help mitigate some of the damage this mob deals to group", 50},
-				{"mana_tombs_19307_02", "Important", "Dispel Curse of Impotence (magical damage dealt reduced for 60 sec) from mana-using player", 40},
-				{"mana_tombs_19307_03", "Defensives", "Defensive/Extra Heals when mob applies Shadows Embrace to player (40 yd range; Shadow DoT over 6 sec; Physical damage dealt decreased by 50%).", 30},
-				{"mana_tombs_19307_04", "Important", "LoS pull these mobs to safe area as this mob will cast Psychic Scream (AoE Fear) as well as Death Coil fear", 20},
-				{"mana_tombs_19307_05", "SHAMAN", "Use Tremor Totem to negate Psychic Scream & Death Coil fears", 10}}
+tipsMap_deDE[18309] = {{"mana_tombs_18309_01", "Important", "Diese Mobs nutzen Schildhieb und sperren die getroffene Magieschule 8 Sek. lang. Dafür verlassen sie auch mal den Tank, um einen Cast zu unterbrechen.", 20},
+				{"mana_tombs_18309_02", "HEALER", "Als Heiler etwas Abstand halten, damit du früher siehst, wenn dieser Mob auf dich zuläuft.", 10}}
+tipsMap_deDE[18311] = {{"mana_tombs_18311_01", "Important", "Den Mob per LoS-Pull in den Meelee ziehen, sonst charged er einen Spieler und stunnt ihn 2 Sek. lang.", 20},
+				{"mana_tombs_18311_02", "Defensives", "Seelenschlag auf dem Tank reduziert 5 Sek. lang die erhaltene Heilung um 50%. Der Tank braucht dafür eventuell zusätzliche Def-CDs und Extra-Heilung.", 10}}
+tipsMap_deDE[18312] = {{"mana_tombs_18312_01", "PriorityTargets", "Die eigentliche Gefahr kommt vom Astralen Geist, den dieser Mob beschwört. Adds und diesen Mob schnell burnen.", 20},
+				{"mana_tombs_18312_02", "Important", "Caster sollten auf Maxrange stehen, um Gegenzauber mit 3-Sek.-Spelllock zu vermeiden.", 10}}
+tipsMap_deDE[18313] = {{"mana_tombs_18313_01", "PriorityTargets", "Diese Range-Mobs per LoS-Pull reinziehen. Wegen des hohen Schadens durch Arkane Geschosse sollte die Gruppe sie schnell downen. Der Zauberer beschwört außerdem einen Arkanteufel.", 10}}
+tipsMap_deDE[18314] = {{"mana_tombs_18314_01", "Important", "Der Mob nutzt Solarplexus, meist auf den Tank, für 4 Sek. Danach geht er auf Platz 2 der Bedrohungsliste. Verlangsamungen und Kiten helfen, bis der Tank wieder Aggro hat.", 10}}
+tipsMap_deDE[18315] = {{"mana_tombs_18315_01", "Legion", "Verursacht hauptsächlich Feuer- und physischen Schaden.", 30},
+				{"mana_tombs_18315_02", "Interrupts", "KICK: Polymorph, also Schaf auf einen zufälligen Spieler.", 20},
+				{"mana_tombs_18315_03", "Important", "Wird der Tank erfolgreich in ein Schaf verwandelt, den Mob verlangsamen oder kiten.", 10}}
+tipsMap_deDE[18317] = {{"mana_tombs_18317_01", "PriorityTargets", "Wegen Heilige Nova, die Verbündete stark heilt und Spielern Schaden macht, sollten diese Adds schnell fokussiert werden.", 20},
+				{"mana_tombs_18317_02", "Interrupts", "KICK: Heilung.", 10}}
+tipsMap_deDE[18331] = {{"mana_tombs_18331_01", "Important", "Diese Range-Mobs per LoS-Pull reinziehen.", 20},
+				{"mana_tombs_18331_02", "Interrupts", "KICK: Mana Burn.", 10}}
+tipsMap_deDE[18394] = {{"mana_tombs_18394_01", "PriorityTargets", "Wird von Astralen Bannwirkerinnen beschworen. DDs sollten diesen Mob sofort fokussieren, da seine Schattenblitzsalve nahe Spieler hart trifft.", 10}}
+tipsMap_deDE[18429] = {{"mana_tombs_18429_01", "PriorityTargets", "Verursacht Arkane Explosion und kontert Caster per Gegenzauber.", 10}}
+tipsMap_deDE[19306] = {{"mana_tombs_19306_01", "Important", "Diesen Mob per LoS-Pull reinziehen. Range-DDs und Heiler sollten mindestens 10 Meter Abstand halten, um Arkane Explosion zu vermeiden.", 40},
+				{"mana_tombs_19306_02", "PriorityTargets", "KICK: Mana Burn.", 30},
+				{"mana_tombs_19306_03", "Important", "Feenfeuer vor allem von Meelees dispellen. Das ist ein Magie-Effekt, der 20 Sek. lang die Rüstung senkt.", 20},
+				{"mana_tombs_19306_04", "Important", "Beim Tod des Mobs folgt eine Arkane Explosion als AoE.", 10}}
+tipsMap_deDE[19307] = {{"mana_tombs_19307_01", "PriorityTargets", "Verursacht Schattenschaden. Schattenwiderstands-Buffs oder -Auren können einen Teil des Gruppenschadens mindern.", 50},
+				{"mana_tombs_19307_02", "Important", "Fluch der Ohnmacht von Mananutzern dispellen. Er reduziert 60 Sek. lang den verursachten Magieschaden.", 40},
+				{"mana_tombs_19307_03", "Defensives", "Extra-Heilung oder Def-CDs sind sinnvoll, wenn Schattenumarmung auf einem Spieler liegt. Das ist ein 40-Meter-Schatten-DoT über 6 Sek. und halbiert den physischen Schaden.", 30},
+				{"mana_tombs_19307_04", "Important", "Diese Mobs per LoS-Pull an einen sicheren Ort ziehen, da sie sowohl Psychischer Schrei als AoE-Fear als auch Todesmantel-Fear nutzen.", 20},
+				{"mana_tombs_19307_05", "SHAMAN", "Tremor Totem nutzen, um Psychischer Schrei und Todesmantel-Fear abzufangen.", 10}}
 tipsMap_deDE[18636] = {{"shadow_lab_18636_01", "Important", "Nicht-Tanks gehen gegen diesen Mob sehr schnell um. Darum sollte immer der Tank vorne stehen.", 20},
 					{"shadow_lab_18636_02", "WARLOCK", "Nach dem ersten Boss sollten Hexer ihre Sukkubus nutzen, um den Assassinen per CC zu sichern, wenn sie von diesen getarnten Mobs gestunnt werden.", 10}}
 tipsMap_deDE[18637] = {{"shadow_lab_18637_01", "Important", "Schattenwort: Schmerz vom Spieler dispellen. Das ist ein Magie-Effekt mit Schatten-DoT.", 20},
