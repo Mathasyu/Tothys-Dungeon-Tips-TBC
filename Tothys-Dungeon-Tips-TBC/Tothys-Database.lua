@@ -4996,10 +4996,10 @@ tipsMap_enUS = {
 tipsMap_deDE = tipsMap_deDE or {}
 
 -- Explicit German placeholder copies for untranslated shipped entries.
-tipsMap_deDE[126389] = {{"example_126389_01", "Blank", "A+ Tip right here. \n It's a shame it's so damn long eh? It just goes on and on and on and ooon", 20},
-				{"example_126389_02", "Interrupts", "INTERRUPT: Stone Bolt", 10}}
-tipsMap_deDE[99999] = {{"example_99999_01", "Important", "PlaceholderImportant", 30}, {"example_99999_02", "Important", "PlaceholderImportant", 20},
-				{"example_99999_03", "Advanced", "PlaceholderAdvanced", 10}}
+tipsMap_deDE[126389] = {{"example_126389_01", "Blank", "A+-Tipp direkt hier. \n Schade, dass er so verdammt lang ist, oder? Er geht einfach immer weiter und weiter und weiter und weeeiter.", 20},
+				{"example_126389_02", "Interrupts", "KICK: Stone Bolt", 10}}
+tipsMap_deDE[99999] = {{"example_99999_01", "Important", "PlatzhalterWichtig", 30}, {"example_99999_02", "Important", "PlatzhalterWichtig", 20},
+				{"example_99999_03", "Advanced", "PlatzhalterAdvanced", 10}}
 tipsMap_deDE[17711] = {{"worldboss_17711_01", "Legion", "", 10}}
 tipsMap_deDE[18728] = {{"worldboss_18728_01", "Legion", "", 10}}
 tipsMap_deDE[23863] = {{"zulaman_23863_01", "Important", "", 10}}
@@ -5283,42 +5283,42 @@ tipsMap_deDE[25851] = {{"sunwell_25851_01", "Important", "", 10}}
 tipsMap_deDE[25867] = {{"sunwell_25867_01", "Important", "", 10}}
 tipsMap_deDE[25948] = {{"sunwell_25948_01", "Important", "", 10}}
 tipsMap_deDE[26101] = {{"sunwell_26101_01", "Important", "", 10}}
-tipsMap_deDE[17398] = {{"bloodfurnace_17398_01", "Important", "Deals AoE Damage to melee in form of Stomp and also uses Concussion Blow (5 sec stun)", 10}}
-tipsMap_deDE[17399] = {{"bloodfurnace_17399_01", "Important", "Charms players for 6 sec (magic can be dispelled)", 20},
-				{"bloodfurnace_17399_02", "Important", "If no one can dispel charm, the charmed player should be CC'd or stunned", 10}}
-tipsMap_deDE[17401] = {{"bloodfurnace_17401_01", "Important", "Will Spell Lock casters & burn mana users", 20},
-				{"bloodfurnace_17401_02", "PALADIN", "If tanking, can use Seal of Wisdom after sufficient threat has been built up", 10}}
-tipsMap_deDE[17770] = {{"underbog_17770_01", "Important", "Immune to CC.", 60},
-					{"underbog_17770_02", "Important", "Before fight begins, you will need to deal with 2 Bog Giants (both pull when one is pulled). One of them can be kited by a DPS who then jumps off ledge, allowing grp to fight one Bog Lord at a time", 50},
-					{"underbog_17770_03", "Legion", "If your group is too weak to deal with both Bog Giants at once, focus down one as that one will not respawn if you wipe to the second", 40},
-					{"underbog_17770_04", "Advanced", "POSITIONING: It is helpful for DPS and Healer to stand close together so that they move (around the boss) as a group to avoid mushrooms", 30},
-					{"underbog_17770_05", "PriorityTargets", "When boss summons an Underbog Mushroom, ALL players (tank included) need to run away from it as it causes MASSIVE AoE damage! (showing nameplates can be helpful to see these mushrooms spawn and adjust accordingly)", 20},
-					{"underbog_17770_06", "Dodge", "RUN AWAY: All players (tank included) needs to run away from boss at 20% as boss leeches health with AoE Foul Spores ability (Lasts 11 seconds)", 10}}
-tipsMap_deDE[18105] = {{"underbog_18105_01", "Advanced", "POSITIONING: Tank should have boss turned away from group. DPS/Heals need to stand at sides to avoid frontal attack & tail sweep", 10}}
-tipsMap_deDE[17826] = {{"underbog_17826_01", "Important", "Prior to starting fight, defeat the nearby Underbog Lord so that this guy isn't pulled with boss", 60},
-					{"underbog_17826_02", "Advanced", "POSITIONING: Stand with backs against a wall to avoid knockback from Musel'ek, and all players should stack on boss to avoid majority of his ranged abilities (including Aimed Shot).", 50},
-					{"underbog_17826_03", "Important", "Due to heal interrupts, keeping HoTs up will be especially helpful to preserve group", 40},
-					{"underbog_17826_04", "TANK", "TANK should build threat on Claw first before switching back to Musel'ek.", 30},
-					{"underbog_17826_05", "HEALER", "Priority heals to player (esp tank) if afflicted by ECHOING ROAR AoE debuff (reduces armor by 50-82% depending on difficulty; 10 yd range)", 20},
-					{"underbog_17826_06", "TANK", "After Freezing Trap Effect (5 sec trap to players within 50 yds), tank needs to get back in melee of boss ASAP", 10}}
-tipsMap_deDE[17827] = {{"underbog_17827_01", "Important", "Make sure TANK can build up sufficient threat on this guy before engaging boss and this add. Claw turns friendly when at 20%", 30},
-					{"underbog_17827_02", "Important", "ECHOING ROAR: AoE ability reducing players' within 10 yds armor by 50% on normal-mode (82% on heroic). If this is the tank, they will need to pop additional defensives and receive big heals for 20 sec debuff.", 20},
-					{"underbog_17827_03", "Important", "Stack Claw on top of Musel'ek to negate Claw's FERAL CHARGE +knockback", 10}}
-tipsMap_deDE[17882] = {{"underbog_17882_01", "Advanced", "POSITIONING: Players should spread as much as possible to mitigate number of players hit by boss' Chain Lightning. Spreading will also mitigate number of players struck with Static Charge (AoE Nature DoT)", 120},
-					{"underbog_17882_02", "Defensives", "As boss hits tank hard, defensives will need to be timed and healer should keep tank as close to max health as much and as often as possible!", 110},
-					{"underbog_17882_03", "Dodge", "DODGE: If struck by Static Charge (30 yd AoE Nature DoT), run away from nearby players. If tank is struck, other players will need to run from the tank", 100},
-					{"underbog_17882_04", "Important", "LEVITATE: Boss will levitate a player into the air", 90},
-					{"underbog_17882_05", "Legion", "LEVITATE: By standing near small mushrooms, players can mitigate this boss ability (some abilities can allow players to also break free", 80},
-					{"underbog_17882_06", "PRIEST", "Use DISPEL MAGIC to dispel boss' Levitate from yourself/other player and then cast your own Levitate ability to avoid fall damage", 70},
-					{"underbog_17882_07", "PRIEST", "When falling from Levitate, cast Levitate on yourself/other player to mitigate their fall damage", 60},
-					{"underbog_17882_08", "PALADIN", "Use CLEANSE to dispel Levitate from yourself or another player", 50},
-					{"underbog_17882_09", "WARLOCK", "Felhunter's can Dispel levitate", 40},
-					{"underbog_17882_10", "MAGE", "Use Blink to escape from Levitate and then Slow Fall", 30},
-					{"underbog_17882_11", "DRUID", "Feral Druid (Bear Form) can use Feral Charge to break free from Levitate and avoid fall damage", 20},
-					{"underbog_17882_12", "HEALER", "Players that are levitated will need be topped off to ensure they can survive fall damage. They will also need additional heals when they actually receive the fall damage (unless that damage can be slowed)", 10}}
-tipsMap_deDE[18107] = {{"underbog_18107_01", "Important", "Defeat Tidewrath before Ghaz'an reaches and eats him and \n you will be awarded bonus loot (even if you wipe on boss, but \n manage to take down Tidewrath).", 10}}
-tipsMap_deDE[22299] = {{"underbog_22299_01", "PriorityTargets", "DPS need to focus down adds before going back to boss; summoned ~every 10 sec.", 20},
-					{"underbog_22299_02", "Interrupts", "Interrupt: Lightning Bolt (Deals Nature Damage)", 10}}
+tipsMap_deDE[17398] = {{"bloodfurnace_17398_01", "Important", "Verursacht AoE-Schaden im Nahkampf durch Stomp und nutzt zusaetzlich Concussion Blow mit 5 Sek. Stun.", 10}}
+tipsMap_deDE[17399] = {{"bloodfurnace_17399_01", "Important", "Charmt Spieler fuer 6 Sek. und kann als Magie dispellt werden.", 20},
+				{"bloodfurnace_17399_02", "Important", "Wenn niemand den Charm dispellen kann, sollte der betroffene Spieler per CC oder Stun gesichert werden.", 10}}
+tipsMap_deDE[17401] = {{"bloodfurnace_17401_01", "Important", "Spelllockt Caster und burnt Mana-Nutzer leer.", 20},
+				{"bloodfurnace_17401_02", "PALADIN", "Wenn du tankst, kannst du nach sauberem Threat-Aufbau Siegel der Weisheit nutzen.", 10}}
+tipsMap_deDE[17770] = {{"underbog_17770_01", "Important", "Immun gegen CC.", 60},
+					{"underbog_17770_02", "Important", "Vor Kampfbeginn muesst ihr zwei Bog Giants handeln. Einer davon kann von einem DD gekitet werden, der anschliessend die Kante runterspringt, damit die Gruppe jeweils nur einen Bog Lord gleichzeitig spielt.", 50},
+					{"underbog_17770_03", "Legion", "Ist eure Gruppe zu schwach fuer beide Bog Giants gleichzeitig, fokussiert erst einen. Der erste respawnt nicht, wenn ihr am zweiten wiped.", 40},
+					{"underbog_17770_04", "Advanced", "POSITIONIERUNG: Es hilft, wenn DDs und Heiler nah beieinander stehen und sich gemeinsam um den Boss bewegen, um Pilzen auszuweichen.", 30},
+					{"underbog_17770_05", "PriorityTargets", "Sobald der Boss einen Underbog Mushroom beschwoert, muessen ALLE Spieler inklusive Tank sofort rauslaufen. Der Pilz macht massiven AoE-Schaden. Namensplaketten helfen, die Spawns schneller zu sehen.", 20},
+					{"underbog_17770_06", "Dodge", "RAUS DA: Ab 20% muessen alle Spieler inklusive Tank vom Boss weg, da Foul Spores 11 Sek. lang AoE-Lebensentzug verursacht.", 10}}
+tipsMap_deDE[18105] = {{"underbog_18105_01", "Advanced", "POSITIONIERUNG: Tank soll den Boss von der Gruppe wegdrehen. DDs und Heiler stehen seitlich, um Frontalangriff und Tail Sweep zu vermeiden.", 10}}
+tipsMap_deDE[17826] = {{"underbog_17826_01", "Important", "Vor Kampfbeginn den nahen Underbog Lord toeten, damit er nicht zusammen mit dem Boss gepullt wird.", 60},
+					{"underbog_17826_02", "Advanced", "POSITIONIERUNG: Mit dem Ruecken zur Wand stehen, um den Knockback von Musel'ek zu vermeiden. Alle Spieler sollten auf dem Boss stacken, um den Grossteil seiner Fernkampffaehigkeiten inklusive Aimed Shot zu umgehen.", 50},
+					{"underbog_17826_03", "Important", "Wegen Heal-Interrupts helfen HoTs besonders dabei, die Gruppe stabil zu halten.", 40},
+					{"underbog_17826_04", "TANK", "Der Tank sollte zuerst auf Claw Threat aufbauen und dann erst wieder zu Musel'ek wechseln.", 30},
+					{"underbog_17826_05", "HEALER", "Prio-Heals auf den betroffenen Spieler, besonders den Tank, wenn Echoing Roar liegt. Der AoE-Debuff reduziert innerhalb von 10 Metern die Ruestung je nach Schwierigkeit um 50-82%.", 20},
+					{"underbog_17826_06", "TANK", "Nach dem Freezing Trap-Effekt muss der Tank so schnell wie moeglich wieder in den Nahkampf des Bosses.", 10}}
+tipsMap_deDE[17827] = {{"underbog_17827_01", "Important", "Stellt sicher, dass der Tank genug Threat auf diesem Add aufbauen kann, bevor Boss und Add gleichzeitig gespielt werden. Claw wird bei 20% freundlich.", 30},
+					{"underbog_17827_02", "Important", "Echoing Roar reduziert die Ruestung von Spielern innerhalb von 10 Metern um 50% auf Normal und 82% auf Heroisch. Trifft es den Tank, braucht er Def-CDs und grosse Heals fuer die 20 Sek. Debuffdauer.", 20},
+					{"underbog_17827_03", "Important", "Claw auf Musel'ek stacken, um Ferocious Charge samt Knockback zu negieren.", 10}}
+tipsMap_deDE[17882] = {{"underbog_17882_01", "Advanced", "POSITIONIERUNG: So weit wie moeglich spreaden, damit Chain Lightning und Static Charge moeglichst wenige Spieler treffen.", 120},
+					{"underbog_17882_02", "Defensives", "Der Boss hittet den Tank hart. Def-CDs sauber timen und den Tank moeglichst konstant hoch halten.", 110},
+					{"underbog_17882_03", "Dodge", "RAUS: Wer von Static Charge getroffen wird, muss von anderen Spielern weg. Trifft es den Tank, muessen die anderen vom Tank weg.", 100},
+					{"underbog_17882_04", "Important", "LEVITATE: Der Boss hebt einen Spieler in die Luft.", 90},
+					{"underbog_17882_05", "Legion", "LEVITATE: Wer nah an kleinen Pilzen steht, kann diese Bossfaehigkeit teilweise abmildern. Manche Klassen koennen sich zudem selbst daraus befreien.", 80},
+					{"underbog_17882_06", "PRIEST", "DISPEL MAGIC auf Levitate nutzen und danach eigenes Levitate casten, um Fallschaden zu vermeiden.", 70},
+					{"underbog_17882_07", "PRIEST", "Waerend des Falls Levitate auf dich oder andere Spieler casten, um den Fallschaden zu reduzieren.", 60},
+					{"underbog_17882_08", "PALADIN", "CLEANSE nutzen, um Levitate von dir oder einem anderen Spieler zu dispellen.", 50},
+					{"underbog_17882_09", "WARLOCK", "Der Felhunter kann Levitate dispellen.", 40},
+					{"underbog_17882_10", "MAGE", "Mit Blink aus Levitate raus und danach Slow Fall nutzen.", 30},
+					{"underbog_17882_11", "DRUID", "Feral Druids im Baeren koennen mit Feral Charge aus Levitate ausbrechen und so Fallschaden vermeiden.", 20},
+					{"underbog_17882_12", "HEALER", "Levitierte Spieler hochheilen, damit sie den Fallschaden ueberleben. Auch beim eigentlichen Einschlag zusaetzlich heilen, sofern der Schaden nicht anderweitig abgefangen wird.", 10}}
+tipsMap_deDE[18107] = {{"underbog_18107_01", "Important", "Tidewrath besiegen, bevor Ghaz'an ihn erreicht und frisst. Dann bekommt ihr Bonus-Loot, selbst wenn ihr am Boss wiped, aber Tidewrath noch vorher legt.", 10}}
+tipsMap_deDE[22299] = {{"underbog_22299_01", "PriorityTargets", "DDs muessen die Adds fokussen, bevor sie wieder auf den Boss gehen. Sie spawnen etwa alle 10 Sek.", 20},
+					{"underbog_22299_02", "Interrupts", "KICK: Lightning Bolt verursacht Naturschaden.", 10}}
 tipsMap_deDE[17723] = {{"underbog_17723_01", "Important", "Immun gegen jede Form von CC und Verlangsamungen (Fallen). Auf HEROISCH, besonders paarweise, kann der Mob hart hitten. Er bewegt sich langsam und kann gut gekitet werden.", 10}}
 tipsMap_deDE[17724] = {{"underbog_17724_01", "TANK", "Dreh diesem Mob im Kampf NICHT den Ruecken zu, da er von hinten mehr Schaden macht. Wenn du ihn von einer Pat wegziehen musst: rueckwaerts laufen oder strafen.", 10}}
 tipsMap_deDE[17725] = {{"underbog_17725_01", "Defensives", "Def-CDs koennen noetig sein, da Wild Growth den physischen Schaden des Mobs um 50% erhoeht.", 10}}
@@ -5346,49 +5346,49 @@ tipsMap_deDE[17990] = {{"underbog_17990_01", "Dodge", "RAUS DA! Die Sporenwolke 
 tipsMap_deDE[19632] = {{"underbog_19632_01", "Defensives", "Def-CDs koennen fuer Tank oder anvisierten Spieler waehrend Stinger Rage noetig sein.", 20},
 					{"underbog_19632_02", "Important", "Anfaellig fuer CC, selbst auf Heroisch.", 10}}
 tipsMap_deDE[20465] = {{"underbog_20465_01", "Important", "Warum schwimmst du mit den Fischen?", 10}}
-tipsMap_deDE[17797] = {{"steamvaults_17797_01", "Legion", "Boss deals Nature damage; Adds deal Frost damage (Nature resist should be prioritized if only have one option and have no Frost Aura for group from Paladin)", 50},
-					{"steamvaults_17797_02", "Important", "Tank should focus on boss and use AoE threat (such as Thunderclap) on adds. DPS need to focus down the adds (or banish one of them) before going after boss. Adds will despawn once boss dies.", 40},
-					{"steamvaults_17797_03", "Important", "Dispel: Enveloping Wind esp if applied to tank/healer (magic effect applied to player stunning them for 6 sec)", 30},
-					{"steamvaults_17797_04", "Dodge", "DODGE/RUN: Watch for Lightning Cloud and run out of it (deals AoE Nature damage)", 20},
-					{"steamvaults_17797_05", "Important", "HEROIC-mode: Boss will cast two Lightning Clouds at a time", 10}}
-tipsMap_deDE[17796] = {{"steamvaults_17796_01", "Advanced", "POSITIONING: Only the tank should be standing in front of boss due to Super Shrink Ray (frontal cone that reduces player damage dealt by 35% for 15 sec)", 50},
-					{"steamvaults_17796_02", "Important", "At 75%, 50% and 25%, boss announces 'Tune em' up boys' and 3 repair gnomes will spawn. These should be AoE'd down ASAP", 40},
-					{"steamvaults_17796_03", "Important", "Thunder Clap from Warriors or Consecration from Paladins are helpful during add phases", 30},
-					{"steamvaults_17796_04", "Important", "HEROIC-mode: Boss summons an additional gnome every 7 sec", 20},
-					{"steamvaults_17796_05", "Important", "HEROIC-mode: Boss has a 5 minute enrage timer and quickly one shots players!", 10}}
-tipsMap_deDE[17798] = {{"steamvaults_17798_01", "TANK", "Tank the boss in the middle of the room", 90},
-					{"steamvaults_17798_02", "Important", "Spell-casting players need to stop DPS on boss during Spell Reflection (white bubble around boss that reflects damage back to player).", 80},
-					{"steamvaults_17798_03", "Important", "Players will be occasionally struck with Impale (Physical damage DoT)", 70},
-					{"steamvaults_17798_04", "HEALER", "Most of your heals will be on the tank, but watch for impales on other players and players that are still attacking boss during boss' Spell Reflection.", 60},
-					{"steamvaults_17798_05", "PriorityTargets", "DPS down Naga Distiller w/in 12 sec of boss drawing power from it to prevent boss from gaining WARLORD'S RAGE (increased boss attack speed and damage done)", 50},
-					{"steamvaults_17798_06", "DAMAGE", "Save big damage CDs for Naga Distillers. While failing to destroy one distiller in the time alloted won't necessarily result in a wipe, failure to burn down multiple containers will.", 40},
-					{"steamvaults_17798_07", "TANK", "When Naga Distiller activates, you should focus down the container with your DPS!", 30},
-					{"steamvaults_17798_08", "Legion", "Macro to help with containers would be: /targetexact Naga Distiller", 20},
-					{"steamvaults_17798_09", "Defensives", "Boss will crack a player on the head reducing their stamina for 15 sec.", 10}}
-tipsMap_deDE[17917] = {{"steamvaults_17917_01", "PriorityTargets", "Burn these down before boss. Warlocks can BANISH one of them", 10}}
-tipsMap_deDE[17951] = {{"steamvaults_17951_01", "PriorityTargets", "Focus down adds anytime they are up as they will heal/repair boss", 30},
-					{"steamvaults_17951_02", "WARRIOR", "When adds appear, a warrior casting Thunder Clap can delay repairs conducted by adds", 20},
-					{"steamvaults_17951_03", "PALADIN", "Pallys using Consecration can quickly burn Mechanics down", 10}}
-tipsMap_deDE[17954] = {{"steamvaults_17954_01", "PriorityTargets", "When boss draws power from distiller, it must be destroyed w/in 12 sec to prevent a boss enrage!", 10}}
-tipsMap_deDE[17721] = {{"steamvaults_17721_01", "Important", "Players should spread when fighting mob due to Net root casts & AoE Fire Bombs", 10}}
-tipsMap_deDE[17722] = {{"steamvaults_17722_01", "Important", "Interrupt/Run out of AoE from Blizzard (Channeled Frost AoE)", 10}}
-tipsMap_deDE[17800] = {{"steamvaults_17800_01", "Important", "Mob should be tanked away from players due to Cleave. Melee players hit with Cleave will require increased healing", 10}}
-tipsMap_deDE[17801] = {{"steamvaults_17801_01", "Important", "Interrupt: Fear or CC mob", 10}}
-tipsMap_deDE[17802] = {{"steamvaults_17802_01", "Defensives", "Applies Mortal Blow (reduced armor and attack speed for 12 sec) to Tank, during this time, tank may need to pop defensive CDs & receive extra heals", 10}}
-tipsMap_deDE[17803] = {{"steamvaults_17803_01", "PriorityTargets", "Interrupt: Heal or CC mob", 20},
-					{"steamvaults_17803_02", "Important", "Mob should be tanked away from casters as Sonic Burst will spelllock players w/in 10 yds for 3 sec", 10}}
-tipsMap_deDE[17805] = {{"steamvaults_17805_01", "Important", "Will use Disarm (likely on tank) causing issue with threat building/maintaining when this happens. This mob should be slowed if it begins to move toward DPS/Healer, while tank is Disarmed", 10}}
-tipsMap_deDE[17799] = {{"steamvaults_17799_01", "Important", "Tank can use AoE threat-building abilities such as Thunder Clap/Consecration, but DPS should ignore them", 10}}
-tipsMap_deDE[21338] = {{"steamvaults_21338_01", "Important", "Non-elite mob that should be AoE'd down", 10}}
-tipsMap_deDE[21694] = {{"steamvaults_21694_01", "Legion", "Deals Nature & Physical Damage; consider resistance armor/pots if undergeared", 50},
-					{"steamvaults_21694_02", "Important", "Mob should be tanked away from group due to Trample (mob deals Physical AoE). Melee players struck by this may need additional healing", 40},
-					{"steamvaults_21694_03", "Important", "Dispel Fungal Decay from player (Disease; Nature DoT w/momvement speed slow lasting 18 sec)", 30},
-					{"steamvaults_21694_04", "Important", "Dispel Poison Bolt from player (Poison; Nature DoT lasting 10 sec)", 20},
-					{"steamvaults_21694_05", "Dodge", "Run out of Disease Cloud (Nature DoT)", 10}}
-tipsMap_deDE[21695] = {{"steamvaults_21695_01", "Important", "These mobs should be tanked with your back against the wall due to Water Sprout knockback (40 yd range; Frost Damage)", 20},
-					{"steamvaults_21695_02", "Important", "Surger pops Frost Nova rooting nearby players for 8 sec", 10}}
-tipsMap_deDE[21696] = {{"steamvaults_21696_01", "Legion", "This mob deals Frost Damage; having proper aura/resistances can be helpful in mitigating some of mob's damage", 20},
-					{"steamvaults_21696_02", "Legion", "Mob has 45 yd range attack in form of Water Bolt (Instant Frost damaging ability)", 10}}
+tipsMap_deDE[17797] = {{"steamvaults_17797_01", "Legion", "Der Boss macht Naturschaden, die Adds machen Frostschaden. Wenn ihr nur eine Resistenzoption habt und kein Paladin Frostwiderstands-Aura stellt, sollte Naturwiderstand Prio haben.", 50},
+					{"steamvaults_17797_02", "Important", "Der Tank sollte auf dem Boss bleiben und per AoE-Threat die Adds einsammeln. DDs fokussen zuerst die Adds oder verbannen eines davon, bevor sie auf den Boss gehen. Die Adds despawnen beim Bosstod.", 40},
+					{"steamvaults_17797_03", "Important", "Enveloping Wind dispellen, besonders auf Tank oder Heiler. Der Magie-Effekt stunnt 6 Sek.", 30},
+					{"steamvaults_17797_04", "Dodge", "RAUS: Auf Lightning Cloud achten und rauslaufen. Die Flaeche macht AoE-Naturschaden.", 20},
+					{"steamvaults_17797_05", "Important", "Auf HEROISCH castet der Boss zwei Lightning Clouds gleichzeitig.", 10}}
+tipsMap_deDE[17796] = {{"steamvaults_17796_01", "Advanced", "POSITIONIERUNG: Nur der Tank sollte vor dem Boss stehen, da Super Shrink Ray frontal trifft und den verursachten Schaden 15 Sek. lang um 35% reduziert.", 50},
+					{"steamvaults_17796_02", "Important", "Bei 75%, 50% und 25% sagt der Boss 'Tune em' up boys' und drei Reparaturgnome spawnen. Diese sofort per AoE wegbrennen.", 40},
+					{"steamvaults_17796_03", "Important", "Thunder Clap von Kriegern oder Consecration von Paladinen helfen stark waehrend der Add-Phasen.", 30},
+					{"steamvaults_17796_04", "Important", "Auf HEROISCH beschwoert der Boss alle 7 Sek. einen zusaetzlichen Gnom.", 20},
+					{"steamvaults_17796_05", "Important", "Auf HEROISCH hat der Boss einen 5-Minuten-Enrage und oneshottet dann Spieler sehr schnell.", 10}}
+tipsMap_deDE[17798] = {{"steamvaults_17798_01", "TANK", "Den Boss in der Mitte des Raums tanken.", 90},
+					{"steamvaults_17798_02", "Important", "Caster muessen den DPS stoppen, sobald Spell Reflection aktiv ist. Die weisse Kugel reflektiert Schaden auf den Spieler zurueck.", 80},
+					{"steamvaults_17798_03", "Important", "Spieler werden regelmaessig von Impale getroffen, einem physischen DoT.", 70},
+					{"steamvaults_17798_04", "HEALER", "Der meiste Heal geht auf den Tank, aber achte auch auf Impales und Spieler, die trotz Spell Reflection weiter Schaden machen.", 60},
+					{"steamvaults_17798_05", "PriorityTargets", "Naga Distiller muessen innerhalb von 12 Sek. zerstoert werden, nachdem der Boss Kraft daraus zieht, sonst bekommt er Warlord's Rage.", 50},
+					{"steamvaults_17798_06", "DAMAGE", "Grosse Damage-CDs fuer Naga Distiller aufheben. Einen Container zu verpassen wipe't nicht immer sofort, mehrere schon eher.", 40},
+					{"steamvaults_17798_07", "TANK", "Sobald ein Naga Distiller aktiv wird, solltest du ihn gemeinsam mit den DDs fokussen.", 30},
+					{"steamvaults_17798_08", "Legion", "Hilfreiches Makro fuer die Container: /targetexact Naga Distiller", 20},
+					{"steamvaults_17798_09", "Defensives", "Der Boss trifft einem Spieler auf den Kopf und reduziert dessen Ausdauer fuer 15 Sek.", 10}}
+tipsMap_deDE[17917] = {{"steamvaults_17917_01", "PriorityTargets", "Diese Adds vor dem Boss burnen. Warlocks koennen eines davon banishen.", 10}}
+tipsMap_deDE[17951] = {{"steamvaults_17951_01", "PriorityTargets", "Adds immer sofort fokussen, sobald sie da sind, da sie den Boss heilen oder reparieren.", 30},
+					{"steamvaults_17951_02", "WARRIOR", "Wenn Adds spawnen, kann Thunder Clap von einem Krieger ihre Reparaturen verzoegern.", 20},
+					{"steamvaults_17951_03", "PALADIN", "Paladine koennen die Mechanics mit Consecration schnell wegbrennen.", 10}}
+tipsMap_deDE[17954] = {{"steamvaults_17954_01", "PriorityTargets", "Wenn der Boss Kraft aus einem Distiller zieht, muss dieser innerhalb von 12 Sek. zerstoert werden, sonst enraget der Boss.", 10}}
+tipsMap_deDE[17721] = {{"steamvaults_17721_01", "Important", "Beim Kampf gegen diesen Mob spreaden wegen Net-Roots und AoE-Feuerbomben.", 10}}
+tipsMap_deDE[17722] = {{"steamvaults_17722_01", "Important", "Blizzard kicken oder aus dem AoE rauslaufen. Es ist ein kanalisierter Frost-AoE.", 10}}
+tipsMap_deDE[17800] = {{"steamvaults_17800_01", "Important", "Diesen Mob wegen Cleave von der Gruppe weg tanken. Meelees, die vom Cleave getroffen werden, brauchen zusaetzliche Heals.", 10}}
+tipsMap_deDE[17801] = {{"steamvaults_17801_01", "Important", "Fear kicken oder den Mob per CC sichern.", 10}}
+tipsMap_deDE[17802] = {{"steamvaults_17802_01", "Defensives", "Mortal Blow reduziert 12 Sek. lang Ruestung und Angriffstempo des Tanks. In dieser Zeit koennen Def-CDs und Extra-Heals noetig sein.", 10}}
+tipsMap_deDE[17803] = {{"steamvaults_17803_01", "PriorityTargets", "Heal kicken oder den Mob per CC sichern.", 20},
+					{"steamvaults_17803_02", "Important", "Diesen Mob von Castern weg tanken, da Sonic Burst Spieler innerhalb von 10 Metern 3 Sek. spelllockt.", 10}}
+tipsMap_deDE[17805] = {{"steamvaults_17805_01", "Important", "Nutzt Disarm, meist auf dem Tank, was Threat-Aufbau und -Halten erschwert. Wird der Tank entwaffnet und der Mob laeuft auf DDs oder Heiler zu, sollte er geslowt werden.", 10}}
+tipsMap_deDE[17799] = {{"steamvaults_17799_01", "Important", "Der Tank kann AoE-Threat wie Thunder Clap oder Consecration nutzen, DDs sollten diese Mobs aber ignorieren.", 10}}
+tipsMap_deDE[21338] = {{"steamvaults_21338_01", "Important", "Non-Elite-Mob, der einfach per AoE downgehen sollte.", 10}}
+tipsMap_deDE[21694] = {{"steamvaults_21694_01", "Legion", "Macht Natur- und physischen Schaden. Untergegear te Gruppen koennen von Resistenzgear oder Pots profitieren.", 50},
+					{"steamvaults_21694_02", "Important", "Diesen Mob wegen Trample von der Gruppe weg tanken. Meelees, die vom physischen AoE getroffen werden, brauchen eventuell Extra-Heals.", 40},
+					{"steamvaults_21694_03", "Important", "Fungal Decay vom Spieler dispellen. Krankheit mit Natur-DoT und Verlangsamung fuer 18 Sek.", 30},
+					{"steamvaults_21694_04", "Important", "Poison Bolt vom Spieler dispellen. Gift-DoT mit Naturschaden fuer 10 Sek.", 20},
+					{"steamvaults_21694_05", "Dodge", "Aus der Disease Cloud rauslaufen.", 10}}
+tipsMap_deDE[21695] = {{"steamvaults_21695_01", "Important", "Diese Mobs mit dem Ruecken zur Wand tanken, da Water Sprout einen Knockback ueber 40 Meter macht und Frostschaden verursacht.", 20},
+					{"steamvaults_21695_02", "Important", "Der Surger nutzt Frost Nova und rooted nahe Spieler fuer 8 Sek.", 10}}
+tipsMap_deDE[21696] = {{"steamvaults_21696_01", "Legion", "Dieser Mob macht Frostschaden. Passende Auren oder Resistenzen helfen beim Abfedern des Schadens.", 20},
+					{"steamvaults_21696_02", "Legion", "Hat einen 45-Meter-Angriff in Form von Water Bolt, einer sofortigen Frost-Schadensfaehigkeit.", 10}}
 tipsMap_deDE[22891] = {{"steamvaults_22891_01", "Legion", "", 10}}
 tipsMap_deDE[18341] = {{"mana_tombs_18341_01", "Important", "Beim Pull dieses Bosses wird auch der Trash im Raum mitgepullt.", 90},
 				{"mana_tombs_18341_02", "Important", "LEERENSALVE, also eine Salve aus Leerenblitzen mit Schattenschaden und Knockback, macht den Kampf mit dem Rücken zur Wand deutlich sicherer.", 80},
@@ -5412,15 +5412,15 @@ tipsMap_deDE[18344] = {{"mana_tombs_18344_01", "Legion", "Boss und Lehrlings-Add
 				{"mana_tombs_18344_06", "Important", "Der Boss castet oft Frostnova und blinkt aus der Meelee-Reichweite. Eine Gruppe mit starkem Range-Schaden hilft hier sehr.", 30},
 				{"mana_tombs_18344_07", "Important", "Frostnova als Magie-Effekt von der Gruppe oder mindestens vom Tank dispellen.", 20},
 				{"mana_tombs_18344_08", "TANK", "Sobald Frostnova runter ist, sofort wieder an den Boss ran und Aggro aufnehmen.", 10}}
-tipsMap_deDE[22930] = {{"mana_tombs_22930_01", "Legion", "Summonable only on HEROIC mode by a party member that has Shaffar's Stasis Chamber Key or The Eye of Haramad (the eye is not consumed on use)", 50},
-				{"mana_tombs_22930_02", "Legion", "TANK: Fire Resistance gear/pots will be helpful to mitigate some boss damage during frontal-cone DOUBLE BREATH", 40},
-				{"mana_tombs_22930_03", "TANK", "Tank should turn boss away from group as Yor's DOUBLE BREATH deals frontal cone of Fire Damage", 30},
-				{"mana_tombs_22930_04", "Important", "Yor will use Stomp (Knockback w/10 yd range)", 20},
-				{"mana_tombs_22930_05", "Important", "DPS and Healer should stand as far from boss as possible on his backside to avoid frontal fire damage +knockback", 10}}
-tipsMap_deDE[18431] = {{"mana_tombs_18431_01", "PriorityTargets", "DPS should burn down these mobs down ASAP (Spawns every ~10 sec)", 10}}
-tipsMap_deDE[18430] = {{"mana_tombs_18430_01", "PriorityTargets", "If Ethereal Beacons are not destroyed quickly enough, these mobs will take their place", 30},
-				{"mana_tombs_18430_02", "Important", "Deal HEAVY Fire & Frost damage", 20},
-				{"mana_tombs_18430_03", "Legion", "Vulnerable to CC such as Polymorph", 10}}
+tipsMap_deDE[22930] = {{"mana_tombs_22930_01", "Legion", "Nur auf HEROISCH von einem Gruppenmitglied beschwoerbar, das Shaffar's Stasis Chamber Key oder The Eye of Haramad besitzt. Das Auge wird dabei nicht verbraucht.", 50},
+				{"mana_tombs_22930_02", "Legion", "TANK: Feuerwiderstands-Gear oder Pots helfen, den Schaden von Double Breath abzufedern.", 40},
+				{"mana_tombs_22930_03", "TANK", "Boss von der Gruppe wegdrehen, da Double Breath frontal Feuer-Schaden macht.", 30},
+				{"mana_tombs_22930_04", "Important", "Yor nutzt Stomp mit Knockback innerhalb von 10 Metern.", 20},
+				{"mana_tombs_22930_05", "Important", "DDs und Heiler sollten moeglichst weit hinten am Boss stehen, um Frontal-Feuerschaden und Knockback zu vermeiden.", 10}}
+tipsMap_deDE[18431] = {{"mana_tombs_18431_01", "PriorityTargets", "DDs muessen diese Mobs sofort runterbrennen. Sie spawnen etwa alle 10 Sek.", 10}}
+tipsMap_deDE[18430] = {{"mana_tombs_18430_01", "PriorityTargets", "Werden Ethereal Beacons nicht schnell genug zerstoert, spawnen stattdessen diese Mobs.", 30},
+				{"mana_tombs_18430_02", "Important", "Machen hohen Feuer- und Frostschaden.", 20},
+				{"mana_tombs_18430_03", "Legion", "Anfaellig fuer CC wie Polymorph.", 10}}
 tipsMap_deDE[18309] = {{"mana_tombs_18309_01", "Important", "Diese Mobs nutzen Schildhieb und sperren die getroffene Magieschule 8 Sek. lang. Dafür verlassen sie auch mal den Tank, um einen Cast zu unterbrechen.", 20},
 				{"mana_tombs_18309_02", "HEALER", "Als Heiler etwas Abstand halten, damit du früher siehst, wenn dieser Mob auf dich zuläuft.", 10}}
 tipsMap_deDE[18311] = {{"mana_tombs_18311_01", "Important", "Den Mob per LoS-Pull in den Meelee ziehen, sonst charged er einen Spieler und stunnt ihn 2 Sek. lang.", 20},

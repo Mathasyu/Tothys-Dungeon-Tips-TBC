@@ -191,6 +191,7 @@ def build_report() -> str:
     duplicate_override_ids = sorted(npc_id for npc_id, blocks in de_direct_assignments.items() if len(blocks) > 1)
 
     identical_override_ids: list[int] = []
+    empty_placeholder_ids: list[int] = []
     partial_same_text_ids: list[tuple[int, int, int]] = []
     structural_mismatches: list[str] = []
 
@@ -228,7 +229,10 @@ def build_report() -> str:
                 all_same = False
 
         if all_same:
-            identical_override_ids.append(npc_id)
+            if all(not tip.text.strip() for tip in en_tips):
+                empty_placeholder_ids.append(npc_id)
+            else:
+                identical_override_ids.append(npc_id)
         elif same_texts:
             partial_same_text_ids.append((npc_id, same_texts, len(en_tips)))
 
@@ -325,7 +329,8 @@ def build_report() -> str:
             "",
             "### 4. Overrides that are still effectively English",
             "",
-            f"- Fully identical explicit `deDE` overrides (same texts as `enUS`): `{', '.join(str(value) for value in identical_override_ids) if identical_override_ids else 'none'}`",
+            f"- Fully identical explicit `deDE` overrides with non-empty English text: `{', '.join(str(value) for value in identical_override_ids) if identical_override_ids else 'none'}`",
+            f"- Fully identical explicit `deDE` overrides with empty English text: **{len(empty_placeholder_ids)}**",
             f"- Partially translated overrides (some lines still identical to `enUS`): `{', '.join(f'{npc_id} ({same}/{total})' for npc_id, same, total in partial_same_text_ids[:20]) if partial_same_text_ids else 'none'}`",
             "",
             "### 5. Browser UI locale strings",
@@ -375,7 +380,8 @@ def build_report() -> str:
             f"- Done: explicit `deDE` counterparts for all `tipsMap_enUS` entries: **{'yes' if missing_done else 'no'}**",
             f"- Done: structural parity between `tipsMap_enUS` and `tipsMap_deDE`: **{'yes' if structural_done else 'no'}**",
             f"- Done: duplicate explicit `tipsMap_deDE` assignments removed: **{'yes' if duplicates_done else 'no'}**",
-            f"- Open: fully identical explicit `deDE` overrides still left to translate: **{len(identical_override_ids)}**",
+            f"- Open: fully identical explicit `deDE` overrides with non-empty English text still left to translate: **{len(identical_override_ids)}**",
+            f"- Open: fully identical explicit `deDE` overrides with empty English text: **{len(empty_placeholder_ids)}**",
             f"- Open: partially translated overrides still left to finish: **{len(partial_same_text_ids)}**",
             f"- Open: browser locale key drift: **{browser_drift_count}**",
             f"- Open: visible `TEST:` markers in shipped instance content: **{len(instance_content_findings)}**",
