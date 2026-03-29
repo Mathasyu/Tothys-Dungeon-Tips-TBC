@@ -34,6 +34,27 @@ Guidelines:
   - `Tothys-Database.lua`
   - `Tothys-UI.lua`
 - Normalized NPC combat tips now also carry `legacy_npc_name.enUS` to make translator-facing Lua review easier
+- Rewrite docs were moved out of the addon folder into `docs_rewrite` to keep the WoW addon directory free of project-only documentation
+- Removed redundant `expansions.*.instances` lists from the normalized model so expansion ownership is now defined only by `instances[instanceKey].expansion`
+- Removed redundant `instanceNpcs.*.all` lists from the normalized model so instance NPC membership is now defined only by `bosses` and `others`
+- The rewrite UI shell now uses a proper first-tip lookup against the normalized tip map instead of assuming list-style tip storage
+- Added `Tothys-Dungeon-Tools-TBC-test.zip` as an installable test package for the current rewrite shell
+- The rewrite shell now has a first real browser flow:
+  - instance stepping
+  - NPC stepping
+  - localized instance/NPC names
+  - full ordered NPC tip display from the normalized database
+- The rewrite core now exposes standardized context and lookup helpers for:
+  - ordered instance keys
+  - ordered instance tips
+  - instance details
+  - ordered NPC tips
+  - current browser context
+- The rewrite window now shows the full current context from the normalized database:
+  - dungeon info
+  - more infos
+  - NPC tips
+- The rewrite window is now resizable and its main content area is scrollable so longer instance and NPC text blocks are usable without a fixed-height bottleneck
 
 ## 2026-03-21
 

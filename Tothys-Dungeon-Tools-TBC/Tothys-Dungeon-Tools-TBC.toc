@@ -1,5 +1,5 @@
 ## Interface: 20501
-## Title: Kiesel Dungeon Tool
+## Title: Kiesel Dungeon Tool (Rewrite)
 ## Author: Mathasyu, based on work by Voulk
 ## Notes: Clean TBC-only rewrite of Kiesel Dungeon Tool with a normalized content model.
 ## Version: 0.1.0

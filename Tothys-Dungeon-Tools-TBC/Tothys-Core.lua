@@ -22,6 +22,11 @@ local DEFAULTS = {
         width = 520,
         height = 420,
     },
+    browser = {
+        expansion = "tbc",
+        instance = "hellfire_ramparts",
+        npcID = 17306,
+    },
 }
 
 local function copyMissingDefaults(target, defaults)
@@ -72,11 +77,225 @@ function addon:GetNpc(npcID)
 end
 
 function addon:GetNpcTips(instanceKey, npcID)
-    local instanceTips = self.db and self.db.tips and self.db.tips[instanceKey]
-    if not instanceTips then
+    local instanceNpcTips = self.db and self.db.tips and self.db.tips[instanceKey]
+    if not instanceNpcTips then
         return nil
     end
-    return instanceTips[tostring(npcID)] or nil
+    return instanceNpcTips[tostring(npcID)] or nil
+end
+
+function addon:GetInstanceTips(instanceKey)
+    return self.db and self.db.instanceTips and self.db.instanceTips[instanceKey] or nil
+end
+
+function addon:GetInstanceDetails(instanceKey)
+    return self.db and self.db.instanceDetails and self.db.instanceDetails[instanceKey] or nil
+end
+
+function addon:GetOrderedInstanceKeys(expansionKey)
+    local keys = {}
+    if not self.db or not self.db.instances then
+        return keys
+    end
+
+    for instanceKey, instance in pairs(self.db.instances) do
+        if not expansionKey or instance.expansion == expansionKey then
+            keys[#keys + 1] = instanceKey
+        end
+    end
+
+    table.sort(keys, function(a, b)
+        local left = self.db.instances[a]
+        local right = self.db.instances[b]
+        if (left.order or 9999) ~= (right.order or 9999) then
+            return (left.order or 9999) < (right.order or 9999)
+        end
+        return a < b
+    end)
+
+    return keys
+end
+
+function addon:GetInstanceNpcIDs(instanceKey)
+    local relation = self.db and self.db.instanceNpcs and self.db.instanceNpcs[instanceKey]
+    if not relation then
+        return {}
+    end
+
+    local npcIDs = {}
+    for _, npcID in ipairs(relation.bosses or {}) do
+        npcIDs[#npcIDs + 1] = npcID
+    end
+    for _, npcID in ipairs(relation.others or {}) do
+        npcIDs[#npcIDs + 1] = npcID
+    end
+    return npcIDs
+end
+
+function addon:GetOrderedNpcTips(instanceKey, npcID)
+    local tipMap = self:GetNpcTips(instanceKey, npcID)
+    if not tipMap then
+        return {}
+    end
+
+    local tips = {}
+    for _, tip in pairs(tipMap) do
+        tips[#tips + 1] = tip
+    end
+
+    table.sort(tips, function(a, b)
+        return tostring(a.id or "") < tostring(b.id or "")
+    end)
+
+    return tips
+end
+
+function addon:GetOrderedInstanceTips(instanceKey)
+    local tipMap = self:GetInstanceTips(instanceKey)
+    if not tipMap then
+        return {}
+    end
+
+    local tips = {}
+    for _, tip in pairs(tipMap) do
+        tips[#tips + 1] = tip
+    end
+
+    table.sort(tips, function(a, b)
+        return tostring(a.id or "") < tostring(b.id or "")
+    end)
+
+    return tips
+end
+
+function addon:GetFirstNpcTip(instanceKey, npcID)
+    local tips = self:GetOrderedNpcTips(instanceKey, npcID)
+    if #tips > 0 then
+        return tips[1]
+    end
+    return nil
+end
+
+function addon:GetCurrentExpansionKey()
+    local keys = self:GetOrderedInstanceKeys(TDT2Config.browser.expansion)
+    if #keys > 0 then
+        return TDT2Config.browser.expansion
+    end
+
+    for expansionKey in pairs(self.db.expansions or {}) do
+        local instanceKeys = self:GetOrderedInstanceKeys(expansionKey)
+        if #instanceKeys > 0 then
+            TDT2Config.browser.expansion = expansionKey
+            return expansionKey
+        end
+    end
+    return nil
+end
+
+function addon:GetCurrentInstanceKey()
+    local expansionKey = self:GetCurrentExpansionKey()
+    local keys = self:GetOrderedInstanceKeys(expansionKey)
+    if #keys == 0 then
+        return nil
+    end
+
+    for _, instanceKey in ipairs(keys) do
+        if instanceKey == TDT2Config.browser.instance then
+            return instanceKey
+        end
+    end
+
+    TDT2Config.browser.instance = keys[1]
+    return keys[1]
+end
+
+function addon:GetCurrentNpcID()
+    local instanceKey = self:GetCurrentInstanceKey()
+    local npcIDs = self:GetInstanceNpcIDs(instanceKey)
+    if #npcIDs == 0 then
+        return nil
+    end
+
+    for _, npcID in ipairs(npcIDs) do
+        if npcID == TDT2Config.browser.npcID then
+            return npcID
+        end
+    end
+
+    TDT2Config.browser.npcID = npcIDs[1]
+    return npcIDs[1]
+end
+
+function addon:GetCurrentContext()
+    local expansionKey = self:GetCurrentExpansionKey()
+    local instanceKey = self:GetCurrentInstanceKey()
+    local npcID = self:GetCurrentNpcID()
+
+    return {
+        expansionKey = expansionKey,
+        expansion = expansionKey and self:GetExpansion(expansionKey) or nil,
+        instanceKey = instanceKey,
+        instance = instanceKey and self:GetInstance(instanceKey) or nil,
+        npcID = npcID,
+        npc = npcID and self:GetNpc(npcID) or nil,
+        instanceTips = instanceKey and self:GetOrderedInstanceTips(instanceKey) or {},
+        instanceDetails = instanceKey and (self:GetInstanceDetails(instanceKey) or {}) or {},
+        npcTips = (instanceKey and npcID) and self:GetOrderedNpcTips(instanceKey, npcID) or {},
+    }
+end
+
+function addon:StepInstance(delta)
+    local expansionKey = self:GetCurrentExpansionKey()
+    local keys = self:GetOrderedInstanceKeys(expansionKey)
+    if #keys == 0 then
+        return
+    end
+
+    local current = self:GetCurrentInstanceKey()
+    local index = 1
+    for i, key in ipairs(keys) do
+        if key == current then
+            index = i
+            break
+        end
+    end
+
+    index = index + delta
+    if index < 1 then
+        index = #keys
+    elseif index > #keys then
+        index = 1
+    end
+
+    TDT2Config.browser.instance = keys[index]
+    local npcIDs = self:GetInstanceNpcIDs(keys[index])
+    TDT2Config.browser.npcID = npcIDs[1]
+end
+
+function addon:StepNpc(delta)
+    local instanceKey = self:GetCurrentInstanceKey()
+    local npcIDs = self:GetInstanceNpcIDs(instanceKey)
+    if #npcIDs == 0 then
+        return
+    end
+
+    local current = self:GetCurrentNpcID()
+    local index = 1
+    for i, npcID in ipairs(npcIDs) do
+        if npcID == current then
+            index = i
+            break
+        end
+    end
+
+    index = index + delta
+    if index < 1 then
+        index = #npcIDs
+    elseif index > #npcIDs then
+        index = 1
+    end
+
+    TDT2Config.browser.npcID = npcIDs[index]
 end
 
 local eventFrame = CreateFrame("Frame")
