@@ -5467,26 +5467,6 @@ tipsMap_deDE[18634] = {
 tipsMap_deDE[18635] = {
 	{"shadow_lab_18635_01", "Important", "Am besten weg von der Gruppe tanken, da der Mob physischen AoE-Schaden verursacht. Meelees brauchen hier ggf. Extra-Heilung.", 10},
 }
-tipsMap_deDE[17381] = {
-	{"bloodfurnace_17381_01", "Legion", "Spieler sollten mindestens 8 Meter Abstand halten, damit nicht mehrere gleichzeitig von Explodierendes Becherglas getroffen werden (Naturschaden + AoE-Knockback).", 30},
-	{"bloodfurnace_17381_02", "Important", "Der Boss uebernimmt zufaellig einen Spieler. Der MCte Spieler sollte sofort per CC gesichert werden. Trifft es den Tank, geht der Boss direkt auf den Heiler.", 20},
-	{"bloodfurnace_17381_03", "Important", "Der Boss speit innerhalb der Meeleereichweite eine AoE-Saeurefontaene.", 10},
-}
-tipsMap_deDE[17380] = {
-	{"bloodfurnace_17380_01", "TANK", "Kite den Boss aus der Giftwolke.", 30},
-	{"bloodfurnace_17380_02", "Important", "Nur der Tank sollte vor dem Boss stehen, da Schleimspray ein frontaler Kegel ist.", 20},
-	{"bloodfurnace_17380_03", "HEALER", "Achte auf Spieler, die von Giftblitz getroffen werden. Das ist ein Natur-DoT.", 10},
-}
-tipsMap_deDE[17429] = {
-	{"bloodfurnace_17429_01", "Legion", "Es kommen 4 Wellen. Die erste Welle wird durch den Hebel an der Zellentuer gestartet.", 40},
-	{"bloodfurnace_17429_02", "TANK", "Der Tank sollte jeweils am naechsten an der Zelle stehen, die gleich aufgeht. Direkt eine AoE-Bedrohungsfaehigkeit nutzen, um die Adds zu sich zu ziehen.", 30},
-	{"bloodfurnace_17429_03", "Important", "Die Mobs koennen gefearnt, getrappt oder verlangsamt werden. So bekommt die Gruppe weniger Schaden von der Orc-Masse.", 20},
-	{"bloodfurnace_17429_04", "Important", "Sobald der letzte Mob einer Welle stirbt, oeffnet sich automatisch die naechste Tuer. Die Boss-Tuer geht auf, wenn der letzte Orc der vierten Welle faellt.", 10},
-}
-tipsMap_deDE[17377] = {
-	{"bloodfurnace_17377_01", "Important", "So weit wie moeglich verteilen, um den Gruppenschaden durch Schattenblitzsalve zu verringern. Das hilft vor allem Ranges und Heiler.", 20},
-	{"bloodfurnace_17377_02", "Important", "Lauf weg, wenn der Boss sagt: 'NAEHER ... KOMMT NAEHER UND BRENNT', denn dann folgt ein schwerer Feuer-AoE.", 10},
-}
 tipsMap_deDE[17653] = {
 	{"bloodfurnace_17653_01", "Important", "Sobald die Adds down sind, kommt der Boss auf die Gruppe.", 10},
 }
