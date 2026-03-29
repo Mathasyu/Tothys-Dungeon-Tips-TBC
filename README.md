@@ -68,7 +68,7 @@ Use these commands in chat:
 
 Latest release ZIP:
 
-- [Tothys-Dungeon-Tips-TBC.zip](https://github.com/Mathasyu/Tothys-Dungeon-Tips-TBC/blob/release/2026-Q1-02-02_0.9.2/Tothys-Dungeon-Tips-TBC.zip)
+- [Tothys-Dungeon-Tips-TBC-0.9.3.zip](https://github.com/Mathasyu/Tothys-Dungeon-Tips-TBC/latest/Tothys-Dungeon-Tips-TBC-0.9.3.zip)
 
 ## Status
 
