@@ -2,7 +2,7 @@
 Tothys Dungeon Tips TBC (former QE Dungeon Tips)
 Configuration Page
 
-Version: 0.9.1
+Version: 0.9.3
 Developed by: Voulk
 Forked by: Mathasyu 2026-03-09
 Contact:
@@ -22,6 +22,13 @@ Changelog:
         - Added override, hide, and reset workflows for shipped tips
         - Added scrollbars for the main tip window and config/editor pages
         - Expanded TBC dungeon and raid catalog with editor-safe tip IDs and weights
+    0.9.3 - 2026-03-29
+        - Split the browser into Dungeon-Browser and NPC-Browser
+        - Renamed editors to NPC-Editor and Dungeon-Editor
+        - Added the minimap button and the >>> quick jump to NPC-Browser
+        - Finished structural multilingual cleanup for tipsMap_deDE
+        - Added translation audit and paired EN/DE review exports
+        - Added a normalized content-model export as groundwork for the new addon rewrite
 ]]--
 
 local localeDisplayNames = {

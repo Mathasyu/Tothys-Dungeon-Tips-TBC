@@ -2,7 +2,7 @@
 Tothys Dungeon Tips TBC (former QE Dungeon Tips)
 Configuration Page
 
-Version: 0.9.1
+Version: 0.9.3
 Developed by: Voulk
 Forked by: Mathasyu 2026-03-09
 Contact: 
@@ -20,6 +20,11 @@ Future Versions - Engine
 Future Versions - Content
  - All BFA dungeons
  - Possible Raid version for LFR/N/H
+
+Recent changes
+ - Added minimap button with browser/config shortcuts
+ - Added >>> quick jump from the main frame into NPC-Browser
+ - Refined the frame/browser flow for the split Dungeon-Browser and NPC-Browser
 
 ]]--
 

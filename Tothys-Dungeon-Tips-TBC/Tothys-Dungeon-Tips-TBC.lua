@@ -1,6 +1,12 @@
 --[[
 Tothys Dungeon Tips TBC (former QE Dungeon Tips)
-Version: 0.9.1
+Version: 0.9.3
+
+Recent changes:
+ - Split browsing into Dungeon-Browser and NPC-Browser
+ - Added minimap access and >>> quick jump into NPC-Browser
+ - Expanded multilingual tooling and review exports
+ - Prepared normalized content-model export for the upcoming rewrite
 Developed by: Voulk
 Forked by: Mathasyu 2026-03-09
 Contact: 
