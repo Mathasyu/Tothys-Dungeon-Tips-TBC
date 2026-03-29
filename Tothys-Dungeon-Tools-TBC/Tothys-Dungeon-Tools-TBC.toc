@@ -6,5 +6,5 @@
 ## SavedVariables: TDT2Config, TDT2UserData
 
 Tothys-Core.lua
-Tothys-Data.lua
+Tothys-Database.lua
 Tothys-UI.lua

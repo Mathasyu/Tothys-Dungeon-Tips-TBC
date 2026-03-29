@@ -59,6 +59,26 @@ function addon:GetLocalizedText(localizedValue)
     return localizedValue[locale] or localizedValue.enUS or ""
 end
 
+function addon:GetExpansion(expansionKey)
+    return self.db and self.db.expansions and self.db.expansions[expansionKey] or nil
+end
+
+function addon:GetInstance(instanceKey)
+    return self.db and self.db.instances and self.db.instances[instanceKey] or nil
+end
+
+function addon:GetNpc(npcID)
+    return self.db and self.db.npcs and self.db.npcs[tostring(npcID)] or nil
+end
+
+function addon:GetNpcTips(instanceKey, npcID)
+    local instanceTips = self.db and self.db.tips and self.db.tips[instanceKey]
+    if not instanceTips then
+        return nil
+    end
+    return instanceTips[tostring(npcID)] or nil
+end
+
 local eventFrame = CreateFrame("Frame")
 eventFrame:RegisterEvent("ADDON_LOADED")
 eventFrame:SetScript("OnEvent", function(_, event, loadedAddonName)

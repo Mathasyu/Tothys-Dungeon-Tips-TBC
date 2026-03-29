@@ -10,7 +10,6 @@ from export_tip_review import (
     DB_PATH,
     ROOT,
     decode_lua_string,
-    extract_section,
     extract_tip_maps,
     find_matching_brace,
     parse_name_block,
@@ -21,6 +20,8 @@ from export_tip_review import (
 
 
 OUTPUT_PATH = ROOT / "docs" / "NORMALIZED_CONTENT_MODEL.json"
+REWRITE_OUTPUT_PATH = ROOT / "docs_rewrite" / "NORMALIZED_CONTENT_MODEL.json"
+LUA_OUTPUT_PATH = ROOT / "Tothys-Dungeon-Tools-TBC" / "Tothys-Database.lua"
 CATALOG_MARKER = "addon.contentCatalog = addon.contentCatalog or {"
 INSTANCE_CONTENT_MARKER = "addon.instanceContent = addon.instanceContent or {}"
 TIPS_EN_MARKER = "tipsMap_enUS = {"
@@ -37,13 +38,16 @@ DETAIL_RE = re.compile(
 )
 
 
-def parse_expansions_and_instances(db_text: str) -> tuple[dict, dict]:
+def parse_expansions_and_instances(db_text: str) -> tuple[dict, dict, dict]:
     catalog_start = db_text.find(CATALOG_MARKER)
     tips_start = db_text.find(INSTANCE_CONTENT_MARKER, catalog_start)
     catalog_text = db_text[catalog_start:tips_start]
 
     expansions: dict[str, dict] = {}
     instances: dict[str, dict] = {}
+    instance_npcs: dict[str, dict[str, list[int]]] = {}
+
+    npc_groups = parse_npc_groups(db_text)
 
     for exp_match in EXPANSION_RE.finditer(catalog_text):
         expansion_key = exp_match.group("key")
@@ -60,7 +64,6 @@ def parse_expansions_and_instances(db_text: str) -> tuple[dict, dict]:
                 "enUS": name_en,
                 "deDE": name_de,
             },
-            "instances": [],
         }
 
         instances_match = re.search(r"instances\s*=\s*\{(?P<body>.*)\n\t\t\},", expansion_text, re.S)
@@ -91,28 +94,37 @@ def parse_expansions_and_instances(db_text: str) -> tuple[dict, dict]:
                     "enUS": inst_name_en,
                     "deDE": inst_name_de,
                 },
-                "npcIDs": npc_ids,
-                "npcNames": {
+            }
+            bosses: list[int] = []
+            others: list[int] = []
+            for npc_id in npc_ids:
+                if npc_groups.get((instance_key, npc_id)) == "boss":
+                    bosses.append(npc_id)
+                else:
+                    others.append(npc_id)
+            instance_npcs[instance_key] = {
+                "bosses": bosses,
+                "others": others,
+                "names": {
                     str(npc_id): {
-                        "enUS": names[0],
-                        "deDE": names[1],
+                        "enUS": npc_names.get(npc_id, ("", ""))[0],
+                        "deDE": npc_names.get(npc_id, ("", ""))[1],
                     }
-                    for npc_id, names in npc_names.items()
+                    for npc_id in npc_ids
                 },
             }
-            expansions[expansion_key]["instances"].append(instance_key)
 
     expansions = dict(sorted(expansions.items(), key=lambda item: item[1]["order"]))
-    return expansions, instances
+    return expansions, instances, instance_npcs
 
 
-def parse_instance_content(db_text: str) -> tuple[dict[str, list[dict]], dict[str, dict]]:
+def parse_instance_content(db_text: str) -> tuple[dict[str, dict], dict[str, dict]]:
     instance_start = db_text.find(INSTANCE_CONTENT_MARKER)
     tips_start = db_text.find(TIPS_EN_MARKER, instance_start)
     section = db_text[instance_start:tips_start]
 
     marker_re = re.compile(r"(?m)^addon\.instanceContent\.(?P<key>[a-z0-9_]+)\s*=\s*addon\.instanceContent\.(?P=key)\s+or\s+\{")
-    instance_tips: dict[str, list[dict]] = {}
+    instance_tips: dict[str, dict] = {}
     instance_details: dict[str, dict] = {}
 
     for match in marker_re.finditer(section):
@@ -122,23 +134,21 @@ def parse_instance_content(db_text: str) -> tuple[dict[str, list[dict]], dict[st
         block_text = section[brace_start:brace_end]
 
         info_match = re.search(r"info\s*=\s*\{(?P<body>.*?)\n\t\},\n\tdetails", block_text, re.S)
-        tips: list[dict] = []
+        tips: dict[str, dict] = {}
         if info_match:
             for tip_match in TIP_ENTRY_RE.finditer(info_match.group("body")):
                 legacy_id = tip_match.group("id")
                 local_id = legacy_id.rsplit("_", 1)[-1] if "_" in legacy_id else legacy_id
-                tips.append(
-                    {
-                        "id": local_id,
-                        "legacy_id": legacy_id,
-                        "type": tip_match.group("type"),
-                        "weight": int(tip_match.group("weight")),
-                        "text": {
-                            "enUS": decode_lua_string(tip_match.group("en")),
-                            "deDE": decode_lua_string(tip_match.group("de")),
-                        },
-                    }
-                )
+                tips[local_id] = {
+                    "id": local_id,
+                    "legacy_id": legacy_id,
+                    "type": tip_match.group("type"),
+                    "weight": int(tip_match.group("weight")),
+                    "text": {
+                        "enUS": decode_lua_string(tip_match.group("en")),
+                        "deDE": decode_lua_string(tip_match.group("de")),
+                    },
+                }
         instance_tips[instance_key] = tips
 
         details: dict[str, dict] = {}
@@ -154,54 +164,53 @@ def parse_instance_content(db_text: str) -> tuple[dict[str, list[dict]], dict[st
     return instance_tips, instance_details
 
 
-def build_npcs(instances: dict, npc_groups: dict[tuple[str, int], str]) -> dict[str, dict]:
+def build_npcs(instance_npcs: dict) -> dict[str, dict]:
     npcs: dict[str, dict] = {}
-    for instance_key, instance in instances.items():
-        for npc_id_str, names in instance["npcNames"].items():
-            npc_id = int(npc_id_str)
+    for instance_key, info in instance_npcs.items():
+        for npc_id_str, names in info["names"].items():
             entry = npcs.setdefault(
                 npc_id_str,
                 {
-                    "id": npc_id,
-                    "name": names,
+                    "id": int(npc_id_str),
+                    "name": {
+                        "enUS": names["enUS"],
+                        "deDE": names["deDE"],
+                    },
                     "instances": [],
-                    "groups": {},
                 },
             )
             if instance_key not in entry["instances"]:
                 entry["instances"].append(instance_key)
-            group = npc_groups.get((instance_key, npc_id))
-            if group:
-                entry["groups"][instance_key] = group
     return npcs
 
 
-def build_tips(instances: dict, tips_en: dict, tips_de: dict) -> dict[str, dict]:
+def build_tips(instance_npcs: dict, tips_en: dict, tips_de: dict) -> dict[str, dict]:
     result: dict[str, dict] = {}
-    for instance_key, instance in instances.items():
-        npc_block: dict[str, list[dict]] = {}
-        for npc_id in instance["npcIDs"]:
+    for instance_key, info in instance_npcs.items():
+        npc_block: dict[str, dict] = {}
+        for npc_id in info["bosses"] + info["others"]:
             en_entries = tips_en.get(npc_id, [])
             de_entries = tips_de.get(npc_id, [])
             if not en_entries or not de_entries:
                 continue
 
-            normalized_entries: list[dict] = []
+            normalized_entries: dict[str, dict] = {}
             for index, (en_tip, de_tip) in enumerate(zip(en_entries, de_entries), start=1):
                 legacy_id = en_tip.tip_id
                 local_id = legacy_id.rsplit("_", 1)[-1] if "_" in legacy_id else f"{index:02d}"
-                normalized_entries.append(
-                    {
-                        "id": local_id,
-                        "legacy_id": legacy_id,
-                        "type": en_tip.tip_type,
-                        "weight": en_tip.weight,
-                        "text": {
-                            "enUS": en_tip.text,
-                            "deDE": de_tip.text,
-                        },
-                    }
-                )
+                normalized_entries[local_id] = {
+                    "id": local_id,
+                    "legacy_id": legacy_id,
+                    "legacy_npc_name": {
+                        "enUS": info["names"][str(npc_id)]["enUS"],
+                    },
+                    "type": en_tip.tip_type,
+                    "weight": en_tip.weight,
+                    "text": {
+                        "enUS": en_tip.text,
+                        "deDE": de_tip.text,
+                    },
+                }
             npc_block[str(npc_id)] = normalized_entries
         result[instance_key] = npc_block
     return result
@@ -209,25 +218,26 @@ def build_tips(instances: dict, tips_en: dict, tips_de: dict) -> dict[str, dict]
 
 def build_payload() -> dict:
     db_text = DB_PATH.read_text(encoding="utf-8")
-    expansions, instances = parse_expansions_and_instances(db_text)
-    npc_groups = parse_npc_groups(db_text)
+    expansions, instances, instance_npcs = parse_expansions_and_instances(db_text)
     tips_en, tips_de = extract_tip_maps(db_text)
     instance_tips, instance_details = parse_instance_content(db_text)
-    npcs = build_npcs(instances, npc_groups)
-    tips = build_tips(instances, tips_en, tips_de)
+    npcs = build_npcs(instance_npcs)
+    tips = build_tips(instance_npcs, tips_en, tips_de)
 
     return {
         "meta": {
             "source": str(DB_PATH.relative_to(ROOT)),
             "generated_from": "scripts/export_normalized_model.py",
             "notes": [
-                "Generated review/migration target from current shipped DB.",
-                "Uses instance keys such as `ramparts` as stable identifiers.",
-                "Tip ids are stored as local ids plus legacy ids for reversibility.",
+                "Generated migration target from current shipped DB.",
+                "Top-level variable names are generic and locale-agnostic.",
+                "Tip ids are local within instance/npc scope and retain legacy_id for reversibility.",
+                "NPC combat tips retain the legacy English NPC name for translation and review work.",
             ],
         },
         "expansions": expansions,
         "instances": instances,
+        "instanceNpcs": instance_npcs,
         "npcs": npcs,
         "tips": tips,
         "instanceTips": instance_tips,
@@ -235,10 +245,71 @@ def build_payload() -> dict:
     }
 
 
+def to_lua(value, indent: int = 0) -> str:
+    pad = " " * indent
+    next_pad = " " * (indent + 2)
+
+    if value is None:
+        return "nil"
+    if value is True:
+        return "true"
+    if value is False:
+        return "false"
+    if isinstance(value, str):
+        escaped = value.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
+        return f'"{escaped}"'
+    if isinstance(value, (int, float)):
+        return str(value)
+    if isinstance(value, list):
+        if not value:
+            return "{}"
+        parts = ["{"]
+        for item in value:
+            parts.append(f"{next_pad}{to_lua(item, indent + 2)},")
+        parts.append(f"{pad}}}")
+        return "\n".join(parts)
+    if isinstance(value, dict):
+        if not value:
+            return "{}"
+        parts = ["{"]
+        for key, item in value.items():
+            if isinstance(key, int):
+                lua_key = f"[{key}]"
+            elif isinstance(key, str) and key.isidentifier():
+                lua_key = key
+            else:
+                lua_key = f"[{to_lua(key)}]"
+            parts.append(f"{next_pad}{lua_key} = {to_lua(item, indent + 2)},")
+        parts.append(f"{pad}}}")
+        return "\n".join(parts)
+    raise TypeError(f"Unsupported value type: {type(value)!r}")
+
+
+def write_lua_runtime(payload: dict) -> None:
+    lua_table = to_lua(payload, 0)
+    content = """--[[
+Tothys Dungeon Tools TBC
+Runtime database
+
+This file is generated by scripts/export_normalized_model.py.
+Do not edit it manually.
+]]
+
+local _, addon = ...
+
+addon.db = %s
+""" % lua_table
+    LUA_OUTPUT_PATH.write_text(content, encoding="utf-8")
+
+
 def main() -> int:
     payload = build_payload()
     OUTPUT_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    REWRITE_OUTPUT_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_lua_runtime(payload)
     print(f"Wrote normalized content model to {OUTPUT_PATH}")
+    print(f"Wrote normalized content model to {REWRITE_OUTPUT_PATH}")
+    print(f"Wrote normalized runtime database to {LUA_OUTPUT_PATH}")
     return 0
 
 

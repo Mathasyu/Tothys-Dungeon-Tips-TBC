@@ -8,6 +8,33 @@ Guidelines:
 - focus on user-visible behavior, data-model milestones, and tooling
 - do not use this as a dump of every tiny formatting change
 
+## 2026-03-29
+
+### Added
+
+- Added a dedicated rewrite documentation area under `Tothys-Dungeon-Tools-TBC/docs`
+- Added rewrite-local `README.md`, `PLAN.md`, and `DATA_MODEL.md` so the new addon architecture can evolve separately from the legacy addon docs
+- Copied the current generated normalized export into `Tothys-Dungeon-Tools-TBC/docs/NORMALIZED_CONTENT_MODEL.json` as the working data basis for the rewrite
+
+### Changed
+
+- `scripts/export_normalized_model.py` now exports a stricter normalized model with generic top-level containers:
+  - `meta`
+  - `expansions`
+  - `instances`
+  - `instanceNpcs`
+  - `npcs`
+  - `tips`
+  - `instanceTips`
+  - `instanceDetails`
+- Added `scripts/validate_normalized_model.py` to validate the generated normalized model before building rewrite runtime code against it
+- `scripts/export_normalized_model.py` now also generates `Tothys-Dungeon-Tools-TBC/Tothys-Database.lua` so the rewrite addon can load the full exported DB directly instead of a tiny seed
+- Simplified the rewrite addon file layout so lookup helpers now live in `Tothys-Core.lua` and the rewrite only keeps:
+  - `Tothys-Core.lua`
+  - `Tothys-Database.lua`
+  - `Tothys-UI.lua`
+- Normalized NPC combat tips now also carry `legacy_npc_name.enUS` to make translator-facing Lua review easier
+
 ## 2026-03-21
 
 ### Added
