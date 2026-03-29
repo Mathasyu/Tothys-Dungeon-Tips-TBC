@@ -6299,59 +6299,59 @@ tipsMap_deDE[19209] = {
 tipsMap_deDE[22890] = {
 	{"shadow_lab_22890_01", "Legion", "", 10},
 }
-tipsMap_deDE[17848] = {{"old_hillsbrad_17848_01", "Legion", "Tank n Spank fight, but be sure trash has been cleared so you aren't feared into a pat", 30},
-					{"old_hillsbrad_17848_02", "Important", "Boss will cast Frightening Shout (AoE Fear w/10 yd range [as of Patch 2.3] lasting 6 sec) - Standing beyond this range to negate fear and his WW ability.", 20},
-					{"old_hillsbrad_17848_03", "Defensives", "Drake applies Mortal Strike to target reducing their healing effectiveness. Tank may need to use defensive CDs to help party healer during this part.", 10}}
-tipsMap_deDE[17862] = {{"old_hillsbrad_17862_01", "Legion", "Paladin-Type Mob", 80},
-					{"old_hillsbrad_17862_02", "Advanced", "KILL ORDER: Warden (Healer), Veteran (Rogue), then Skarloc (Boss)", 70},
-					{"old_hillsbrad_17862_03", "TANK", "Be quick to pick up boss and use AoE to hold aggro on Veteran (Rogue)", 60},
-					{"old_hillsbrad_17862_04", "DAMAGE", "Focus down Warden (Healer) before going after Veteran or Boss (tank should be focusing on these two targets at start of fight)", 50},
-					{"old_hillsbrad_17862_05", "Interrupts", "INTERRUPT: Holy Light (Heals an ally)", 40},
-					{"old_hillsbrad_17862_06", "HEALER", "When Tank is struck by Hammer of Justice (5 sec stun) be sure to focus your heals to keep tank topped off!", 30},
-					{"old_hillsbrad_17862_07", "WARLOCK", "Immune to Curse of Tongues.", 20},
-					{"old_hillsbrad_17862_08", "Important", "Stay out of Consecration at all times. If the tank, it's your job to kite the boss out of it!", 10}}
-tipsMap_deDE[18096] = {{"old_hillsbrad_18096_01", "Advanced", "PHASE ONE - Trash Waves", 100},
-					{"old_hillsbrad_18096_02", "Legion", "1st Wave (Trash from west/same direction as boss)", 90},
-					{"old_hillsbrad_18096_03", "Legion", "2nd Wave (Trash from south - direction Thrall and players entered Tarren Mill)", 80},
-					{"old_hillsbrad_18096_04", "Legion", "3rd Wave (Trash from west/same direction as boss and 1st wave)", 70},
-					{"old_hillsbrad_18096_05", "Important", "After 3rd wave goes down, group should use food/water to get health/mana back up - Save your POTS!", 60},
-					{"old_hillsbrad_18096_06", "Advanced", "PHASE TWO - After brief intermission, boss will land", 50},
-					{"old_hillsbrad_18096_07", "TANK", "When boss lands, tank him near NW small house of Tarren Mill under the outside roof of building & keep boss faced away from group due to frontal cone Sand Breath (Reduces movement speed +reduced attack for 10 sec)", 40},
-					{"old_hillsbrad_18096_08", "Important", "Players should stand as far from boss as possible due to Wing Buffet (Knocks back players w/in 15 yds)", 30},
-					{"old_hillsbrad_18096_09", "Important", "Boss has Magic Distruption Aura which will periodically dispel magical effects (buffs) from players", 20},
-					{"old_hillsbrad_18096_10", "Defensives", "While under the effect of Impending Death you will take increased damage. Pop Defensives. Healer focus on this player!", 10}}
-tipsMap_deDE[18725] = {{"old_hillsbrad_18725_01", "Important", "Click to be flown to the other side of the instance", 10}}
-tipsMap_deDE[18786] = {{"old_hillsbrad_18786_01", "Important", "Escort and Protect Thrall", 10}}
-tipsMap_deDE[17814] = {{"old_hillsbrad_17814_01", "Legion", "Protection Warrior-Type Mob", 20},
-					{"old_hillsbrad_17814_02", "Important", "After mob casts Shield Block, only the first melee attack might be blocked for the next 5 sec. Avoid using big CD abilities during this 5 sec window", 10}}
-tipsMap_deDE[17815] = {{"old_hillsbrad_17815_01", "Legion", "Ranged mobs that Shoot players", 10}}
-tipsMap_deDE[17819] = {{"old_hillsbrad_17819_01", "Important", "Mobs will cleave nearest ally to their target, so tank should pull this mob away from ranged DPS/healer. Melee DPS may need extra heals", 10}}
-tipsMap_deDE[17820] = {{"old_hillsbrad_17820_01", "Important", "Potentially dangerous with Scatter Shot (Disorients player); These mobs can be CC'd", 10}}
-tipsMap_deDE[17833] = {{"old_hillsbrad_17833_01", "PriorityTargets", "(Priest) Healer-Type Mob", 40},
-					{"old_hillsbrad_17833_02", "Important", "Can be CC'd", 30},
-					{"old_hillsbrad_17833_03", "Interrupts", "INTERRUPT: Heal (Heals an ally)", 20},
-					{"old_hillsbrad_17833_04", "Interrupts", "INTERRUPT: Psychic Scream (4 sec AoE Fear)", 10}}
-tipsMap_deDE[17840] = {{"old_hillsbrad_17840_01", "Defensives", "During Frenzy, tank may need to pop defensive CDs to mitigate some of the damage", 10}}
+tipsMap_deDE[17848] = {{"old_hillsbrad_17848_01", "Legion", "Einfacher Tank-and-Spank-Kampf, aber der Trash muss vorher weg sein, damit euch der Fear nicht in eine Pat schickt.", 30},
+					{"old_hillsbrad_17848_02", "Important", "Der Boss castet Furchterregender Schrei, einen AoE-Fear mit 10 Metern Reichweite, der 6 Sek. hält. Außerhalb dieser Reichweite stehen, um Fear und Wirbelwind zu vermeiden.", 20},
+					{"old_hillsbrad_17848_03", "Defensives", "Drake belegt sein Ziel mit Tödlicher Stoß und reduziert die Heilwirkung. Der Tank braucht in dieser Phase eventuell Def-CDs, um den Heiler zu entlasten.", 10}}
+tipsMap_deDE[17862] = {{"old_hillsbrad_17862_01", "Legion", "Paladin-artiger Mob.", 80},
+					{"old_hillsbrad_17862_02", "Advanced", "KILL ORDER: Warden (Heiler), Veteran (Schurke), dann Skarloc (Boss).", 70},
+					{"old_hillsbrad_17862_03", "TANK", "Den Boss sofort aufnehmen und AoE-Bedrohung nutzen, um den Veteranen zu halten.", 60},
+					{"old_hillsbrad_17862_04", "DAMAGE", "Zuerst den Warden (Heiler) fokussen, dann Veteran oder Boss. Der Tank sollte zu Kampfbeginn diese beiden Ziele binden.", 50},
+					{"old_hillsbrad_17862_05", "Interrupts", "KICK: Heiliges Licht heilt einen Verbündeten.", 40},
+					{"old_hillsbrad_17862_06", "HEALER", "Wird der Tank von Hammer der Gerechtigkeit getroffen, 5 Sek. Stun, musst du ihn sofort stabil halten.", 30},
+					{"old_hillsbrad_17862_07", "WARLOCK", "Immun gegen Fluch der Sprachen.", 20},
+					{"old_hillsbrad_17862_08", "Important", "Immer aus Weihe raus. Bist du der Tank, musst du den Boss herauskiten.", 10}}
+tipsMap_deDE[18096] = {{"old_hillsbrad_18096_01", "Advanced", "PHASE ONE - Trashwellen", 100},
+					{"old_hillsbrad_18096_02", "Legion", "1. Welle: Trash aus dem Westen, also aus derselben Richtung wie der Boss.", 90},
+					{"old_hillsbrad_18096_03", "Legion", "2. Welle: Trash aus dem Süden, also aus der Richtung, aus der Thrall und die Spieler nach Tarrens Mühle gekommen sind.", 80},
+					{"old_hillsbrad_18096_04", "Legion", "3. Welle: Trash wieder aus dem Westen, also aus derselben Richtung wie Boss und erste Welle.", 70},
+					{"old_hillsbrad_18096_05", "Important", "Nach der dritten Welle Essen und Wasser nutzen, um Leben und Mana wieder aufzufüllen. Eure Pots aufsparen.", 60},
+					{"old_hillsbrad_18096_06", "Advanced", "PHASE TWO - Nach einer kurzen Pause landet der Boss.", 50},
+					{"old_hillsbrad_18096_07", "TANK", "Wenn der Boss landet, ihn beim kleinen Haus im Nordwesten von Tarrens Mühle unter dem Vordach tanken und von der Gruppe wegdrehen, wegen Sandatem als Frontal-Kegel. Er reduziert 10 Sek. lang Bewegungstempo und Angriffskraft.", 40},
+					{"old_hillsbrad_18096_08", "Important", "Spieler sollten wegen Wing Buffet möglichst weit vom Boss weg stehen. Dieser Effekt schleudert Spieler innerhalb von 15 Metern zurück.", 30},
+					{"old_hillsbrad_18096_09", "Important", "Der Boss hat eine Aura der Magiestörung, die regelmäßig magische Effekte und Buffs von Spielern entfernt.", 20},
+					{"old_hillsbrad_18096_10", "Defensives", "Unter dem Effekt von Bevorstehender Tod erleidet der Spieler erhöhten Schaden. Def-CDs ziehen. Heiler soll diesen Spieler fokussen.", 10}}
+tipsMap_deDE[18725] = {{"old_hillsbrad_18725_01", "Important", "Anklicken, um auf die andere Seite der Instanz geflogen zu werden.", 10}}
+tipsMap_deDE[18786] = {{"old_hillsbrad_18786_01", "Important", "Thrall eskortieren und beschützen.", 10}}
+tipsMap_deDE[17814] = {{"old_hillsbrad_17814_01", "Legion", "Protection-Warrior-artiger Mob.", 20},
+					{"old_hillsbrad_17814_02", "Important", "Nachdem der Mob Schildblock gecastet hat, kann in den nächsten 5 Sek. nur der erste Meeleeschlag geblockt werden. In diesem Fenster keine großen CDs verschwenden.", 10}}
+tipsMap_deDE[17815] = {{"old_hillsbrad_17815_01", "Legion", "Fernkampf-Mobs, die auf Spieler schießen.", 10}}
+tipsMap_deDE[17819] = {{"old_hillsbrad_17819_01", "Important", "Diese Mobs cleaven den nächsten Verbündeten ihres Ziels. Der Tank sollte sie also von Range-DDs und Heiler wegziehen. Meelee-DDs brauchen eventuell Extra-Heilung.", 10}}
+tipsMap_deDE[17820] = {{"old_hillsbrad_17820_01", "Important", "Wegen Streuschuss potenziell gefährlich. Dieser Desorient kann Spieler aus dem Kampf nehmen. Die Mobs können per CC gesichert werden.", 10}}
+tipsMap_deDE[17833] = {{"old_hillsbrad_17833_01", "PriorityTargets", "Priester-Heiler-artiger Mob.", 40},
+					{"old_hillsbrad_17833_02", "Important", "Kann per CC gesichert werden.", 30},
+					{"old_hillsbrad_17833_03", "Interrupts", "KICK: Heilung heilt einen Verbündeten.", 20},
+					{"old_hillsbrad_17833_04", "Interrupts", "KICK: Psychischer Schrei, 4-Sek.-AoE-Fear.", 10}}
+tipsMap_deDE[17840] = {{"old_hillsbrad_17840_01", "Defensives", "Während Raserei braucht der Tank eventuell Def-CDs, um einen Teil des Schadens abzufangen.", 10}}
 tipsMap_deDE[17846] = {{"old_hillsbrad_17846_01", "Legion", "", 10}}
-tipsMap_deDE[17860] = {{"old_hillsbrad_17860_01", "Legion", "Rogue-Type Mob", 40},
-					{"old_hillsbrad_17860_02", "Important", "Can be CC'd", 30},
-					{"old_hillsbrad_17860_03", "Important", "KIDNEY SHOT (Stuns player for 4 sec)", 20},
-					{"old_hillsbrad_17860_04", "Important", "BACKSTAB (Increased damage if mob is standing behind target)", 10}}
-tipsMap_deDE[18092] = {{"old_hillsbrad_18092_01", "Important", "Will apply Mortal Strike debuff on player (Reduced healing effectiveness)", 10}}
-tipsMap_deDE[18093] = {{"old_hillsbrad_18093_01", "PriorityTargets", "Mob heals, cleanses and stuns", 20},
-					{"old_hillsbrad_18093_02", "Interrupts", "Interrupt: Heal", 10}}
-tipsMap_deDE[18094] = {{"old_hillsbrad_18094_01", "Important", "Dispel Curse of Infinity from player - usually the tank. (Debuff causing increased damage taken by 50%)", 10}}
-tipsMap_deDE[18170] = {{"old_hillsbrad_18170_01", "Defensives", "Defensive: Applies Mortal Wounds debuff to target (reduces effectiveness of healing taken by 50% for 5 sec)", 10}}
-tipsMap_deDE[18171] = {{"old_hillsbrad_18171_01", "Important", "Dispel Curse of Infinity from player - usually the tank. (Debuff causing increased damage taken by 50%)", 10}}
-tipsMap_deDE[18172] = {{"old_hillsbrad_18172_01", "Important", "Inflicts Shadow & Physical Damage; Cleave also hits a nearby player", 10}}
+tipsMap_deDE[17860] = {{"old_hillsbrad_17860_01", "Legion", "Schurken-artiger Mob.", 40},
+					{"old_hillsbrad_17860_02", "Important", "Kann per CC gesichert werden.", 30},
+					{"old_hillsbrad_17860_03", "Important", "Nierenhieb betäubt den Spieler 4 Sek. lang.", 20},
+					{"old_hillsbrad_17860_04", "Important", "Backstab verursacht erhöhten Schaden, wenn der Mob hinter seinem Ziel steht.", 10}}
+tipsMap_deDE[18092] = {{"old_hillsbrad_18092_01", "Important", "Verpasst dem Spieler Tödlicher Stoß und reduziert damit die Heilwirkung.", 10}}
+tipsMap_deDE[18093] = {{"old_hillsbrad_18093_01", "PriorityTargets", "Der Mob heilt, reinigt und stunnt.", 20},
+					{"old_hillsbrad_18093_02", "Interrupts", "KICK: Heilung.", 10}}
+tipsMap_deDE[18094] = {{"old_hillsbrad_18094_01", "Important", "Fluch der Unendlichkeit vom Spieler dispellen, meist vom Tank. Der Debuff erhöht den erlittenen Schaden um 50%.", 10}}
+tipsMap_deDE[18170] = {{"old_hillsbrad_18170_01", "Defensives", "Def-CDs: Der Mob belegt sein Ziel mit Tödliche Wunden und reduziert 5 Sek. lang die erhaltene Heilung um 50%.", 10}}
+tipsMap_deDE[18171] = {{"old_hillsbrad_18171_01", "Important", "Fluch der Unendlichkeit vom Spieler dispellen, meist vom Tank. Der Debuff erhöht den erlittenen Schaden um 50%.", 10}}
+tipsMap_deDE[18172] = {{"old_hillsbrad_18172_01", "Important", "Verursacht Schatten- und physischen Schaden. Cleave trifft zusätzlich einen nahen Spieler.", 10}}
 tipsMap_deDE[18673] = {{"old_hillsbrad_18673_01", "Legion", "", 10}}
 tipsMap_deDE[18764] = {{"old_hillsbrad_18764_01", "Legion", "", 10}}
 tipsMap_deDE[18765] = {{"old_hillsbrad_18765_01", "Legion", "", 10}}
-tipsMap_deDE[18934] = {{"old_hillsbrad_18934_01", "Important", "Mage dealing combo of Frost and Fire damage", 20},
-					{"old_hillsbrad_18934_02", "Important", "CC this mob and avoid AoE - mob will Polymorph a player", 10}}
+tipsMap_deDE[18934] = {{"old_hillsbrad_18934_01", "Important", "Magier-Mob, der eine Mischung aus Frost- und Feuerschaden verursacht.", 20},
+					{"old_hillsbrad_18934_02", "Important", "Diesen Mob per CC sichern und AoE vermeiden. Er wird einen Spieler in ein Schaf verwandeln.", 10}}
 tipsMap_deDE[26650] = {{"old_hillsbrad_26650_01", "Legion", "", 10}}
-tipsMap_deDE[28132] = {{"old_hillsbrad_28132_01", "Legion", "Ranged mob that uses Net to root players and disorient them with Scatter Shot", 10}}
-tipsMap_deDE[28163] = {{"old_hillsbrad_28163_01", "Important", "Reduces enemy's strength and agility by 10% for 30 sec", 10}}
+tipsMap_deDE[28132] = {{"old_hillsbrad_28132_01", "Legion", "Fernkampf-Mob, der mit Netz Spieler rooted und sie mit Streuschuss desorientiert.", 10}}
+tipsMap_deDE[28163] = {{"old_hillsbrad_28163_01", "Important", "Reduziert 30 Sek. lang Stärke und Beweglichkeit des Gegners um 10%.", 10}}
 tipsMap_deDE[19044] = {
 	{"gruul_19044_01", "Advanced", "POSITIONIERUNG: Der Kampf bevozugt Range-DDs gegenueber Meelees. Tanks, DDs und Heiler sollten nicht aufeinander stacken, sondern sich verteilen.", 100},
 	{"gruul_19044_02", "Important", "Stellt sicher, dass MT und OT auf Platz 1 und 2 der Bedrohungsliste stehen, da Schmerzvoller Schlag den Spieler mit der zweithoechsten Bedrohung trifft.", 90},

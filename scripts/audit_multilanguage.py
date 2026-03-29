@@ -362,15 +362,30 @@ def build_report() -> str:
         report_lines.extend(["", "Additional notes:"])
         report_lines.extend([f"- {entry}" for entry in instance_content_findings])
 
+    structural_done = len(structural_mismatches) == 0
+    missing_done = len(untranslated_ids) == 0
+    duplicates_done = len(duplicate_override_ids) == 0
+    browser_drift_count = len(browser_missing_in_de) + len(browser_extra_in_de)
+
     report_lines.extend(
         [
             "",
+            "## Progress summary",
+            "",
+            f"- Done: explicit `deDE` counterparts for all `tipsMap_enUS` entries: **{'yes' if missing_done else 'no'}**",
+            f"- Done: structural parity between `tipsMap_enUS` and `tipsMap_deDE`: **{'yes' if structural_done else 'no'}**",
+            f"- Done: duplicate explicit `tipsMap_deDE` assignments removed: **{'yes' if duplicates_done else 'no'}**",
+            f"- Open: fully identical explicit `deDE` overrides still left to translate: **{len(identical_override_ids)}**",
+            f"- Open: partially translated overrides still left to finish: **{len(partial_same_text_ids)}**",
+            f"- Open: browser locale key drift: **{browser_drift_count}**",
+            f"- Open: visible `TEST:` markers in shipped instance content: **{len(instance_content_findings)}**",
+            "",
             "## Recommended next steps",
             "",
-            "1. Fix the structural mismatches before translating further.",
-            "2. Work through untranslated `tipsMap_deDE` entries in controlled batches.",
-            "3. Review identical `npcNames` values and confirm which ones are real proper names versus placeholders.",
-            "4. Remove the visible `TEST:` marker from `instanceContent.auchenai_crypts` once the migration is considered stable.",
+            f"1. {'Done' if structural_done else 'Open'}: Fix the structural mismatches before translating further.",
+            "2. Open: Work through untranslated `tipsMap_deDE` entries in controlled batches.",
+            "3. Open: Review identical `npcNames` values and confirm which ones are real proper names versus placeholders.",
+            f"4. {'Open' if instance_content_findings else 'Done'}: Remove the visible `TEST:` marker from `instanceContent.auchenai_crypts` once the migration is considered stable.",
             "",
             "## Important note",
             "",
